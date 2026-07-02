@@ -4,9 +4,21 @@
 import * as store from './store.js';
 import { generateQuiz, gradeShortAnswers, hasApiKey } from './ai.js';
 import { award, nextMastery, XP } from './gamification.js';
+import { prepareNextLesson } from './lessons.js';
 import { el, clear, toast, loading, navigate } from './ui.js';
 
-export async function renderQuiz(root, { id }) {
+// Flatten a lesson into quiz source material (full text, not a truncated body).
+function lessonContent(lesson) {
+  return [
+    ...(lesson.sections || []).map((s) => `${s.heading}\n${s.text}`),
+    lesson.example?.text ? `In practice: ${lesson.example.text}` : '',
+    ...(lesson.glossary || []).map((g) => `${g.term}: ${g.definition}`),
+    (lesson.insights || []).join('\n'),
+    lesson.body || '',
+  ].filter(Boolean).join('\n\n');
+}
+
+export async function renderQuiz(root, { id, focusConcepts = [] }) {
   clear(root);
   const lesson = await store.get('lessons', id);
   if (!lesson) {
@@ -18,15 +30,14 @@ export async function renderQuiz(root, { id }) {
     return navigate('#/settings');
   }
 
-  loading(root, 'Building your quiz…');
+  loading(root, focusConcepts.length ? 'Building your retest…' : 'Building your quiz…');
   let quizData;
   try {
     quizData = await generateQuiz({
       lessonTitle: lesson.title,
       concepts: lesson.concepts,
-      body: lesson.sections?.length
-        ? lesson.sections.map((s) => `${s.heading}: ${s.text}`).join('\n\n')
-        : lesson.body,
+      content: lessonContent(lesson),
+      focusConcepts,
     });
   } catch (err) {
     console.error(err);
@@ -50,6 +61,24 @@ export async function renderQuiz(root, { id }) {
 
     const card = el('div', { class: 'quiz-card' }, [el('h2', {}, q.question)]);
 
+    const canProceed = () =>
+      q.type === 'mc' ? answers[idx] != null : (answers[idx] || '').trim().length > 0;
+
+    const nextBtn = el('button', {
+      class: 'btn btn-primary',
+      onclick: () => {
+        if (!canProceed()) return;
+        if (idx < questions.length - 1) { idx++; step(); }
+        else finish();
+      },
+    }, idx < questions.length - 1 ? 'Next →' : 'Submit');
+
+    // Keep the button state live — typing must enable it without a re-render.
+    const syncNext = () => {
+      if (canProceed()) nextBtn.removeAttribute('disabled');
+      else nextBtn.setAttribute('disabled', 'disabled');
+    };
+
     if (q.type === 'mc') {
       const opts = el('div', { class: 'options' });
       (q.options || []).forEach((opt, i) => {
@@ -70,23 +99,18 @@ export async function renderQuiz(root, { id }) {
         placeholder: 'Your answer…',
       });
       ta.value = answers[idx] || '';
-      ta.addEventListener('input', () => (answers[idx] = ta.value));
+      ta.addEventListener('input', () => {
+        answers[idx] = ta.value;
+        syncNext();
+      });
       card.append(ta);
     }
 
-    const canProceed = q.type === 'mc' ? answers[idx] != null : (answers[idx] || '').trim().length > 0;
+    syncNext();
     card.append(
       el('div', { class: 'quiz-nav' }, [
         idx > 0 ? el('button', { class: 'btn', onclick: () => { idx--; step(); } }, '← Back') : el('span', {}),
-        el('button', {
-          class: 'btn btn-primary',
-          disabled: !canProceed ? 'disabled' : null,
-          onclick: () => {
-            if (!canProceed) return;
-            if (idx < questions.length - 1) { idx++; step(); }
-            else finish();
-          },
-        }, idx < questions.length - 1 ? 'Next →' : 'Submit'),
+        nextBtn,
       ])
     );
 
@@ -175,12 +199,24 @@ export async function renderQuiz(root, { id }) {
 
     const list = el('div', { class: 'results' });
     results.forEach((r, i) => {
+      const q = questions[i];
+      const yourAnswer = q.type === 'mc' ? (q.options?.[answers[i]] ?? '—') : (answers[i] || '—');
+      const rightAnswer = q.type === 'mc' ? q.options?.[q.correctIndex] : q.modelAnswer;
       list.append(
         el('div', { class: 'result ' + (r.correct ? 'ok' : 'bad') }, [
           el('div', { class: 'result-head' }, [
             el('span', { class: 'result-icon' }, r.correct ? '✓' : '✕'),
-            el('span', { class: 'result-q' }, questions[i].question),
+            el('span', { class: 'result-q' }, q.question),
           ]),
+          el('p', { class: 'result-ans' }, [el('strong', {}, 'You: '), yourAnswer]),
+          // Show the right answer when wrong; for short answers always show
+          // the model answer — comparing is where the learning happens.
+          (!r.correct || q.type === 'short') && rightAnswer
+            ? el('p', { class: 'result-model' }, [
+                el('strong', {}, q.type === 'mc' ? 'Correct: ' : 'Model answer: '),
+                rightAnswer,
+              ])
+            : null,
           r.feedback ? el('p', { class: 'result-fb' }, r.feedback) : null,
         ])
       );
@@ -191,12 +227,25 @@ export async function renderQuiz(root, { id }) {
       toast(`🏆 ${a.name} unlocked`, 'success');
     }
 
+    const missed = [...new Set(results.filter((r) => !r.correct).map((r) => r.concept).filter(Boolean))];
+    if (missed.length) {
+      root.append(
+        el('button', {
+          class: 'btn full retest-btn',
+          onclick: () => renderQuiz(root, { id: lesson.id, focusConcepts: missed }),
+        }, `↻ Retest what you missed (${missed.length} concept${missed.length > 1 ? 's' : ''})`)
+      );
+    }
+
     root.append(
       el('div', { class: 'quiz-nav' }, [
         el('button', { class: 'btn', onclick: () => navigate(`#/topic/${lesson.topicId}`) }, 'Back to topic'),
         el('button', { class: 'btn btn-primary', onclick: () => navigate('#/dashboard') }, 'Dashboard →'),
       ])
     );
+
+    // Quietly write the next planned lesson so it's ready when he is.
+    prepareNextLesson(lesson.topicId);
   };
 
   step();

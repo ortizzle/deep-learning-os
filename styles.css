@@ -439,6 +439,36 @@ mark.kw {
 .result.bad .result-icon { color: var(--bad); }
 .result-q { font-size: 14px; font-weight: 500; }
 .result-fb { margin: 6px 0 0 22px; font-size: 13px; color: var(--text-2); }
+.result-ans { margin: 8px 0 0 22px; font-size: 13px; color: var(--text-2); }
+.result-ans strong { color: var(--text); font-weight: 600; }
+.result-model { margin: 4px 0 0 22px; font-size: 13px; color: var(--good); line-height: 1.5; }
+.result-model strong { font-weight: 600; }
+.retest-btn { border-color: var(--accent); color: var(--accent); font-weight: 600; }
+
+/* course plan */
+.plan { padding: 16px; }
+.plan-row {
+  display: flex; align-items: flex-start; gap: 12px;
+  width: 100%; text-align: left;
+  background: none; border: none; border-top: 1px solid var(--border);
+  padding: 12px 2px; font: inherit; color: inherit;
+}
+.plan-row:first-of-type { border-top: none; }
+button.plan-row { cursor: pointer; }
+button.plan-row:hover .plan-title { color: var(--accent); }
+.plan-num {
+  flex-shrink: 0;
+  width: 24px; height: 24px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 600;
+  background: var(--surface-2); color: var(--text-2);
+}
+.plan-row.done .plan-num { background: var(--good-soft); color: var(--good); }
+.plan-row.ready .plan-num { background: var(--accent-soft); color: var(--accent); }
+.plan-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.plan-title { font-size: 14px; font-weight: 600; }
+.plan-row.upcoming .plan-title { color: var(--text-2); font-weight: 500; }
+.plan-focus { font-size: 12px; color: var(--text-3); line-height: 1.4; }
 
 /* ---------- coach chat ---------- */
 .chat-thread {

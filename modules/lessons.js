@@ -1,7 +1,7 @@
 // lessons.js — topics + lessons: list, detail, creation, and the lesson reader.
 
 import * as store from './store.js';
-import { generateLesson, hasApiKey } from './ai.js';
+import { generateLesson, generateSyllabus, hasApiKey } from './ai.js';
 import { award } from './gamification.js';
 import { SUGGESTED_TOPICS } from './suggestedTopics.js';
 import { el, clear, paragraphs, rich, toast, loading, navigate } from './ui.js';
@@ -164,11 +164,38 @@ export async function renderTopic(root, { id }) {
   );
 
   root.append(
-    el('button', { class: 'btn btn-primary full', onclick: () => generateLessonFor(topic, root) }, '✨ Generate a lesson')
+    el('button', { class: 'btn btn-primary full', onclick: () => generateLessonFor(topic, root) },
+      topic.syllabus?.length ? '✨ Generate next lesson' : '✨ Plan this topic & write lesson 1')
   );
 
+  // Course plan: the syllabus with per-entry state.
+  if (topic.syllabus?.length) {
+    const byId = Object.fromEntries(lessons.map((l) => [l.id, l]));
+    const plan = el('section', { class: 'plan panel' }, [el('h4', {}, 'Course plan')]);
+    topic.syllabus.forEach((e, i) => {
+      const lesson = e.lessonId ? byId[e.lessonId] : null;
+      const state = lesson?.completedAt ? 'done' : lesson ? 'ready' : 'upcoming';
+      const row = el(lesson ? 'button' : 'div', {
+        class: `plan-row ${state}`,
+        onclick: lesson ? () => navigate(`#/lesson/${lesson.id}`) : null,
+      }, [
+        el('span', { class: 'plan-num' }, state === 'done' ? '✓' : String(i + 1)),
+        el('div', { class: 'plan-main' }, [
+          el('span', { class: 'plan-title' }, e.title),
+          e.focus ? el('span', { class: 'plan-focus' }, e.focus) : null,
+        ]),
+        el('span', { class: `pill ${state === 'done' ? 'pill-done' : ''}` },
+          state === 'done' ? 'Done' : state === 'ready' ? 'Read' : 'Planned'),
+      ]);
+      plan.append(row);
+    });
+    root.append(plan);
+  }
+
   if (!lessons.length) {
-    root.append(el('p', { class: 'muted center' }, 'No lessons yet — generate your first.'));
+    if (!topic.syllabus?.length) {
+      root.append(el('p', { class: 'muted center' }, 'No lessons yet — generating the first one also plans a course for this topic.'));
+    }
     return;
   }
 
@@ -187,13 +214,77 @@ export async function renderTopic(root, { id }) {
   root.append(list);
 }
 
+// Ensure the topic has a syllabus with at least one un-generated entry;
+// extends the plan when the current one is exhausted.
+async function ensureSyllabus(topic) {
+  if (topic.syllabus?.some((e) => !e.lessonId)) return topic;
+  const plan = await generateSyllabus({
+    topicName: topic.name,
+    topicDescription: topic.description,
+    priorTitles: (topic.syllabus || []).map((e) => e.title),
+    count: 6,
+  });
+  topic.syllabus = [
+    ...(topic.syllabus || []),
+    ...(plan.lessons || []).map((l) => ({ title: l.title, focus: l.focus, lessonId: null })),
+  ];
+  return store.put('topics', topic);
+}
+
+// Persist a generated lesson + register its concepts + link the syllabus entry.
+async function saveGeneratedLesson(topic, data, entry) {
+  const lesson = await store.put('lessons', {
+    topicId: topic.id,
+    title: data.title || entry?.title || 'Untitled lesson',
+    objectives: data.objectives || [],
+    concepts: data.concepts || [],
+    body: data.body || '',
+    sections: data.sections || [],
+    example: data.example || null,
+    pauseAndThink: data.pauseAndThink || null,
+    glossary: data.glossary || [],
+    insights: data.insights || [],
+    action: data.action || '',
+    leadershipTakeaway: data.leadershipTakeaway || '',
+    productivityTip: data.productivityTip || '',
+    discussionQ: data.discussionQ || '',
+    completedAt: null,
+  });
+
+  // Register concepts (mastery accumulation — v2 foundation).
+  const allConcepts = await store.getAll('concepts');
+  for (const name of lesson.concepts) {
+    const existing = allConcepts.find((c) => c.topicId === topic.id && c.name === name);
+    if (!existing) {
+      await store.put('concepts', {
+        name,
+        topicId: topic.id,
+        masteryScore: 0,
+        lastReviewed: null,
+        timesReviewed: 0,
+      });
+    }
+  }
+
+  if (entry) entry.lessonId = lesson.id;
+  topic.lessonIds = [...(topic.lessonIds || []), lesson.id];
+  await store.put('topics', topic);
+  return lesson;
+}
+
 async function generateLessonFor(topic, root) {
   if (!hasApiKey()) {
     toast('Add your Claude API key in Settings first', 'warn');
     return navigate('#/settings');
   }
-  loading(root, 'Generating your lesson…');
   try {
+    if (!topic.syllabus?.some((e) => !e.lessonId)) {
+      loading(root, 'Planning this topic…');
+    }
+    topic = await ensureSyllabus(topic);
+    const entry = topic.syllabus.find((e) => !e.lessonId);
+    loading(root, `Writing “${entry.title}”…`);
+
     const priorTitles = (await store.getAll('lessons'))
       .filter((l) => l.topicId === topic.id)
       .map((l) => l.title);
@@ -201,50 +292,48 @@ async function generateLessonFor(topic, root) {
       topicName: topic.name,
       topicDescription: topic.description,
       priorTitles,
+      plannedTitle: entry.title,
+      plannedFocus: entry.focus,
     });
 
-    const lesson = await store.put('lessons', {
-      topicId: topic.id,
-      title: data.title,
-      objectives: data.objectives || [],
-      concepts: data.concepts || [],
-      body: data.body || '',
-      sections: data.sections || [],
-      example: data.example || null,
-      pauseAndThink: data.pauseAndThink || null,
-      glossary: data.glossary || [],
-      insights: data.insights || [],
-      action: data.action || '',
-      leadershipTakeaway: data.leadershipTakeaway || '',
-      productivityTip: data.productivityTip || '',
-      discussionQ: data.discussionQ || '',
-      completedAt: null,
-    });
-
-    // Register concepts (mastery accumulation — v2 foundation).
-    for (const name of lesson.concepts) {
-      const existing = (await store.getAll('concepts')).find(
-        (c) => c.topicId === topic.id && c.name === name
-      );
-      if (!existing) {
-        await store.put('concepts', {
-          name,
-          topicId: topic.id,
-          masteryScore: 0,
-          lastReviewed: null,
-          timesReviewed: 0,
-        });
-      }
-    }
-
-    topic.lessonIds = [...(topic.lessonIds || []), lesson.id];
-    await store.put('topics', topic);
-
+    const lesson = await saveGeneratedLesson(topic, data, entry);
     navigate(`#/lesson/${lesson.id}`);
   } catch (err) {
     console.error(err);
     toast(err.message || 'Lesson generation failed', 'error');
     renderTopic(root, { id: topic.id });
+  }
+}
+
+// Background pre-generation: after a quiz, quietly write the next planned
+// lesson so it's waiting. Skips if one is already unread or in flight.
+const preparing = new Set();
+
+export async function prepareNextLesson(topicId) {
+  if (!hasApiKey() || preparing.has(topicId)) return;
+  const topic = await store.get('topics', topicId);
+  if (!topic) return;
+  const topicLessons = (await store.getAll('lessons')).filter((l) => l.topicId === topicId);
+  if (topicLessons.some((l) => !l.completedAt)) return; // one already queued
+
+  preparing.add(topicId);
+  try {
+    const t = await ensureSyllabus(topic);
+    const entry = t.syllabus.find((e) => !e.lessonId);
+    if (!entry) return;
+    const data = await generateLesson({
+      topicName: t.name,
+      topicDescription: t.description,
+      priorTitles: topicLessons.map((l) => l.title),
+      plannedTitle: entry.title,
+      plannedFocus: entry.focus,
+    });
+    const lesson = await saveGeneratedLesson(t, data, entry);
+    toast(`Next lesson ready: ${lesson.title}`, 'success');
+  } catch (err) {
+    console.warn('prepareNextLesson failed', err);
+  } finally {
+    preparing.delete(topicId);
   }
 }
 

@@ -15,6 +15,7 @@ About Lofty and its customers:
 - Lofty is an AI-powered platform ("agentic AI operating system") for residential real estate: AI CRM with autonomous lead engagement and appointment booking, IDX agent websites, lead generation (PPC, social ads, direct mail), marketing automation (Social Studio), power dialer, and transaction management.
 - Customers are realtors — from individual agents to teams to brokerages (SMB through MidMarket/enterprise) — paying premium prices (roughly $449/month core up to ~$1,500/month enterprise, plus onboarding fees).
 - Premium pricing means high expectations: customers judge value by lead ROI and closings. Churn risk spikes when lead quality disappoints, onboarding stalls, or agents don't adopt the tools. Customers are commission-based small-business owners — cost-sensitive, seasonal, and quick to escalate when ad spend or billing feels off.
+- Lofty's public help center is help.lofty.com. For product-specific topics, suggest relevant help-center areas by name as further reading — never invent specific article URLs.
 
 His org, specifically:
 - Support: leads the support team in Manila and directly manages a US-based global support lead.
@@ -112,11 +113,26 @@ async function generateJSON({ system, prompt, maxTokens }) {
 
 // ---------- Lessons ----------
 
-export async function generateLesson({ topicName, topicDescription, priorTitles = [] }) {
+// Design a progressive curriculum for a topic. Each lesson generation then
+// targets the next planned entry, so lessons build instead of repeating.
+export async function generateSyllabus({ topicName, topicDescription, priorTitles = [], count = 6 }) {
+  const system = `${CHRIS_CONTEXT}\n\nYou design progressive learning curricula. Respond with JSON only — no markdown, no fences.`;
+  const prompt = `Design a ${count}-lesson curriculum for the topic "${topicName}"${
+    topicDescription ? ` (${topicDescription})` : ''
+  }.
+${priorTitles.length ? `Already covered — do not repeat: ${priorTitles.join('; ')}.` : ''}
+Lessons must build progressively from foundations to advanced application, each covering clearly distinct ground.
+
+Return JSON: { "lessons": [ { "title": "short lesson title", "focus": "one sentence: what this lesson covers and why it comes at this point" } ] }`;
+  return generateJSON({ system, prompt, maxTokens: 1200 });
+}
+
+export async function generateLesson({ topicName, topicDescription, priorTitles = [], plannedTitle, plannedFocus }) {
   const system = `${CHRIS_CONTEXT}\n\nYou are an expert educator writing a focused, practical textbook-style micro-lesson. Respond with JSON only — no markdown, no fences.`;
   const prompt = `Create a lesson for the topic "${topicName}"${
     topicDescription ? ` (${topicDescription})` : ''
   }.
+${plannedTitle ? `This lesson is a planned curriculum entry. Title it "${plannedTitle}" and keep its scope to: ${plannedFocus || 'the planned title'}.` : ''}
 ${priorTitles.length ? `Avoid repeating these existing lessons: ${priorTitles.join('; ')}.` : ''}
 
 Return JSON with exactly this shape:
@@ -145,20 +161,30 @@ In section text, "example.text", "insights", "action", "leadershipTakeaway", and
 
 // ---------- Quizzes ----------
 
-export async function generateQuiz({ lessonTitle, concepts = [], body = '' }) {
-  const system = `${CHRIS_CONTEXT}\n\nYou write rigorous but fair comprehension quizzes. Respond with JSON only — no markdown, no fences.`;
+export async function generateQuiz({ lessonTitle, concepts = [], content = '', focusConcepts = [] }) {
+  const system = `${CHRIS_CONTEXT}\n\nYou write rigorous but fair comprehension quizzes, strictly grounded in the provided lesson content. Respond with JSON only — no markdown, no fences.`;
   const prompt = `Write a quiz for the lesson "${lessonTitle}".
 Key concepts: ${concepts.join(', ')}.
-Lesson content: ${body.slice(0, 2000)}
+${focusConcepts.length ? `RETEST: the learner missed these concepts last attempt — concentrate most questions on them: ${focusConcepts.join(', ')}.` : ''}
 
-Return 5-8 questions mixing multiple choice and short answer as JSON:
+LESSON CONTENT — the only source of truth:
+---
+${content.slice(0, 7000)}
+---
+
+Rules:
+- Every question must be answerable solely from the lesson content above. Never test facts the lesson does not state, even if you know them.
+- 5-8 questions, mixing multiple choice and short answer.
+- Tie every question to one of the key concepts via the "concept" field.
+- For multiple choice, "modelAnswer" is not needed; for short answer, give a concise ideal answer drawn from the lesson.
+
+Return JSON:
 {
   "questions": [
     { "type": "mc", "concept": "concept name", "question": "...", "options": ["A","B","C","D"], "correctIndex": 0 },
     { "type": "short", "concept": "concept name", "question": "...", "modelAnswer": "a concise ideal answer" }
   ]
-}
-Tie every question to one of the key concepts via the "concept" field.`;
+}`;
   return generateJSON({ system, prompt, maxTokens: 2500 });
 }
 
