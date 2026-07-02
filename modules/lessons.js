@@ -6,6 +6,13 @@ import { award } from './gamification.js';
 import { SUGGESTED_TOPICS } from './suggestedTopics.js';
 import { el, clear, paragraphs, rich, toast, loading, navigate } from './ui.js';
 
+// Where a lesson sits in its topic's curriculum: { index, total } or null.
+export function syllabusPosition(topic, lessonId) {
+  const syl = topic?.syllabus || [];
+  const i = syl.findIndex((e) => e.lessonId === lessonId);
+  return i === -1 ? null : { index: i + 1, total: syl.length };
+}
+
 // Average mastery across a topic's concepts (0-100), for the progress bar.
 async function topicMastery(topicId) {
   const concepts = (await store.getAll('concepts')).filter(
@@ -49,8 +56,13 @@ export async function renderTopics(root) {
   }
 
   const list = el('div', { class: 'card-list' });
+  const allLessons = await store.getAll('lessons');
   for (const t of topics.sort((a, b) => (b.updatedAt || '').localeCompare(a.updatedAt || ''))) {
     const pct = await topicMastery(t.id);
+    const done = allLessons.filter((l) => l.topicId === t.id && l.completedAt).length;
+    const progress = t.syllabus?.length
+      ? `${done} of ${t.syllabus.length} done`
+      : `${(t.lessonIds || []).length} lessons`;
     list.append(
       el('button', { class: 'card topic-card', onclick: () => navigate(`#/topic/${t.id}`) }, [
         el('div', { class: 'card-main' }, [
@@ -58,7 +70,7 @@ export async function renderTopics(root) {
           t.description ? el('p', { class: 'muted' }, t.description) : null,
         ]),
         el('div', { class: 'card-meta' }, [
-          el('span', { class: 'pill' }, `${(t.lessonIds || []).length} lessons`),
+          el('span', { class: done ? 'pill pill-done' : 'pill' }, progress),
           pct != null ? masteryBar(pct) : null,
         ]),
       ])
@@ -513,14 +525,19 @@ export async function renderLesson(root, { id }) {
 
   readStart = Date.now();
 
+  const topic = await store.get('topics', lesson.topicId);
+  const pos = syllabusPosition(topic, lesson.id);
   const words = lessonWordCount(lesson);
   const readMins = Math.max(1, Math.round(words / 200));
 
   root.append(
     el('header', { class: 'view-head' }, [
-      el('button', { class: 'link', onclick: () => navigate(`#/topic/${lesson.topicId}`) }, '← Topic'),
+      el('button', { class: 'link', onclick: () => navigate(`#/topic/${lesson.topicId}`) }, `← ${topic?.name || 'Topic'}`),
       el('h1', {}, lesson.title),
-      el('span', { class: 'pill read-time' }, `~${readMins} min read`),
+      el('div', { class: 'lesson-meta' }, [
+        pos ? el('span', { class: 'pill pill-pos' }, `Lesson ${pos.index} of ${pos.total}`) : null,
+        el('span', { class: 'pill' }, `~${readMins} min read`),
+      ]),
     ])
   );
 

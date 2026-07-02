@@ -5,6 +5,7 @@ import * as store from './store.js';
 import { levelProgress, ACHIEVEMENTS } from './gamification.js';
 import { recentHighlights } from './saved.js';
 import { renderTodayPanel } from './today.js';
+import { syllabusPosition } from './lessons.js';
 import { el, clear, navigate } from './ui.js';
 
 function statCard(value, label) {
@@ -61,7 +62,9 @@ async function recommendation() {
     if (a.topicId !== b.topicId && ta !== tb) return tb.localeCompare(ta);
     return syllabusIndex(a) - syllabusIndex(b);
   });
-  return { lesson: pending[0] };
+  const lesson = pending[0];
+  const topic = topicById[lesson.topicId];
+  return { lesson, topic, pos: syllabusPosition(topic, lesson.id) };
 }
 
 export async function renderDashboard(root) {
@@ -113,8 +116,14 @@ export async function renderDashboard(root) {
       el('h4', {}, 'Recommended next'),
       rec.lesson
         ? el('button', { class: 'card rec-card', onclick: () => navigate(`#/lesson/${rec.lesson.id}`) }, [
-            el('div', { class: 'card-main' }, [el('h3', {}, rec.lesson.title), el('p', { class: 'muted' }, 'Continue where you left off')]),
-            el('span', { class: 'pill' }, 'Resume'),
+            el('div', { class: 'card-main' }, [
+              el('h3', {}, rec.lesson.title),
+              el('p', { class: 'muted' },
+                rec.pos
+                  ? `Lesson ${rec.pos.index} of ${rec.pos.total} · ${rec.topic?.name || ''}`
+                  : rec.topic?.name || 'Continue where you left off'),
+            ]),
+            el('span', { class: 'pill' }, 'Read'),
           ])
         : el('button', { class: 'card rec-card', onclick: () => navigate('#/topics') }, [
             el('div', { class: 'card-main' }, [el('h3', {}, 'Generate a lesson'), el('p', { class: 'muted' }, 'Pick a topic to keep learning')]),
