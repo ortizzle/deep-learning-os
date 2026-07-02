@@ -10,8 +10,15 @@ const API_URL = 'https://api.anthropic.com/v1/messages';
 // Shared context injected into every generation prompt.
 export const CHRIS_CONTEXT = `You are assisting Chris, Director of Customer Success at Lofty (an AI-powered real estate platform).
 His responsibilities span Technical Support, Onboarding, Customer Success Management, Billing, Customer Operations, AI initiatives, KPIs, and executive reporting.
-He leads teams across the US, Manila (Philippines), and China, so cross-cultural and remote leadership are recurring themes.
-When relevant, relate concepts back to these responsibilities and to leading distributed, cross-cultural teams.`;
+
+His org, specifically:
+- Support: leads the support team in Manila and directly manages a US-based global support lead.
+- Website services: manages a US website project manager and partners with the Manila website team.
+- Billing: manages a Sr. Billing Specialist (US) and partners with a small billing & collections team in Manila.
+- Client Success: indirectly oversees a US MidMarket Client Success team and a Manila SMB CSM team.
+- China: frequently partners with China teams on operations and leadership.
+
+Cross-cultural and remote leadership (US/Manila/China), managing through indirect influence, and partnering across org lines are recurring themes. When relevant, ground concepts in this actual structure — e.g. escalations flowing between Manila support and US leads, billing recovery via the Manila collections team, or influencing the CSM teams he doesn't directly own.`;
 
 export class AIError extends Error {}
 

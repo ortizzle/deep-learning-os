@@ -22,8 +22,17 @@ export const SUGGESTED_TOPICS = [
     category: 'Customer Success',
     topics: [
       { name: 'Reducing Churn & Driving Retention', description: 'Leading indicators of churn, intervention playbooks, and building a retention engine.' },
+      { name: 'Renewals & Expansion', description: 'Running a renewal motion: forecasting, negotiation, value recaps, and turning renewals into expansion conversations.' },
       { name: 'Scaling CS Operations', description: 'Segmentation, playbooks, and tooling to scale CSM impact without linear headcount.' },
       { name: 'Customer Onboarding Excellence', description: 'Designing onboarding that drives fast time-to-value and long-term adoption.' },
+    ],
+  },
+  {
+    category: 'Escalations',
+    topics: [
+      { name: 'Handling Customer Escalations', description: 'Owning executive escalations end-to-end: triage, communication cadence, internal alignment, and closing the loop with the customer.' },
+      { name: 'De-escalation & Difficult Conversations', description: 'Language and techniques that lower the temperature with angry customers — and when to switch from email to a call.' },
+      { name: 'Building an Escalation Process', description: 'Designing tiers, SLAs, and handoffs between Manila support and US leads so escalations get caught early and routed cleanly.' },
     ],
   },
   {
@@ -46,6 +55,7 @@ export const SUGGESTED_TOPICS = [
     category: 'Productivity',
     topics: [
       { name: 'Strategic Prioritization', description: 'Deciding what matters as a director — focus, saying no, and managing competing demands.' },
+      { name: 'Running Effective Meetings', description: 'Agendas, facilitation, and decision hygiene — especially for cross-timezone meetings with Manila and China.' },
       { name: 'Time & Energy Management for Directors', description: 'Protecting deep work while running a reactive, people-heavy org.' },
     ],
   },
