@@ -32,14 +32,36 @@ async function topicRankings() {
   return ranked;
 }
 
-// Recommend: an incomplete lesson, else nudge to generate one.
+// Recommend the next unread lesson in curriculum order: pick the most
+// recently active topic, then the earliest pending lesson in its syllabus.
 async function recommendation() {
-  const lessons = await store.getAll('lessons');
+  const [lessons, topics] = await Promise.all([
+    store.getAll('lessons'),
+    store.getAll('topics'),
+  ]);
   const pending = lessons.filter((l) => !l.completedAt);
-  if (pending.length) {
-    return { lesson: pending.sort((a, b) => (b.createdAt || '').localeCompare(a.createdAt || ''))[0] };
+  if (!pending.length) return { lesson: null };
+
+  const topicById = Object.fromEntries(topics.map((t) => [t.id, t]));
+  const syllabusIndex = (l) => {
+    const syl = topicById[l.topicId]?.syllabus || [];
+    const i = syl.findIndex((e) => e.lessonId === l.id);
+    return i === -1 ? 999 : i;
+  };
+
+  // Most recently touched topic first (keep momentum), then syllabus order.
+  const lastActivity = {};
+  for (const l of lessons) {
+    const t = l.completedAt || l.updatedAt || l.createdAt || '';
+    if (t > (lastActivity[l.topicId] || '')) lastActivity[l.topicId] = t;
   }
-  return { lesson: null };
+  pending.sort((a, b) => {
+    const ta = lastActivity[a.topicId] || '';
+    const tb = lastActivity[b.topicId] || '';
+    if (a.topicId !== b.topicId && ta !== tb) return tb.localeCompare(ta);
+    return syllabusIndex(a) - syllabusIndex(b);
+  });
+  return { lesson: pending[0] };
 }
 
 export async function renderDashboard(root) {
