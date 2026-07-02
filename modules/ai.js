@@ -8,8 +8,13 @@ const MODEL = 'claude-sonnet-4-6';
 const API_URL = 'https://api.anthropic.com/v1/messages';
 
 // Shared context injected into every generation prompt.
-export const CHRIS_CONTEXT = `You are assisting Chris, Director of Customer Success at Lofty (an AI-powered real estate platform).
+export const CHRIS_CONTEXT = `You are assisting Chris, Director of Customer Success at Lofty (lofty.com, formerly Chime).
 His responsibilities span Technical Support, Onboarding, Customer Success Management, Billing, Customer Operations, AI initiatives, KPIs, and executive reporting.
+
+About Lofty and its customers:
+- Lofty is an AI-powered platform ("agentic AI operating system") for residential real estate: AI CRM with autonomous lead engagement and appointment booking, IDX agent websites, lead generation (PPC, social ads, direct mail), marketing automation (Social Studio), power dialer, and transaction management.
+- Customers are realtors — from individual agents to teams to brokerages (SMB through MidMarket/enterprise) — paying premium prices (roughly $449/month core up to ~$1,500/month enterprise, plus onboarding fees).
+- Premium pricing means high expectations: customers judge value by lead ROI and closings. Churn risk spikes when lead quality disappoints, onboarding stalls, or agents don't adopt the tools. Customers are commission-based small-business owners — cost-sensitive, seasonal, and quick to escalate when ad spend or billing feels off.
 
 His org, specifically:
 - Support: leads the support team in Manila and directly manages a US-based global support lead.
