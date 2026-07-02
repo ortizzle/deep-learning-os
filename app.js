@@ -1,0 +1,146 @@
+// app.js — boot, hash router, view switching, settings view.
+
+import {
+  initStore,
+  getSettings,
+  saveSettings,
+  syncConfigured,
+  pullFromGist,
+  pushToGist,
+  onSyncStatus,
+  exportSnapshot,
+} from './modules/store.js';
+import { renderDashboard } from './modules/dashboard.js';
+import { renderTopics, renderTopic, renderLesson } from './modules/lessons.js';
+import { renderQuiz } from './modules/quiz.js';
+import { renderCoach } from './modules/coach.js';
+import { hasApiKey } from './modules/ai.js';
+import { el, clear, toast, navigate } from './modules/ui.js';
+
+const view = document.getElementById('view');
+
+// Route table: hash pattern → handler. `:param` captured positionally.
+const routes = [
+  { re: /^#\/dashboard$/, tab: 'dashboard', fn: () => renderDashboard(view) },
+  { re: /^#\/topics$/, tab: 'topics', fn: () => renderTopics(view) },
+  { re: /^#\/topic\/(.+)$/, tab: 'topics', fn: (m) => renderTopic(view, { id: m[1] }) },
+  { re: /^#\/lesson\/(.+)$/, tab: 'topics', fn: (m) => renderLesson(view, { id: m[1] }) },
+  { re: /^#\/quiz\/(.+)$/, tab: 'topics', fn: (m) => renderQuiz(view, { id: m[1] }) },
+  { re: /^#\/coach$/, tab: 'coach', fn: () => renderCoach(view) },
+  { re: /^#\/settings$/, tab: 'settings', fn: () => renderSettings(view) },
+];
+
+function setActiveTab(tab) {
+  document.querySelectorAll('.tab').forEach((t) => {
+    t.classList.toggle('active', t.dataset.tab === tab);
+  });
+}
+
+async function router() {
+  const hash = location.hash || '#/dashboard';
+  const match = routes.find((r) => r.re.test(hash));
+  if (!match) return navigate('#/dashboard');
+  setActiveTab(match.tab);
+  window.scrollTo(0, 0);
+  try {
+    await match.fn(hash.match(match.re));
+  } catch (err) {
+    console.error(err);
+    clear(view).append(el('p', { class: 'empty' }, `Something broke: ${err.message}`));
+  }
+}
+
+// ---------- Settings view ----------
+
+function renderSettings(root) {
+  clear(root);
+  const s = getSettings();
+
+  const apiKey = el('input', { class: 'input', type: 'password', placeholder: 'sk-ant-...', value: s.apiKey || '' });
+  const gistToken = el('input', { class: 'input', type: 'password', placeholder: 'GitHub token (gist scope)', value: s.gistToken || '' });
+  const gistId = el('input', { class: 'input', placeholder: 'Gist ID', value: s.gistId || '' });
+
+  const status = el('span', { class: 'sync-dot ' + (syncConfigured() ? 'on' : 'off') });
+  const statusText = el('span', { class: 'muted' }, syncConfigured() ? 'Sync configured' : 'Local-only (no sync)');
+
+  root.append(
+    el('header', { class: 'view-head' }, [el('h1', {}, 'Settings')]),
+
+    el('section', { class: 'panel' }, [
+      el('h4', {}, 'Claude API'),
+      el('label', { class: 'field-label' }, 'API key (stored only on this device)'),
+      apiKey,
+      el('p', { class: 'muted small' }, 'Used for direct browser calls to api.anthropic.com. Never leaves your device except to Anthropic.'),
+    ]),
+
+    el('section', { class: 'panel' }, [
+      el('h4', {}, 'Gist sync (optional)'),
+      el('div', { class: 'sync-status' }, [status, statusText]),
+      el('label', { class: 'field-label' }, 'GitHub token (gist scope)'),
+      gistToken,
+      el('label', { class: 'field-label' }, 'Gist ID'),
+      gistId,
+      el('p', { class: 'muted small' }, 'Leave blank to run fully local. When set, your data mirrors to a private Gist and merges across devices.'),
+    ]),
+
+    el('div', { class: 'settings-actions' }, [
+      el('button', { class: 'btn btn-primary', onclick: onSave }, 'Save'),
+      el('button', { class: 'btn', onclick: onSyncNow, disabled: syncConfigured() ? null : 'disabled' }, 'Sync now'),
+      el('button', { class: 'btn', onclick: onExport }, 'Export JSON'),
+    ])
+  );
+
+  async function onSave() {
+    saveSettings({
+      apiKey: apiKey.value.trim(),
+      gistToken: gistToken.value.trim(),
+      gistId: gistId.value.trim(),
+    });
+    toast('Settings saved', 'success');
+    renderSettings(root);
+  }
+
+  async function onSyncNow() {
+    if (!syncConfigured()) return;
+    toast('Syncing…');
+    await pullFromGist();
+    await pushToGist();
+    toast('Synced', 'success');
+  }
+
+  async function onExport() {
+    const snapshot = await exportSnapshot();
+    const blob = new Blob([JSON.stringify(snapshot, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = el('a', { href: url, download: 'deep-learning-os-backup.json' });
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+}
+
+// ---------- boot ----------
+
+async function boot() {
+  // Reflect sync status in the header dot.
+  onSyncStatus((st) => {
+    const dot = document.getElementById('header-sync');
+    if (dot) dot.className = 'header-sync ' + st;
+  });
+
+  await initStore();
+
+  // First-run nudge toward settings if nothing is configured.
+  if (!hasApiKey() && !location.hash) {
+    navigate('#/settings');
+  }
+
+  window.addEventListener('hashchange', router);
+  await router();
+
+  // Register service worker (PWA). Path is relative for GitHub Pages subpath.
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js').catch((e) => console.warn('SW failed', e));
+  }
+}
+
+boot();
