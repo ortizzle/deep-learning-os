@@ -1,7 +1,8 @@
-// sw.js — cache-first shell for offline PWA use. Bump CACHE on shell changes.
-// Never caches api.anthropic.com or api.github.com (always network).
+// sw.js — network-first shell with cache fallback. Online loads always get
+// current code (prevents stale-code-vs-upgraded-DB crashes); offline still
+// works from the last cached shell. Never touches api.* traffic.
 
-const CACHE = 'dlos-shell-v11';
+const CACHE = 'dlos-shell-v12';
 const SHELL = [
   './',
   './index.html',
@@ -43,19 +44,16 @@ self.addEventListener('fetch', (e) => {
   }
   if (e.request.method !== 'GET') return;
 
-  // Cache-first for shell assets, falling back to network + runtime cache.
+  // Network-first: fresh code whenever online, cached shell when offline.
   e.respondWith(
-    caches.match(e.request).then((cached) => {
-      if (cached) return cached;
-      return fetch(e.request)
-        .then((res) => {
-          if (res.ok && url.origin === self.location.origin) {
-            const copy = res.clone();
-            caches.open(CACHE).then((c) => c.put(e.request, copy));
-          }
-          return res;
-        })
-        .catch(() => cached);
-    })
+    fetch(e.request)
+      .then((res) => {
+        if (res.ok && url.origin === self.location.origin) {
+          const copy = res.clone();
+          caches.open(CACHE).then((c) => c.put(e.request, copy));
+        }
+        return res;
+      })
+      .catch(() => caches.match(e.request))
   );
 });

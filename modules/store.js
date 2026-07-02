@@ -65,7 +65,19 @@ function openDb() {
       }
     };
     req.onsuccess = () => resolve(req.result);
-    req.onerror = () => reject(req.error);
+    req.onerror = () => {
+      // VersionError: the DB was already upgraded by newer app code while
+      // this (stale-cached) code asks for an older version. Open at the
+      // current version instead — our stores are append-only, so a newer
+      // schema is always a superset this code can safely use.
+      if (req.error?.name === 'VersionError') {
+        const retry = indexedDB.open(DB_NAME);
+        retry.onsuccess = () => resolve(retry.result);
+        retry.onerror = () => reject(retry.error);
+      } else {
+        reject(req.error);
+      }
+    };
   });
   return dbPromise;
 }

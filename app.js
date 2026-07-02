@@ -163,13 +163,25 @@ function renderSettings(root) {
 async function boot() {
   applyTheme();
 
+  // Register the service worker FIRST: even if the rest of boot crashes,
+  // the browser can still pick up a fixed version on the next load.
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js').catch((e) => console.warn('SW failed', e));
+  }
+
   // Reflect sync status in the header dot.
   onSyncStatus((st) => {
     const dot = document.getElementById('header-sync');
     if (dot) dot.className = 'header-sync ' + st;
   });
 
-  await initStore();
+  // A storage failure must degrade, never blank the app.
+  try {
+    await initStore();
+  } catch (err) {
+    console.error('initStore failed', err);
+    toast(`Storage error — some data may be unavailable (${err?.message || err})`, 'error');
+  }
 
   // First-run nudge toward settings if nothing is configured.
   if (!hasApiKey() && !location.hash) {
@@ -178,11 +190,6 @@ async function boot() {
 
   window.addEventListener('hashchange', router);
   await router();
-
-  // Register service worker (PWA). Path is relative for GitHub Pages subpath.
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js').catch((e) => console.warn('SW failed', e));
-  }
 }
 
 boot();
