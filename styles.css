@@ -313,6 +313,74 @@ mark.kw {
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
+
+/* textbook section subtitles */
+.lesson-subtitle {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 26px 0 10px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+.lesson-subtitle:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+.read-time { display: inline-block; margin-top: 8px; }
+
+/* "In practice" worked example */
+.example-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 16px;
+}
+.example-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: var(--accent);
+}
+.example-title { font-size: 16px; font-weight: 600; margin: 6px 0 8px; }
+.example-box p { line-height: 1.6; margin: 0 0 10px; }
+.example-box p:last-child { margin-bottom: 0; }
+
+/* pause & think reveal */
+.pause-box {
+  background: var(--surface-2);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin: 18px 0;
+}
+.pause-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: var(--text-2);
+}
+.pause-q { font-weight: 500; line-height: 1.55; margin: 8px 0 12px; }
+.pause-reveal {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  background: none;
+  border: 1.5px dashed var(--accent);
+  border-radius: 999px;
+  padding: 7px 16px;
+  cursor: pointer;
+}
+.pause-reveal:hover { background: var(--accent-soft); }
+.pause-answer { border-top: 1px dashed var(--border-strong); padding-top: 12px; }
+.pause-answer p { margin: 0 0 8px; line-height: 1.6; color: var(--text-2); }
+.pause-answer.hidden { display: none; }
+
+/* glossary */
+.glossary dl { margin: 0; }
+.glossary dt { font-weight: 600; font-size: 14px; margin-top: 12px; }
+.glossary dt:first-child { margin-top: 0; }
+.glossary dd { margin: 3px 0 0; font-size: 14px; color: var(--text-2); line-height: 1.55; }
 .closers { display: flex; flex-direction: column; gap: 10px; }
 .closer {
   background: var(--surface);

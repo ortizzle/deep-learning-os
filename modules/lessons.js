@@ -209,6 +209,10 @@ async function generateLessonFor(topic, root) {
       objectives: data.objectives || [],
       concepts: data.concepts || [],
       body: data.body || '',
+      sections: data.sections || [],
+      example: data.example || null,
+      pauseAndThink: data.pauseAndThink || null,
+      glossary: data.glossary || [],
       insights: data.insights || [],
       action: data.action || '',
       leadershipTakeaway: data.leadershipTakeaway || '',
@@ -246,6 +250,54 @@ async function generateLessonFor(topic, root) {
 
 // ---------- Lesson reader ----------
 
+// Reading-minutes tracker: accumulate time actually spent in the reader into
+// profile.learningMinutes. Flushed when the user leaves the lesson.
+let readStart = null;
+
+async function flushReadingTime() {
+  if (!readStart) return;
+  const secs = (Date.now() - readStart) / 1000;
+  readStart = null;
+  if (secs < 30) return; // ignore drive-by visits
+  const mins = Math.min(30, Math.max(1, Math.round(secs / 60))); // cap 30/visit
+  const profile = await store.getProfile();
+  profile.learningMinutes = (profile.learningMinutes || 0) + mins;
+  await store.saveProfile(profile);
+}
+
+window.addEventListener('hashchange', () => {
+  if (!location.hash.startsWith('#/lesson/')) flushReadingTime();
+});
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) flushReadingTime();
+});
+
+// Tap-to-reveal "check your understanding" box.
+function pauseBox({ question, answer }) {
+  const revealed = el('div', { class: 'pause-answer hidden' });
+  paragraphs(answer).forEach((p) => revealed.append(p));
+  const btn = el('button', { class: 'pause-reveal' }, 'Reveal answer');
+  btn.addEventListener('click', () => {
+    revealed.classList.remove('hidden');
+    btn.remove();
+  });
+  return el('aside', { class: 'pause-box' }, [
+    el('span', { class: 'pause-label' }, 'Pause & think'),
+    rich('p', { class: 'pause-q' }, question),
+    btn,
+    revealed,
+  ]);
+}
+
+function lessonWordCount(lesson) {
+  const parts = [
+    ...(lesson.sections || []).map((s) => `${s.heading} ${s.text}`),
+    lesson.body || '',
+    lesson.example?.text || '',
+  ];
+  return parts.join(' ').split(/\s+/).filter(Boolean).length;
+}
+
 export async function renderLesson(root, { id }) {
   clear(root);
   const lesson = await store.get('lessons', id);
@@ -254,10 +306,16 @@ export async function renderLesson(root, { id }) {
     return;
   }
 
+  readStart = Date.now();
+
+  const words = lessonWordCount(lesson);
+  const readMins = Math.max(1, Math.round(words / 200));
+
   root.append(
     el('header', { class: 'view-head' }, [
       el('button', { class: 'link', onclick: () => navigate(`#/topic/${lesson.topicId}`) }, '← Topic'),
       el('h1', {}, lesson.title),
+      el('span', { class: 'pill read-time' }, `~${readMins} min read`),
     ])
   );
 
@@ -272,7 +330,43 @@ export async function renderLesson(root, { id }) {
     );
   }
 
-  article.append(el('section', { class: 'lesson-body' }, paragraphs(lesson.body)));
+  // Textbook sections (new lessons) or plain body (older lessons).
+  if (lesson.sections?.length) {
+    const bodyWrap = el('section', { class: 'lesson-body' });
+    lesson.sections.forEach((s, i) => {
+      bodyWrap.append(el('h3', { class: 'lesson-subtitle' }, s.heading));
+      paragraphs(s.text).forEach((p) => bodyWrap.append(p));
+      // Drop the pause-and-think box roughly mid-lesson.
+      if (lesson.pauseAndThink && i === Math.floor((lesson.sections.length - 1) / 2)) {
+        bodyWrap.append(pauseBox(lesson.pauseAndThink));
+      }
+    });
+    article.append(bodyWrap);
+  } else {
+    article.append(el('section', { class: 'lesson-body' }, paragraphs(lesson.body)));
+  }
+
+  if (lesson.example?.text) {
+    article.append(
+      el('aside', { class: 'example-box' }, [
+        el('span', { class: 'example-label' }, 'In practice'),
+        lesson.example.title ? el('h3', { class: 'example-title' }, lesson.example.title) : null,
+        ...paragraphs(lesson.example.text),
+      ])
+    );
+  }
+
+  if (lesson.glossary?.length) {
+    article.append(
+      el('section', { class: 'lesson-block glossary' }, [
+        el('h4', {}, 'Key terms'),
+        el('dl', {}, lesson.glossary.flatMap((g) => [
+          el('dt', {}, g.term),
+          el('dd', {}, g.definition),
+        ])),
+      ])
+    );
+  }
 
   const closer = (label, value, cls = '') =>
     value ? el('div', { class: `closer ${cls}` }, [el('span', { class: 'closer-label' }, label), rich('p', {}, value)]) : null;

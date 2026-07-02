@@ -24,7 +24,9 @@ export async function renderQuiz(root, { id }) {
     quizData = await generateQuiz({
       lessonTitle: lesson.title,
       concepts: lesson.concepts,
-      body: lesson.body,
+      body: lesson.sections?.length
+        ? lesson.sections.map((s) => `${s.heading}: ${s.text}`).join('\n\n')
+        : lesson.body,
     });
   } catch (err) {
     console.error(err);

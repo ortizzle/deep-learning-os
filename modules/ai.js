@@ -101,7 +101,7 @@ async function generateJSON({ system, prompt, maxTokens }) {
 // ---------- Lessons ----------
 
 export async function generateLesson({ topicName, topicDescription, priorTitles = [] }) {
-  const system = `${CHRIS_CONTEXT}\n\nYou are an expert instructional designer creating a focused, practical micro-lesson. Respond with JSON only — no markdown, no fences.`;
+  const system = `${CHRIS_CONTEXT}\n\nYou are an expert educator writing a focused, practical textbook-style micro-lesson. Respond with JSON only — no markdown, no fences.`;
   const prompt = `Create a lesson for the topic "${topicName}"${
     topicDescription ? ` (${topicDescription})` : ''
   }.
@@ -112,7 +112,12 @@ Return JSON with exactly this shape:
   "title": "short lesson title",
   "objectives": ["2-4 learning objectives"],
   "concepts": ["3-6 key concept names, each a short noun phrase"],
-  "body": "the main teaching content as 3-6 short paragraphs of plain text",
+  "sections": [
+    { "heading": "short subtitle naming one core idea", "text": "1-2 short paragraphs teaching that idea, plain text" }
+  ],
+  "example": { "title": "short scenario name", "text": "one concrete worked example applying the lesson to Chris's actual role and teams" },
+  "pauseAndThink": { "question": "one check-your-understanding question a reader should pause on", "answer": "a concise model answer" },
+  "glossary": [ { "term": "key term", "definition": "one-sentence plain-English definition" } ],
   "insights": ["exactly 3 key insights"],
   "action": "one concrete action Chris can take today",
   "leadershipTakeaway": "one leadership takeaway",
@@ -120,8 +125,10 @@ Return JSON with exactly this shape:
   "discussionQ": "one thought-provoking discussion question"
 }
 
-In "body", "insights", "action", "leadershipTakeaway", and "productivityTip", wrap the most important key terms and phrases in double asterisks like **this** — the app renders them as highlights. Highlight sparingly: 1-3 terms per paragraph or item, only genuinely load-bearing vocabulary (named concepts, metrics, techniques). No other markdown.`;
-  return generateJSON({ system, prompt, maxTokens: 2500 });
+Write 3-5 sections, each a single core idea a textbook would give its own subheading. Glossary covers the lesson's key terms (3-6 entries).
+
+In section text, "example.text", "insights", "action", "leadershipTakeaway", and "productivityTip", wrap the most important key terms in double asterisks like **this** — the app renders them as highlights. Highlight sparingly: 1-3 terms per paragraph or item, only genuinely load-bearing vocabulary. No other markdown.`;
+  return generateJSON({ system, prompt, maxTokens: 3500 });
 }
 
 // ---------- Quizzes ----------
