@@ -8,10 +8,11 @@ import { el, clear, escapeHtml, toast, navigate } from './ui.js';
 
 // Build a compact context summary from recent activity + weak concepts.
 async function buildContextSummary() {
-  const [lessons, quizzes, concepts] = await Promise.all([
+  const [lessons, quizzes, concepts, highlights] = await Promise.all([
     store.getAll('lessons'),
     store.getAll('quizzes'),
     store.getAll('concepts'),
+    store.getAll('highlights'),
   ]);
 
   const recentLessons = lessons
@@ -30,10 +31,16 @@ async function buildContextSummary() {
     .slice(0, 5)
     .map((c) => `${c.name} (${c.masteryScore || 0}%)`);
 
+  const recentSaves = highlights
+    .sort((a, b) => (b.createdAt || '').localeCompare(a.createdAt || ''))
+    .slice(0, 5)
+    .map((h) => `"${h.text.length > 120 ? h.text.slice(0, 120) + '…' : h.text}"`);
+
   return [
     recentLessons.length ? `Recent lessons: ${recentLessons.join('; ')}.` : '',
     avgQuiz != null ? `Average quiz score: ${avgQuiz}%.` : '',
     weak.length ? `Weakest concepts: ${weak.join(', ')}.` : '',
+    recentSaves.length ? `Passages he chose to highlight recently (strong signal of what resonates): ${recentSaves.join(' | ')}` : '',
   ]
     .filter(Boolean)
     .join('\n');

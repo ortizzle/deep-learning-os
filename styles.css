@@ -445,6 +445,72 @@ mark.kw {
 .result-model strong { font-weight: 600; }
 .retest-btn { border-color: var(--accent); color: var(--accent); font-weight: 600; }
 
+/* ---------- highlights & saved ---------- */
+.hl {
+  background: var(--accent-soft);
+  border-bottom: 2px solid var(--accent);
+}
+.hl-block {
+  background: var(--accent-soft);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 0 0 6px var(--accent-soft);
+}
+.hl-popover {
+  position: absolute;
+  z-index: 60;
+  background: var(--text);
+  color: var(--bg);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 14px;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+}
+.saveable { position: relative; }
+.save-mark {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: none;
+  border: none;
+  color: var(--text-3);
+  font-size: 15px;
+  line-height: 1;
+  padding: 4px;
+  cursor: pointer;
+  opacity: 0.55;
+  transition: opacity 0.15s, color 0.15s;
+}
+.save-mark:hover { opacity: 1; }
+.save-mark.saved { color: var(--accent); opacity: 1; }
+li.saveable { padding-right: 26px; }
+
+.saved-item { border-top: 1px solid var(--border); padding: 12px 0; }
+.saved-item:first-of-type { border-top: none; padding-top: 4px; }
+.saved-quote {
+  margin: 0 0 8px;
+  padding-left: 12px;
+  border-left: 3px solid var(--accent);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text);
+}
+.dash-quote { margin-bottom: 12px; }
+.saved-meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.saved-src { font-size: 13px; padding: 0; text-align: left; }
+.saved-del {
+  background: none;
+  border: none;
+  color: var(--text-3);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 4px 6px;
+}
+.saved-del:hover { color: var(--bad); }
+
 /* course plan */
 .plan { padding: 16px; }
 .plan-row {

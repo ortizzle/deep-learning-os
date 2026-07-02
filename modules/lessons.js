@@ -361,6 +361,122 @@ document.addEventListener('visibilitychange', () => {
   if (document.hidden) flushReadingTime();
 });
 
+// ---------- highlights ----------
+
+// Wrap saved selection-highlights in the rendered article. Matches within a
+// single text node; if the quote spans markup (e.g. a keyword pill), falls
+// back to tinting the whole containing block.
+function applyHighlights(article, highlights) {
+  for (const h of highlights) {
+    if (!h.text) continue;
+    const walker = document.createTreeWalker(article, NodeFilter.SHOW_TEXT);
+    let done = false;
+    let node;
+    while (!done && (node = walker.nextNode())) {
+      const i = node.textContent.indexOf(h.text);
+      if (i === -1) continue;
+      const range = document.createRange();
+      range.setStart(node, i);
+      range.setEnd(node, i + h.text.length);
+      const span = document.createElement('span');
+      span.className = 'hl';
+      range.surroundContents(span);
+      done = true;
+    }
+    if (!done) {
+      // Cross-markup quote: tint the closest block that contains it.
+      const block = [...article.querySelectorAll('p, li, .closer, .example-box')]
+        .find((b) => b.textContent.includes(h.text));
+      block?.classList.add('hl-block');
+    }
+  }
+}
+
+// One-tap block bookmarks on saveable elements.
+function markSavedBlocks(article, lesson, highlights) {
+  const saved = new Map(highlights.map((h) => [h.text, h]));
+  const blocks = article.querySelectorAll('.lesson-body p, .lesson-block li, .closer, .example-box');
+  for (const block of blocks) {
+    if (block.closest('.pause-answer')) continue;
+    const text = block.textContent.trim();
+    if (!text) continue;
+    const existing = saved.get(text);
+    const btn = el('button', {
+      class: 'save-mark' + (existing ? ' saved' : ''),
+      title: existing ? 'Remove from saved' : 'Save for later',
+    }, existing ? '⚑' : '⚐');
+    btn.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      const isSaved = btn.classList.contains('saved');
+      if (isSaved) {
+        const h = (await store.getAll('highlights')).find(
+          (x) => x.lessonId === lesson.id && x.text === text
+        );
+        if (h) await store.remove('highlights', h.id);
+        btn.classList.remove('saved');
+        btn.textContent = '⚐';
+        toast('Removed from saved');
+      } else {
+        await store.put('highlights', {
+          lessonId: lesson.id,
+          topicId: lesson.topicId,
+          text,
+          source: 'block',
+        });
+        btn.classList.add('saved');
+        btn.textContent = '⚑';
+        toast('Saved for later', 'success');
+      }
+    });
+    block.classList.add('saveable');
+    block.append(btn);
+  }
+}
+
+// Floating "Highlight" button that follows text selection inside the article.
+function setupSelectionCapture(article, lesson) {
+  let btn = null;
+  const removeBtn = () => { btn?.remove(); btn = null; };
+
+  const onSelection = () => {
+    const sel = document.getSelection();
+    const text = sel ? sel.toString().trim() : '';
+    if (!text || text.length < 3 || sel.isCollapsed ||
+        !article.contains(sel.anchorNode) || !article.contains(sel.focusNode)) {
+      removeBtn();
+      return;
+    }
+    if (!btn) {
+      btn = el('button', { class: 'hl-popover' }, '🖍 Highlight');
+      btn.addEventListener('click', async () => {
+        const quote = document.getSelection()?.toString().trim();
+        if (quote) {
+          const h = await store.put('highlights', {
+            lessonId: lesson.id,
+            topicId: lesson.topicId,
+            text: quote,
+            source: 'selection',
+          });
+          applyHighlights(article, [h]);
+          toast('Highlighted', 'success');
+        }
+        document.getSelection()?.removeAllRanges();
+        removeBtn();
+      });
+      document.body.append(btn);
+    }
+    const rect = sel.getRangeAt(0).getBoundingClientRect();
+    btn.style.top = `${rect.top + window.scrollY - 46}px`;
+    btn.style.left = `${Math.max(8, rect.left + window.scrollX + rect.width / 2 - 56)}px`;
+  };
+
+  document.addEventListener('selectionchange', onSelection);
+  window.addEventListener('hashchange', () => {
+    removeBtn();
+    document.removeEventListener('selectionchange', onSelection);
+  }, { once: true });
+}
+
 // Tap-to-reveal "check your understanding" box.
 function pauseBox({ question, answer }) {
   const revealed = el('div', { class: 'pause-answer hidden' });
@@ -479,6 +595,12 @@ export async function renderLesson(root, { id }) {
   );
 
   root.append(article);
+
+  // Highlights: render saved ones, enable block bookmarks + selection capture.
+  const highlights = (await store.getAll('highlights')).filter((h) => h.lessonId === lesson.id);
+  applyHighlights(article, highlights.filter((h) => h.source === 'selection'));
+  markSavedBlocks(article, lesson, highlights);
+  setupSelectionCapture(article, lesson);
 }
 
 // ---------- shared modal ----------

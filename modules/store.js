@@ -3,7 +3,7 @@
 // runs fully local; sync is a transparent mirror on top.
 
 const DB_NAME = 'deep-learning-os';
-const DB_VERSION = 1;
+const DB_VERSION = 2; // v2: adds 'highlights'
 export const SCHEMA_VERSION = 1;
 
 // Object stores that hold user records. `profile` is a singleton (id: 'me').
@@ -13,6 +13,7 @@ export const STORES = [
   'quizzes',
   'concepts',
   'coachSessions',
+  'highlights',
   'profile',
 ];
 

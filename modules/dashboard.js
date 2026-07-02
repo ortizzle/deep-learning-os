@@ -3,6 +3,7 @@
 
 import * as store from './store.js';
 import { levelProgress, ACHIEVEMENTS } from './gamification.js';
+import { recentHighlights } from './saved.js';
 import { el, clear, navigate } from './ui.js';
 
 function statCard(value, label) {
@@ -116,6 +117,21 @@ export async function renderDashboard(root) {
               ])
             : null,
         ]),
+      ])
+    );
+  }
+
+  // Saved highlights teaser.
+  const saves = await recentHighlights(2);
+  if (saves.length) {
+    root.append(
+      el('section', { class: 'panel' }, [
+        el('h4', {}, 'Saved'),
+        ...saves.map((h) =>
+          el('blockquote', { class: 'saved-quote dash-quote' },
+            h.text.length > 140 ? h.text.slice(0, 140) + '…' : h.text)
+        ),
+        el('button', { class: 'link', onclick: () => navigate('#/saved') }, 'View all saved →'),
       ])
     );
   }
