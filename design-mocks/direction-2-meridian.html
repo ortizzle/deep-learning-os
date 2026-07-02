@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Meridian — Deep Learning OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0b0c0f;
+    --surface: #131419;
+    --surface-2: #1a1b21;
+    --border: #23242c;
+    --border-strong: #32333d;
+    --text: #e7e8ec;
+    --text-2: #8d8f9c;
+    --text-3: #5c5e69;
+    --accent: #3B5BFF;
+    --accent-soft: #17203f;
+    --accent-text: #ffffff;
+    --signal: #B4FF39;
+    --good: #35d18a;
+    --good-soft: #10241b;
+    --bad: #ff5c5c;
+    --bad-soft: #2a1414;
+    --radius: 10px;
+    --radius-sm: 7px;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.4);
+    --shadow-md: 0 10px 30px rgba(0,0,0,0.55);
+    --maxw: 420px;
+    font-family: 'Inter', -apple-system, sans-serif;
+  }
+  [data-theme="light"] {
+    --bg: #f7f8fa;
+    --surface: #ffffff;
+    --surface-2: #eef0f4;
+    --border: #e2e4e9;
+    --border-strong: #cfd2da;
+    --text: #14151a;
+    --text-2: #62636e;
+    --text-3: #9497a3;
+    --accent: #2f4dde;
+    --accent-soft: #e8ebff;
+    --accent-text: #ffffff;
+    --signal: #7fb400;
+    --good-soft: #e3f9ee;
+    --bad-soft: #ffe9e9;
+    --shadow-sm: 0 1px 2px rgba(20,20,30,0.06);
+    --shadow-md: 0 10px 30px rgba(20,20,30,0.10);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
+  body { display: flex; justify-content: center; padding: 28px 0 80px; transition: background 0.2s, color 0.2s; }
+  .phone { width: 100%; max-width: var(--maxw); }
+  .toolbar { display: flex; align-items: center; justify-content: space-between; padding: 0 18px 14px; }
+  .backlink { font-size: 13px; color: var(--text-2); text-decoration: none; font-weight: 500; }
+  .toggle { border: 1px solid var(--border-strong); background: var(--surface); color: var(--text); border-radius: 8px; width: 34px; height: 34px; cursor: pointer; font-size: 15px; }
+  .app { background: var(--bg); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--border); }
+
+  .topbar { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; background: color-mix(in srgb, var(--bg) 85%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+  .brand { display: flex; align-items: center; gap: 9px; }
+  .mark { width: 22px; height: 22px; }
+  .wordmark { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 14.5px; letter-spacing: 0.01em; text-transform: lowercase; }
+  .sync-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--signal); box-shadow: 0 0 8px var(--signal); }
+
+  .view { padding: 20px 18px 28px; }
+  h4.label { font-family: 'Space Grotesk', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.09em; color: var(--text-2); font-weight: 600; margin: 0 0 10px; }
+
+  .hero { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow-sm); margin-bottom: 12px; }
+  .hero-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+  .streak { display: flex; align-items: center; gap: 8px; }
+  .streak-icon { color: var(--signal); }
+  .streak-icon svg { width: 18px; height: 18px; }
+  .streak-num { font-family: 'IBM Plex Mono', monospace; font-size: 26px; font-weight: 600; color: var(--text); }
+  .streak-label { font-size: 12.5px; color: var(--text-2); }
+  .level-badge { text-align: right; }
+  .level-num { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 13.5px; }
+  .level-xp { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--text-2); }
+  .bar { height: 5px; width: 100%; background: var(--surface-2); border-radius: 3px; overflow: hidden; margin-top: 12px; }
+  .bar-fill { height: 100%; background: var(--accent); }
+  .bar-label { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: var(--text-2); margin-top: 6px; }
+
+  .stat-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin-bottom: 12px; }
+  .stat { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 13px; text-align: center; }
+  .stat-value { font-family: 'IBM Plex Mono', monospace; font-size: 20px; font-weight: 600; }
+  .stat-label { font-size: 10.5px; color: var(--text-2); margin-top: 3px; text-transform: uppercase; letter-spacing: 0.04em; }
+
+  .panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 15px; margin-bottom: 12px; }
+  .card { display: flex; align-items: center; justify-content: space-between; gap: 12px; background: var(--accent-soft); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 13px; }
+  .card h3 { margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 14.5px; font-weight: 600; }
+  .card p { margin: 3px 0 0; font-size: 12px; color: var(--text-2); }
+  .pill { font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; color: var(--accent-text); background: var(--accent); border-radius: 4px; padding: 5px 9px; white-space: nowrap; }
+
+  .topic-card { padding: 12px 0; border-top: 1px solid var(--border); }
+  .topic-card:first-of-type { border-top: none; }
+  .topic-name { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600; }
+  .topic-mastery { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
+  .topic-mastery .bar { width: 110px; margin: 0; }
+  .topic-mastery .bar-fill { background: var(--signal); }
+  .topic-pct { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--text-2); }
+
+  .badge-strip { display: flex; gap: 8px; flex-wrap: wrap; }
+  .badge { display: flex; align-items: center; gap: 6px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 5px; padding: 6px 10px; font-size: 12px; font-weight: 500; }
+  .badge-icon { color: var(--signal); }
+  .badge-icon svg { width: 12px; height: 12px; }
+
+  .lesson-block { margin-bottom: 14px; }
+  .lesson-body p { line-height: 1.7; font-size: 15px; margin: 0; }
+  .closer { background: var(--accent-soft); border-radius: var(--radius-sm); border-left: 2px solid var(--accent); padding: 12px 14px; margin-top: 12px; }
+  .closer-label { font-family: 'Space Grotesk', sans-serif; font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); font-weight: 700; }
+  .closer p { margin: 4px 0 0; font-size: 13px; line-height: 1.5; }
+
+  .score-ring { width: 112px; height: 112px; border-radius: 50%; margin: 0 auto 14px; display: flex; align-items: baseline; justify-content: center; background: conic-gradient(var(--signal) 82%, var(--surface-2) 0); position: relative; }
+  .score-ring::before { content: ''; position: absolute; inset: 8px; border-radius: 50%; background: var(--bg); }
+  .score-num { position: relative; font-family: 'IBM Plex Mono', monospace; font-size: 30px; font-weight: 600; }
+  .score-pct { position: relative; font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: var(--text-2); margin-left: 2px; }
+  .quiz-result-head { text-align: center; margin-bottom: 14px; }
+  .quiz-result-head h1 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 19px; margin: 0; }
+
+  .chat-thread { display: flex; flex-direction: column; gap: 9px; }
+  .bubble { max-width: 82%; padding: 10px 13px; border-radius: 10px; font-size: 14px; line-height: 1.5; }
+  .bubble.user { align-self: flex-end; background: var(--accent); color: #fff; }
+  .bubble.assistant { align-self: flex-start; background: var(--surface-2); border: 1px solid var(--border); }
+
+  .tabbar { display: grid; grid-template-columns: repeat(4,1fr); background: color-mix(in srgb, var(--surface) 90%, transparent); backdrop-filter: blur(12px); border-top: 1px solid var(--border); padding: 10px 6px 12px; }
+  .tab { display: flex; flex-direction: column; align-items: center; gap: 4px; color: var(--text-3); font-family: 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 500; }
+  .tab svg { width: 18px; height: 18px; }
+  .tab.active { color: var(--signal); }
+</style>
+</head>
+<body data-theme="dark">
+  <div class="phone">
+    <div class="toolbar">
+      <a class="backlink" href="./index.html">← Gallery</a>
+      <button class="toggle" onclick="const b=document.body;b.dataset.theme=b.dataset.theme==='dark'?'light':'dark';this.textContent=b.dataset.theme==='dark'?'☀':'☾'">☀</button>
+    </div>
+
+    <div class="app">
+      <div class="topbar">
+        <div class="brand">
+          <svg class="mark" viewBox="0 0 24 24" fill="none">
+            <path d="M6 3L9 6L6 9L3 6Z" fill="var(--accent)"/>
+            <path d="M18 3L21 6L18 9L15 6Z" fill="var(--signal)"/>
+            <path d="M6 15L9 18L6 21L3 18Z" fill="var(--signal)"/>
+            <path d="M18 15L21 18L18 21L15 18Z" fill="var(--accent)"/>
+            <path d="M9 6L15 6M6 9L6 15M18 9L18 15M9 18L15 18" stroke="var(--text-3)" stroke-width="1"/>
+          </svg>
+          <span class="wordmark">deep learning</span>
+        </div>
+        <span class="sync-dot" title="Synced"></span>
+      </div>
+
+      <div class="view">
+        <div class="hero">
+          <div class="hero-top">
+            <div class="streak">
+              <span class="streak-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg></span>
+              <div><span class="streak-num">12</span> <span class="streak-label">day streak</span></div>
+            </div>
+            <div class="level-badge">
+              <div class="level-num">LV 6</div>
+              <div class="level-xp">1,480 XP</div>
+            </div>
+          </div>
+          <div class="bar"><div class="bar-fill" style="width:64%"></div></div>
+          <div class="bar-label">320 / 500 XP → LV 7</div>
+        </div>
+
+        <div class="stat-row">
+          <div class="stat"><div class="stat-value">18</div><div class="stat-label">Lessons</div></div>
+          <div class="stat"><div class="stat-value">340</div><div class="stat-label">Minutes</div></div>
+          <div class="stat"><div class="stat-value">06</div><div class="stat-label">Level</div></div>
+        </div>
+
+        <section class="panel">
+          <h4 class="label">Recommended next</h4>
+          <div class="card">
+            <div><h3>Transformer Attention, Part 2</h3><p>Continue where you left off</p></div>
+            <span class="pill">RESUME</span>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h4 class="label">Where you stand</h4>
+          <div class="topic-card">
+            <div class="topic-name">Distributed Systems</div>
+            <div class="topic-mastery"><div class="bar"><div class="bar-fill" style="width:88%"></div></div><span class="topic-pct">88%</span></div>
+          </div>
+          <div class="topic-card">
+            <div class="topic-name">Probability &amp; Statistics</div>
+            <div class="topic-mastery"><div class="bar"><div class="bar-fill" style="width:41%"></div></div><span class="topic-pct">41%</span></div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h4 class="label">Achievements</h4>
+          <div class="badge-strip">
+            <div class="badge"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg></span>First Lesson</div>
+            <div class="badge"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg></span>Consistent</div>
+            <div class="badge"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a6 6 0 0112 0v2"/></svg></span>Coached</div>
+          </div>
+        </section>
+
+        <section class="panel lesson-block">
+          <h4 class="label">Lesson · Transformer Attention</h4>
+          <div class="lesson-body">
+            <p>Self-attention lets each token look at every other token in the sequence and decide, dynamically, how much to weight it — that's the mechanism that replaced recurrence.</p>
+          </div>
+          <div class="closer">
+            <div class="closer-label">Try this</div>
+            <p>Sketch the Q/K/V matrices for a 4-word sentence by hand before your next quiz.</p>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="quiz-result-head">
+            <div class="score-ring"><span class="score-num">82</span><span class="score-pct">%</span></div>
+            <h1>Strong work.</h1>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h4 class="label">Coach</h4>
+          <div class="chat-thread">
+            <div class="bubble assistant">Your quiz scores on probability are lagging behind everything else. What's actually getting in the way — time, or the material itself?</div>
+            <div class="bubble user">Honestly, I keep skipping the practice problems.</div>
+          </div>
+        </section>
+      </div>
+
+      <nav class="tabbar">
+        <a class="tab active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3L21 12L12 21L3 12Z"/></svg>Home</a>
+        <a class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4L12 4L12 12L4 12Z"/><path d="M12 4L20 4L20 12L12 12Z"/><path d="M4 12L12 12L12 20L4 20Z"/><path d="M12 12L20 12L20 20L12 20Z"/></svg>Topics</a>
+        <a class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v11H8l-4 4V4z"/></svg>Coach</a>
+        <a class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2.5"/><path d="M4 12h4M16 12h4M12 4v4M12 16v4M6.5 6.5l2.5 2.5M15 15l2.5 2.5M17.5 6.5L15 9M9 15l-2.5 2.5"/></svg>Settings</a>
+      </nav>
+    </div>
+  </div>
+</body>
+</html>

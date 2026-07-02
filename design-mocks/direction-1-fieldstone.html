@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Fieldstone — Deep Learning OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #f7f3ea;
+    --surface: #fffdf8;
+    --surface-2: #f0e9da;
+    --border: #e6dcc7;
+    --border-strong: #d8caac;
+    --text: #2b2620;
+    --text-2: #736a5a;
+    --text-3: #a3987f;
+    --accent: #c2632f;
+    --accent-soft: #f3e0d2;
+    --accent-text: #fffdf8;
+    --sage: #5f7a5a;
+    --sage-soft: #e6ede4;
+    --bad: #ad4433;
+    --bad-soft: #f6e5df;
+    --radius: 12px;
+    --radius-sm: 8px;
+    --shadow-sm: 0 1px 2px rgba(60,45,20,0.06), 0 2px 6px rgba(60,45,20,0.05);
+    --shadow-md: 0 10px 26px rgba(60,45,20,0.12);
+    --maxw: 420px;
+    font-family: 'Inter', -apple-system, sans-serif;
+  }
+  [data-theme="dark"] {
+    --bg: #1c1712;
+    --surface: #262019;
+    --surface-2: #2d251c;
+    --border: #3a3125;
+    --border-strong: #4a3f2f;
+    --text: #f2e9d8;
+    --text-2: #bdae94;
+    --text-3: #8a7c65;
+    --accent: #e08349;
+    --accent-soft: #3a2a1c;
+    --accent-text: #1c1712;
+    --sage: #8caa84;
+    --sage-soft: #26301f;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+    --shadow-md: 0 10px 26px rgba(0,0,0,0.45);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
+  body {
+    display: flex; justify-content: center; padding: 28px 0 80px; transition: background 0.2s, color 0.2s;
+    background-image: radial-gradient(circle, rgba(0,0,0,0.035) 1px, transparent 1px);
+    background-size: 14px 14px;
+  }
+  [data-theme="dark"] body { background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px); }
+  .phone { width: 100%; max-width: var(--maxw); }
+  .toolbar { display: flex; align-items: center; justify-content: space-between; padding: 0 18px 14px; }
+  .backlink { font-size: 13px; color: var(--text-2); text-decoration: none; font-weight: 500; }
+  .toggle { border: 1px solid var(--border-strong); background: var(--surface); color: var(--text); border-radius: 999px; width: 34px; height: 34px; cursor: pointer; font-size: 15px; }
+  .app { background: var(--bg); border-radius: 22px; overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--border); }
+
+  .topbar { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+  .brand { display: flex; align-items: center; gap: 9px; }
+  .seal { width: 28px; height: 28px; }
+  .wordmark { display: flex; flex-direction: column; line-height: 1; }
+  .wordmark .main { font-family: 'Fraunces', serif; font-variant: small-caps; font-weight: 600; font-size: 15px; letter-spacing: 0.01em; }
+  .wordmark .sub { font-size: 9px; letter-spacing: 0.14em; color: var(--text-3); margin-top: 2px; }
+  .sync-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--sage); }
+
+  .view { padding: 20px 18px 28px; }
+  h4.label { font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-2); font-weight: 600; margin: 0 0 10px; }
+
+  .hero { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow-sm); margin-bottom: 14px; border-left: 3px solid var(--accent); }
+  .hero-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+  .streak { display: flex; align-items: center; gap: 8px; }
+  .streak-icon { color: var(--accent); }
+  .streak-icon svg { width: 22px; height: 22px; }
+  .streak-num { font-family: 'Fraunces', serif; font-size: 30px; font-weight: 600; }
+  .streak-label { font-size: 13px; color: var(--text-2); }
+  .level-badge { text-align: right; }
+  .level-num { font-weight: 600; font-size: 14px; font-family: 'Fraunces', serif; }
+  .level-xp { font-size: 12px; color: var(--text-2); }
+  .bar { height: 6px; width: 100%; background: var(--surface-2); border-radius: 999px; overflow: hidden; margin-top: 12px; }
+  .bar-fill { height: 100%; background: var(--accent); border-radius: 999px; }
+  .bar-label { font-size: 11px; color: var(--text-2); margin-top: 6px; }
+
+  .stat-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 14px; }
+  .stat { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px; text-align: center; box-shadow: var(--shadow-sm); }
+  .stat-value { font-family: 'Fraunces', serif; font-size: 23px; font-weight: 600; }
+  .stat-label { font-size: 11.5px; color: var(--text-2); margin-top: 2px; }
+
+  .panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; margin-bottom: 14px; box-shadow: var(--shadow-sm); }
+  .card { display: flex; align-items: center; justify-content: space-between; gap: 12px; background: var(--accent-soft); border-radius: var(--radius-sm); padding: 14px; }
+  .card h3 { margin: 0; font-family: 'Fraunces', serif; font-size: 15.5px; font-weight: 600; }
+  .card p { margin: 3px 0 0; font-size: 12.5px; color: var(--text-2); }
+  .pill { font-size: 11.5px; font-weight: 600; color: var(--accent-text); background: var(--accent); border-radius: 5px; padding: 5px 11px; white-space: nowrap; }
+
+  .topic-card { padding: 12px 0; border-top: 1px solid var(--border); }
+  .topic-card:first-of-type { border-top: none; }
+  .topic-name { font-size: 14.5px; font-weight: 600; }
+  .topic-mastery { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
+  .topic-mastery .bar { width: 110px; margin: 0; }
+  .topic-mastery .bar-fill { background: var(--sage); }
+  .topic-pct { font-size: 12px; color: var(--text-2); }
+
+  .badge-strip { display: flex; gap: 8px; flex-wrap: wrap; }
+  .badge { display: flex; align-items: center; gap: 6px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 999px; padding: 6px 12px; font-size: 12.5px; font-weight: 500; }
+  .badge-icon { color: var(--accent); }
+  .badge-icon svg { width: 13px; height: 13px; }
+
+  .lesson-block { margin-bottom: 16px; }
+  .lesson-body p { line-height: 1.75; font-size: 15.5px; margin: 0; }
+  .closer { background: var(--sage-soft); border-radius: var(--radius-sm); border-left: 3px solid var(--sage); padding: 12px 14px; margin-top: 12px; }
+  .closer-label { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--sage); font-weight: 700; }
+  .closer p { margin: 4px 0 0; font-size: 13.5px; line-height: 1.55; font-style: italic; }
+
+  .score-ring { width: 116px; height: 116px; border-radius: 50%; margin: 0 auto 14px; display: flex; align-items: baseline; justify-content: center; background: conic-gradient(var(--accent) 82%, var(--surface-2) 0); position: relative; }
+  .score-ring::before { content: ''; position: absolute; inset: 9px; border-radius: 50%; background: var(--bg); }
+  .score-num { position: relative; font-family: 'Fraunces', serif; font-size: 34px; font-weight: 600; }
+  .score-pct { position: relative; font-size: 15px; color: var(--text-2); margin-left: 2px; }
+  .quiz-result-head { text-align: center; margin-bottom: 16px; }
+  .quiz-result-head h1 { font-family: 'Fraunces', serif; font-weight: 600; font-size: 21px; margin: 0; }
+
+  .chat-thread { display: flex; flex-direction: column; gap: 10px; }
+  .bubble { max-width: 82%; padding: 11px 14px; border-radius: 14px; font-size: 14.5px; line-height: 1.5; }
+  .bubble.user { align-self: flex-end; background: var(--accent); color: var(--accent-text); border-bottom-right-radius: 4px; }
+  .bubble.assistant { align-self: flex-start; background: var(--surface); border: 1px solid var(--border); border-bottom-left-radius: 4px; }
+
+  .tabbar { display: grid; grid-template-columns: repeat(4,1fr); background: color-mix(in srgb, var(--surface) 92%, transparent); backdrop-filter: blur(10px); border-top: 1px solid var(--border); padding: 10px 6px 12px; }
+  .tab { display: flex; flex-direction: column; align-items: center; gap: 4px; color: var(--text-3); font-size: 10.5px; font-weight: 500; }
+  .tab svg { width: 19px; height: 19px; }
+  .tab.active { color: var(--accent); }
+</style>
+</head>
+<body data-theme="light">
+  <div class="phone">
+    <div class="toolbar">
+      <a class="backlink" href="./index.html">← Gallery</a>
+      <button class="toggle" onclick="const b=document.body;b.dataset.theme=b.dataset.theme==='dark'?'light':'dark';this.textContent=b.dataset.theme==='dark'?'☀':'☾'">☾</button>
+    </div>
+
+    <div class="app">
+      <div class="topbar">
+        <div class="brand">
+          <svg class="seal" viewBox="0 0 32 32" fill="none">
+            <path d="M16 3 L28 16 L16 29 L4 16 Z" stroke="currentColor" stroke-width="1.6" style="color:var(--accent)" />
+            <path d="M16 11c-2.5 2-1 5 0 6-1 1-3-1-3 1.5" stroke="currentColor" stroke-width="1.3" style="color:var(--accent)" fill="none" stroke-linecap="round"/>
+          </svg>
+          <div class="wordmark"><span class="main">Deep Learning</span><span class="sub">O·S</span></div>
+        </div>
+        <span class="sync-dot" title="Synced"></span>
+      </div>
+
+      <div class="view">
+        <div class="hero">
+          <div class="hero-top">
+            <div class="streak">
+              <span class="streak-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2c2 4-1 5-1 8a4 4 0 0 0 8 0c1.5 2 2 4 2 6a9 9 0 1 1-18 0c0-5 4-7 4-10 0-2 2-4 5-4z"/></svg></span>
+              <div><span class="streak-num">12</span> <span class="streak-label">day streak</span></div>
+            </div>
+            <div class="level-badge">
+              <div class="level-num">Lv 6</div>
+              <div class="level-xp">1,480 XP</div>
+            </div>
+          </div>
+          <div class="bar"><div class="bar-fill" style="width:64%"></div></div>
+          <div class="bar-label">320 / 500 XP to Lv 7</div>
+        </div>
+
+        <div class="stat-row">
+          <div class="stat"><div class="stat-value">18</div><div class="stat-label">Lessons</div></div>
+          <div class="stat"><div class="stat-value">340</div><div class="stat-label">Minutes</div></div>
+          <div class="stat"><div class="stat-value">6</div><div class="stat-label">Level</div></div>
+        </div>
+
+        <section class="panel">
+          <h4 class="label">Recommended next</h4>
+          <div class="card">
+            <div><h3>Transformer Attention, Part 2</h3><p>Continue where you left off</p></div>
+            <span class="pill">Resume</span>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h4 class="label">Where you stand</h4>
+          <div class="topic-card">
+            <div class="topic-name">Distributed Systems</div>
+            <div class="topic-mastery"><div class="bar"><div class="bar-fill" style="width:88%"></div></div><span class="topic-pct">88%</span></div>
+          </div>
+          <div class="topic-card">
+            <div class="topic-name">Probability &amp; Statistics</div>
+            <div class="topic-mastery"><div class="bar"><div class="bar-fill" style="width:41%"></div></div><span class="topic-pct">41%</span></div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h4 class="label">Achievements</h4>
+          <div class="badge-strip">
+            <div class="badge"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 13l4 4L19 7"/></svg></span>First Lesson</div>
+            <div class="badge"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c2 4-1 5-1 8a4 4 0 0 0 8 0c1.5 2 2 4 2 6a9 9 0 1 1-18 0c0-5 4-7 4-10z"/></svg></span>Consistent</div>
+            <div class="badge"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a6 6 0 0112 0v2"/></svg></span>Coached</div>
+          </div>
+        </section>
+
+        <section class="panel lesson-block">
+          <h4 class="label">Lesson · Transformer Attention</h4>
+          <div class="lesson-body">
+            <p>Self-attention lets each token look at every other token in the sequence and decide, dynamically, how much to weight it — that's the mechanism that replaced recurrence.</p>
+          </div>
+          <div class="closer">
+            <div class="closer-label">Try this</div>
+            <p>Sketch the Q/K/V matrices for a 4-word sentence by hand before your next quiz.</p>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="quiz-result-head">
+            <div class="score-ring"><span class="score-num">82</span><span class="score-pct">%</span></div>
+            <h1>Strong work.</h1>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h4 class="label">Coach</h4>
+          <div class="chat-thread">
+            <div class="bubble assistant">Your quiz scores on probability are lagging behind everything else. What's actually getting in the way — time, or the material itself?</div>
+            <div class="bubble user">Honestly, I keep skipping the practice problems.</div>
+          </div>
+        </section>
+      </div>
+
+      <nav class="tabbar">
+        <a class="tab active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 11l8-7 8 7"/><path d="M6 10v9h5v-5h2v5h5v-9"/></svg>Home</a>
+        <a class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 6c3-1.5 6-1.5 8 0 2-1.5 5-1.5 8 0v13c-3-1.5-6-1.5-8 0-2-1.5-5-1.5-8 0V6z"/><path d="M12 6v13"/></svg>Topics</a>
+        <a class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v11H8l-4 4V4z"/><path d="M12 8v4M12 15h.01"/></svg>Coach</a>
+        <a class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3.2"/><path d="M19.4 15a1.7 1.7 0 00.34 1.87l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.7 1.7 0 00-1.87-.34 1.7 1.7 0 00-1.04 1.56V21a2 2 0 01-4 0v-.09A1.7 1.7 0 008 19.4a1.7 1.7 0 00-1.87.34l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.7 1.7 0 004.6 15a1.7 1.7 0 00-1.56-1.04H3a2 2 0 010-4h.09A1.7 1.7 0 004.6 8a1.7 1.7 0 00-.34-1.87l-.06-.06a2 2 0 112.83-2.83l.06.06A1.7 1.7 0 008 4.6a1.7 1.7 0 001.04-1.56V3a2 2 0 014 0v.09A1.7 1.7 0 0016 4.6a1.7 1.7 0 001.87-.34l.06-.06a2 2 0 112.83 2.83l-.06.06A1.7 1.7 0 0019.4 8c.36.62 1 1.02 1.71 1.04H21a2 2 0 010 4h-.09a1.7 1.7 0 00-1.51 1.96z"/></svg>Settings</a>
+      </nav>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Atrium — Deep Learning OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #faf9fc;
+    --surface: #ffffff;
+    --surface-2: #f3f1f8;
+    --border: #ece9f4;
+    --border-strong: #ddd8ee;
+    --text: #221f2b;
+    --text-2: #6f6b80;
+    --text-3: #a29dae;
+    --accent: #6C4BD1;
+    --accent-2: #FF8A65;
+    --accent-soft: #efe9fb;
+    --accent-text: #ffffff;
+    --good: #12966b;
+    --good-soft: #e5f6ee;
+    --bad: #e0574a;
+    --bad-soft: #fcecea;
+    --grad: linear-gradient(135deg, var(--accent), var(--accent-2));
+    --radius: 18px;
+    --radius-sm: 12px;
+    --shadow-sm: 0 1px 2px rgba(50,30,90,0.05), 0 2px 8px rgba(50,30,90,0.04);
+    --shadow-md: 0 8px 28px rgba(50,30,90,0.10);
+    --maxw: 420px;
+    font-family: 'Inter', -apple-system, sans-serif;
+  }
+  [data-theme="dark"] {
+    --bg: #17131f;
+    --surface: #201a2b;
+    --surface-2: #251f31;
+    --border: #322a41;
+    --border-strong: #40374f;
+    --text: #f3f1f8;
+    --text-2: #b3adc4;
+    --text-3: #7d7690;
+    --accent: #9b7ff0;
+    --accent-2: #ffab8a;
+    --accent-soft: #2e2545;
+    --accent-text: #17131f;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+    --shadow-md: 0 8px 28px rgba(0,0,0,0.4);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
+  body { display: flex; justify-content: center; padding: 28px 0 80px; transition: background 0.2s, color 0.2s; }
+  .phone { width: 100%; max-width: var(--maxw); }
+  .toolbar { display: flex; align-items: center; justify-content: space-between; padding: 0 18px 14px; }
+  .backlink { font-size: 13px; color: var(--text-2); text-decoration: none; font-weight: 500; }
+  .toggle { border: 1px solid var(--border-strong); background: var(--surface); color: var(--text); border-radius: 999px; width: 34px; height: 34px; cursor: pointer; font-size: 15px; }
+  .app { background: var(--bg); border-radius: 28px; overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--border); }
+
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 18px; background: color-mix(in srgb, var(--bg) 85%, transparent);
+    backdrop-filter: saturate(180%) blur(14px);
+    border-bottom: 1px solid var(--border);
+  }
+  .brand { display: flex; align-items: center; gap: 9px; }
+  .mark { width: 26px; height: 26px; border-radius: 9px; background: var(--grad); display: flex; align-items: center; justify-content: center; }
+  .mark svg { width: 14px; height: 14px; }
+  .wordmark { font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 15.5px; letter-spacing: -0.01em; }
+  .sync-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--good); box-shadow: 0 0 0 3px var(--good-soft); }
+
+  .view { padding: 20px 18px 28px; }
+  h4.label { font-family: 'Outfit', sans-serif; font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-2); font-weight: 600; margin: 0 0 10px; }
+
+  .hero { background: var(--surface); background-image: linear-gradient(160deg, var(--accent-soft), transparent 60%); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow-sm); margin-bottom: 14px; }
+  .hero-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+  .streak { display: flex; align-items: center; gap: 8px; }
+  .streak-icon { width: 26px; height: 26px; border-radius: 8px; background: var(--grad); display: flex; align-items: center; justify-content: center; }
+  .streak-icon svg { width: 14px; height: 14px; color: #fff; }
+  .streak-num { font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -0.02em; }
+  .streak-label { font-size: 13px; color: var(--text-2); }
+  .level-badge { text-align: right; }
+  .level-num { font-weight: 600; font-size: 14px; }
+  .level-xp { font-size: 12px; color: var(--text-2); }
+  .bar { height: 8px; width: 100%; background: var(--surface-2); border-radius: 999px; overflow: hidden; margin-top: 12px; }
+  .bar-fill { height: 100%; background: var(--grad); border-radius: 999px; }
+  .bar-label { font-size: 11px; color: var(--text-2); margin-top: 6px; }
+
+  .stat-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 14px; }
+  .stat { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px; text-align: center; box-shadow: var(--shadow-sm); }
+  .stat-value { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 700; }
+  .stat-label { font-size: 11.5px; color: var(--text-2); margin-top: 2px; }
+
+  .panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; margin-bottom: 14px; box-shadow: var(--shadow-sm); }
+  .card { display: flex; align-items: center; justify-content: space-between; gap: 12px; background: var(--accent-soft); border-radius: var(--radius-sm); padding: 14px; }
+  .card h3 { margin: 0; font-size: 15px; font-weight: 600; }
+  .card p { margin: 3px 0 0; font-size: 12.5px; color: var(--text-2); }
+  .pill { font-size: 11.5px; font-weight: 600; color: #fff; background: var(--grad); border-radius: 999px; padding: 5px 11px; white-space: nowrap; }
+
+  .topic-card { display: flex; align-items: center; justify-content: space-between; padding: 13px 0; border-top: 1px solid var(--border); }
+  .topic-card:first-of-type { border-top: none; }
+  .topic-name { font-size: 14.5px; font-weight: 600; }
+  .topic-mastery { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
+  .topic-mastery .bar { width: 110px; margin: 0; }
+  .topic-pct { font-size: 12px; color: var(--text-2); }
+
+  .badge-strip { display: flex; gap: 8px; flex-wrap: wrap; }
+  .badge { display: flex; align-items: center; gap: 6px; background: var(--surface-2); border-radius: 999px; padding: 6px 12px 6px 6px; font-size: 12.5px; font-weight: 500; }
+  .badge-icon { width: 20px; height: 20px; border-radius: 50%; background: var(--grad); display: flex; align-items: center; justify-content: center; }
+  .badge-icon svg { width: 11px; height: 11px; color: #fff; }
+
+  .lesson-block { margin-bottom: 16px; }
+  .lesson-body p { line-height: 1.7; font-size: 15px; margin: 0; }
+  .closer { background: var(--accent-soft); border-radius: var(--radius-sm); border-left: 3px solid var(--accent); padding: 12px 14px; margin-top: 12px; }
+  .closer-label { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); font-weight: 700; }
+  .closer p { margin: 4px 0 0; font-size: 13.5px; line-height: 1.5; }
+
+  .score-ring { width: 116px; height: 116px; border-radius: 50%; margin: 0 auto 14px; display: flex; align-items: baseline; justify-content: center; background: conic-gradient(var(--accent) 82%, var(--surface-2) 0); position: relative; }
+  .score-ring::before { content: ''; position: absolute; inset: 9px; border-radius: 50%; background: var(--bg); }
+  .score-num { position: relative; font-family: 'Outfit', sans-serif; font-size: 32px; font-weight: 700; }
+  .score-pct { position: relative; font-size: 15px; color: var(--text-2); margin-left: 2px; }
+  .quiz-result-head { text-align: center; margin-bottom: 16px; }
+  .quiz-result-head h1 { font-family: 'Outfit', sans-serif; font-size: 21px; margin: 0; }
+
+  .chat-thread { display: flex; flex-direction: column; gap: 10px; }
+  .bubble { max-width: 82%; padding: 11px 14px; border-radius: 16px; font-size: 14.5px; line-height: 1.5; }
+  .bubble.user { align-self: flex-end; background: var(--grad); color: #fff; border-bottom-right-radius: 4px; }
+  .bubble.assistant { align-self: flex-start; background: var(--surface); border: 1px solid var(--border); border-bottom-left-radius: 4px; }
+
+  .tabbar { display: grid; grid-template-columns: repeat(4,1fr); background: color-mix(in srgb, var(--surface) 90%, transparent); backdrop-filter: saturate(180%) blur(14px); border-top: 1px solid var(--border); padding: 10px 6px 12px; }
+  .tab { display: flex; flex-direction: column; align-items: center; gap: 4px; color: var(--text-3); font-size: 10.5px; font-weight: 500; }
+  .tab svg { width: 20px; height: 20px; }
+  .tab.active { color: var(--accent); }
+  .tab.active .tab-chip { background: var(--accent-soft); }
+  .tab-chip { width: 32px; height: 24px; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+</style>
+</head>
+<body data-theme="light">
+  <div class="phone">
+    <div class="toolbar">
+      <a class="backlink" href="./index.html">← Gallery</a>
+      <button class="toggle" onclick="const b=document.body;b.dataset.theme=b.dataset.theme==='dark'?'light':'dark';this.textContent=b.dataset.theme==='dark'?'☀':'☾'">☾</button>
+    </div>
+
+    <div class="app">
+      <div class="topbar">
+        <div class="brand">
+          <div class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3L21 12L12 21L3 12Z" fill="white" fill-opacity="0.92"/></svg></div>
+          <span class="wordmark">Deep Learning</span>
+        </div>
+        <span class="sync-dot" title="Synced"></span>
+      </div>
+
+      <div class="view">
+        <div class="hero">
+          <div class="hero-top">
+            <div class="streak">
+              <div class="streak-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c2 4-1 5-1 8a4 4 0 0 0 8 0c1.5 2 2 4 2 6a9 9 0 1 1-18 0c0-5 4-7 4-10 0-2 2-4 5-4z"/></svg></div>
+              <div><span class="streak-num">12</span> <span class="streak-label">day streak</span></div>
+            </div>
+            <div class="level-badge">
+              <div class="level-num">Lv 6</div>
+              <div class="level-xp">1,480 XP</div>
+            </div>
+          </div>
+          <div class="bar"><div class="bar-fill" style="width:64%"></div></div>
+          <div class="bar-label">320 / 500 XP to Lv 7</div>
+        </div>
+
+        <div class="stat-row">
+          <div class="stat"><div class="stat-value">18</div><div class="stat-label">Lessons</div></div>
+          <div class="stat"><div class="stat-value">340</div><div class="stat-label">Minutes</div></div>
+          <div class="stat"><div class="stat-value">6</div><div class="stat-label">Level</div></div>
+        </div>
+
+        <section class="panel">
+          <h4 class="label">Recommended next</h4>
+          <div class="card">
+            <div><h3>Transformer Attention, Part 2</h3><p>Continue where you left off</p></div>
+            <span class="pill">Resume</span>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h4 class="label">Where you stand</h4>
+          <div class="topic-card">
+            <div>
+              <div class="topic-name">Distributed Systems</div>
+              <div class="topic-mastery"><div class="bar"><div class="bar-fill" style="width:88%"></div></div><span class="topic-pct">88%</span></div>
+            </div>
+          </div>
+          <div class="topic-card">
+            <div>
+              <div class="topic-name">Probability &amp; Statistics</div>
+              <div class="topic-mastery"><div class="bar"><div class="bar-fill" style="width:41%"></div></div><span class="topic-pct">41%</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h4 class="label">Achievements</h4>
+          <div class="badge-strip">
+            <div class="badge"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg></span>First Lesson</div>
+            <div class="badge"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M12 3c2 4-1 5-1 8a4 4 0 0 0 8 0c1.5 2 2 4 2 6a9 9 0 1 1-18 0c0-5 4-7 4-10z"/></svg></span>Consistent</div>
+            <div class="badge"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a6 6 0 0112 0v2"/></svg></span>Coached</div>
+          </div>
+        </section>
+
+        <section class="panel lesson-block">
+          <h4 class="label">Lesson · Transformer Attention</h4>
+          <div class="lesson-body">
+            <p>Self-attention lets each token look at every other token in the sequence and decide, dynamically, how much to weight it — that's the mechanism that replaced recurrence.</p>
+          </div>
+          <div class="closer">
+            <div class="closer-label">Try this</div>
+            <p>Sketch the Q/K/V matrices for a 4-word sentence by hand before your next quiz.</p>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="quiz-result-head">
+            <div class="score-ring"><span class="score-num">82</span><span class="score-pct">%</span></div>
+            <h1>Strong work.</h1>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h4 class="label">Coach</h4>
+          <div class="chat-thread">
+            <div class="bubble assistant">Your quiz scores on probability are lagging behind everything else. What's actually getting in the way — time, or the material itself?</div>
+            <div class="bubble user">Honestly, I keep skipping the practice problems.</div>
+          </div>
+        </section>
+      </div>
+
+      <nav class="tabbar">
+        <a class="tab active"><span class="tab-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3L21 12L12 21L3 12Z"/></svg></span>Home</a>
+        <a class="tab"><span class="tab-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg></span>Topics</a>
+        <a class="tab"><span class="tab-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v11H8l-4 4V4z"/><path d="M9 9h.01M13 9h.01M17 9h.01"/></svg></span>Coach</a>
+        <a class="tab"><span class="tab-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.34 1.87l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.7 1.7 0 00-1.87-.34 1.7 1.7 0 00-1.04 1.56V21a2 2 0 01-4 0v-.09A1.7 1.7 0 008 19.4a1.7 1.7 0 00-1.87.34l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.7 1.7 0 004.6 15a1.7 1.7 0 00-1.56-1.04H3a2 2 0 010-4h.09A1.7 1.7 0 004.6 8a1.7 1.7 0 00-.34-1.87l-.06-.06a2 2 0 112.83-2.83l.06.06A1.7 1.7 0 008 4.6a1.7 1.7 0 001.04-1.56V3a2 2 0 014 0v.09A1.7 1.7 0 0016 4.6a1.7 1.7 0 001.87-.34l.06-.06a2 2 0 112.83 2.83l-.06.06A1.7 1.7 0 0019.4 8c.36.62 1 1.02 1.71 1.04H21a2 2 0 010 4h-.09a1.7 1.7 0 00-1.51 1.96z"/></svg></span>Settings</a>
+      </nav>
+    </div>
+  </div>
+</body>
+</html>
