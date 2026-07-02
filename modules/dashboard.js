@@ -4,6 +4,7 @@
 import * as store from './store.js';
 import { levelProgress, ACHIEVEMENTS } from './gamification.js';
 import { recentHighlights } from './saved.js';
+import { renderTodayPanel } from './today.js';
 import { el, clear, navigate } from './ui.js';
 
 function statCard(value, label) {
@@ -68,6 +69,11 @@ export async function renderDashboard(root) {
       ]),
     ])
   );
+
+  // Today: the daily accountability checklist.
+  const todayPanel = el('section', { class: 'panel today' });
+  root.append(todayPanel);
+  await renderTodayPanel(todayPanel);
 
   // Stat row.
   root.append(

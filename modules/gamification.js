@@ -10,6 +10,8 @@ export const XP = {
   quizPerfect: 40, // bonus on top of quizCompleted
   coachSession: 20,
   topicCreated: 10,
+  taskDone: 5,
+  perfectDay: 25, // every Today item resolved, at least one done
 };
 
 // Level curve: level N requires 100 * N * (N-1) / 2 cumulative XP (gentle ramp).
@@ -42,6 +44,8 @@ export const ACHIEVEMENTS = [
   { id: 'first-coach', name: 'Coached', desc: 'Held your first coach session.' },
   { id: 'topic-mastered', name: 'Topic Mastered', desc: 'Reached 90+ mastery across a topic.' },
   { id: 'level-5', name: 'Level 5', desc: 'Reached level 5.' },
+  { id: 'perfect-7', name: 'Consistent Closer', desc: '7 perfect days.' },
+  { id: 'actions-30', name: 'Action Taker', desc: 'Completed 30 lesson actions.' },
 ];
 
 function dayString(d = new Date()) {
@@ -70,11 +74,12 @@ async function evaluateAchievements(profile) {
     }
   };
 
-  const [lessons, quizzes, coachSessions, concepts] = await Promise.all([
+  const [lessons, quizzes, coachSessions, concepts, tasks] = await Promise.all([
     getAll('lessons'),
     getAll('quizzes'),
     getAll('coachSessions'),
     getAll('concepts'),
+    getAll('tasks'),
   ]);
 
   if (lessons.some((l) => l.completedAt)) grant('first-lesson');
@@ -82,6 +87,8 @@ async function evaluateAchievements(profile) {
   if (quizzes.length >= 10) grant('ten-quizzes');
   if (coachSessions.length >= 1) grant('first-coach');
   if (profile.level >= 5) grant('level-5');
+  if ((profile.perfectDays || 0) >= 7) grant('perfect-7');
+  if (tasks.filter((t) => t.type === 'action' && t.status === 'done').length >= 30) grant('actions-30');
 
   // Topic mastered: any topic whose concepts average >= 90.
   const byTopic = {};

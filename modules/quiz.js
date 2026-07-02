@@ -5,6 +5,7 @@ import * as store from './store.js';
 import { generateQuiz, gradeShortAnswers, hasApiKey } from './ai.js';
 import { award, nextMastery, XP } from './gamification.js';
 import { prepareNextLesson } from './lessons.js';
+import { addLessonAction } from './today.js';
 import { el, clear, toast, loading, navigate } from './ui.js';
 
 // Flatten a lesson into quiz source material (full text, not a truncated body).
@@ -30,19 +31,25 @@ export async function renderQuiz(root, { id, focusConcepts = [] }) {
     return navigate('#/settings');
   }
 
-  loading(root, focusConcepts.length ? 'Building your retest…' : 'Building your quiz…');
   let quizData;
-  try {
-    quizData = await generateQuiz({
-      lessonTitle: lesson.title,
-      concepts: lesson.concepts,
-      content: lessonContent(lesson),
-      focusConcepts,
-    });
-  } catch (err) {
-    console.error(err);
-    toast(err.message || 'Quiz generation failed', 'error');
-    return navigate(`#/lesson/${lesson.id}`);
+  // Pre-authored quiz attached to the lesson: instant, no tokens. Retests
+  // still generate live so they can focus on missed concepts.
+  if (!focusConcepts.length && lesson.quiz?.questions?.length) {
+    quizData = lesson.quiz;
+  } else {
+    loading(root, focusConcepts.length ? 'Building your retest…' : 'Building your quiz…');
+    try {
+      quizData = await generateQuiz({
+        lessonTitle: lesson.title,
+        concepts: lesson.concepts,
+        content: lessonContent(lesson),
+        focusConcepts,
+      });
+    } catch (err) {
+      console.error(err);
+      toast(err.message || 'Quiz generation failed', 'error');
+      return navigate(`#/lesson/${lesson.id}`);
+    }
   }
 
   const questions = quizData.questions || [];
@@ -181,7 +188,10 @@ export async function renderQuiz(root, { id, focusConcepts = [] }) {
     await store.put('lessons', lesson);
 
     const bonus = score === 100 ? XP.quizPerfect : 0;
-    if (firstCompletion) await award('lessonCompleted');
+    if (firstCompletion) {
+      await award('lessonCompleted');
+      await addLessonAction(lesson); // "action for today" joins the Today list
+    }
     const { unlocked, leveledUp } = await award('quizCompleted', { xp: bonus });
 
     showResults(results, score, leveledUp, unlocked);

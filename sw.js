@@ -1,7 +1,7 @@
 // sw.js — cache-first shell for offline PWA use. Bump CACHE on shell changes.
 // Never caches api.anthropic.com or api.github.com (always network).
 
-const CACHE = 'dlos-shell-v10';
+const CACHE = 'dlos-shell-v11';
 const SHELL = [
   './',
   './index.html',
@@ -17,6 +17,7 @@ const SHELL = [
   './modules/gamification.js',
   './modules/saved.js',
   './modules/suggestedTopics.js',
+  './modules/today.js',
   './modules/ui.js',
 ];
 

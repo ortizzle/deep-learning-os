@@ -2,6 +2,7 @@
 // performance + weak areas as context, then streams-free turns to Claude.
 
 import * as store from './store.js';
+import { followThroughSummary } from './today.js';
 import { coachReply, hasApiKey } from './ai.js';
 import { award } from './gamification.js';
 import { el, clear, escapeHtml, toast, navigate } from './ui.js';
@@ -36,11 +37,14 @@ async function buildContextSummary() {
     .slice(0, 5)
     .map((h) => `"${h.text.length > 120 ? h.text.slice(0, 120) + '…' : h.text}"`);
 
+  const followThrough = await followThroughSummary();
+
   return [
     recentLessons.length ? `Recent lessons: ${recentLessons.join('; ')}.` : '',
     avgQuiz != null ? `Average quiz score: ${avgQuiz}%.` : '',
     weak.length ? `Weakest concepts: ${weak.join(', ')}.` : '',
     recentSaves.length ? `Passages he chose to highlight recently (strong signal of what resonates): ${recentSaves.join(' | ')}` : '',
+    followThrough, // hold him accountable to acting on lessons, not just reading
   ]
     .filter(Boolean)
     .join('\n');

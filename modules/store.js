@@ -3,7 +3,7 @@
 // runs fully local; sync is a transparent mirror on top.
 
 const DB_NAME = 'deep-learning-os';
-const DB_VERSION = 2; // v2: adds 'highlights'
+const DB_VERSION = 3; // v2: adds 'highlights'; v3: adds 'habits' + 'tasks'
 export const SCHEMA_VERSION = 1;
 
 // Object stores that hold user records. `profile` is a singleton (id: 'me').
@@ -14,6 +14,8 @@ export const STORES = [
   'concepts',
   'coachSessions',
   'highlights',
+  'habits',
+  'tasks',
   'profile',
 ];
 
@@ -218,6 +220,9 @@ export async function pushToGist() {
   const { gistId } = getSettings();
   emitSync('syncing');
   try {
+    // Merge remote first so a push can never clobber records this device
+    // hasn't seen (e.g. content seeded from another machine).
+    await pullFromGist();
     const snapshot = await exportSnapshot();
     await gistFetch(`/gists/${gistId}`, {
       method: 'PATCH',

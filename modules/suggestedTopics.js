@@ -59,4 +59,27 @@ export const SUGGESTED_TOPICS = [
       { name: 'Time & Energy Management for Directors', description: 'Protecting deep work while running a reactive, people-heavy org.' },
     ],
   },
+  {
+    category: 'Business Toolkit',
+    topics: [
+      { name: 'RACI & Ownership Clarity', description: 'Using RACI and similar models to kill ambiguity about who owns what — across support, billing, websites, and CS.' },
+      { name: 'Agile for Business Teams', description: 'Applying agile practically outside engineering: sprints, standups, retros, and kanban for operations teams.' },
+      { name: 'OKRs & Goal Setting', description: 'Setting objectives and key results that cascade cleanly from company goals to team commitments.' },
+    ],
+  },
+  {
+    category: 'Habits & Behavior',
+    topics: [
+      { name: 'Building Habits That Stick', description: 'Habit loops, cues, friction, and identity-based habits — engineering follow-through instead of relying on willpower.' },
+      { name: 'Behavioral Change for Leaders', description: 'Changing team behavior at scale: incentives, defaults, social proof, and making the right thing the easy thing.' },
+    ],
+  },
+  {
+    category: 'Company Tools',
+    topics: [
+      { name: 'Claude at Work', description: 'Getting real leverage from Claude: prompting for analysis, drafting, meeting prep, and building AI into daily workflows.' },
+      { name: 'Notion for Team Operations', description: 'Databases, dashboards, and SOPs in Notion — running team documentation and processes people actually use.' },
+      { name: 'Excel & Office Power Skills', description: 'The 20% of Excel, Outlook, and PowerPoint that does 80% of the work: pivot tables, lookups, and exec-ready decks.' },
+    ],
+  },
 ];

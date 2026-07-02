@@ -445,6 +445,58 @@ mark.kw {
 .result-model strong { font-weight: 600; }
 .retest-btn { border-color: var(--accent); color: var(--accent); font-weight: 600; }
 
+/* ---------- today / habits ---------- */
+.today-head { display: flex; align-items: center; justify-content: space-between; }
+.today-head h4 { margin-bottom: 6px; }
+.today-head .link { padding: 0; font-size: 12px; }
+.task-row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid var(--border);
+}
+.task-row:first-of-type { border-top: none; }
+.task-check {
+  flex-shrink: 0;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  border: 2px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--accent-text);
+  font-size: 14px; font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+.task-check:hover { border-color: var(--accent); }
+.task-row.done .task-check { background: var(--accent); border-color: var(--accent); }
+.task-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.task-name { font-size: 14px; font-weight: 500; line-height: 1.4; }
+.task-row.done .task-name { text-decoration: line-through; color: var(--text-3); }
+.task-row.skipped .task-name { color: var(--text-3); font-style: italic; }
+.task-carried { color: var(--warn); font-weight: 600; }
+.task-src { font-size: 11px; color: var(--text-3); }
+.task-skip {
+  flex-shrink: 0;
+  background: none; border: none;
+  color: var(--text-3);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px 6px;
+  opacity: 0.6;
+}
+.task-skip:hover, .task-skip.active { opacity: 1; color: var(--warn); }
+.chain { display: inline-flex; gap: 4px; }
+.dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--surface-2);
+}
+.dot.done { background: var(--accent); }
+.dot.skip { background: var(--border-strong); }
+.dot.today { border: 1.5px solid var(--accent); background: var(--surface); width: 7px; height: 7px; }
+.today-edit { border-top: 1px dashed var(--border-strong); margin-top: 10px; padding-top: 10px; }
+.today-edit-row { display: flex; align-items: center; justify-content: space-between; padding: 6px 0; font-size: 14px; }
+.today-edit-add { display: flex; gap: 8px; margin-top: 8px; }
+.today-edit-add .input { margin-bottom: 0; flex: 1; }
+
 /* ---------- highlights & saved ---------- */
 .hl {
   background: var(--accent-soft);
