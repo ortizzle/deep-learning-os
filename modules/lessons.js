@@ -3,6 +3,7 @@
 import * as store from './store.js';
 import { generateLesson, hasApiKey } from './ai.js';
 import { award } from './gamification.js';
+import { SUGGESTED_TOPICS } from './suggestedTopics.js';
 import { el, clear, paragraphs, toast, loading, navigate } from './ui.js';
 
 // Average mastery across a topic's concepts (0-100), for the progress bar.
@@ -36,12 +37,14 @@ export async function renderTopics(root) {
   );
 
   if (!topics.length) {
+    // Empty state: surface suggestions front and center as the first action.
     root.append(
-      el('div', { class: 'empty' }, [
+      el('div', { class: 'empty compact' }, [
         el('p', {}, 'No topics yet.'),
-        el('p', { class: 'muted' }, 'Create one to generate your first lesson.'),
+        el('p', { class: 'muted' }, 'Add a suggested topic below, or create your own.'),
       ])
     );
+    renderSuggestions(root, topics, { expanded: true });
     return;
   }
 
@@ -62,6 +65,63 @@ export async function renderTopics(root) {
     );
   }
   root.append(list);
+
+  // When topics exist, keep suggestions available but tucked away.
+  renderSuggestions(root, topics, { expanded: false });
+}
+
+// Curated one-tap suggestions. Dedupes against existing topics by name.
+function renderSuggestions(root, existingTopics, { expanded }) {
+  const existingNames = new Set(
+    existingTopics.map((t) => (t.name || '').trim().toLowerCase())
+  );
+
+  const body = el('div', { class: 'suggest-body' + (expanded ? '' : ' collapsed') });
+
+  const buildCard = (topic) => {
+    const already = existingNames.has(topic.name.trim().toLowerCase());
+    const card = el('button', {
+      class: 'suggest-card' + (already ? ' added' : ''),
+      disabled: already ? 'disabled' : null,
+      onclick: already ? null : async () => {
+        card.setAttribute('disabled', 'disabled');
+        await store.put('topics', {
+          name: topic.name,
+          description: topic.description,
+          lessonIds: [],
+        });
+        await award('topicCreated');
+        toast(`Added “${topic.name}”`, 'success');
+        renderTopics(root); // re-render so it flips to “Added” and joins the list
+      },
+    }, [
+      el('div', { class: 'suggest-main' }, [
+        el('span', { class: 'suggest-name' }, topic.name),
+        el('span', { class: 'suggest-desc' }, topic.description),
+      ]),
+      el('span', { class: 'suggest-add' }, already ? '✓ Added' : '+ Add'),
+    ]);
+    return card;
+  };
+
+  for (const group of SUGGESTED_TOPICS) {
+    body.append(el('h5', { class: 'suggest-cat' }, group.category));
+    const grid = el('div', { class: 'suggest-grid' });
+    group.topics.forEach((t) => grid.append(buildCard(t)));
+    body.append(grid);
+  }
+
+  const header = el('button', { class: 'suggest-toggle' }, [
+    el('span', {}, expanded ? 'Suggested topics' : 'Browse suggested topics'),
+    el('span', { class: 'suggest-chevron' }, expanded ? '▾' : '▸'),
+  ]);
+  header.addEventListener('click', () => {
+    body.classList.toggle('collapsed');
+    const open = !body.classList.contains('collapsed');
+    header.querySelector('.suggest-chevron').textContent = open ? '▾' : '▸';
+  });
+
+  root.append(el('section', { class: 'suggest' }, [header, body]));
 }
 
 function newTopicDialog(root) {
