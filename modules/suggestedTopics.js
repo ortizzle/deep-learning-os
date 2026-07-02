@@ -65,6 +65,13 @@ export const SUGGESTED_TOPICS = [
       { name: 'RACI & Ownership Clarity', description: 'Using RACI and similar models to kill ambiguity about who owns what — across support, billing, websites, and CS.' },
       { name: 'Agile for Business Teams', description: 'Applying agile practically outside engineering: sprints, standups, retros, and kanban for operations teams.' },
       { name: 'OKRs & Goal Setting', description: 'Setting objectives and key results that cascade cleanly from company goals to team commitments.' },
+      { name: 'KPI Design & Creation', description: 'Building KPIs from scratch: leading vs. lagging indicators, target setting, instrumentation, and avoiding metrics that distort behavior.' },
+    ],
+  },
+  {
+    category: 'Compliance',
+    topics: [
+      { name: 'CIPA & Communications Compliance', description: 'The California Invasion of Privacy Act and communications-recording law: consent, disclosures, and what they mean for AI calling, texting, chat, and website tracking.' },
     ],
   },
   {
@@ -77,6 +84,7 @@ export const SUGGESTED_TOPICS = [
   {
     category: 'Company Tools',
     topics: [
+      { name: 'Lofty AI Features Mastery', description: 'Deep working knowledge of Lofty\'s AI capabilities — AI assistant, autonomous lead engagement, AI calling and texting — to lead adoption, support, and compliance conversations.' },
       { name: 'Claude at Work', description: 'Getting real leverage from Claude: prompting for analysis, drafting, meeting prep, and building AI into daily workflows.' },
       { name: 'Notion for Team Operations', description: 'Databases, dashboards, and SOPs in Notion — running team documentation and processes people actually use.' },
       { name: 'Excel & Office Power Skills', description: 'The 20% of Excel, Outlook, and PowerPoint that does 80% of the work: pivot tables, lookups, and exec-ready decks.' },

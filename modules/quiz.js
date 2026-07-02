@@ -212,11 +212,17 @@ export async function renderQuiz(root, { id, focusConcepts = [] }) {
       const q = questions[i];
       const yourAnswer = q.type === 'mc' ? (q.options?.[answers[i]] ?? '—') : (answers[i] || '—');
       const rightAnswer = q.type === 'mc' ? q.options?.[q.correctIndex] : q.modelAnswer;
+      // Short answers get a partial tier: right elements deserve better than a red X.
+      const tier = q.type === 'mc'
+        ? (r.correct ? 'ok' : 'bad')
+        : r.score >= 80 ? 'ok' : r.score >= 40 ? 'partial' : 'bad';
+      const icon = tier === 'ok' ? '✓' : tier === 'partial' ? '◐' : '✕';
       list.append(
-        el('div', { class: 'result ' + (r.correct ? 'ok' : 'bad') }, [
+        el('div', { class: 'result ' + tier }, [
           el('div', { class: 'result-head' }, [
-            el('span', { class: 'result-icon' }, r.correct ? '✓' : '✕'),
+            el('span', { class: 'result-icon' }, icon),
             el('span', { class: 'result-q' }, q.question),
+            q.type === 'short' ? el('span', { class: 'result-score' }, `${r.score ?? 0}%`) : null,
           ]),
           el('p', { class: 'result-ans' }, [el('strong', {}, 'You: '), yourAnswer]),
           // Show the right answer when wrong; for short answers always show

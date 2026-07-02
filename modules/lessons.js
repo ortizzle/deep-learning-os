@@ -57,8 +57,24 @@ export async function renderTopics(root) {
 
   const list = el('div', { class: 'card-list' });
   const allLessons = await store.getAll('lessons');
-  for (const t of topics.sort((a, b) => (b.updatedAt || '').localeCompare(a.updatedAt || ''))) {
+  const readyCount = (t) =>
+    allLessons.filter((l) => l.topicId === t.id && !l.completedAt).length;
+
+  // Sort by what's actionable: ready-to-read lessons first, then planned
+  // topics (syllabus exists), then the rest by recency.
+  topics.sort((a, b) => {
+    const ra = readyCount(a);
+    const rb = readyCount(b);
+    if (ra !== rb) return rb - ra;
+    const sa = a.syllabus?.length ? 1 : 0;
+    const sb = b.syllabus?.length ? 1 : 0;
+    if (sa !== sb) return sb - sa;
+    return (b.updatedAt || '').localeCompare(a.updatedAt || '');
+  });
+
+  for (const t of topics) {
     const pct = await topicMastery(t.id);
+    const ready = readyCount(t);
     const done = allLessons.filter((l) => l.topicId === t.id && l.completedAt).length;
     const progress = t.syllabus?.length
       ? `${done} of ${t.syllabus.length} done`
@@ -70,6 +86,7 @@ export async function renderTopics(root) {
           t.description ? el('p', { class: 'muted' }, t.description) : null,
         ]),
         el('div', { class: 'card-meta' }, [
+          ready ? el('span', { class: 'pill pill-pos' }, `${ready} ready`) : null,
           el('span', { class: done ? 'pill pill-done' : 'pill' }, progress),
           pct != null ? masteryBar(pct) : null,
         ]),
@@ -552,11 +569,26 @@ export async function renderLesson(root, { id }) {
     );
   }
 
+  // Table of contents: tap a section to jump to it.
+  if (lesson.sections?.length > 1) {
+    article.append(
+      el('nav', { class: 'toc' }, [
+        el('h4', {}, 'In this lesson'),
+        el('ol', {}, lesson.sections.map((s, i) =>
+          el('li', {}, el('button', {
+            class: 'toc-link',
+            onclick: () => document.getElementById(`sec-${i}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' }),
+          }, s.heading))
+        )),
+      ])
+    );
+  }
+
   // Textbook sections (new lessons) or plain body (older lessons).
   if (lesson.sections?.length) {
     const bodyWrap = el('section', { class: 'lesson-body' });
     lesson.sections.forEach((s, i) => {
-      bodyWrap.append(el('h3', { class: 'lesson-subtitle' }, s.heading));
+      bodyWrap.append(el('h3', { class: 'lesson-subtitle', id: `sec-${i}` }, s.heading));
       paragraphs(s.text).forEach((p) => bodyWrap.append(p));
       // Drop the pause-and-think box roughly mid-lesson.
       if (lesson.pauseAndThink && i === Math.floor((lesson.sections.length - 1) / 2)) {

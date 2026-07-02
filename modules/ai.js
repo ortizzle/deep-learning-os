@@ -191,10 +191,19 @@ Return JSON:
 }
 
 // Grade a batch of short-answer responses. Returns [{ correct, score, feedback }].
+// Generous partial credit: correct elements earn points even in imperfect answers.
 export async function gradeShortAnswers(items) {
   if (!items.length) return [];
-  const system = `You are a fair grader. Respond with JSON only — no markdown, no fences.`;
-  const prompt = `Grade these short-answer responses. For each, give a score 0-100, whether it counts as correct (>=60), and one sentence of constructive feedback.
+  const system = `You are a fair, generous grader who rewards partial understanding. Respond with JSON only — no markdown, no fences.`;
+  const prompt = `Grade these short-answer responses against their model answers.
+
+Rubric:
+- Break each model answer into its key elements. Award proportional credit for every element the answer captures, in ANY wording — synonyms and plain language count fully.
+- Reward correct reasoning explicitly. Never require the model answer's phrasing, completeness, or polish.
+- Do not punish brevity when the core idea is right.
+- Scale: 100 = essentially all key elements; 80 = solid grasp, minor gaps; 60 = right core idea, real gaps; 40 = some correct elements present; 20 = mostly off; 0 = nothing correct.
+- "correct" is true when score >= 60.
+- Feedback (1-2 sentences): FIRST name what was right, THEN the single most important missing element.
 
 ${JSON.stringify(items, null, 2)}
 
