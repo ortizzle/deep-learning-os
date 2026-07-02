@@ -304,6 +304,15 @@ h4 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: 
 .lesson-block ul { margin: 0; padding-left: 20px; }
 .lesson-block li { margin: 6px 0; }
 .lesson-body p { line-height: 1.7; font-size: 16px; margin: 0 0 14px; color: var(--text); }
+mark.kw {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+  padding: 1px 5px;
+  border-radius: 5px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
 .closers { display: flex; flex-direction: column; gap: 10px; }
 .closer {
   background: var(--surface);

@@ -37,13 +37,27 @@ export function escapeHtml(s = '') {
     .replace(/"/g, '&quot;');
 }
 
-// Turn plain-text paragraphs into <p> elements (lessons return fence-free text).
+// Render text with **key term** markers as highlighted spans. Escapes HTML
+// first, so the only markup that can reach innerHTML is ours.
+export function richText(text = '') {
+  return escapeHtml(text).replace(
+    /\*\*([^*\n]+)\*\*/g,
+    '<mark class="kw">$1</mark>'
+  );
+}
+
+// Element whose content is rich text (highlights rendered).
+export function rich(tag, attrs, text) {
+  return el(tag, { ...attrs, html: richText(text) });
+}
+
+// Turn plain-text paragraphs into <p> elements, rendering key-term highlights.
 export function paragraphs(text = '') {
   return text
     .split(/\n{2,}/)
     .map((p) => p.trim())
     .filter(Boolean)
-    .map((p) => el('p', {}, p));
+    .map((p) => rich('p', {}, p));
 }
 
 // Lightweight non-blocking toast.

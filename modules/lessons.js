@@ -4,7 +4,7 @@ import * as store from './store.js';
 import { generateLesson, hasApiKey } from './ai.js';
 import { award } from './gamification.js';
 import { SUGGESTED_TOPICS } from './suggestedTopics.js';
-import { el, clear, paragraphs, toast, loading, navigate } from './ui.js';
+import { el, clear, paragraphs, rich, toast, loading, navigate } from './ui.js';
 
 // Average mastery across a topic's concepts (0-100), for the progress bar.
 async function topicMastery(topicId) {
@@ -275,12 +275,12 @@ export async function renderLesson(root, { id }) {
   article.append(el('section', { class: 'lesson-body' }, paragraphs(lesson.body)));
 
   const closer = (label, value, cls = '') =>
-    value ? el('div', { class: `closer ${cls}` }, [el('span', { class: 'closer-label' }, label), el('p', {}, value)]) : null;
+    value ? el('div', { class: `closer ${cls}` }, [el('span', { class: 'closer-label' }, label), rich('p', {}, value)]) : null;
 
   article.append(
     el('section', { class: 'lesson-block' }, [
       el('h4', {}, 'Key insights'),
-      el('ul', {}, (lesson.insights || []).map((i) => el('li', {}, i))),
+      el('ul', {}, (lesson.insights || []).map((i) => rich('li', {}, i))),
     ]),
     el('div', { class: 'closers' }, [
       closer('Do this today', lesson.action, 'closer-action'),

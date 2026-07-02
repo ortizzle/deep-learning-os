@@ -112,13 +112,15 @@ Return JSON with exactly this shape:
   "title": "short lesson title",
   "objectives": ["2-4 learning objectives"],
   "concepts": ["3-6 key concept names, each a short noun phrase"],
-  "body": "the main teaching content as 3-6 short paragraphs of markdown-free plain text",
+  "body": "the main teaching content as 3-6 short paragraphs of plain text",
   "insights": ["exactly 3 key insights"],
   "action": "one concrete action Chris can take today",
   "leadershipTakeaway": "one leadership takeaway",
   "productivityTip": "one productivity improvement",
   "discussionQ": "one thought-provoking discussion question"
-}`;
+}
+
+In "body", "insights", "action", "leadershipTakeaway", and "productivityTip", wrap the most important key terms and phrases in double asterisks like **this** — the app renders them as highlights. Highlight sparingly: 1-3 terms per paragraph or item, only genuinely load-bearing vocabulary (named concepts, metrics, techniques). No other markdown.`;
   return generateJSON({ system, prompt, maxTokens: 2500 });
 }
 
