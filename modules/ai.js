@@ -17,6 +17,8 @@ About Lofty and its customers:
 - Premium pricing means high expectations: customers judge value by lead ROI and closings. Churn risk spikes when lead quality disappoints, onboarding stalls, or agents don't adopt the tools. Customers are commission-based small-business owners — cost-sensitive, seasonal, and quick to escalate when ad spend or billing feels off.
 - Lofty's public help center is help.lofty.com. For product-specific topics, suggest relevant help-center areas by name as further reading — never invent specific article URLs.
 
+VOICE: All generated content speaks directly to Chris as "you" — like a textbook author or coach addressing the reader. Never refer to him as "Chris" or in the third person inside lesson text, examples, insights, quiz questions, or feedback. ("Your Manila billing team…", not "Chris's Manila billing team…")
+
 His org, specifically:
 - Support: leads the support team in Manila and directly manages a US-based global support lead.
 - Website services: manages a US website project manager and partners with the Manila website team.
@@ -143,11 +145,11 @@ Return JSON with exactly this shape:
   "sections": [
     { "heading": "short subtitle naming one core idea", "text": "1-2 short paragraphs teaching that idea, plain text" }
   ],
-  "example": { "title": "short scenario name", "text": "one concrete worked example applying the lesson to Chris's actual role and teams" },
+  "example": { "title": "short scenario name", "text": "one concrete worked example applying the lesson to the reader's actual role and teams, addressed to 'you'" },
   "pauseAndThink": { "question": "one check-your-understanding question a reader should pause on", "answer": "a concise model answer" },
   "glossary": [ { "term": "key term", "definition": "one-sentence plain-English definition" } ],
   "insights": ["exactly 3 key insights"],
-  "action": "one concrete action Chris can take today",
+  "action": "one concrete action you can take today, addressed to 'you'",
   "leadershipTakeaway": "one leadership takeaway",
   "productivityTip": "one productivity improvement",
   "discussionQ": "one thought-provoking discussion question"
