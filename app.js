@@ -19,6 +19,23 @@ import { el, clear, toast, navigate } from './modules/ui.js';
 
 const view = document.getElementById('view');
 
+// ---------- theme ----------
+
+const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+// Resolve the Auto/Light/Dark setting to a concrete theme on <html>.
+function applyTheme() {
+  const pref = getSettings().theme || 'auto';
+  const dark = pref === 'dark' || (pref === 'auto' && darkQuery.matches);
+  document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.setAttribute('content', dark ? '#0f1513' : '#f7f9f8');
+}
+
+darkQuery.addEventListener('change', () => {
+  if ((getSettings().theme || 'auto') === 'auto') applyTheme();
+});
+
 // Route table: hash pattern → handler. `:param` captured positionally.
 const routes = [
   { re: /^#\/dashboard$/, tab: 'dashboard', fn: () => renderDashboard(view) },
@@ -63,8 +80,29 @@ function renderSettings(root) {
   const status = el('span', { class: 'sync-dot ' + (syncConfigured() ? 'on' : 'off') });
   const statusText = el('span', { class: 'muted' }, syncConfigured() ? 'Sync configured' : 'Local-only (no sync)');
 
+  const themePref = s.theme || 'auto';
+  const themeBtn = (value, label) =>
+    el('button', {
+      class: 'btn seg-btn' + (themePref === value ? ' active' : ''),
+      onclick: () => {
+        saveSettings({ theme: value });
+        applyTheme();
+        renderSettings(root);
+      },
+    }, label);
+
   root.append(
     el('header', { class: 'view-head' }, [el('h1', {}, 'Settings')]),
+
+    el('section', { class: 'panel' }, [
+      el('h4', {}, 'Appearance'),
+      el('div', { class: 'seg' }, [
+        themeBtn('auto', 'Auto'),
+        themeBtn('light', 'Light'),
+        themeBtn('dark', 'Dark'),
+      ]),
+      el('p', { class: 'muted small' }, 'Auto follows your device\'s light/dark setting.'),
+    ]),
 
     el('section', { class: 'panel' }, [
       el('h4', {}, 'Claude API'),
@@ -121,6 +159,8 @@ function renderSettings(root) {
 // ---------- boot ----------
 
 async function boot() {
+  applyTheme();
+
   // Reflect sync status in the header dot.
   onSyncStatus((st) => {
     const dot = document.getElementById('header-sync');
