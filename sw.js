@@ -2,7 +2,7 @@
 // current code (prevents stale-code-vs-upgraded-DB crashes); offline still
 // works from the last cached shell. Never touches api.* traffic.
 
-const CACHE = 'dlos-shell-v13';
+const CACHE = 'dlos-shell-v14';
 const SHELL = [
   './',
   './index.html',
@@ -45,8 +45,10 @@ self.addEventListener('fetch', (e) => {
   if (e.request.method !== 'GET') return;
 
   // Network-first: fresh code whenever online, cached shell when offline.
+  // cache:'no-cache' forces ETag revalidation past GitHub Pages' max-age=600,
+  // so updates land immediately instead of up to 10 minutes late.
   e.respondWith(
-    fetch(e.request)
+    fetch(e.request, { cache: 'no-cache' })
       .then((res) => {
         if (res.ok && url.origin === self.location.origin) {
           const copy = res.clone();
