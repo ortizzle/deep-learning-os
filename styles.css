@@ -404,6 +404,7 @@ mark.kw {
 .option {
   text-align: left;
   background: var(--surface);
+  color: var(--text); /* buttons don't inherit color — vital in dark mode */
   border: 1.5px solid var(--border-strong);
   border-radius: var(--radius-sm);
   padding: 14px 16px;
