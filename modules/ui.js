@@ -86,3 +86,28 @@ export function loading(root, label = 'Working…') {
 export function navigate(hash) {
   location.hash = hash;
 }
+
+// Share text via the native share sheet (Android/Chrome), falling back to
+// the clipboard on platforms without navigator.share.
+export async function shareText({ title, text }) {
+  if (navigator.share) {
+    try {
+      await navigator.share({ title, text });
+      return true;
+    } catch (err) {
+      if (err?.name === 'AbortError') return false; // user closed the sheet
+    }
+  }
+  try {
+    await navigator.clipboard.writeText(text);
+    toast('Copied to clipboard', 'success');
+    return true;
+  } catch {
+    toast('Could not share on this device', 'error');
+    return false;
+  }
+}
+
+// Small inline share glyph (arrow leaving a box), tinted via currentColor.
+export const SHARE_ICON =
+  '<svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round"><path d="M12 14V4"/><path d="M8.5 7.5 12 4l3.5 3.5"/><path d="M6 11v8h12v-8"/></svg>';

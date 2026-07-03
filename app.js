@@ -25,11 +25,15 @@ const view = document.getElementById('view');
 
 const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
-// Resolve the Auto/Light/Dark setting to a concrete theme on <html>.
+export const ACCENTS = ['blue', 'teal', 'indigo', 'plum', 'amber'];
+
+// Resolve the Auto/Light/Dark setting + accent to attributes on <html>.
 function applyTheme() {
-  const pref = getSettings().theme || 'auto';
+  const s = getSettings();
+  const pref = s.theme || 'auto';
   const dark = pref === 'dark' || (pref === 'auto' && darkQuery.matches);
   document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+  document.documentElement.dataset.accent = ACCENTS.includes(s.accent) ? s.accent : 'blue';
   const meta = document.querySelector('meta[name="theme-color"]');
   if (meta) meta.setAttribute('content', dark ? '#0f1513' : '#f7f9f8');
 }
@@ -105,7 +109,19 @@ function renderSettings(root) {
         themeBtn('light', 'Light'),
         themeBtn('dark', 'Dark'),
       ]),
-      el('p', { class: 'muted small' }, 'Auto follows your device\'s light/dark setting.'),
+      el('label', { class: 'field-label' }, 'Accent color'),
+      el('div', { class: 'accent-row' }, ACCENTS.map((a) =>
+        el('button', {
+          class: 'accent-dot accent-' + a + ((s.accent || 'blue') === a ? ' active' : ''),
+          title: a,
+          onclick: () => {
+            saveSettings({ accent: a });
+            applyTheme();
+            renderSettings(root);
+          },
+        })
+      )),
+      el('p', { class: 'muted small' }, 'Auto follows your device\'s light/dark setting. Accent recolors the whole app.'),
     ]),
 
     el('section', { class: 'panel' }, [

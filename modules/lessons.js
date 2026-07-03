@@ -4,7 +4,12 @@ import * as store from './store.js';
 import { generateLesson, generateSyllabus, hasApiKey } from './ai.js';
 import { touchActivity } from './gamification.js';
 import { SUGGESTED_TOPICS } from './suggestedTopics.js';
-import { el, clear, paragraphs, rich, toast, loading, navigate } from './ui.js';
+import { el, clear, paragraphs, rich, toast, loading, navigate, shareText, SHARE_ICON } from './ui.js';
+
+// Formatted share text for a passage from a lesson.
+function passageShare(text, lessonTitle) {
+  return `“${text}”\n\n— ${lessonTitle} · Ortiz Learning OS`;
+}
 
 // Where a lesson sits in its topic's curriculum: { index, total } or null.
 export function syllabusPosition(topic, lessonId) {
@@ -465,8 +470,18 @@ function markSavedBlocks(article, lesson, highlights) {
         toast('Saved for later', 'success');
       }
     });
+    const shareBtn = el('button', {
+      class: 'share-mark',
+      title: 'Share this passage',
+      html: SHARE_ICON,
+    });
+    shareBtn.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      await shareText({ title: lesson.title, text: passageShare(text, lesson.title) });
+    });
+
     block.classList.add('saveable');
-    block.append(btn);
+    block.append(btn, shareBtn);
   }
 }
 
@@ -568,6 +583,17 @@ export async function renderLesson(root, { id }) {
       el('div', { class: 'lesson-meta' }, [
         pos ? el('span', { class: 'pill pill-pos' }, `Lesson ${pos.index} of ${pos.total}`) : null,
         el('span', { class: 'pill' }, `~${readMins} min read`),
+        el('button', {
+          class: 'pill share-pill',
+          html: SHARE_ICON + ' Share',
+          onclick: () => {
+            const insights = (lesson.insights || []).map((i) => `• ${i.replace(/\*\*/g, '')}`).join('\n');
+            shareText({
+              title: lesson.title,
+              text: `${lesson.title}\n\nKey insights:\n${insights}\n\n— Ortiz Learning OS`,
+            });
+          },
+        }),
       ]),
     ])
   );

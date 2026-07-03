@@ -2,7 +2,7 @@
    theme is a matter of overriding these under [data-theme="dark"] later. */
 
 :root {
-  /* palette — "crisp studio": cool neutrals, teal energy */
+  /* palette — cool neutrals; accent is user-selectable (blue default) */
   --bg: #f7f9f8;
   --surface: #ffffff;
   --surface-2: #edf2f0;
@@ -11,8 +11,8 @@
   --text: #1c2622;
   --text-2: #5f6e68;
   --text-3: #93a29b;
-  --accent: #17936c;
-  --accent-soft: #e1f5ee;
+  --accent: #1f6fbd;
+  --accent-soft: #e6f1fb;
   --accent-text: #ffffff;
   --good: #0f8a5f;
   --good-soft: #e1f5ee;
@@ -46,9 +46,9 @@
   --text: #e9f0ec;
   --text-2: #9fb2a9;
   --text-3: #67796f;
-  --accent: #2fbe8f;
-  --accent-soft: #14372b;
-  --accent-text: #05281d;
+  --accent: #5aa4e8;
+  --accent-soft: #14304d;
+  --accent-text: #062138;
   --good: #37d19c;
   --good-soft: #123529;
   --bad: #f07a70;
@@ -57,6 +57,17 @@
   --shadow-sm: none;
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.35);
 }
+
+/* Accent variants — set via data-accent on <html> (Settings → Appearance).
+   Blue is the default above; each variant defines light + dark trios. */
+[data-accent='teal'] { --accent: #17936c; --accent-soft: #e1f5ee; --accent-text: #ffffff; }
+[data-theme='dark'][data-accent='teal'] { --accent: #2fbe8f; --accent-soft: #14372b; --accent-text: #05281d; }
+[data-accent='indigo'] { --accent: #534AB7; --accent-soft: #EEEDFE; --accent-text: #ffffff; }
+[data-theme='dark'][data-accent='indigo'] { --accent: #7F77DD; --accent-soft: #2a2560; --accent-text: #14103a; }
+[data-accent='plum'] { --accent: #993556; --accent-soft: #FBEAF0; --accent-text: #ffffff; }
+[data-theme='dark'][data-accent='plum'] { --accent: #D4537E; --accent-soft: #4B1528; --accent-text: #2b0c17; }
+[data-accent='amber'] { --accent: #854F0B; --accent-soft: #FAEEDA; --accent-text: #ffffff; }
+[data-theme='dark'][data-accent='amber'] { --accent: #EF9F27; --accent-soft: #412402; --accent-text: #241400; }
 
 * { box-sizing: border-box; }
 
@@ -96,6 +107,25 @@ body { overscroll-behavior-y: none; }
   font-weight: 700;
   font-size: 15px;
   letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.wordmark-bulb {
+  width: 19px; height: 19px;
+  stroke: var(--accent);
+  fill: none;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.tab-icon svg {
+  width: 22px; height: 22px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 .header-sync {
   width: 8px; height: 8px; border-radius: 50%;
@@ -262,6 +292,7 @@ h4 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: 
 .level-bar .bar { width: 100%; height: 8px; }
 .level-bar-label { font-size: 11px; margin-top: 6px; }
 
+.greeting { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; margin: 4px 0 14px; }
 .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px; }
 .stat {
   background: var(--surface);
@@ -606,7 +637,43 @@ mark.kw {
 }
 .save-mark:hover { opacity: 1; }
 .save-mark.saved { color: var(--accent); opacity: 1; }
-li.saveable { padding-right: 26px; }
+.share-mark {
+  position: absolute;
+  top: 7px;
+  right: 30px;
+  background: none;
+  border: none;
+  color: var(--text-3);
+  line-height: 1;
+  padding: 4px;
+  cursor: pointer;
+  opacity: 0.55;
+  transition: opacity 0.15s, color 0.15s;
+}
+.share-mark:hover { opacity: 1; color: var(--accent); }
+li.saveable { padding-right: 52px; }
+.share-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: none;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+.saved-actions { display: flex; align-items: center; gap: 2px; }
+.saved-share {
+  background: none;
+  border: none;
+  color: var(--text-3);
+  cursor: pointer;
+  padding: 4px 6px;
+  line-height: 1;
+}
+.saved-share:hover { color: var(--accent); }
 
 .saved-item { border-top: 1px solid var(--border); padding: 12px 0; }
 .saved-item:first-of-type { border-top: none; padding-top: 4px; }
@@ -702,6 +769,22 @@ textarea.input { resize: vertical; line-height: 1.5; }
 .field-label { display: block; font-size: 13px; font-weight: 500; color: var(--text-2); margin-bottom: 6px; }
 
 .settings-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.accent-row { display: flex; gap: 10px; margin-bottom: 10px; }
+.accent-dot {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.15s;
+}
+.accent-dot:hover { transform: scale(1.08); }
+.accent-dot.active { box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--text); }
+.accent-blue { background: #1f6fbd; }
+.accent-teal { background: #17936c; }
+.accent-indigo { background: #534AB7; }
+.accent-plum { background: #993556; }
+.accent-amber { background: #b7791f; }
+
 .seg { display: flex; gap: 6px; margin-bottom: 10px; }
 .seg-btn { flex: 1; }
 .seg-btn.active {

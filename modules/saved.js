@@ -2,7 +2,7 @@
 // linking back to its lesson.
 
 import * as store from './store.js';
-import { el, clear, toast, navigate } from './ui.js';
+import { el, clear, toast, navigate, shareText, SHARE_ICON } from './ui.js';
 
 export async function renderSaved(root) {
   clear(root);
@@ -54,15 +54,26 @@ export async function renderSaved(root) {
               lesson
                 ? el('button', { class: 'link saved-src', onclick: () => navigate(`#/lesson/${lesson.id}`) }, lesson.title)
                 : el('span', { class: 'muted' }, 'Lesson removed'),
-              el('button', {
-                class: 'saved-del',
-                title: 'Remove',
-                onclick: async (e) => {
-                  await store.remove('highlights', h.id);
-                  toast('Removed');
-                  renderSaved(root);
-                },
-              }, '✕'),
+              el('div', { class: 'saved-actions' }, [
+                el('button', {
+                  class: 'saved-share',
+                  title: 'Share',
+                  html: SHARE_ICON,
+                  onclick: () => shareText({
+                    title: lesson?.title || 'Ortiz Learning OS',
+                    text: `“${h.text}”\n\n— ${lesson?.title || 'a lesson'} · Ortiz Learning OS`,
+                  }),
+                }),
+                el('button', {
+                  class: 'saved-del',
+                  title: 'Remove',
+                  onclick: async (e) => {
+                    await store.remove('highlights', h.id);
+                    toast('Removed');
+                    renderSaved(root);
+                  },
+                }, '✕'),
+              ]),
             ]),
           ])
         );

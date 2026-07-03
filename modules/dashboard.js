@@ -75,6 +75,13 @@ export async function renderDashboard(root) {
   const completed = lessons.filter((l) => l.completedAt).length;
   const mastered = masteredTopicCount(topics, concepts);
 
+  // Personal greeting, on Arizona time.
+  const hour = parseInt(new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/Phoenix', hour: 'numeric', hourCycle: 'h23',
+  }).format(new Date()), 10);
+  const greet = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
+  root.append(el('h2', { class: 'greeting' }, `${greet}, Chris`));
+
   // The three signals that matter: consistency, volume, depth.
   root.append(
     el('div', { class: 'stat-row' }, [

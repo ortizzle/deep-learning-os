@@ -1,7 +1,7 @@
 {
-  "name": "Deep Learning OS",
-  "short_name": "Learning OS",
-  "description": "A personal AI-powered learning platform.",
+  "name": "Ortiz Learning OS",
+  "short_name": "Ortiz OS",
+  "description": "Chris Ortiz's personal AI-powered learning system.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
