@@ -539,20 +539,31 @@ mark.kw {
   border-radius: var(--radius-sm);
   box-shadow: 0 0 0 6px var(--accent-soft);
 }
-.hl-popover {
-  position: absolute;
-  z-index: 60;
-  background: var(--text);
-  color: var(--bg);
+.hl-bar {
+  position: fixed;
+  left: 0; right: 0;
+  bottom: calc(var(--tabbar-h) + var(--safe-bottom) + 12px);
+  z-index: 55;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  animation: fade 0.15s ease;
+}
+.hl-bar-btn {
+  pointer-events: auto;
+  background: var(--accent);
+  color: var(--accent-text);
   font: inherit;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   border: none;
   border-radius: 999px;
-  padding: 8px 14px;
+  padding: 12px 22px;
   cursor: pointer;
   box-shadow: var(--shadow-md);
 }
+.hl-bar-btn:active { transform: scale(0.97); }
+.hl { cursor: pointer; }
 .saveable { position: relative; }
 .save-mark {
   position: absolute;
@@ -614,7 +625,8 @@ button.plan-row:hover .plan-title { color: var(--accent); }
   background: var(--surface-2); color: var(--text-2);
 }
 .plan-row.done .plan-num { background: var(--good-soft); color: var(--good); }
-.plan-row.ready .plan-num { background: var(--accent-soft); color: var(--accent); }
+.plan-row.ready .plan-num,
+.plan-row.started .plan-num { background: var(--accent-soft); color: var(--accent); }
 .plan-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
 .plan-title { font-size: 14px; font-weight: 600; }
 .plan-row.upcoming .plan-title { color: var(--text-2); font-weight: 500; }

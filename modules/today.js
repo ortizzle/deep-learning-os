@@ -6,7 +6,10 @@ import * as store from './store.js';
 import { award } from './gamification.js';
 import { el, toast } from './ui.js';
 
-const dayStr = (d = new Date()) => d.toISOString().slice(0, 10);
+// Local-time day string — the user's day, not UTC's (which would roll the
+// Today list and chains over mid-afternoon in the US).
+const dayStr = (d = new Date()) =>
+  `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 
 // Seed default habits exactly once.
 async function ensureDefaultHabits() {

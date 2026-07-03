@@ -203,7 +203,7 @@ export async function renderTopic(root, { id }) {
     const plan = el('section', { class: 'plan panel' }, [el('h4', {}, 'Course plan')]);
     topic.syllabus.forEach((e, i) => {
       const lesson = e.lessonId ? byId[e.lessonId] : null;
-      const state = lesson?.completedAt ? 'done' : lesson ? 'ready' : 'upcoming';
+      const state = lesson?.completedAt ? 'done' : lesson?.startedAt ? 'started' : lesson ? 'ready' : 'upcoming';
       const row = el(lesson ? 'button' : 'div', {
         class: `plan-row ${state}`,
         onclick: lesson ? () => navigate(`#/lesson/${lesson.id}`) : null,
@@ -213,8 +213,8 @@ export async function renderTopic(root, { id }) {
           el('span', { class: 'plan-title' }, e.title),
           e.focus ? el('span', { class: 'plan-focus' }, e.focus) : null,
         ]),
-        el('span', { class: `pill ${state === 'done' ? 'pill-done' : ''}` },
-          state === 'done' ? 'Done' : state === 'ready' ? 'Read' : 'Planned'),
+        el('span', { class: `pill ${state === 'done' ? 'pill-done' : state === 'started' ? 'pill-pos' : ''}` },
+          state === 'done' ? 'Done' : state === 'started' ? 'Continue' : state === 'ready' ? 'Read' : 'Planned'),
       ]);
       plan.append(row);
     });
@@ -236,7 +236,8 @@ export async function renderTopic(root, { id }) {
           el('h3', {}, l.title),
           el('p', { class: 'muted' }, (l.objectives || []).slice(0, 1).join('')),
         ]),
-        el('span', { class: l.completedAt ? 'pill pill-done' : 'pill' }, l.completedAt ? 'Completed' : 'New'),
+        el('span', { class: l.completedAt ? 'pill pill-done' : l.startedAt ? 'pill pill-pos' : 'pill' },
+          l.completedAt ? 'Completed' : l.startedAt ? 'Started' : 'New'),
       ])
     );
   }
@@ -409,6 +410,13 @@ function applyHighlights(article, highlights) {
       range.setEnd(node, i + h.text.length);
       const span = document.createElement('span');
       span.className = 'hl';
+      span.title = 'Tap to remove highlight';
+      span.addEventListener('click', async () => {
+        if (!confirm('Remove this highlight?')) return;
+        await store.remove('highlights', h.id);
+        span.replaceWith(...span.childNodes);
+        toast('Highlight removed');
+      });
       range.surroundContents(span);
       done = true;
     }
@@ -462,46 +470,46 @@ function markSavedBlocks(article, lesson, highlights) {
   }
 }
 
-// Floating "Highlight" button that follows text selection inside the article.
+// Bottom "Highlight" action bar shown while text is selected in the article.
+// Bottom placement keeps it clear of the browser's native selection menu,
+// which owns the space next to the selected text (especially on Android).
 function setupSelectionCapture(article, lesson) {
-  let btn = null;
-  const removeBtn = () => { btn?.remove(); btn = null; };
+  let bar = null;
+  const removeBar = () => { bar?.remove(); bar = null; };
 
   const onSelection = () => {
     const sel = document.getSelection();
     const text = sel ? sel.toString().trim() : '';
     if (!text || text.length < 3 || sel.isCollapsed ||
         !article.contains(sel.anchorNode) || !article.contains(sel.focusNode)) {
-      removeBtn();
+      removeBar();
       return;
     }
-    if (!btn) {
-      btn = el('button', { class: 'hl-popover' }, '🖍 Highlight');
-      btn.addEventListener('click', async () => {
-        const quote = document.getSelection()?.toString().trim();
-        if (quote) {
-          const h = await store.put('highlights', {
-            lessonId: lesson.id,
-            topicId: lesson.topicId,
-            text: quote,
-            source: 'selection',
-          });
-          applyHighlights(article, [h]);
-          toast('Highlighted', 'success');
-        }
-        document.getSelection()?.removeAllRanges();
-        removeBtn();
-      });
-      document.body.append(btn);
-    }
-    const rect = sel.getRangeAt(0).getBoundingClientRect();
-    btn.style.top = `${rect.top + window.scrollY - 46}px`;
-    btn.style.left = `${Math.max(8, rect.left + window.scrollX + rect.width / 2 - 56)}px`;
+    if (bar) return;
+    bar = el('div', { class: 'hl-bar' }, [
+      el('button', { class: 'hl-bar-btn' }, '🖍 Highlight selection'),
+    ]);
+    bar.firstChild.addEventListener('click', async () => {
+      const quote = document.getSelection()?.toString().trim();
+      if (quote) {
+        const h = await store.put('highlights', {
+          lessonId: lesson.id,
+          topicId: lesson.topicId,
+          text: quote,
+          source: 'selection',
+        });
+        applyHighlights(article, [h]);
+        toast('Highlighted', 'success');
+      }
+      document.getSelection()?.removeAllRanges();
+      removeBar();
+    });
+    document.body.append(bar);
   };
 
   document.addEventListener('selectionchange', onSelection);
   window.addEventListener('hashchange', () => {
-    removeBtn();
+    removeBar();
     document.removeEventListener('selectionchange', onSelection);
   }, { once: true });
 }
@@ -541,6 +549,12 @@ export async function renderLesson(root, { id }) {
   }
 
   readStart = Date.now();
+
+  // Mark the lesson as started (the "book taken off the shelf" signal).
+  if (!lesson.completedAt && !lesson.startedAt) {
+    lesson.startedAt = store.now();
+    await store.put('lessons', lesson);
+  }
 
   const topic = await store.get('topics', lesson.topicId);
   const pos = syllabusPosition(topic, lesson.id);

@@ -48,8 +48,9 @@ export const ACHIEVEMENTS = [
   { id: 'actions-30', name: 'Action Taker', desc: 'Completed 30 lesson actions.' },
 ];
 
+// Local-time day string (streaks follow the user's clock, not UTC).
 function dayString(d = new Date()) {
-  return d.toISOString().slice(0, 10);
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 }
 
 // Update streak based on lastActiveDate vs today. Returns mutated profile.

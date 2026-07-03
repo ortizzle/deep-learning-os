@@ -40,7 +40,8 @@ async function recommendation() {
     store.getAll('lessons'),
     store.getAll('topics'),
   ]);
-  const pending = lessons.filter((l) => !l.completedAt);
+  // Only recommend fresh starts — started lessons live on the Continue shelf.
+  const pending = lessons.filter((l) => !l.completedAt && !l.startedAt);
   if (!pending.length) return { lesson: null };
 
   const topicById = Object.fromEntries(topics.map((t) => [t.id, t]));
@@ -109,9 +110,34 @@ export async function renderDashboard(root) {
     ])
   );
 
-  // Recommendation.
+  // Continue reading: started-but-unfinished lessons, like books off the shelf.
+  const allTopics = await store.getAll('topics');
+  const topicById = Object.fromEntries(allTopics.map((t) => [t.id, t]));
+  const started = lessons
+    .filter((l) => l.startedAt && !l.completedAt)
+    .sort((a, b) => (b.startedAt || '').localeCompare(a.startedAt || ''));
+  if (started.length) {
+    root.append(
+      el('section', { class: 'panel' }, [
+        el('h4', {}, 'Continue reading'),
+        ...started.slice(0, 3).map((l) => {
+          const t = topicById[l.topicId];
+          const pos = syllabusPosition(t, l.id);
+          return el('button', { class: 'card', onclick: () => navigate(`#/lesson/${l.id}`) }, [
+            el('div', { class: 'card-main' }, [
+              el('h3', {}, l.title),
+              el('p', { class: 'muted' }, pos ? `Lesson ${pos.index} of ${pos.total} · ${t?.name || ''}` : t?.name || ''),
+            ]),
+            el('span', { class: 'pill pill-pos' }, 'Resume'),
+          ]);
+        }),
+      ])
+    );
+  }
+
+  // Recommendation (fresh starts only; hidden if the shelf covers it).
   const rec = await recommendation();
-  root.append(
+  if (rec.lesson || !started.length) root.append(
     el('section', { class: 'panel' }, [
       el('h4', {}, 'Recommended next'),
       rec.lesson

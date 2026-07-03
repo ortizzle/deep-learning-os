@@ -75,6 +75,12 @@ export const SUGGESTED_TOPICS = [
     ],
   },
   {
+    category: 'Real Estate Domain',
+    topics: [
+      { name: 'MLS & IDX Fundamentals', description: 'How MLSs actually work: listing data, IDX feeds, RESO standards, display compliance rules, and why they shape everything from website SEO to support tickets.' },
+    ],
+  },
+  {
     category: 'Habits & Behavior',
     topics: [
       { name: 'Building Habits That Stick', description: 'Habit loops, cues, friction, and identity-based habits — engineering follow-through instead of relying on willpower.' },
