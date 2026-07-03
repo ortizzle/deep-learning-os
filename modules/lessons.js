@@ -3,6 +3,7 @@
 import * as store from './store.js';
 import { generateLesson, generateSyllabus, hasApiKey } from './ai.js';
 import { touchActivity } from './gamification.js';
+import { addManualTask, addHabitFromText } from './today.js';
 import { SUGGESTED_TOPICS } from './suggestedTopics.js';
 import { el, clear, paragraphs, rich, toast, loading, navigate, shareText, SHARE_ICON } from './ui.js';
 
@@ -77,11 +78,41 @@ export async function renderTopics(root) {
   const allLessons = await store.getAll('lessons');
   const readyCount = (t) => allLessons.filter((l) => l.topicId === t.id && !l.completedAt).length;
   const doneCount = (t) => allLessons.filter((l) => l.topicId === t.id && l.completedAt).length;
+  const inProgress = (t) =>
+    doneCount(t) > 0 ||
+    allLessons.some((l) => l.topicId === t.id && l.startedAt && !l.completedAt);
+  const progressOf = (t) => {
+    const total = t.syllabus?.length || 0;
+    return total ? doneCount(t) / total : 0;
+  };
 
-  // Section headings: explicit topic.category, else matched by name against
-  // the curated suggestions, else bucketed as "My Topics". This means
-  // existing topics that match a suggestion (e.g. seeded content) sort into
-  // the right section with no data migration needed.
+  // Build one topic card (shared by the pinned group and category sections).
+  const topicCard = async (t) => {
+    const pct = await topicMastery(t.id);
+    const total = t.syllabus?.length || 0;
+    const progressEl = total
+      ? progressBar(total, doneCount(t), readyCount(t))
+      : el('span', { class: 'pill' }, `${(t.lessonIds || []).length} lessons`);
+    return el('button', {
+      class: 'card topic-card' + (doneCount(t) > 0 ? ' started' : ''),
+      onclick: () => navigate(`#/topic/${t.id}`),
+    }, [
+      el('div', { class: 'card-main' }, [
+        el('h3', {}, t.name),
+        t.description ? el('p', { class: 'muted' }, t.description) : null,
+      ]),
+      el('div', { class: 'card-meta' }, [progressEl, pct != null ? masteryBar(pct) : null]),
+    ]);
+  };
+
+  // "In progress" topics: excluded from category sections, pinned on top.
+  const openTopics = topics
+    .filter(inProgress)
+    .sort((a, b) => progressOf(b) - progressOf(a) || (b.updatedAt || '').localeCompare(a.updatedAt || ''));
+  const remaining = topics.filter((t) => !inProgress(t));
+
+  // Remaining topics by category. Headings: explicit topic.category, else
+  // matched by name against curated suggestions, else "My Topics".
   const categoryByName = new Map();
   for (const group of SUGGESTED_TOPICS) {
     for (const t of group.topics) categoryByName.set(t.name, group.category);
@@ -90,70 +121,49 @@ export async function renderTopics(root) {
   const categoryOrder = [...SUGGESTED_TOPICS.map((g) => g.category), 'My Topics'];
 
   const groups = new Map();
-  for (const t of topics) {
+  for (const t of remaining) {
     const cat = categoryOf(t);
     if (!groups.has(cat)) groups.set(cat, []);
     groups.get(cat).push(t);
   }
-
-  // Within each section, sort by progress made — furthest along first.
-  const progressOf = (t) => {
-    const total = t.syllabus?.length || 0;
-    return total ? doneCount(t) / total : 0;
-  };
   for (const list of groups.values()) {
     list.sort((a, b) => {
-      const pa = progressOf(a), pb = progressOf(b);
-      if (pa !== pb) return pb - pa;
       const ra = readyCount(a), rb = readyCount(b);
       if (ra !== rb) return rb - ra;
       return (b.updatedAt || '').localeCompare(a.updatedAt || '');
     });
   }
-
   const activeCats = categoryOrder.filter((c) => groups.has(c));
 
-  // Table of contents — jump straight to a section. Only worth it once
-  // there's more than one.
-  if (activeCats.length > 1) {
+  // Table of contents — jump to any section (incl. In progress). Rendered
+  // first so it sits above all sections.
+  const tocEntries = [
+    ...(openTopics.length ? [['In progress', 'in-progress']] : []),
+    ...activeCats.map((c) => [c, slug(c)]),
+  ];
+  if (tocEntries.length > 1) {
     root.append(
-      el('div', { class: 'topics-toc' }, activeCats.map((cat) =>
+      el('div', { class: 'topics-toc' }, tocEntries.map(([label, id]) =>
         el('button', {
           class: 'toc-chip',
-          onclick: () => document.getElementById(`cat-${slug(cat)}`)
+          onclick: () => document.getElementById(`cat-${id}`)
             ?.scrollIntoView({ behavior: 'smooth', block: 'start' }),
-        }, cat)
+        }, label)
       ))
     );
+  }
+
+  if (openTopics.length) {
+    root.append(el('h4', { class: 'topic-cat-heading pinned', id: 'cat-in-progress' }, 'In progress'));
+    const cardList = el('div', { class: 'card-list' });
+    for (const t of openTopics) cardList.append(await topicCard(t));
+    root.append(cardList);
   }
 
   for (const cat of activeCats) {
     root.append(el('h4', { class: 'topic-cat-heading', id: `cat-${slug(cat)}` }, cat));
     const cardList = el('div', { class: 'card-list' });
-    for (const t of groups.get(cat)) {
-      const pct = await topicMastery(t.id);
-      const ready = readyCount(t);
-      const done = doneCount(t);
-      const total = t.syllabus?.length || 0;
-      const progressEl = total
-        ? progressBar(total, done, ready)
-        : el('span', { class: 'pill' }, `${(t.lessonIds || []).length} lessons`);
-      cardList.append(
-        el('button', {
-          class: 'card topic-card' + (done > 0 ? ' started' : ''),
-          onclick: () => navigate(`#/topic/${t.id}`),
-        }, [
-          el('div', { class: 'card-main' }, [
-            el('h3', {}, t.name),
-            t.description ? el('p', { class: 'muted' }, t.description) : null,
-          ]),
-          el('div', { class: 'card-meta' }, [
-            progressEl,
-            pct != null ? masteryBar(pct) : null,
-          ]),
-        ])
-      );
-    }
+    for (const t of groups.get(cat)) cardList.append(await topicCard(t));
     root.append(cardList);
   }
 
@@ -741,8 +751,19 @@ export async function renderLesson(root, { id }) {
     );
   }
 
-  const closer = (label, value, cls = '') =>
-    value ? el('div', { class: `closer ${cls}` }, [el('span', { class: 'closer-label' }, label), rich('p', {}, value)]) : null;
+  // `actionable` closers get a "+" that adds the tip to Today (once or daily).
+  const closer = (label, value, cls = '', actionable = false) => {
+    if (!value) return null;
+    const head = el('div', { class: 'closer-head' }, [el('span', { class: 'closer-label' }, label)]);
+    if (actionable) {
+      head.append(el('button', {
+        class: 'closer-add',
+        title: 'Add to Today',
+        onclick: () => addToTodaySheet(value.replace(/\*\*/g, ''), lesson.id),
+      }, '+ Add to Today'));
+    }
+    return el('div', { class: `closer ${cls}` }, [head, rich('p', {}, value)]);
+  };
 
   article.append(
     el('section', { class: 'lesson-block' }, [
@@ -750,9 +771,9 @@ export async function renderLesson(root, { id }) {
       el('ul', {}, (lesson.insights || []).map((i) => rich('li', {}, i))),
     ]),
     el('div', { class: 'closers' }, [
-      closer('Do this today', lesson.action, 'closer-action'),
-      closer('Leadership takeaway', lesson.leadershipTakeaway),
-      closer('Productivity tip', lesson.productivityTip),
+      closer('Do this today', lesson.action, 'closer-action', true),
+      closer('Leadership takeaway', lesson.leadershipTakeaway, '', true),
+      closer('Productivity tip', lesson.productivityTip, '', true),
       closer('Discussion question', lesson.discussionQ, 'closer-q'),
     ])
   );
@@ -790,4 +811,21 @@ export function showModal(title, fields, onSave, saveLabel = 'Save') {
   overlay.append(modal);
   document.body.append(overlay);
   fields[0]?.focus?.();
+}
+
+// Ask-each-time sheet: add a tip to Today as a one-off or a recurring habit.
+function addToTodaySheet(text, lessonId) {
+  const overlay = el('div', { class: 'modal-overlay' });
+  const close = () => overlay.remove();
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
+  const modal = el('div', { class: 'modal' }, [
+    el('h3', {}, 'Add to Today'),
+    el('p', { class: 'muted small sheet-quote' }, `“${text}”`),
+    el('div', { class: 'sheet-actions' }, [
+      el('button', { class: 'btn', onclick: async () => { await addManualTask({ name: text, sourceLessonId: lessonId }); close(); } }, 'Just today'),
+      el('button', { class: 'btn btn-primary', onclick: async () => { await addHabitFromText({ name: text, sourceLessonId: lessonId }); close(); } }, 'Every day'),
+    ]),
+  ]);
+  overlay.append(modal);
+  document.body.append(overlay);
 }

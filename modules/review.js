@@ -5,10 +5,29 @@
 
 import * as store from './store.js';
 import { gradeShortAnswers, hasApiKey } from './ai.js';
-import { touchActivity, nextMastery } from './gamification.js';
+import { touchActivity, nextMastery, dayString } from './gamification.js';
 import { el, clear, toast, loading, navigate } from './ui.js';
 
 const SESSION_SIZE = 8;
+
+// Question of the day for Home: one question from completed lessons, chosen
+// deterministically by Arizona date so it's stable all day. Returns
+// { question, lesson, correctText } or null when nothing's completed yet.
+export async function questionOfTheDay() {
+  const lessons = await store.getAll('lessons');
+  const pool = [];
+  for (const lesson of lessons) {
+    if (!lesson.completedAt || !lesson.quiz?.questions?.length) continue;
+    for (const q of lesson.quiz.questions) pool.push({ q, lesson });
+  }
+  if (!pool.length) return null;
+  const day = dayString();
+  let hash = 0;
+  for (let i = 0; i < day.length; i++) hash = (hash * 31 + day.charCodeAt(i)) >>> 0;
+  const { q, lesson } = pool[hash % pool.length];
+  const correctText = q.type === 'mc' ? q.options?.[q.correctIndex] : q.modelAnswer;
+  return { question: q.question, lesson, correctText };
+}
 
 // Build the weighted question pool from completed lessons' stored quizzes.
 async function buildPool() {

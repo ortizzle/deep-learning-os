@@ -216,6 +216,7 @@ h4 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: 
   margin: 4px 0 10px;
 }
 .topic-cat-heading:not(:first-of-type) { margin-top: 24px; }
+.topic-cat-heading.pinned { color: var(--accent); }
 
 /* started topics get a quiet accent tint so progress is visible at a glance */
 .topic-card.started {
@@ -235,7 +236,7 @@ h4 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: 
 }
 .seg-bar .seg-done { background: var(--accent); border-color: var(--accent); }
 .seg-bar .seg-ready { background: var(--accent-soft); border-color: var(--accent); }
-.seg-bar .seg-todo { background: var(--surface-2); border-color: var(--border); border-style: dashed; }
+.seg-bar .seg-todo { background: var(--border-strong); border-color: var(--text-3); border-style: dashed; }
 .card {
   display: flex;
   align-items: center;
@@ -344,6 +345,24 @@ h4 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: 
 .level-bar-label { font-size: 11px; margin-top: 6px; }
 
 .greeting { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; margin: 4px 0 14px; }
+.panel-head { display: flex; align-items: center; justify-content: space-between; }
+.panel-head h4 { margin-bottom: 10px; }
+.panel-head .link { padding: 0; }
+.panel-tight { padding-top: 12px; padding-bottom: 12px; }
+.panel-btn { display: block; width: 100%; text-align: left; font: inherit; color: inherit; cursor: pointer; border: 1px solid var(--border); }
+.panel-btn:active { transform: scale(0.995); }
+
+/* question of the day */
+.qotd { background: var(--surface-2); border-radius: var(--radius-sm); padding: 14px; margin-bottom: 10px; }
+.qotd-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; color: var(--accent); }
+.qotd-q { font-size: 16px; font-weight: 500; line-height: 1.5; margin: 6px 0 12px; }
+.qotd-reveal { font-size: 13px; padding: 7px 14px; }
+.qotd-answer { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
+.qotd-answer p { margin: 4px 0 8px; line-height: 1.5; }
+.qotd-answer.hidden { display: none; }
+.standings-toggle { display: block; margin-top: 12px; padding: 0; }
+.standings-wrap { margin-top: 12px; }
+.standings-wrap.hidden { display: none; }
 .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px; }
 .stat {
   background: var(--surface);
@@ -516,6 +535,23 @@ mark.kw {
   padding: 12px 14px;
 }
 .closer-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-3); font-weight: 600; }
+.closer-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.closer-add {
+  flex-shrink: 0;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: none;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  cursor: pointer;
+}
+.closer-add:active { transform: scale(0.97); }
+.sheet-quote { margin: 0 0 16px; line-height: 1.5; }
+.sheet-actions { display: flex; gap: 8px; }
+.sheet-actions .btn { flex: 1; }
 .closer p { margin: 4px 0 0; line-height: 1.5; }
 .closer-action { border-left-color: var(--accent); background: var(--accent-soft); }
 .closer-q { border-left-color: var(--good); background: var(--good-soft); }
@@ -612,7 +648,9 @@ mark.kw {
 .task-row.done .task-name { text-decoration: line-through; color: var(--text-3); }
 .task-row.skipped .task-name { color: var(--text-3); font-style: italic; }
 .task-carried { color: var(--warn); font-weight: 600; }
-.task-src { font-size: 11px; color: var(--text-3); }
+.task-src { font-size: 11px; color: var(--text-3); text-align: left; }
+button.task-src { background: none; border: none; padding: 0; cursor: pointer; font: inherit; font-size: 11px; color: var(--accent); }
+button.task-src:hover { text-decoration: underline; }
 .task-skip {
   flex-shrink: 0;
   background: none; border: none;

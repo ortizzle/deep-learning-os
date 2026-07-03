@@ -6,6 +6,7 @@ import { masteredTopicCount } from './gamification.js';
 import { recentHighlights } from './saved.js';
 import { renderTodayPanel } from './today.js';
 import { syllabusPosition } from './lessons.js';
+import { questionOfTheDay } from './review.js';
 import { el, clear, navigate } from './ui.js';
 
 function statCard(value, label, icon) {
@@ -96,61 +97,75 @@ export async function renderDashboard(root) {
   root.append(todayPanel);
   await renderTodayPanel(todayPanel);
 
-  // Continue reading: started-but-unfinished lessons, like books off the shelf.
   const topicById = Object.fromEntries(topics.map((t) => [t.id, t]));
+
+  // Continue: started-but-unfinished lessons — the primary action. Top 3, with
+  // "View all" to the full reading list when there are more.
   const started = lessons
     .filter((l) => l.startedAt && !l.completedAt)
     .sort((a, b) => (b.startedAt || '').localeCompare(a.startedAt || ''));
   if (started.length) {
+    const head = el('div', { class: 'panel-head' }, [el('h4', {}, 'Continue')]);
+    if (started.length > 3) {
+      head.append(el('button', { class: 'link small', onclick: () => navigate('#/reading') }, 'View all →'));
+    }
     root.append(
       el('section', { class: 'panel' }, [
-        el('h4', {}, 'Continue reading'),
-        ...started.slice(0, 3).map((l) => {
-          const t = topicById[l.topicId];
-          const pos = syllabusPosition(t, l.id);
-          return el('button', { class: 'card', onclick: () => navigate(`#/lesson/${l.id}`) }, [
-            el('div', { class: 'card-main' }, [
-              el('h3', {}, l.title),
-              el('p', { class: 'muted' }, pos ? `Lesson ${pos.index} of ${pos.total} · ${t?.name || ''}` : t?.name || ''),
-            ]),
-            el('span', { class: 'pill pill-pos' }, 'Resume'),
-          ]);
-        }),
+        head,
+        ...started.slice(0, 3).map((l) => lessonCard(l, topicById[l.topicId], 'Resume', 'pill-pos')),
       ])
     );
   }
 
-  // Recommendation (fresh starts only; hidden if the shelf covers it).
+  // Start something new: fresh-start recommendation, secondary.
   const rec = await recommendation();
-  if (rec.lesson || !started.length) root.append(
-    el('section', { class: 'panel' }, [
-      el('h4', {}, 'Recommended next'),
-      rec.lesson
-        ? el('button', { class: 'card rec-card', onclick: () => navigate(`#/lesson/${rec.lesson.id}`) }, [
-            el('div', { class: 'card-main' }, [
-              el('h3', {}, rec.lesson.title),
-              el('p', { class: 'muted' },
-                rec.pos
-                  ? `Lesson ${rec.pos.index} of ${rec.pos.total} · ${rec.topic?.name || ''}`
-                  : rec.topic?.name || 'Continue where you left off'),
-            ]),
-            el('span', { class: 'pill' }, 'Read'),
-          ])
-        : el('button', { class: 'card rec-card', onclick: () => navigate('#/topics') }, [
-            el('div', { class: 'card-main' }, [el('h3', {}, 'Generate a lesson'), el('p', { class: 'muted' }, 'Pick a topic to keep learning')]),
-            el('span', { class: 'pill' }, 'Go'),
-          ]),
-    ])
-  );
-
-  // Strong / weak topics.
-  const ranked = await topicRankings();
-  if (ranked.length) {
-    const strongest = ranked[0];
-    const weakest = ranked[ranked.length - 1];
+  if (rec.lesson) {
     root.append(
-      el('section', { class: 'panel' }, [
-        el('h4', {}, 'Where you stand'),
+      el('section', { class: 'panel panel-tight' }, [
+        el('h4', {}, 'Start something new'),
+        lessonCard(rec.lesson, rec.topic, 'Read', 'pill'),
+      ])
+    );
+  } else if (!started.length) {
+    root.append(
+      el('section', { class: 'panel panel-tight' }, [
+        el('h4', {}, 'Start something new'),
+        el('button', { class: 'card rec-card', onclick: () => navigate('#/topics') }, [
+          el('div', { class: 'card-main' }, [el('h3', {}, 'Generate a lesson'), el('p', { class: 'muted' }, 'Pick a topic to keep learning')]),
+          el('span', { class: 'pill' }, 'Go'),
+        ]),
+      ])
+    );
+  }
+
+  // Review: a question of the day + collapsible standings.
+  const qotd = await questionOfTheDay();
+  const ranked = await topicRankings();
+  if (qotd || ranked.length) {
+    const panel = el('section', { class: 'panel' }, [el('h4', {}, 'Review')]);
+
+    if (qotd) {
+      const answer = el('div', { class: 'qotd-answer hidden' }, [
+        el('span', { class: 'muted small' }, 'Answer'),
+        el('p', {}, qotd.correctText || '—'),
+        el('button', { class: 'link small', onclick: () => navigate(`#/lesson/${qotd.lesson.id}`) }, `From “${qotd.lesson.title}” →`),
+      ]);
+      const reveal = el('button', { class: 'btn qotd-reveal', onclick: () => { answer.classList.remove('hidden'); reveal.remove(); } }, 'Reveal answer');
+      panel.append(
+        el('div', { class: 'qotd' }, [
+          el('span', { class: 'qotd-label' }, 'Question of the day'),
+          el('p', { class: 'qotd-q' }, qotd.question),
+          reveal,
+          answer,
+        ]),
+        el('button', { class: 'btn btn-primary full', onclick: () => navigate('#/review') }, 'Start full review →')
+      );
+    }
+
+    if (ranked.length) {
+      const strongest = ranked[0];
+      const weakest = ranked[ranked.length - 1];
+      const standings = el('div', { class: 'standings-wrap hidden' }, [
         el('div', { class: 'standings' }, [
           el('div', { class: 'standing strong' }, [
             el('span', { class: 'muted' }, 'Strongest'),
@@ -165,23 +180,68 @@ export async function renderDashboard(root) {
               ])
             : null,
         ]),
-        el('button', { class: 'link', onclick: () => navigate('#/review') }, 'Review your weak spots →'),
-      ])
-    );
+      ]);
+      const toggle = el('button', { class: 'link small standings-toggle' }, 'Where you stand ▸');
+      toggle.addEventListener('click', () => {
+        standings.classList.toggle('hidden');
+        toggle.textContent = standings.classList.contains('hidden') ? 'Where you stand ▸' : 'Where you stand ▾';
+      });
+      panel.append(toggle, standings);
+    }
+
+    root.append(panel);
   }
 
-  // Saved highlights teaser.
+  // Saved: the whole panel is clickable → Saved view.
   const saves = await recentHighlights(2);
   if (saves.length) {
-    root.append(
-      el('section', { class: 'panel' }, [
-        el('h4', {}, 'Saved'),
-        ...saves.map((h) =>
-          el('blockquote', { class: 'saved-quote dash-quote' },
-            h.text.length > 140 ? h.text.slice(0, 140) + '…' : h.text)
-        ),
-        el('button', { class: 'link', onclick: () => navigate('#/saved') }, 'View all saved →'),
-      ])
-    );
+    const panel = el('button', { class: 'panel panel-btn', onclick: () => navigate('#/saved') }, [
+      el('div', { class: 'panel-head' }, [el('h4', {}, 'Saved'), el('span', { class: 'link small' }, 'View all →')]),
+      ...saves.map((h) =>
+        el('blockquote', { class: 'saved-quote dash-quote' },
+          h.text.length > 140 ? h.text.slice(0, 140) + '…' : h.text)
+      ),
+    ]);
+    root.append(panel);
   }
+}
+
+// A tappable lesson card with topic + curriculum position.
+function lessonCard(lesson, topic, pillLabel, pillClass) {
+  const pos = syllabusPosition(topic, lesson.id);
+  return el('button', { class: 'card', onclick: () => navigate(`#/lesson/${lesson.id}`) }, [
+    el('div', { class: 'card-main' }, [
+      el('h3', {}, lesson.title),
+      el('p', { class: 'muted' }, pos ? `Lesson ${pos.index} of ${pos.total} · ${topic?.name || ''}` : topic?.name || ''),
+    ]),
+    el('span', { class: `pill ${pillClass}` }, pillLabel),
+  ]);
+}
+
+// Full "Continue" list: every started-unfinished lesson.
+export async function renderContinue(root) {
+  clear(root);
+  const [lessons, topics] = await Promise.all([
+    store.getAll('lessons'),
+    store.getAll('topics'),
+  ]);
+  const topicById = Object.fromEntries(topics.map((t) => [t.id, t]));
+  const started = lessons
+    .filter((l) => l.startedAt && !l.completedAt)
+    .sort((a, b) => (b.startedAt || '').localeCompare(a.startedAt || ''));
+
+  root.append(
+    el('header', { class: 'view-head' }, [
+      el('button', { class: 'link', onclick: () => navigate('#/dashboard') }, '← Home'),
+      el('h1', {}, 'Continue'),
+      el('p', { class: 'muted' }, 'Lessons you\'ve started but not finished.'),
+    ])
+  );
+  if (!started.length) {
+    root.append(el('div', { class: 'empty' }, [el('p', {}, 'Nothing in progress.'), el('button', { class: 'btn btn-primary', onclick: () => navigate('#/topics') }, 'Browse topics')]));
+    return;
+  }
+  const list = el('div', { class: 'card-list' });
+  for (const l of started) list.append(lessonCard(l, topicById[l.topicId], 'Resume', 'pill-pos'));
+  root.append(list);
 }
