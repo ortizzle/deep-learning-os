@@ -3,7 +3,7 @@
 // runs fully local; sync is a transparent mirror on top.
 
 const DB_NAME = 'deep-learning-os';
-const DB_VERSION = 3; // v2: adds 'highlights'; v3: adds 'habits' + 'tasks'
+const DB_VERSION = 4; // v2: 'highlights'; v3: 'habits'+'tasks'; v4: 'tombstones'
 export const SCHEMA_VERSION = 1;
 
 // Object stores that hold user records. `profile` is a singleton (id: 'me').
@@ -17,6 +17,7 @@ export const STORES = [
   'habits',
   'tasks',
   'profile',
+  'tombstones',
 ];
 
 let dbPromise = null;
@@ -114,6 +115,12 @@ export async function put(store, record, { touch = true } = {}) {
 
 export async function remove(store, id) {
   await reqToPromise((await tx(store, 'readwrite')).delete(id));
+  // Record a tombstone so this deletion survives sync — without it, the
+  // next pull merges the still-present remote copy right back in (newest-
+  // updatedAt-wins has no concept of "gone").
+  if (store !== 'tombstones') {
+    await put('tombstones', { id: `${store}:${id}`, store, recordId: id, deletedAt: now() });
+  }
   scheduleSync();
 }
 
@@ -157,18 +164,44 @@ export async function exportSnapshot() {
   return { schemaVersion: SCHEMA_VERSION, updatedAt: now(), data };
 }
 
-// Merge an incoming snapshot: newest updatedAt wins per record.
+// Merge an incoming snapshot: newest updatedAt wins per record, EXCEPT
+// tombstoned records — a deletion (locally or on another device) is never
+// resurrected by a later merge, unless a genuinely newer edit exists.
 export async function mergeSnapshot(snapshot) {
   if (!snapshot || !snapshot.data) return;
   // Future: if snapshot.schemaVersion < SCHEMA_VERSION, migrate here.
+
+  // Tombstones merge first, so we know what NOT to bring back.
+  for (const t of snapshot.data.tombstones || []) {
+    if (!t || !t.id) continue;
+    const existing = await get('tombstones', t.id);
+    if (!existing || (t.updatedAt || '') > (existing.updatedAt || '')) {
+      await put('tombstones', t, { touch: false });
+    }
+  }
+  const tombstones = await getAll('tombstones');
+  const tombSet = new Set(tombstones.map((t) => t.id)); // `${store}:${recordId}`
+
   for (const name of STORES) {
+    if (name === 'tombstones') continue;
     const incoming = snapshot.data[name] || [];
     for (const rec of incoming) {
-      if (!rec || !rec.id) continue;
+      if (!rec || !rec.id || tombSet.has(`${name}:${rec.id}`)) continue;
       const existing = await get(name, rec.id);
       if (!existing || (rec.updatedAt || '') > (existing.updatedAt || '')) {
         await put(name, rec, { touch: false });
       }
+    }
+  }
+
+  // Purge any local record whose tombstone is newer than its last edit —
+  // covers a device that was offline with a stale copy when the deletion
+  // happened elsewhere.
+  for (const t of tombstones) {
+    if (!t.store || !t.recordId) continue;
+    const existing = await get(t.store, t.recordId);
+    if (existing && (existing.updatedAt || '') <= (t.deletedAt || '')) {
+      await reqToPromise((await tx(t.store, 'readwrite')).delete(t.recordId));
     }
   }
 }

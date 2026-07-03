@@ -184,7 +184,58 @@ h4 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: 
 .link:hover { color: var(--accent); }
 
 /* ---------- cards ---------- */
-.card-list { display: flex; flex-direction: column; gap: 10px; }
+.card-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+
+/* topics: table of contents */
+.topics-toc {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  margin-bottom: 18px;
+  scrollbar-width: none;
+}
+.topics-toc::-webkit-scrollbar { display: none; }
+.toc-chip {
+  flex-shrink: 0;
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--text-2);
+  background: var(--surface-2);
+  border: none;
+  border-radius: 999px;
+  padding: 7px 14px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.toc-chip:active { transform: scale(0.97); }
+
+.topic-cat-heading {
+  scroll-margin-top: 66px;
+  margin: 4px 0 10px;
+}
+.topic-cat-heading:not(:first-of-type) { margin-top: 24px; }
+
+/* started topics get a quiet accent tint so progress is visible at a glance */
+.topic-card.started {
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+}
+.topic-card.started .card-main h3 { color: var(--text); }
+
+/* segmented progress bar: filled = done, outlined = ready, muted = not written */
+.seg-bar { display: flex; gap: 3px; width: 96px; }
+.seg-bar .seg {
+  flex: 1;
+  height: 8px;
+  border-radius: 2.5px;
+  background: var(--surface-2);
+  border: 1.5px solid var(--border);
+}
+.seg-bar .seg-done { background: var(--accent); border-color: var(--accent); }
+.seg-bar .seg-ready { background: var(--accent-soft); border-color: var(--accent); }
+.seg-bar .seg-todo { background: var(--surface-2); border-color: var(--border); border-style: dashed; }
 .card {
   display: flex;
   align-items: center;
@@ -597,26 +648,53 @@ mark.kw {
 }
 .hl-bar {
   position: fixed;
-  left: 0; right: 0;
+  left: 12px; right: 12px;
   bottom: calc(var(--tabbar-h) + var(--safe-bottom) + 12px);
   z-index: 55;
   display: flex;
-  justify-content: center;
-  pointer-events: none;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+  background: var(--text);
+  color: var(--bg);
+  border-radius: var(--radius);
+  padding: 10px 10px 10px 16px;
+  box-shadow: var(--shadow-md);
   animation: fade 0.15s ease;
 }
+.hl-bar-preview {
+  flex: 1;
+  min-width: 0;
+  font-size: 13px;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  opacity: 0.85;
+}
+.hl-bar-actions { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.hl-bar-cancel {
+  background: none;
+  border: none;
+  color: var(--bg);
+  opacity: 0.6;
+  font-size: 16px;
+  line-height: 1;
+  padding: 8px;
+  cursor: pointer;
+}
+.hl-bar-cancel:hover { opacity: 1; }
 .hl-bar-btn {
-  pointer-events: auto;
   background: var(--accent);
   color: var(--accent-text);
   font: inherit;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   border: none;
   border-radius: 999px;
-  padding: 12px 22px;
+  padding: 10px 16px;
   cursor: pointer;
-  box-shadow: var(--shadow-md);
+  white-space: nowrap;
 }
 .hl-bar-btn:active { transform: scale(0.97); }
 .hl { cursor: pointer; }
@@ -699,6 +777,8 @@ li.saveable { padding-right: 52px; }
 .saved-del:hover { color: var(--bad); }
 
 /* course plan */
+.plan-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
+.plan-head h4 { margin-bottom: 0; }
 .plan { padding: 16px; }
 .plan-row {
   display: flex; align-items: flex-start; gap: 12px;

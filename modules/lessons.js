@@ -35,6 +35,20 @@ function masteryBar(pct) {
   ]);
 }
 
+// Segmented progress bar: filled = done, outlined = ready to read now,
+// muted = not written yet. Replaces the old "N of M done" / "N ready" pills
+// with something glanceable rather than readable.
+function progressBar(total, done, ready) {
+  const segs = [];
+  for (let i = 0; i < total; i++) {
+    const cls = i < done ? 'seg-done' : i < done + ready ? 'seg-ready' : 'seg-todo';
+    segs.push(el('span', { class: `seg ${cls}` }));
+  }
+  return el('div', { class: 'seg-bar', title: `${done} done · ${ready} ready · ${total} total` }, segs);
+}
+
+const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+
 // ---------- Topics list ----------
 
 export async function renderTopics(root) {
@@ -60,45 +74,88 @@ export async function renderTopics(root) {
     return;
   }
 
-  const list = el('div', { class: 'card-list' });
   const allLessons = await store.getAll('lessons');
-  const readyCount = (t) =>
-    allLessons.filter((l) => l.topicId === t.id && !l.completedAt).length;
+  const readyCount = (t) => allLessons.filter((l) => l.topicId === t.id && !l.completedAt).length;
+  const doneCount = (t) => allLessons.filter((l) => l.topicId === t.id && l.completedAt).length;
 
-  // Sort by what's actionable: ready-to-read lessons first, then planned
-  // topics (syllabus exists), then the rest by recency.
-  topics.sort((a, b) => {
-    const ra = readyCount(a);
-    const rb = readyCount(b);
-    if (ra !== rb) return rb - ra;
-    const sa = a.syllabus?.length ? 1 : 0;
-    const sb = b.syllabus?.length ? 1 : 0;
-    if (sa !== sb) return sb - sa;
-    return (b.updatedAt || '').localeCompare(a.updatedAt || '');
-  });
+  // Section headings: explicit topic.category, else matched by name against
+  // the curated suggestions, else bucketed as "My Topics". This means
+  // existing topics that match a suggestion (e.g. seeded content) sort into
+  // the right section with no data migration needed.
+  const categoryByName = new Map();
+  for (const group of SUGGESTED_TOPICS) {
+    for (const t of group.topics) categoryByName.set(t.name, group.category);
+  }
+  const categoryOf = (t) => t.category || categoryByName.get(t.name) || 'My Topics';
+  const categoryOrder = [...SUGGESTED_TOPICS.map((g) => g.category), 'My Topics'];
 
+  const groups = new Map();
   for (const t of topics) {
-    const pct = await topicMastery(t.id);
-    const ready = readyCount(t);
-    const done = allLessons.filter((l) => l.topicId === t.id && l.completedAt).length;
-    const progress = t.syllabus?.length
-      ? `${done} of ${t.syllabus.length} done`
-      : `${(t.lessonIds || []).length} lessons`;
-    list.append(
-      el('button', { class: 'card topic-card', onclick: () => navigate(`#/topic/${t.id}`) }, [
-        el('div', { class: 'card-main' }, [
-          el('h3', {}, t.name),
-          t.description ? el('p', { class: 'muted' }, t.description) : null,
-        ]),
-        el('div', { class: 'card-meta' }, [
-          ready ? el('span', { class: 'pill pill-pos' }, `${ready} ready`) : null,
-          el('span', { class: done ? 'pill pill-done' : 'pill' }, progress),
-          pct != null ? masteryBar(pct) : null,
-        ]),
-      ])
+    const cat = categoryOf(t);
+    if (!groups.has(cat)) groups.set(cat, []);
+    groups.get(cat).push(t);
+  }
+
+  // Within each section, sort by progress made — furthest along first.
+  const progressOf = (t) => {
+    const total = t.syllabus?.length || 0;
+    return total ? doneCount(t) / total : 0;
+  };
+  for (const list of groups.values()) {
+    list.sort((a, b) => {
+      const pa = progressOf(a), pb = progressOf(b);
+      if (pa !== pb) return pb - pa;
+      const ra = readyCount(a), rb = readyCount(b);
+      if (ra !== rb) return rb - ra;
+      return (b.updatedAt || '').localeCompare(a.updatedAt || '');
+    });
+  }
+
+  const activeCats = categoryOrder.filter((c) => groups.has(c));
+
+  // Table of contents — jump straight to a section. Only worth it once
+  // there's more than one.
+  if (activeCats.length > 1) {
+    root.append(
+      el('div', { class: 'topics-toc' }, activeCats.map((cat) =>
+        el('button', {
+          class: 'toc-chip',
+          onclick: () => document.getElementById(`cat-${slug(cat)}`)
+            ?.scrollIntoView({ behavior: 'smooth', block: 'start' }),
+        }, cat)
+      ))
     );
   }
-  root.append(list);
+
+  for (const cat of activeCats) {
+    root.append(el('h4', { class: 'topic-cat-heading', id: `cat-${slug(cat)}` }, cat));
+    const cardList = el('div', { class: 'card-list' });
+    for (const t of groups.get(cat)) {
+      const pct = await topicMastery(t.id);
+      const ready = readyCount(t);
+      const done = doneCount(t);
+      const total = t.syllabus?.length || 0;
+      const progressEl = total
+        ? progressBar(total, done, ready)
+        : el('span', { class: 'pill' }, `${(t.lessonIds || []).length} lessons`);
+      cardList.append(
+        el('button', {
+          class: 'card topic-card' + (done > 0 ? ' started' : ''),
+          onclick: () => navigate(`#/topic/${t.id}`),
+        }, [
+          el('div', { class: 'card-main' }, [
+            el('h3', {}, t.name),
+            t.description ? el('p', { class: 'muted' }, t.description) : null,
+          ]),
+          el('div', { class: 'card-meta' }, [
+            progressEl,
+            pct != null ? masteryBar(pct) : null,
+          ]),
+        ])
+      );
+    }
+    root.append(cardList);
+  }
 
   // When topics exist, keep suggestions available but tucked away.
   renderSuggestions(root, topics, { expanded: false });
@@ -112,7 +169,7 @@ function renderSuggestions(root, existingTopics, { expanded }) {
 
   const body = el('div', { class: 'suggest-body' + (expanded ? '' : ' collapsed') });
 
-  const buildCard = (topic) => {
+  const buildCard = (topic, category) => {
     const already = existingNames.has(topic.name.trim().toLowerCase());
     const card = el('button', {
       class: 'suggest-card' + (already ? ' added' : ''),
@@ -122,6 +179,7 @@ function renderSuggestions(root, existingTopics, { expanded }) {
         await store.put('topics', {
           name: topic.name,
           description: topic.description,
+          category,
           lessonIds: [],
         });
         await touchActivity();
@@ -141,7 +199,7 @@ function renderSuggestions(root, existingTopics, { expanded }) {
   for (const group of SUGGESTED_TOPICS) {
     body.append(el('h5', { class: 'suggest-cat' }, group.category));
     const grid = el('div', { class: 'suggest-grid' });
-    group.topics.forEach((t) => grid.append(buildCard(t)));
+    group.topics.forEach((t) => grid.append(buildCard(t, group.category)));
     body.append(grid);
   }
 
@@ -205,7 +263,14 @@ export async function renderTopic(root, { id }) {
   // Course plan: the syllabus with per-entry state.
   if (topic.syllabus?.length) {
     const byId = Object.fromEntries(lessons.map((l) => [l.id, l]));
-    const plan = el('section', { class: 'plan panel' }, [el('h4', {}, 'Course plan')]);
+    const planDone = lessons.filter((l) => l.completedAt).length;
+    const planReady = lessons.filter((l) => !l.completedAt).length;
+    const plan = el('section', { class: 'plan panel' }, [
+      el('div', { class: 'plan-head' }, [
+        el('h4', {}, 'Course plan'),
+        progressBar(topic.syllabus.length, planDone, planReady),
+      ]),
+    ]);
     topic.syllabus.forEach((e, i) => {
       const lesson = e.lessonId ? byId[e.lessonId] : null;
       const state = lesson?.completedAt ? 'done' : lesson?.startedAt ? 'started' : lesson ? 'ready' : 'upcoming';
@@ -492,6 +557,11 @@ function setupSelectionCapture(article, lesson) {
   let bar = null;
   const removeBar = () => { bar?.remove(); bar = null; };
 
+  const dismiss = () => {
+    document.getSelection()?.removeAllRanges();
+    removeBar();
+  };
+
   const onSelection = () => {
     const sel = document.getSelection();
     const text = sel ? sel.toString().trim() : '';
@@ -500,11 +570,21 @@ function setupSelectionCapture(article, lesson) {
       removeBar();
       return;
     }
-    if (bar) return;
+
+    // Rebuild each time so the preview reflects a resized selection (the
+    // user may drag the native handles to fix a too-big/too-small grab)
+    // rather than freezing on whatever was selected first.
+    removeBar();
+    const preview = text.length > 60 ? text.slice(0, 60) + '…' : text;
     bar = el('div', { class: 'hl-bar' }, [
-      el('button', { class: 'hl-bar-btn' }, '🖍 Highlight selection'),
+      el('span', { class: 'hl-bar-preview' }, `“${preview}”`),
+      el('div', { class: 'hl-bar-actions' }, [
+        el('button', { class: 'hl-bar-cancel', title: 'Discard selection' }, '✕'),
+        el('button', { class: 'hl-bar-btn' }, '🖍 Highlight'),
+      ]),
     ]);
-    bar.firstChild.addEventListener('click', async () => {
+    bar.querySelector('.hl-bar-cancel').addEventListener('click', dismiss);
+    bar.querySelector('.hl-bar-btn').addEventListener('click', async () => {
       const quote = document.getSelection()?.toString().trim();
       if (quote) {
         const h = await store.put('highlights', {
@@ -516,8 +596,7 @@ function setupSelectionCapture(article, lesson) {
         applyHighlights(article, [h]);
         toast('Highlighted', 'success');
       }
-      document.getSelection()?.removeAllRanges();
-      removeBar();
+      dismiss();
     });
     document.body.append(bar);
   };

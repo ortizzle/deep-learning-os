@@ -2,7 +2,7 @@
 // current code (prevents stale-code-vs-upgraded-DB crashes); offline still
 // works from the last cached shell. Never touches api.* traffic.
 
-const CACHE = 'dlos-shell-v20';
+const CACHE = 'dlos-shell-v21';
 const SHELL = [
   './',
   './index.html',
