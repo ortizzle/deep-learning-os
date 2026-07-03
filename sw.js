@@ -2,7 +2,7 @@
 // current code (prevents stale-code-vs-upgraded-DB crashes); offline still
 // works from the last cached shell. Never touches api.* traffic.
 
-const CACHE = 'dlos-shell-v18';
+const CACHE = 'dlos-shell-v19';
 const SHELL = [
   './',
   './index.html',
@@ -16,6 +16,7 @@ const SHELL = [
   './modules/coach.js',
   './modules/dashboard.js',
   './modules/gamification.js',
+  './modules/review.js',
   './modules/saved.js',
   './modules/suggestedTopics.js',
   './modules/today.js',

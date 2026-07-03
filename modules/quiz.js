@@ -3,7 +3,7 @@
 
 import * as store from './store.js';
 import { generateQuiz, gradeShortAnswers, hasApiKey } from './ai.js';
-import { award, nextMastery, XP } from './gamification.js';
+import { touchActivity, nextMastery } from './gamification.js';
 import { prepareNextLesson } from './lessons.js';
 import { addLessonAction } from './today.js';
 import { el, clear, toast, loading, navigate } from './ui.js';
@@ -182,28 +182,25 @@ export async function renderQuiz(root, { id, focusConcepts = [] }) {
       }
     }
 
-    // Mark lesson complete + award XP/streak.
+    // Mark lesson complete + record activity for the streak.
     const firstCompletion = !lesson.completedAt;
     lesson.completedAt = lesson.completedAt || store.now();
     await store.put('lessons', lesson);
 
-    const bonus = score === 100 ? XP.quizPerfect : 0;
     if (firstCompletion) {
-      await award('lessonCompleted');
       await addLessonAction(lesson); // "action for today" joins the Today list
     }
-    const { unlocked, leveledUp } = await award('quizCompleted', { xp: bonus });
+    await touchActivity();
 
-    showResults(results, score, leveledUp, unlocked);
+    showResults(results, score);
   };
 
-  const showResults = (results, score, leveledUp, unlocked) => {
+  const showResults = (results, score) => {
     clear(root);
     root.append(
       el('header', { class: 'view-head center' }, [
         el('div', { class: 'score-ring', style: `--p:${score}` }, [el('span', { class: 'score-num' }, `${score}`), el('span', { class: 'score-pct' }, '%')]),
         el('h1', {}, score >= 80 ? 'Strong work.' : score >= 60 ? 'Solid.' : 'Room to grow.'),
-        leveledUp ? el('p', { class: 'level-up' }, '⬆ Level up!') : null,
       ])
     );
 
@@ -238,10 +235,6 @@ export async function renderQuiz(root, { id, focusConcepts = [] }) {
       );
     });
     root.append(list);
-
-    for (const a of unlocked || []) {
-      toast(`🏆 ${a.name} unlocked`, 'success');
-    }
 
     const missed = [...new Set(results.filter((r) => !r.correct).map((r) => r.concept).filter(Boolean))];
     if (missed.length) {

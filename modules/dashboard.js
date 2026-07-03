@@ -1,16 +1,16 @@
-// dashboard.js — home screen: streak, XP/level, stats, strong/weak topics,
-// recommended next lesson, recent achievements.
+// dashboard.js — Home: the command center. Streak + counts, the Today
+// checklist, the Continue-reading shelf, and what to start next.
 
 import * as store from './store.js';
-import { levelProgress, ACHIEVEMENTS } from './gamification.js';
+import { masteredTopicCount } from './gamification.js';
 import { recentHighlights } from './saved.js';
 import { renderTodayPanel } from './today.js';
 import { syllabusPosition } from './lessons.js';
 import { el, clear, navigate } from './ui.js';
 
-function statCard(value, label) {
+function statCard(value, label, icon) {
   return el('div', { class: 'stat' }, [
-    el('div', { class: 'stat-value' }, String(value)),
+    el('div', { class: 'stat-value' }, [icon ? el('span', { class: 'stat-icon' }, icon) : null, String(value)]),
     el('div', { class: 'stat-label' }, label),
   ]);
 }
@@ -21,7 +21,7 @@ async function topicRankings() {
     store.getAll('topics'),
     store.getAll('concepts'),
   ]);
-  const ranked = topics
+  return topics
     .map((t) => {
       const cs = concepts.filter((c) => c.topicId === t.id && c.timesReviewed > 0);
       if (!cs.length) return null;
@@ -30,11 +30,9 @@ async function topicRankings() {
     })
     .filter(Boolean)
     .sort((a, b) => b.avg - a.avg);
-  return ranked;
 }
 
-// Recommend the next unread lesson in curriculum order: pick the most
-// recently active topic, then the earliest pending lesson in its syllabus.
+// Recommend the next unread, unstarted lesson in curriculum order.
 async function recommendation() {
   const [lessons, topics] = await Promise.all([
     store.getAll('lessons'),
@@ -50,8 +48,6 @@ async function recommendation() {
     const i = syl.findIndex((e) => e.lessonId === l.id);
     return i === -1 ? 999 : i;
   };
-
-  // Most recently touched topic first (keep momentum), then syllabus order.
   const lastActivity = {};
   for (const l of lessons) {
     const t = l.completedAt || l.updatedAt || l.createdAt || '';
@@ -70,29 +66,21 @@ async function recommendation() {
 
 export async function renderDashboard(root) {
   clear(root);
-  const profile = await store.getProfile();
-  const lessons = await store.getAll('lessons');
+  const [profile, lessons, topics, concepts] = await Promise.all([
+    store.getProfile(),
+    store.getAll('lessons'),
+    store.getAll('topics'),
+    store.getAll('concepts'),
+  ]);
   const completed = lessons.filter((l) => l.completedAt).length;
-  const prog = levelProgress(profile.xp || 0);
+  const mastered = masteredTopicCount(topics, concepts);
 
-  // Hero: streak + level.
+  // The three signals that matter: consistency, volume, depth.
   root.append(
-    el('header', { class: 'hero' }, [
-      el('div', { class: 'hero-top' }, [
-        el('div', { class: 'streak' }, [
-          el('span', { class: 'streak-flame' }, '🔥'),
-          el('span', { class: 'streak-num' }, String(profile.streak || 0)),
-          el('span', { class: 'streak-label' }, 'day streak'),
-        ]),
-        el('div', { class: 'level-badge' }, [
-          el('span', { class: 'level-num' }, `Lv ${prog.level}`),
-          el('span', { class: 'level-xp' }, `${profile.xp || 0} XP`),
-        ]),
-      ]),
-      el('div', { class: 'level-bar' }, [
-        el('div', { class: 'bar' }, [el('div', { class: 'bar-fill', style: `width:${prog.pct}%` })]),
-        el('div', { class: 'level-bar-label muted' }, `${prog.into} / ${prog.span} XP to Lv ${prog.level + 1}`),
-      ]),
+    el('div', { class: 'stat-row' }, [
+      statCard(profile.streak || 0, 'day streak', '🔥'),
+      statCard(completed, 'lessons done'),
+      statCard(mastered, 'topics mastered'),
     ])
   );
 
@@ -101,18 +89,8 @@ export async function renderDashboard(root) {
   root.append(todayPanel);
   await renderTodayPanel(todayPanel);
 
-  // Stat row.
-  root.append(
-    el('div', { class: 'stat-row' }, [
-      statCard(completed, 'Lessons'),
-      statCard(profile.learningMinutes || 0, 'Minutes'),
-      statCard(prog.level, 'Level'),
-    ])
-  );
-
   // Continue reading: started-but-unfinished lessons, like books off the shelf.
-  const allTopics = await store.getAll('topics');
-  const topicById = Object.fromEntries(allTopics.map((t) => [t.id, t]));
+  const topicById = Object.fromEntries(topics.map((t) => [t.id, t]));
   const started = lessons
     .filter((l) => l.startedAt && !l.completedAt)
     .sort((a, b) => (b.startedAt || '').localeCompare(a.startedAt || ''));
@@ -180,6 +158,7 @@ export async function renderDashboard(root) {
               ])
             : null,
         ]),
+        el('button', { class: 'link', onclick: () => navigate('#/review') }, 'Review your weak spots →'),
       ])
     );
   }
@@ -198,19 +177,4 @@ export async function renderDashboard(root) {
       ])
     );
   }
-
-  // Recent achievements.
-  const earned = (profile.achievements || [])
-    .map((id) => ACHIEVEMENTS.find((a) => a.id === id))
-    .filter(Boolean);
-  root.append(
-    el('section', { class: 'panel' }, [
-      el('h4', {}, 'Achievements'),
-      earned.length
-        ? el('div', { class: 'badge-strip' }, earned.map((a) =>
-            el('div', { class: 'badge', title: a.desc }, [el('span', { class: 'badge-icon' }, '🏆'), el('span', {}, a.name)])
-          ))
-        : el('p', { class: 'muted' }, 'Complete a lesson to earn your first badge.'),
-    ])
-  );
 }

@@ -2,7 +2,7 @@
 
 import * as store from './store.js';
 import { generateLesson, generateSyllabus, hasApiKey } from './ai.js';
-import { award } from './gamification.js';
+import { touchActivity } from './gamification.js';
 import { SUGGESTED_TOPICS } from './suggestedTopics.js';
 import { el, clear, paragraphs, rich, toast, loading, navigate } from './ui.js';
 
@@ -119,7 +119,7 @@ function renderSuggestions(root, existingTopics, { expanded }) {
           description: topic.description,
           lessonIds: [],
         });
-        await award('topicCreated');
+        await touchActivity();
         toast(`Added “${topic.name}”`, 'success');
         renderTopics(root); // re-render so it flips to “Added” and joins the list
       },
@@ -164,7 +164,7 @@ function newTopicDialog(root) {
       description: desc.value.trim(),
       lessonIds: [],
     });
-    await award('topicCreated');
+    await touchActivity();
     navigate(`#/topic/${topic.id}`);
   };
 

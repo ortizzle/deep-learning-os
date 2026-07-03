@@ -15,6 +15,7 @@ import { renderTopics, renderTopic, renderLesson } from './modules/lessons.js';
 import { renderQuiz } from './modules/quiz.js';
 import { renderCoach } from './modules/coach.js';
 import { renderSaved } from './modules/saved.js';
+import { renderReview } from './modules/review.js';
 import { hasApiKey } from './modules/ai.js';
 import { el, clear, toast, navigate } from './modules/ui.js';
 
@@ -46,6 +47,7 @@ const routes = [
   { re: /^#\/quiz\/(.+)$/, tab: 'topics', fn: (m) => renderQuiz(view, { id: m[1] }) },
   { re: /^#\/coach$/, tab: 'coach', fn: () => renderCoach(view) },
   { re: /^#\/saved$/, tab: 'dashboard', fn: () => renderSaved(view) },
+  { re: /^#\/review$/, tab: 'review', fn: () => renderReview(view) },
   { re: /^#\/settings$/, tab: 'settings', fn: () => renderSettings(view) },
 ];
 

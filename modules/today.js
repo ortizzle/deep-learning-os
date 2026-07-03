@@ -3,13 +3,11 @@
 // States: pending / done / skipped ("doesn't apply" — honest, chain-safe).
 
 import * as store from './store.js';
-import { award } from './gamification.js';
+import { touchActivity, dayString } from './gamification.js';
 import { el, toast } from './ui.js';
 
-// Local-time day string — the user's day, not UTC's (which would roll the
-// Today list and chains over mid-afternoon in the US).
-const dayStr = (d = new Date()) =>
-  `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+// Day boundaries pinned to Arizona time (see gamification.js).
+const dayStr = dayString;
 
 // Seed default habits exactly once.
 async function ensureDefaultHabits() {
@@ -63,8 +61,8 @@ export async function addLessonAction(lesson) {
   });
 }
 
-// Perfect day: every item resolved, at least one actually done. Once per day.
-async function checkPerfectDay() {
+// All of today's items resolved (at least one done): a quiet nod, once a day.
+async function checkDayClosed() {
   const today = dayStr();
   const todays = (await store.getAll('tasks')).filter(
     (t) => t.date === today && t.status !== 'expired'
@@ -77,11 +75,8 @@ async function checkPerfectDay() {
   const profile = await store.getProfile();
   if (profile.lastPerfectDay === today) return;
   profile.lastPerfectDay = today;
-  profile.perfectDays = (profile.perfectDays || 0) + 1;
   await store.saveProfile(profile);
-  const { unlocked } = await award('perfectDay');
-  toast('✨ Perfect day — everything closed out', 'success');
-  for (const a of unlocked || []) toast(`🏆 ${a.name} unlocked`, 'success');
+  toast('✨ Everything closed out for today', 'success');
 }
 
 // 7-day dot chain for a habit (oldest → today).
@@ -129,12 +124,10 @@ export async function renderTodayPanel(container) {
   container.append(head);
 
   const setStatus = async (task, status) => {
-    const firstDone = status === 'done' && !task.rewarded;
     task.status = status;
-    if (firstDone) task.rewarded = true;
     await store.put('tasks', task);
-    if (firstDone) await award('taskDone');
-    await checkPerfectDay();
+    if (status === 'done') await touchActivity();
+    await checkDayClosed();
     renderTodayPanel(container);
   };
 
