@@ -267,7 +267,11 @@ export async function renderTopic(root, { id }) {
 
   root.append(
     el('button', { class: 'btn btn-primary full', onclick: () => generateLessonFor(topic, root) },
-      topic.syllabus?.length ? '✨ Generate next lesson' : '✨ Plan this topic & write lesson 1')
+      topic.syllabus?.length
+        ? '✨ Generate next lesson'
+        : lessons.length
+          ? '✨ Plan a course & generate the next lesson'
+          : '✨ Plan this topic & write lesson 1')
   );
 
   // Course plan: the syllabus with per-entry state.
@@ -328,14 +332,29 @@ export async function renderTopic(root, { id }) {
 // extends the plan when the current one is exhausted.
 async function ensureSyllabus(topic) {
   if (topic.syllabus?.some((e) => !e.lessonId)) return topic;
+
+  // Backfill any lessons that predate the course-plan feature (or were
+  // otherwise never linked into the syllabus) as already-done entries,
+  // so a topic with existing lessons doesn't get told to "write lesson 1"
+  // and doesn't have the new plan duplicate ground it already covered.
+  const existingLessons = (await store.getAll('lessons')).filter((l) => l.topicId === topic.id);
+  const syllabus = topic.syllabus ? [...topic.syllabus] : [];
+  const linkedIds = new Set(syllabus.map((e) => e.lessonId).filter(Boolean));
+  for (const l of existingLessons) {
+    if (!linkedIds.has(l.id)) {
+      syllabus.push({ title: l.title, focus: '', lessonId: l.id });
+      linkedIds.add(l.id);
+    }
+  }
+
   const plan = await generateSyllabus({
     topicName: topic.name,
     topicDescription: topic.description,
-    priorTitles: (topic.syllabus || []).map((e) => e.title),
+    priorTitles: syllabus.map((e) => e.title),
     count: 6,
   });
   topic.syllabus = [
-    ...(topic.syllabus || []),
+    ...syllabus,
     ...(plan.lessons || []).map((l) => ({ title: l.title, focus: l.focus, lessonId: null })),
   ];
   return store.put('topics', topic);
