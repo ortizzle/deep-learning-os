@@ -541,6 +541,13 @@ mark.kw {
 }
 .closer-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-3); font-weight: 600; }
 .closer-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.closer-actions { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
+/* Closer save/share reuse .save-mark/.share-mark's look but sit inline in
+   .closer-actions instead of absolutely-positioned — they share a header
+   row with "+ Add to Today" instead of overlapping it in the corner.
+   Scoped via the parent (not just the bare class) so it wins over the
+   later .save-mark/.share-mark base rules regardless of source order. */
+.closer-actions .save-mark, .closer-actions .share-mark { position: static; padding: 2px; }
 .closer-add {
   flex-shrink: 0;
   background: var(--accent-soft);

@@ -532,10 +532,12 @@ function applyHighlights(article, highlights) {
   }
 }
 
-// One-tap block bookmarks on saveable elements.
+// One-tap block bookmarks on saveable elements. Closers are excluded here —
+// they build their own save/share buttons inline in their header row (see
+// `closer()` in renderLesson) so the controls can't overlap each other.
 function markSavedBlocks(article, lesson, highlights) {
   const saved = new Map(highlights.map((h) => [h.text, h]));
-  const blocks = article.querySelectorAll('.lesson-body p, .lesson-block li, .closer, .example-box');
+  const blocks = article.querySelectorAll('.lesson-body p, .lesson-block li, .example-box');
   for (const block of blocks) {
     if (block.closest('.pause-answer')) continue;
     const text = block.textContent.trim();
@@ -774,17 +776,58 @@ export async function renderLesson(root, { id }) {
     );
   }
 
-  // `actionable` closers get a "+" that adds the tip to Today (once or daily).
+  // Every closer gets one action row: label on the left, then whichever of
+  // [+ Add to Today, save, share] apply — grouped together so they can't
+  // overlap (previously the save/share icons were absolutely positioned
+  // into the same corner the "+ Add to Today" button occupied).
+  const highlights = (await store.getAll('highlights')).filter((h) => h.lessonId === lesson.id);
+  const savedBlockByText = new Map(
+    highlights.filter((h) => h.source === 'block').map((h) => [h.text, h])
+  );
+
   const closer = (label, value, cls = '', actionable = false) => {
     if (!value) return null;
-    const head = el('div', { class: 'closer-head' }, [el('span', { class: 'closer-label' }, label)]);
+    const text = value.replace(/\*\*/g, '');
+    const actions = el('div', { class: 'closer-actions' });
+
     if (actionable) {
-      head.append(el('button', {
+      actions.append(el('button', {
         class: 'closer-add',
         title: 'Add to Today',
-        onclick: () => addToTodaySheet(value.replace(/\*\*/g, ''), lesson.id),
+        onclick: () => addToTodaySheet(text, lesson.id),
       }, '+ Add to Today'));
     }
+
+    const existing = savedBlockByText.get(text);
+    const saveBtn = el('button', {
+      class: 'save-mark closer-save' + (existing ? ' saved' : ''),
+      title: existing ? 'Remove from saved' : 'Save for later',
+    }, existing ? '⚑' : '⚐');
+    saveBtn.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      const isSaved = saveBtn.classList.contains('saved');
+      if (isSaved) {
+        const h = (await store.getAll('highlights')).find((x) => x.lessonId === lesson.id && x.text === text);
+        if (h) await store.remove('highlights', h.id);
+        saveBtn.classList.remove('saved');
+        saveBtn.textContent = '⚐';
+        toast('Removed from saved');
+      } else {
+        await store.put('highlights', { lessonId: lesson.id, topicId: lesson.topicId, text, source: 'block' });
+        saveBtn.classList.add('saved');
+        saveBtn.textContent = '⚑';
+        toast('Saved for later', 'success');
+      }
+    });
+
+    const shareBtn = el('button', { class: 'share-mark closer-share', title: 'Share this passage', html: SHARE_ICON });
+    shareBtn.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      await shareText({ title: lesson.title, text: passageShare(text, lesson.title) });
+    });
+
+    actions.append(saveBtn, shareBtn);
+    const head = el('div', { class: 'closer-head' }, [el('span', { class: 'closer-label' }, label), actions]);
     return el('div', { class: `closer ${cls}` }, [head, rich('p', {}, value)]);
   };
 
@@ -808,8 +851,8 @@ export async function renderLesson(root, { id }) {
 
   root.append(article);
 
-  // Highlights: render saved ones, enable block bookmarks + selection capture.
-  const highlights = (await store.getAll('highlights')).filter((h) => h.lessonId === lesson.id);
+  // Highlights: render saved selections, enable block bookmarks (closers
+  // already got their own save/share buttons above) + selection capture.
   applyHighlights(article, highlights.filter((h) => h.source === 'selection'));
   markSavedBlocks(article, lesson, highlights);
   setupSelectionCapture(article, lesson);
