@@ -9,8 +9,8 @@ import { syllabusPosition } from './lessons.js';
 import { questionOfTheDay } from './review.js';
 import { el, clear, navigate } from './ui.js';
 
-function statCard(value, label, icon) {
-  return el('div', { class: 'stat' }, [
+function statCard(value, label, icon, onClick) {
+  return el(onClick ? 'button' : 'div', { class: 'stat' + (onClick ? ' stat-btn' : ''), onclick: onClick }, [
     el('div', { class: 'stat-value' }, [icon ? el('span', { class: 'stat-icon' }, icon) : null, String(value)]),
     el('div', { class: 'stat-label' }, label),
   ]);
@@ -87,7 +87,7 @@ export async function renderDashboard(root) {
   root.append(
     el('div', { class: 'stat-row' }, [
       statCard(profile.streak || 0, 'day streak', '🔥'),
-      statCard(completed, 'lessons done'),
+      statCard(completed, 'lessons done', null, () => navigate('#/completed')),
       statCard(mastered, 'topics mastered'),
     ])
   );
@@ -243,5 +243,33 @@ export async function renderContinue(root) {
   }
   const list = el('div', { class: 'card-list' });
   for (const l of started) list.append(lessonCard(l, topicById[l.topicId], 'Resume', 'pill-pos'));
+  root.append(list);
+}
+
+// All completed lessons, newest first.
+export async function renderCompletedLessons(root) {
+  clear(root);
+  const [lessons, topics] = await Promise.all([
+    store.getAll('lessons'),
+    store.getAll('topics'),
+  ]);
+  const topicById = Object.fromEntries(topics.map((t) => [t.id, t]));
+  const done = lessons
+    .filter((l) => l.completedAt)
+    .sort((a, b) => (b.completedAt || '').localeCompare(a.completedAt || ''));
+
+  root.append(
+    el('header', { class: 'view-head' }, [
+      el('button', { class: 'link', onclick: () => navigate('#/dashboard') }, '← Home'),
+      el('h1', {}, 'Completed'),
+      el('p', { class: 'muted' }, `${done.length} lesson${done.length === 1 ? '' : 's'} finished.`),
+    ])
+  );
+  if (!done.length) {
+    root.append(el('div', { class: 'empty' }, [el('p', {}, 'No completed lessons yet.'), el('button', { class: 'btn btn-primary', onclick: () => navigate('#/topics') }, 'Browse topics')]));
+    return;
+  }
+  const list = el('div', { class: 'card-list' });
+  for (const l of done) list.append(lessonCard(l, topicById[l.topicId], 'Review', 'pill-done'));
   root.append(list);
 }

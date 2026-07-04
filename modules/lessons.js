@@ -303,15 +303,19 @@ export async function renderTopic(root, { id }) {
       plan.append(row);
     });
     root.append(plan);
-  }
-
-  if (!lessons.length) {
-    if (!topic.syllabus?.length) {
-      root.append(el('p', { class: 'muted center' }, 'No lessons yet — generating the first one also plans a course for this topic.'));
-    }
+    // The course plan is the single source of truth for this topic's
+    // lessons — don't also render the flat list below it, or every lesson
+    // shows up twice (once as a plan row, once as a plain card).
     return;
   }
 
+  if (!lessons.length) {
+    root.append(el('p', { class: 'muted center' }, 'No lessons yet — generating the first one also plans a course for this topic.'));
+    return;
+  }
+
+  // Legacy fallback for topics that predate course plans and have no
+  // syllabus yet: show the flat list until a plan is generated.
   const list = el('div', { class: 'card-list' });
   for (const l of lessons.sort((a, b) => (b.createdAt || '').localeCompare(a.createdAt || ''))) {
     list.append(
