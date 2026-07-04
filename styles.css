@@ -666,14 +666,18 @@ button.task-src:hover { text-decoration: underline; }
   opacity: 0.6;
 }
 .task-skip:hover, .task-skip.active { opacity: 1; color: var(--warn); }
-.chain { display: inline-flex; gap: 4px; }
+.chain { display: inline-flex; gap: 5px; }
 .dot {
-  width: 8px; height: 8px; border-radius: 50%;
+  width: 9px; height: 9px; border-radius: 50%;
   background: var(--surface-2);
+  border: 1px solid var(--border);
 }
-.dot.done { background: var(--accent); }
-.dot.skip { background: var(--border-strong); }
-.dot.today { border: 1.5px solid var(--accent); background: var(--surface); width: 7px; height: 7px; }
+/* Done = accent blue (matches the rest of the app's "done" language).
+   Skipped = warn amber — same color as the ⊘ skip button elsewhere, so a
+   skipped day never reads as a dim/uncertain version of "done" or "empty". */
+.dot.done { background: var(--accent); border-color: var(--accent); }
+.dot.skip { background: var(--warn); border-color: var(--warn); }
+.dot.today { border: 1.5px solid var(--accent); background: var(--surface); width: 8px; height: 8px; }
 .today-edit { border-top: 1px dashed var(--border-strong); margin-top: 10px; padding-top: 10px; }
 .today-edit-row { display: flex; align-items: center; justify-content: space-between; padding: 6px 0; font-size: 14px; }
 .today-edit-add { display: flex; gap: 8px; margin-top: 8px; }
