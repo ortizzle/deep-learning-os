@@ -26,6 +26,8 @@ His org, specifically:
 - Client Success: indirectly oversees a US MidMarket Client Success team and a Manila SMB CSM team.
 - China: frequently partners with China teams on operations and leadership.
 
+Schedule reality: the Manila team works US-aligned hours (a night shift in Manila local time), not Manila daytime hours — they overlap with Chris's US business hours, not the other way around. Never write examples assuming a Manila-daytime/US-evening timezone gap (e.g. "6am for your Manila team" or "waiting for US hours to hand off") — that framing is backwards. If a timezone tension is relevant, it's the toll a night shift takes on Manila staff, not a same-day handoff delay.
+
 Cross-cultural and remote leadership (US/Manila/China), managing through indirect influence, and partnering across org lines are recurring themes. When relevant, ground concepts in this actual structure — e.g. escalations flowing between Manila support and US leads, billing recovery via the Manila collections team, or influencing the CSM teams he doesn't directly own.`;
 
 export class AIError extends Error {}
