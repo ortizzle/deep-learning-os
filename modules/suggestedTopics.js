@@ -73,6 +73,11 @@ export const SUGGESTED_TOPICS = [
     topics: [
       { name: 'CIPA & Communications Compliance', description: 'The California Invasion of Privacy Act and communications-recording law: consent, disclosures, and what they mean for AI calling, texting, chat, and website tracking.' },
       { name: 'TCPA & Outreach Compliance', description: 'The Telephone Consumer Protection Act and its rules for calls and texts: prior express consent, autodialers and prerecorded/AI voice, the DNC registry, and quiet hours — and what they mean for AI calling and texting.' },
+      { name: '10DLC & A2P Messaging Compliance', description: 'How carriers govern application-to-person texting: brand and campaign registration, opt-in/opt-out handling, throughput and content rules — the plumbing that keeps AI texting deliverable and compliant.' },
+      { name: 'CAN-SPAM & Email Compliance', description: 'The rules for commercial email: accurate headers and subject lines, clear identification, a working unsubscribe, and honoring opt-outs — what marketing and lifecycle email must get right.' },
+      { name: 'CCPA / CPRA & Consumer Data Privacy', description: 'California\'s consumer privacy regime: what counts as personal information, the rights to know, delete, and opt out of sale/sharing, and what it means for how we collect and use lead and customer data.' },
+      { name: 'Fair Housing & Advertising Compliance', description: 'The Fair Housing Act and its reach into real estate marketing: protected classes, discriminatory targeting and language, and the audience and ad-targeting limits that shape agent outreach.' },
+      { name: 'STIR/SHAKEN & Branded Caller ID', description: 'Why legitimate calls get flagged as spam and how call authentication fixes it: attestation levels, number reputation, and branded caller ID — protecting answer rates for AI and agent calling.' },
     ],
   },
   {
