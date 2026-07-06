@@ -10,7 +10,7 @@ import {
   onSyncStatus,
   exportSnapshot,
 } from './modules/store.js';
-import { renderDashboard, renderContinue, renderCompletedLessons } from './modules/dashboard.js';
+import { renderDashboard, renderContinue, renderCompletedLessons, renderDailyActivity } from './modules/dashboard.js';
 import { renderTopics, renderTopic, renderLesson } from './modules/lessons.js';
 import { renderQuiz } from './modules/quiz.js';
 import { renderCoach } from './modules/coach.js';
@@ -53,6 +53,7 @@ const routes = [
   { re: /^#\/saved$/, tab: 'dashboard', fn: () => renderSaved(view) },
   { re: /^#\/reading$/, tab: 'dashboard', fn: () => renderContinue(view) },
   { re: /^#\/completed$/, tab: 'dashboard', fn: () => renderCompletedLessons(view) },
+  { re: /^#\/activity$/, tab: 'dashboard', fn: () => renderDailyActivity(view) },
   { re: /^#\/review$/, tab: 'review', fn: () => renderReview(view) },
   { re: /^#\/settings$/, tab: 'settings', fn: () => renderSettings(view) },
 ];

@@ -2,7 +2,7 @@
 // checklist, the Continue-reading shelf, and what to start next.
 
 import * as store from './store.js';
-import { masteredTopicCount } from './gamification.js';
+import { masteredTopicCount, dayString } from './gamification.js';
 import { recentHighlights } from './saved.js';
 import { renderTodayPanel } from './today.js';
 import { syllabusPosition } from './lessons.js';
@@ -86,7 +86,7 @@ export async function renderDashboard(root) {
   // The three signals that matter: consistency, volume, depth.
   root.append(
     el('div', { class: 'stat-row' }, [
-      statCard(profile.streak || 0, 'day streak', '🔥'),
+      statCard(profile.streak || 0, 'day streak', '🔥', () => navigate('#/activity')),
       statCard(completed, 'lessons done', null, () => navigate('#/completed')),
       statCard(mastered, 'topics mastered'),
     ])
@@ -289,5 +289,82 @@ export async function renderCompletedLessons(root) {
     const list = el('div', { class: 'card-list' });
     for (const l of groups.get(topicId)) list.append(lessonCard(l, topicById[topicId], 'Review', 'pill-done'));
     root.append(list);
+  }
+}
+
+// "Today", "Yesterday", or e.g. "Friday, July 3" — all on Arizona time.
+function dayHeading(dateKey) {
+  const today = dayString();
+  const yesterday = dayString(new Date(Date.now() - 86400000));
+  if (dateKey === today) return 'Today';
+  if (dateKey === yesterday) return 'Yesterday';
+  const d = new Date(`${dateKey}T12:00:00Z`);
+  return new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/Phoenix', weekday: 'long', month: 'long', day: 'numeric',
+  }).format(d);
+}
+
+// What was done, day by day: lessons completed and Today-list tasks
+// resolved (done or skipped), newest day first. Tapping the streak stat
+// on Home opens this — the streak's receipts.
+export async function renderDailyActivity(root) {
+  clear(root);
+  const [lessons, tasks, topics] = await Promise.all([
+    store.getAll('lessons'),
+    store.getAll('tasks'),
+    store.getAll('topics'),
+  ]);
+  const topicById = Object.fromEntries(topics.map((t) => [t.id, t]));
+
+  const byDay = new Map();
+  const bump = (dateKey) => {
+    if (!byDay.has(dateKey)) byDay.set(dateKey, { lessons: [], tasks: [] });
+    return byDay.get(dateKey);
+  };
+
+  for (const l of lessons) {
+    if (!l.completedAt) continue;
+    bump(dayString(new Date(l.completedAt))).lessons.push(l);
+  }
+  for (const t of tasks) {
+    if (t.status !== 'done' && t.status !== 'skipped') continue;
+    bump(t.date).tasks.push(t);
+  }
+
+  const days = [...byDay.keys()].sort((a, b) => b.localeCompare(a));
+
+  root.append(
+    el('header', { class: 'view-head' }, [
+      el('button', { class: 'link', onclick: () => navigate('#/dashboard') }, '← Home'),
+      el('h1', {}, 'Activity'),
+      el('p', { class: 'muted' }, 'What you\'ve done, day by day.'),
+    ])
+  );
+  if (!days.length) {
+    root.append(el('div', { class: 'empty' }, [el('p', {}, 'Nothing logged yet.'), el('button', { class: 'btn btn-primary', onclick: () => navigate('#/topics') }, 'Browse topics')]));
+    return;
+  }
+
+  for (const dateKey of days) {
+    const entry = byDay.get(dateKey);
+    root.append(el('h4', { class: 'topic-cat-heading' }, dayHeading(dateKey)));
+
+    if (entry.lessons.length) {
+      const list = el('div', { class: 'card-list' });
+      for (const l of entry.lessons) list.append(lessonCard(l, topicById[l.topicId], 'Review', 'pill-done'));
+      root.append(list);
+    }
+    if (entry.tasks.length) {
+      const panel = el('div', { class: 'panel panel-tight' });
+      for (const t of entry.tasks) {
+        panel.append(
+          el('div', { class: `task-row ${t.status}` }, [
+            el('span', { class: 'task-check' }, t.status === 'done' ? '✓' : '⊘'),
+            el('div', { class: 'task-main' }, [el('span', { class: 'task-name' }, t.name)]),
+          ])
+        );
+      }
+      root.append(panel);
+    }
   }
 }
