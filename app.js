@@ -16,6 +16,7 @@ import { renderQuiz } from './modules/quiz.js';
 import { renderCoach } from './modules/coach.js';
 import { renderSaved } from './modules/saved.js';
 import { renderReview } from './modules/review.js';
+import { seedPrebuiltCourses } from './modules/prebuiltContent.js';
 import { hasApiKey } from './modules/ai.js';
 import { el, clear, toast, navigate } from './modules/ui.js';
 
@@ -199,6 +200,9 @@ async function boot() {
   // A storage failure must degrade, never blank the app.
   try {
     await initStore();
+    // Preloaded courses: real lessons authored ahead of time, seeded straight
+    // into the store so these topics need no Claude API call to read.
+    await seedPrebuiltCourses();
   } catch (err) {
     console.error('initStore failed', err);
     toast(`Storage error — some data may be unavailable (${err?.message || err})`, 'error');
