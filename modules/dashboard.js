@@ -246,7 +246,8 @@ export async function renderContinue(root) {
   root.append(list);
 }
 
-// All completed lessons, newest first.
+// All completed lessons, grouped by topic — topics ordered by their most
+// recently completed lesson, and lessons within each topic newest first.
 export async function renderCompletedLessons(root) {
   clear(root);
   const [lessons, topics] = await Promise.all([
@@ -254,9 +255,7 @@ export async function renderCompletedLessons(root) {
     store.getAll('topics'),
   ]);
   const topicById = Object.fromEntries(topics.map((t) => [t.id, t]));
-  const done = lessons
-    .filter((l) => l.completedAt)
-    .sort((a, b) => (b.completedAt || '').localeCompare(a.completedAt || ''));
+  const done = lessons.filter((l) => l.completedAt);
 
   root.append(
     el('header', { class: 'view-head' }, [
@@ -269,7 +268,26 @@ export async function renderCompletedLessons(root) {
     root.append(el('div', { class: 'empty' }, [el('p', {}, 'No completed lessons yet.'), el('button', { class: 'btn btn-primary', onclick: () => navigate('#/topics') }, 'Browse topics')]));
     return;
   }
-  const list = el('div', { class: 'card-list' });
-  for (const l of done) list.append(lessonCard(l, topicById[l.topicId], 'Review', 'pill-done'));
-  root.append(list);
+
+  // Group by topic, each group's lessons newest-first.
+  const groups = new Map();
+  for (const l of done) {
+    if (!groups.has(l.topicId)) groups.set(l.topicId, []);
+    groups.get(l.topicId).push(l);
+  }
+  for (const list of groups.values()) {
+    list.sort((a, b) => (b.completedAt || '').localeCompare(a.completedAt || ''));
+  }
+
+  // Order topic groups by their own most recent completion.
+  const orderedTopicIds = [...groups.keys()].sort(
+    (a, b) => (groups.get(b)[0].completedAt || '').localeCompare(groups.get(a)[0].completedAt || '')
+  );
+
+  for (const topicId of orderedTopicIds) {
+    root.append(el('h4', { class: 'topic-cat-heading' }, topicById[topicId]?.name || 'Other'));
+    const list = el('div', { class: 'card-list' });
+    for (const l of groups.get(topicId)) list.append(lessonCard(l, topicById[topicId], 'Review', 'pill-done'));
+    root.append(list);
+  }
 }
