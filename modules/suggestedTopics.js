@@ -72,6 +72,7 @@ export const SUGGESTED_TOPICS = [
     category: 'Compliance',
     topics: [
       { name: 'CIPA & Communications Compliance', description: 'The California Invasion of Privacy Act and communications-recording law: consent, disclosures, and what they mean for AI calling, texting, chat, and website tracking.' },
+      { name: 'TCPA & Outreach Compliance', description: 'The Telephone Consumer Protection Act and its rules for calls and texts: prior express consent, autodialers and prerecorded/AI voice, the DNC registry, and quiet hours — and what they mean for AI calling and texting.' },
     ],
   },
   {
