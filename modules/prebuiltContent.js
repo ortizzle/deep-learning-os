@@ -35,6 +35,9 @@ function lessonRecord(id, topicId, L) {
     leadershipTakeaway: L.leadershipTakeaway || '',
     productivityTip: L.productivityTip || '',
     discussionQ: L.discussionQ || '',
+    // Pre-authored quiz travels with the lesson; renderQuiz serves it with
+    // zero API calls (MC grades locally). Null lessons fall back to live gen.
+    quiz: L.quiz && L.quiz.questions?.length ? L.quiz : null,
     completedAt: null,
   };
 }
@@ -91,9 +94,16 @@ export async function seedPrebuiltCourses() {
         topicDirty = true;
       }
 
-      // Create the lesson only if it isn't already there.
+      // Create the lesson only if it isn't already there. If it exists but
+      // predates the pre-authored quiz (e.g. seeded by an earlier version),
+      // backfill the quiz so returning users get it without a reseed.
       const existing = await store.get('lessons', lessonId);
-      if (!existing) {
+      if (existing) {
+        if (L.quiz?.questions?.length && !existing.quiz?.questions?.length) {
+          existing.quiz = L.quiz;
+          await store.put('lessons', existing);
+        }
+      } else {
         await store.put('lessons', lessonRecord(lessonId, topic.id, L));
         if (!topic.lessonIds.includes(lessonId)) topic.lessonIds.push(lessonId);
         topicDirty = true;

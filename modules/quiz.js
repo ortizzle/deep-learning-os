@@ -26,17 +26,18 @@ export async function renderQuiz(root, { id, focusConcepts = [] }) {
     root.append(el('p', { class: 'empty' }, 'Lesson not found.'));
     return;
   }
-  if (!hasApiKey()) {
-    toast('Add your Claude API key in Settings first', 'warn');
-    return navigate('#/settings');
-  }
-
   let quizData;
   // Pre-authored quiz attached to the lesson: instant, no tokens. Retests
-  // still generate live so they can focus on missed concepts.
+  // still generate live so they can focus on missed concepts. Only a live
+  // generation needs an API key, so gate on that — a pre-authored quiz reads
+  // and (for MC) grades entirely locally.
   if (!focusConcepts.length && lesson.quiz?.questions?.length) {
     quizData = lesson.quiz;
   } else {
+    if (!hasApiKey()) {
+      toast('Add your Claude API key in Settings first', 'warn');
+      return navigate('#/settings');
+    }
     loading(root, focusConcepts.length ? 'Building your retest…' : 'Building your quiz…');
     try {
       quizData = await generateQuiz({
