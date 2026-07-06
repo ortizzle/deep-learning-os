@@ -97,9 +97,9 @@ export const PREBUILT_COURSES = [
               "question": "What does CIPA make illegal?",
               "options": [
                 "Secretly intercepting, recording, or listening to communications without proper consent",
-                "Sending marketing texts to consumers without a prior business relationship",
-                "Storing customer data on servers located outside California",
-                "Charging different prices to consumers in different states"
+                "Sending marketing text messages to consumers who lack any prior business relationship",
+                "Storing collected customer data on computer servers physically located outside California",
+                "Charging consumers different prices depending on which state they happen to live in"
               ],
               "correctIndex": 0
             },
@@ -110,7 +110,7 @@ export const PREBUILT_COURSES = [
               "options": [
                 "Using a device to secretly overhear a private in-person chat",
                 "Tapping into a communication in transit over a wire or line",
-                "Reselling recorded calls to an advertising platform",
+                "Reselling previously recorded phone calls to an ad platform",
                 "Failing to delete recordings after a set retention period"
               ],
               "correctIndex": 1
@@ -121,8 +121,8 @@ export const PREBUILT_COURSES = [
               "question": "The two classic CIPA theories were originally written to address what technology?",
               "options": [
                 "Email interception in the 1990s",
-                "Website session tracking scripts",
-                "Phone taps in the 1960s",
+                "Website session-tracking scripts",
+                "Telephone wiretaps in the 1960s",
                 "Text-message forwarding services"
               ],
               "correctIndex": 2
@@ -132,10 +132,10 @@ export const PREBUILT_COURSES = [
               "concept": "statutory damages",
               "question": "Why does the lesson say statutory damages make CIPA dangerous?",
               "options": [
-                "They require proof of at least ten thousand dollars in losses",
-                "They can only be recovered by government prosecutors",
-                "They are capped at the total revenue of the defendant",
-                "A plaintiff can recover a fixed amount without proving lost money"
+                "They require proof of at least ten thousand dollars in actual losses",
+                "They can only ever be recovered by government criminal prosecutors",
+                "They are strictly capped at the total annual revenue of the defendant",
+                "A plaintiff can recover a fixed sum without proving any money was lost"
               ],
               "correctIndex": 3
             },
@@ -145,9 +145,9 @@ export const PREBUILT_COURSES = [
               "question": "What does a private right of action allow?",
               "options": [
                 "An individual to sue directly rather than relying on a government enforcer",
-                "A company to settle claims privately before any suit is filed",
-                "A court to convert civil penalties into criminal charges",
-                "A regulator to fine a business without going to court"
+                "A company to settle all claims privately well before any lawsuit is filed",
+                "A court to convert ordinary civil penalties into serious criminal charges",
+                "A government regulator to fine a business directly without going to court"
               ],
               "correctIndex": 0
             },
@@ -156,10 +156,10 @@ export const PREBUILT_COURSES = [
               "concept": "confidential communication",
               "question": "According to the lesson, why is CIPA a customer-success concern for Lofty and not just a legal footnote?",
               "options": [
-                "Because CIPA fines are billed directly to the support department",
+                "Because any CIPA fines are billed directly to the customer-success support department",
                 "Because a non-compliant default setting can create liability across an entire customer base",
-                "Because only the vendor, never the customer, can be sued under CIPA",
-                "Because CIPA requires support teams to obtain a legal license"
+                "Because only the software vendor, and never the customer, can ever be sued under CIPA",
+                "Because CIPA requires every support team member to first obtain a formal legal license"
               ],
               "correctIndex": 1
             }
@@ -243,10 +243,10 @@ export const PREBUILT_COURSES = [
               "concept": "one-party consent",
               "question": "In a one-party consent state, who must agree to a recording?",
               "options": [
-                "Every participant on the confidential communication",
-                "A judge before the recording begins",
-                "Only one participant, who can be the person recording",
-                "Both the caller and the caller's employer"
+                "Every single participant on the confidential communication",
+                "A judge must first approve it before any recording begins",
+                "Only one participant, who can be the person doing the recording",
+                "Both the caller and the caller's employer must agree first"
               ],
               "correctIndex": 2
             },
@@ -256,9 +256,9 @@ export const PREBUILT_COURSES = [
               "question": "What does all-party consent require?",
               "options": [
                 "Everyone on a confidential communication to consent before recording",
-                "One participant to consent within 24 hours of the call",
-                "Written consent filed with a state agency",
-                "Consent only from parties who are physically in California"
+                "One single participant to consent within 24 hours after the call ends",
+                "Written consent to be formally filed with a state privacy agency",
+                "Consent only from those parties who are physically located in California"
               ],
               "correctIndex": 0
             },
@@ -269,7 +269,7 @@ export const PREBUILT_COURSES = [
               "options": [
                 "One-party consent, like most US states",
                 "A hybrid rule that varies by county",
-                "No consent requirement at all",
+                "No recording consent requirement at all",
                 "All-party consent, which CIPA enforces"
               ],
               "correctIndex": 3
@@ -280,9 +280,9 @@ export const PREBUILT_COURSES = [
               "question": "What is the most-protective-state rule?",
               "options": [
                 "Applying the strictest applicable consent standard to all communications",
-                "Following whichever state has the largest population",
-                "Using the caller's home-state law for every call",
-                "Recording only calls that stay inside a single state"
+                "Following the recording law of whichever state has the largest population",
+                "Using the caller's own home-state recording law for every single call",
+                "Recording only those calls that stay entirely inside a single state"
               ],
               "correctIndex": 0
             },
@@ -291,10 +291,10 @@ export const PREBUILT_COURSES = [
               "concept": "mixed-state calls",
               "question": "In a mixed-state call, how have courts generally treated which law applies?",
               "options": [
-                "They always apply the caller's home-state law",
+                "They will always simply apply the caller's own home-state recording law",
                 "They have been willing to apply the law of the more protective state",
-                "They apply whichever state's law was chosen in the contract",
-                "They decline to apply any state's recording law"
+                "They apply whichever single state's law was chosen in the written contract",
+                "They generally decline to apply any state's recording law at all"
               ],
               "correctIndex": 1
             },
@@ -303,10 +303,10 @@ export const PREBUILT_COURSES = [
               "concept": "reasonable expectation of privacy",
               "question": "In the Texas-agent example, why could a court apply California law to a silent recording?",
               "options": [
-                "Because the agent's brokerage was headquartered in California",
-                "Because the call used a California phone number",
+                "Because the agent's brokerage happened to be headquartered in California",
+                "Because the outbound call used a California-based phone number",
                 "Because the called party was in an all-party state expecting privacy",
-                "Because Lofty's servers were located in California"
+                "Because Lofty's recording servers were physically located in California"
               ],
               "correctIndex": 2
             }
@@ -394,9 +394,9 @@ export const PREBUILT_COURSES = [
               "concept": "recording disclosure",
               "question": "Under an all-party regime, when must consent to record be obtained?",
               "options": [
-                "At any point before the call ends",
-                "Only if the other party asks about recording",
-                "Within a day after the recording is made",
+                "At any single point in time before the call finally ends",
+                "Only if the other party specifically asks about being recorded",
+                "Within one full day after the recording has already been made",
                 "Before the recording of the confidential portion begins"
               ],
               "correctIndex": 3
@@ -407,9 +407,9 @@ export const PREBUILT_COURSES = [
               "question": "What is a beep tone used for?",
               "options": [
                 "An audible periodic tone signaling that a call is being recorded",
-                "A signal that the call has been transferred to a supervisor",
-                "A tone confirming the caller is an AI system",
-                "A chime played when consent is stored in the database"
+                "A signal that the call has just been transferred to a live supervisor",
+                "A tone confirming that the caller on the line is an AI system",
+                "A chime that plays when consent is safely stored in the database"
               ],
               "correctIndex": 0
             },
@@ -418,10 +418,10 @@ export const PREBUILT_COURSES = [
               "concept": "affirmative consent",
               "question": "What is described as the strongest consent posture?",
               "options": [
-                "Silence after a clear recording notice",
+                "Silence from the person after a clear recording notice is read",
                 "Affirmative consent, where the person says yes or presses a key",
-                "A disclosure read at the end of the call",
-                "A written policy kept on file by the company"
+                "A recording disclosure read aloud at the very end of the call",
+                "A written recording policy kept on file by the company itself"
               ],
               "correctIndex": 1
             },
@@ -430,10 +430,10 @@ export const PREBUILT_COURSES = [
               "concept": "consent capture",
               "question": "Why is giving notice alone not enough, according to the lesson?",
               "options": [
-                "Because notice must be repeated every five minutes",
-                "Because notice must be delivered by a human, not a bot",
+                "Because the notice must be repeated aloud every five minutes on a call",
+                "Because the notice must always be delivered by a human and not a bot",
                 "Because you need consent capture you can later produce as evidence",
-                "Because notice is only valid if translated into every language"
+                "Because notice is only valid if translated into every single language"
               ],
               "correctIndex": 2
             },
@@ -442,10 +442,10 @@ export const PREBUILT_COURSES = [
               "concept": "AI voice disclosure",
               "question": "How does the lesson characterize the recording disclosure and the AI voice disclosure?",
               "options": [
-                "As a single combined notice that covers both at once",
-                "As duties that only apply to human callers",
-                "As requirements that cancel each other out on AI calls",
-                "As distinct duties that both need to be handled"
+                "As a single combined notice that manages to cover both at once",
+                "As duties that only ever apply to live human callers, not bots",
+                "As requirements that simply cancel each other out on any AI call",
+                "As two distinct duties that both need to be separately handled"
               ],
               "correctIndex": 3
             },
@@ -455,9 +455,9 @@ export const PREBUILT_COURSES = [
               "question": "Why does the lesson say automated callers are an asset for disclosures?",
               "options": [
                 "They deliver the exact disclosure in the exact order on every call",
-                "They are legally exempt from giving recording notices",
-                "They can record calls without any consent at all",
-                "They automatically detect which state the consumer is in"
+                "They are entirely legally exempt from ever giving recording notices",
+                "They are able to record calls without obtaining any consent at all",
+                "They automatically detect exactly which state the consumer is located in"
               ],
               "correctIndex": 0
             }
@@ -545,10 +545,10 @@ export const PREBUILT_COURSES = [
               "concept": "pen register",
               "question": "What does a pen register capture?",
               "options": [
-                "The full content of a recorded phone conversation",
+                "The full spoken content of a recorded phone conversation between parties",
                 "Outgoing routing, addressing, or signaling data, not the content",
-                "A visitor's stored payment card details",
-                "The consent records tied to each web form"
+                "A website visitor's stored payment card and billing details",
+                "The signed consent records that are tied to each web form"
               ],
               "correctIndex": 1
             },
@@ -557,10 +557,10 @@ export const PREBUILT_COURSES = [
               "concept": "pen register",
               "question": "Why does the lesson call the pen-register theory especially potent?",
               "options": [
-                "It carries automatic criminal penalties",
-                "It applies only to phone lines, not websites",
+                "It automatically carries severe automatic criminal penalties in every case",
+                "It applies only to traditional phone lines and never to any websites",
                 "Historically it does not require capturing the content of a communication",
-                "It requires the plaintiff to prove financial loss"
+                "It requires the plaintiff to first prove they suffered financial loss"
               ],
               "correctIndex": 2
             },
@@ -569,9 +569,9 @@ export const PREBUILT_COURSES = [
               "concept": "session replay",
               "question": "What does session replay technology record?",
               "options": [
-                "Only the pages a visitor bookmarks for later",
-                "The visitor's stored login password in plain text",
-                "The IP addresses of every prior site visitor",
+                "Only the specific pages a visitor bookmarks on the site for later",
+                "The visitor's stored account login password saved in plain text",
+                "The IP addresses belonging to every prior visitor of the site",
                 "A visitor's mouse movements, clicks, scrolls, and keystrokes"
               ],
               "correctIndex": 3
@@ -582,9 +582,9 @@ export const PREBUILT_COURSES = [
               "question": "How do plaintiffs frame third-party chat widgets under CIPA?",
               "options": [
                 "As a third party secretly listening to a two-party conversation",
-                "As a pen register that captures only routing data",
-                "As a lawful first-party recording of the site's own call",
-                "As a telemarketing autodialer violation"
+                "As a pen register that captures only the outgoing routing data",
+                "As a lawful first-party recording of the website's own chat",
+                "As a telemarketing autodialer violation of federal calling rules"
               ],
               "correctIndex": 0
             },
@@ -593,10 +593,10 @@ export const PREBUILT_COURSES = [
               "concept": "party exception",
               "question": "What does the party exception establish?",
               "options": [
-                "That California residents are exempt from CIPA claims",
+                "That California residents are entirely exempt from all CIPA claims",
                 "That a participant cannot wiretap a communication they are party to",
-                "That analytics scripts are always exempt from consent rules",
-                "That a plaintiff must be a party to sue under CIPA"
+                "That analytics scripts are always exempt from every consent rule",
+                "That a plaintiff must have been a party to the call to sue under CIPA"
               ],
               "correctIndex": 1
             },
@@ -605,9 +605,9 @@ export const PREBUILT_COURSES = [
               "concept": "tracking pixel",
               "question": "According to the lesson, what is the core defense for consumer-facing IDX sites?",
               "options": [
-                "Blocking all California visitors from the website",
-                "Deleting analytics data at the end of each day",
-                "Recording every visitor session for later review",
+                "Simply blocking every California-based visitor from ever loading the website",
+                "Automatically deleting all collected analytics data at the end of each day",
+                "Recording every single visitor session in full for careful later review",
                 "Meaningful consent before third-party scripts load, plus privacy-policy disclosure"
               ],
               "correctIndex": 3
@@ -701,9 +701,9 @@ export const PREBUILT_COURSES = [
               "question": "What is the goal of compliance-by-default?",
               "options": [
                 "The easiest, default way to use the platform is also the compliant way",
-                "Compliance features are offered only as a paid add-on",
-                "Each agent chooses their own disclosure wording per call",
-                "Compliance is verified once per year by an outside auditor"
+                "Compliance features are offered to customers only as a paid add-on",
+                "Each individual agent chooses their own disclosure wording per call",
+                "Compliance is verified just once each year by an outside auditor firm"
               ],
               "correctIndex": 0
             },
@@ -712,7 +712,7 @@ export const PREBUILT_COURSES = [
               "concept": "consent language",
               "question": "What does standardized consent language include for AI calls?",
               "options": [
-                "A signed paper form mailed after each call",
+                "A signed paper form mailed to the consumer after each call",
                 "An opening recording-and-automation disclosure",
                 "A monthly summary emailed to the consumer",
                 "A verbal quiz confirming the consumer's identity"
@@ -724,10 +724,10 @@ export const PREBUILT_COURSES = [
               "concept": "recordkeeping",
               "question": "How long does the lesson say consent records should be kept?",
               "options": [
-                "For exactly thirty days after each call",
-                "Only until the customer's contract renews",
+                "For exactly thirty calendar days after each and every recorded call",
+                "Only up until the moment the customer's service contract next renews",
                 "At least as long as the recordings and communications they authorize",
-                "Indefinitely, regardless of the communication involved"
+                "Indefinitely forever, regardless of the communication they authorize"
               ],
               "correctIndex": 2
             },
@@ -736,10 +736,10 @@ export const PREBUILT_COURSES = [
               "concept": "auditability",
               "question": "What does good auditability turn a lawsuit or escalation into?",
               "options": [
-                "A mandatory settlement payment",
-                "A courtroom hearing before a jury",
+                "A large mandatory settlement payment",
+                "A full courtroom hearing before a jury",
                 "A companywide staff retraining event",
-                "A database query or lookup"
+                "A simple database query or record lookup"
               ],
               "correctIndex": 3
             },
@@ -748,10 +748,10 @@ export const PREBUILT_COURSES = [
               "concept": "escalation path",
               "question": "What does the lesson say the Manila support team needs regarding CIPA questions?",
               "options": [
-                "A script and decision rules, not legal theory",
-                "A law degree before handling any ticket",
-                "Authority to settle claims with consumers directly",
-                "Permission to disable recording on the whole platform"
+                "A clear script and simple decision rules, not legal theory",
+                "A full law degree before handling any support ticket at all",
+                "Authority to settle claims with consumers directly on their own",
+                "Permission to disable recording across the whole entire platform"
               ],
               "correctIndex": 0
             },
@@ -760,10 +760,10 @@ export const PREBUILT_COURSES = [
               "concept": "vendor review",
               "question": "What questions does a vendor review ask about a tool touching a communication?",
               "options": [
-                "Whether the tool is cheaper than its competitors",
+                "Whether the tool happens to be noticeably cheaper than its rival competitors",
                 "Whether it acts as an undisclosed third party, records by default, and waits for consent",
-                "Whether the vendor is based in the United States",
-                "Whether the tool integrates with the billing system"
+                "Whether the vendor company is based within the United States or elsewhere",
+                "Whether the tool integrates cleanly with the existing internal billing system"
               ],
               "correctIndex": 1
             }
@@ -852,9 +852,9 @@ export const PREBUILT_COURSES = [
               "question": "What kind of law is the Telephone Consumer Protection Act described as?",
               "options": [
                 "A federal law governing how businesses call and text consumers",
-                "A state law governing door-to-door sales practices",
-                "A voluntary industry code for email marketers",
-                "A local ordinance restricting billboard advertising"
+                "A state law governing door-to-door residential sales practices",
+                "A voluntary industry code adopted by commercial email marketers",
+                "A local city ordinance restricting outdoor billboard advertising"
               ],
               "correctIndex": 0
             },
@@ -863,10 +863,10 @@ export const PREBUILT_COURSES = [
               "concept": "Calls vs. texts equivalence",
               "question": "Under the TCPA, how is a text message to a mobile number treated?",
               "options": [
-                "As a low-risk casual convenience channel",
+                "As a low-risk and casual consumer convenience channel",
                 "As a call, with the same consent and technology rules",
-                "As exempt because texting is lightly regulated",
-                "As governed only by carrier terms of service"
+                "As fully exempt because texting is only lightly regulated",
+                "As governed only by the carrier's own terms of service"
               ],
               "correctIndex": 1
             },
@@ -996,7 +996,7 @@ export const PREBUILT_COURSES = [
               "options": [
                 "Non-marketing, informational contact",
                 "Telemarketing with prerecorded voice",
-                "New-listing promotional alerts",
+                "New-listing promotional marketing alerts",
                 "Any solicitation to sign up for a service"
               ],
               "correctIndex": 0
@@ -1009,7 +1009,7 @@ export const PREBUILT_COURSES = [
                 "The time of day the message is sent",
                 "The content and purpose of the message",
                 "The area code of the recipient's number",
-                "The length of the message body"
+                "The overall length of the message body text"
               ],
               "correctIndex": 1
             },
@@ -1030,9 +1030,9 @@ export const PREBUILT_COURSES = [
               "concept": "E-SIGN electronic signature",
               "question": "Under the E-SIGN Act, what can count as a valid signature for written consent?",
               "options": [
-                "A notarized handwritten signature only",
-                "A verbal yes recorded on a phone call",
-                "A pre-checked box in a terms-of-service page",
+                "A traditional notarized handwritten ink signature only",
+                "A simple verbal yes recorded during a phone call",
+                "A pre-checked consent box buried in a terms-of-service page",
                 "An electronic action such as a checkbox or text-to-join"
               ],
               "correctIndex": 3
@@ -1042,9 +1042,9 @@ export const PREBUILT_COURSES = [
               "concept": "Clear and conspicuous disclosure",
               "question": "Which of these does the lesson say does NOT meet the clear and conspicuous standard?",
               "options": [
-                "A pre-checked box or buried fine print",
+                "A pre-checked box or buried, hard-to-see fine print",
                 "A readily noticeable, understandable disclosure",
-                "An affirmative, informed action to agree",
+                "An affirmative, informed action taken to agree",
                 "Language identifying who is contacting them"
               ],
               "correctIndex": 0
@@ -1137,10 +1137,10 @@ export const PREBUILT_COURSES = [
               "concept": "Facebook v. Duguid",
               "question": "How did Facebook v. Duguid (2021) change the ATDS definition?",
               "options": [
-                "It expanded ATDS to cover any dialing software",
+                "It broadly expanded ATDS to cover virtually any modern dialing software",
                 "It narrowed ATDS to systems using a random or sequential number generator",
-                "It eliminated the ATDS category entirely",
-                "It moved ATDS regulation to the states"
+                "It completely eliminated the ATDS statutory category from the law entirely",
+                "It moved all ATDS regulation from the FCC down to the individual states"
               ],
               "correctIndex": 1
             },
@@ -1149,10 +1149,10 @@ export const PREBUILT_COURSES = [
               "concept": "Automatic Telephone Dialing System (ATDS)",
               "question": "After Duguid, systems that dial from a curated list of specific customer numbers may do what?",
               "options": [
-                "Automatically qualify as an ATDS",
-                "Be banned outright under the TCPA",
+                "Automatically qualify as a regulated ATDS",
+                "Be banned outright under the federal TCPA",
                 "Fall outside the strict ATDS definition",
-                "Require state licensing to operate"
+                "Require special state licensing to operate"
               ],
               "correctIndex": 2
             },
@@ -1173,9 +1173,9 @@ export const PREBUILT_COURSES = [
               "concept": "Artificial or prerecorded voice",
               "question": "What do calls delivering an artificial or prerecorded voice generally require for marketing?",
               "options": [
-                "Prior express written consent",
-                "Only a curated dialing list",
-                "A single opt-in text reply",
+                "Prior express written consent from them",
+                "Only a curated internal dialing list",
+                "A single one-time opt-in text reply",
                 "No consent if under the ATDS threshold"
               ],
               "correctIndex": 0
@@ -1187,8 +1187,8 @@ export const PREBUILT_COURSES = [
               "options": [
                 "The recipient's registered do-not-call status",
                 "The identity of the business responsible for it",
-                "The exact source list the number came from",
-                "The consent timestamp on file"
+                "The exact source list that the phone number came from",
+                "The exact consent timestamp currently on file for it"
               ],
               "correctIndex": 1
             },
@@ -1197,10 +1197,10 @@ export const PREBUILT_COURSES = [
               "concept": "Caller identification requirements",
               "question": "What must prerecorded telemarketing calls offer during the call?",
               "options": [
-                "A discount for continued participation",
-                "A transcript of the recorded message",
-                "An automated opt-out mechanism",
-                "A live transfer to a human agent"
+                "A discount offered for continued participation",
+                "A full transcript of the entire recorded message",
+                "An automated opt-out mechanism on the call",
+                "A live transfer over to a human sales agent"
               ],
               "correctIndex": 2
             }
@@ -1281,9 +1281,9 @@ export const PREBUILT_COURSES = [
               "question": "Marketers generally may not call registered National DNC numbers unless they have what?",
               "options": [
                 "An established relationship or valid consent",
-                "A curated list rather than an autodialer",
-                "Approval from the recipient's carrier",
-                "A state telemarketing license"
+                "A curated contact list rather than an autodialer",
+                "Advance approval from the recipient's mobile carrier",
+                "A valid state-issued telemarketing license"
               ],
               "correctIndex": 0
             },
@@ -1292,10 +1292,10 @@ export const PREBUILT_COURSES = [
               "concept": "Internal do-not-call list",
               "question": "Why does the internal do-not-call list matter even when the national registry does not?",
               "options": [
-                "It is required only for prerecorded voice calls",
-                "It replaces the need to check the national registry",
+                "It is legally required only for prerecorded artificial voice marketing calls",
+                "It entirely replaces the need to ever check the national DNC registry",
                 "Someone un-registered nationally may have told the company directly to stop",
-                "It applies only to numbers outside the caller's state"
+                "It applies only to phone numbers located outside of the caller's home state"
               ],
               "correctIndex": 2
             },
@@ -1304,9 +1304,9 @@ export const PREBUILT_COURSES = [
               "concept": "Quiet hours (8am to 9pm local time)",
               "question": "What are the TCPA quiet-hour limits for telemarketing calls and texts?",
               "options": [
-                "9am to 8pm on business days only",
-                "7am to 10pm in the caller's time zone",
-                "6am to 11pm in the platform's time zone",
+                "9am to 8pm on regular weekday business days only",
+                "7am to 10pm measured in the caller's own time zone",
+                "6am to 11pm measured in the platform's server time zone",
                 "8am to 9pm in the local time of the called party"
               ],
               "correctIndex": 3
@@ -1316,10 +1316,10 @@ export const PREBUILT_COURSES = [
               "concept": "Local time of the called party",
               "question": "Which clock controls whether outreach falls within quiet hours?",
               "options": [
-                "The recipient's time zone",
-                "The caller's time zone",
-                "The platform's server time zone",
-                "Coordinated Universal Time"
+                "The message recipient's local time zone",
+                "The outbound caller's own time zone",
+                "The platform's central server time zone",
+                "Coordinated Universal Time, or UTC"
               ],
               "correctIndex": 0
             },
@@ -1436,9 +1436,9 @@ export const PREBUILT_COURSES = [
               "question": "What does suppression list management overlay before outreach?",
               "options": [
                 "The national DNC, internal DNC, revocations, and reassigned-number flags",
-                "Only the national DNC registry entries",
-                "Consent timestamps and disclosure language only",
-                "The recipient time zones and quiet-hour windows"
+                "Only the national DNC registry entries and nothing else at all beyond that",
+                "Consent timestamps and the disclosure language shown to the lead only",
+                "The recipient time zones and their applicable quiet-hour sending windows"
               ],
               "correctIndex": 0
             },
@@ -1447,10 +1447,10 @@ export const PREBUILT_COURSES = [
               "concept": "AI and agent workflow guardrails",
               "question": "What should the AI dialer and texter do when consent is missing or a contact is suppressed?",
               "options": [
-                "Send but flag the message for later review",
-                "Refuse to send the outreach",
-                "Route the message to a human to send manually",
-                "Delay the send until the next quiet-hour window"
+                "Send but flag that message for someone's later review",
+                "Refuse to send the outreach message to that contact at all",
+                "Route the message to a human to send it out manually",
+                "Delay the send until the next available quiet-hour window"
               ],
               "correctIndex": 1
             },
@@ -1459,10 +1459,10 @@ export const PREBUILT_COURSES = [
               "concept": "Escalation path",
               "question": "What is the safest default rule for the Manila team when consent, suppression, or timing is unclear?",
               "options": [
-                "Send and log the ambiguity for auditing",
-                "Ask the customer to decide and proceed",
-                "Do not send and escalate",
-                "Send only during quiet hours to reduce risk"
+                "Send it but log the ambiguity for later auditing",
+                "Ask the customer to decide and then proceed",
+                "Do not send the message and escalate it upward",
+                "Send only during quiet hours to help reduce risk"
               ],
               "correctIndex": 2
             },
@@ -1471,9 +1471,9 @@ export const PREBUILT_COURSES = [
               "concept": "Compliance auditing",
               "question": "What does periodic compliance auditing sample outreach to confirm?",
               "options": [
-                "That marketing conversion rates stayed high",
-                "That message copy matched brand guidelines",
-                "That agents met their response-time targets",
+                "That marketing conversion rates stayed reliably high across campaigns",
+                "That message copy consistently matched the brand's style guidelines",
+                "That support agents met their assigned response-time targets",
                 "That consent records exist and sends stayed within quiet hours"
               ],
               "correctIndex": 3
@@ -1484,9 +1484,9 @@ export const PREBUILT_COURSES = [
               "question": "According to the lesson, what turns TCPA from tribal knowledge into a reliable operating standard?",
               "options": [
                 "Consistent training across time zones and cultures",
-                "Purchasing larger verified contact lists",
-                "Assigning compliance to a single US expert",
-                "Increasing the volume of automated sends"
+                "Purchasing larger and better-verified contact lists",
+                "Assigning all compliance work to a single US expert",
+                "Steadily increasing the volume of automated sends"
               ],
               "correctIndex": 0
             }
@@ -1578,9 +1578,9 @@ export const PREBUILT_COURSES = [
               "question": "What is a 10DLC number?",
               "options": [
                 "A standard 10-digit long code used to send messages from software",
-                "A short code leased for high-volume marketing blasts",
-                "A toll-free number reserved for support lines",
-                "An international code assigned by the carrier registry"
+                "A five-to-six digit short code leased for high-volume marketing blasts",
+                "A toll-free 800 number reserved exclusively for support lines",
+                "An international dialing code assigned by the global carrier registry"
               ],
               "correctIndex": 0
             },
@@ -1602,7 +1602,7 @@ export const PREBUILT_COURSES = [
               "question": "Which are named as the mobile network operators (MNOs)?",
               "options": [
                 "Twilio, Bandwidth, and Sinch",
-                "The Campaign Registry and its aggregators",
+                "The Campaign Registry itself",
                 "AT&T, T-Mobile, and Verizon",
                 "Apple, Google, and Samsung"
               ],
@@ -1613,9 +1613,9 @@ export const PREBUILT_COURSES = [
               "concept": "The Campaign Registry (TCR)",
               "question": "What role does The Campaign Registry (TCR) play in the ecosystem?",
               "options": [
-                "It owns the network pipes that reach each handset",
-                "It writes the app's message send logic directly",
-                "It charges consumers a fee to receive business texts",
+                "It owns the underlying network pipes that physically reach each handset",
+                "It writes the sending application's message send logic directly for it",
+                "It charges consumers a small recurring fee to receive business texts",
                 "It is a clearinghouse recording which businesses and campaigns are approved"
               ],
               "correctIndex": 3
@@ -1626,9 +1626,9 @@ export const PREBUILT_COURSES = [
               "question": "What does the lesson say happens to unregistered A2P traffic?",
               "options": [
                 "It is silently filtered or the sending number is blocked",
-                "It bounces back with a clear delivery error each time",
-                "It is queued and retried until it succeeds",
-                "It is delivered but flagged as spam to the recipient"
+                "It bounces back with a clear delivery error message each time",
+                "It is queued and then retried repeatedly until it succeeds",
+                "It is delivered but visibly flagged as spam to the recipient"
               ],
               "correctIndex": 0
             },
@@ -1637,10 +1637,10 @@ export const PREBUILT_COURSES = [
               "concept": "Carrier filtering and blocking",
               "question": "In the example, what actually caused the auto-texting to stop reaching anyone?",
               "options": [
-                "A bug in the app's send logic that needed patching",
-                "The recipient's phone silently rejecting all texts",
+                "A hidden bug in the app's message send logic that badly needed patching",
+                "The recipient's mobile phone silently rejecting each and every text sent",
                 "A2P volume sent without a registered campaign being filtered by T-Mobile",
-                "A billing lapse that suspended the customer's account"
+                "A billing lapse that quietly suspended the paying customer's whole account"
               ],
               "correctIndex": 2
             }
@@ -1728,9 +1728,9 @@ export const PREBUILT_COURSES = [
               "concept": "Brand registration",
               "question": "According to the lesson, what does a brand represent?",
               "options": [
-                "A single message program with its own opt-in details",
-                "The declared category of messaging a campaign sends",
-                "A third-party trust score assigned to a business",
+                "A single specific message program along with its own distinct opt-in details",
+                "The broadly declared category of messaging that a given campaign actually sends",
+                "A third-party trust score that is externally assigned to a registered business",
                 "The legal business behind the messaging, with name, tax ID, address, and website"
               ],
               "correctIndex": 3
@@ -1740,9 +1740,9 @@ export const PREBUILT_COURSES = [
               "concept": "Campaign registration",
               "question": "How do brands and campaigns relate?",
               "options": [
-                "One brand can own many campaigns",
-                "Each campaign owns several brands",
-                "A brand and a campaign are the same registration",
+                "One single brand can own many separate campaigns",
+                "Each individual campaign owns several different brands",
+                "A brand and a campaign are the exact same registration",
                 "Campaigns must be registered before any brand exists"
               ],
               "correctIndex": 0
@@ -1752,10 +1752,10 @@ export const PREBUILT_COURSES = [
               "concept": "Brand vetting",
               "question": "What does enhanced brand vetting produce?",
               "options": [
-                "A permanent exemption from carrier filtering",
+                "A permanent and lasting exemption from all future carrier message filtering",
                 "A score from a third-party provider that generally unlocks better throughput",
-                "A new legal name registered with the tax authority",
-                "A set of sample messages approved for all campaigns"
+                "A brand-new legal business name registered directly with the tax authority",
+                "A fixed set of sample messages pre-approved for use across all campaigns"
               ],
               "correctIndex": 1
             },
@@ -1765,7 +1765,7 @@ export const PREBUILT_COURSES = [
               "question": "Why must a campaign's declared use-case match what it really sends?",
               "options": [
                 "Because carriers refuse any campaign with more than one use-case",
-                "Because the use-case determines the brand's legal name",
+                "Because the declared use-case determines the brand's legal name",
                 "Because a mismatch is a fast route to filtering or de-registration",
                 "Because reviewers only read the use-case and skip the samples"
               ],
@@ -1777,9 +1777,9 @@ export const PREBUILT_COURSES = [
               "question": "What are common rejection reasons during campaign review?",
               "options": [
                 "Vague samples, missing opt-out language, or samples that don't match the use-case",
-                "Submitting too many detailed sample messages at once",
-                "Registering the brand before creating the campaign",
-                "Choosing a use-case that is more specific than needed"
+                "Submitting far too many overly detailed sample messages all at once for review",
+                "Registering the legal brand well before creating its associated campaign entry",
+                "Choosing a declared use-case that is far more specific than actually needed"
               ],
               "correctIndex": 0
             },
@@ -1878,9 +1878,9 @@ export const PREBUILT_COURSES = [
               "concept": "Explicit opt-in",
               "question": "What does the lesson say qualifies as explicit opt-in?",
               "options": [
-                "A pre-checked box included on the lead form",
-                "Consent buried in the terms of service",
-                "Any purchase the consumer makes from the business",
+                "A conveniently pre-checked box that is included on the lead capture form",
+                "Consent language quietly buried deep within the terms of service page",
+                "Any ordinary purchase the consumer happens to make from the business",
                 "A clear, affirmative agreement tied to a disclosed sender and purpose"
               ],
               "correctIndex": 3
@@ -1890,10 +1890,10 @@ export const PREBUILT_COURSES = [
               "concept": "STOP / HELP keywords",
               "question": "What must the HELP keyword return when a consumer texts it?",
               "options": [
-                "Contact or support information",
-                "A single opt-out confirmation message",
-                "A list of the sender's active campaigns",
-                "The consumer's consent records on file"
+                "Contact details or general support information",
+                "A single one-time opt-out confirmation message",
+                "A full list of the sender's active campaigns",
+                "The consumer's stored consent records on file"
               ],
               "correctIndex": 0
             },
@@ -1902,10 +1902,10 @@ export const PREBUILT_COURSES = [
               "concept": "STOP / HELP keywords",
               "question": "What must happen immediately when a consumer texts STOP?",
               "options": [
-                "The sender pauses only the current marketing campaign",
+                "The sender pauses only the single current marketing campaign in progress",
                 "Messaging to that number ceases and a single confirmation is sent",
-                "The consumer is asked to confirm the opt-out twice",
-                "The number is re-verified against the brand registration"
+                "The consumer is politely asked to confirm the opt-out request twice",
+                "The number is re-verified once more against the brand registration record"
               ],
               "correctIndex": 1
             },
@@ -1938,9 +1938,9 @@ export const PREBUILT_COURSES = [
               "concept": "Consent records",
               "question": "In the example, what re-created a violation after a lead texted STOP?",
               "options": [
-                "The platform failing to send the STOP confirmation",
-                "The lead texting HELP after opting out",
-                "A carrier mistakenly clearing the suppression list",
+                "The platform completely failing to send back the STOP confirmation",
+                "The lead deciding to text HELP shortly after opting out",
+                "A carrier mistakenly clearing the entire suppression list by error",
                 "A manual re-import that restarted the AI engagement sequence"
               ],
               "correctIndex": 3
@@ -2052,10 +2052,10 @@ export const PREBUILT_COURSES = [
               "concept": "Trust score",
               "question": "What does the lesson say about a trust score over time?",
               "options": [
-                "It is a one-time gate cleared at registration",
-                "It only ever increases once vetting is purchased",
+                "It is only a one-time entry gate that is fully cleared at registration",
+                "It only ever increases upward once enhanced brand vetting is purchased",
                 "It can degrade from spammy content or opt-out spikes, tightening throughput",
-                "It is fixed by the carrier and cannot change"
+                "It is permanently fixed by the carrier at the start and can never change"
               ],
               "correctIndex": 2
             },
@@ -2064,9 +2064,9 @@ export const PREBUILT_COURSES = [
               "concept": "Vetting score",
               "question": "Where does a vetting score come from?",
               "options": [
-                "The consumer's response rate to messages",
-                "The number of segments in each message",
-                "The volume of leads in a text blast",
+                "The consumer's overall response and reply rate to the messages sent",
+                "The total number of message segments contained in each single message",
+                "The sheer volume of individual leads included in a single text blast",
                 "Enhanced third-party brand vetting that feeds into overall trust"
               ],
               "correctIndex": 3
@@ -2077,9 +2077,9 @@ export const PREBUILT_COURSES = [
               "question": "What is deliverability, as defined in the lesson?",
               "options": [
                 "The share of sent messages that actually reach handsets",
-                "The maximum messages a campaign may send per second",
-                "The confirmation returned after a STOP keyword",
-                "The trust rating surfaced by the registry"
+                "The maximum number of messages a campaign may send per second",
+                "The confirmation message returned right after a STOP keyword",
+                "The overall trust rating that is surfaced by the registry"
               ],
               "correctIndex": 0
             },
@@ -2202,10 +2202,10 @@ export const PREBUILT_COURSES = [
               "concept": "URL shorteners",
               "question": "Why are public URL shorteners heavily filtered?",
               "options": [
-                "They add extra message segments to every text",
+                "They needlessly add several extra message segments to every single text",
                 "Their shared domain carries the spam reputation of everyone who used it",
-                "They are banned by the TCPA for automated texts",
-                "They cannot be tied to any registered brand"
+                "They are entirely banned under the TCPA for all automated text messages",
+                "They simply cannot be reliably tied back to any one registered brand"
               ],
               "correctIndex": 1
             },
@@ -2214,9 +2214,9 @@ export const PREBUILT_COURSES = [
               "concept": "URL shorteners",
               "question": "What does the lesson recommend instead of a generic shortener?",
               "options": [
-                "Omitting all links from every message",
-                "Rotating shortener domains between sends",
-                "Sending links only after the consumer texts HELP",
+                "Omitting all clickable links from every message sent",
+                "Rotating several shortener domains between different sends",
+                "Sending links only after the consumer first texts HELP",
                 "A branded or dedicated link tied to your own domain"
               ],
               "correctIndex": 3
@@ -2229,7 +2229,7 @@ export const PREBUILT_COURSES = [
                 "ALL CAPS with excessive punctuation and urgency",
                 "Identifying the sender at the start of the text",
                 "Light personalization and varied structure",
-                "Keeping the message to a single segment"
+                "Keeping the whole message to a single segment"
               ],
               "correctIndex": 0
             },
@@ -2238,10 +2238,10 @@ export const PREBUILT_COURSES = [
               "concept": "Message filtering",
               "question": "What is the subtler AI-specific filtering risk the lesson highlights?",
               "options": [
-                "AI copy that is too short to identify the sender",
-                "AI messages that always include an opt-out line",
+                "AI-written copy that is far too short to properly identify the sender",
+                "AI messages that dutifully always include a clear opt-out line at the end",
                 "Sameness, as thousands of near-identical messages look like a spam campaign",
-                "AI copy that routes links through a branded domain"
+                "AI copy that carefully routes all its links through a single branded domain"
               ],
               "correctIndex": 2
             }
@@ -2344,10 +2344,10 @@ export const PREBUILT_COURSES = [
               "concept": "per-email liability",
               "question": "According to the lesson, how does message volume affect CAN-SPAM coverage?",
               "options": [
-                "Only bulk sends above a threshold are covered",
+                "Only bulk email sends above a set volume threshold are ever covered",
                 "Coverage does not depend on volume; one message can violate",
-                "Coverage begins after 100 recipients",
-                "Volume determines the size of the penalty only"
+                "Coverage only begins once a send reaches at least 100 recipients",
+                "The message volume alone determines the eventual size of the penalty"
               ],
               "correctIndex": 1
             },
@@ -2356,10 +2356,10 @@ export const PREBUILT_COURSES = [
               "concept": "transactional or relationship message",
               "question": "What still applies to a transactional or relationship message despite its exemption?",
               "options": [
-                "A mandatory unsubscribe link",
-                "A physical postal address",
+                "A mandatory one-click unsubscribe link within the message body itself",
+                "A valid physical postal mailing address for the sending business",
                 "Routing and header information must not be false or misleading",
-                "A clear advertisement disclosure"
+                "A clear and conspicuous commercial advertisement disclosure label"
               ],
               "correctIndex": 2
             },
@@ -2380,10 +2380,10 @@ export const PREBUILT_COURSES = [
               "concept": "opt-out vs opt-in regime",
               "question": "How does the lesson characterize CAN-SPAM's consent model?",
               "options": [
-                "Opt-in, requiring consent before sending",
+                "Opt-in, requiring prior consent before any sending",
                 "Opt-out, permitting sending until asked to stop",
-                "Double opt-in with confirmation",
-                "No sending allowed without a contract"
+                "Double opt-in with an extra confirmation step",
+                "No sending allowed at all without a signed contract"
               ],
               "correctIndex": 1
             },
@@ -2474,10 +2474,10 @@ export const PREBUILT_COURSES = [
               "concept": "originating routing information",
               "question": "What must the From, To, Reply-To, and routing data accurately identify?",
               "options": [
-                "The recipient's mailbox provider",
+                "The recipient's own email mailbox provider service",
                 "The person or business that initiated the message",
-                "The marketing platform used to send",
-                "The campaign's target segment"
+                "The marketing platform actually used to send it",
+                "The campaign's intended target audience segment"
               ],
               "correctIndex": 1
             },
@@ -2486,10 +2486,10 @@ export const PREBUILT_COURSES = [
               "concept": "header accuracy",
               "question": "To which messages does the honest-header rule apply?",
               "options": [
-                "Only bulk commercial campaigns",
-                "Only messages sent without consent",
+                "Only to large bulk commercial marketing campaigns",
+                "Only to messages that were sent without any consent",
                 "Even to otherwise-exempt transactional messages",
-                "Only messages with an unsubscribe link"
+                "Only to messages that contain an unsubscribe link"
               ],
               "correctIndex": 2
             },
@@ -2498,10 +2498,10 @@ export const PREBUILT_COURSES = [
               "concept": "deceptive subject line",
               "question": "What makes a subject line cross into a violation, per the lesson?",
               "options": [
-                "Using curiosity or cleverness to boost opens",
-                "Being longer than the preview text allows",
+                "Using pure curiosity or cleverness to boost the open rate",
+                "Being noticeably longer than the inbox preview text allows",
                 "Creating a false impression of the message's real purpose",
-                "Omitting the sender's brand name"
+                "Omitting the sender's recognizable brand name entirely"
               ],
               "correctIndex": 2
             },
@@ -2510,10 +2510,10 @@ export const PREBUILT_COURSES = [
               "concept": "material misleading standard",
               "question": "What is the test for whether a subject line deceives?",
               "options": [
-                "Whether the open rate exceeds the average",
+                "Whether the message's open rate clearly exceeds the campaign average",
                 "Whether a reasonable recipient would be misled about the contents",
-                "Whether the sender intended to mislead",
-                "Whether the subject mentions a product"
+                "Whether the sender actually subjectively intended to mislead anyone",
+                "Whether the subject line happens to mention a specific product"
               ],
               "correctIndex": 1
             },
@@ -2537,7 +2537,7 @@ export const PREBUILT_COURSES = [
                 "It disappears along with the honest-header rule",
                 "This particular disclosure requirement eases",
                 "It becomes stricter and needs exact wording",
-                "It shifts to the recipient's provider"
+                "It shifts over to the recipient's email provider"
               ],
               "correctIndex": 1
             }
@@ -2617,9 +2617,9 @@ export const PREBUILT_COURSES = [
               "question": "What must every commercial email include for stopping mail?",
               "options": [
                 "A clear and conspicuous opt-out mechanism",
-                "A double-confirmation unsubscribe flow",
-                "A mandatory preference-center login",
-                "A signed consent record"
+                "A cumbersome double-confirmation unsubscribe flow",
+                "A mandatory preference-center account login",
+                "A signed written consent record on file"
               ],
               "correctIndex": 0
             },
@@ -2628,7 +2628,7 @@ export const PREBUILT_COURSES = [
               "concept": "30-day link validity",
               "question": "For at least how long must the opt-out mechanism keep processing requests after a message is sent?",
               "options": [
-                "10 business days",
+                "15 days",
                 "60 days",
                 "30 days",
                 "90 days"
@@ -2642,7 +2642,7 @@ export const PREBUILT_COURSES = [
               "options": [
                 "10 business days",
                 "10 calendar days",
-                "24 hours",
+                "24 calendar hours",
                 "30 business days"
               ],
               "correctIndex": 0
@@ -2652,10 +2652,10 @@ export const PREBUILT_COURSES = [
               "concept": "no-fee no-extra-info rule",
               "question": "Which of these is a prohibited barrier to opting out?",
               "options": [
-                "Offering a single unsubscribe page",
+                "Offering just a single simple unsubscribe page",
                 "Requiring a login or forcing a stated reason",
-                "Providing a reply-to address",
-                "Confirming the request on one page"
+                "Providing a working reply-to email address",
+                "Confirming the opt-out request on one page"
               ],
               "correctIndex": 1
             },
@@ -2664,10 +2664,10 @@ export const PREBUILT_COURSES = [
               "concept": "no-fee no-extra-info rule",
               "question": "After someone opts out, what may you do with their email address?",
               "options": [
-                "Sell it to a partner network",
-                "Transfer it to an affiliate for reuse",
+                "Sell the address outright to an outside partner network",
+                "Transfer it to a marketing affiliate for their reuse",
                 "Neither sell nor transfer it, except to a compliance provider",
-                "Rent it for a single campaign"
+                "Rent it out to a third party for a single campaign"
               ],
               "correctIndex": 2
             },
@@ -2676,10 +2676,10 @@ export const PREBUILT_COURSES = [
               "concept": "opt-out honoring across senders",
               "question": "In the brokerage example, why did the office manager's opt-out cover the webinar campaign too?",
               "options": [
-                "Both were run in the same tool",
-                "Both are commercial email from Lofty",
-                "The webinar was a transactional message",
-                "She re-subscribed by mistake"
+                "Both campaigns were run inside the same tool",
+                "Both are commercial email sent from Lofty",
+                "The webinar was really a transactional message",
+                "She accidentally re-subscribed herself by mistake"
               ],
               "correctIndex": 1
             }
@@ -2795,9 +2795,9 @@ export const PREBUILT_COURSES = [
               "question": "Under CAN-SPAM, who is generally treated as the sender?",
               "options": [
                 "The business whose product or service is promoted",
-                "The platform that transmitted the message",
-                "The recipient's mailbox provider",
-                "The agency that designed the creative"
+                "The email platform that actually transmitted the message",
+                "The recipient's own email mailbox provider service",
+                "The outside agency that designed the ad creative"
               ],
               "correctIndex": 0
             },
@@ -2806,10 +2806,10 @@ export const PREBUILT_COURSES = [
               "concept": "designated sender in multi-marketer email",
               "question": "When one message promotes multiple businesses, what does the law allow?",
               "options": [
-                "Splitting liability equally by revenue",
+                "Splitting all shared liability equally by each firm's revenue",
                 "Designating one sender to carry primary obligations",
-                "Exempting the message from address rules",
-                "Assigning liability to the mail platform"
+                "Fully exempting the shared message from the address rules",
+                "Assigning all of the liability to the sending mail platform"
               ],
               "correctIndex": 1
             },
@@ -2904,10 +2904,10 @@ export const PREBUILT_COURSES = [
               "concept": "transactional vs promotional segmentation",
               "question": "What is the disciplined approach to lifecycle email streams?",
               "options": [
-                "Merge all messages into one stream",
+                "Merge every single lifecycle message into one shared stream",
                 "Segment transactional and commercial content deliberately",
-                "Send everything as transactional to reduce rules",
-                "Route all mail through personal inboxes"
+                "Send absolutely everything as transactional to reduce the rules",
+                "Route all outgoing marketing mail through personal inboxes"
               ],
               "correctIndex": 1
             },
@@ -2916,10 +2916,10 @@ export const PREBUILT_COURSES = [
               "concept": "transactional vs promotional segmentation",
               "question": "When a lifecycle message is ambiguous, what default does the lesson recommend?",
               "options": [
-                "Treat it as transactional and skip the rules",
-                "Delay it until consent is obtained",
-                "Treat it as commercial and fully comply",
-                "Ask the recipient to reclassify it"
+                "Treat it as transactional and simply skip the rules",
+                "Delay sending it until full consent is obtained",
+                "Treat it as commercial and then fully comply",
+                "Ask the recipient themselves to reclassify it"
               ],
               "correctIndex": 2
             },
@@ -2929,9 +2929,9 @@ export const PREBUILT_COURSES = [
               "question": "What is the fix for opt-outs scattered across CRM, billing, and campaign tools?",
               "options": [
                 "One authoritative do-not-email list every system checks",
-                "A separate suppression list per tool",
-                "Manual review of each inbox weekly",
-                "Disabling all automated sending"
+                "A separate standalone suppression list kept per tool",
+                "A careful manual review of each separate inbox weekly",
+                "Completely disabling all automated email sending outright"
               ],
               "correctIndex": 0
             },
@@ -2964,10 +2964,10 @@ export const PREBUILT_COURSES = [
               "concept": "compliance ownership",
               "question": "What is the role of the named compliance owner for email?",
               "options": [
-                "Writing the marketing copy for campaigns",
+                "Writing all of the marketing copy used across the campaigns",
                 "Maintaining suppression, auditing templates, and vetting sends",
-                "Approving the annual advertising budget",
-                "Negotiating vendor pricing contracts"
+                "Approving the company's overall annual advertising budget",
+                "Negotiating all of the vendor pricing and service contracts"
               ],
               "correctIndex": 1
             }
@@ -3066,33 +3066,33 @@ export const PREBUILT_COURSES = [
               "concept": "CPRA amendments",
               "question": "How does the lesson describe the relationship of the CPRA to the CCPA?",
               "options": [
-                "A full replacement of the CCPA",
+                "A full replacement repealing the CCPA",
+                "An unrelated federal privacy statute",
                 "A set of amendments that broadened it",
-                "An unrelated federal statute",
-                "A voluntary industry code"
+                "A voluntary industry code of conduct"
               ],
-              "correctIndex": 1
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "CPRA amendments",
               "question": "Which change did the CPRA add to the CCPA regime?",
               "options": [
-                "A right to portability only",
-                "A right to correct and a sensitive-data category",
-                "Removal of the sale concept",
-                "A cap on fines"
+                "A right to data portability and nothing more",
+                "Removal of the sale-of-data concept entirely",
+                "A hard statutory cap on total civil fines",
+                "A right to correct and a sensitive-data category"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Applicability thresholds",
               "question": "How many thresholds must a for-profit business meet to fall under the law?",
               "options": [
-                "All three thresholds",
-                "At least two thresholds",
-                "At least one threshold",
+                "Any two of the three thresholds",
+                "All three of the thresholds",
+                "At least one of the thresholds",
                 "Exactly one threshold and no more"
               ],
               "correctIndex": 2
@@ -3102,24 +3102,24 @@ export const PREBUILT_COURSES = [
               "concept": "Applicability thresholds",
               "question": "Which is one of the applicability thresholds the lesson lists?",
               "options": [
-                "Employing over 500 people",
+                "Employing more than 500 workers across the company",
+                "Operating a physical retail storefront within California",
                 "Deriving half or more of revenue from selling or sharing PI",
-                "Operating a physical store in California",
-                "Being publicly traded"
+                "Being a publicly traded company on a US stock exchange"
               ],
-              "correctIndex": 1
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "California Privacy Protection Agency",
               "question": "What is notable about the CPPA compared to most US privacy enforcement?",
               "options": [
-                "It only issues advisory memos",
                 "It is a dedicated agency with rulemaking and enforcement power",
-                "It replaces the Attorney General entirely",
-                "It handles only federal cases"
+                "It only issues nonbinding advisory memos to the legislature",
+                "It fully replaces the state Attorney General in all matters",
+                "It handles only federal privacy cases, not state ones"
               ],
-              "correctIndex": 1
+              "correctIndex": 0
             }
           ]
         }
@@ -3196,10 +3196,10 @@ export const PREBUILT_COURSES = [
               "concept": "Personal information",
               "question": "How does CCPA/CPRA define personal information?",
               "options": [
-                "Only a person's name and email",
-                "Any info that identifies, relates to, or could be linked with a consumer or household",
-                "Only government-issued identifiers",
-                "Only data a consumer typed in themselves"
+                "Only a consumer's legal name and email address on file",
+                "Anything that identifies or links to a consumer or household",
+                "Only formal government-issued identifiers such as an SSN",
+                "Only information a consumer personally typed in themselves"
               ],
               "correctIndex": 1
             },
@@ -3208,60 +3208,60 @@ export const PREBUILT_COURSES = [
               "concept": "Inferences",
               "question": "How does the lesson treat an AI-generated 'likely to buy' score?",
               "options": [
-                "As aggregate data",
-                "As personal information",
-                "As deidentified data",
-                "As exempt metadata"
+                "As nonpersonal aggregate data",
+                "As deidentified, exempt data",
+                "As covered personal information",
+                "As exempt technical metadata"
               ],
-              "correctIndex": 1
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Sensitive personal information",
               "question": "Which is an example of sensitive personal information under CPRA?",
               "options": [
-                "A favorited listing",
                 "Precise geolocation and government IDs",
-                "A page-view timestamp",
-                "An average listing count"
+                "A user's favorited property listing",
+                "A single page-view timestamp record",
+                "An average listing-count statistic"
               ],
-              "correctIndex": 1
+              "correctIndex": 0
             },
             {
               "type": "mc",
               "concept": "Sensitive personal information",
               "question": "What extra control can consumers direct over sensitive personal information?",
               "options": [
-                "To have it encrypted at rest",
+                "To require it be encrypted both at rest and in transit",
+                "To receive ongoing monetary royalties on its resale",
                 "To limit its use to what's necessary for the service",
-                "To receive royalties on it",
-                "To make it public"
+                "To have it published openly for public access"
               ],
-              "correctIndex": 1
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Deidentified and aggregate data",
               "question": "Why is removing a name but keeping a device ID and precise location usually not deidentification?",
               "options": [
-                "Because device IDs are always sensitive",
-                "Because the record can still be linked back to a person",
-                "Because names are not personal information",
-                "Because location is always aggregate"
+                "Because device IDs are always inherently sensitive data",
+                "Because names alone are never personal information at all",
+                "Because location data is always treated as aggregate",
+                "Because the record can still be linked back to a person"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Deidentified and aggregate data",
               "question": "What does genuinely deidentified or truly aggregate data fall outside of?",
               "options": [
+                "The CPPA's enforcement authority entirely",
+                "The consumer right to correct records",
                 "The definition of personal information",
-                "The CPPA's authority",
-                "The right to correct",
-                "All California law"
+                "All California privacy law entirely"
               ],
-              "correctIndex": 0
+              "correctIndex": 2
             }
           ]
         }
@@ -3339,34 +3339,34 @@ export const PREBUILT_COURSES = [
               "concept": "Right to know",
               "question": "What can a consumer ask for under the right to know?",
               "options": [
-                "A refund for data collected",
+                "A monetary refund for every piece of data collected",
+                "Complete deletion of all of their personal data on file",
                 "What PI was collected, its sources, purposes, and disclosures",
-                "Deletion of all their data",
-                "A copy of the business's contracts"
+                "A full copy of the business's internal vendor contracts"
               ],
-              "correctIndex": 1
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Right to correct",
               "question": "Which right was added by the CPRA?",
               "options": [
-                "The right to know",
-                "The right to correct inaccurate personal information",
-                "The right to delete",
-                "The right to portability"
+                "The right to know what data has been collected",
+                "The right to delete personal data on request",
+                "The right to full data portability on demand",
+                "The right to correct inaccurate personal information"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Right to know",
               "question": "How many designated methods must businesses offer for submitting requests?",
               "options": [
-                "At least one",
-                "At least two",
-                "Exactly three",
-                "As many as consumers request"
+                "At least one method",
+                "At least two methods",
+                "Exactly three methods",
+                "As many as requested"
               ],
               "correctIndex": 1
             },
@@ -3375,12 +3375,12 @@ export const PREBUILT_COURSES = [
               "concept": "Request verification",
               "question": "Why must a business verify a requester before acting?",
               "options": [
-                "To charge a processing fee",
+                "To justify charging the consumer a processing fee",
+                "To lawfully extend the required response deadline",
                 "Because acting for an impostor would itself be a data breach",
-                "To delay the response window",
-                "To avoid offering a toll-free number"
+                "To avoid having to offer a toll-free contact number"
               ],
-              "correctIndex": 1
+              "correctIndex": 2
             },
             {
               "type": "mc",
@@ -3399,12 +3399,12 @@ export const PREBUILT_COURSES = [
               "concept": "Deletion exceptions",
               "question": "Which is a valid reason to retain data despite a deletion request?",
               "options": [
-                "To keep marketing to the person",
+                "To keep marketing new products to them",
+                "Because honoring deletion is optional",
                 "To comply with a legal obligation",
-                "Because deletion is optional",
-                "To sell it later"
+                "To sell the data to a partner later"
               ],
-              "correctIndex": 1
+              "correctIndex": 2
             }
           ]
         }
@@ -3482,58 +3482,58 @@ export const PREBUILT_COURSES = [
               "concept": "Sale",
               "question": "How is a 'sale' defined under the law?",
               "options": [
-                "Only an exchange of cash for data",
-                "Disclosing PI to a third party for money or other valuable consideration",
-                "Any internal use of PI",
-                "Sharing data with a service provider"
+                "Only a direct exchange of cash for consumer data",
+                "Any purely internal company use of personal data",
+                "Sharing data with a contracted service provider",
+                "Disclosing PI to a third party for money or other value"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Sharing",
               "question": "What does the CPRA concept of 'sharing' specifically cover?",
               "options": [
+                "Selling PI to a data broker strictly for cash",
+                "Storing PI in an encrypted cloud database",
                 "Disclosing PI for cross-context behavioral advertising",
-                "Selling PI for cash only",
-                "Storing PI in the cloud",
-                "Giving PI to law enforcement"
+                "Handing PI over to law enforcement agencies"
               ],
-              "correctIndex": 0
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Cross-context behavioral advertising",
               "question": "Does sharing for advertising require money to change hands to count?",
               "options": [
-                "Yes, cash is always required",
                 "No, it can count even with no money involved",
-                "Only if over a dollar threshold",
-                "Only between competitors"
+                "Yes, cash payment is always strictly required",
+                "Only if it exceeds a set dollar threshold",
+                "Only when it occurs between direct competitors"
               ],
-              "correctIndex": 1
+              "correctIndex": 0
             },
             {
               "type": "mc",
               "concept": "Do Not Sell or Share My Personal Information",
               "question": "What must a business that sells or shares post for consumers?",
               "options": [
-                "A privacy hotline number only",
+                "A dedicated privacy support hotline number only",
+                "A mandatory new-account signup and login page",
                 "A clear Do Not Sell or Share My Personal Information link",
-                "A mandatory account signup page",
-                "A cookie policy PDF"
+                "A lengthy downloadable cookie policy PDF file"
               ],
-              "correctIndex": 1
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Right to opt out",
               "question": "After a consumer opts out, what must the business generally do before asking them to opt back in?",
               "options": [
-                "Ask again immediately",
-                "Wait a set period",
-                "Delete their account",
-                "Charge a re-entry fee"
+                "Ask them again immediately",
+                "Wait a set waiting period",
+                "Delete their entire account",
+                "Charge a re-entry access fee"
               ],
               "correctIndex": 1
             },
@@ -3542,12 +3542,12 @@ export const PREBUILT_COURSES = [
               "concept": "Global Privacy Control",
               "question": "How do California regulators treat a valid Global Privacy Control signal?",
               "options": [
-                "As a suggestion the business may ignore",
+                "As a mere suggestion the business is free to ignore",
+                "As valid only after an added manual confirmation click",
                 "As a legally binding opt-out that must be honored automatically",
-                "As requiring an additional manual click",
-                "As applying only to email marketing"
+                "As applying strictly to email marketing messages only"
               ],
-              "correctIndex": 1
+              "correctIndex": 2
             }
           ]
         }
@@ -3625,72 +3625,72 @@ export const PREBUILT_COURSES = [
               "concept": "Service provider",
               "question": "How does the law define a service provider?",
               "options": [
-                "Anyone who receives data for value",
+                "Any entity that receives personal data for value",
+                "A government regulator that audits your data flows",
                 "A party that processes PI only on your behalf under contract",
-                "A regulator that audits data flows",
-                "A consumer acting as an agent"
+                "A consumer acting as an authorized agent for others"
               ],
-              "correctIndex": 1
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Third party",
               "question": "Disclosing PI to a true third party for value triggers which obligations?",
               "options": [
-                "Data minimization only",
+                "Data minimization duties only",
+                "The right-to-correct duty only",
                 "Sale and sharing obligations",
-                "Right to correct only",
-                "No obligations at all"
+                "No new legal obligations at all"
               ],
-              "correctIndex": 1
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Required contract terms",
               "question": "Which is a required contract term with service providers?",
               "options": [
-                "Guaranteeing a minimum data volume",
-                "Prohibiting selling or sharing the data",
-                "Allowing unrestricted data combining",
-                "Permitting the vendor's own marketing use"
+                "Guaranteeing a set minimum data volume",
+                "Allowing unrestricted data recombination",
+                "Permitting the vendor's own marketing use",
+                "Prohibiting selling or sharing the data"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Required contract terms",
               "question": "What happens to a vendor that lacks the required contract terms?",
               "options": [
-                "It becomes a regulator",
+                "It effectively becomes a state regulator",
+                "It is left fully exempt from the law",
                 "It can legally be treated as a third party",
-                "It is exempt from the law",
-                "It automatically becomes a contractor"
+                "It automatically becomes a data contractor"
               ],
-              "correctIndex": 1
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Data minimization",
               "question": "What does data minimization require?",
               "options": [
-                "Deleting all data yearly",
-                "Collecting and accessing only what's needed for a stated purpose",
-                "Storing data only in California",
-                "Encrypting every field"
+                "Deleting every piece of collected data yearly",
+                "Storing all collected data only within California",
+                "Collecting and using only what a stated purpose needs",
+                "Encrypting every single stored data field at rest"
               ],
-              "correctIndex": 1
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Operational request handling",
               "question": "How does offshore location affect a Manila or China team's obligations?",
               "options": [
-                "It exempts them from the rules",
                 "It gives no exemption; they follow the same purpose limits",
-                "It halves the response timelines",
-                "It removes data minimization duties"
+                "It fully exempts the offshore team from all the rules",
+                "It cuts the required response timelines in half",
+                "It removes their data minimization duties entirely"
               ],
-              "correctIndex": 1
+              "correctIndex": 0
             }
           ]
         }
@@ -3803,10 +3803,10 @@ export const PREBUILT_COURSES = [
               "concept": "Fair Housing Act (1968)",
               "question": "Under the Act, what must a violation include according to the lesson?",
               "options": [
-                "Proof of bad intent",
-                "No requirement of intent",
-                "A written contract",
-                "A prior warning"
+                "Proof of deliberate bad intent",
+                "No requirement of intent at all",
+                "A signed written contract",
+                "A prior formal warning notice"
               ],
               "correctIndex": 1
             },
@@ -3816,9 +3816,9 @@ export const PREBUILT_COURSES = [
               "question": "What role does HUD play in enforcement?",
               "options": [
                 "Investigates individual complaints",
-                "Brings systemic lawsuits",
-                "Writes state statutes",
-                "Licenses brokerages"
+                "Brings systemic pattern lawsuits",
+                "Writes state housing statutes",
+                "Licenses real-estate brokerages"
               ],
               "correctIndex": 0
             },
@@ -3827,12 +3827,12 @@ export const PREBUILT_COURSES = [
               "concept": "DOJ pattern-or-practice suits",
               "question": "What kind of action does the DOJ bring under the Act?",
               "options": [
-                "Individual damage claims",
+                "Individual private damage claims",
+                "Broker license revocation orders",
                 "Pattern-or-practice lawsuits",
-                "License revocations",
-                "Tax penalty filings"
+                "Federal tax penalty filings"
               ],
-              "correctIndex": 1
+              "correctIndex": 2
             },
             {
               "type": "mc",
@@ -3921,24 +3921,24 @@ export const PREBUILT_COURSES = [
               "concept": "Preference/limitation/discrimination standard",
               "question": "What does the advertising rule bar a published statement from indicating?",
               "options": [
-                "Price, size, or location",
-                "Preference, limitation, or discrimination",
-                "Age, income, or credit",
-                "Intent, malice, or bias"
+                "Price, square footage, or location",
+                "Age, income level, or credit score",
+                "Intent, malice, or personal bias",
+                "Preference, limitation, or discrimination"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Preference/limitation/discrimination standard",
               "question": "According to the lesson, the advertising test turns on whether:",
               "options": [
-                "A word appears on a banned list",
+                "A word appears on an official banned list",
+                "The agent secretly intended to cause harm",
                 "An ordinary reader perceives the message",
-                "The agent intended harm",
-                "A protected person complained"
+                "A protected person filed a formal complaint"
               ],
-              "correctIndex": 1
+              "correctIndex": 2
             },
             {
               "type": "mc",
@@ -3957,10 +3957,10 @@ export const PREBUILT_COURSES = [
               "concept": "Prohibited words and coded language",
               "question": "What single habit does the lesson call the most reliable compliance practice?",
               "options": [
-                "List every amenity",
-                "Avoid all adjectives",
+                "List out every single amenity",
+                "Avoid using all adjectives entirely",
                 "Describe the property, not the person",
-                "Quote fair housing law"
+                "Quote the fair housing law verbatim"
               ],
               "correctIndex": 2
             },
@@ -3969,22 +3969,22 @@ export const PREBUILT_COURSES = [
               "concept": "AI-generated copy risk",
               "question": "Why does the lesson say AI writing tools multiply risk?",
               "options": [
-                "They ignore banned lists",
                 "They reproduce coded phrasing at higher volume",
-                "They cannot be edited",
-                "They avoid property details"
+                "They completely ignore the banned word lists",
+                "Their generated output cannot be edited later",
+                "They tend to omit all concrete property details"
               ],
-              "correctIndex": 1
+              "correctIndex": 0
             },
             {
               "type": "mc",
               "concept": "AI-generated copy risk",
               "question": "What does the lesson say AI-generated marketing copy needs?",
               "options": [
-                "Blind trust in the model",
-                "A ban on all AI use",
+                "Complete blind trust in the model",
+                "A total ban on any AI use",
                 "Guardrails and a review step",
-                "Customer sign-off only"
+                "Only a customer sign-off"
               ],
               "correctIndex": 2
             }
@@ -4063,10 +4063,10 @@ export const PREBUILT_COURSES = [
               "concept": "Audience targeting limits",
               "question": "According to the lesson, a neutral ad message can still be a problem when:",
               "options": [
-                "It runs on many platforms",
+                "It runs across many ad platforms",
                 "It is shown to a skewed audience",
-                "It uses no images",
-                "It is written by AI"
+                "It uses no photos or images at all",
+                "It is written entirely by AI tools"
               ],
               "correctIndex": 1
             },
@@ -4088,9 +4088,9 @@ export const PREBUILT_COURSES = [
               "question": "What does the Special Ad Category strip out for housing advertisers?",
               "options": [
                 "Targeting by age, gender, and zip code",
-                "All ad imagery and video",
-                "The ability to buy any ads",
-                "Budget and bidding controls"
+                "All ad imagery, photos, and video",
+                "The ability to buy any ads at all",
+                "Budget, bidding, and spend controls"
               ],
               "correctIndex": 0
             },
@@ -4099,24 +4099,24 @@ export const PREBUILT_COURSES = [
               "concept": "Meta/HUD settlement",
               "question": "What prompted Meta to create the Special Ad Category?",
               "options": [
-                "A state licensing rule",
-                "HUD charging it over ad delivery",
-                "A voluntary industry pledge",
-                "A shareholder lawsuit"
+                "A new state broker licensing rule",
+                "A voluntary industry-wide ad pledge",
+                "A shareholder class-action lawsuit",
+                "HUD charging it over ad delivery"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Lookalike / Special Ad Audiences",
               "question": "What risk does the lesson attach to lookalike or Special Ad Audiences?",
               "options": [
-                "They raise the cost per ad",
+                "They raise the cost per ad impression",
+                "They require slow manual approval each time",
                 "They encode the seed list's demographics",
-                "They require manual approval",
-                "They shrink the ad radius"
+                "They shrink the ad delivery radius sharply"
               ],
-              "correctIndex": 1
+              "correctIndex": 2
             },
             {
               "type": "mc",
@@ -4124,9 +4124,9 @@ export const PREBUILT_COURSES = [
               "question": "What does proxy targeting use as a stand-in for protected characteristics?",
               "options": [
                 "Neutral-seeming attributes like zip code",
-                "Explicit race categories",
-                "Customer complaint records",
-                "Randomized audiences"
+                "Explicit, named race categories",
+                "Past customer complaint records",
+                "Fully randomized target audiences"
               ],
               "correctIndex": 0
             }
@@ -4205,10 +4205,10 @@ export const PREBUILT_COURSES = [
               "concept": "Steering",
               "question": "What does steering do according to the lesson?",
               "options": [
-                "Sets different rental prices",
+                "Sets different rental prices by area",
                 "Guides buyers toward or away from neighborhoods",
-                "Denies loans to areas",
-                "Publishes coded ad copy"
+                "Denies mortgage loans to entire areas",
+                "Publishes coded discriminatory ad copy"
               ],
               "correctIndex": 1
             },
@@ -4218,9 +4218,9 @@ export const PREBUILT_COURSES = [
               "question": "The lesson says steering is illegal regardless of what?",
               "options": [
                 "Whether the buyer asked or the agent meant well",
-                "The size of the brokerage",
-                "The neighborhood's price range",
-                "The medium of communication"
+                "The overall size of the brokerage firm",
+                "The targeted neighborhood's price range",
+                "The medium used for the communication"
               ],
               "correctIndex": 0
             },
@@ -4241,34 +4241,34 @@ export const PREBUILT_COURSES = [
               "concept": "Digital redlining",
               "question": "How does digital redlining occur per the lesson?",
               "options": [
-                "Through printed neighborhood maps",
-                "Through ad delivery, routing, or marketing spend",
-                "Through zoning board decisions",
-                "Through in-person open houses"
+                "Through old printed neighborhood boundary maps",
+                "Through local zoning board hearing rulings",
+                "Through in-person open house showing events",
+                "Through ad delivery, routing, or marketing spend"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Disparate impact",
               "question": "A facially neutral policy can violate the Act under disparate impact when it:",
               "options": [
-                "Is applied inconsistently by staff",
-                "Disproportionately harms a protected class without valid justification",
-                "Uses outdated technology",
-                "Was never reviewed by legal"
+                "Is applied inconsistently by different frontline staff",
+                "Relies on outdated, legacy office technology systems",
+                "Was never formally reviewed by the company's legal team",
+                "Disproportionately harms a protected class without justification"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Disparate impact",
               "question": "Which case does the lesson say affirmed the disparate-impact theory?",
               "options": [
-                "Inclusive Communities",
-                "Shelley v. Kraemer",
-                "Jones v. Mayer",
-                "Texas v. HUD"
+                "Inclusive Communities (2015)",
+                "Shelley v. Kraemer (1948)",
+                "Jones v. Alfred Mayer (1968)",
+                "City of Dallas v. HUD (2019)"
               ],
               "correctIndex": 0
             }
@@ -4347,10 +4347,10 @@ export const PREBUILT_COURSES = [
               "concept": "AI copy auditing",
               "question": "Why does the lesson say one flawed template becomes a systemic risk?",
               "options": [
-                "Templates cannot be edited later",
+                "Templates cannot be edited later on",
                 "AI outreach acts on thousands of leads",
-                "Customers rarely review copy",
-                "Regulators audit every listing"
+                "Customers rarely review the final copy",
+                "Regulators audit every single listing"
               ],
               "correctIndex": 1
             },
@@ -4359,12 +4359,12 @@ export const PREBUILT_COURSES = [
               "concept": "Compliance-by-default",
               "question": "What does compliance-by-default mean in the lesson?",
               "options": [
-                "Legal reviews every listing manually",
-                "The compliant path is automatic and violations take deliberate effort",
-                "AI tools are disabled entirely",
-                "Customers self-certify each ad"
+                "The legal team manually reviews each and every listing",
+                "All AI generation tools are disabled entirely by default",
+                "Customers must self-certify each individual ad themselves",
+                "The compliant path is automatic and violations take real effort"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
@@ -4372,9 +4372,9 @@ export const PREBUILT_COURSES = [
               "question": "What should a lead-routing rule carry according to the lesson?",
               "options": [
                 "A documented business justification",
-                "A geographic proxy filter",
-                "A customer approval signature",
-                "A demographic preference tag"
+                "A geographic proxy targeting filter",
+                "A signed customer approval signature",
+                "A demographic preference targeting tag"
               ],
               "correctIndex": 0
             },
@@ -4383,10 +4383,10 @@ export const PREBUILT_COURSES = [
               "concept": "AI copy auditing",
               "question": "What backs up the guardrails in the generation step?",
               "options": [
-                "A ban on AI copy",
-                "Sampling to catch what slips",
-                "Customer testimonials",
-                "Annual legal audits only"
+                "An outright ban on all AI copy",
+                "Sampling to catch what slips through",
+                "Positive customer testimonials",
+                "Annual legal audits and nothing else"
               ],
               "correctIndex": 1
             },
@@ -4396,9 +4396,9 @@ export const PREBUILT_COURSES = [
               "question": "Which sequence does the lesson give front-line reps for a risky request?",
               "options": [
                 "Recognize, decline, offer an alternative, route the pattern",
-                "Approve, log, notify billing, close",
-                "Delay, consult, discount, comply",
-                "Escalate, refund, apologize, retarget"
+                "Approve it, log it, notify billing, then close out",
+                "Delay, consult a manager, discount, then comply",
+                "Escalate, refund, apologize, then retarget them"
               ],
               "correctIndex": 0
             },
@@ -4407,12 +4407,12 @@ export const PREBUILT_COURSES = [
               "concept": "Escalation protocol",
               "question": "What is the firm rule about helping customers around fair housing law?",
               "options": [
-                "Allowed for large accounts",
-                "Never help them relabel, reword, or reroute around it",
-                "Permitted with a signed waiver",
-                "Fine if intent is neutral"
+                "Allowed only for large key strategic accounts",
+                "Permitted if the customer signs a waiver form",
+                "Acceptable as long as the intent seems neutral",
+                "Never help them relabel, reword, or reroute around it"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             }
           ]
         }
@@ -4498,10 +4498,10 @@ export const PREBUILT_COURSES = [
               "concept": "spam labeling",
               "question": "According to the lesson, what is a spam label fundamentally?",
               "options": [
-                "A legal judgment issued by the FCC about a business",
-                "A probabilistic guess made by software about a number's behavior",
-                "A permanent block placed by the recipient's carrier",
-                "A certification that a call's content is compliant"
+                "A formal legal judgment the FCC issues about a business",
+                "A probabilistic guess software makes about a number's behavior",
+                "A permanent block placed by the recipient's own carrier",
+                "A certification that a given call's content is compliant"
               ],
               "correctIndex": 1
             },
@@ -4512,7 +4512,7 @@ export const PREBUILT_COURSES = [
               "options": [
                 "The exact same spam label on their calls",
                 "Completely opposite call display treatment",
-                "Identical answer rates over time",
+                "Identical answer rates measured over time",
                 "The same carrier assigned to their traffic"
               ],
               "correctIndex": 0
@@ -4546,10 +4546,10 @@ export const PREBUILT_COURSES = [
               "concept": "TRACED Act",
               "question": "What did the TRACED Act, passed in 2019, direct the FCC to do?",
               "options": [
-                "Ban all automated dialing by real-estate firms",
-                "Require voice providers to implement caller ID authentication",
-                "Assign spam labels directly to flagged numbers",
-                "Certify that marketing call content is compliant"
+                "Ban all automated dialing by real-estate firms outright",
+                "Require voice providers to add caller ID authentication",
+                "Assign spam labels directly to every flagged number",
+                "Certify that all marketing call content is compliant"
               ],
               "correctIndex": 1
             },
@@ -4558,10 +4558,10 @@ export const PREBUILT_COURSES = [
               "concept": "answer rate",
               "question": "According to the lesson, why does AI dialing at volume compound the labeling risk for Lofty customers?",
               "options": [
-                "It changes agent scripts automatically without review",
-                "It routes every call through a single discount carrier",
-                "It generates the call patterns most likely to trip a spam filter",
-                "It reports numbers to the FCC as high-volume senders"
+                "It changes agent scripts automatically without any review",
+                "It routes every single call through one discount carrier",
+                "It generates the call patterns most likely to trip a filter",
+                "It reports the numbers to the FCC as high-volume senders"
               ],
               "correctIndex": 2
             }
@@ -4665,10 +4665,10 @@ export const PREBUILT_COURSES = [
               "concept": "full attestation A",
               "question": "What does full attestation (A) mean the carrier has done?",
               "options": [
-                "Only passed the call through its network",
+                "Only passed the call through its own network",
                 "Confirmed the customer's right to use that number",
-                "Guaranteed the call will be answered",
-                "Verified the call content is not spam"
+                "Guaranteed the call will actually be answered",
+                "Verified the call's content is not spam"
               ],
               "correctIndex": 1
             },
@@ -4689,10 +4689,10 @@ export const PREBUILT_COURSES = [
               "concept": "gateway attestation C",
               "question": "According to the lesson, what does gateway attestation (C) indicate?",
               "options": [
-                "The carrier only passed the call through and can vouch for almost nothing",
+                "The carrier only relayed the call and can vouch for little",
                 "The carrier fully confirmed the customer's number ownership",
-                "The carrier knows the customer but not the number",
-                "The carrier flagged the call as spam before delivery"
+                "The carrier knows the customer but not the specific number",
+                "The carrier flagged the call as spam before delivering it"
               ],
               "correctIndex": 0
             },
@@ -4808,10 +4808,10 @@ export const PREBUILT_COURSES = [
               "concept": "call velocity",
               "question": "What does a sudden spike in calls from one number read as to the engines?",
               "options": [
-                "A high-value business",
-                "A verified caller",
-                "Robocalling",
-                "A partial attestation"
+                "A high-value business caller",
+                "A verified trusted caller",
+                "Likely robocalling activity",
+                "A partial attestation grade"
               ],
               "correctIndex": 2
             },
@@ -4832,10 +4832,10 @@ export const PREBUILT_COURSES = [
               "concept": "consumer complaints",
               "question": "The lesson says complaints follow the number, which explains what?",
               "options": [
-                "Why registered numbers earn A attestation faster",
+                "Why registered numbers earn A-level attestation faster",
                 "Why a shared or recycled number can arrive already damaged",
-                "Why engines ignore short-duration calls entirely",
-                "Why carriers remove labels after a few weeks"
+                "Why engines ignore all short-duration calls entirely",
+                "Why carriers remove the labels after a few weeks"
               ],
               "correctIndex": 1
             },
@@ -4844,9 +4844,9 @@ export const PREBUILT_COURSES = [
               "concept": "short-duration calls",
               "question": "Per the lesson, why do the engines err toward flagging high-performing dialers?",
               "options": [
-                "Dialers report their own volume to the engines",
-                "Honest high-volume outreach and robocalling look statistically similar",
-                "Dialers always route through opaque carriers",
+                "Dialers report their own call volume to the engines",
+                "Honest high-volume outreach and robocalling look similar",
+                "Dialers always route calls through opaque carriers",
                 "Engines require complaints before scoring any number"
               ],
               "correctIndex": 1
@@ -4939,10 +4939,10 @@ export const PREBUILT_COURSES = [
               "concept": "Rich Call Data (RCD)",
               "question": "What does Rich Call Data (RCD) carry inside the authenticated call?",
               "options": [
-                "The recipient's complaint history",
+                "The call recipient's full complaint history",
                 "The carrier's attestation certificate only",
                 "The display name, logo, and call reason",
-                "The number's velocity score"
+                "The calling number's velocity score"
               ],
               "correctIndex": 2
             },
@@ -4952,8 +4952,8 @@ export const PREBUILT_COURSES = [
               "question": "Per the lesson, why is RCD much harder to spoof than the old caller ID name?",
               "options": [
                 "It is bound to the caller's verified identity and attestation",
-                "It is stored only on the recipient's device",
-                "It is reviewed manually by each carrier",
+                "It is stored only locally on the recipient's device",
+                "It is manually reviewed by each carrier in the path",
                 "It is refreshed every few seconds during the call"
               ],
               "correctIndex": 0
@@ -4963,10 +4963,10 @@ export const PREBUILT_COURSES = [
               "concept": "call reason",
               "question": "Which is given as an example of a call reason shown with a branded call?",
               "options": [
-                "Scam Likely, do not answer",
-                "Following up on your inquiry",
+                "Scam Likely, please do not answer",
+                "Following up on your recent inquiry",
                 "Verified by three analytics engines",
-                "Full attestation grade A"
+                "Given full attestation at grade A"
               ],
               "correctIndex": 1
             },
@@ -4975,10 +4975,10 @@ export const PREBUILT_COURSES = [
               "concept": "answer rate lift",
               "question": "According to the lesson, why does branding lift answer rates?",
               "options": [
-                "It lowers the caller's call velocity automatically",
-                "It repairs a number's damaged reputation",
-                "It attacks the core reason people don't pick up: not knowing who is calling",
-                "It routes calls through higher-attestation carriers"
+                "It automatically lowers the caller's call velocity score",
+                "It fully repairs a number's already damaged reputation",
+                "It targets why people don't answer: not knowing who calls",
+                "It routes the calls through higher-attestation carriers"
               ],
               "correctIndex": 2
             },
@@ -4987,8 +4987,8 @@ export const PREBUILT_COURSES = [
               "concept": "business logo display",
               "question": "What does the lesson say branding does for a number with a bad reputation?",
               "options": [
-                "It repairs the reputation over time",
-                "It resets the number's complaint count",
+                "It slowly repairs the reputation over time",
+                "It resets the number's entire complaint count",
                 "It guarantees a verified checkmark regardless",
                 "It cannot repair it and can even backfire"
               ],
@@ -5074,10 +5074,10 @@ export const PREBUILT_COURSES = [
               "concept": "number rotation",
               "question": "According to the lesson, what does healthy number rotation involve?",
               "options": [
-                "Cycling through disposable numbers rapidly",
-                "Spreading volume across a modest pool of registered, well-behaved numbers",
-                "Using one high-attestation number for all calls",
-                "Rotating carriers instead of numbers each week"
+                "Rapidly cycling through many disposable throwaway numbers",
+                "Spreading volume across a modest pool of registered numbers",
+                "Using one single high-attestation number for all calls",
+                "Rotating through different carriers instead of numbers weekly"
               ],
               "correctIndex": 1
             },
@@ -5086,10 +5086,10 @@ export const PREBUILT_COURSES = [
               "concept": "number burning",
               "question": "Per the lesson, why does number burning fail?",
               "options": [
-                "Carriers refuse to sign disposable numbers",
-                "It requires branding that can't be spoofed",
+                "Carriers flatly refuse to sign disposable numbers",
+                "It requires branding that simply can't be spoofed",
                 "Engines detect the pattern and complaints follow the caller",
-                "It raises attestation to gateway level C"
+                "It raises attestation up to gateway level C"
               ],
               "correctIndex": 2
             },
@@ -5098,10 +5098,10 @@ export const PREBUILT_COURSES = [
               "concept": "reputation monitoring",
               "question": "According to the lesson, what does reputation monitoring accomplish?",
               "options": [
-                "It removes spam labels automatically",
-                "It catches a flag in days rather than after answer rates collapse",
-                "It registers numbers with the FCC",
-                "It signs calls with full attestation"
+                "It removes the spam labels automatically for you",
+                "It catches a flag in days, not after rates collapse",
+                "It registers all the numbers directly with the FCC",
+                "It signs outgoing calls with full A attestation"
               ],
               "correctIndex": 1
             },
@@ -5110,10 +5110,10 @@ export const PREBUILT_COURSES = [
               "concept": "remediation and redress",
               "question": "Why is remediation described as multi-vendor work?",
               "options": [
-                "Because carriers own the remediation process",
-                "Because each flagged number needs a new carrier",
-                "Because engines score independently",
-                "Because branding vendors handle the corrections"
+                "Because the carriers own the remediation process",
+                "Because each flagged number needs a brand-new carrier",
+                "Because each engine scores numbers independently",
+                "Because branding vendors handle all the corrections"
               ],
               "correctIndex": 2
             },
@@ -5134,10 +5134,10 @@ export const PREBUILT_COURSES = [
               "concept": "carrier and vendor coordination",
               "question": "According to the lesson, which partner handles attestation and signing?",
               "options": [
-                "The branding vendor",
-                "The analytics engine",
-                "The voice provider",
-                "The industry registry"
+                "The call branding vendor",
+                "The reputation analytics engine",
+                "The voice provider carrier",
+                "The central industry registry"
               ],
               "correctIndex": 2
             }
@@ -5253,9 +5253,9 @@ export const PREBUILT_COURSES = [
               "question": "In high-context communication, meaning is carried mainly by what?",
               "options": [
                 "Explicit, literal wording chosen carefully",
-                "Written documents rather than speech",
+                "Written documents rather than spoken words",
                 "Situation, relationship, and what is left unsaid",
-                "The seniority of whoever is speaking"
+                "The seniority of whoever happens to be speaking"
               ],
               "correctIndex": 2
             },
@@ -5264,10 +5264,10 @@ export const PREBUILT_COURSES = [
               "concept": "Individualism vs collectivism",
               "question": "US workplace culture is described in this lesson as tending toward which pattern?",
               "options": [
-                "Individualist and low-context",
-                "Collectivist and high-context",
-                "Collectivist and low power distance",
-                "Individualist and high power distance"
+                "Individualist and low-context overall",
+                "Collectivist and high-context overall",
+                "Collectivist and low in power distance",
+                "Individualist and high in power distance"
               ],
               "correctIndex": 0
             },
@@ -5276,7 +5276,7 @@ export const PREBUILT_COURSES = [
               "concept": "Culture map",
               "question": "What is the purpose of sketching a culture map of your teams?",
               "options": [
-                "To rank which team performs best overall",
+                "To rank which team performs the best overall",
                 "To document each employee's personality type",
                 "To anticipate friction points by comparing tendencies",
                 "To decide which team should lead each project"
@@ -5288,10 +5288,10 @@ export const PREBUILT_COURSES = [
               "concept": "Cultural generalization vs stereotype",
               "question": "When a person contradicts the cultural pattern you expected, the lesson says you should do what?",
               "options": [
-                "Assume they are an exception to ignore",
+                "Assume they are just an exception to ignore",
                 "Let the person's actual behavior override the pattern",
-                "Re-apply the pattern more firmly next time",
-                "Conclude the dimension framework is wrong"
+                "Re-apply the pattern even more firmly next time",
+                "Conclude the whole dimension framework is wrong"
               ],
               "correctIndex": 1
             }
@@ -5391,7 +5391,7 @@ export const PREBUILT_COURSES = [
               "question": "The lesson frames directness in feedback as what?",
               "options": [
                 "A sign of a more mature work culture",
-                "A dial to match to the receiver",
+                "A dial to match to the receiver's culture",
                 "A US practice best avoided everywhere",
                 "A fixed measure of a leader's honesty"
               ],
@@ -5415,8 +5415,8 @@ export const PREBUILT_COURSES = [
               "question": "What is a risk of using strong downgrading language with a direct US team?",
               "options": [
                 "They may miss that a real problem exists",
-                "They may feel the note is a crisis",
-                "They will lose face in front of peers",
+                "They may feel the note signals a crisis",
+                "They will lose face in front of their peers",
                 "They will escalate the issue to leadership"
               ],
               "correctIndex": 0
@@ -5524,10 +5524,10 @@ export const PREBUILT_COURSES = [
               "concept": "Deference to authority",
               "question": "In a higher-power-distance team, public agreement with a leader often signals what?",
               "options": [
-                "Genuine, tested buy-in from everyone",
+                "Genuine, tested buy-in from everyone present",
                 "Deference to authority rather than real consent",
-                "A decision that cannot be revisited later",
-                "A lack of interest in the topic"
+                "A final decision that cannot be revisited later",
+                "A general lack of interest in the whole topic"
               ],
               "correctIndex": 1
             },
@@ -5549,9 +5549,9 @@ export const PREBUILT_COURSES = [
               "question": "The lesson says hierarchy and decision style are related how?",
               "options": [
                 "Hierarchical cultures are always top-down",
-                "They are separate axes that can combine",
+                "They are separate axes that can freely combine",
                 "Consensus cultures always have low power distance",
-                "Top-down decisions are always final"
+                "Top-down decisions are always final and fixed"
               ],
               "correctIndex": 1
             },
@@ -5560,9 +5560,9 @@ export const PREBUILT_COURSES = [
               "concept": "Consensus vs top-down decisions",
               "question": "A consensus decision style is described as producing decisions that are what?",
               "options": [
-                "Fast to reach but easily reversed",
+                "Fast to reach but very easily reversed",
                 "Slower to reach but stable once made",
-                "Made by a leader and rarely revisited",
+                "Made by one leader and rarely revisited",
                 "Decided by whoever spoke most in the room"
               ],
               "correctIndex": 1
@@ -5584,10 +5584,10 @@ export const PREBUILT_COURSES = [
               "concept": "Psychological safety across cultures",
               "question": "In the onboarding example, when should input have been gathered?",
               "options": [
-                "During the joint call itself",
-                "After adoption metrics came in",
+                "During the joint group call itself",
+                "After the adoption metrics came in",
                 "Before the group call, in writing and privately",
-                "Only from the Manila team, not China"
+                "Only from the Manila team, and not China"
               ],
               "correctIndex": 2
             }
@@ -5671,9 +5671,9 @@ export const PREBUILT_COURSES = [
               "question": "The lesson recommends what default style for writing across mixed context teams?",
               "options": [
                 "Implicit and relationship-based",
-                "Explicit and low-context",
-                "Brief and idiomatic",
-                "High-context and contextual"
+                "Explicit and low-context throughout",
+                "Brief, idiomatic, and casual",
+                "High-context and heavily contextual"
               ],
               "correctIndex": 1
             },
@@ -5682,10 +5682,10 @@ export const PREBUILT_COURSES = [
               "concept": "Second-language dynamics",
               "question": "How does the lesson characterize working in a second language?",
               "options": [
-                "A sign the person needs more training",
+                "A clear sign the person needs more training",
                 "Cognitively taxing but independent of expertise",
                 "Best addressed by speaking louder and faster",
-                "Evidence of lower analytical skill"
+                "Evidence of a lower underlying analytical skill"
               ],
               "correctIndex": 1
             },
@@ -5694,10 +5694,10 @@ export const PREBUILT_COURSES = [
               "concept": "Confirming understanding",
               "question": "Which is the stronger way to confirm understanding?",
               "options": [
-                "Asking 'does that make sense?'",
+                "Simply asking 'does that make sense?' out loud",
                 "Asking the person to restate the plan in their own words",
-                "Sending a written summary and moving on",
-                "Watching whether the person nods along"
+                "Sending a written summary and then moving on",
+                "Watching whether the person nods along quietly"
               ],
               "correctIndex": 1
             },
@@ -5706,10 +5706,10 @@ export const PREBUILT_COURSES = [
               "concept": "Idioms and ambiguity",
               "question": "Why does the lesson advise dropping idioms like 'run it up the flagpole'?",
               "options": [
-                "They sound too informal for business",
+                "They sound far too informal for business",
                 "They generate ambiguity across a language gap",
-                "They take longer to say than plain verbs",
-                "They are considered rude in most cultures"
+                "They take longer to say than plain verbs do",
+                "They are considered rude in most other cultures"
               ],
               "correctIndex": 1
             },
@@ -5730,10 +5730,10 @@ export const PREBUILT_COURSES = [
               "concept": "Second-language dynamics",
               "question": "A quiet contributor on your team working in a second language may actually be what?",
               "options": [
-                "Disengaged from the discussion",
-                "Unprepared for the meeting",
+                "Disengaged from the whole discussion",
+                "Unprepared for the current meeting",
                 "A sharp analyst who needs time to compose",
-                "In need of a simpler assignment"
+                "In need of a much simpler assignment"
               ],
               "correctIndex": 2
             }
@@ -5817,8 +5817,8 @@ export const PREBUILT_COURSES = [
               "question": "Task-based trust is built primarily on what?",
               "options": [
                 "Personal connection developed over time",
-                "Reliable delivery and competence",
-                "Shared cultural background",
+                "Reliable delivery and proven competence",
+                "A shared common cultural background",
                 "Frequency of informal conversation"
               ],
               "correctIndex": 1
@@ -5828,10 +5828,10 @@ export const PREBUILT_COURSES = [
               "concept": "Recognition and motivation",
               "question": "Why can public individual praise misfire with a more collectivist team?",
               "options": [
-                "It takes attention away from the leader",
+                "It takes attention away from the team leader",
                 "Being singled out before peers can be uncomfortable",
-                "It sets performance targets too high",
-                "It is seen as a task-based reward"
+                "It sets individual performance targets too high",
+                "It is generally seen as a task-based reward"
               ],
               "correctIndex": 1
             },
@@ -5852,10 +5852,10 @@ export const PREBUILT_COURSES = [
               "concept": "Relationship-based trust",
               "question": "For relationship-based cultures, investing in personal connection is described as what?",
               "options": [
-                "A soft extra once the work is done",
+                "A soft extra to add once the work is done",
                 "The foundation that makes delivery possible",
-                "A distraction from task performance",
-                "Optional unless problems arise"
+                "A distraction from real task performance",
+                "Optional unless serious problems arise"
               ],
               "correctIndex": 1
             },
@@ -5864,10 +5864,10 @@ export const PREBUILT_COURSES = [
               "concept": "Inclusive team identity",
               "question": "Building an inclusive team identity means avoiding which pattern?",
               "options": [
-                "Celebrating delivery alongside relationship",
+                "Celebrating delivery right alongside relationship",
                 "One team always adapting while the US center never does",
                 "Translating between different communication styles",
-                "Giving team recognition in public forums"
+                "Giving whole-team recognition in public forums"
               ],
               "correctIndex": 1
             },
@@ -5876,10 +5876,10 @@ export const PREBUILT_COURSES = [
               "concept": "Recognition and motivation",
               "question": "In the quarter-end example, how did you recognize the Manila billing team?",
               "options": [
-                "Named the top individual in the all-hands",
-                "Sent a company-wide email ranking performers",
+                "Named the single top individual in the all-hands",
+                "Sent a company-wide email ranking all performers",
                 "Gave public team credit and private individual thanks",
-                "Offered only a bonus with no acknowledgement"
+                "Offered only a bonus with no real acknowledgement"
               ],
               "correctIndex": 2
             }
@@ -5970,10 +5970,10 @@ export const PREBUILT_COURSES = [
               "concept": "visibility gap",
               "question": "What does the 'visibility gap' describe?",
               "options": [
-                "The salary difference between US and Manila staff",
+                "The pay difference between your US-based staff and the Manila team that supports them",
                 "The gap between what you could see in a shared room and what reaches you across distance",
-                "The delay caused by teams working in different time zones",
-                "The missing documentation for onboarding new hires"
+                "The scheduling delay that happens when teams work across several distant time zones",
+                "The onboarding documentation that goes missing whenever new hires join the team"
               ],
               "correctIndex": 1
             },
@@ -5982,10 +5982,10 @@ export const PREBUILT_COURSES = [
               "concept": "async-first operating model",
               "question": "In an async-first operating model, live synchronous meetings are treated as what?",
               "options": [
-                "The default way to resolve any question quickly",
-                "Something to be eliminated from the team entirely",
+                "The default, go-to way to resolve almost any question quickly",
+                "Something to be removed from the team's workflow entirely",
                 "A deliberate, expensive choice reserved for what needs it",
-                "A weekly requirement regardless of the topic"
+                "A standing weekly requirement to hold regardless of the topic"
               ],
               "correctIndex": 2
             },
@@ -5995,9 +5995,9 @@ export const PREBUILT_COURSES = [
               "question": "What is the correct time-zone reality for your Manila Support and billing teams?",
               "options": [
                 "They work a night shift locally to overlap your US business hours",
-                "They work their local daytime and hand off to you overnight",
-                "They operate a full day ahead with same-day handoff delays",
-                "They only overlap your hours for one hour each morning"
+                "They work their local daytime and then hand off to you overnight",
+                "They operate a full day ahead, causing same-day handoff delays",
+                "They overlap your working hours for only one hour each morning"
               ],
               "correctIndex": 0
             },
@@ -6006,10 +6006,10 @@ export const PREBUILT_COURSES = [
               "concept": "co-located default",
               "question": "What is the 'co-located default' the lesson warns against?",
               "options": [
-                "Writing everything down before any meeting happens",
+                "Writing everything down carefully before any meeting ever happens",
                 "The reflex of solving problems by pulling people into a live meeting",
-                "Assuming remote workers are less productive than office staff",
-                "Scheduling all work around a single shared time zone"
+                "Assuming remote workers are less productive than in-office staff",
+                "Scheduling all of the team's work around a single shared time zone"
               ],
               "correctIndex": 1
             },
@@ -6018,10 +6018,10 @@ export const PREBUILT_COURSES = [
               "concept": "visibility gap",
               "question": "According to the lesson, what is the wrong way to respond to lost ambient information?",
               "options": [
-                "Redesigning how work and information flow across the team",
-                "Reserving synchronous time for sensitive or complex issues",
+                "Redesigning how work and information flow across the whole team",
+                "Reserving synchronous time for sensitive or genuinely complex issues",
                 "Rebuilding visibility through constant status pings and surveillance",
-                "Creating durable written summaries at the end of a shift"
+                "Creating durable written summaries at the end of every shift handoff"
               ],
               "correctIndex": 2
             },
@@ -6030,9 +6030,9 @@ export const PREBUILT_COURSES = [
               "concept": "distributed team",
               "question": "The lesson frames distributed management as primarily what kind of problem?",
               "options": [
-                "A hiring problem you solve by recruiting locally",
-                "A budgeting problem you solve with better tooling spend",
-                "A morale problem you solve with more social events",
+                "A hiring problem you solve by recruiting more people locally",
+                "A budgeting problem you solve with better spending on tooling",
+                "A morale problem you solve by running more frequent social events",
                 "A design problem you solve before it becomes a people problem"
               ],
               "correctIndex": 3
@@ -6123,7 +6123,7 @@ export const PREBUILT_COURSES = [
                 "Its author's seniority and the recipient's team",
                 "Its length and the language it is written in",
                 "Its urgency and how permanent it needs to be",
-                "Its cost to produce and the time of day sent"
+                "Its cost to produce and the time of day it is sent"
               ],
               "correctIndex": 2
             },
@@ -6135,7 +6135,7 @@ export const PREBUILT_COURSES = [
                 "What is needed, why, by when, and what done looks like",
                 "A list of everyone who has ever worked on the topic",
                 "A summary of the last three meetings on the subject",
-                "The sender's availability for a follow-up call"
+                "The sender's current availability for a follow-up call"
               ],
               "correctIndex": 0
             },
@@ -6144,10 +6144,10 @@ export const PREBUILT_COURSES = [
               "concept": "single source of truth",
               "question": "What problem does a single source of truth solve?",
               "options": [
-                "It reduces the number of people on a distributed team",
+                "It reduces the number of people needed on a distributed team",
                 "It prevents people from acting on stale or conflicting versions",
-                "It removes the need for any written communication",
-                "It guarantees faster internet across all locations"
+                "It removes the need for any written communication at all",
+                "It guarantees faster internet across all of the team's locations"
               ],
               "correctIndex": 1
             },
@@ -6156,9 +6156,9 @@ export const PREBUILT_COURSES = [
               "concept": "meeting-to-doc conversion",
               "question": "Which kind of work resists meeting-to-doc conversion?",
               "options": [
-                "Routine status updates shared across the team",
-                "Simple approvals that need only a yes or no",
-                "One-way information sharing to a group",
+                "Routine status updates that get shared across the whole team",
+                "Simple approvals that need only a quick yes or no answer",
+                "One-way information sharing broadcast out to a large group",
                 "Debate, negotiation, coaching, and relationship-building"
               ],
               "correctIndex": 3
@@ -6168,10 +6168,10 @@ export const PREBUILT_COURSES = [
               "concept": "response-time expectations",
               "question": "According to the lesson, clear response-time expectations primarily allow people to do what?",
               "options": [
-                "Answer every message within five minutes",
+                "Answer every incoming message within about five minutes",
                 "Fully disconnect when off, easing the night-shift toll",
-                "Avoid writing anything down at all",
-                "Attend more live meetings each week"
+                "Avoid writing anything down at all during their shift",
+                "Attend a greater number of live meetings each week"
               ],
               "correctIndex": 1
             },
@@ -6181,9 +6181,9 @@ export const PREBUILT_COURSES = [
               "question": "Converting a convertible meeting to a document produces which additional benefit?",
               "options": [
                 "A durable artifact others can reference later",
-                "A guarantee that no one will ever meet again",
-                "A reduction in the team's total headcount",
-                "An automatic translation into every language"
+                "A guarantee that no one will need to meet again",
+                "A reduction in the overall team's total headcount",
+                "An automatic translation of it into every language"
               ],
               "correctIndex": 0
             }
@@ -6270,10 +6270,10 @@ export const PREBUILT_COURSES = [
               "concept": "swift trust",
               "question": "What is swift trust?",
               "options": [
-                "Trust earned only after years of working together",
+                "Trust that is earned only after years of working closely together",
                 "Provisional trust extended early based on roles and reputation",
-                "Trust that never needs to be reinforced once given",
-                "A measure of how fast a team responds to messages"
+                "Trust that never needs to be reinforced again once it is given",
+                "A measure of how fast a team responds to incoming messages"
               ],
               "correctIndex": 1
             },
@@ -6282,10 +6282,10 @@ export const PREBUILT_COURSES = [
               "concept": "trust battery",
               "question": "According to the lesson, what drains the trust battery fastest?",
               "options": [
-                "A single dramatic public failure by a teammate",
-                "Extending provisional trust to a new colleague",
+                "A single dramatic and very public failure by a teammate",
+                "Extending provisional trust to a brand-new colleague",
                 "Chronic small misses like unanswered promised replies",
-                "Holding one extra live meeting each week"
+                "Holding one extra live meeting on the calendar each week"
               ],
               "correctIndex": 2
             },
@@ -6294,9 +6294,9 @@ export const PREBUILT_COURSES = [
               "concept": "assume positive intent",
               "question": "Assume positive intent is best described as what?",
               "options": [
-                "A naive belief that no one ever makes mistakes",
-                "A rule requiring you to praise all work equally",
-                "A policy of ignoring late or terse messages",
+                "A naive belief that no one on the team ever makes mistakes",
+                "A rule requiring you to praise everyone's work equally",
+                "A policy of quietly ignoring late or unusually terse messages",
                 "A deliberate bias-correction toward the generous explanation"
               ],
               "correctIndex": 3
@@ -6307,9 +6307,9 @@ export const PREBUILT_COURSES = [
               "question": "Psychological safety is the shared belief that a person can do what?",
               "options": [
                 "Speak up or admit a mistake without being punished",
-                "Skip any meeting they find inconvenient",
-                "Work whatever hours they personally prefer",
-                "Avoid all written documentation of decisions"
+                "Skip any meeting that they personally find inconvenient",
+                "Work whatever hours they happen to personally prefer",
+                "Avoid all written documentation of the team's decisions"
               ],
               "correctIndex": 0
             },
@@ -6318,9 +6318,9 @@ export const PREBUILT_COURSES = [
               "concept": "presence without surveillance",
               "question": "What distinguishes presence from surveillance in the lesson?",
               "options": [
-                "Presence requires cameras on while surveillance does not",
+                "Presence requires cameras kept on while surveillance does not need them",
                 "Presence signals care and availability while surveillance signals distrust",
-                "Presence applies only to US staff and surveillance to Manila",
+                "Presence applies only to US staff while surveillance applies to Manila",
                 "Presence means daily check-ins while surveillance means weekly ones"
               ],
               "correctIndex": 1
@@ -6330,10 +6330,10 @@ export const PREBUILT_COURSES = [
               "concept": "trust battery",
               "question": "The lesson names which behavior as the currency of distributed leadership?",
               "options": [
-                "Scheduling more frequent status meetings",
-                "Monitoring when people are online",
+                "Scheduling a greater number of frequent status meetings",
+                "Monitoring closely when each person happens to be online",
                 "Reliability — doing what you said, when and where you said",
-                "Responding to every message within minutes"
+                "Responding to every incoming message within a few minutes"
               ],
               "correctIndex": 2
             }
@@ -6420,10 +6420,10 @@ export const PREBUILT_COURSES = [
               "concept": "outcome-based management",
               "question": "Outcome-based management holds people accountable for what?",
               "options": [
-                "The number of hours they appear online",
+                "The number of hours they appear to be online each day",
                 "The results they own rather than how busy they appear",
-                "The volume of messages they send each shift",
-                "How quickly they reply to every request"
+                "The sheer volume of messages they send during each shift",
+                "How quickly they manage to reply to every single request"
               ],
               "correctIndex": 1
             },
@@ -6433,9 +6433,9 @@ export const PREBUILT_COURSES = [
               "question": "Why does measuring presence especially harm a night-shift Manila team?",
               "options": [
                 "It punishes people for the biology of working through their local night",
-                "It makes them work fewer total hours than US staff",
-                "It forces them to attend more daytime meetings",
-                "It prevents them from using any shared dashboards"
+                "It makes them work fewer total hours than the US-based staff do",
+                "It forces them to attend far more daytime meetings than others",
+                "It prevents them from using any of the team's shared dashboards"
               ],
               "correctIndex": 0
             },
@@ -6444,10 +6444,10 @@ export const PREBUILT_COURSES = [
               "concept": "clear commitments",
               "question": "Which is an example of a holdable clear commitment?",
               "options": [
-                "The team should try to improve response times soon",
-                "Everyone should stay focused on customer happiness",
+                "The team should probably try to improve its response times sometime soon",
+                "Everyone on the team should stay generally focused on customer happiness",
                 "Median first response under two hours by month end, owned by the shift lead",
-                "We will all do our best to reduce churn this quarter"
+                "We will all simply do our very best to reduce churn over this quarter"
               ],
               "correctIndex": 2
             },
@@ -6456,9 +6456,9 @@ export const PREBUILT_COURSES = [
               "concept": "visibility mechanisms",
               "question": "What best characterizes a well-designed visibility mechanism?",
               "options": [
-                "It demands constant, on-demand proof of effort",
-                "It records every keystroke a worker makes",
-                "It replaces all written commitments with meetings",
+                "It demands constant, on-demand proof of a worker's effort",
+                "It records every single keystroke that a worker makes",
+                "It replaces all written commitments with live meetings",
                 "It surfaces progress on a rhythm as part of the work"
               ],
               "correctIndex": 3
@@ -6469,9 +6469,9 @@ export const PREBUILT_COURSES = [
               "question": "Productive escalation is the norm that surfacing a blocker early is what?",
               "options": [
                 "Expected and rewarded rather than punished",
-                "A sign the escalating person has failed",
+                "A clear sign the escalating person has failed",
                 "Only appropriate once a problem is large",
-                "Something to route around the manager"
+                "Something best routed around the manager"
               ],
               "correctIndex": 0
             },
@@ -6480,7 +6480,7 @@ export const PREBUILT_COURSES = [
               "concept": "productive escalation",
               "question": "According to the lesson, early escalation depends on what condition?",
               "options": [
-                "A larger headcount on the team",
+                "A noticeably larger headcount on the team",
                 "An environment with psychological safety",
                 "More frequent surveillance of the team",
                 "A faster internet connection for everyone"
@@ -6570,10 +6570,10 @@ export const PREBUILT_COURSES = [
               "concept": "intentional connection",
               "question": "Why must connection be engineered on a distributed team?",
               "options": [
-                "Because relationships form for free without any effort",
+                "Because strong relationships form for free without any real effort",
                 "Because unplanned connection simply doesn't happen at a distance",
-                "Because only live meetings can ever build relationships",
-                "Because connection matters less than raw output"
+                "Because only live meetings are able to ever build relationships",
+                "Because connection matters far less than a team's raw output"
               ],
               "correctIndex": 1
             },
@@ -6583,9 +6583,9 @@ export const PREBUILT_COURSES = [
               "question": "According to the lesson, what does high isolation risk lead to?",
               "options": [
                 "People disengage, hide problems, and eventually leave",
-                "People deliver far more work than co-located peers",
-                "People stop needing any written documentation",
-                "People request more surveillance from managers"
+                "People deliver far more work than their co-located peers do",
+                "People stop needing any form of written documentation",
+                "People begin to request more surveillance from managers"
               ],
               "correctIndex": 0
             },
@@ -6594,10 +6594,10 @@ export const PREBUILT_COURSES = [
               "concept": "always-on creep",
               "question": "Who sets the real ceiling on how hard always-on pressure squeezes a team?",
               "options": [
-                "The most junior member on the team",
-                "The customers who submit tickets",
+                "The most junior member currently on the team",
+                "The customers who submit the support tickets",
                 "The manager, through the behavior they model",
-                "The time zone with the most staff"
+                "The single time zone with the most staff in it"
               ],
               "correctIndex": 2
             },
@@ -6606,9 +6606,9 @@ export const PREBUILT_COURSES = [
               "concept": "proximity bias",
               "question": "Proximity bias is the tendency to favor whom?",
               "options": [
-                "The people with the longest tenure on the team",
-                "The people who deliver the strongest outcomes",
-                "The people who work the most total hours",
+                "The people who happen to have the longest tenure on the team",
+                "The people who reliably deliver the strongest business outcomes",
+                "The people who end up working the most total hours each week",
                 "The people you interact with most, often those nearest your time zone"
               ],
               "correctIndex": 3
@@ -6619,9 +6619,9 @@ export const PREBUILT_COURSES = [
               "question": "Which action does the lesson recommend to counter proximity bias?",
               "options": [
                 "Track who gets visible projects and rotate opportunities across locations",
-                "Give all credit to whoever attends the most meetings",
-                "Concentrate high-value work in your own time zone",
-                "Reduce recognition to avoid appearing to play favorites"
+                "Give all of the credit to whoever attends the most team meetings",
+                "Concentrate the high-value work squarely within your own time zone",
+                "Reduce recognition overall to avoid appearing to play any favorites"
               ],
               "correctIndex": 0
             },
@@ -6630,10 +6630,10 @@ export const PREBUILT_COURSES = [
               "concept": "inclusion across distance",
               "question": "Inclusion across distance means every member feels what?",
               "options": [
-                "That they must relocate to the main office eventually",
+                "That they must eventually relocate to the company's main office",
                 "That their contribution matters regardless of location or culture",
-                "That only outcomes, never people, are ever discussed",
-                "That the largest region should always set the agenda"
+                "That only outcomes, and never the people, are ever discussed",
+                "That the largest region should always get to set the agenda"
               ],
               "correctIndex": 1
             }
@@ -6720,10 +6720,10 @@ export const PREBUILT_COURSES = [
               "concept": "Development as output",
               "question": "For a manager-of-managers, what is the primary 'output' of their job?",
               "options": [
-                "The number of tickets they personally close",
+                "The number of support tickets they personally close",
                 "The growing capability of the managers below them",
-                "The accuracy of their weekly reports",
-                "The size of their team headcount"
+                "The accuracy of the weekly reports they produce",
+                "The overall size of their reporting team's headcount"
               ],
               "correctIndex": 1
             },
@@ -6732,10 +6732,10 @@ export const PREBUILT_COURSES = [
               "concept": "Player-coach trap",
               "question": "What is the 'player-coach trap'?",
               "options": [
-                "Delegating so much you lose touch with the work",
-                "Coaching two teams at once and burning out",
+                "Delegating so much of the work that you fully lose touch with it",
+                "Coaching two separate teams at the same time and burning out",
                 "Staying the best individual contributor instead of building your people",
-                "Promoting your strongest performer too early"
+                "Promoting your single strongest performer far too early on"
               ],
               "correctIndex": 2
             },
@@ -6744,10 +6744,10 @@ export const PREBUILT_COURSES = [
               "concept": "Skip-level distance",
               "question": "Why is 'skip-level distance' described as intentional?",
               "options": [
-                "It lets you avoid difficult conversations with leads",
-                "It reduces the number of meetings on your calendar",
+                "It lets you conveniently avoid the difficult conversations with your leads",
+                "It reduces the sheer number of recurring meetings sitting on your calendar",
                 "It forces you to lead through judgment and outcomes rather than watching every task",
-                "It keeps you compliant with company reporting rules"
+                "It keeps you compliant with the company's formal reporting rules and norms"
               ],
               "correctIndex": 2
             },
@@ -6757,9 +6757,9 @@ export const PREBUILT_COURSES = [
               "question": "According to the lesson, how does leverage through others compound?",
               "options": [
                 "A developed lead handles many future decisions without you",
-                "You gain more hours by working later each day",
-                "You reduce headcount and save on payroll",
-                "You centralize all decisions to move faster"
+                "You gain a few more working hours by staying later each day",
+                "You reduce the team's headcount and save money on payroll",
+                "You centralize all of the decisions so the team moves faster"
               ],
               "correctIndex": 0
             },
@@ -6768,10 +6768,10 @@ export const PREBUILT_COURSES = [
               "concept": "Player-coach trap",
               "question": "What is the 'tell' that you've fallen into the player-coach trap?",
               "options": [
-                "Your team misses its numbers repeatedly",
+                "Your team keeps repeatedly missing its numbers",
                 "Your calendar is full of tasks only you can do",
-                "Your leads ask you too many questions",
-                "Your reports take too long to write"
+                "Your leads bring you far too many questions",
+                "Your written reports take too long to finish"
               ],
               "correctIndex": 1
             },
@@ -6780,9 +6780,9 @@ export const PREBUILT_COURSES = [
               "concept": "Span vs. depth",
               "question": "When you resolve a customer escalation yourself instead of coaching your support lead through it, what have you mainly cost?",
               "options": [
-                "A faster resolution for the customer",
+                "A faster resolution delivered to the customer",
                 "A rep your lead needed to grow into the role",
-                "An entry in your executive report",
+                "An entry to include in your executive report",
                 "A chance to build the customer relationship"
               ],
               "correctIndex": 1
@@ -6866,10 +6866,10 @@ export const PREBUILT_COURSES = [
               "concept": "Task vs. outcome delegation",
               "question": "What mainly distinguishes outcome delegation from task delegation?",
               "options": [
-                "It comes with a longer deadline",
+                "It usually comes with a noticeably longer deadline attached",
                 "It hands over the result plus the authority to decide how to reach it",
-                "It applies only to senior managers",
-                "It requires written documentation of every step"
+                "It applies only to the more senior managers across a team",
+                "It requires written documentation of every single step taken"
               ],
               "correctIndex": 1
             },
@@ -6878,10 +6878,10 @@ export const PREBUILT_COURSES = [
               "concept": "Reverse delegation",
               "question": "What is 'reverse delegation'?",
               "options": [
-                "Delegating a task and then taking it back midway",
-                "Assigning the same task to two people by mistake",
+                "Delegating a task to someone and then taking it back midway",
+                "Accidentally assigning the very same task to two people at once",
                 "A report pushing a decision back up to you and you accepting it",
-                "Delegating upward to your own boss"
+                "Delegating a piece of work upward to your own boss instead"
               ],
               "correctIndex": 2
             },
@@ -6890,8 +6890,8 @@ export const PREBUILT_COURSES = [
               "concept": "Readiness matching",
               "question": "According to the lesson, what should determine how much authority you delegate to a person?",
               "options": [
-                "Their tenure with the company",
-                "Your own comfort level with letting go",
+                "Their total tenure with the company so far",
+                "Your own comfort level with fully letting go",
                 "Their demonstrated readiness and capability",
                 "The size of the customer account involved"
               ],
@@ -6902,9 +6902,9 @@ export const PREBUILT_COURSES = [
               "concept": "Delegation levels",
               "question": "Which best describes a low delegation level?",
               "options": [
-                "Act and don't report back",
-                "Decide and inform me afterward",
-                "Recommend an approach and I'll approve it",
+                "Act and never report",
+                "Decide, then tell me",
+                "Recommend; I'll approve",
                 "Do exactly what I say"
               ],
               "correctIndex": 3
@@ -6915,9 +6915,9 @@ export const PREBUILT_COURSES = [
               "question": "When a lead asks 'what should I do?', which response keeps the decision on their desk?",
               "options": [
                 "'What do you recommend, and what do you need from me?'",
-                "'Let me handle this one for you.'",
-                "'Do whatever the customer asks.'",
-                "'I'll get back to you after I think about it.'"
+                "'Let me just handle this particular one for you.'",
+                "'Do whatever the customer is asking you to do.'",
+                "'I'll get back to you after I've thought about it.'"
               ],
               "correctIndex": 0
             },
@@ -6926,10 +6926,10 @@ export const PREBUILT_COURSES = [
               "concept": "Decision rights",
               "question": "In the MidMarket renewals example, what did setting guardrails accomplish?",
               "options": [
-                "It removed the lead's accountability for the forecast",
+                "It removed the lead's accountability for hitting the forecast",
                 "It clarified which decisions she could make alone versus bring to you",
-                "It required her to report every renewal individually",
-                "It eliminated the need for any discounting"
+                "It required her to report every single renewal individually",
+                "It eliminated the need for any discounting on the renewals"
               ],
               "correctIndex": 1
             }
@@ -7020,10 +7020,10 @@ export const PREBUILT_COURSES = [
               "concept": "Ask vs. tell",
               "question": "Why is asking developmentally superior to telling, per the lesson?",
               "options": [
-                "It gets to the answer faster in every case",
+                "It reliably gets to the right answer faster in every case",
                 "It builds a manager who can solve the next problem without you",
-                "It avoids the need for any 1:1 meetings",
-                "It removes your accountability for the outcome"
+                "It removes the need to hold any 1:1 meetings going forward",
+                "It removes your own accountability for the final outcome"
               ],
               "correctIndex": 1
             },
@@ -7032,10 +7032,10 @@ export const PREBUILT_COURSES = [
               "concept": "Directive vs. developmental",
               "question": "When is a directive response more appropriate than a coaching one?",
               "options": [
-                "When the person is highly experienced",
-                "When you want to build their judgment",
+                "When the person involved is already highly experienced",
+                "When your main goal is to build up their judgment",
                 "In a live, high-stakes crisis with no time to spare",
-                "When you have a full hour to talk"
+                "When you happen to have a full hour available to talk"
               ],
               "correctIndex": 2
             },
@@ -7056,10 +7056,10 @@ export const PREBUILT_COURSES = [
               "concept": "Coaching for reasoning",
               "question": "What does 'coaching for reasoning' prioritize?",
               "options": [
-                "The specific answer the person lands on",
+                "The specific answer the person finally lands on",
                 "How the person thinks through the problem",
-                "Documenting the conversation for HR",
-                "The speed of reaching a decision"
+                "Documenting the whole conversation for HR",
+                "The raw speed of reaching a decision"
               ],
               "correctIndex": 1
             },
@@ -7068,10 +7068,10 @@ export const PREBUILT_COURSES = [
               "concept": "Powerful questions",
               "question": "What makes a question 'powerful' in coaching?",
               "options": [
-                "It hints at the answer you already have in mind",
-                "It can be answered yes or no",
+                "It quietly hints at the answer you already have",
+                "It can be answered with a simple yes or no",
                 "It makes the other person do the thinking",
-                "It covers many topics at once"
+                "It tries to cover many topics all at once"
               ],
               "correctIndex": 2
             }
@@ -7154,10 +7154,10 @@ export const PREBUILT_COURSES = [
               "concept": "Situation-Behavior-Impact",
               "question": "What are the three components of the SBI feedback model?",
               "options": [
-                "Strengths, Barriers, Improvements",
+                "Strengths, Barriers, Results",
                 "Situation, Behavior, Impact",
-                "Setup, Backstory, Instruction",
-                "Standard, Baseline, Increment"
+                "Setup, Backstory, Steps",
+                "Standard, Baseline, Growth"
               ],
               "correctIndex": 1
             },
@@ -7166,10 +7166,10 @@ export const PREBUILT_COURSES = [
               "concept": "Behavioral feedback",
               "question": "Why is 'you're not strategic' considered poor feedback?",
               "options": [
-                "It is too detailed to remember",
+                "It is far too detailed for anyone to remember",
                 "It is a character label with no actionable path",
-                "It should be given in writing instead",
-                "It focuses too much on a single situation"
+                "It should really be given in writing instead",
+                "It focuses too heavily on one single situation"
               ],
               "correctIndex": 1
             },
@@ -7178,10 +7178,10 @@ export const PREBUILT_COURSES = [
               "concept": "Feedback frequency",
               "question": "According to the lesson, what makes feedback land as coaching rather than a verdict?",
               "options": [
-                "Delivering it with more intensity",
-                "Saving it for the performance review",
+                "Delivering it with noticeably more intensity",
+                "Saving it all up for the performance review",
                 "Giving it frequently in small, timely doses",
-                "Putting it in a formal document"
+                "Putting it into a formal written document"
               ],
               "correctIndex": 2
             },
@@ -7190,10 +7190,10 @@ export const PREBUILT_COURSES = [
               "concept": "Accountability vs. micromanagement",
               "question": "Which statement reflects accountability without micromanagement?",
               "options": [
-                "'Send me every email before it goes out'",
+                "'Send me every single email before it goes out'",
                 "'Own the forecast and I'll review the result Thursday'",
-                "'Copy me on all your customer calls'",
-                "'Check with me before making any decision'"
+                "'Copy me on all of your customer calls, please'",
+                "'Check with me first before making any decision'"
               ],
               "correctIndex": 1
             },
@@ -7202,10 +7202,10 @@ export const PREBUILT_COURSES = [
               "concept": "Cross-cultural feedback",
               "question": "How should you adjust feedback across your US, Manila, and China teams?",
               "options": [
-                "Lower the standard for teams that value harmony",
+                "Lower the overall standard for teams that strongly value harmony",
                 "Adapt the delivery while keeping the substance and standard identical",
-                "Only give feedback to the US team directly",
-                "Deliver all correction publicly for consistency"
+                "Only give direct feedback to members of the US-based team",
+                "Deliver all correction publicly for the sake of consistency"
               ],
               "correctIndex": 1
             },
@@ -7214,10 +7214,10 @@ export const PREBUILT_COURSES = [
               "concept": "Feedback frequency",
               "question": "What is described as the biggest feedback failure?",
               "options": [
-                "Being too harsh in the moment",
+                "Being far too harsh with a person in the moment",
                 "Saving feedback up instead of giving it in the flow",
-                "Giving feedback in private",
-                "Using a structured model like SBI"
+                "Giving the feedback quietly in a private setting",
+                "Relying on a structured model like the SBI one"
               ],
               "correctIndex": 1
             }
@@ -7305,10 +7305,10 @@ export const PREBUILT_COURSES = [
               "concept": "Bench strength",
               "question": "What does 'bench strength' measure?",
               "options": [
-                "How quickly your team closes tickets",
+                "How quickly your team is able to close its tickets",
                 "How ready your org is to fill leadership roles from within",
-                "The total headcount across your teams",
-                "How many external candidates you've interviewed"
+                "The total headcount spread across all of your teams",
+                "How many external candidates you have interviewed so far"
               ],
               "correctIndex": 1
             },
@@ -7317,7 +7317,7 @@ export const PREBUILT_COURSES = [
               "concept": "Succession planning",
               "question": "When should succession planning happen?",
               "options": [
-                "Only during annual performance reviews",
+                "Only at annual performance reviews",
                 "Before a key role becomes vacant",
                 "After a resignation is submitted",
                 "When a customer escalation forces it"
@@ -7329,10 +7329,10 @@ export const PREBUILT_COURSES = [
               "concept": "Stretch assignments",
               "question": "What separates a genuine stretch assignment from a setup?",
               "options": [
-                "The size of the customer account involved",
+                "The overall size of the customer account involved",
                 "A safety net of scope, air cover, and a debrief",
-                "Being given only to the most senior person",
-                "Requiring no involvement from you at all"
+                "Being handed only to the most senior person available",
+                "Requiring absolutely no involvement from you at all"
               ],
               "correctIndex": 1
             },
@@ -7341,10 +7341,10 @@ export const PREBUILT_COURSES = [
               "concept": "Key-person risk",
               "question": "What is 'key-person risk'?",
               "options": [
-                "The chance a new hire fails probation",
+                "The chance that a promising new hire fails their probation",
                 "The exposure when only one person can perform a critical role",
-                "The risk of promoting someone too early",
-                "The cost of hiring externally instead of internally"
+                "The risk that comes from promoting someone far too early",
+                "The added cost of hiring externally instead of from within"
               ],
               "correctIndex": 1
             },
@@ -7353,10 +7353,10 @@ export const PREBUILT_COURSES = [
               "concept": "Coaching cascade",
               "question": "What is a 'coaching cascade'?",
               "options": [
-                "A schedule of back-to-back coaching sessions",
+                "A packed schedule of back-to-back coaching sessions",
                 "Managers coaching their own people the way you coach them",
-                "Escalating coaching problems up the chain",
-                "A quarterly review of all coaching notes"
+                "Escalating coaching problems upward through the chain",
+                "A quarterly review of all of the team's coaching notes"
               ],
               "correctIndex": 1
             },
@@ -7365,10 +7365,10 @@ export const PREBUILT_COURSES = [
               "concept": "Nine-box / readiness grid",
               "question": "On a readiness grid, what does a 'gap' indicate for a critical role?",
               "options": [
-                "A successor who is ready to step in now",
-                "A role that has been recently filled",
+                "A successor who is fully ready to step into the role now",
+                "A role on the grid that has recently been filled",
                 "No ready successor, marking where to aim development",
-                "A role that can be eliminated"
+                "A role that could simply be eliminated altogether"
               ],
               "correctIndex": 2
             }
@@ -7456,9 +7456,9 @@ export const PREBUILT_COURSES = [
               "question": "What does leading with BLUF mean in an executive update?",
               "options": [
                 "Stating the conclusion or recommendation in the first sentence",
-                "Adding a detailed background section before the point",
-                "Summarizing every data source you consulted",
-                "Ending the message with a clear conclusion"
+                "Adding a detailed background section in before making the point",
+                "Summarizing every single data source that you had consulted",
+                "Ending the message with a clear conclusion at the very end"
               ],
               "correctIndex": 0
             },
@@ -7467,10 +7467,10 @@ export const PREBUILT_COURSES = [
               "concept": "Executive attention economy",
               "question": "Why must executive communication earn attention quickly?",
               "options": [
-                "Because executives prefer longer documents",
+                "Because most executives actually prefer much longer documents",
                 "Because a leader's attention is scarce and competes with other demands",
-                "Because email systems truncate long messages",
-                "Because policy requires short updates"
+                "Because email systems will truncate any overly long messages",
+                "Because company policy formally requires all updates to be short"
               ],
               "correctIndex": 1
             },
@@ -7479,10 +7479,10 @@ export const PREBUILT_COURSES = [
               "concept": "The ask",
               "question": "What problem does making the ask explicit solve?",
               "options": [
-                "It shortens the total word count of the message",
-                "It replaces the need for any supporting data",
+                "It meaningfully shortens the overall word count of the message",
+                "It replaces the need for any supporting data within the update",
                 "It removes the reader's uncertainty about whether to act or just note it",
-                "It guarantees the reader will agree with you"
+                "It guarantees that the reader will ultimately agree with you"
               ],
               "correctIndex": 2
             },
@@ -7491,7 +7491,7 @@ export const PREBUILT_COURSES = [
               "concept": "Decision-oriented framing",
               "question": "According to the lesson, executives primarily read your updates in order to do what?",
               "options": [
-                "Follow the narrative of your work",
+                "Follow your work's narrative",
                 "Verify your effort level",
                 "Learn your research process",
                 "Make or confirm a decision"
@@ -7504,9 +7504,9 @@ export const PREBUILT_COURSES = [
               "question": "In the BLUF approach, where does the supporting detail go?",
               "options": [
                 "After the signal, for readers who want proof",
-                "Removed entirely from the message",
-                "Split evenly throughout the message",
-                "Before the conclusion as a lead-in"
+                "Removed from the message altogether",
+                "Split evenly all throughout the message",
+                "Before the conclusion as an early lead-in"
               ],
               "correctIndex": 0
             },
@@ -7515,10 +7515,10 @@ export const PREBUILT_COURSES = [
               "concept": "Decision-oriented framing",
               "question": "How should you label an update when you only need the executive to be informed, not act?",
               "options": [
-                "Leave the purpose unlabeled",
+                "Leave the purpose unmarked",
                 "Mark it 'For awareness'",
                 "Mark it 'For decision'",
-                "Mark it 'Urgent'"
+                "Mark it 'Time-critical'"
               ],
               "correctIndex": 1
             }
@@ -7605,9 +7605,9 @@ export const PREBUILT_COURSES = [
               "concept": "Executive summary",
               "question": "What three questions should an executive summary answer in order?",
               "options": [
-                "Who, what, and when",
+                "Who did what, and by exactly when",
                 "What's the situation, so what, now what",
-                "How much, how long, how risky",
+                "How much, how long, and how risky it is",
                 "What worked, what failed, what's next"
               ],
               "correctIndex": 1
@@ -7617,10 +7617,10 @@ export const PREBUILT_COURSES = [
               "concept": "Pyramid principle",
               "question": "How does the pyramid principle order ideas?",
               "options": [
-                "Evidence first, then reasons, then the conclusion",
-                "Chronologically from oldest to newest fact",
+                "Evidence first, then the reasons, then the conclusion",
+                "Chronologically, from the oldest to the newest fact",
                 "Main point first, then grouped arguments, then evidence",
-                "Alphabetically by topic heading"
+                "Alphabetically, by each topic's heading label"
               ],
               "correctIndex": 2
             },
@@ -7629,9 +7629,9 @@ export const PREBUILT_COURSES = [
               "concept": "MECE",
               "question": "What does it mean for supporting points to be MECE?",
               "options": [
-                "They repeat the main point for emphasis",
-                "They are ranked strictly by importance",
-                "They each cite an external source",
+                "They repeat the main point again for emphasis",
+                "They are ranked strictly in order of importance",
+                "They each cite a separate external source",
                 "They don't overlap and leave no important gap"
               ],
               "correctIndex": 3
@@ -7642,9 +7642,9 @@ export const PREBUILT_COURSES = [
               "question": "Why is scannable formatting described as risk management, not decoration?",
               "options": [
                 "It protects the message against a reader who skims first",
-                "It makes the document legally compliant",
-                "It reduces the file size of the report",
-                "It prevents the reader from disagreeing"
+                "It makes the whole document fully legally compliant",
+                "It noticeably reduces the file size of the report",
+                "It prevents the reader from being able to disagree"
               ],
               "correctIndex": 0
             },
@@ -7653,10 +7653,10 @@ export const PREBUILT_COURSES = [
               "concept": "Status report structure",
               "question": "What is the main benefit of keeping a recurring report's structure fixed?",
               "options": [
-                "It allows longer reports each week",
+                "It allows the reports to run somewhat longer each week",
                 "Readers learn exactly where to find each element and stop hunting",
-                "It removes the need for an executive summary",
-                "It guarantees the metrics improve"
+                "It removes any need to include an executive summary at all",
+                "It practically guarantees the reported metrics improve"
               ],
               "correctIndex": 1
             },
@@ -7665,10 +7665,10 @@ export const PREBUILT_COURSES = [
               "concept": "Executive summary",
               "question": "What is the stand-alone test for an executive summary?",
               "options": [
-                "Whether it fits within one line",
-                "Whether it names every team involved",
+                "Whether the whole summary fits within a single line",
+                "Whether it names every team that was involved in the work",
                 "Whether reading only it would still drive the right decision",
-                "Whether it avoids using any numbers"
+                "Whether it manages to avoid using any numbers at all"
               ],
               "correctIndex": 2
             }
@@ -7757,7 +7757,7 @@ export const PREBUILT_COURSES = [
               "options": [
                 "List every supporting data point",
                 "Pause and let the executive steer",
-                "Restate it in different words",
+                "Restate it all in different words",
                 "Move on to an unrelated update"
               ],
               "correctIndex": 1
@@ -7770,7 +7770,7 @@ export const PREBUILT_COURSES = [
                 "As a lack of thoroughness",
                 "As avoidance of the question",
                 "As command of the material",
-                "As overconfidence to be checked"
+                "As overconfidence to check"
               ],
               "correctIndex": 2
             },
@@ -7780,9 +7780,9 @@ export const PREBUILT_COURSES = [
               "question": "What is the common mistake anxious speakers make under scrutiny?",
               "options": [
                 "They add words when they should say less",
-                "They refuse to answer at all",
-                "They speak too quietly to hear",
-                "They change the subject deliberately"
+                "They refuse to answer the question at all",
+                "They speak far too quietly to be heard",
+                "They deliberately change the subject"
               ],
               "correctIndex": 0
             },
@@ -7791,9 +7791,9 @@ export const PREBUILT_COURSES = [
               "concept": "One-breath summary",
               "question": "What does the one-breath summary test tell you?",
               "options": [
-                "Whether the room is paying attention",
-                "Whether your slide count is too high",
-                "Whether the meeting should be a call",
+                "Whether the room is actually paying attention",
+                "Whether your total slide count is too high",
+                "Whether the meeting should have been a call",
                 "Whether you've actually found your core point"
               ],
               "correctIndex": 3
@@ -7804,9 +7804,9 @@ export const PREBUILT_COURSES = [
               "question": "According to the lesson, executive presence in live settings comes primarily from what?",
               "options": [
                 "Steadiness and comfort with pauses",
-                "Speaking louder than others",
+                "Speaking noticeably louder than others",
                 "Talking faster to cover more ground",
-                "Using more technical vocabulary"
+                "Using much more technical vocabulary"
               ],
               "correctIndex": 0
             },
@@ -7815,7 +7815,7 @@ export const PREBUILT_COURSES = [
               "concept": "Answer-first Q&A",
               "question": "In answer-first Q&A, what comes after the direct answer?",
               "options": [
-                "A change of topic",
+                "A quick change of topic",
                 "The reasoning behind it",
                 "A request to move on",
                 "An apology for brevity"
@@ -7905,10 +7905,10 @@ export const PREBUILT_COURSES = [
               "concept": "Recommendation framing",
               "question": "What distinguishes recommendation framing from simply presenting options?",
               "options": [
-                "It hides the less attractive options",
+                "It quietly hides the less attractive options",
                 "It states which option you'd choose and why",
-                "It removes the executive's ability to override you",
-                "It always includes exactly two options"
+                "It strips the executive's power to override you",
+                "It always includes exactly two clear options"
               ],
               "correctIndex": 1
             },
@@ -7917,10 +7917,10 @@ export const PREBUILT_COURSES = [
               "concept": "Delivering bad news",
               "question": "According to the lesson, what do executives find hardest to forgive?",
               "options": [
-                "Problems that come with a plan",
-                "Recommendations they disagree with",
-                "Late surprises",
-                "Detailed metrics"
+                "A problem raised with its plan",
+                "Advice they disagree with",
+                "Late, last-minute surprises",
+                "Long lists of detailed metrics"
               ],
               "correctIndex": 2
             },
@@ -7930,9 +7930,9 @@ export const PREBUILT_COURSES = [
               "question": "Why should you avoid softening 'likely to churn' into 'engagement headwinds'?",
               "options": [
                 "Because precision under bad news is itself a trust signal",
-                "Because vague language is against policy",
-                "Because it makes the message longer",
-                "Because executives prefer technical jargon"
+                "Because vague, fuzzy language is against company policy",
+                "Because the softened version makes the message longer",
+                "Because most executives actually prefer technical jargon"
               ],
               "correctIndex": 0
             },
@@ -7941,10 +7941,10 @@ export const PREBUILT_COURSES = [
               "concept": "Managing up",
               "question": "What does managing up actually involve?",
               "options": [
-                "Flattering the executive to gain favor",
-                "Hiding your real opinion from leadership",
+                "Flattering the executive constantly to gain their favor",
+                "Hiding what your real opinion is from the leadership team",
                 "Adapting your format and focus to the executive's preferences",
-                "Reporting more frequently than necessary"
+                "Reporting to them far more frequently than is necessary"
               ],
               "correctIndex": 2
             },
@@ -7953,9 +7953,9 @@ export const PREBUILT_COURSES = [
               "concept": "Confidence calibration",
               "question": "What is the benefit of reliably calibrated confidence over time?",
               "options": [
-                "It lets you avoid stating any numbers",
-                "It makes your updates shorter",
-                "It removes the need for recommendations",
+                "It conveniently lets you avoid ever stating any of the numbers",
+                "It reliably makes each one of your updates noticeably shorter",
+                "It removes the need for you to ever offer a clear recommendation",
                 "It lets executives delegate real decisions without re-checking your work"
               ],
               "correctIndex": 3
@@ -7966,9 +7966,9 @@ export const PREBUILT_COURSES = [
               "question": "What does bringing only questions upward signal to an executive?",
               "options": [
                 "That you want them to do your thinking for you",
-                "That you are being appropriately humble",
+                "That you are being appropriately humble here",
                 "That you have calibrated your confidence well",
-                "That you respect their time"
+                "That you genuinely respect their limited time"
               ],
               "correctIndex": 0
             }
@@ -8056,9 +8056,9 @@ export const PREBUILT_COURSES = [
               "question": "What is the most common communication failure at the board level?",
               "options": [
                 "Getting the altitude wrong — too much operational detail or too vague",
-                "Using too many strategic frames",
-                "Presenting a recommendation too early",
-                "Reporting metrics too consistently"
+                "Relying on far too many competing strategic frames at once",
+                "Presenting your recommendation much too early in the meeting",
+                "Reporting the operational metrics a little too consistently"
               ],
               "correctIndex": 0
             },
@@ -8067,10 +8067,10 @@ export const PREBUILT_COURSES = [
               "concept": "Metrics as narrative",
               "question": "Why is a raw dashboard dump risky with a board?",
               "options": [
-                "It takes too long to load on screen",
+                "It simply takes far too long to fully load on the screen",
                 "It invites the board to draw their own, possibly wrong, conclusions",
-                "It always contains outdated numbers",
-                "It violates reporting cadence rules"
+                "It almost always contains at least some outdated numbers",
+                "It ends up violating the board's set reporting cadence rules"
               ],
               "correctIndex": 1
             },
@@ -8079,10 +8079,10 @@ export const PREBUILT_COURSES = [
               "concept": "Strategic frame",
               "question": "What turns a metric from trivia into a reason to act?",
               "options": [
-                "Showing it as a percentage",
-                "Presenting it in a chart",
+                "Showing the metric as a clean percentage figure",
+                "Presenting the metric inside a polished chart",
                 "Tying it to a strategic goal or risk the board owns",
-                "Comparing it to an industry benchmark"
+                "Comparing it against a known industry benchmark"
               ],
               "correctIndex": 2
             },
@@ -8091,9 +8091,9 @@ export const PREBUILT_COURSES = [
               "concept": "Decision escalation",
               "question": "What should a clean decision escalation to the board include?",
               "options": [
-                "A detailed history of the problem's origin",
-                "A list of everyone who worked on it",
-                "An open-ended request for the board's thoughts",
+                "A detailed history of where the problem first originated",
+                "A full list of everyone who ever worked on the issue",
+                "An open-ended request for the board's general thoughts",
                 "Options, your recommendation, the tradeoff, and a deadline"
               ],
               "correctIndex": 3
@@ -8104,9 +8104,9 @@ export const PREBUILT_COURSES = [
               "question": "How does a consistent reporting cadence protect you in a bad quarter?",
               "options": [
                 "It makes the bad quarter read as a managed data point in a trend",
-                "It hides the bad numbers from the board",
-                "It shortens the board meeting",
-                "It removes the need for a recommendation"
+                "It quietly hides the worst numbers away from the board",
+                "It meaningfully shortens the length of the board meeting",
+                "It removes any need to include a clear recommendation there"
               ],
               "correctIndex": 0
             },
@@ -8115,10 +8115,10 @@ export const PREBUILT_COURSES = [
               "concept": "Audience altitude",
               "question": "For a board audience, what should operational detail be compressed into?",
               "options": [
-                "A longer appendix of raw data",
+                "A much longer appendix full of the raw data",
                 "Its strategic implication for revenue and risk",
-                "A per-shift breakdown by team",
-                "A separate operational dashboard"
+                "A detailed per-shift breakdown given by team",
+                "A completely separate operational dashboard"
               ],
               "correctIndex": 1
             }
@@ -8209,10 +8209,10 @@ export const PREBUILT_COURSES = [
               "concept": "Lateral influence",
               "question": "What defines lateral influence as opposed to positional authority?",
               "options": [
-                "It is granted formally by the company's org chart",
+                "It is granted to you formally by the company's org chart",
                 "It shapes the actions of people who can freely decline you",
-                "It only applies to people who report directly to you",
-                "It comes automatically with a director-level title"
+                "It applies only to the people who report directly to you",
+                "It arrives automatically along with a director-level title"
               ],
               "correctIndex": 1
             },
@@ -8221,10 +8221,10 @@ export const PREBUILT_COURSES = [
               "concept": "Sources of power",
               "question": "According to the lesson, which three sources supply lateral power?",
               "options": [
-                "Title, budget, and headcount authority",
+                "Job title, budget, and headcount power",
                 "Seniority, tenure, and public visibility",
                 "Expertise, relationships, and reciprocity",
-                "Charisma, volume, and persistence"
+                "Charisma, sheer volume, and persistence"
               ],
               "correctIndex": 2
             },
@@ -8235,8 +8235,8 @@ export const PREBUILT_COURSES = [
               "options": [
                 "Entirely within your own team's control to deliver",
                 "Yours to own but reliant on a team you don't control",
-                "Owned and delivered solely by another department",
-                "Optional and unrelated to your accountability"
+                "Owned and delivered entirely by another department",
+                "Completely optional and unrelated to what you own"
               ],
               "correctIndex": 1
             },
@@ -8245,10 +8245,10 @@ export const PREBUILT_COURSES = [
               "concept": "Positional authority",
               "question": "Over which group do you actually hold positional authority?",
               "options": [
-                "The Product Managers you partner with",
+                "The Product Managers you regularly partner with",
                 "The Manila support staff who report to you",
-                "The Sales reps setting customer expectations",
-                "The Engineering team fixing a billing bug"
+                "The Sales reps who set the customer expectations",
+                "The Engineering team fixing the billing bug"
               ],
               "correctIndex": 1
             },
@@ -8257,10 +8257,10 @@ export const PREBUILT_COURSES = [
               "concept": "Value exchange",
               "question": "In the AI-calling example, why did the fix request land successfully?",
               "options": [
-                "You pulled rank and demanded immediate action",
+                "You pulled rank and firmly demanded immediate action",
                 "You framed it as a value exchange advancing their goals",
-                "You waited silently for the sprint to open up",
-                "You reported the PM to their manager for delays"
+                "You simply waited in silence for the sprint to open up",
+                "You reported the PM to their own manager for the delays"
               ],
               "correctIndex": 1
             },
@@ -8269,10 +8269,10 @@ export const PREBUILT_COURSES = [
               "concept": "Reciprocity",
               "question": "What makes reciprocity a source of influence?",
               "options": [
-                "It forces compliance through formal escalation",
+                "It forces full compliance through formal escalation",
                 "People tend to return help they previously received",
-                "It depends entirely on your rank in the company",
-                "It only works between direct reports and managers"
+                "It depends entirely on your current rank in the company",
+                "It only works between direct reports and their managers"
               ],
               "correctIndex": 1
             }
@@ -8359,10 +8359,10 @@ export const PREBUILT_COURSES = [
               "concept": "Competence and character",
               "question": "How does the lesson describe the two halves of credibility?",
               "options": [
-                "Seniority and the size of your budget",
+                "Your seniority level and the size of your budget",
                 "Competence in your work and character in good faith",
-                "Popularity and the loudness of your voice",
-                "Tenure at the company and formal title"
+                "Your popularity and the sheer loudness of your voice",
+                "Your tenure at the company and your formal job title"
               ],
               "correctIndex": 1
             },
@@ -8372,9 +8372,9 @@ export const PREBUILT_COURSES = [
               "question": "How is someone with high competence but low character likely perceived?",
               "options": [
                 "As a trusted partner worth acting on quickly",
-                "As pleasant but not worth acting on",
+                "As pleasant enough but not worth acting on",
                 "As a dangerous operator people route around",
-                "As the most influential person in the room"
+                "As the single most influential person present"
               ],
               "correctIndex": 2
             },
@@ -8383,10 +8383,10 @@ export const PREBUILT_COURSES = [
               "concept": "Trust account",
               "question": "What does the lesson say about the cost of a withdrawal from the trust account?",
               "options": [
-                "It costs the same as a single deposit",
+                "It costs about the same as one single deposit",
                 "It costs several times what a deposit earns",
-                "It has no lasting effect on the balance",
-                "It can only be caused by dishonesty, not misses"
+                "It has no real lasting effect on the balance",
+                "It comes only from dishonesty, never from misses"
               ],
               "correctIndex": 1
             },
@@ -8395,10 +8395,10 @@ export const PREBUILT_COURSES = [
               "concept": "Consistency",
               "question": "Why does the lesson call consistency the multiplier of trust?",
               "options": [
-                "Because grand gestures build trust faster than habits",
+                "Because grand, showy gestures build trust faster than habits do",
                 "Because being reliable in small moments earns benefit of the doubt",
-                "Because trust only forms during high-stakes events",
-                "Because one strong quarter erases prior unreliability"
+                "Because trust really only forms during the high-stakes events",
+                "Because one genuinely strong quarter erases prior unreliability"
               ],
               "correctIndex": 1
             },
@@ -8407,10 +8407,10 @@ export const PREBUILT_COURSES = [
               "concept": "Relationship capital",
               "question": "What is the core mistake the 'bank before you borrow' idea warns against?",
               "options": [
-                "Making too many small deposits over time",
-                "Sharing customer intel that helps a counterpart",
+                "Making far too many small deposits over a long time",
+                "Sharing useful customer intel that helps out a counterpart",
                 "Showing up to a counterpart only when you need something",
-                "Publicly celebrating another team's release"
+                "Publicly celebrating another team's successful release"
               ],
               "correctIndex": 2
             },
@@ -8419,10 +8419,10 @@ export const PREBUILT_COURSES = [
               "concept": "Trust account",
               "question": "In the renewal-season example, what did the deposits accomplish?",
               "options": [
-                "They let you skip the Product team entirely",
+                "They let you skip over the Product team entirely",
                 "They made your later ask weigh as a trusted colleague's",
                 "They gave you formal authority over the Product Manager",
-                "They replaced the need to present any customer data"
+                "They replaced any need to present customer data at all"
               ],
               "correctIndex": 1
             }
@@ -8511,8 +8511,8 @@ export const PREBUILT_COURSES = [
               "options": [
                 "Engage them as intensely as your closest allies",
                 "Keep them satisfied without overloading them",
-                "Ignore them since they don't care about the outcome",
-                "Route every decision through them first"
+                "Ignore them, since they don't care about outcomes",
+                "Route every single decision through them first"
               ],
               "correctIndex": 1
             },
@@ -8523,8 +8523,8 @@ export const PREBUILT_COURSES = [
               "options": [
                 "A position is the hidden motive; an interest is the public demand",
                 "A position is stated; an interest is the underlying need driving it",
-                "They are two words for the same stated request",
-                "A position is data-based; an interest is purely emotional"
+                "They are simply two different words for the same stated request",
+                "A position is data-based, while an interest is purely emotional"
               ],
               "correctIndex": 1
             },
@@ -8535,8 +8535,8 @@ export const PREBUILT_COURSES = [
               "options": [
                 "Influencers hold the formal power to approve the request",
                 "Influencers shape the decision without holding the pen",
-                "Decision-makers rarely matter to the outcome",
-                "Influencers always outrank the decision-maker"
+                "Decision-makers rarely matter much to the final outcome",
+                "Influencers will almost always outrank the decision-maker"
               ],
               "correctIndex": 1
             },
@@ -8545,10 +8545,10 @@ export const PREBUILT_COURSES = [
               "concept": "WIIFM",
               "question": "What does answering a counterpart's WIIFM require you to do?",
               "options": [
-                "Explain why your emergency should be everyone's priority",
+                "Explain why your emergency should be everyone's top priority",
                 "Reframe the ask so it advances a goal they already own",
-                "Offer them a formal reporting line into your team",
-                "Escalate to their manager to force cooperation"
+                "Offer them a formal reporting line straight into your team",
+                "Escalate to their manager in order to force cooperation"
               ],
               "correctIndex": 1
             },
@@ -8557,10 +8557,10 @@ export const PREBUILT_COURSES = [
               "concept": "Incentive alignment",
               "question": "In the onboarding example, how did you achieve incentive alignment with Sales?",
               "options": [
-                "You demanded they stop selling the product vision",
+                "You demanded that they stop selling the grand product vision",
                 "You showed over-promised accounts churn and drag net revenue",
-                "You reported the team leads to the VP of Sales",
-                "You offered the reps a share of CS's budget"
+                "You reported the Sales team leads directly to the VP of Sales",
+                "You offered the reps a small share of the CS team's budget"
               ],
               "correctIndex": 1
             },
@@ -8570,9 +8570,9 @@ export const PREBUILT_COURSES = [
               "question": "What common mapping failure does the lesson warn about?",
               "options": [
                 "Spending energy on the friendliest rather than the most pivotal person",
-                "Listing too few people who could block the initiative",
-                "Sorting stakeholders by influence instead of by interest",
-                "Engaging the decision-maker before the influencers"
+                "Listing far too few of the people who could block the initiative",
+                "Sorting stakeholders by their influence instead of by interest",
+                "Engaging the decision-maker well before any of the influencers"
               ],
               "correctIndex": 0
             }
@@ -8659,10 +8659,10 @@ export const PREBUILT_COURSES = [
               "concept": "Framing",
               "question": "How should you frame an ask to invite partnership rather than mere sympathy?",
               "options": [
-                "Around your team's workload and stress level",
+                "Around your own team's heavy workload and stress level",
                 "Around a shared business problem the listener cares about",
                 "Around how long the issue has personally frustrated you",
-                "Around your formal right to demand the help"
+                "Around your formal right to demand the help you need"
               ],
               "correctIndex": 1
             },
@@ -8671,9 +8671,9 @@ export const PREBUILT_COURSES = [
               "concept": "Data-plus-narrative",
               "question": "Why does the lesson pair data with narrative rather than using either alone?",
               "options": [
-                "Numbers alone are always more persuasive than stories",
+                "Numbers alone are always more persuasive than any story",
                 "Data sizes the problem while the story makes it matter",
-                "Stories prove the problem is real without any numbers",
+                "Stories can prove the problem is real without any numbers",
                 "Busy counterparts prefer a full spreadsheet to a headline"
               ],
               "correctIndex": 1
@@ -8683,10 +8683,10 @@ export const PREBUILT_COURSES = [
               "concept": "The specific ask",
               "question": "What makes a request a specific ask?",
               "options": [
-                "It leaves the timing open so the counterpart isn't pressured",
+                "It leaves the timing open so the counterpart feels no pressure",
                 "It names exactly what you want, from whom, and by when",
-                "It asks broadly for help sometime in the future",
-                "It requests an open-ended, ongoing commitment"
+                "It asks broadly for some help at some point in the future",
+                "It requests an open-ended, ongoing commitment of effort"
               ],
               "correctIndex": 1
             },
@@ -8695,10 +8695,10 @@ export const PREBUILT_COURSES = [
               "concept": "Objection handling",
               "question": "What is the recommended first step when a counterpart raises an objection?",
               "options": [
-                "Rebut it immediately with your strongest counterpoint",
+                "Rebut it immediately with your single strongest counterpoint",
                 "Acknowledge the concern genuinely before problem-solving",
-                "Escalate the disagreement to their manager",
-                "Restate why your issue is the higher priority"
+                "Escalate the whole disagreement up to their manager fast",
+                "Restate again why your issue is really the higher priority"
               ],
               "correctIndex": 1
             },
@@ -8707,10 +8707,10 @@ export const PREBUILT_COURSES = [
               "concept": "Objection handling",
               "question": "In the Engineering example, how did you respond to 'the sprint is full'?",
               "options": [
-                "You argued your bug outranked their planned work",
+                "You argued that your bug clearly outranked their planned work",
                 "You offered your team to own reproduction and test cases",
-                "You escalated to the Engineering lead's director",
-                "You withdrew the request until the next quarter"
+                "You escalated it straight to the Engineering lead's director",
+                "You withdrew the request entirely until the next quarter"
               ],
               "correctIndex": 1
             },
@@ -8720,9 +8720,9 @@ export const PREBUILT_COURSES = [
               "question": "How does the lesson say you should close a cross-functional conversation?",
               "options": [
                 "With a defined next step and an agreed owner",
-                "With a warm but open-ended good feeling",
+                "With a warm but fully open-ended good feeling",
                 "With a promise to circle back sometime later",
-                "With a summary email replacing any verbal agreement"
+                "With a summary email replacing the verbal deal"
               ],
               "correctIndex": 0
             }
@@ -8809,10 +8809,10 @@ export const PREBUILT_COURSES = [
               "concept": "Coalition building",
               "question": "When should you ideally build a coalition for a big cross-functional change?",
               "options": [
-                "Publicly in the group forum where the decision is made",
+                "Publicly, in the group forum where the decision gets made",
                 "Privately, securing agreement one conversation at a time",
                 "Only after the decision has already been rejected once",
-                "By announcing it broadly before talking to anyone"
+                "By announcing it broadly before talking with anyone at all"
               ],
               "correctIndex": 1
             },
@@ -8821,10 +8821,10 @@ export const PREBUILT_COURSES = [
               "concept": "Social proof",
               "question": "How does the lesson say social proof should be used?",
               "options": [
-                "By overstating consensus to build extra momentum",
+                "By overstating the consensus to build up extra momentum",
                 "By honestly citing real supporters, not imaginary ones",
-                "By hiding who supports the idea to avoid bias",
-                "By naming only the most senior supporter available"
+                "By hiding who actually supports the idea to avoid bias",
+                "By naming only the single most senior supporter available"
               ],
               "correctIndex": 1
             },
@@ -8833,10 +8833,10 @@ export const PREBUILT_COURSES = [
               "concept": "Escalation as last resort",
               "question": "What is the clean way to escalate a stalled cross-functional issue?",
               "options": [
-                "Go over the counterpart's head quietly to save time",
+                "Go over the counterpart's head quietly to save some time",
                 "Escalate the issue jointly after giving them a heads-up",
-                "Escalate the person's competence to their manager",
-                "Escalate loudly and often to show you mean business"
+                "Escalate the person's competence straight to their manager",
+                "Escalate loudly and often to show that you mean business"
               ],
               "correctIndex": 1
             },
@@ -8847,8 +8847,8 @@ export const PREBUILT_COURSES = [
               "options": [
                 "That they are exceptionally decisive and driven",
                 "That they cannot influence without formal power",
-                "That they hold strong lateral relationships",
-                "That their priorities are always the most urgent"
+                "That they hold genuinely strong lateral relationships",
+                "That their priorities are always the most urgent ones"
               ],
               "correctIndex": 1
             },
@@ -8859,8 +8859,8 @@ export const PREBUILT_COURSES = [
               "options": [
                 "It costs nothing yet buys enormous goodwill",
                 "It transfers formal authority to the contributor",
-                "It guarantees the counterpart will never object again",
-                "It lets you claim shared wins as your own"
+                "It guarantees the counterpart never objects again",
+                "It lets you claim shared wins fully as your own"
               ],
               "correctIndex": 0
             },
@@ -8869,10 +8869,10 @@ export const PREBUILT_COURSES = [
               "concept": "Reputation over time",
               "question": "Why does the lesson describe lateral influence as a repeated game?",
               "options": [
-                "Because each ask is fully independent of the last",
+                "Because each new ask is fully independent of the last one",
                 "Because your reputation compounds or erodes with every interaction",
-                "Because influence resets to zero after every project",
-                "Because a single big win outweighs your long-term record"
+                "Because your influence resets right back to zero every project",
+                "Because a single big win outweighs your entire long-term record"
               ],
               "correctIndex": 1
             }
@@ -8959,10 +8959,10 @@ export const PREBUILT_COURSES = [
               "concept": "explanatory communication",
               "question": "What best describes the shift from exploratory to explanatory work?",
               "options": [
-                "From presenting one conclusion to searching all the data",
+                "From presenting one focused conclusion to searching through all the raw data",
                 "From searching data for truth to presenting the slice that supports one decision",
-                "From verbal updates to written dashboards",
-                "From lagging metrics to leading metrics"
+                "From giving verbal status updates to publishing always-on written dashboards",
+                "From reporting lagging metrics to forecasting leading predictive metrics"
               ],
               "correctIndex": 1
             },
@@ -8971,10 +8971,10 @@ export const PREBUILT_COURSES = [
               "concept": "the So-What",
               "question": "According to the lesson, the So-What is best defined as:",
               "options": [
-                "The raw metric and its trend line",
-                "The chart type chosen for the data",
+                "The raw underlying metric and its plotted trend line",
+                "The specific chart type selected to display the data",
                 "The business implication and why the audience should act",
-                "The data source and its refresh cadence"
+                "The upstream data source and its scheduled refresh cadence"
               ],
               "correctIndex": 2
             },
@@ -8983,10 +8983,10 @@ export const PREBUILT_COURSES = [
               "concept": "data as evidence",
               "question": "In the lesson's framing, a metric plays which role in a data story?",
               "options": [
-                "The evidence supporting the argument",
-                "The argument itself",
-                "The audience's decision",
-                "The noise to be cut"
+                "The evidence that supports the argument",
+                "The core argument being made itself",
+                "The final decision the audience makes",
+                "The distracting noise to be cut out"
               ],
               "correctIndex": 0
             },
@@ -8995,10 +8995,10 @@ export const PREBUILT_COURSES = [
               "concept": "audience-first framing",
               "question": "Why can one dataset produce three different stories?",
               "options": [
-                "Because the data changes between meetings",
-                "Because charts render differently on each screen",
+                "Because the underlying data changes between each meeting",
+                "Because charts render differently on each device screen",
                 "Because each audience acts on a different implication",
-                "Because analysts disagree on the numbers"
+                "Because analysts disagree about what the numbers mean"
               ],
               "correctIndex": 2
             },
@@ -9007,10 +9007,10 @@ export const PREBUILT_COURSES = [
               "concept": "signal versus noise",
               "question": "Cutting a dashboard down to the signal is described as:",
               "options": [
-                "A shortcut that sacrifices rigor",
+                "A convenient shortcut that sacrifices rigor",
                 "An act of respect for the executive's time",
-                "A step only needed for junior audiences",
-                "A way to hide unfavorable numbers"
+                "A step that is only needed for junior audiences",
+                "A sneaky way to hide unfavorable numbers"
               ],
               "correctIndex": 1
             },
@@ -9019,10 +9019,10 @@ export const PREBUILT_COURSES = [
               "concept": "explanatory communication",
               "question": "The lesson says executives do not want your search history; they want:",
               "options": [
-                "Every tab of the dashboard",
-                "The refresh schedule",
-                "Your conclusion",
-                "The full methodology"
+                "Every open tab of the dashboard",
+                "The dashboard refresh schedule",
+                "Your bottom-line conclusion",
+                "The full analysis methodology"
               ],
               "correctIndex": 2
             }
@@ -9109,10 +9109,10 @@ export const PREBUILT_COURSES = [
               "concept": "Big Idea",
               "question": "Which of these is a Big Idea rather than a topic?",
               "options": [
-                "A review of AI texting performance",
+                "A broad review of our AI texting performance over the past quarter",
                 "AI texting response rates are half of AI calling, costing us renewals",
-                "The AI texting metrics dashboard",
-                "An overview of texting versus calling"
+                "The AI texting metrics dashboard with its usual weekly charts",
+                "An overview comparing AI texting versus AI calling across the team"
               ],
               "correctIndex": 1
             },
@@ -9121,10 +9121,10 @@ export const PREBUILT_COURSES = [
               "concept": "hero metric",
               "question": "What is the role of a hero metric in a data story?",
               "options": [
-                "It is one of several equally weighted numbers",
+                "It is one of several equally weighted numbers on the slide",
                 "It is the single number the story orbits, with others as context",
-                "It is the chart style used on the title slide",
-                "It is the metric the audience already knows best"
+                "It is the decorative chart style used on the title slide",
+                "It is simply the metric the audience already knows best"
               ],
               "correctIndex": 1
             },
@@ -9133,9 +9133,9 @@ export const PREBUILT_COURSES = [
               "concept": "tension and stakes",
               "question": "According to the lesson, decisions are driven primarily by:",
               "options": [
-                "Completeness of the data",
-                "Number of slides presented",
-                "Stakes and a stated gap",
+                "The completeness of the data",
+                "The number of slides presented",
+                "Clear stakes and a stated gap",
                 "The seniority of the presenter"
               ],
               "correctIndex": 2
@@ -9145,10 +9145,10 @@ export const PREBUILT_COURSES = [
               "concept": "one message per slide",
               "question": "Why should a slide's single takeaway be written as its headline?",
               "options": [
-                "To fill empty space at the top",
-                "To meet formatting standards",
+                "To fill the empty space at the top of the slide",
+                "To satisfy the team's formatting standards",
                 "To keep you in control of the interpretation",
-                "To reduce the number of charts needed"
+                "To reduce the total number of charts needed"
               ],
               "correctIndex": 2
             },
@@ -9157,10 +9157,10 @@ export const PREBUILT_COURSES = [
               "concept": "the governing message",
               "question": "What does the lesson say happens if a presentation carries three big ideas?",
               "options": [
-                "It becomes more persuasive",
+                "It becomes noticeably more persuasive",
                 "You effectively have three presentations",
-                "The audience remembers all three",
-                "It shortens the meeting"
+                "The audience remembers all three ideas",
+                "It shortens the overall meeting time"
               ],
               "correctIndex": 1
             },
@@ -9169,10 +9169,10 @@ export const PREBUILT_COURSES = [
               "concept": "hero metric",
               "question": "What is the risk of emphasizing every metric equally?",
               "options": [
-                "The deck becomes too short",
+                "The deck ends up becoming far too short",
                 "The audience defaults to its own priorities",
-                "The data becomes inaccurate",
-                "The hero metric grows too large"
+                "The underlying data becomes inaccurate",
+                "The hero metric visually grows too large"
               ],
               "correctIndex": 1
             }
@@ -9269,8 +9269,8 @@ export const PREBUILT_COURSES = [
               "options": [
                 "Save the recommendation for the final slide",
                 "State the answer first, then support it",
-                "Present data before any conclusion",
-                "Build suspense toward a reveal"
+                "Present all the data before any conclusion",
+                "Build slow suspense toward a final reveal"
               ],
               "correctIndex": 1
             },
@@ -9279,10 +9279,10 @@ export const PREBUILT_COURSES = [
               "concept": "answer-first structure",
               "question": "Why does answer-first structure help when a meeting is cut short?",
               "options": [
-                "It removes the need for supporting data",
+                "It removes the need for any supporting data at all",
                 "The decision is already stated before time runs out",
-                "It makes the charts render faster",
-                "It shortens the situation section"
+                "It makes all the charts render noticeably faster",
+                "It shortens the opening situation section considerably"
               ],
               "correctIndex": 1
             },
@@ -9291,10 +9291,10 @@ export const PREBUILT_COURSES = [
               "concept": "MECE grouping",
               "question": "Supporting points are MECE when they are:",
               "options": [
-                "Numerous and detailed",
+                "Numerous, granular, and highly detailed",
                 "Non-overlapping and without obvious gaps",
-                "Ordered by data size",
-                "Written as slide headlines"
+                "Carefully ordered by underlying data size",
+                "Always written directly as slide headlines"
               ],
               "correctIndex": 1
             },
@@ -9303,10 +9303,10 @@ export const PREBUILT_COURSES = [
               "concept": "the narrative spine",
               "question": "How do you test whether a deck has a narrative spine?",
               "options": [
-                "Count the total number of charts",
-                "Check that each slide has a footnote",
+                "Count the total number of charts across the entire deck",
+                "Check that each slide includes a properly formatted footnote",
                 "Read only the headlines and see if they form a coherent argument",
-                "Verify every slide uses the same color palette"
+                "Verify that every slide uses exactly the same color palette"
               ],
               "correctIndex": 2
             },
@@ -9315,10 +9315,10 @@ export const PREBUILT_COURSES = [
               "concept": "situation-complication-resolution",
               "question": "What is the cost of opening with the complication instead of the situation?",
               "options": [
-                "The deck becomes too long",
+                "The deck becomes too long and the audience loses focus",
                 "The room questions your premise instead of your recommendation",
-                "The hero metric is lost",
-                "The resolution becomes MECE"
+                "The hero metric is lost entirely somewhere in the deck",
+                "The resolution section accidentally becomes overly MECE"
               ],
               "correctIndex": 1
             }
@@ -9405,10 +9405,10 @@ export const PREBUILT_COURSES = [
               "concept": "chart-message fit",
               "question": "According to the lesson, chart choice is primarily:",
               "options": [
-                "An aesthetic preference",
+                "A purely aesthetic and stylistic preference",
                 "A communication decision about the comparison",
-                "A software limitation",
-                "A branding requirement"
+                "A hard limitation imposed by the software",
+                "A corporate branding requirement to follow"
               ],
               "correctIndex": 1
             },
@@ -9417,9 +9417,9 @@ export const PREBUILT_COURSES = [
               "concept": "chart-message fit",
               "question": "Which chart does the lesson suggest for a ranking comparison?",
               "options": [
-                "A pie chart",
+                "A basic pie chart",
                 "A dual-axis chart",
-                "A sorted bar",
+                "A sorted bar chart",
                 "A 3-D column chart"
               ],
               "correctIndex": 2
@@ -9429,10 +9429,10 @@ export const PREBUILT_COURSES = [
               "concept": "data-ink ratio",
               "question": "Raising the data-ink ratio means:",
               "options": [
-                "Adding more colors and labels",
+                "Adding more colors, labels, and background decoration",
                 "Increasing the share of the visual devoted to data",
-                "Using a larger chart size",
-                "Adding gridlines for precision"
+                "Using a substantially larger overall chart size",
+                "Adding dense gridlines everywhere for precision"
               ],
               "correctIndex": 1
             },
@@ -9441,10 +9441,10 @@ export const PREBUILT_COURSES = [
               "concept": "preattentive attributes",
               "question": "Preattentive attributes are visual properties that the eye:",
               "options": [
-                "Processes before conscious thought",
-                "Ignores unless labeled",
-                "Only sees in printed decks",
-                "Requires a legend to interpret"
+                "Processes before any conscious thought",
+                "Ignores entirely unless clearly labeled",
+                "Only notices in printed paper decks",
+                "Requires a legend in order to interpret"
               ],
               "correctIndex": 0
             },
@@ -9454,9 +9454,9 @@ export const PREBUILT_COURSES = [
               "question": "What happens when an entire chart is colorful?",
               "options": [
                 "The most important point stands out more",
-                "Nothing stands out",
-                "The data-ink ratio rises",
-                "The annotation becomes unnecessary"
+                "Then nothing in particular stands out",
+                "The overall data-ink ratio actually rises",
+                "The annotation then becomes unnecessary"
               ],
               "correctIndex": 1
             },
@@ -9465,10 +9465,10 @@ export const PREBUILT_COURSES = [
               "concept": "annotation as narration",
               "question": "Why does annotation matter especially in exec settings?",
               "options": [
-                "It replaces the need for a hero metric",
-                "It satisfies formatting standards",
+                "It replaces the need for a clear hero metric entirely",
+                "It satisfies the company's deck formatting standards",
                 "The deck often circulates afterward without you to narrate it",
-                "It increases the number of slides"
+                "It increases the total number of slides in the deck"
               ],
               "correctIndex": 2
             }
@@ -9561,8 +9561,8 @@ export const PREBUILT_COURSES = [
               "options": [
                 "Walk through the agenda and methodology",
                 "State the stakes and the recommendation",
-                "List every data source used",
-                "Review the prior quarter's deck"
+                "List out every single data source used",
+                "Review the entire prior quarter's deck"
               ],
               "correctIndex": 1
             },
@@ -9571,10 +9571,10 @@ export const PREBUILT_COURSES = [
               "concept": "the ask",
               "question": "The lesson says a data story that ends with \"any questions?\" leaves the decision:",
               "options": [
-                "Fully approved",
+                "Approved",
                 "Homeless",
-                "Documented",
-                "Delegated"
+                "Recorded",
+                "Assigned"
               ],
               "correctIndex": 1
             },
@@ -9583,10 +9583,10 @@ export const PREBUILT_COURSES = [
               "concept": "handling pushback",
               "question": "What signals that your data is solid when you are challenged?",
               "options": [
-                "Getting defensive about the numbers",
+                "Getting visibly defensive about all the numbers",
                 "Staying calm and answering with prepared evidence",
-                "Changing the recommendation on the spot",
-                "Deferring every question to a follow-up"
+                "Changing your recommendation right on the spot",
+                "Deferring every hard question to a later follow-up"
               ],
               "correctIndex": 1
             },
@@ -9595,10 +9595,10 @@ export const PREBUILT_COURSES = [
               "concept": "credibility and caveats",
               "question": "According to the lesson, naming your data's limitations up front:",
               "options": [
-                "Weakens your case and invites doubt",
+                "Weakens your case and openly invites doubt",
                 "Builds trust by showing you pressure-tested it",
-                "Should be avoided until directly asked",
-                "Only matters for junior audiences"
+                "Should be avoided entirely until directly asked",
+                "Only genuinely matters for junior audiences"
               ],
               "correctIndex": 1
             },
@@ -9607,10 +9607,10 @@ export const PREBUILT_COURSES = [
               "concept": "closing the loop",
               "question": "Closing the loop means:",
               "options": [
-                "Ending the meeting on time",
+                "Ending the meeting exactly on time without ever running over",
                 "Capturing the decision, owner, and date, then reporting the outcome",
-                "Removing the appendix from the deck",
-                "Sending the slides to everyone afterward"
+                "Removing the lengthy appendix from the very back of the deck",
+                "Sending the full slide deck to everyone shortly afterward"
               ],
               "correctIndex": 1
             },
@@ -9621,8 +9621,8 @@ export const PREBUILT_COURSES = [
               "options": [
                 "It is vague enough to gain broad agreement",
                 "It is specific, owned, and time-bound",
-                "It is saved for a later meeting",
-                "It avoids naming resources"
+                "It is quietly saved for a later meeting",
+                "It carefully avoids naming any resources"
               ],
               "correctIndex": 1
             }
@@ -9729,10 +9729,10 @@ export const PREBUILT_COURSES = [
               "concept": "Gross revenue retention",
               "question": "Which statement about gross revenue retention (GRR) is true?",
               "options": [
-                "It can exceed 100% when expansion is strong",
-                "It counts only the number of logos lost",
+                "It can exceed 100% when expansion is strong enough",
+                "It counts only the raw number of logos that are lost",
                 "It cannot exceed 100% because it excludes expansion",
-                "It ignores involuntary churn entirely"
+                "It completely ignores involuntary churn losses"
               ],
               "correctIndex": 2
             },
@@ -9742,9 +9742,9 @@ export const PREBUILT_COURSES = [
               "question": "Net revenue retention differs from GRR mainly because it:",
               "options": [
                 "Adds expansion revenue on top of retained revenue",
-                "Excludes any failed-payment losses",
-                "Counts customers instead of dollars",
-                "Measures acquisition cost per logo"
+                "Excludes any and all failed-payment losses entirely",
+                "Counts the number of customers instead of dollars",
+                "Measures the average acquisition cost per logo"
               ],
               "correctIndex": 0
             },
@@ -9753,10 +9753,10 @@ export const PREBUILT_COURSES = [
               "concept": "Logo churn vs revenue churn",
               "question": "Why does the lesson say a Director should steer primarily by revenue churn?",
               "options": [
-                "It is easier to calculate than logo churn",
+                "It is generally much easier to calculate than logo churn",
                 "It reflects the dollar impact the business actually feels",
-                "It always moves before logo churn does",
-                "It excludes enterprise accounts by design"
+                "It always moves earlier than logo churn ever does",
+                "It deliberately excludes enterprise accounts by design"
               ],
               "correctIndex": 1
             },
@@ -9765,10 +9765,10 @@ export const PREBUILT_COURSES = [
               "concept": "Retention compounding",
               "question": "The lesson argues retention beats acquisition because retention:",
               "options": [
-                "Requires no billing infrastructure",
+                "Requires no ongoing billing infrastructure",
                 "Compounds lifetime value on the existing base",
                 "Eliminates the need for expansion revenue",
-                "Is measured only in logos, not dollars"
+                "Is measured only in logos and never in dollars"
               ],
               "correctIndex": 1
             },
@@ -9777,10 +9777,10 @@ export const PREBUILT_COURSES = [
               "concept": "Logo churn vs revenue churn",
               "question": "Losing ten solo agents at $449/mo versus one enterprise brokerage at $1,500/mo shows that:",
               "options": [
-                "Logo churn and revenue churn always move together",
-                "Involuntary churn only affects small accounts",
+                "Logo churn and revenue churn always move together in lockstep",
+                "Involuntary churn only affects small accounts and never large ones",
                 "Logo churn and revenue churn can diverge because accounts differ in size",
-                "GRR must be below NRR in every book"
+                "GRR must always sit below NRR in every single book of business"
               ],
               "correctIndex": 2
             }
@@ -9873,8 +9873,8 @@ export const PREBUILT_COURSES = [
               "options": [
                 "A leading indicator of churn",
                 "A lagging indicator of churn",
-                "A relationship signal",
-                "An early warning trigger"
+                "A relationship health signal",
+                "An early warning trigger signal"
               ],
               "correctIndex": 1
             },
@@ -9884,8 +9884,8 @@ export const PREBUILT_COURSES = [
               "question": "According to the lesson, a customer health score should blend which three families of signals?",
               "options": [
                 "Usage, sentiment, and relationship",
-                "Pricing, discount, and contract",
-                "Logins, revenue, and headcount",
+                "Pricing, discount, and contract terms",
+                "Logins, revenue, and total headcount",
                 "Acquisition, expansion, and renewal"
               ],
               "correctIndex": 0
@@ -9895,10 +9895,10 @@ export const PREBUILT_COURSES = [
               "concept": "Product usage signals",
               "question": "Why does the lesson call usage the earliest tell for Lofty customers?",
               "options": [
-                "Usage is the only metric available to CSMs",
+                "Usage is the only meaningful metric that is available to CSMs",
                 "Value is tied to activity, so disengagement shows up in usage first",
-                "Usage always lags sentiment by a full quarter",
-                "Usage cannot be faked by daily logins"
+                "Usage always lags behind sentiment signals by a full quarter",
+                "Usage simply cannot ever be faked by routine daily logins"
               ],
               "correctIndex": 1
             },
@@ -9907,10 +9907,10 @@ export const PREBUILT_COURSES = [
               "concept": "Early warning triggers",
               "question": "What makes a good early warning trigger, per the lesson?",
               "options": [
-                "It fires as often as possible for full coverage",
-                "It tracks a lagging outcome after the cancel",
+                "It fires as often as it possibly can for full coverage",
+                "It tracks a lagging outcome only after the cancel occurs",
                 "It sets a threshold that routes an at-risk account to a human",
-                "It replaces the need for a health score"
+                "It entirely replaces the need for a separate health score"
               ],
               "correctIndex": 2
             },
@@ -9919,9 +9919,9 @@ export const PREBUILT_COURSES = [
               "concept": "Sentiment and relationship signals",
               "question": "An account with daily logins but two billing disputes and a departed champion should be scored:",
               "options": [
-                "Healthy, because usage outweighs other signals",
+                "Healthy, because strong usage outweighs all other signals",
                 "At-risk, because sentiment and relationship signals are negative",
-                "Involuntary churn, because of the disputes",
+                "Involuntary churn, purely because of the billing disputes",
                 "Healthy, because relationship signals don't affect churn"
               ],
               "correctIndex": 1
@@ -9931,10 +9931,10 @@ export const PREBUILT_COURSES = [
               "concept": "Product usage signals",
               "question": "The lesson says which usage pattern is the louder alarm?",
               "options": [
-                "A consistently light user staying light",
+                "A consistently light user who simply keeps staying light",
                 "A customer whose dialer usage dropped 60% month over month",
-                "A customer with high absolute logins",
-                "A new account still in onboarding"
+                "A customer with consistently high absolute login counts",
+                "A brand-new account that is still in active onboarding"
               ],
               "correctIndex": 1
             }
@@ -10021,10 +10021,10 @@ export const PREBUILT_COURSES = [
               "concept": "Root-cause diagnosis",
               "question": "The lesson warns that leading a save with a discount when the real issue is unused features tends to:",
               "options": [
-                "Permanently resolve the value gap",
+                "Permanently resolve the underlying value gap for good",
                 "Train customers to threaten cancellation for a price cut",
-                "Improve gross revenue retention automatically",
-                "Convert involuntary churn to voluntary"
+                "Improve gross revenue retention automatically over time",
+                "Convert involuntary churn into voluntary churn instead"
               ],
               "correctIndex": 1
             },
@@ -10033,10 +10033,10 @@ export const PREBUILT_COURSES = [
               "concept": "Segmented intervention",
               "question": "Why should a solo agent at $449/mo usually get a scaled rather than high-touch intervention?",
               "options": [
-                "Solo agents never churn voluntarily",
+                "Solo agents almost never churn voluntarily at all",
                 "Their account can't absorb full CSM hours profitably",
-                "Automated nudges are the only tool available",
-                "Small accounts drive most revenue churn"
+                "Automated nudges are the only tool that is available",
+                "Small accounts on their own drive most revenue churn"
               ],
               "correctIndex": 1
             },
@@ -10045,10 +10045,10 @@ export const PREBUILT_COURSES = [
               "concept": "Value re-anchoring",
               "question": "According to the lesson, a save conversation should open by:",
               "options": [
-                "Presenting the largest allowable discount first",
+                "Presenting the single largest allowable discount first",
                 "Defending the product against the customer's complaints",
                 "Reconnecting the customer to the outcomes they bought",
-                "Announcing the account will be handed to billing"
+                "Announcing that the account will be handed to billing"
               ],
               "correctIndex": 2
             },
@@ -10058,9 +10058,9 @@ export const PREBUILT_COURSES = [
               "question": "What is the first move on any at-risk account, per the lesson?",
               "options": [
                 "Choosing the right playbook by diagnosing the cause",
-                "Offering a subscription pause",
-                "Escalating to a US lead immediately",
-                "Sending the standard enablement webinar"
+                "Immediately offering the customer a subscription pause",
+                "Escalating the account straight to a US lead immediately",
+                "Sending them the standard enablement webinar right away"
               ],
               "correctIndex": 0
             },
@@ -10069,10 +10069,10 @@ export const PREBUILT_COURSES = [
               "concept": "Escalation and hand-off",
               "question": "The lesson says a clean hand-off or exit includes all EXCEPT:",
               "options": [
-                "Routing genuine billing failures to the billing team",
-                "Escalating enterprise risk to a US lead",
+                "Routing genuinely failed billing payments to the billing team",
+                "Escalating clear enterprise-level renewal risk up to a US lead",
                 "Applying the same high-touch save to every account regardless of size",
-                "Letting a true mismatch account go"
+                "Letting a customer who is a true product mismatch just walk away"
               ],
               "correctIndex": 2
             },
@@ -10081,10 +10081,10 @@ export const PREBUILT_COURSES = [
               "concept": "Save offers and concessions",
               "question": "Why does the lesson say save offers should have boundaries defined in advance?",
               "options": [
-                "So discounts can grow without limit",
+                "So that discounts can freely grow without any limit whatsoever over time",
                 "So CSMs don't negotiate blind and threats don't automatically earn discounts",
-                "So every account receives the identical offer",
-                "So the offer replaces root-cause diagnosis"
+                "So that every single account receives the exact identical save offer",
+                "So that the save offer entirely replaces careful root-cause diagnosis"
               ],
               "correctIndex": 1
             }
@@ -10171,10 +10171,10 @@ export const PREBUILT_COURSES = [
               "concept": "Retention engine",
               "question": "What is the lesson's test of whether you have a real retention engine versus heroics?",
               "options": [
-                "Whether NRR exceeds 100% this quarter",
+                "Whether NRR manages to exceed 100% this single quarter",
                 "Whether it keeps working when your best person is out",
-                "Whether every account gets a discount",
-                "Whether Manila handles all first-response tickets"
+                "Whether every single account ends up getting a discount",
+                "Whether Manila handles all of the first-response tickets"
               ],
               "correctIndex": 1
             },
@@ -10183,10 +10183,10 @@ export const PREBUILT_COURSES = [
               "concept": "Cross-team ownership",
               "question": "According to the lesson, cross-team ownership fails without:",
               "options": [
-                "A single team owning all of churn",
+                "A single team trying to own all of churn alone",
                 "Routing that gives every signal a defined path",
-                "Eliminating the billing team's role",
-                "Moving all CSMs to Manila"
+                "Eliminating the billing team's role entirely",
+                "Moving every single one of the CSMs over to Manila"
               ],
               "correctIndex": 1
             },
@@ -10198,7 +10198,7 @@ export const PREBUILT_COURSES = [
                 "A discount, a script, and a survey",
                 "A trigger, an owner, and a deadline",
                 "A dashboard, a report, and a meeting",
-                "A champion, a contract, and a renewal date"
+                "A champion, a contract, and a renewal"
               ],
               "correctIndex": 1
             },
@@ -10207,10 +10207,10 @@ export const PREBUILT_COURSES = [
               "concept": "Retention cadence",
               "question": "Given that Manila teams work US-aligned hours, the timezone concern the lesson raises is:",
               "options": [
-                "A day-long gap before US handoffs can happen",
+                "A full day-long gap before any US handoffs can even happen",
                 "The toll of the night shift on Manila staff owning unrouted risk",
-                "That handoffs must wait for the next business day",
-                "That China product partners are always offline"
+                "That every handoff must wait for the next full business day",
+                "That the China product partners are essentially always offline"
               ],
               "correctIndex": 1
             },
@@ -10221,8 +10221,8 @@ export const PREBUILT_COURSES = [
               "options": [
                 "Save only the single account currently at risk",
                 "Make the cause of churn less common next quarter",
-                "Replace the need for playbooks",
-                "Shift all churn ownership to leadership"
+                "Entirely replace the ongoing need for playbooks",
+                "Shift all of the churn ownership up to leadership"
               ],
               "correctIndex": 1
             },
@@ -10232,9 +10232,9 @@ export const PREBUILT_COURSES = [
               "question": "When a CSM spots a failed payment, the retention engine should route it to:",
               "options": [
                 "The billing team as involuntary churn",
-                "The website onboarding team",
-                "The China product partners",
-                "The Manila support ticket queue"
+                "The website onboarding specialist team",
+                "The China-based product partner team",
+                "The Manila support ticket handling queue"
               ],
               "correctIndex": 0
             }
@@ -10321,10 +10321,10 @@ export const PREBUILT_COURSES = [
               "concept": "Cohort retention analysis",
               "question": "What does cohort retention analysis let you see that a single monthly churn number cannot?",
               "options": [
-                "The total tickets closed by Manila support",
+                "The total number of tickets closed by the Manila support team",
                 "Whether a specific change helped one group retain better over time",
-                "The exact save offer given to each account",
-                "The number of logos in the enterprise segment"
+                "The exact save offer that was given to each individual account",
+                "The precise number of logos sitting in the enterprise segment"
               ],
               "correctIndex": 1
             },
@@ -10333,10 +10333,10 @@ export const PREBUILT_COURSES = [
               "concept": "Save rate and net revenue retention",
               "question": "A high save rate combined with flat NRR most likely means:",
               "options": [
-                "Expansion revenue has stopped entirely",
+                "Your expansion revenue has stopped almost entirely",
                 "You're saving small accounts while large logos leak",
-                "Involuntary churn has been eliminated",
-                "Cohort analysis is no longer needed"
+                "Involuntary churn has now been completely eliminated",
+                "Cohort analysis is simply no longer needed at all"
               ],
               "correctIndex": 1
             },
@@ -10345,10 +10345,10 @@ export const PREBUILT_COURSES = [
               "concept": "Executive retention narrative",
               "question": "How should retention be reported to executives, per the lesson?",
               "options": [
-                "As a full dump of every available metric",
+                "As a full raw dump of every single available metric on hand",
                 "As a narrative led by the metric that matters plus causes and action",
-                "As raw ticket and activity counts",
-                "As a single logo-churn number with no context"
+                "As raw ticket volumes and unfiltered daily activity counts alone",
+                "As a single logo-churn number presented with no context at all"
               ],
               "correctIndex": 1
             },
@@ -10369,10 +10369,10 @@ export const PREBUILT_COURSES = [
               "concept": "Iteration loop",
               "question": "The disciplined iteration loop the lesson recommends is to:",
               "options": [
-                "Change several things at once for speed",
+                "Change several different things all at once for speed",
                 "Change one thing per cycle and measure the next cohort",
-                "Avoid changing anything until NRR drops",
-                "Report only after a full year of data"
+                "Avoid changing anything at all until NRR finally drops",
+                "Report results only after a full year of data comes in"
               ],
               "correctIndex": 1
             },
@@ -10381,10 +10381,10 @@ export const PREBUILT_COURSES = [
               "concept": "Save rate and net revenue retention",
               "question": "Which pair of numbers does the lesson say proves the retention engine's impact?",
               "options": [
-                "Tickets closed and logins",
+                "Total tickets closed and daily logins",
                 "Save rate and net revenue retention",
-                "CSAT and total headcount",
-                "Acquisition cost and ad spend"
+                "Average CSAT and total headcount",
+                "Acquisition cost and total ad spend"
               ],
               "correctIndex": 1
             }
@@ -10479,10 +10479,10 @@ export const PREBUILT_COURSES = [
               "concept": "Renewal Motion",
               "question": "What best describes a renewal in this lesson's framing?",
               "options": [
-                "A billing event that happens automatically",
+                "A billing event that quietly happens all on its own",
                 "A customer's re-decision to keep paying that you earn",
-                "A one-time sale to a brand-new customer",
-                "A support ticket about invoicing"
+                "A one-time sale to a completely brand-new customer",
+                "A routine support ticket about an invoicing issue"
               ],
               "correctIndex": 1
             },
@@ -10491,7 +10491,7 @@ export const PREBUILT_COURSES = [
               "concept": "Renewal Timeline",
               "question": "How should the renewal timeline be planned?",
               "options": [
-                "Forward from today's date",
+                "Forward from today's current date",
                 "Backward from the contract end date",
                 "Only after the customer complains",
                 "On the day the contract expires"
@@ -10505,8 +10505,8 @@ export const PREBUILT_COURSES = [
               "options": [
                 "All existing customer revenue",
                 "Any upsell or expansion revenue",
-                "Failed payments only",
-                "New logo bookings and upsell combined"
+                "Only the failed payment losses",
+                "New logo bookings and upsells"
               ],
               "correctIndex": 1
             },
@@ -10516,9 +10516,9 @@ export const PREBUILT_COURSES = [
               "question": "What is the ceiling on GRR?",
               "options": [
                 "It can never exceed 100%",
-                "It can reach up to 120%",
-                "It has no upper limit",
-                "It is capped at 90%"
+                "It can reach as high as 120%",
+                "It has no real upper limit",
+                "It is hard-capped at 90%"
               ],
               "correctIndex": 0
             },
@@ -10527,10 +10527,10 @@ export const PREBUILT_COURSES = [
               "concept": "Renewal Ownership",
               "question": "In your org, who typically handles the contract and invoicing mechanics of a renewal?",
               "options": [
-                "The MidMarket CSM team alone",
+                "The MidMarket CSM team handling it alone",
                 "The Sr. Billing Specialist and billing team",
-                "The website PM team",
-                "The China partner teams"
+                "The website product management PM team",
+                "The China-based external partner teams"
               ],
               "correctIndex": 1
             },
@@ -10539,10 +10539,10 @@ export const PREBUILT_COURSES = [
               "concept": "Auto-Renewal vs Active Renewal",
               "question": "Why is treating an auto-renewing contract as automatic risky?",
               "options": [
-                "Auto-renewal voids the contract terms",
+                "Auto-renewal quietly voids all of the original signed contract terms outright",
                 "The customer still re-decides, so skipping the value check hides dissatisfaction",
-                "Auto-renewal doubles the price silently",
-                "It forces an immediate cancellation"
+                "Auto-renewal silently doubles the customer's monthly price every single time",
+                "It somehow forces an immediate and completely unwanted account cancellation"
               ],
               "correctIndex": 1
             }
@@ -10644,7 +10644,7 @@ export const PREBUILT_COURSES = [
                 "A cancellation request already submitted",
                 "Declining AI dialer and texting usage",
                 "The final churn number for the quarter",
-                "The signed non-renewal notice"
+                "The already signed non-renewal notice"
               ],
               "correctIndex": 1
             },
@@ -10653,10 +10653,10 @@ export const PREBUILT_COURSES = [
               "concept": "Renewal Risk Score",
               "question": "What is the primary purpose of a renewal risk score?",
               "options": [
-                "To set the renewal price",
+                "To directly set the customer's renewal price",
                 "To triage where limited CSM hours go first",
-                "To replace the contract",
-                "To calculate commission payouts"
+                "To entirely replace the signed contract",
+                "To calculate quarterly commission payouts"
               ],
               "correctIndex": 1
             },
@@ -10665,10 +10665,10 @@ export const PREBUILT_COURSES = [
               "concept": "Forecast Review Cadence",
               "question": "What should each at-risk renewal receive in a forecast review?",
               "options": [
-                "A discount automatically",
+                "A discount applied automatically",
                 "An owner, a next step, and a date",
-                "An immediate cancellation",
-                "A new contract number"
+                "An immediate account cancellation",
+                "A brand-new signed contract number"
               ],
               "correctIndex": 1
             },
@@ -10678,9 +10678,9 @@ export const PREBUILT_COURSES = [
               "question": "Why keep Commit and Best-Case explicitly separate in the review?",
               "options": [
                 "Conflating them inflates the forecast and hides accounts needing saving",
-                "Commit accounts pay more than Best-Case",
-                "Best-Case accounts cannot renew",
-                "It is required by the auto-renewal clause"
+                "Commit accounts always end up paying more than Best-Case ones do",
+                "Best-Case accounts are structurally unable to renew under any terms",
+                "It is strictly required by the standard auto-renewal contract clause"
               ],
               "correctIndex": 0
             },
@@ -10689,10 +10689,10 @@ export const PREBUILT_COURSES = [
               "concept": "Leading Indicators",
               "question": "For a Lofty customer, why is dropping AI feature usage an especially strong warning?",
               "options": [
-                "It voids the contract",
+                "It immediately voids the entire signed contract outright",
                 "They pay premium for those features, so low use signals ROI doubt",
-                "It automatically triggers a refund",
-                "It moves them to a cheaper plan by default"
+                "It automatically triggers a full pro-rated account refund",
+                "It quietly moves them down to a much cheaper plan by default"
               ],
               "correctIndex": 1
             }
@@ -10779,10 +10779,10 @@ export const PREBUILT_COURSES = [
               "concept": "Value Recap",
               "question": "When is a value recap most effective in the renewal cycle?",
               "options": [
-                "After the customer cancels",
+                "Delivered after the customer cancels",
                 "Delivered before negotiation begins",
-                "Only during a billing dispute",
-                "After the contract has lapsed"
+                "Only during an active billing dispute",
+                "After the contract has already lapsed"
               ],
               "correctIndex": 1
             },
@@ -10791,10 +10791,10 @@ export const PREBUILT_COURSES = [
               "concept": "Realized Value",
               "question": "What do realtors primarily renew on?",
               "options": [
-                "The number of features listed",
+                "The total number of features listed",
                 "Realized value in their own pipeline",
-                "The length of the contract",
-                "The size of the support team"
+                "The overall length of the contract",
+                "The size of the vendor's support team"
               ],
               "correctIndex": 1
             },
@@ -10803,10 +10803,10 @@ export const PREBUILT_COURSES = [
               "concept": "Outcome Metrics",
               "question": "Which is an outcome metric rather than a vanity metric?",
               "options": [
-                "Total texts sent",
+                "The total number of texts sent this month",
                 "AI-booked appointments that became closings",
-                "Number of logins this week",
-                "Count of features enabled"
+                "The raw number of logins recorded this week",
+                "The count of product features enabled so far"
               ],
               "correctIndex": 1
             },
@@ -10816,9 +10816,9 @@ export const PREBUILT_COURSES = [
               "question": "What does ROI framing connect Lofty's cost to?",
               "options": [
                 "The customer's commission economics",
-                "The competitor's pricing",
-                "The support team's headcount",
-                "The number of MLS feeds"
+                "The nearest competitor's list pricing",
+                "The internal support team's headcount",
+                "The total number of MLS feeds offered"
               ],
               "correctIndex": 0
             },
@@ -10827,10 +10827,10 @@ export const PREBUILT_COURSES = [
               "concept": "Business Review",
               "question": "How is a business review best described?",
               "options": [
-                "A routine status update",
+                "A routine, low-stakes status update meeting covering recent progress",
                 "A decision-shaping conversation on results, goals, and the path forward",
-                "A billing reconciliation call",
-                "A product feature demo for new users"
+                "A billing reconciliation call to sort out outstanding invoicing details",
+                "A standard product feature demo aimed at brand-new platform users"
               ],
               "correctIndex": 1
             },
@@ -10839,10 +10839,10 @@ export const PREBUILT_COURSES = [
               "concept": "Realized Value",
               "question": "If a value recap reveals thin realized value, what is the honest move?",
               "options": [
-                "Spin the recap to sound better",
+                "Spin the recap to make it sound better",
                 "Run an adoption push before renewing",
-                "Cancel the account immediately",
-                "Raise the price to offset risk"
+                "Cancel the account almost immediately",
+                "Raise the price to help offset the risk"
               ],
               "correctIndex": 1
             }
@@ -10929,10 +10929,10 @@ export const PREBUILT_COURSES = [
               "concept": "Price Objection",
               "question": "A price objection is usually a disguised version of what?",
               "options": [
-                "A request to cancel immediately",
+                "A direct request to cancel immediately",
                 "A question about whether it is worth it",
-                "A billing system error",
-                "A demand for more features free"
+                "A straightforward billing system error",
+                "A demand for additional features for free"
               ],
               "correctIndex": 1
             },
@@ -10942,8 +10942,8 @@ export const PREBUILT_COURSES = [
               "question": "What does concession trading require for every give?",
               "options": [
                 "A corresponding get in return",
-                "A manager's signature only",
-                "A public announcement",
+                "A manager's written signature",
+                "A formal public announcement",
                 "An immediate price increase"
               ],
               "correctIndex": 0
@@ -10953,10 +10953,10 @@ export const PREBUILT_COURSES = [
               "concept": "Discounting Discipline",
               "question": "Why is undisciplined discounting dangerous across a realtor customer base?",
               "options": [
-                "It improves GRR over time",
+                "It actually steadily improves overall GRR over time",
                 "It spreads by word of mouth and drags down GRR",
-                "It has no effect beyond one deal",
-                "It is required by the contract"
+                "It has essentially no effect beyond one single deal",
+                "It is contractually required by the signed contract"
               ],
               "correctIndex": 1
             },
@@ -10967,8 +10967,8 @@ export const PREBUILT_COURSES = [
               "options": [
                 "Opening with a concession to build goodwill",
                 "Leading with full value and standard terms first",
-                "Refusing to discuss price at all",
-                "Matching the customer's first number"
+                "Flatly refusing to discuss the price point at all",
+                "Simply matching the customer's first stated number"
               ],
               "correctIndex": 1
             },
@@ -10978,9 +10978,9 @@ export const PREBUILT_COURSES = [
               "question": "What are walk-away terms?",
               "options": [
                 "The point past which the renewal is not worth saving on those terms",
-                "The date the contract auto-renews",
-                "The standard onboarding fee",
-                "The maximum discount finance allows anyone"
+                "The specific calendar date on which the contract auto-renews",
+                "The standard one-time onboarding fee charged to new accounts",
+                "The absolute maximum discount that finance will allow anyone"
               ],
               "correctIndex": 0
             },
@@ -10989,10 +10989,10 @@ export const PREBUILT_COURSES = [
               "concept": "Price Objection",
               "question": "What is the first response to a price objection?",
               "options": [
-                "Offer the largest discount available",
+                "Immediately offer the single largest discount available",
                 "Return to the value recap and the customer's outcomes",
-                "End the call and escalate",
-                "Switch them to a cheaper competitor"
+                "End the call immediately and escalate it up the chain",
+                "Suggest switching them over to a cheaper competitor"
               ],
               "correctIndex": 1
             }
@@ -11079,10 +11079,10 @@ export const PREBUILT_COURSES = [
               "concept": "Expansion",
               "question": "What is the precondition for pursuing expansion?",
               "options": [
-                "A struggling account that needs rescue",
+                "A struggling at-risk account that badly needs rescue",
                 "A healthy, high-value relationship with realized value",
-                "An open billing dispute",
-                "A pending cancellation notice"
+                "An open, unresolved billing dispute currently on file",
+                "A pending account cancellation notice already submitted"
               ],
               "correctIndex": 1
             },
@@ -11091,9 +11091,9 @@ export const PREBUILT_COURSES = [
               "concept": "Upsell vs Cross-Sell",
               "question": "Adding a lead-generation package onto a core CRM subscription is an example of what?",
               "options": [
-                "An upsell",
-                "A cross-sell",
-                "A downgrade",
+                "An add-on upsell",
+                "A pure cross-sell",
+                "A tier downgrade",
                 "A renewal discount"
               ],
               "correctIndex": 1
@@ -11103,10 +11103,10 @@ export const PREBUILT_COURSES = [
               "concept": "Net Revenue Retention",
               "question": "What does NRR include that GRR does not?",
               "options": [
-                "Only failed payments",
+                "Only the customer's failed payment losses",
                 "Expansion revenue from existing customers",
-                "New logo bookings",
-                "Onboarding fees only"
+                "Brand-new logo bookings brought in by sales",
+                "One-time onboarding and setup fees only"
               ],
               "correctIndex": 1
             },
@@ -11115,10 +11115,10 @@ export const PREBUILT_COURSES = [
               "concept": "Net Revenue Retention",
               "question": "What does NRR above 100% signal to leadership?",
               "options": [
-                "The base is shrinking",
+                "The customer base is shrinking",
                 "The existing base is self-growing",
-                "Every account has churned",
-                "Discounts are too high"
+                "Nearly every account has churned",
+                "The discounts are far too high"
               ],
               "correctIndex": 1
             },
@@ -11127,10 +11127,10 @@ export const PREBUILT_COURSES = [
               "concept": "Expansion Timing",
               "question": "When is the best moment to open an expansion conversation?",
               "options": [
-                "While the customer is frustrated and under-adopted",
+                "While the customer is frustrated and clearly under-adopted",
                 "Right after a win or during the renewal when value is fresh",
-                "Only after the contract has expired",
-                "During an unresolved escalation"
+                "Only well after the signed contract has fully expired",
+                "Right in the middle of an unresolved support escalation"
               ],
               "correctIndex": 1
             },
@@ -11140,9 +11140,9 @@ export const PREBUILT_COURSES = [
               "question": "Land and expand is best described as a motion where a customer does what?",
               "options": [
                 "Starts small and grows over time, pushing NRR above 100%",
-                "Signs the largest possible contract on day one",
-                "Downgrades each renewal to cut cost",
-                "Cancels and re-signs repeatedly"
+                "Signs the single largest possible contract on day one",
+                "Steadily downgrades their plan at each renewal to cut cost",
+                "Repeatedly cancels and then re-signs the same contract"
               ],
               "correctIndex": 0
             }
@@ -11234,9 +11234,9 @@ export const PREBUILT_COURSES = [
               "question": "What defines the linear headcount trap?",
               "options": [
                 "Adding CSMs one-for-one with customer growth so cost tracks revenue in a straight line",
-                "Hiring CSMs only during peak real-estate season",
-                "Giving every CSM an identical compensation plan",
-                "Reducing CSM headcount whenever revenue dips"
+                "Hiring new CSMs only during the busy peak real-estate selling season each year",
+                "Giving every single CSM across the entire team an identical flat compensation plan",
+                "Automatically reducing overall CSM headcount whenever quarterly revenue happens to dip"
               ],
               "correctIndex": 0
             },
@@ -11245,10 +11245,10 @@ export const PREBUILT_COURSES = [
               "concept": "Coverage model",
               "question": "A coverage model is best described as:",
               "options": [
-                "The commission structure paid to each CSM",
+                "The overall commission structure paid out to each individual CSM",
                 "The deliberate design of how much attention each segment receives",
-                "The software stack the support team uses",
-                "The number of regions a team operates in"
+                "The particular software stack that the support team relies on",
+                "The total number of geographic regions a given team operates across"
               ],
               "correctIndex": 1
             },
@@ -11257,10 +11257,10 @@ export const PREBUILT_COURSES = [
               "concept": "High-touch vs tech-touch",
               "question": "Which is a defining feature of a tech-touch model?",
               "options": [
-                "A named CSM runs quarterly business reviews",
+                "A named CSM personally runs recurring quarterly business reviews",
                 "Customers are served through automation with no named human owner",
-                "Every account gets a custom success plan",
-                "Accounts are visited on-site each month"
+                "Every individual account gets its own fully custom success plan",
+                "Accounts are physically visited on-site by a dedicated CSM each month"
               ],
               "correctIndex": 1
             },
@@ -11270,9 +11270,9 @@ export const PREBUILT_COURSES = [
               "question": "Where does linear staffing typically fail first?",
               "options": [
                 "Among the few largest enterprise brokerages",
-                "In the long tail of many small accounts",
-                "Within the billing team's workload",
-                "During the initial contract signature"
+                "In the long tail of the many small accounts",
+                "Within the billing team's overall workload",
+                "During the initial contract signature stage"
               ],
               "correctIndex": 1
             },
@@ -11281,10 +11281,10 @@ export const PREBUILT_COURSES = [
               "concept": "Book of business",
               "question": "A CSM's book of business refers to:",
               "options": [
-                "The onboarding checklist she follows",
+                "The standard onboarding checklist that she follows",
                 "The full set of accounts she is responsible for",
-                "The revenue target set by finance",
-                "The playbook library she can access"
+                "The revenue target that finance sets for her",
+                "The full playbook library that she can access"
               ],
               "correctIndex": 1
             },
@@ -11296,7 +11296,7 @@ export const PREBUILT_COURSES = [
                 "Giving every customer the least service possible",
                 "Spending capacity where it changes an outcome",
                 "Ensuring all customers get identical treatment",
-                "Maximizing the number of CSMs on payroll"
+                "Maximizing the total number of CSMs on payroll"
               ],
               "correctIndex": 1
             }
@@ -11380,9 +11380,9 @@ export const PREBUILT_COURSES = [
               "question": "Segmentation is fundamentally about:",
               "options": [
                 "Dividing customers into groups that should be served differently",
-                "Ranking CSMs by their renewal rates",
-                "Sorting support tickets by urgency",
-                "Grouping product features by release date"
+                "Ranking each individual CSM by their overall quarterly renewal rates",
+                "Sorting incoming support tickets by their level of urgency",
+                "Grouping all product features together by their planned release date"
               ],
               "correctIndex": 0
             },
@@ -11393,8 +11393,8 @@ export const PREBUILT_COURSES = [
               "options": [
                 "Contract length and payment method",
                 "Current value and potential value",
-                "Region and language spoken",
-                "Ticket volume and CSAT score"
+                "Home region and language spoken",
+                "Support ticket volume and CSAT score"
               ],
               "correctIndex": 1
             },
@@ -11404,9 +11404,9 @@ export const PREBUILT_COURSES = [
               "question": "What is the risk of segmenting on current revenue alone?",
               "options": [
                 "It over-serves stagnant large accounts and under-serves growing small ones",
-                "It makes onboarding checklists too long",
-                "It forces every account into high-touch",
-                "It eliminates the need for playbooks"
+                "It makes the standard onboarding checklists far too long to finish",
+                "It wrongly forces nearly every single account into a high-touch model",
+                "It completely eliminates the ongoing need for any written playbooks"
               ],
               "correctIndex": 0
             },
@@ -11415,10 +11415,10 @@ export const PREBUILT_COURSES = [
               "concept": "Segment drift",
               "question": "Segment drift occurs when:",
               "options": [
-                "A CSM changes teams mid-quarter",
+                "A CSM abruptly changes teams in the middle of the quarter",
                 "Accounts change but their segment and touch model never update",
-                "Two segments are given the same name",
-                "A customer switches payment cards"
+                "Two different segments are accidentally given the same name",
+                "A customer simply switches to a different payment card on file"
               ],
               "correctIndex": 1
             },
@@ -11427,10 +11427,10 @@ export const PREBUILT_COURSES = [
               "concept": "Touch model assignment",
               "question": "The purpose of assigning a touch model to each segment is to:",
               "options": [
-                "Reduce the number of segments to one",
+                "Reduce the total number of segments down to just one",
                 "Ensure each segment drives a distinct, resourced motion",
-                "Give every account a named CSM",
-                "Standardize customer pricing"
+                "Give every single account its own dedicated named CSM",
+                "Fully standardize customer pricing across the board"
               ],
               "correctIndex": 1
             },
@@ -11440,9 +11440,9 @@ export const PREBUILT_COURSES = [
               "question": "How is segment drift best prevented?",
               "options": [
                 "By re-segmenting on a regular cadence with fresh data",
-                "By never changing a customer's tier once set",
-                "By assigning all accounts to tech-touch",
-                "By hiring more CSMs each quarter"
+                "By never changing a customer's assigned tier once it is set",
+                "By assigning every one of the accounts to tech-touch",
+                "By hiring several more CSMs at the start of each quarter"
               ],
               "correctIndex": 0
             }
@@ -11525,9 +11525,9 @@ export const PREBUILT_COURSES = [
               "concept": "Playbook",
               "question": "A CS playbook specifies all of the following EXCEPT:",
               "options": [
-                "The trigger that starts it",
-                "The steps and owner",
-                "The timing and assets",
+                "The trigger that starts it off",
+                "The sequence of steps and owner",
+                "The timing and needed assets",
                 "The customer's credit card number"
               ],
               "correctIndex": 3
@@ -11537,10 +11537,10 @@ export const PREBUILT_COURSES = [
               "concept": "Trigger-based play",
               "question": "A trigger-based play fires when:",
               "options": [
-                "A fixed calendar date arrives",
+                "A fixed calendar date finally arrives",
                 "A signal appears in the account's data",
-                "A quarter closes",
-                "A CSM is hired"
+                "A fiscal quarter formally closes out",
+                "A brand-new CSM is hired onto the team"
               ],
               "correctIndex": 1
             },
@@ -11550,9 +11550,9 @@ export const PREBUILT_COURSES = [
               "question": "The main value of playbooks for a scaled team is:",
               "options": [
                 "Every account in a segment gets the same proven motion",
-                "CSMs no longer need to talk to customers",
-                "Onboarding is eliminated",
-                "Pricing becomes uniform"
+                "CSMs no longer need to talk with their customers at all",
+                "The entire onboarding process is completely eliminated",
+                "Customer pricing becomes perfectly uniform everywhere"
               ],
               "correctIndex": 0
             },
@@ -11561,10 +11561,10 @@ export const PREBUILT_COURSES = [
               "concept": "Standardization",
               "question": "How do you standardize without sounding robotic?",
               "options": [
-                "Script every word a CSM says",
+                "Rigidly script every single word that a CSM ever says",
                 "Standardize the structure while personalizing the message",
-                "Remove CSMs from the motion entirely",
-                "Send identical automated emails to all customers"
+                "Remove the CSMs from the entire customer motion completely",
+                "Send the identical automated email to every single customer"
               ],
               "correctIndex": 1
             },
@@ -11573,10 +11573,10 @@ export const PREBUILT_COURSES = [
               "concept": "Trigger-based play",
               "question": "Why do calendar-based plays scale poorly on their own?",
               "options": [
-                "They require expensive software",
+                "They tend to require fairly expensive and specialized software",
                 "They spend effort regardless of need and miss accounts between dates",
-                "They cannot be written down",
-                "They only work for enterprise accounts"
+                "They simply cannot ever be properly written down anywhere at all",
+                "They only really work for the very largest enterprise accounts"
               ],
               "correctIndex": 1
             },
@@ -11585,10 +11585,10 @@ export const PREBUILT_COURSES = [
               "concept": "Play library",
               "question": "A play library is:",
               "options": [
-                "A list of customers due for renewal",
+                "A running list of the customers due for renewal",
                 "The organized collection of a team's playbooks",
-                "A schedule of team meetings",
-                "A record of past escalations"
+                "A weekly schedule of internal team meetings",
+                "A historical record of past account escalations"
               ],
               "correctIndex": 1
             }
@@ -11673,8 +11673,8 @@ export const PREBUILT_COURSES = [
               "options": [
                 "Predict a customer's exact lifetime value",
                 "Rank which accounts a CSM should work first",
-                "Replace the renewal contract",
-                "Set the customer's monthly price"
+                "Entirely replace the signed renewal contract",
+                "Set the customer's monthly subscription price"
               ],
               "correctIndex": 1
             },
@@ -11684,9 +11684,9 @@ export const PREBUILT_COURSES = [
               "question": "A good health score is weighted toward:",
               "options": [
                 "Leading indicators a CSM can still act on",
-                "Lagging indicators like a lost renewal",
-                "The customer's tenure alone",
-                "The CSM's personal opinion only"
+                "Lagging indicators like an already-lost renewal",
+                "The customer's overall account tenure alone",
+                "The individual CSM's personal gut opinion only"
               ],
               "correctIndex": 0
             },
@@ -11695,10 +11695,10 @@ export const PREBUILT_COURSES = [
               "concept": "Digital/tech-touch motion",
               "question": "A tech-touch motion serves the long tail through:",
               "options": [
-                "A named CSM for every account",
+                "A single named CSM assigned to every individual account",
                 "Automated lifecycle emails, in-app guidance, and webinars",
-                "On-site quarterly visits",
-                "Custom-built success plans per account"
+                "Regularly scheduled on-site quarterly visits to each account",
+                "Fully custom-built success plans for every single account"
               ],
               "correctIndex": 1
             },
@@ -11707,10 +11707,10 @@ export const PREBUILT_COURSES = [
               "concept": "Digital/tech-touch motion",
               "question": "Why can tech-touch outperform a stretched human?",
               "options": [
-                "It is cheaper to license",
+                "It is generally much cheaper to license",
                 "It is consistent and never forgets a step",
-                "It requires no lifecycle design",
-                "It only serves enterprise accounts"
+                "It requires absolutely no lifecycle design",
+                "It only serves large enterprise accounts"
               ],
               "correctIndex": 1
             },
@@ -11720,9 +11720,9 @@ export const PREBUILT_COURSES = [
               "question": "AI adds the most leverage in CS operations by:",
               "options": [
                 "Removing low-value work so humans focus on judgment",
-                "Replacing all human relationships",
-                "Setting renewal pricing automatically",
-                "Eliminating the need for segmentation"
+                "Fully replacing all human customer relationships",
+                "Setting all of the renewal pricing fully automatically",
+                "Eliminating the entire need for customer segmentation"
               ],
               "correctIndex": 0
             },
@@ -11731,10 +11731,10 @@ export const PREBUILT_COURSES = [
               "concept": "Signal-to-noise",
               "question": "Automation that floods CSMs with unactionable alerts:",
               "options": [
-                "Improves prioritization",
+                "Improves the whole team's prioritization",
                 "Lowers signal-to-noise and gets ignored",
-                "Raises the health score's accuracy",
-                "Increases CSM capacity"
+                "Raises the health score's overall accuracy",
+                "Meaningfully increases total CSM capacity"
               ],
               "correctIndex": 1
             }
@@ -11818,9 +11818,9 @@ export const PREBUILT_COURSES = [
               "question": "Capacity planning in a scaled model answers:",
               "options": [
                 "How many accounts a CSM can hold given the support around them",
-                "What price to charge each segment",
-                "Which region to hire in next",
-                "How long onboarding should take"
+                "What subscription price to charge to each different segment",
+                "Which geographic region the team ought to hire into next",
+                "How long the initial onboarding process should really take"
               ],
               "correctIndex": 0
             },
@@ -11829,10 +11829,10 @@ export const PREBUILT_COURSES = [
               "concept": "Pooled coverage",
               "question": "Pooled coverage is best described as:",
               "options": [
-                "A named CSM per enterprise account",
+                "A single dedicated named CSM assigned per enterprise account",
                 "A shared team working a queue of triggered tasks across accounts",
-                "An automated email sequence with no humans",
-                "A quarterly on-site review program"
+                "An automated email sequence that runs with no humans at all",
+                "A recurring quarterly on-site executive business review program"
               ],
               "correctIndex": 1
             },
@@ -11842,9 +11842,9 @@ export const PREBUILT_COURSES = [
               "question": "Pooled coverage scales the tail because it:",
               "options": [
                 "Redirects idle capacity on quiet accounts to active ones",
-                "Eliminates the need for playbooks",
-                "Assigns every account a dedicated owner",
-                "Removes all triggers from the system"
+                "Completely eliminates the ongoing need for any playbooks",
+                "Assigns every single account its own dedicated owner",
+                "Removes all of the automated triggers from the system"
               ],
               "correctIndex": 0
             },
@@ -11853,10 +11853,10 @@ export const PREBUILT_COURSES = [
               "concept": "Efficiency metrics",
               "question": "Which is an efficiency metric rather than an activity metric?",
               "options": [
-                "Number of emails sent",
-                "Calls made per day",
+                "Total number of emails sent",
+                "Total calls placed per day",
                 "Revenue supported per CSM",
-                "Hours logged in the tool"
+                "Hours logged inside the tool"
               ],
               "correctIndex": 2
             },
@@ -11866,9 +11866,9 @@ export const PREBUILT_COURSES = [
               "question": "A healthy sign that scaling is working is the CSM-to-revenue ratio:",
               "options": [
                 "Staying flat as tooling spend rises",
-                "Trending upward over time",
-                "Falling each quarter",
-                "Being ignored in reporting"
+                "Steadily trending upward over time",
+                "Falling lower each and every quarter",
+                "Being completely ignored in reporting"
               ],
               "correctIndex": 1
             },
@@ -11877,10 +11877,10 @@ export const PREBUILT_COURSES = [
               "concept": "Continuous improvement loop",
               "question": "A continuous improvement loop means:",
               "options": [
-                "Never changing plays once launched",
+                "Never once changing any of the plays after they are launched",
                 "Measuring plays, cutting what fails, and reinvesting in what works",
-                "Adding a new metric every week",
-                "Reporting only activity to executives"
+                "Adding a brand-new tracking metric to the dashboard every single week",
+                "Reporting only raw activity counts up to the senior executives"
               ],
               "correctIndex": 1
             }
@@ -11968,9 +11968,9 @@ export const PREBUILT_COURSES = [
               "question": "What does time-to-value measure?",
               "options": [
                 "The elapsed time from signup to the customer's first tangible benefit",
-                "The total revenue a customer pays in their first year",
-                "The number of training calls completed during setup",
-                "The time support takes to answer a new customer's ticket"
+                "The total revenue a customer pays across their entire first year of use",
+                "The number of live training calls a customer completes during setup",
+                "The time support takes to answer a brand-new customer's first ticket"
               ],
               "correctIndex": 0
             },
@@ -11979,10 +11979,10 @@ export const PREBUILT_COURSES = [
               "concept": "First value moment",
               "question": "Which of these best qualifies as a realtor's first value moment in Lofty?",
               "options": [
-                "Finishing the onboarding webinar",
-                "Setting a profile photo and password",
-                "An AI-engaged lead replying and booking a showing",
-                "Reading three help-center articles"
+                "Finishing the full onboarding webinar from start to finish",
+                "Setting up a profile photo and choosing an account password",
+                "An AI-engaged lead replying to outreach and booking a showing",
+                "Reading through three separate help-center support articles"
               ],
               "correctIndex": 2
             },
@@ -11991,34 +11991,34 @@ export const PREBUILT_COURSES = [
               "concept": "Early churn window",
               "question": "According to the lesson, what does a stalled start most often look like?",
               "options": [
-                "An angry escalation to executives",
-                "A formal cancellation request",
-                "A billing dispute filed immediately",
-                "Silence, such as logins trailing off"
+                "Silence, such as the customer's logins quietly trailing off",
+                "An angry escalation sent straight to your executives",
+                "A formal written request to cancel the subscription",
+                "A billing dispute the customer files almost immediately"
               ],
-              "correctIndex": 3
+              "correctIndex": 0
             },
             {
               "type": "mc",
               "concept": "Onboarding as retention lever",
               "question": "How does the lesson frame onboarding?",
               "options": [
-                "As the front end of retention",
-                "As a one-time technical setup task",
-                "As primarily the billing team's concern",
-                "As optional for experienced agents"
+                "As a one-time technical setup task done once at the start",
+                "As the front end of retention itself, not a separate phase",
+                "As primarily the billing and finance team's ongoing concern",
+                "As an optional extra step for already-experienced agents"
               ],
-              "correctIndex": 0
+              "correctIndex": 1
             },
             {
               "type": "mc",
               "concept": "Cost of a stalled start",
               "question": "Why does the lesson say catching a stalled start early matters?",
               "options": [
-                "It reduces the number of training calls needed",
+                "It reduces the number of live training calls a CSM must run",
                 "It is far cheaper than winning the customer back later",
-                "It speeds up the sales team's quota",
-                "It lowers the monthly subscription price"
+                "It speeds up how fast the sales team clears its quota",
+                "It lowers the customer's recurring monthly subscription price"
               ],
               "correctIndex": 1
             },
@@ -12027,10 +12027,10 @@ export const PREBUILT_COURSES = [
               "concept": "Early churn window",
               "question": "Which time frame does the lesson give for the early churn window?",
               "options": [
-                "The first 6 to 12 months",
-                "The first 30 to 90 days",
-                "The first 24 hours after signup",
-                "The final 30 days before renewal"
+                "The first six to twelve months of use",
+                "The first thirty to ninety days after signup",
+                "The first twenty-four hours right after signup",
+                "The final thirty days before the renewal date"
               ],
               "correctIndex": 1
             }
@@ -12113,10 +12113,10 @@ export const PREBUILT_COURSES = [
               "concept": "Onboarding milestones",
               "question": "How does the lesson describe a strong onboarding journey?",
               "options": [
-                "A complete tour of every product feature",
-                "A short sequence of milestones ending in small wins",
-                "A single long training webinar",
-                "A self-guided document with no touchpoints"
+                "A complete guided tour through every single product feature",
+                "A short sequence of milestones each ending in a small win",
+                "A single long training webinar covering everything at once",
+                "A self-guided document with no human touchpoints at all"
               ],
               "correctIndex": 1
             },
@@ -12125,10 +12125,10 @@ export const PREBUILT_COURSES = [
               "concept": "Segmentation by tier",
               "question": "What onboarding path does the lesson recommend for an SMB solo agent?",
               "options": [
-                "A lighter, more automated self-serve path",
-                "A dedicated enterprise success manager",
-                "A custom-built integration project",
-                "No onboarding at all"
+                "A lighter, more automated self-serve onboarding path",
+                "A dedicated enterprise-level customer success manager",
+                "A fully custom-built systems integration project",
+                "No structured onboarding process offered at all"
               ],
               "correctIndex": 0
             },
@@ -12137,10 +12137,10 @@ export const PREBUILT_COURSES = [
               "concept": "Customer's definition of success",
               "question": "What does the customer's definition of success usually center on for a realtor?",
               "options": [
-                "Using every feature in the platform",
-                "Completing all training modules",
+                "Using every available feature the platform offers",
+                "Completing all of the assigned training modules",
                 "More booked appointments or deals from the same spend",
-                "The lowest possible monthly price"
+                "Paying the lowest possible price every month"
               ],
               "correctIndex": 2
             },
@@ -12149,22 +12149,22 @@ export const PREBUILT_COURSES = [
               "concept": "Kickoff call",
               "question": "What is the main purpose of the kickoff call?",
               "options": [
-                "To collect the first payment",
-                "To align on the customer's definition of success",
-                "To close the onboarding as complete",
-                "To demo unreleased features"
+                "To collect the customer's very first subscription payment",
+                "To formally close out the onboarding as fully complete",
+                "To demo features that have not yet been released",
+                "To align together on the customer's definition of success"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Success plan",
               "question": "What does the lesson say a success plan should contain?",
               "options": [
-                "A full list of every platform feature",
-                "Only the contract's pricing terms",
-                "The goal, milestones, and who does what by when",
-                "A transcript of the sales calls"
+                "A full inventory list of every single platform feature",
+                "Only the pricing terms written into the contract",
+                "The goal, the milestones, and who does what by when",
+                "A complete transcript of all the earlier sales calls"
               ],
               "correctIndex": 2
             },
@@ -12173,12 +12173,12 @@ export const PREBUILT_COURSES = [
               "concept": "Segmentation by tier",
               "question": "Why does the lesson call over-serving a solo agent a failure?",
               "options": [
-                "It uses white-glove hours you cannot scale",
-                "It always makes the customer churn faster",
-                "It violates the customer's contract",
-                "It reduces the product's price"
+                "It always makes the customer end up churning faster",
+                "It directly violates the terms of the customer's contract",
+                "It burns white-glove hours you can never hope to scale",
+                "It quietly reduces the product's overall list price"
               ],
-              "correctIndex": 0
+              "correctIndex": 2
             }
           ]
         }
@@ -12260,9 +12260,9 @@ export const PREBUILT_COURSES = [
               "question": "What is an activation event?",
               "options": [
                 "The single measurable event marking the move from setup into real use",
-                "The day the customer's first invoice is paid",
-                "The completion of the sales contract",
-                "The customer's first support ticket"
+                "The day the customer's very first invoice finally gets paid in full",
+                "The completion and signing of the initial sales contract paperwork",
+                "The moment the customer files their very first support ticket"
               ],
               "correctIndex": 0
             },
@@ -12271,10 +12271,10 @@ export const PREBUILT_COURSES = [
               "concept": "Aha moment",
               "question": "How does the lesson describe the aha moment?",
               "options": [
-                "The day a discount is applied",
+                "The day a promotional discount is first applied to the account",
                 "The moment the customer emotionally realizes the product works for them",
-                "The final onboarding milestone signoff",
-                "The point the renewal is forecast"
+                "The final onboarding milestone being signed off as fully complete",
+                "The point at which the account's future renewal is first forecast"
               ],
               "correctIndex": 1
             },
@@ -12283,22 +12283,22 @@ export const PREBUILT_COURSES = [
               "concept": "Setup friction",
               "question": "Which is an example of setup friction in the lesson?",
               "options": [
-                "A CSM sending a welcome email",
-                "Contact import that fails silently",
-                "A customer upgrading their plan",
-                "An executive business review"
+                "A contact import that quietly fails in silence",
+                "A CSM sending a friendly welcome email",
+                "A customer choosing to upgrade their plan",
+                "An executive-level quarterly business review"
               ],
-              "correctIndex": 1
+              "correctIndex": 0
             },
             {
               "type": "mc",
               "concept": "Onboarding nudges",
               "question": "What makes the best onboarding nudges effective per the lesson?",
               "options": [
-                "They are sent on a fixed calendar day",
-                "They are triggered by customer behavior",
-                "They offer the largest possible discount",
-                "They come only from the billing team"
+                "They are sent out on a fixed, pre-set calendar day",
+                "They are triggered by the customer's actual behavior",
+                "They offer the single largest discount that is possible",
+                "They are sent only by the billing and finance team"
               ],
               "correctIndex": 1
             },
@@ -12307,22 +12307,22 @@ export const PREBUILT_COURSES = [
               "concept": "Adoption habit",
               "question": "Why is activating once not enough?",
               "options": [
-                "It cancels the customer's contract",
-                "The customer may never return and form a habit",
-                "It automatically triggers a refund",
-                "It prevents the aha moment"
+                "It immediately cancels the customer's active contract",
+                "It automatically triggers an unwanted account refund",
+                "It permanently prevents the customer's aha moment",
+                "The customer may never come back to form a lasting habit"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Setup friction",
               "question": "What does the lesson say often moves activation most?",
               "options": [
-                "Sending more encouragement emails",
-                "Removing a single blocking step in the path",
-                "Raising the subscription price",
-                "Adding more features to configure"
+                "Sending many more encouragement emails to the customer",
+                "Removing a single blocking step from the setup path",
+                "Raising the recurring monthly subscription price",
+                "Adding even more features for the user to configure"
               ],
               "correctIndex": 1
             }
@@ -12405,10 +12405,10 @@ export const PREBUILT_COURSES = [
               "concept": "Sales-to-CS handoff",
               "question": "Why is the Sales-to-CS handoff called the most dangerous seam?",
               "options": [
-                "It is where the first payment can fail",
+                "It is the point where the customer's first payment can fail",
                 "A dropped handoff makes the CSM re-discover everything at kickoff",
-                "It is when the contract is signed",
-                "It only involves the Manila team"
+                "It is the exact moment the sales contract gets signed off",
+                "It only ever involves the Manila-based support team"
               ],
               "correctIndex": 1
             },
@@ -12417,10 +12417,10 @@ export const PREBUILT_COURSES = [
               "concept": "Onboarding playbook",
               "question": "What does a good onboarding playbook name?",
               "options": [
-                "Only the pricing tiers",
+                "Only the product's various pricing tiers and nothing else",
                 "The milestones, templates, nudges, and escalation points",
-                "The customer's personal contact details",
-                "The company's quarterly revenue"
+                "The customer's personal phone and email contact details",
+                "The company's total quarterly revenue and profit figures"
               ],
               "correctIndex": 1
             },
@@ -12429,10 +12429,10 @@ export const PREBUILT_COURSES = [
               "concept": "Scaling with automation",
               "question": "How does the lesson say CSM impact grows without headcount growing one-for-one?",
               "options": [
-                "By pairing playbooks with automation",
-                "By raising prices on new customers",
-                "By removing the kickoff call",
-                "By assigning one CSM per account"
+                "By pairing repeatable playbooks with smart automation",
+                "By raising subscription prices on all new customers",
+                "By completely removing the onboarding kickoff call",
+                "By assigning one dedicated CSM to every account"
               ],
               "correctIndex": 0
             },
@@ -12441,10 +12441,10 @@ export const PREBUILT_COURSES = [
               "concept": "Handoff to steady-state support",
               "question": "What should happen when onboarding completes?",
               "options": [
-                "The account is closed automatically",
+                "The account is automatically closed out without warning",
                 "A deliberate handoff transfers context to steady-state support",
-                "The customer is asked to renew immediately",
-                "All automation is switched off"
+                "The customer is immediately asked to renew their contract",
+                "Every piece of onboarding automation is switched off"
               ],
               "correctIndex": 1
             },
@@ -12454,9 +12454,9 @@ export const PREBUILT_COURSES = [
               "question": "What does the lesson say about your Manila team's hours?",
               "options": [
                 "They work US-aligned hours and overlap your business day",
-                "They work Manila daytime, causing a handoff delay",
-                "They are unavailable during US hours",
-                "They only handle billing, not onboarding"
+                "They work Manila daytime hours, causing a full handoff delay",
+                "They are completely unavailable during all US business hours",
+                "They only ever handle billing issues, never onboarding"
               ],
               "correctIndex": 0
             },
@@ -12465,12 +12465,12 @@ export const PREBUILT_COURSES = [
               "concept": "Role clarity",
               "question": "What problem does role clarity prevent across US and Manila teams?",
               "options": [
-                "Both gaps and duplicated effort in onboarding steps",
-                "The need for any playbooks",
-                "Customers paying their invoices",
-                "The Sales team meeting quota"
+                "The ongoing need for any written onboarding playbooks",
+                "Both gaps and duplicated effort across onboarding steps",
+                "Customers actually paying their monthly invoices on time",
+                "The Sales team successfully meeting its revenue quota"
               ],
-              "correctIndex": 0
+              "correctIndex": 1
             }
           ]
         }
@@ -12555,10 +12555,10 @@ export const PREBUILT_COURSES = [
               "concept": "Leading onboarding metrics",
               "question": "Why manage onboarding with leading metrics rather than renewal rate?",
               "options": [
-                "Leading metrics move now and predict retention later",
-                "Renewal rate is impossible to measure",
-                "Leading metrics are required by contract",
-                "Renewal rate ignores the customer entirely"
+                "Leading metrics move now and predict retention later on",
+                "Renewal rate is essentially impossible to ever measure",
+                "Leading metrics are strictly required by the contract",
+                "Renewal rate ignores the actual customer almost entirely"
               ],
               "correctIndex": 0
             },
@@ -12567,10 +12567,10 @@ export const PREBUILT_COURSES = [
               "concept": "Onboarding completion vs. activation",
               "question": "What does high completion with low activation indicate?",
               "options": [
-                "The customers have already renewed",
-                "The process is busy but not working",
-                "The pricing is set too low",
-                "The Manila team is overstaffed"
+                "The customers have all already renewed early",
+                "The process is busy but not truly working at all",
+                "The product's pricing has been set far too low",
+                "The Manila support team is badly overstaffed now"
               ],
               "correctIndex": 1
             },
@@ -12579,10 +12579,10 @@ export const PREBUILT_COURSES = [
               "concept": "Feedback loop",
               "question": "Which teams does the lesson say hold the richest signal on where new customers get stuck?",
               "options": [
-                "The finance and legal teams",
+                "The internal finance and legal teams",
                 "Your Manila support and CSM teams",
-                "The external ad agencies",
-                "The board of directors"
+                "The external advertising agencies",
+                "The company's board of directors"
               ],
               "correctIndex": 1
             },
@@ -12591,10 +12591,10 @@ export const PREBUILT_COURSES = [
               "concept": "Cohort analysis",
               "question": "What does cohort analysis let you compare?",
               "options": [
-                "This month's signups' activation against last month's",
-                "One CSM's salary against another's",
-                "The price of two subscription tiers",
-                "The number of features in the product"
+                "This month's signups' activation against last month's cohort",
+                "One CSM's total salary compared against another CSM's",
+                "The list price of two different subscription tiers",
+                "The total number of features built into the product"
               ],
               "correctIndex": 0
             },
@@ -12603,10 +12603,10 @@ export const PREBUILT_COURSES = [
               "concept": "Onboarding-to-renewal link",
               "question": "How does the lesson say to reframe onboarding for executives?",
               "options": [
-                "As an optional training expense",
-                "As a cost to minimize each quarter",
-                "As a retention investment leadership will fund",
-                "As solely the billing team's responsibility"
+                "As an optional extra training expense to consider",
+                "As a recurring cost to minimize every single quarter",
+                "As a retention investment that leadership will fund",
+                "As solely the billing team's ongoing responsibility"
               ],
               "correctIndex": 2
             },
@@ -12615,9 +12615,9 @@ export const PREBUILT_COURSES = [
               "concept": "Onboarding completion vs. activation",
               "question": "What should the onboarding dashboard be anchored on?",
               "options": [
-                "Tasks finished by the CSM",
-                "Value reached by the customer",
-                "The number of emails sent",
+                "The tasks finished by the CSM",
+                "The real value reached by the customer",
+                "The total number of emails sent",
                 "The count of support tickets closed"
               ],
               "correctIndex": 1
@@ -12713,10 +12713,10 @@ export const PREBUILT_COURSES = [
               "concept": "Executive escalation",
               "question": "What most reliably signals that a ticket has become an executive escalation?",
               "options": [
-                "The customer sent more than three replies",
+                "The customer has sent more than three replies in a row about it",
                 "The business risk to revenue, reputation, or a key relationship has risen",
-                "A Manila agent is unsure of the answer",
-                "The ticket has been open longer than a day"
+                "A front-line Manila agent happens to be unsure of the correct answer",
+                "The ticket has remained open for longer than one full business day"
               ],
               "correctIndex": 1
             },
@@ -12737,10 +12737,10 @@ export const PREBUILT_COURSES = [
               "concept": "Impact vs. reach",
               "question": "A quiet bug is silently double-billing hundreds of agents. Which axis makes this top-tier despite few complaints?",
               "options": [
-                "High reach across many paying customers",
-                "Low impact on each account",
-                "Short ticket age",
-                "Strong customer sentiment"
+                "High reach spanning across many paying customers",
+                "Low individual impact on each single account",
+                "A relatively short overall ticket age",
+                "Unusually strong positive customer sentiment"
               ],
               "correctIndex": 0
             },
@@ -12749,10 +12749,10 @@ export const PREBUILT_COURSES = [
               "concept": "Single-threaded owner",
               "question": "According to the lesson, what does single-threaded ownership actually require?",
               "options": [
-                "Personally completing every task in the fix",
+                "Personally completing every single task involved in the fix",
                 "Guaranteeing the ball is never dropped and the customer has one owner",
-                "Keeping the case inside the tier-1 queue",
-                "Rotating the case among available agents"
+                "Keeping the case sitting entirely inside the tier-1 queue",
+                "Rotating the case around among whichever agents are available"
               ],
               "correctIndex": 1
             },
@@ -12761,10 +12761,10 @@ export const PREBUILT_COURSES = [
               "concept": "Acknowledgment window",
               "question": "In the brokerage AI-calling example, what did you do within the first hour?",
               "options": [
-                "Issued a full refund",
+                "Issued the customer a full and immediate refund",
                 "Sent an acknowledgment that the case was seen and owned",
-                "Closed the ticket as resolved",
-                "Reassigned it to tier-1"
+                "Closed out the ticket and marked it fully resolved",
+                "Reassigned the whole case back down to tier-1"
               ],
               "correctIndex": 1
             },
@@ -12773,10 +12773,10 @@ export const PREBUILT_COURSES = [
               "concept": "Executive escalation",
               "question": "Why is treating escalations like ordinary tickets the most common failure?",
               "options": [
-                "Ordinary tickets are always closed too fast",
+                "Ordinary tickets are almost always closed out far too fast",
                 "The normal queue has no owner or clock built for high-stakes cases",
-                "Agents dislike routine tickets",
-                "Escalations cost more to log"
+                "Front-line agents generally dislike handling routine tickets",
+                "Escalations simply cost a good deal more to formally log"
               ],
               "correctIndex": 1
             }
@@ -12859,10 +12859,10 @@ export const PREBUILT_COURSES = [
               "concept": "Update cadence",
               "question": "According to the lesson, what most often turns a frustrated customer into a furious one during an open escalation?",
               "options": [
-                "The size of the underlying bug",
-                "Silence and the absence of updates",
-                "Being offered a phone call",
-                "Receiving a written recap"
+                "The sheer size of the underlying bug",
+                "Silence and a total absence of updates",
+                "Being offered a live phone call",
+                "Receiving a clear written recap"
               ],
               "correctIndex": 1
             },
@@ -12871,10 +12871,10 @@ export const PREBUILT_COURSES = [
               "concept": "Holding update",
               "question": "What is the core discipline behind a holding update?",
               "options": [
-                "Update on schedule, not only when there is progress",
-                "Wait until the fix is fully confirmed",
-                "Send updates only when the customer asks",
-                "Reserve updates for top-tier cases"
+                "Update on a set schedule, not only when there is progress",
+                "Wait until the fix has been fully confirmed first",
+                "Send updates only when the customer directly asks",
+                "Reserve status updates only for top-tier cases"
               ],
               "correctIndex": 0
             },
@@ -12883,10 +12883,10 @@ export const PREBUILT_COURSES = [
               "concept": "Holding update",
               "question": "Which message best fits the definition of a proper holding update?",
               "options": [
-                "A promise to refund the account in full",
+                "A firm promise to refund the entire account balance in full",
                 "'No change yet, still actively on it, next update tomorrow morning'",
-                "A closed-ticket confirmation with a survey link",
-                "A request for the customer to be patient indefinitely"
+                "A closed-ticket confirmation bundled with a feedback survey link",
+                "A request for the customer to remain patient indefinitely, no date"
               ],
               "correctIndex": 1
             },
@@ -12895,10 +12895,10 @@ export const PREBUILT_COURSES = [
               "concept": "Channel choice",
               "question": "When emotion is high or the issue is complex, which channel does the lesson say lowers the temperature fastest?",
               "options": [
-                "A detailed email",
-                "A scheduled phone call",
+                "A long detailed email",
+                "A scheduled live phone call",
                 "A help-center article link",
-                "A public status page"
+                "A public status page post"
               ],
               "correctIndex": 1
             },
@@ -12907,22 +12907,22 @@ export const PREBUILT_COURSES = [
               "concept": "Named point of contact",
               "question": "What should the customer always be given as their point of contact?",
               "options": [
-                "A generic 'support team' alias",
-                "A specific named person who owns the case",
-                "A rotating on-call queue",
-                "A self-service knowledge base"
+                "A specific named person who directly owns the case",
+                "A generic shared 'support team' email alias",
+                "A constantly rotating on-call support queue",
+                "A self-service online knowledge base article"
               ],
-              "correctIndex": 1
+              "correctIndex": 0
             },
             {
               "type": "mc",
               "concept": "Expectation setting",
               "question": "In the dialer example, what did you set up front that kept the cancellation threat from reheating?",
               "options": [
-                "A promise of a specific daily 4pm update until resolved",
-                "An immediate account credit",
-                "A same-day guaranteed fix",
-                "A switch to a different support tier"
+                "A promise of a specific daily 4pm update until it was resolved",
+                "An immediate one-time credit applied to their account",
+                "A same-day guaranteed fix for the whole problem",
+                "A switch over to a completely different support tier"
               ],
               "correctIndex": 0
             }
@@ -13005,10 +13005,10 @@ export const PREBUILT_COURSES = [
               "concept": "Internal escalation thread",
               "question": "Why keep the internal escalation thread separate from the customer-facing one?",
               "options": [
-                "To reduce the number of emails sent",
+                "To meaningfully cut down the total number of emails being sent",
                 "To shield the customer from internal debate and protect the team from performing",
-                "Because customers prefer fewer updates",
-                "To avoid creating a written record"
+                "Because customers generally prefer to receive far fewer updates",
+                "To deliberately avoid creating any lasting written record of it"
               ],
               "correctIndex": 1
             },
@@ -13017,10 +13017,10 @@ export const PREBUILT_COURSES = [
               "concept": "Business-impact framing",
               "question": "Which framing best mobilizes a team you don't own, per the lesson?",
               "options": [
-                "'My customer is really upset with us'",
+                "'My biggest customer is really quite upset with all of us right now'",
                 "'This $1,500/mo enterprise account is at churn risk and may be systemic'",
-                "'Can you look at this when you get a chance'",
-                "'This has been open for a while now'"
+                "'Could you look into this whenever you happen to get a spare chance'",
+                "'This particular ticket has been sitting open for quite a while now'"
               ],
               "correctIndex": 1
             },
@@ -13030,9 +13030,9 @@ export const PREBUILT_COURSES = [
               "question": "What makes a handoff explicit rather than a silent toss over the wall?",
               "options": [
                 "Sending owner states what's done, what's left, and who owns it next; receiver confirms",
-                "Marking the ticket as reassigned",
-                "Adding more people to the email chain",
-                "Moving the case to a new queue"
+                "Simply marking the ticket as reassigned to somebody else in the system",
+                "Just adding a lot more people onto the growing email chain thread",
+                "Quietly moving the whole case over into a brand-new support queue"
               ],
               "correctIndex": 0
             },
@@ -13042,9 +13042,9 @@ export const PREBUILT_COURSES = [
               "question": "According to the lesson, escalations across teams you don't own ultimately run on what?",
               "options": [
                 "The goodwill and relationships banked before the fire started",
-                "Your job title and seniority",
-                "The length of the ticket history",
-                "The number of reminders you send"
+                "Your official job title and level of organizational seniority",
+                "The overall length and depth of the ticket's history",
+                "The sheer number of follow-up reminders that you send"
               ],
               "correctIndex": 0
             },
@@ -13053,10 +13053,10 @@ export const PREBUILT_COURSES = [
               "concept": "Escalation bridge",
               "question": "What is an escalation bridge used for on the hottest cases?",
               "options": [
-                "A written summary sent to executives",
+                "A formal written summary that gets sent up to the executives",
                 "A live call or channel where everyone who touches the fix decides in real time",
-                "A separate customer status page",
-                "A queue for tier-1 agents"
+                "A separate public-facing customer status page for the incident",
+                "A dedicated intake queue staffed by front-line tier-1 agents"
               ],
               "correctIndex": 1
             },
@@ -13065,10 +13065,10 @@ export const PREBUILT_COURSES = [
               "concept": "Cross-team handoff",
               "question": "Given the Manila team's US-aligned hours, what is the real handoff risk in the lesson?",
               "options": [
-                "A same-day delay from a Manila-daytime gap",
+                "A same-day handoff delay caused by a gap during Manila daytime hours",
                 "The case passing between support, billing, and China partners without explicit confirmation",
-                "Customers being updated too frequently",
-                "Time-zone silence overnight"
+                "Customers ending up being updated far too frequently about the case",
+                "Prolonged time-zone silence stretching across the whole overnight window"
               ],
               "correctIndex": 1
             }
@@ -13151,10 +13151,10 @@ export const PREBUILT_COURSES = [
               "concept": "Resolution confirmation",
               "question": "When is an escalation actually resolved, according to the lesson?",
               "options": [
-                "When engineering merges the fix",
-                "When the internal ticket is closed",
+                "When the engineering team finally merges in the fix",
+                "When the internal support ticket is formally closed",
                 "When the customer confirms the problem is gone in their world",
-                "When the update cadence ends"
+                "When the regular status update cadence comes to an end"
               ],
               "correctIndex": 2
             },
@@ -13163,10 +13163,10 @@ export const PREBUILT_COURSES = [
               "concept": "Making the customer whole",
               "question": "How should a make-whole remedy be sized?",
               "options": [
-                "As large as possible to guarantee loyalty",
+                "As large as possible to try to guarantee future loyalty",
                 "Proportional to the actual harm the customer suffered",
-                "The same fixed credit for every case",
-                "Only after the customer formally demands it"
+                "The exact same fixed credit amount for every single case",
+                "Only ever after the customer formally demands it"
               ],
               "correctIndex": 1
             },
@@ -13175,10 +13175,10 @@ export const PREBUILT_COURSES = [
               "concept": "Service recovery paradox",
               "question": "What does the service recovery paradox describe?",
               "options": [
-                "Customers churn faster after any escalation",
+                "Customers tend to churn much faster after almost any escalation",
                 "A well-handled escalation can leave a customer more loyal than if nothing went wrong",
-                "Fixes always cause new problems",
-                "Credits reduce long-term revenue"
+                "Attempted fixes will almost always end up causing brand-new problems",
+                "Issuing account credits reliably reduces the company's long-term revenue"
               ],
               "correctIndex": 1
             },
@@ -13187,10 +13187,10 @@ export const PREBUILT_COURSES = [
               "concept": "Formal closure",
               "question": "What does a formal closure consist of?",
               "options": [
-                "Silently marking the ticket resolved",
-                "An explicit recap of what happened, the fix, prevention, and the customer's agreement it's done",
-                "A satisfaction survey link",
-                "An internal note to engineering"
+                "Quietly marking the entire ticket resolved in the ticketing system, unannounced",
+                "An explicit recap of what happened, the fix taken, prevention, and the customer's sign-off",
+                "A quick customer satisfaction survey link sent out right after the case closure",
+                "A brief internal note passed along only to the core engineering team afterward"
               ],
               "correctIndex": 1
             },
@@ -13199,10 +13199,10 @@ export const PREBUILT_COURSES = [
               "concept": "Resolution confirmation",
               "question": "Against what should you verify the fix when confirming resolution?",
               "options": [
-                "The internal ticket description",
+                "The internal support ticket's description field",
                 "The customer's original complaint in their own words",
-                "Engineering's merge notes",
-                "The billing system log"
+                "The engineering team's technical merge notes",
+                "The billing system's raw transaction log"
               ],
               "correctIndex": 1
             },
@@ -13212,9 +13212,9 @@ export const PREBUILT_COURSES = [
               "question": "In the dialer example, what did you do after formally closing the case?",
               "options": [
                 "Handed the re-engaged account to their MidMarket CSM for the renewal conversation",
-                "Escalated it again to engineering",
-                "Issued a full contract refund",
-                "Reopened the internal thread"
+                "Escalated the whole case straight back to the engineering team once again",
+                "Issued the customer a complete refund of their entire contract value",
+                "Reopened the original internal escalation thread to keep it going"
               ],
               "correctIndex": 0
             }
@@ -13297,10 +13297,10 @@ export const PREBUILT_COURSES = [
               "concept": "Blameless post-mortem",
               "question": "Why must a post-mortem be blameless, per the lesson?",
               "options": [
-                "To make the document shorter",
+                "Mainly to make the final written document a good deal shorter",
                 "So the front line keeps surfacing early warnings instead of hiding misses",
-                "Because executives require it",
-                "To avoid assigning any owners"
+                "Simply because senior executives strictly require it to be that way",
+                "To deliberately avoid ever assigning any owners to the fixes"
               ],
               "correctIndex": 1
             },
@@ -13309,10 +13309,10 @@ export const PREBUILT_COURSES = [
               "concept": "Root cause vs. symptom",
               "question": "In the dialer case, which is the root cause rather than the symptom?",
               "options": [
-                "The dialer stopped for one brokerage",
-                "The principal threatened to cancel",
-                "No alerting when AI calling volume drops to zero",
-                "The account was double-billed"
+                "The dialer completely stopped working for one brokerage",
+                "The brokerage principal openly threatened to cancel",
+                "No alerting fires when AI calling volume drops to zero",
+                "The customer's account was quietly double-billed"
               ],
               "correctIndex": 2
             },
@@ -13321,10 +13321,10 @@ export const PREBUILT_COURSES = [
               "concept": "Root cause vs. symptom",
               "question": "What is the payoff of fixing the root cause instead of the symptom?",
               "options": [
-                "It closes the current ticket faster",
+                "It closes out the current open ticket much faster",
                 "It retires whole classes of future escalations at once",
-                "It reduces the need for customer updates",
-                "It removes the need for a post-mortem"
+                "It reduces the ongoing need for regular customer updates",
+                "It removes the need to ever run a post-mortem again"
               ],
               "correctIndex": 1
             },
@@ -13334,9 +13334,9 @@ export const PREBUILT_COURSES = [
               "question": "What does a cluster of similar escalations signal?",
               "options": [
                 "The fix belongs in product, process, or onboarding, not one-off heroics",
-                "That the customers are unusually demanding",
-                "That the cases were mis-triaged",
-                "That the cadence was too slow"
+                "That these particular customers are simply unusually demanding people",
+                "That the individual cases were each badly mis-triaged at intake",
+                "That the update cadence on them was running far too slow"
               ],
               "correctIndex": 0
             },
@@ -13345,10 +13345,10 @@ export const PREBUILT_COURSES = [
               "concept": "Executive escalation reporting",
               "question": "How should you lead an executive escalation report?",
               "options": [
-                "With a case-by-case play-by-play",
-                "With the pattern and the investment ask",
-                "With individual customer names",
-                "With the full internal thread"
+                "With a detailed case-by-case play-by-play",
+                "With the overall pattern and the investment ask",
+                "With a list of individual customer names",
+                "With the full internal escalation thread"
               ],
               "correctIndex": 1
             },
@@ -13357,10 +13357,10 @@ export const PREBUILT_COURSES = [
               "concept": "Prevention backlog",
               "question": "What is a prevention backlog?",
               "options": [
-                "A queue of unresolved customer tickets",
+                "A large running queue of all still-unresolved customer support tickets",
                 "A prioritized list of systemic fixes from escalations that competes for real investment",
-                "A log of blamed individuals",
-                "A list of customer credits owed"
+                "A running log that names the individuals blamed for each past incident",
+                "A standing list of all the account credits currently owed to customers"
               ],
               "correctIndex": 1
             }
@@ -13451,10 +13451,10 @@ export const PREBUILT_COURSES = [
               "concept": "Threat response",
               "question": "An escalated customer's rational thinking is drowned out because they are experiencing what?",
               "options": [
-                "A deliberate negotiation tactic",
-                "A threat response",
-                "A billing error",
-                "A product outage"
+                "A calculated bargaining tactic",
+                "An involuntary threat response",
+                "A simple billing error",
+                "A temporary product outage"
               ],
               "correctIndex": 1
             },
@@ -13463,10 +13463,10 @@ export const PREBUILT_COURSES = [
               "concept": "Validation before information",
               "question": "According to the lesson, what must come before facts and solutions in a hot conversation?",
               "options": [
-                "A refund offer",
+                "A quick refund offer",
                 "A supervisor transfer",
-                "Validation",
-                "A troubleshooting checklist"
+                "Genuine validation",
+                "A troubleshooting list"
               ],
               "correctIndex": 2
             },
@@ -13487,10 +13487,10 @@ export const PREBUILT_COURSES = [
               "concept": "Emotional flooding",
               "question": "Which behavior is a sign of emotional flooding?",
               "options": [
-                "Calmly reviewing the invoice",
+                "Calmly reviewing the disputed invoice line by line",
                 "Repeating themselves and rejecting reasonable offers",
-                "Asking for written documentation",
-                "Scheduling a follow-up call"
+                "Politely asking for clear written documentation",
+                "Scheduling a calm follow-up call for later"
               ],
               "correctIndex": 1
             },
@@ -13499,10 +13499,10 @@ export const PREBUILT_COURSES = [
               "concept": "Commission-based cost sensitivity",
               "question": "Why does a billing surprise feel existential rather than annoying to Lofty customers?",
               "options": [
-                "They rarely read their invoices",
+                "They only rarely bother to read their invoices",
                 "They are commission-based small-business owners",
-                "They have unlimited marketing budgets",
-                "They prefer phone support"
+                "They have effectively unlimited marketing budgets",
+                "They strongly prefer phone support over email"
               ],
               "correctIndex": 1
             },
@@ -13611,8 +13611,8 @@ export const PREBUILT_COURSES = [
               "options": [
                 "\"Let me take a look\"",
                 "\"Here's what I can do\"",
-                "\"That's our policy\"",
-                "\"I understand why that's confusing\""
+                "\"That's just our policy\"",
+                "\"I see why that's confusing\""
               ],
               "correctIndex": 2
             },
@@ -13646,9 +13646,9 @@ export const PREBUILT_COURSES = [
               "question": "What does reflective listening involve?",
               "options": [
                 "Restating what the customer said to confirm understanding",
-                "Quoting the refund policy back to them",
-                "Transferring the call to a supervisor",
-                "Listing every product feature"
+                "Quoting the full refund policy directly back to them",
+                "Transferring the call straight to a senior supervisor",
+                "Listing out every single product feature in order"
               ],
               "correctIndex": 0
             },
@@ -13743,10 +13743,10 @@ export const PREBUILT_COURSES = [
               "concept": "Email amplification",
               "question": "Which of these is a signal of email amplification?",
               "options": [
-                "The customer stops replying for a week",
+                "The customer suddenly stops replying for an entire week",
                 "The customer starts CC'ing others and restating points",
-                "The customer requests a written invoice",
-                "The customer asks for the help center link"
+                "The customer requests a fully itemized written invoice",
+                "The customer asks for the self-service help center link"
               ],
               "correctIndex": 1
             },
@@ -13755,10 +13755,10 @@ export const PREBUILT_COURSES = [
               "concept": "Tone bandwidth",
               "question": "Why does a spiraling thread often need a call rather than a better-written email?",
               "options": [
-                "Email is faster than calling",
+                "Email is simply much faster than making a call",
                 "Email has low tone bandwidth for warmth and sincerity",
-                "Calls avoid any written record",
-                "Customers dislike reading"
+                "Live calls avoid leaving behind any written record",
+                "Customers generally dislike having to read long text"
               ],
               "correctIndex": 1
             },
@@ -13767,10 +13767,10 @@ export const PREBUILT_COURSES = [
               "concept": "The channel-switch offer",
               "question": "How should a channel-switch offer be framed?",
               "options": [
-                "As service, with a specific time and purpose",
-                "As a warning that emails will stop",
-                "As a sign the customer is too heated",
-                "As a mandatory policy step"
+                "As a service, framed with a specific time and purpose",
+                "As a plain warning that all further emails will stop",
+                "As a clear sign the customer has become too heated",
+                "As a mandatory step required by company policy"
               ],
               "correctIndex": 0
             },
@@ -13779,10 +13779,10 @@ export const PREBUILT_COURSES = [
               "concept": "Call structure",
               "question": "In the de-escalation call structure, what should you resist doing in the first 60 seconds?",
               "options": [
-                "Letting the customer vent",
-                "Acknowledging the impact",
+                "Letting the customer fully vent",
+                "Acknowledging the felt impact",
                 "Solving the problem immediately",
-                "Confirming the timeline"
+                "Confirming the exact timeline"
               ],
               "correctIndex": 2
             },
@@ -13792,9 +13792,9 @@ export const PREBUILT_COURSES = [
               "question": "What is the main purpose of the written recap after a call?",
               "options": [
                 "To create an accountable record and prevent re-escalation",
-                "To upsell additional Lofty features",
-                "To close the ticket without customer input",
-                "To replace the need for the call"
+                "To upsell several additional Lofty product features",
+                "To close out the ticket without any customer input",
+                "To fully replace the need for the phone call itself"
               ],
               "correctIndex": 0
             },
@@ -13889,10 +13889,10 @@ export const PREBUILT_COURSES = [
               "concept": "Boundaried empathy",
               "question": "What does boundaried empathy require you to do?",
               "options": [
-                "Cave to the demand to keep the peace",
+                "Cave in to the demand just to keep the peace",
                 "Validate the feeling and state the limit together",
-                "State the limit and skip the validation",
-                "Escalate the decision to a manager"
+                "State the hard limit and skip over the validation",
+                "Escalate the whole decision up to a manager"
               ],
               "correctIndex": 1
             },
@@ -13903,8 +13903,8 @@ export const PREBUILT_COURSES = [
               "options": [
                 "A vague maybe and a delay",
                 "A clear limit and an alternative",
-                "A full refund",
-                "A transfer to billing"
+                "A full no-questions refund",
+                "A quick transfer to billing"
               ],
               "correctIndex": 1
             },
@@ -13913,10 +13913,10 @@ export const PREBUILT_COURSES = [
               "concept": "Setting expectations vs. defending",
               "question": "For a lead-ROI complaint, the lesson recommends which core move?",
               "options": [
-                "Defending that the leads are industry-standard",
-                "Re-anchoring what good performance looks like",
-                "Immediately offering a full refund",
-                "Ending the conversation quickly"
+                "Defending that the leads are simply industry-standard",
+                "Re-anchoring what good performance actually looks like",
+                "Immediately offering the customer a full refund",
+                "Ending the whole conversation as quickly as possible"
               ],
               "correctIndex": 1
             },
@@ -13926,9 +13926,9 @@ export const PREBUILT_COURSES = [
               "question": "How should a cancellation threat be treated?",
               "options": [
                 "As a diagnostic signal to understand the real driver",
-                "As an ultimatum to counter with a discount",
-                "As a reason to close the account immediately",
-                "As a bluff to ignore"
+                "As an ultimatum to counter with a quick discount",
+                "As a reason to close down the account immediately",
+                "As an empty bluff that is safe to simply ignore"
               ],
               "correctIndex": 0
             },
@@ -13937,10 +13937,10 @@ export const PREBUILT_COURSES = [
               "concept": "Documenting the agreement",
               "question": "Why document the terms of a resolution in writing?",
               "options": [
-                "To make the customer sign a contract",
+                "To make the customer formally sign a binding contract",
                 "To protect both sides and prevent the issue reopening",
-                "To slow down the resolution",
-                "To avoid having to send a recap"
+                "To deliberately slow down the whole resolution",
+                "To avoid ever having to send a written recap"
               ],
               "correctIndex": 1
             },
@@ -13949,10 +13949,10 @@ export const PREBUILT_COURSES = [
               "concept": "Cancellation-threat handling",
               "question": "According to the lesson, what does a panic discount teach customers?",
               "options": [
-                "That the product is high quality",
-                "That threatening to cancel gets concessions",
-                "That support is responsive",
-                "That prices are fixed"
+                "That the product is genuinely high quality",
+                "That threatening to cancel wins concessions",
+                "That the support team is quite responsive",
+                "That the listed prices are firmly fixed"
               ],
               "correctIndex": 1
             }
@@ -14035,10 +14035,10 @@ export const PREBUILT_COURSES = [
               "concept": "Emotional contagion",
               "question": "Emotional contagion means that in an escalation, tone and arousal do what?",
               "options": [
-                "Stay contained to the customer",
+                "Stay fully contained to the customer alone",
                 "Spread between people in both directions",
-                "Only affect written channels",
-                "Disappear once facts are shared"
+                "Only ever affect the written channels",
+                "Disappear the moment facts are shared"
               ],
               "correctIndex": 1
             },
@@ -14047,10 +14047,10 @@ export const PREBUILT_COURSES = [
               "concept": "Self-regulation",
               "question": "The lesson describes self-regulation as what?",
               "options": [
-                "A fixed personality trait",
+                "A fixed, unchangeable personality trait",
                 "A professional skill like pausing before replying",
-                "A reason to hand off the ticket",
-                "A scripting technique"
+                "A valid reason to hand off the whole ticket",
+                "A rehearsed scripting and wording technique"
               ],
               "correctIndex": 1
             },
@@ -14060,9 +14060,9 @@ export const PREBUILT_COURSES = [
               "question": "What is the risk of taking over every hard ticket from your handlers?",
               "options": [
                 "It builds dependence and hollow confidence",
-                "It resolves the upstream cause",
-                "It improves their self-regulation",
-                "It reduces documentation"
+                "It quietly resolves the true upstream cause",
+                "It steadily improves their own self-regulation",
+                "It reduces the amount of documentation"
               ],
               "correctIndex": 0
             },
@@ -14071,10 +14071,10 @@ export const PREBUILT_COURSES = [
               "concept": "Upstream prevention",
               "question": "Upstream prevention involves doing what with recurring escalation patterns?",
               "options": [
-                "Logging them and closing them faster",
+                "Logging each one and then closing them out much faster",
                 "Feeding them to Product, Billing, or onboarding to stop the cause",
-                "Rotating which handler takes them",
-                "Offering larger discounts each time"
+                "Rotating which support handler picks each of them up",
+                "Offering progressively larger discounts each time"
               ],
               "correctIndex": 1
             },
@@ -14083,10 +14083,10 @@ export const PREBUILT_COURSES = [
               "concept": "After-action review",
               "question": "An after-action review on a recurring escalation primarily asks what?",
               "options": [
-                "Which handler is at fault",
+                "Which specific handler is at fault",
                 "What upstream cause created the heat",
-                "How large a refund to issue",
-                "Whether to change the SLA"
+                "How large a refund the case needs",
+                "Whether to revise the current SLA"
               ],
               "correctIndex": 1
             },
@@ -14095,10 +14095,10 @@ export const PREBUILT_COURSES = [
               "concept": "Self-regulation",
               "question": "Why does the night-shift reality of your Manila team matter for de-escalation quality?",
               "options": [
-                "It shortens handling time",
+                "It meaningfully shortens the overall handling time",
                 "It taxes emotional reserves, so recovery time sustains quality",
-                "It removes the need for coaching",
-                "It eliminates emotional contagion"
+                "It completely removes the ongoing need for coaching",
+                "It fully eliminates all forms of emotional contagion"
               ],
               "correctIndex": 1
             }
@@ -14190,9 +14190,9 @@ export const PREBUILT_COURSES = [
               "question": "What most precisely makes a ticket an escalation?",
               "options": [
                 "The customer used an angry or threatening tone",
-                "The normal owner can't move it forward alone",
-                "It came from an enterprise-tier customer",
-                "It was opened outside business hours"
+                "The normal owner simply can't move it forward alone",
+                "It happened to come from an enterprise-tier customer",
+                "It was opened well outside of normal business hours"
               ],
               "correctIndex": 1
             },
@@ -14213,10 +14213,10 @@ export const PREBUILT_COURSES = [
               "concept": "Ad-hoc vs. designed process",
               "question": "What is the main hidden cost of hero-driven escalation handling?",
               "options": [
-                "Higher software licensing fees each quarter",
-                "Inconsistent outcomes and misused senior time",
-                "Slower internet for the Manila office",
-                "More tickets being opened by customers"
+                "Higher software licensing fees every single quarter",
+                "Inconsistent outcomes and badly misused senior time",
+                "Noticeably slower internet for the whole Manila office",
+                "Many more support tickets being opened by customers"
               ],
               "correctIndex": 1
             },
@@ -14225,10 +14225,10 @@ export const PREBUILT_COURSES = [
               "concept": "Early-catch principle",
               "question": "According to the early-catch principle, the cheapest escalation is the one that is:",
               "options": [
-                "Handled by the most senior person available",
-                "Intercepted while the problem is still small",
-                "Resolved with a partial refund quickly",
-                "Escalated straight to an executive first"
+                "Handled by the single most senior person available",
+                "Intercepted early while the problem is still small",
+                "Resolved quickly with a modest partial refund",
+                "Escalated straight up to a senior executive first"
               ],
               "correctIndex": 1
             },
@@ -14237,10 +14237,10 @@ export const PREBUILT_COURSES = [
               "concept": "Escalation cost",
               "question": "Why is a polite report of a launch-blocking IDX bug still an escalation?",
               "options": [
-                "Because the customer pays a premium price",
-                "Because it carries business risk beyond the owner",
-                "Because polite tickets always outrank angry ones",
-                "Because it was filed by a large brokerage"
+                "Because that customer happens to pay a premium price",
+                "Because it carries real business risk beyond the owner",
+                "Because polite tickets will always outrank angrier ones",
+                "Because it was filed by an unusually large brokerage"
               ],
               "correctIndex": 1
             },
@@ -14249,10 +14249,10 @@ export const PREBUILT_COURSES = [
               "concept": "Ad-hoc vs. designed process",
               "question": "What does a designed process replace?",
               "options": [
-                "The need for any senior involvement at all",
-                "The 'who do I ping?' guesswork with a known path",
-                "All customer anger with customer satisfaction",
-                "The Manila team with automated tooling"
+                "The need for any senior involvement at all whatsoever",
+                "The 'who do I ping?' guesswork with a clear known path",
+                "All customer anger with guaranteed customer satisfaction",
+                "The whole Manila team with fully automated tooling"
               ],
               "correctIndex": 1
             }
@@ -14339,10 +14339,10 @@ export const PREBUILT_COURSES = [
               "concept": "Tier structure",
               "question": "What defines a tier in the escalation ladder?",
               "options": [
-                "The technical intelligence of its members",
-                "The authority and reach of its owner",
-                "The number of tickets it closes weekly",
-                "The physical office the team sits in"
+                "The raw technical intelligence of its members",
+                "The decision authority and reach of its owner",
+                "The number of tickets it manages to close weekly",
+                "The physical office building the team sits in"
               ],
               "correctIndex": 1
             },
@@ -14375,8 +14375,8 @@ export const PREBUILT_COURSES = [
               "concept": "Tier bloat",
               "question": "Why is tier bloat a problem?",
               "options": [
-                "It makes the front line too powerful",
-                "Every added handoff loses context and time",
+                "It makes the whole front line far too powerful",
+                "Every added handoff loses more context and time",
                 "It reduces the number of specialists available",
                 "It forces customers to wait for business hours"
               ],
@@ -14387,10 +14387,10 @@ export const PREBUILT_COURSES = [
               "concept": "Skip-level escalation",
               "question": "When a brokerage owner emails you directly, the recommended response is to:",
               "options": [
-                "Personally resolve it to show responsiveness",
-                "Route it back to the correct tier with context",
-                "Ignore it until the normal process catches up",
-                "Permanently move that account to Tier 3"
+                "Personally resolve it to show your responsiveness",
+                "Route it back to the correct tier along with context",
+                "Ignore it until the normal process finally catches up",
+                "Permanently move that whole account up to Tier 3"
               ],
               "correctIndex": 1
             },
@@ -14399,10 +14399,10 @@ export const PREBUILT_COURSES = [
               "concept": "Tier structure",
               "question": "In the described model, who typically sits at Tier 1?",
               "options": [
-                "The Manila support team on the front line",
-                "Product and Engineering specialists",
-                "The US global support lead alone",
-                "The director handling exec escalations"
+                "The Manila support team out on the front line",
+                "The Product and Engineering specialist group",
+                "The single US global support lead, alone",
+                "The director who handles exec escalations"
               ],
               "correctIndex": 0
             }
@@ -14489,10 +14489,10 @@ export const PREBUILT_COURSES = [
               "concept": "Severity levels",
               "question": "Severity should be ranked primarily by:",
               "options": [
-                "How loudly the customer complains",
+                "How loudly the customer chooses to complain",
                 "Business impact and whether a workaround exists",
-                "The seniority of the assigned agent",
-                "The time of day the ticket arrived"
+                "The overall seniority of the assigned agent",
+                "The particular time of day the ticket arrived"
               ],
               "correctIndex": 1
             },
@@ -14501,10 +14501,10 @@ export const PREBUILT_COURSES = [
               "concept": "Response vs. resolution SLA",
               "question": "What is the difference between a response SLA and a resolution SLA?",
               "options": [
-                "One is for email, the other for phone",
+                "One is only for email, the other only for phone",
                 "Acknowledging ownership vs. actually fixing it",
-                "One applies to Sev-1, the other to Sev-3",
-                "One is internal, the other customer-facing"
+                "One applies to Sev-1, the other only to Sev-3",
+                "One is purely internal, the other customer-facing"
               ],
               "correctIndex": 1
             },
@@ -14537,10 +14537,10 @@ export const PREBUILT_COURSES = [
               "concept": "Business-hours vs. clock-time SLA",
               "question": "Why must an SLA state which clock it runs on?",
               "options": [
-                "Because customers dislike all overnight coverage",
+                "Because customers dislike any and all overnight coverage",
                 "To avoid an unstated clock mismatching expectations",
-                "Because clock-time SLAs are always superior",
-                "So the Manila team can work daytime hours"
+                "Because clock-time SLAs are essentially always superior",
+                "So that the Manila team can work normal daytime hours"
               ],
               "correctIndex": 1
             },
@@ -14639,10 +14639,10 @@ export const PREBUILT_COURSES = [
               "concept": "Context loss",
               "question": "What is the single biggest source of slow, frustrating escalations?",
               "options": [
-                "Too few tiers in the ladder",
-                "Context loss when a ticket changes owners",
-                "Customers filing during the night shift",
-                "Overly aggressive response SLAs"
+                "Having too few tiers in the escalation ladder",
+                "Context loss whenever a ticket changes owners",
+                "Customers filing tickets during the night shift",
+                "Overly aggressive response-time SLA targets"
               ],
               "correctIndex": 1
             },
@@ -14651,10 +14651,10 @@ export const PREBUILT_COURSES = [
               "concept": "Escalation template",
               "question": "Which template line is described as the most valuable?",
               "options": [
-                "The customer's account tier and name",
+                "The customer's account tier and full name",
                 "What is specifically needed from the next owner",
-                "The list of steps already attempted",
-                "The severity level and business impact"
+                "The full list of steps already attempted so far",
+                "The severity level and the business impact"
               ],
               "correctIndex": 1
             },
@@ -14663,10 +14663,10 @@ export const PREBUILT_COURSES = [
               "concept": "Warm vs. cold handoff",
               "question": "When is a warm handoff most appropriate?",
               "options": [
-                "For every routine Sev-3 ticket",
+                "For every single routine Sev-3 ticket",
                 "For a high-stakes Sev-1 churn threat",
-                "Only when the template is incomplete",
-                "Whenever the sender is off shift"
+                "Only when the template is left incomplete",
+                "Whenever the sender happens to be off shift"
               ],
               "correctIndex": 1
             },
@@ -14675,10 +14675,10 @@ export const PREBUILT_COURSES = [
               "concept": "Handoff artifact",
               "question": "What is the purpose of a handoff artifact?",
               "options": [
-                "To document the SLA breach for reporting",
-                "To let the receiver never start from zero",
-                "To replace warm handoffs entirely",
-                "To assign blame for the escalation"
+                "To document the SLA breach for later reporting",
+                "To let the receiver never have to start from zero",
+                "To completely replace warm handoffs entirely",
+                "To assign clear blame for the escalation"
               ],
               "correctIndex": 1
             },
@@ -14789,10 +14789,10 @@ export const PREBUILT_COURSES = [
               "concept": "Leading vs. lagging indicators",
               "question": "Which is a leading indicator of escalations?",
               "options": [
-                "Last quarter's realized churn number",
-                "A spike in cancellation-keyword tickets",
-                "The count of SLAs breached last month",
-                "Total tickets closed year-to-date"
+                "Last quarter's fully realized churn number",
+                "A sudden spike in cancellation-keyword tickets",
+                "The total count of SLAs breached last month",
+                "Total support tickets closed year-to-date"
               ],
               "correctIndex": 1
             },
@@ -14801,10 +14801,10 @@ export const PREBUILT_COURSES = [
               "concept": "Escalation rate",
               "question": "Why can a rising escalation rate be a good sign?",
               "options": [
-                "It means fewer customers are contacting support",
+                "It means far fewer customers are now contacting support",
                 "Triggers may be catching issues Tier 1 used to sit on",
-                "It proves SLAs are being breached less often",
-                "It shows the Manila team is working faster"
+                "It proves the SLAs are being breached much less often",
+                "It shows the Manila team is now working much faster"
               ],
               "correctIndex": 1
             },
@@ -14813,9 +14813,9 @@ export const PREBUILT_COURSES = [
               "concept": "Root-cause loop",
               "question": "What does the root-cause loop add beyond resolving a ticket?",
               "options": [
-                "It assigns the ticket to a higher tier",
+                "It assigns the whole ticket up to a higher tier",
                 "It asks why it escalated and fixes the category",
-                "It measures SLA attainment by severity",
+                "It measures overall SLA attainment by severity",
                 "It converts cold handoffs into warm ones"
               ],
               "correctIndex": 1
@@ -14825,10 +14825,10 @@ export const PREBUILT_COURSES = [
               "concept": "Escalation review cadence",
               "question": "What is the purpose of an escalation review cadence?",
               "options": [
-                "To reassign blame for breached SLAs",
-                "To convert escalations into process improvements",
-                "To replace the ticketing system's dashboards",
-                "To eliminate the need for severity levels"
+                "To reassign the blame for all breached SLAs",
+                "To convert escalations into real process improvements",
+                "To replace the ticketing system's built-in dashboards",
+                "To eliminate the ongoing need for severity levels"
               ],
               "correctIndex": 1
             },
@@ -14837,9 +14837,9 @@ export const PREBUILT_COURSES = [
               "concept": "SLA attainment",
               "question": "SLA attainment measures:",
               "options": [
-                "The number of tiers in the process",
+                "The total number of tiers in the whole process",
                 "The percent of SLAs met, tracked by severity",
-                "How many templates were filled correctly",
+                "How many handoff templates were filled correctly",
                 "The share of tickets from enterprise accounts"
               ],
               "correctIndex": 1
@@ -14947,72 +14947,72 @@ export const PREBUILT_COURSES = [
               "concept": "Involuntary churn",
               "question": "What defines involuntary churn?",
               "options": [
-                "A customer cancels after a bad onboarding experience",
-                "A subscription lapses due to a failed payment the customer never intended",
-                "A customer downgrades to a cheaper plan",
-                "A customer disputes a charge they recognize"
+                "A customer cancels on purpose after a poor onboarding experience",
+                "A customer deliberately downgrades to a cheaper subscription plan",
+                "A customer files a dispute over a charge they clearly recognize",
+                "A subscription lapses due to a failed payment the customer never intended"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Soft decline",
               "question": "Which is an example of a soft decline?",
               "options": [
-                "A card reported lost or stolen",
-                "A permanently closed bank account",
-                "Insufficient funds at the moment of charge",
-                "A 'do not honor' block from the issuer"
+                "Insufficient funds at the moment of the charge",
+                "A card reported lost or stolen to the bank",
+                "A permanently closed bank account on file",
+                "A 'do not honor' block placed by the issuer"
               ],
-              "correctIndex": 2
+              "correctIndex": 0
             },
             {
               "type": "mc",
               "concept": "Hard decline",
               "question": "Why is retrying a hard decline on the same card unwise?",
               "options": [
-                "The refusal is permanent, so it will keep failing",
-                "It always triggers an immediate chargeback",
-                "It doubles the customer's monthly fee",
-                "It converts the charge into a soft decline"
+                "It always triggers an immediate chargeback dispute",
+                "It automatically doubles the customer's monthly fee",
+                "The refusal is permanent, so retries keep failing",
+                "It converts the charge into a recoverable soft decline"
               ],
-              "correctIndex": 0
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Dunning",
               "question": "How does the lesson define dunning?",
               "options": [
-                "Legal action to collect an unpaid debt",
-                "Structured retrying and communication to recover a failed payment",
-                "The process of issuing refunds for disputes",
-                "Onboarding a customer onto autopay"
+                "Filing formal legal action to collect an overdue unpaid debt",
+                "The internal process of issuing refunds for disputed charges",
+                "Onboarding a new customer onto automatic autopay billing",
+                "Structured retrying and communication to recover a failed payment"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Recoverable revenue",
               "question": "What is recoverable revenue?",
               "options": [
-                "Revenue from upselling existing customers to higher tiers",
-                "New revenue from acquiring replacement customers",
                 "The slice of failed-payment dollars a dunning system can win back",
-                "Refunds returned to customers after disputes"
+                "Revenue gained from upselling existing customers to higher tiers",
+                "New revenue from acquiring replacement customers to fill the gap",
+                "Refunds returned to customers after they win their disputes"
               ],
-              "correctIndex": 2
+              "correctIndex": 0
             },
             {
               "type": "mc",
               "concept": "Voluntary churn",
               "question": "Which scenario is voluntary churn?",
               "options": [
-                "An expired card blocks the monthly charge",
-                "A processor hiccup declines an otherwise good card",
-                "A realtor cancels because they no longer see lead ROI",
-                "A bank flags a charge as insufficient funds"
+                "An expired card silently blocks the monthly renewal charge",
+                "A realtor cancels the plan because they no longer see lead ROI",
+                "A processor hiccup wrongly declines an otherwise good card",
+                "A bank flags the charge and reports insufficient funds"
               ],
-              "correctIndex": 2
+              "correctIndex": 1
             }
           ]
         }
@@ -15097,36 +15097,36 @@ export const PREBUILT_COURSES = [
               "concept": "Retry schedule",
               "question": "Why does spacing retries over several days outperform clustering them in one hour?",
               "options": [
-                "It lets you email the customer between each attempt",
+                "It lets you email the customer between each retry attempt made",
+                "It automatically resets the card's expiration date for you",
                 "It catches funds arriving around payday for insufficient-funds declines",
-                "It resets the card's expiry date automatically",
-                "It converts hard declines into soft declines"
+                "It quietly converts stubborn hard declines into soft declines"
               ],
-              "correctIndex": 1
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Account Updater",
               "question": "What does an Account Updater service do?",
               "options": [
-                "Sends the customer a reminder email to update their card",
-                "Automatically fetches new card details when a bank reissues a card",
-                "Caps the number of retry attempts per charge",
-                "Routes hard declines to the collections team"
+                "Sends the customer a reminder email asking them to update their card",
+                "Caps the maximum number of retry attempts allowed per charge",
+                "Routes every hard decline straight to the collections team",
+                "Automatically fetches new card details when a bank reissues a card"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Retry cap",
               "question": "What happens when the retry cap is reached?",
               "options": [
-                "The charge is written off as unrecoverable",
                 "The account escalates from automated retries to the dunning sequence",
-                "The card is automatically replaced by Account Updater",
-                "The retry interval is doubled indefinitely"
+                "The charge is immediately written off as fully unrecoverable",
+                "The card is automatically replaced by the Account Updater service",
+                "The retry interval is simply doubled and repeated indefinitely"
               ],
-              "correctIndex": 1
+              "correctIndex": 0
             },
             {
               "type": "mc",
@@ -15135,34 +15135,34 @@ export const PREBUILT_COURSES = [
               "options": [
                 "It receives the most aggressive retry pattern",
                 "It is retried on a slower weekly schedule",
-                "It skips retries and goes to customer outreach",
-                "It is queued for Account Updater refresh"
+                "It is queued for Account Updater refresh",
+                "It skips retries and goes to customer outreach"
               ],
-              "correctIndex": 2
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Smart retries",
               "question": "What makes a retry 'smart' rather than a dumb loop?",
               "options": [
-                "It always retries exactly five times in the first hour",
+                "It always retries exactly five times within the first hour",
+                "It refunds the customer automatically after each failed attempt",
                 "It picks attempt timing from signals like decline code and network",
-                "It refunds the customer after each failed attempt",
-                "It emails the customer before every retry"
+                "It emails the customer a warning before every single retry"
               ],
-              "correctIndex": 1
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Retry schedule",
               "question": "What is a risk of retrying the same declined card too aggressively?",
               "options": [
-                "Card networks may flag the merchant and costs can rise",
                 "The customer's card expiry is automatically extended",
+                "Card networks may flag the merchant and costs can rise",
                 "The decline is permanently converted to a hard decline",
-                "Account Updater is disabled for that account"
+                "Account Updater is permanently disabled for that account"
               ],
-              "correctIndex": 0
+              "correctIndex": 1
             }
           ]
         }
@@ -15252,48 +15252,48 @@ export const PREBUILT_COURSES = [
               "concept": "Dunning sequence",
               "question": "How should a dunning sequence be structured over time?",
               "options": [
-                "All messages fired within the first two hours",
-                "A single stern notice at the end of the grace period",
-                "Escalating touches spread across the grace period",
-                "One email repeated identically every day"
+                "Escalating touches spread across the full grace period",
+                "All the messages fired within the first two hours",
+                "A single stern notice sent at the end of the grace period",
+                "One identical email repeated every day of the period"
               ],
-              "correctIndex": 2
+              "correctIndex": 0
             },
             {
               "type": "mc",
               "concept": "Message tone",
               "question": "What tone does the lesson recommend for dunning messages?",
               "options": [
-                "Formal and legalistic to convey seriousness",
-                "Warm and solution-oriented, assuming an honest mistake",
-                "Urgent and accusatory to force fast action",
-                "Neutral and jargon-heavy to stay precise"
+                "Formal and legalistic in order to convey seriousness",
+                "Urgent and accusatory in order to force fast action",
+                "Neutral and jargon-heavy in order to stay precise",
+                "Warm and solution-oriented, assuming an honest mistake"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "In-app dunning",
               "question": "Why is in-app dunning valuable for Lofty's realtors?",
               "options": [
-                "It replaces the need for any retry logic",
+                "It completely replaces the need for any retry logic",
+                "It guarantees the card gets updated fully automatically",
                 "It reaches mobile-first users the moment they log in",
-                "It guarantees the card is updated automatically",
-                "It avoids sending any email or SMS ever"
+                "It avoids ever sending any email or SMS message"
               ],
-              "correctIndex": 1
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Call to action",
               "question": "What should each dunning message contain?",
               "options": [
-                "Several billing options and a detailed invoice",
                 "One clear next step to update the payment method",
-                "A guilt-based reminder of the amount owed",
-                "A survey about why the payment failed"
+                "Several billing options plus a detailed invoice",
+                "A guilt-based reminder of the total amount owed",
+                "A detailed survey about why the payment failed"
               ],
-              "correctIndex": 1
+              "correctIndex": 0
             },
             {
               "type": "mc",
@@ -15301,23 +15301,23 @@ export const PREBUILT_COURSES = [
               "question": "What must happen to the sequence when payment succeeds?",
               "options": [
                 "It should send one final confirmation past-due notice",
-                "It should continue to the last scheduled message",
                 "It should stop immediately so no stale message is sent",
-                "It should restart from the first message"
+                "It should continue on to the last scheduled message",
+                "It should simply restart again from the first message"
               ],
-              "correctIndex": 2
+              "correctIndex": 1
             },
             {
               "type": "mc",
               "concept": "Multi-channel outreach",
               "question": "How should channel choice relate to urgency in the sequence?",
               "options": [
-                "SMS first, then email, then nothing",
-                "Only email throughout to stay professional",
-                "Gentle email early, in-app throughout, SMS for the final notice",
-                "All channels blasted simultaneously on day one"
+                "Aggressive SMS first, then email, then no further contact",
+                "Only email throughout the sequence to stay professional",
+                "All available channels blasted simultaneously on day one",
+                "Gentle email early, in-app throughout, SMS for the final notice"
               ],
-              "correctIndex": 2
+              "correctIndex": 3
             }
           ]
         }
@@ -15407,60 +15407,60 @@ export const PREBUILT_COURSES = [
               "concept": "Grace period",
               "question": "What is the risk of setting the grace period too long?",
               "options": [
-                "Customers are cut off before they can pay",
+                "Customers are cut off before they have a chance to pay",
+                "Automated retries stop firing entirely for the account",
                 "You give away weeks of a premium product for free",
-                "Retries stop firing entirely",
-                "Card networks flag the merchant"
+                "Card networks flag the merchant as high risk"
               ],
-              "correctIndex": 1
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Soft dunning",
               "question": "What characterizes soft dunning?",
               "options": [
-                "Immediately suspending the account",
-                "Deleting the customer's stored data",
-                "Reminders that keep full product access",
-                "Charging a late fee on the balance"
+                "Reminders that still keep full product access",
+                "Immediately suspending the entire account",
+                "Deleting the customer's stored account data",
+                "Charging a late fee on the outstanding balance"
               ],
-              "correctIndex": 2
+              "correctIndex": 0
             },
             {
               "type": "mc",
               "concept": "Suspension",
               "question": "Why does Lofty suspend rather than delete a lapsed account?",
               "options": [
-                "Deletion is more expensive to process",
-                "It preserves data so reactivation is instant",
-                "It avoids sending any dunning messages",
-                "Card networks require accounts stay open"
+                "Deletion is far more expensive to fully process",
+                "It avoids having to send any dunning messages",
+                "Card networks require lapsed accounts to stay open",
+                "It preserves data so reactivation is instant"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Hard dunning",
               "question": "How should hard dunning relate to soft dunning in the sequence?",
               "options": [
-                "Hard dunning should come first to force action",
-                "They should run simultaneously from day one",
-                "Soft dunning should precede hard dunning",
-                "Hard dunning replaces the grace period entirely"
+                "Hard dunning should come first to force fast action",
+                "Soft dunning should always come before hard dunning",
+                "They should both run simultaneously from day one",
+                "Hard dunning should replace the grace period entirely"
               ],
-              "correctIndex": 2
+              "correctIndex": 1
             },
             {
               "type": "mc",
               "concept": "Data retention",
               "question": "What is the purpose of data retention during suspension?",
               "options": [
-                "To comply with card-network retry rules",
                 "To keep the account's data intact for easy reactivation",
-                "To let the customer download an invoice",
-                "To extend the grace period automatically"
+                "To comply with mandatory card-network retry rules",
+                "To let the customer download a final invoice later",
+                "To automatically extend the grace period further"
               ],
-              "correctIndex": 1
+              "correctIndex": 0
             },
             {
               "type": "mc",
@@ -15468,11 +15468,11 @@ export const PREBUILT_COURSES = [
               "question": "Why is frictionless reactivation itself a recovery lever?",
               "options": [
                 "It permanently lowers the customer's monthly price",
+                "It completely removes the need for any grace period",
                 "The easier it is to return, the more lapsed customers do",
-                "It removes the need for a grace period",
-                "It converts hard declines into soft declines"
+                "It quietly converts hard declines into soft declines"
               ],
-              "correctIndex": 1
+              "correctIndex": 2
             }
           ]
         }
@@ -15562,72 +15562,72 @@ export const PREBUILT_COURSES = [
               "concept": "Recovery rate",
               "question": "What does the recovery rate measure?",
               "options": [
-                "The share of charges that fail in a period",
-                "The share of failed revenue won back through dunning",
-                "The average number of retries per charge",
-                "The length of the grace period"
+                "The share of all charges that fail within a period",
+                "The average number of retries attempted per charge",
+                "The total length of the configured grace period",
+                "The share of failed revenue won back through dunning"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Failed payment rate",
               "question": "What does the failed payment rate represent?",
               "options": [
+                "The total dollars recovered after retries succeed",
+                "The percentage of lapsed customers who reactivate",
                 "Your exposure — the share of charges that fail",
-                "The dollars recovered after retries",
-                "The percentage of customers who reactivate",
-                "The number of dunning emails sent"
+                "The total number of dunning emails sent out"
               ],
-              "correctIndex": 0
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Recovery ownership",
               "question": "How should ownership of dunning cases be split?",
               "options": [
-                "Humans handle every case regardless of value",
                 "Automation handles volume; a named human handles high-value exceptions",
-                "Executives personally work all lapsed accounts",
-                "No one owns it, since retries are automatic"
+                "Humans manually handle every single case regardless of its value",
+                "Executives personally work through all the lapsed accounts themselves",
+                "No one really owns it, since the retries are all automatic"
               ],
-              "correctIndex": 1
+              "correctIndex": 0
             },
             {
               "type": "mc",
               "concept": "Executive reporting",
               "question": "What framing best earns dunning executive attention?",
               "options": [
-                "A detailed breakdown of retry intervals used",
-                "Recovered revenue compared to acquisition cost",
-                "The tone changes made to dunning emails",
-                "The number of channels in the sequence"
+                "A detailed breakdown of the retry intervals used",
+                "The tone changes recently made to dunning emails",
+                "The total number of channels used in the sequence",
+                "Recovered revenue compared to acquisition cost"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Revenue retention",
               "question": "How does recovering failed payments affect revenue retention?",
               "options": [
-                "It lowers retention by delaying cancellations",
-                "It has no measurable effect on retention",
+                "It lowers retention by simply delaying cancellations",
                 "It lifts retention by preventing involuntary churn",
-                "It only affects new-customer acquisition"
+                "It has no measurable effect on overall retention",
+                "It only affects brand-new customer acquisition"
               ],
-              "correctIndex": 2
+              "correctIndex": 1
             },
             {
               "type": "mc",
               "concept": "Continuous optimization",
               "question": "Why must dunning be optimized continuously for Lofty?",
               "options": [
-                "Card networks require quarterly resets",
+                "Card networks require a mandatory reset every quarter",
+                "The recovery rate stays fixed once it is configured",
                 "Realtors' seasonal income shifts when payments fail and clear",
-                "Recovery rate is fixed once configured",
-                "Executives mandate monthly copy rewrites"
+                "Executives mandate fresh copy rewrites every month"
               ],
-              "correctIndex": 1
+              "correctIndex": 2
             }
           ]
         }
@@ -15716,12 +15716,12 @@ export const PREBUILT_COURSES = [
               "concept": "Involuntary churn",
               "question": "What defines involuntary churn?",
               "options": [
-                "A customer is lost because a payment failed, not because they chose to leave",
-                "A customer downgrades to a cheaper plan after a review",
-                "A customer cancels after a competitor offers a discount",
-                "A customer pauses their account for a seasonal slowdown"
+                "A customer downgrades to a cheaper plan after reviewing their budget",
+                "A customer cancels on purpose after a competitor offers a discount",
+                "A customer pauses their own account for a seasonal business slowdown",
+                "A customer is lost because a payment failed, not because they chose to leave"
               ],
-              "correctIndex": 0
+              "correctIndex": 3
             },
             {
               "type": "mc",
@@ -15729,59 +15729,59 @@ export const PREBUILT_COURSES = [
               "question": "Which loss is an example of voluntary churn?",
               "options": [
                 "A card expires and the renewal charge is declined",
+                "A bank flags a large renewal charge as suspicious",
                 "A realtor cancels because lead ROI felt too thin",
-                "A bank flags a large charge as suspicious",
-                "An account lapses due to insufficient funds"
+                "An account lapses due to temporary insufficient funds"
               ],
-              "correctIndex": 1
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Silent leak",
               "question": "Why is involuntary churn described as a silent leak?",
               "options": [
-                "It only occurs during specific seasonal windows",
-                "It is always larger than voluntary churn in every business",
                 "It rarely surfaces as a complaint and hides inside aggregate churn",
+                "It only occurs during a few specific seasonal windows each year",
+                "It is always larger than voluntary churn in every business",
                 "It is reported separately by the finance team every month"
               ],
-              "correctIndex": 2
+              "correctIndex": 0
             },
             {
               "type": "mc",
               "concept": "Recoverable revenue",
               "question": "Why is much involuntary churn considered recoverable revenue?",
               "options": [
-                "The customers negotiated a lower price before leaving",
+                "The customers actively negotiated a lower price before leaving",
+                "Many of those customers still want the product and left by accident",
                 "The revenue is automatically credited back by the processor",
-                "Sales has already re-signed those accounts on new terms",
-                "Many of those customers still want the product and left by accident"
+                "Sales has already re-signed all those accounts on new terms"
               ],
-              "correctIndex": 3
+              "correctIndex": 1
             },
             {
               "type": "mc",
               "concept": "Payment failure",
               "question": "According to the lesson, the fix for involuntary churn lives mainly in which function?",
               "options": [
-                "Billing operations",
-                "The Sales team",
                 "Product management",
-                "The website team"
+                "The Sales team",
+                "The website team",
+                "Billing operations"
               ],
-              "correctIndex": 0
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Voluntary churn",
               "question": "Why do voluntary and involuntary churn require different fixes?",
               "options": [
-                "Voluntary churn only affects enterprise accounts",
-                "One is a decision fixed with value; the other is an accident fixed with billing systems",
-                "Involuntary churn can never be recovered once it happens",
-                "They are actually the same problem measured two ways"
+                "One is a decision fixed with value, the other an accident fixed with billing",
+                "Voluntary churn only ever affects large enterprise accounts, not others",
+                "Involuntary churn can never be recovered at all once it happens to occur",
+                "They are actually the exact same problem simply measured two different ways"
               ],
-              "correctIndex": 1
+              "correctIndex": 0
             }
           ]
         }
@@ -15867,72 +15867,72 @@ export const PREBUILT_COURSES = [
               "concept": "Soft decline",
               "question": "What is a soft decline?",
               "options": [
-                "A permanent refusal that requires a brand-new card",
+                "A permanent refusal that requires an entirely brand-new card",
+                "A chargeback formally filed by the customer's own bank",
                 "A temporary failure the same card may clear on a later retry",
-                "A chargeback filed by the customer's bank",
-                "A refund issued after a billing dispute"
+                "A refund issued to the customer after a billing dispute"
               ],
-              "correctIndex": 1
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Hard decline",
               "question": "Which decline reason is a hard decline?",
               "options": [
-                "Insufficient funds",
-                "Transaction velocity flag",
-                "Card reported lost or stolen",
-                "Issuer system timeout"
+                "A card reported lost or stolen",
+                "Temporary insufficient funds",
+                "A transaction velocity flag",
+                "A brief issuer system timeout"
               ],
-              "correctIndex": 2
+              "correctIndex": 0
             },
             {
               "type": "mc",
               "concept": "Expired card",
               "question": "Why is an expired card described as predictable?",
               "options": [
-                "Banks announce expirations to merchants in advance",
-                "It only happens to enterprise accounts",
-                "The processor automatically replaces the card",
-                "Every card carries a printed expiration date known ahead of time"
+                "Banks announce upcoming expirations to merchants well in advance",
+                "It only ever happens to a handful of enterprise accounts",
+                "Every card carries a printed expiration date known ahead of time",
+                "The processor automatically replaces the card before it expires"
               ],
-              "correctIndex": 3
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Decline code",
               "question": "What role does the decline code play in recovery?",
               "options": [
-                "It is the diagnostic that classifies a failure as retry-worthy or needing a new card",
-                "It sets the price of the customer's next renewal",
-                "It determines the customer's overall health score",
-                "It records which CSM owns the account"
+                "It sets the final price of the customer's next subscription renewal",
+                "It determines the customer's overall account health score rating",
+                "It records exactly which CSM currently owns and manages the account",
+                "The diagnostic that classifies a failure as retry-worthy or needing a new card"
               ],
-              "correctIndex": 0
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Insufficient funds",
               "question": "Why is insufficient funds best handled by retrying rather than requesting a new card?",
               "options": [
-                "The card is permanently closed and cannot be reused",
                 "It is a soft, timing-driven failure the same card may later clear",
-                "The issuer has blocked all future charges on the card",
-                "The customer has already asked to cancel the account"
+                "The card is permanently closed and can no longer be reused",
+                "The issuer has permanently blocked all future charges on the card",
+                "The customer has already formally asked to cancel the account"
               ],
-              "correctIndex": 1
+              "correctIndex": 0
             },
             {
               "type": "mc",
               "concept": "Issuer",
               "question": "In a card transaction, what is the issuer?",
               "options": [
-                "The software vendor that stores the card number",
-                "The merchant collecting the subscription payment",
+                "The software vendor that securely stores the card number",
                 "The bank that issued the card and approves or declines the charge",
-                "The regulatory body that sets card-network rules"
+                "The merchant that collects the monthly subscription payment",
+                "The regulatory body that writes and sets card-network rules"
               ],
-              "correctIndex": 2
+              "correctIndex": 1
             }
           ]
         }
@@ -16013,72 +16013,72 @@ export const PREBUILT_COURSES = [
               "concept": "Account updater",
               "question": "What does an account updater service do?",
               "options": [
+                "It automatically refunds customers whose charges were declined",
+                "It raises the customer's available credit limit before a charge",
                 "It automatically refreshes stored card details when a bank reissues a card",
-                "It refunds customers whose charges were declined",
-                "It raises the customer's credit limit before a charge",
-                "It disputes chargebacks on the merchant's behalf"
+                "It automatically disputes chargebacks on the merchant's behalf"
               ],
-              "correctIndex": 0
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Pre-dunning",
               "question": "What is pre-dunning?",
               "options": [
-                "Retrying a failed charge multiple times in one day",
-                "Reaching out before a known upcoming failure to prevent it",
-                "Suspending an account the moment a payment fails",
-                "Offering a discount to a customer who already cancelled"
+                "Retrying a single failed charge multiple times in one day",
+                "Suspending an account the very moment a payment fails",
+                "Offering a discount to a customer who already cancelled",
+                "Reaching out before a known upcoming failure to prevent it"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Card-on-file",
               "question": "What is a card-on-file?",
               "options": [
-                "A one-time card used only for a single purchase",
-                "A physical card mailed to the customer by the merchant",
                 "The saved payment method a business charges for recurring billing",
-                "A backup card the processor issues automatically"
+                "A one-time card used only for a single individual purchase",
+                "A physical card mailed to the customer by the merchant",
+                "A backup card the payment processor issues automatically"
               ],
-              "correctIndex": 2
+              "correctIndex": 0
             },
             {
               "type": "mc",
               "concept": "Prevention rate",
               "question": "What does a prevention rate measure?",
               "options": [
-                "The total revenue lost to voluntary cancellations",
-                "The number of retries attempted per failed charge",
-                "The average time to resolve a billing dispute",
-                "The share of potential failures stopped before they occur"
+                "The total revenue lost to voluntary customer cancellations",
+                "The share of potential failures stopped before they occur",
+                "The number of retries attempted for each failed charge",
+                "The average time taken to resolve a billing dispute"
               ],
-              "correctIndex": 3
+              "correctIndex": 1
             },
             {
               "type": "mc",
               "concept": "Proactive outreach",
               "question": "Why is proactive outreach gentler on the relationship than post-failure dunning?",
               "options": [
-                "Nothing has broken yet, so there is no urgency or defensiveness",
                 "It is always sent by a senior executive rather than support",
-                "It includes an automatic discount on the next renewal",
-                "It legally prevents the customer from cancelling"
+                "It includes an automatic discount applied on the next renewal",
+                "It legally prevents the customer from cancelling at all",
+                "Nothing has broken yet, so there is no urgency or defensiveness"
               ],
-              "correctIndex": 0
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Account updater",
               "question": "According to the lesson, how should prevention and recovery be sequenced?",
               "options": [
-                "Recovery first, because prevention is more expensive",
-                "Only one should ever be used, never both together",
+                "Recovery first, because prevention is far more expensive",
                 "Prevention first, so recovery handles only what slips through",
+                "Only one of them should ever be used, never both together",
                 "They must both be launched in the same week or neither works"
               ],
-              "correctIndex": 2
+              "correctIndex": 1
             }
           ]
         }
@@ -16159,72 +16159,72 @@ export const PREBUILT_COURSES = [
               "concept": "Smart retry",
               "question": "What makes a retry a smart retry?",
               "options": [
-                "It re-attempts the charge every hour until it clears",
+                "It re-attempts the charge every single hour until it finally clears",
+                "It retries only the hard declines and ignores all soft ones",
                 "It times re-attempts based on why the charge failed and caps them",
-                "It retries only hard declines and ignores soft ones",
-                "It doubles the charge amount on each new attempt"
+                "It doubles the charge amount on each and every new attempt"
               ],
-              "correctIndex": 1
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Grace period",
               "question": "What is the purpose of a grace period?",
               "options": [
-                "To permanently lower the customer's subscription price",
-                "To retry the failed card at a higher amount",
                 "To keep service alive for a window after a failure before suspension",
-                "To immediately delete the account once a payment fails"
+                "To permanently lower the customer's monthly subscription price",
+                "To retry the failed card again at a higher charge amount",
+                "To immediately delete the entire account once a payment fails"
               ],
-              "correctIndex": 2
+              "correctIndex": 0
             },
             {
               "type": "mc",
               "concept": "Win-back",
               "question": "When does a win-back attempt occur?",
               "options": [
-                "Before the first charge is ever attempted",
-                "During the free trial before billing starts",
-                "Only while the card is still valid and active",
-                "After the account has already lapsed, as a later re-engagement"
+                "Before the very first charge is ever attempted at all",
+                "During the free trial period before any billing starts",
+                "After the account has already lapsed, as a later re-engagement",
+                "Only while the card on file is still valid and active"
               ],
-              "correctIndex": 3
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Multi-channel outreach",
               "question": "Why is multi-channel outreach recommended for dunning realtors?",
               "options": [
-                "A phone-first agent may ignore email but tap an in-app alert",
-                "It lets the merchant charge the card more frequently",
+                "It lets the merchant charge the card much more frequently",
                 "Regulations require at least three channels for every notice",
-                "It removes the need to offer a one-tap update link"
+                "It removes any need to offer a one-tap payment update link",
+                "A phone-first agent may ignore email but tap an in-app alert"
               ],
-              "correctIndex": 0
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Dunning sequence",
               "question": "According to the lesson, how should dunning message tone progress?",
               "options": [
-                "Every message uses identical wording for consistency",
-                "It starts threatening to create urgency immediately",
                 "Early messages are gentle and helpful, later ones clarify the consequence",
-                "Only the final message is ever sent to the customer"
+                "Every message uses the exact same identical wording for consistency",
+                "It starts out threatening in order to create urgency immediately",
+                "Only the very final message is ever actually sent to the customer"
               ],
-              "correctIndex": 2
+              "correctIndex": 0
             },
             {
               "type": "mc",
               "concept": "Smart retry",
               "question": "Why are blind daily retries discouraged?",
               "options": [
-                "They cost the customer a fee on every attempt",
-                "They burn issuer goodwill and can get a merchant flagged",
+                "They cost the customer an extra fee on every single attempt",
                 "They automatically convert soft declines into hard declines",
-                "They are illegal in most card networks"
+                "They are outright illegal across most major card networks",
+                "They burn issuer goodwill and can get a merchant flagged"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             }
           ]
         }
@@ -16305,24 +16305,24 @@ export const PREBUILT_COURSES = [
               "concept": "Failed payment rate",
               "question": "What does the failed payment rate measure?",
               "options": [
-                "The share of attempted charges that decline over a period",
                 "The share of failed charges that are later recovered",
-                "The total revenue kept by saved accounts",
-                "The number of dunning emails sent per account"
+                "The total revenue ultimately kept by all saved accounts",
+                "The share of attempted charges that decline over a period",
+                "The total number of dunning emails sent per account"
               ],
-              "correctIndex": 0
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Recovery rate",
               "question": "The recovery rate captures charges won back through which combination?",
               "options": [
-                "Only smart retries, excluding any outreach",
-                "Prevention, retries, and dunning combined",
-                "Only prevention via the account updater",
-                "Only win-back attempts after an account lapses"
+                "Prevention, retries, and dunning working combined",
+                "Only smart retries, entirely excluding any outreach",
+                "Only prevention done via the account updater service",
+                "Only win-back attempts made after an account lapses"
               ],
-              "correctIndex": 1
+              "correctIndex": 0
             },
             {
               "type": "mc",
@@ -16330,47 +16330,47 @@ export const PREBUILT_COURSES = [
               "question": "In the suggested split, who owns daily execution of the failed-charge queue?",
               "options": [
                 "The US MidMarket Client Success team",
-                "The Sr. Billing Specialist alone",
                 "The Manila billing and collections team",
-                "The website product manager"
+                "The Sr. Billing Specialist working alone",
+                "The website product management team"
               ],
-              "correctIndex": 2
+              "correctIndex": 1
             },
             {
               "type": "mc",
               "concept": "Executive reporting",
               "question": "Why report recovery results as recovered ARR to executives?",
               "options": [
-                "Decline codes are the metric leaders most want to track",
-                "ARR is required by card-network regulations",
-                "It removes the need to measure the failed payment rate",
-                "Executives act on dollars, and it reframes billing as a retention lever"
+                "Decline codes are the one metric that leaders most want to track",
+                "ARR reporting is strictly required by card-network regulations",
+                "Executives act on dollars, and it reframes billing as a retention lever",
+                "It removes any need to measure the failed payment rate at all"
               ],
-              "correctIndex": 3
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Failed payment rate",
               "question": "Why should the failed payment rate and recovery rate be sliced by cause?",
               "options": [
-                "The aggregate hides which fix — prevention or retry — to invest in next",
-                "Card networks require cause-level reporting by law",
-                "Slicing lets you charge customers different prices",
-                "It replaces the need to assign any owner"
+                "Card networks legally require detailed cause-level reporting",
+                "Slicing the data lets you charge different customers different prices",
+                "It completely replaces the need to assign any owner at all",
+                "The aggregate hides which fix — prevention or retry — to invest in next"
               ],
-              "correctIndex": 0
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Recovered ARR",
               "question": "Why is recovered ARR described as especially efficient revenue?",
               "options": [
+                "It requires no new sale to earn, so it is highly efficient",
                 "It comes from raising prices on existing accounts",
-                "It requires no new sale to earn",
-                "It is guaranteed to exceed voluntary-churn losses",
+                "It is guaranteed to always exceed voluntary-churn losses",
                 "It is collected automatically without any team effort"
               ],
-              "correctIndex": 1
+              "correctIndex": 0
             }
           ]
         }
@@ -16455,72 +16455,72 @@ export const PREBUILT_COURSES = [
               "concept": "Recoverable revenue",
               "question": "Which situation best fits the definition of recoverable revenue?",
               "options": [
-                "A customer who cancels after deciding Lofty isn't worth it",
-                "A failed payment that will clear on retry",
-                "A prospect who never signed a contract",
-                "A discount you voluntarily offered at signup"
+                "A customer who cancels because Lofty no longer feels worth it",
+                "A prospect who never even signed an initial contract",
+                "A discount you voluntarily offered to a customer at signup",
+                "A failed payment that will very likely clear on a retry"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Billing as customer experience",
               "question": "Why does the lesson treat a confusing invoice as a retention risk?",
               "options": [
-                "It slows down the accounting close",
-                "It violates real estate licensing rules",
                 "It erodes customer trust and can trigger cancellation",
-                "It increases the cost of processing payments"
+                "It noticeably slows down the monthly accounting close",
+                "It directly violates real estate licensing rules",
+                "It increases the overall cost of processing payments"
               ],
-              "correctIndex": 2
+              "correctIndex": 0
             },
             {
               "type": "mc",
               "concept": "Involuntary vs voluntary churn",
               "question": "What primarily distinguishes involuntary from voluntary churn?",
               "options": [
+                "Whether the customer is a small SMB or a large enterprise account",
+                "Whether the invoice was billed monthly or billed annually",
                 "Whether a payment mechanism failed versus a deliberate choice to leave",
-                "Whether the customer is SMB or enterprise",
-                "Whether the invoice was monthly or annual",
-                "Whether the charge exceeded a certain dollar amount"
+                "Whether the charge exceeded a certain fixed dollar amount"
               ],
-              "correctIndex": 0
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Billing lifecycle",
               "question": "According to the lesson, the billing lifecycle spans which range?",
               "options": [
-                "Only invoicing through payment collection",
-                "Only disputes through refunds",
-                "Only quote through contract signing",
-                "Quote and contract through reconciliation and reporting"
+                "Only invoicing all the way through payment collection",
+                "Quote and contract through reconciliation and reporting",
+                "Only disputes through to processing refunds",
+                "Only from the quote through to contract signing"
               ],
-              "correctIndex": 3
+              "correctIndex": 1
             },
             {
               "type": "mc",
               "concept": "Billing-CS partnership",
               "question": "What is described as your main point of leverage as Director over billing?",
               "options": [
-                "Processing invoices personally each cycle",
-                "Designing the billing lifecycle across your teams",
-                "Approving every individual refund",
-                "Manually reviewing every failed card"
+                "Processing all the invoices personally each cycle",
+                "Personally approving every single individual refund",
+                "Manually reviewing every single failed card charge",
+                "Designing the billing lifecycle across your teams"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Billing as customer experience",
               "question": "For a solo agent paying out of commission income, how does a surprise charge tend to feel?",
               "options": [
-                "A minor administrative note",
-                "A welcome reminder to budget",
-                "A broken promise worth escalating over",
-                "An expected part of the subscription"
+                "A broken promise that is worth escalating over",
+                "A minor administrative note to file away",
+                "A welcome reminder to help them budget ahead",
+                "An expected, routine part of the subscription"
               ],
-              "correctIndex": 2
+              "correctIndex": 0
             }
           ]
         }
@@ -16605,72 +16605,72 @@ export const PREBUILT_COURSES = [
               "concept": "Proration",
               "question": "What does correct proration require when a customer downgrades mid-cycle?",
               "options": [
-                "Charging a full period at the new lower rate",
+                "Charging a full period upfront at the new lower rate",
+                "Waiting until the very next renewal to adjust it",
                 "Crediting the unused portion of the higher plan",
-                "Waiting until the next renewal to adjust",
-                "Charging a cancellation fee for the change"
+                "Charging a small cancellation fee for the change"
               ],
-              "correctIndex": 1
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Accounts receivable aging",
               "question": "What does an AR aging report primarily organize?",
               "options": [
-                "Unpaid invoices grouped by how overdue they are",
-                "Customers ranked by lifetime value",
-                "Refunds issued by billing agent",
-                "Disputes grouped by card network"
+                "Customers ranked by their total lifetime value",
+                "Refunds issued and grouped by billing agent",
+                "Disputes grouped by the card network involved",
+                "Unpaid invoices grouped by how overdue they are"
               ],
-              "correctIndex": 0
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Days sales outstanding",
               "question": "According to the lesson, rising DSO is an early warning of what?",
               "options": [
-                "That refunds are being processed too quickly",
-                "That onboarding is taking longer than planned",
                 "That invoice quality is slipping or a segment is under financial stress",
-                "That too many customers are upgrading at once"
+                "That customer refunds are being processed far too quickly lately",
+                "That customer onboarding is taking much longer than planned",
+                "That far too many customers are upgrading their plans at once"
               ],
-              "correctIndex": 2
+              "correctIndex": 0
             },
             {
               "type": "mc",
               "concept": "Invoice-to-cash cycle",
               "question": "The invoice-to-cash cycle covers which span?",
               "options": [
-                "Only the moment a card is charged",
-                "Only overdue invoices in collections",
-                "From lead generation to contract signature",
-                "From issuing an invoice to cash received and reconciled"
-              ],
-              "correctIndex": 3
-            },
-            {
-              "type": "mc",
-              "concept": "Invoice accuracy",
-              "question": "Why does the lesson call invoice accuracy the cheapest lever?",
-              "options": [
-                "It lets you raise prices without notice",
-                "A single wrong line turns a routine payment into a dispute, ticket, and delay",
-                "It removes the need for an AR aging report",
-                "It eliminates the need for proration entirely"
+                "Only the single moment a card is actually charged",
+                "From issuing an invoice to cash received and reconciled",
+                "Only the overdue invoices sitting in collections",
+                "From lead generation all the way to contract signature"
               ],
               "correctIndex": 1
             },
             {
               "type": "mc",
               "concept": "Invoice accuracy",
+              "question": "Why does the lesson call invoice accuracy the cheapest lever?",
+              "options": [
+                "It quietly lets you raise your prices without giving any notice",
+                "It removes the ongoing need for an AR aging report entirely",
+                "It completely eliminates the need for any proration entirely",
+                "A single wrong line turns a routine payment into a dispute and a delay"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "type": "mc",
+              "concept": "Invoice accuracy",
               "question": "How should a Lofty invoice present charges for a brokerage, per the lesson?",
               "options": [
-                "As one combined lump sum for simplicity",
-                "As an estimate to be reconciled later",
                 "Separating core subscription, onboarding, and add-ons in plain language",
-                "Only showing the total due with no line items"
+                "As a single combined lump sum, purely for the sake of simplicity",
+                "As a rough estimate meant to be reconciled later on down the line",
+                "Only showing the total amount due with no itemized line items"
               ],
-              "correctIndex": 2
+              "correctIndex": 0
             }
           ]
         }
@@ -16755,72 +16755,72 @@ export const PREBUILT_COURSES = [
               "concept": "Friendly fraud",
               "question": "Which best describes friendly fraud?",
               "options": [
-                "A stolen card used without the owner's knowledge",
-                "A dispute of a charge the customer actually authorized but forgot",
-                "A billing error where you charged the wrong amount",
-                "A refund requested through your support team"
+                "A stolen card used entirely without the owner's knowledge",
+                "A billing error where you accidentally charged the wrong amount",
+                "A simple refund requested through your normal support team",
+                "A dispute of a charge the customer actually authorized but forgot"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Representment",
               "question": "According to the lesson, how do you win representment?",
               "options": [
-                "By arguing persuasively with the bank",
-                "By offering the customer a partial refund",
                 "By submitting documentation proving the charge was legitimate",
-                "By escalating to the card network's executives"
+                "By arguing persuasively and directly with the customer's bank",
+                "By offering the disputing customer a partial refund",
+                "By escalating the case to the card network's executives"
               ],
-              "correctIndex": 2
+              "correctIndex": 0
             },
             {
               "type": "mc",
               "concept": "Chargeback lifecycle",
               "question": "Why is a chargeback described as worse than a plain refund?",
               "options": [
-                "It always doubles the disputed amount",
-                "It cannot ever be contested",
-                "It immediately cancels the customer's account",
-                "It adds network fees and is tracked against your chargeback rate"
+                "It always automatically doubles the total disputed amount",
+                "It can never be contested or reversed under any circumstances",
+                "It adds network fees and is tracked against your chargeback rate",
+                "It immediately cancels the customer's entire account"
               ],
-              "correctIndex": 3
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Dispute rate",
               "question": "What does a rising dispute rate most likely indicate?",
               "options": [
-                "A systemic cause such as an unclear descriptor or slow support",
-                "That refunds are being denied correctly",
-                "That DSO is improving across the book",
-                "That proration is being applied too generously"
+                "That customer refunds are being denied entirely correctly",
+                "That your DSO is steadily improving across the whole book",
+                "That proration is being applied far too generously lately",
+                "A systemic cause such as an unclear descriptor or slow support"
               ],
-              "correctIndex": 0
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Chargeback prevention",
               "question": "Which is an example of chargeback prevention from the lesson?",
               "options": [
-                "Submitting usage logs after a dispute is filed",
-                "Accepting the loss on true fraud cases",
                 "A clear, recognizable billing descriptor on statements",
-                "Increasing the price of annual plans"
+                "Submitting detailed usage logs after a dispute is filed",
+                "Simply accepting the loss on all true fraud cases",
+                "Increasing the overall price of all annual plans"
               ],
-              "correctIndex": 2
+              "correctIndex": 0
             },
             {
               "type": "mc",
               "concept": "Chargeback lifecycle",
               "question": "In the chargeback lifecycle, what happens right after the customer disputes the charge?",
               "options": [
-                "You automatically win if you have a contract",
+                "You automatically win it if you simply have a contract",
+                "The customer's account is immediately permanently closed",
                 "The card network provisionally pulls the funds back",
-                "The customer's account is permanently closed",
-                "The dispute is converted into a standard refund"
+                "The dispute is instantly converted into a standard refund"
               ],
-              "correctIndex": 1
+              "correctIndex": 2
             }
           ]
         }
@@ -16905,72 +16905,72 @@ export const PREBUILT_COURSES = [
               "concept": "Refund vs credit",
               "question": "What is the key difference between a refund and a service credit?",
               "options": [
-                "A refund is larger while a credit is always smaller",
-                "A refund returns cash and exits revenue while a credit applies to future charges",
-                "A refund keeps money in the relationship while a credit does not",
-                "A refund requires manager approval while a credit never does"
+                "A refund returns cash and exits revenue; a credit applies to future charges",
+                "A refund is always larger in size while a credit is always smaller",
+                "A refund keeps the money inside the relationship while a credit does not",
+                "A refund requires manager approval while a credit never requires it"
               ],
-              "correctIndex": 1
+              "correctIndex": 0
             },
             {
               "type": "mc",
               "concept": "Margin leakage",
               "question": "Why is margin leakage hard to catch case by case?",
               "options": [
-                "It only occurs on annual plans",
-                "It shows up clearly on every single invoice",
-                "Each concession looks trivial and justifiable in the moment",
-                "It is tracked automatically by the card networks"
+                "It only ever occurs on the longer annual billing plans",
+                "It shows up very clearly on each and every single invoice",
+                "It is tracked fully automatically by the card networks",
+                "Each concession looks trivial and justifiable in the moment"
               ],
-              "correctIndex": 2
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Refund policy",
               "question": "According to the lesson, what is the real enemy in refund handling?",
               "options": [
+                "Customer refunds consistently being processed far too quickly",
+                "Offering service credits instead of straight cash refunds",
                 "Inconsistency between agents that trains customers to escalate",
-                "Refunds being processed too quickly",
-                "Offering credits instead of cash",
-                "Publishing thresholds to the team"
+                "Publishing the approval thresholds openly to the whole team"
               ],
-              "correctIndex": 0
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Service credit as retention tool",
               "question": "How should credits ideally be tied, per the lesson?",
               "options": [
-                "To the highest-value customers only",
-                "To the end of the fiscal quarter",
-                "To whichever agent handles the ticket",
-                "To a specific reason and a forward commitment"
+                "To only the very highest-value paying customers",
+                "To a specific reason and a forward commitment",
+                "To the very end of the current fiscal quarter",
+                "To whichever agent happens to handle the ticket"
               ],
-              "correctIndex": 3
+              "correctIndex": 1
             },
             {
               "type": "mc",
               "concept": "Goodwill adjustment",
               "question": "Which best describes a goodwill adjustment?",
               "options": [
-                "A full cash refund of the entire invoice",
-                "A partial concession like waiving a fee to resolve a complaint",
-                "A chargeback initiated by the customer's bank",
-                "A permanent discount applied to all future invoices"
+                "A full cash refund covering the entire original invoice",
+                "A formal chargeback initiated by the customer's own bank",
+                "A permanent discount applied to all of their future invoices",
+                "A partial concession like waiving a fee to resolve a complaint"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Service credit as retention tool",
               "question": "Why can a service credit cost less than a cash refund for a customer you want to keep?",
               "options": [
-                "Credits are always half the size of refunds",
-                "Credits are reimbursed by the card network",
                 "It keeps the customer active and can cost less than losing their lifetime value",
-                "Credits never count as margin leakage"
+                "Service credits are always exactly half the size of typical cash refunds",
+                "Service credits are always fully reimbursed later by the card network",
+                "Service credits never once count as any form of margin leakage at all"
               ],
-              "correctIndex": 2
+              "correctIndex": 0
             }
           ]
         }
@@ -17055,72 +17055,72 @@ export const PREBUILT_COURSES = [
               "concept": "Recovery rate",
               "question": "What does recovery rate measure?",
               "options": [
+                "The average number of days taken to collect an invoice",
+                "The total number of customer disputes filed each month",
                 "The share of at-risk or failed revenue you actually get back",
-                "The average days to collect an invoice",
-                "The number of disputes filed per month",
-                "The total refunds issued by reason"
+                "The total dollar value of refunds issued by reason"
               ],
-              "correctIndex": 0
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Revenue recovery engine",
               "question": "What distinguishes a revenue recovery engine from firefighting?",
               "options": [
-                "It requires no metrics to operate",
-                "It runs on triggers and ownership whether or not anyone is watching",
-                "It is handled entirely by the Director personally",
-                "It only activates during quarterly reviews"
+                "It requires absolutely no metrics of any kind to operate",
+                "It is handled entirely by the Director acting personally",
+                "It only ever activates during the quarterly business reviews",
+                "It runs on triggers and ownership whether or not anyone is watching"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Executive reporting",
               "question": "According to the lesson, what should an executive billing readout lead with?",
               "options": [
-                "A full accounts receivable aging table",
-                "A list of every refund by agent",
                 "Revenue at risk, revenue recovered, and what you're changing",
-                "The detailed dispute evidence packages"
+                "A complete, detailed accounts receivable aging table",
+                "A long list of every single refund issued by agent",
+                "The full detailed dispute evidence packages you filed"
               ],
-              "correctIndex": 2
+              "correctIndex": 0
             },
             {
               "type": "mc",
               "concept": "Net revenue retention impact",
               "question": "Why does connecting recovered revenue to net revenue retention matter?",
               "options": [
-                "It lowers the dispute rate automatically",
-                "It replaces the need for a billing dashboard",
-                "It eliminates involuntary churn entirely",
-                "It ties billing to the number executives watch and earns it investment"
+                "It automatically lowers the overall dispute rate on its own",
+                "It ties billing to the number executives watch and earns it investment",
+                "It fully replaces the need for any billing dashboard at all",
+                "It completely eliminates involuntary churn across the board"
               ],
-              "correctIndex": 3
+              "correctIndex": 1
             },
             {
               "type": "mc",
               "concept": "Billing dashboard",
               "question": "What role does the billing dashboard play relative to executive reporting?",
               "options": [
-                "It replaces the executive readout entirely",
-                "It supplies operational detail that the exec story summarizes into dollars",
-                "It is shown to executives instead of a summary",
-                "It tracks only refunds and nothing else"
+                "It completely replaces the executive readout in its entirety",
+                "It is shown directly to the executives in place of any summary",
+                "It tracks only the refunds issued and absolutely nothing else",
+                "It supplies operational detail that the exec story summarizes into dollars"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Recovery rate",
               "question": "Why does the lesson say a recovery rate must be compared over time and across segments?",
               "options": [
-                "Because card networks require it monthly",
-                "Because it is otherwise impossible to calculate",
                 "Because a single number alone can't tell you whether a change actually helped",
-                "Because executives only accept segmented data"
+                "Because the card networks strictly require it every single month",
+                "Because it would otherwise be completely impossible to calculate",
+                "Because executives will only ever accept fully segmented data"
               ],
-              "correctIndex": 2
+              "correctIndex": 0
             }
           ]
         }
@@ -17209,24 +17209,24 @@ export const PREBUILT_COURSES = [
               "concept": "Relational database",
               "question": "What makes a database 'relational'?",
               "options": [
+                "It stores only plain numbers and calendar dates",
+                "It automatically emails full reports every morning",
                 "Its tables reference each other through shared IDs",
-                "It stores only numbers and dates",
-                "It automatically emails reports each morning",
-                "It can only be read by one person at a time"
+                "It can only ever be read by one person at a time"
               ],
-              "correctIndex": 0
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Table",
               "question": "In the lesson's analogy, a single table is most like what?",
               "options": [
-                "One tab in a spreadsheet",
                 "An entire filing cabinet",
+                "One tab in a spreadsheet",
                 "A single email message",
                 "A printed quarterly report"
               ],
-              "correctIndex": 0
+              "correctIndex": 1
             },
             {
               "type": "mc",
@@ -17234,35 +17234,35 @@ export const PREBUILT_COURSES = [
               "question": "One enterprise brokerage account stored in the customers table is represented as a what?",
               "options": [
                 "A column",
+                "A whole database",
                 "A row",
-                "A separate database",
-                "A join key only"
+                "A join key"
               ],
-              "correctIndex": 1
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Self-service analytics",
               "question": "According to the lesson, the main point of a director learning SQL is to do what?",
               "options": [
-                "Replace the data team's analysts",
-                "Build production billing systems",
                 "Cut the lag between a question and a defensible answer",
-                "Memorize every column in the warehouse"
+                "Completely replace the entire data team's analysts",
+                "Build and maintain production billing systems yourself",
+                "Memorize every single column in the whole warehouse"
               ],
-              "correctIndex": 2
+              "correctIndex": 0
             },
             {
               "type": "mc",
               "concept": "Read-only access",
               "question": "What does read-only access guarantee?",
               "options": [
-                "Your queries run faster than anyone else's",
-                "You see data before your team does",
-                "You can edit records but not delete them",
-                "Your queries cannot change or delete any data"
+                "Your queries always run faster than anyone else's",
+                "Your queries cannot change or delete any data",
+                "You get to see the data before your team does",
+                "You can edit existing records but not delete them"
               ],
-              "correctIndex": 3
+              "correctIndex": 1
             },
             {
               "type": "mc",
@@ -17270,11 +17270,11 @@ export const PREBUILT_COURSES = [
               "question": "In the customers table, plan_tier and created_date are examples of what?",
               "options": [
                 "Rows",
-                "Columns",
                 "Databases",
-                "Tickets"
+                "Tickets",
+                "Columns"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             }
           ]
         }
@@ -17355,36 +17355,36 @@ export const PREBUILT_COURSES = [
               "concept": "SELECT clause",
               "question": "In a query, which clause names the columns you want returned?",
               "options": [
+                "SELECT",
                 "FROM",
                 "WHERE",
-                "SELECT",
                 "AND"
               ],
-              "correctIndex": 2
+              "correctIndex": 0
             },
             {
               "type": "mc",
               "concept": "FROM clause",
               "question": "What does the FROM clause specify?",
               "options": [
-                "Which table to read from",
                 "Which columns to return",
                 "How many rows to keep",
+                "Which table to read from",
                 "Which operator to compare with"
               ],
-              "correctIndex": 0
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "WHERE filter",
               "question": "If a query has no WHERE clause, what does it return?",
               "options": [
-                "An error message",
-                "Only the first row",
-                "Nothing at all",
-                "Every row in the table"
+                "A syntax error message",
+                "Every row in the table",
+                "Only the very first row",
+                "Nothing at all is returned"
               ],
-              "correctIndex": 3
+              "correctIndex": 1
             },
             {
               "type": "mc",
@@ -17392,35 +17392,35 @@ export const PREBUILT_COURSES = [
               "question": "Which keyword narrows results by requiring both conditions to be true?",
               "options": [
                 "OR",
-                "AND",
                 "SELECT",
-                "FROM"
+                "FROM",
+                "AND"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "AND / OR logic",
               "question": "Why does `plan_tier = 'enterprise' AND plan_tier = 'midmarket'` return zero rows?",
               "options": [
-                "Enterprise is spelled incorrectly",
-                "AND is not a valid SQL keyword",
                 "One account cannot be both tiers at once",
-                "Text values must be numbers"
+                "The word enterprise is spelled incorrectly",
+                "AND is simply not a valid SQL keyword",
+                "Text values always must be numbers instead"
               ],
-              "correctIndex": 2
+              "correctIndex": 0
             },
             {
               "type": "mc",
               "concept": "Comparison operators",
               "question": "In a WHERE condition, how should a text value like enterprise be written?",
               "options": [
-                "In single quotes",
                 "As a plain number",
                 "In all capital letters",
+                "In single quotes",
                 "With a leading equals sign"
               ],
-              "correctIndex": 0
+              "correctIndex": 2
             }
           ]
         }
@@ -17501,12 +17501,12 @@ export const PREBUILT_COURSES = [
               "concept": "Aggregate functions",
               "question": "What does an aggregate function do?",
               "options": [
+                "Renames all of the columns in a given table",
+                "Sorts all the rows from newest to oldest",
                 "Collapses many rows into a single summary value",
-                "Renames the columns in a table",
-                "Sorts rows from newest to oldest",
-                "Copies a table to a new database"
+                "Copies an entire table into a new database"
               ],
-              "correctIndex": 0
+              "correctIndex": 2
             },
             {
               "type": "mc",
@@ -17514,47 +17514,47 @@ export const PREBUILT_COURSES = [
               "question": "Which function would you use to total up monthly recurring revenue across accounts?",
               "options": [
                 "COUNT",
-                "SUM",
                 "AVG",
-                "GROUP"
+                "GROUP",
+                "SUM"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "GROUP BY",
               "question": "To get one account count per plan tier, which clause do you need?",
               "options": [
+                "GROUP BY",
                 "HAVING",
                 "WHERE",
-                "GROUP BY",
                 "SELECT *"
               ],
-              "correctIndex": 2
+              "correctIndex": 0
             },
             {
               "type": "mc",
               "concept": "HAVING",
               "question": "Why can't you filter on COUNT(*) using WHERE?",
               "options": [
-                "COUNT is not a real function",
-                "WHERE only works on text columns",
-                "WHERE can only appear once per query",
-                "WHERE runs before grouping, so it can't see the aggregate"
+                "COUNT is simply not a real SQL function that exists",
+                "WHERE runs before grouping, so it can't see the aggregate",
+                "WHERE only ever works on plain text-based columns",
+                "WHERE can only appear one single time per query"
               ],
-              "correctIndex": 3
+              "correctIndex": 1
             },
             {
               "type": "mc",
               "concept": "NULL handling",
               "question": "How does a NULL value in the mrr column affect AVG(mrr)?",
               "options": [
+                "It counts as a zero within the computed average",
+                "It causes the whole entire query to fail",
                 "It is ignored and not included in the average",
-                "It counts as a zero in the average",
-                "It causes the whole query to fail",
-                "It doubles the resulting average"
+                "It doubles the final resulting average value"
               ],
-              "correctIndex": 0
+              "correctIndex": 2
             },
             {
               "type": "mc",
@@ -17562,11 +17562,11 @@ export const PREBUILT_COURSES = [
               "question": "If you SELECT plan_tier and COUNT(*), what must be true about plan_tier?",
               "options": [
                 "It must be wrapped in an aggregate",
-                "It must appear in the GROUP BY",
                 "It must be removed from the SELECT",
-                "It must be a numeric column"
+                "It must be a numeric column",
+                "It must appear in the GROUP BY"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             }
           ]
         }
@@ -17647,72 +17647,72 @@ export const PREBUILT_COURSES = [
               "concept": "Primary and foreign keys",
               "question": "What is a foreign key?",
               "options": [
+                "A special password used to unlock an entire database",
+                "A column that must always contain only NULL values",
                 "A column in one table that refers to another table's primary key",
-                "A password that unlocks a database",
-                "A column that must always be NULL",
-                "The first column in every table"
+                "Always the very first column in every single table"
               ],
-              "correctIndex": 0
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Inner join",
               "question": "What does an inner join return?",
               "options": [
-                "Every row from the left table only",
-                "Only rows with a match in both tables",
+                "Every single row from the left table only",
                 "All rows from both tables regardless of match",
-                "Only the rows with NULL values"
+                "Only the rows that have NULL values in them",
+                "Only rows that have a match in both tables"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Left join",
               "question": "To list all customers including those with no subscription, which join fits?",
               "options": [
+                "Left join",
                 "Inner join",
                 "An aggregate join",
-                "Left join",
                 "No join at all"
               ],
-              "correctIndex": 2
+              "correctIndex": 0
             },
             {
               "type": "mc",
               "concept": "Join fan-out",
               "question": "A revenue total balloons after joining customers to tickets. What is the likely cause?",
               "options": [
-                "The WHERE clause is missing",
-                "Text values weren't quoted",
-                "The primary key was deleted",
-                "Fan-out multiplied a customer's row by their ticket count"
+                "The query's entire WHERE clause is completely missing",
+                "Fan-out multiplied a customer's row by their ticket count",
+                "The text values in it simply weren't quoted properly",
+                "The table's primary key was accidentally deleted"
               ],
-              "correctIndex": 3
+              "correctIndex": 1
             },
             {
               "type": "mc",
               "concept": "Primary and foreign keys",
               "question": "Why is business data split across multiple tables in the first place?",
               "options": [
+                "Because a single table can only ever hold up to 1,000 rows",
+                "So that each separate team gets its own fully private database",
                 "To avoid repeating a customer's details on every related record",
-                "Because a table can hold only 1,000 rows",
-                "So each team gets its own private database",
-                "To make queries impossible without a password"
+                "To make running any queries impossible without a password"
               ],
-              "correctIndex": 0
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Left join",
               "question": "In a left join, what fills the right-side columns when there is no match?",
               "options": [
-                "A zero",
-                "NULL",
-                "The previous row's value",
-                "An error"
+                "A zero value",
+                "The prior row value",
+                "A raised query error",
+                "The value NULL"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             }
           ]
         }
@@ -17793,72 +17793,72 @@ export const PREBUILT_COURSES = [
               "concept": "Sanity checking",
               "question": "According to the lesson, a result that's off by 10x most likely indicates what?",
               "options": [
+                "A genuinely surprising underlying business truth",
+                "That the entire database is somehow broken",
                 "A fan-out, missing filter, or NULL problem",
-                "A genuinely surprising business truth",
-                "That the database is broken",
-                "That you need read-write access"
+                "That you now need full read-write access"
               ],
-              "correctIndex": 0
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Date range filtering",
               "question": "To capture exactly one quarter, the lesson recommends which boundary style?",
               "options": [
-                "Using BETWEEN with no time zone check",
-                "Using <= on the last day of the period",
                 "Using < on the day after the period ends",
-                "Skipping the date filter entirely"
+                "Using BETWEEN with no time zone check at all",
+                "Using <= on the very last day of the period",
+                "Skipping the date filter step entirely"
               ],
-              "correctIndex": 2
+              "correctIndex": 0
             },
             {
               "type": "mc",
               "concept": "Sorting and limiting",
               "question": "What does ORDER BY mrr DESC LIMIT 10 give you?",
               "options": [
-                "The average mrr across all accounts",
-                "A total count of accounts",
-                "Ten random accounts",
-                "The top ten accounts by mrr"
+                "The average mrr across every account",
+                "The top ten accounts ranked by mrr",
+                "A total running count of all accounts",
+                "Ten completely random accounts"
               ],
-              "correctIndex": 3
+              "correctIndex": 1
             },
             {
               "type": "mc",
               "concept": "Definitional alignment",
               "question": "Two correct queries return different 'active customer' counts. The most likely cause is what?",
               "options": [
-                "One query has a typo in a keyword",
-                "They use different definitions of 'active'",
-                "The database changed between runs",
-                "One used SELECT * and the other didn't"
+                "One query simply has a typo in a keyword",
+                "The database changed in between the two runs",
+                "One used SELECT * while the other one didn't",
+                "They use different definitions of 'active'"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Knowing your limits",
               "question": "Which question should you route to the data team rather than self-serve?",
               "options": [
-                "A quick gut-check on one segment's ticket count",
-                "A rough count of enterprise accounts for your own notes",
                 "Board-reported revenue blended across multiple systems",
-                "A one-off list of accounts with no subscription"
+                "A quick gut-check on a single segment's ticket count",
+                "A rough count of enterprise accounts for your own notes",
+                "A one-off list of all accounts with no subscription"
               ],
-              "correctIndex": 2
+              "correctIndex": 0
             },
             {
               "type": "mc",
               "concept": "Sanity checking",
               "question": "What does the lesson say you should never do?",
               "options": [
-                "Use ORDER BY on a result",
-                "Join more than two tables at once",
-                "Query a read-only replica",
-                "Present a figure you haven't cross-checked at least once"
+                "Use an ORDER BY clause on a returned query result",
+                "Join more than two separate tables all at once",
+                "Present a figure you haven't cross-checked at least once",
+                "Run a query against a read-only replica database"
               ],
-              "correctIndex": 3
+              "correctIndex": 2
             }
           ]
         }
@@ -17947,12 +17947,12 @@ export const PREBUILT_COURSES = [
               "concept": "Net Revenue Retention",
               "question": "Which metric can exceed 100%?",
               "options": [
-                "Gross Revenue Retention",
-                "Net Revenue Retention",
-                "Logo Retention",
-                "Downgrade rate"
+                "Gross Revenue Retention (GRR)",
+                "Logo Retention rate by account",
+                "Gross monthly downgrade rate",
+                "Net Revenue Retention (NRR)"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
@@ -17973,8 +17973,8 @@ export const PREBUILT_COURSES = [
               "options": [
                 "At the start of the period",
                 "At the end of the period",
-                "At the midpoint average",
-                "When new logos sign"
+                "At the rolling midpoint average",
+                "At the moment new logos sign on"
               ],
               "correctIndex": 0
             },
@@ -17983,10 +17983,10 @@ export const PREBUILT_COURSES = [
               "concept": "Logo Retention",
               "question": "What does logo retention count?",
               "options": [
-                "Dollars retained",
-                "Expansion added",
+                "Recurring dollars retained",
+                "Expansion revenue added on",
                 "Customer accounts retained",
-                "Downgrades avoided"
+                "Contract downgrades avoided"
               ],
               "correctIndex": 2
             },
@@ -17995,10 +17995,10 @@ export const PREBUILT_COURSES = [
               "concept": "Gross Revenue Retention",
               "question": "For the same cohort, GRR is always which relative to NRR?",
               "options": [
-                "Greater than NRR",
+                "Always greater than the NRR",
                 "Less than or equal to NRR",
-                "Exactly double NRR",
-                "Unrelated to NRR"
+                "Exactly double the NRR figure",
+                "Fully unrelated to the NRR"
               ],
               "correctIndex": 1
             },
@@ -18007,10 +18007,10 @@ export const PREBUILT_COURSES = [
               "concept": "Expansion Revenue",
               "question": "In the worked example, what raised NRR above GRR?",
               "options": [
-                "A large brokerage churn",
-                "Two seat downgrades",
+                "A large brokerage churn event",
+                "Two mid-cycle seat downgrades",
                 "Agent upgrades to add-ons",
-                "New logos signed"
+                "Several new logos signed on"
               ],
               "correctIndex": 2
             }
@@ -18097,10 +18097,10 @@ export const PREBUILT_COURSES = [
               "concept": "Health Score",
               "question": "What is a customer health score?",
               "options": [
-                "A single usage metric",
+                "A single raw product usage metric",
                 "A composite blend of multiple signals",
-                "A cancellation confirmation",
-                "A raw ticket count"
+                "A cancellation confirmation record",
+                "A raw count of open support tickets"
               ],
               "correctIndex": 1
             },
@@ -18121,10 +18121,10 @@ export const PREBUILT_COURSES = [
               "concept": "Lagging Indicator",
               "question": "Which best describes a lagging indicator?",
               "options": [
-                "Predicts before the outcome",
+                "Predicts the outcome before it happens",
                 "Confirms an outcome already happened",
-                "Weights adoption heavily",
-                "Triggers a red playbook"
+                "Weights product adoption heavily",
+                "Triggers a red-tier playbook response"
               ],
               "correctIndex": 1
             },
@@ -18133,10 +18133,10 @@ export const PREBUILT_COURSES = [
               "concept": "Adoption Signal",
               "question": "For a platform like Lofty, the strongest single retention predictor is usually?",
               "options": [
-                "Adoption of paid features",
+                "Adoption of the paid feature set",
                 "The friendliness of the last call",
-                "The number of logos signed",
-                "The size of the invoice"
+                "The number of new logos signed",
+                "The size of the monthly invoice"
               ],
               "correctIndex": 0
             },
@@ -18145,9 +18145,9 @@ export const PREBUILT_COURSES = [
               "concept": "Health Tiering",
               "question": "What does health tiering primarily produce?",
               "options": [
-                "A longer denominator",
+                "A longer revenue denominator",
                 "Playbooks triggered by tier",
-                "A single blended score",
+                "A single blended health score",
                 "A lagging retention figure"
               ],
               "correctIndex": 1
@@ -18157,10 +18157,10 @@ export const PREBUILT_COURSES = [
               "concept": "Health Score",
               "question": "Why combine adoption with support and billing signals?",
               "options": [
-                "To exclude expansion revenue",
+                "To exclude all expansion revenue from it",
                 "So one noisy signal does not swing the score",
-                "To make the score lagging",
-                "To count logos instead of dollars"
+                "To make the composite score purely lagging",
+                "To count logos retained instead of dollars"
               ],
               "correctIndex": 1
             }
@@ -18250,7 +18250,7 @@ export const PREBUILT_COURSES = [
                 "Top-rating percentage only",
                 "Promoters minus detractors",
                 "Average effort across tickets",
-                "Renewals minus churn"
+                "Renewals minus churn count"
               ],
               "correctIndex": 1
             },
@@ -18271,10 +18271,10 @@ export const PREBUILT_COURSES = [
               "concept": "Customer Effort Score",
               "question": "CES captures which dimension?",
               "options": [
-                "Likelihood to recommend",
+                "Overall likelihood to recommend",
                 "How hard a task was to complete",
-                "Satisfaction with an outcome",
-                "Percentage of promoters"
+                "Satisfaction with the outcome",
+                "The percentage of promoters"
               ],
               "correctIndex": 1
             },
@@ -18283,10 +18283,10 @@ export const PREBUILT_COURSES = [
               "concept": "Net Promoter Score",
               "question": "What range can NPS take?",
               "options": [
-                "0 to 100",
-                "1 to 5",
+                "0 to 100 points",
+                "1 to 5 stars",
                 "-100 to +100",
-                "0 to 10"
+                "0 to 10 points"
               ],
               "correctIndex": 2
             },
@@ -18296,9 +18296,9 @@ export const PREBUILT_COURSES = [
               "question": "Why be cautious about a moving survey score?",
               "options": [
                 "Respondents may not be a random sample",
-                "Scores always trend upward",
-                "Effort predicts satisfaction",
-                "NPS excludes passives"
+                "Scores always trend steadily upward",
+                "Effort reliably predicts satisfaction",
+                "NPS surveys exclude all passives"
               ],
               "correctIndex": 0
             },
@@ -18307,10 +18307,10 @@ export const PREBUILT_COURSES = [
               "concept": "Transactional vs. Relationship Survey",
               "question": "Which is a relationship survey run periodically?",
               "options": [
-                "Post-ticket CSAT",
-                "Post-onboarding CSAT",
-                "Quarterly NPS",
-                "Post-dispute CES"
+                "Post-ticket CSAT pulse",
+                "Post-onboarding CSAT check",
+                "Quarterly relationship NPS",
+                "Post-dispute CES survey"
               ],
               "correctIndex": 2
             }
@@ -18397,10 +18397,10 @@ export const PREBUILT_COURSES = [
               "concept": "Time-to-Value",
               "question": "Time-to-value measures what?",
               "options": [
-                "Accounts carried per CSM",
-                "Time to a customer's first meaningful outcome",
-                "Promoters minus detractors",
-                "Reopened ticket percentage"
+                "The accounts each CSM carries at once",
+                "Time to the customer's first real outcome",
+                "Survey promoters minus survey detractors",
+                "The reopened support ticket percentage"
               ],
               "correctIndex": 1
             },
@@ -18409,12 +18409,12 @@ export const PREBUILT_COURSES = [
               "concept": "Coverage Ratio",
               "question": "A coverage ratio is primarily used to plan what?",
               "options": [
-                "Survey response rates",
                 "CSM capacity and staffing",
-                "Expansion pricing",
-                "Net revenue retention"
+                "Survey response rate targets",
+                "Expansion and upsell pricing",
+                "Net revenue retention goals"
               ],
-              "correctIndex": 1
+              "correctIndex": 0
             },
             {
               "type": "mc",
@@ -18433,10 +18433,10 @@ export const PREBUILT_COURSES = [
               "concept": "Product Adoption Rate",
               "question": "Product adoption rate should be tracked at what level?",
               "options": [
-                "Overall login activity",
-                "The feature level",
-                "The invoice level",
-                "The survey level"
+                "Overall account login activity",
+                "The individual feature level",
+                "The monthly invoice level",
+                "The periodic survey level"
               ],
               "correctIndex": 1
             },
@@ -18445,22 +18445,22 @@ export const PREBUILT_COURSES = [
               "concept": "Metric Gaming",
               "question": "How do you protect a speed metric from gaming?",
               "options": [
-                "Raise the speed target",
-                "Pair it with a quality metric",
+                "Raise the speed target higher",
                 "Remove the target entirely",
-                "Report it less often"
+                "Report the metric less often",
+                "Pair it with a quality metric"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Coverage Ratio",
               "question": "Which segment should carry a lighter coverage ratio?",
               "options": [
-                "High-touch MidMarket",
-                "Pooled SMB",
-                "Self-serve trials",
-                "Churned accounts"
+                "High-touch MidMarket accounts",
+                "Pooled low-touch SMB accounts",
+                "Self-serve trial accounts",
+                "Recently churned accounts"
               ],
               "correctIndex": 0
             }
@@ -18547,10 +18547,10 @@ export const PREBUILT_COURSES = [
               "concept": "North-Star Metric",
               "question": "What is a north-star metric?",
               "options": [
-                "A weekly support target",
+                "A weekly support ticket volume target",
                 "The single outcome the org exists to move",
-                "A survey response rate",
-                "A per-CSM account count"
+                "A quarterly survey response rate metric",
+                "A per-CSM account load count figure"
               ],
               "correctIndex": 1
             },
@@ -18559,12 +18559,12 @@ export const PREBUILT_COURSES = [
               "concept": "Segmentation",
               "question": "Segmentation of metrics primarily prevents what?",
               "options": [
-                "Slow review cadence",
-                "Blended averages hiding opposing trends",
-                "Premature ticket closes",
-                "Excluding new logos"
+                "A slow and infrequent review cadence",
+                "Premature closing of support tickets",
+                "Accidentally excluding all new logos",
+                "Blended averages hiding opposing trends"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
@@ -18583,10 +18583,10 @@ export const PREBUILT_COURSES = [
               "concept": "Metric Hierarchy",
               "question": "In the hierarchy, what sits beneath the north-star?",
               "options": [
-                "Only the invoice total",
+                "Only the total monthly invoice amount figure",
                 "Leading and operational metrics that feed it",
-                "A second north-star",
-                "Response bias figures"
+                "A competing second north-star metric below",
+                "Survey response bias adjustment figures"
               ],
               "correctIndex": 1
             },
@@ -18595,22 +18595,22 @@ export const PREBUILT_COURSES = [
               "concept": "Executive Reporting",
               "question": "What builds executive trust in a metrics update?",
               "options": [
-                "A wall of vanity metrics",
+                "Presenting a whole wall of vanity metrics",
+                "Quietly hiding the weakest segment away",
                 "Volunteering the counter-metric or caveat",
-                "Hiding the weakest segment",
-                "Reporting only the north-star"
+                "Reporting only the headline north-star"
               ],
-              "correctIndex": 1
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "North-Star Metric",
               "question": "Why can't a north-star metric stand alone?",
               "options": [
-                "It is a leading indicator",
+                "It is purely a fast leading indicator",
                 "It is a lagging outcome needing predictors",
-                "It excludes enterprise accounts",
-                "It changes weekly"
+                "It wrongly excludes all enterprise accounts",
+                "It tends to change from week to week"
               ],
               "correctIndex": 1
             }
@@ -18703,8 +18703,8 @@ export const PREBUILT_COURSES = [
               "options": [
                 "Score which accounts are likely to churn next quarter",
                 "Resolve customer questions before a human handles them",
-                "Draft personalized renewal emails for CSMs",
-                "Summarize sales calls into structured notes"
+                "Draft personalized renewal emails on behalf of CSMs",
+                "Summarize recorded sales calls into structured notes"
               ],
               "correctIndex": 1
             },
@@ -18713,10 +18713,10 @@ export const PREBUILT_COURSES = [
               "concept": "Generative vs predictive AI",
               "question": "A tool that estimates the probability an account will churn is an example of what?",
               "options": [
-                "Generative AI",
-                "Support deflection content",
-                "Predictive AI",
-                "A CSM copilot"
+                "Generative AI content drafting",
+                "Support deflection tooling",
+                "Predictive AI churn scoring",
+                "A CSM productivity copilot"
               ],
               "correctIndex": 2
             },
@@ -18726,9 +18726,9 @@ export const PREBUILT_COURSES = [
               "question": "Which pillar addresses learning about at-risk accounts too late?",
               "options": [
                 "Predictive health scoring",
-                "Support deflection",
-                "CSM productivity",
-                "Generative drafting"
+                "Automated support deflection",
+                "CSM productivity tooling",
+                "Generative content drafting"
               ],
               "correctIndex": 0
             },
@@ -18738,8 +18738,8 @@ export const PREBUILT_COURSES = [
               "question": "According to the lesson, why does the augmentation framing matter beyond messaging?",
               "options": [
                 "It lowers the cost of the AI tools themselves",
-                "It guarantees the AI outputs are accurate",
-                "It removes the need for human review",
+                "It guarantees that the AI outputs are accurate",
+                "It removes the need for any human review at all",
                 "It determines whether teams actually adopt the AI"
               ],
               "correctIndex": 3
@@ -18750,8 +18750,8 @@ export const PREBUILT_COURSES = [
               "question": "A CSM spending hours writing call notes is which kind of problem?",
               "options": [
                 "A predictive health scoring problem",
-                "A support deflection problem",
-                "A CSM productivity problem",
+                "A support deflection workflow problem",
+                "A CSM productivity and time problem",
                 "A generative-versus-predictive problem"
               ],
               "correctIndex": 2
@@ -18762,9 +18762,9 @@ export const PREBUILT_COURSES = [
               "question": "Why does generative AI specifically require human review, per the lesson?",
               "options": [
                 "It can be wrong yet sound fluent and convincing",
-                "It always needs more historical data than predictive AI",
-                "It only works on numeric data",
-                "It cannot create new content reliably"
+                "It always needs more historical data than models",
+                "It only ever works on purely numeric data",
+                "It cannot create genuinely new content reliably"
               ],
               "correctIndex": 0
             }
@@ -18864,9 +18864,9 @@ export const PREBUILT_COURSES = [
               "question": "Containment rate measures which of the following?",
               "options": [
                 "The reduction in total ticket volume year over year",
-                "The average time to resolve a human ticket",
-                "The share of AI conversations that end without a human handoff",
-                "The percentage of articles that are up to date"
+                "The average time it takes to resolve a human ticket",
+                "The share of AI chats ending without a human handoff",
+                "The percentage of help articles that are up to date"
               ],
               "correctIndex": 2
             },
@@ -18875,10 +18875,10 @@ export const PREBUILT_COURSES = [
               "concept": "Knowledge base quality",
               "question": "Why is deflection quality downstream of knowledge base quality?",
               "options": [
-                "The AI grounds answers in your docs, so stale docs produce stale answers",
-                "The AI ignores docs and relies on its own training data",
-                "Containment rate is calculated directly from article counts",
-                "Better docs reduce the need for escalation guardrails entirely"
+                "The AI grounds answers in your docs, so stale docs give stale answers",
+                "The AI ignores your docs and relies only on its training data",
+                "Containment rate is calculated directly from raw article counts",
+                "Better docs remove the need for escalation guardrails entirely"
               ],
               "correctIndex": 0
             },
@@ -18889,8 +18889,8 @@ export const PREBUILT_COURSES = [
               "options": [
                 "The widest possible set of topics for the bot",
                 "The exit path that hands upset customers to a human",
-                "The containment-rate dashboard",
-                "The retraining schedule for the model"
+                "The containment-rate reporting dashboard view",
+                "The periodic retraining schedule for the model"
               ],
               "correctIndex": 1
             },
@@ -18899,10 +18899,10 @@ export const PREBUILT_COURSES = [
               "concept": "Deflection rate",
               "question": "Which questions does the lesson call safest for AI deflection?",
               "options": [
-                "Billing disputes and refund requests",
-                "ROI complaints about lead conversion",
-                "High-volume, low-emotion, well-documented how-to questions",
-                "Emotionally charged cancellation threats"
+                "Billing disputes and complex refund requests",
+                "ROI complaints about weak lead conversion rates",
+                "High-volume, low-emotion, well-documented how-tos",
+                "Emotionally charged cancellation threats and pleas"
               ],
               "correctIndex": 2
             },
@@ -18911,10 +18911,10 @@ export const PREBUILT_COURSES = [
               "concept": "Containment rate",
               "question": "Rising containment alongside falling CSAT most likely signals what?",
               "options": [
-                "The knowledge base has become too large",
+                "The knowledge base has simply become too large",
                 "The AI is deflecting customers who needed a human",
                 "The deflection rate is being measured incorrectly",
-                "The escalation guardrail is firing too often"
+                "The escalation guardrail is firing far too often"
               ],
               "correctIndex": 1
             }
@@ -19001,10 +19001,10 @@ export const PREBUILT_COURSES = [
               "concept": "Rules-based vs predictive scoring",
               "question": "How does predictive scoring differ from rules-based scoring?",
               "options": [
-                "It uses no account data, only support tickets",
-                "It learns signal weights from historical data instead of a human assigning them",
-                "It only reports lagging indicators",
-                "It replaces the need for any CSM judgment"
+                "It uses no account usage data, only raw support tickets",
+                "It learns signal weights from data, not from a human",
+                "It only ever reports slow lagging churn indicators",
+                "It fully replaces the need for human CSM judgment"
               ],
               "correctIndex": 1
             },
@@ -19013,10 +19013,10 @@ export const PREBUILT_COURSES = [
               "concept": "Leading vs lagging indicators",
               "question": "Which of these is a leading indicator of churn?",
               "options": [
-                "A submitted cancellation request",
-                "A missed renewal date",
-                "Power-dialer usage dropping for three weeks",
-                "A finalized non-renewal notice"
+                "A formally submitted cancellation request",
+                "A recently missed renewal date deadline",
+                "Power-dialer usage dropping for weeks",
+                "A finalized non-renewal notice on file"
               ],
               "correctIndex": 2
             },
@@ -19026,9 +19026,9 @@ export const PREBUILT_COURSES = [
               "question": "What is the failure mode the lesson warns about with health scores?",
               "options": [
                 "A beautiful dashboard that nobody acts on",
-                "Too many leading indicators in the model",
-                "Overriding the model too frequently",
-                "Using account tenure as an input"
+                "Too many leading indicators inside the model",
+                "Overriding the model far too frequently",
+                "Using raw account tenure as a model input"
               ],
               "correctIndex": 0
             },
@@ -19037,8 +19037,8 @@ export const PREBUILT_COURSES = [
               "concept": "False positives and precision",
               "question": "In this lesson, precision refers to what?",
               "options": [
-                "How quickly the score updates each day",
-                "How many signals feed the health score",
+                "How quickly the score updates on each day",
+                "How many separate signals feed the score",
                 "How current the underlying documentation is",
                 "How often flagged accounts are truly at risk"
               ],
@@ -19049,10 +19049,10 @@ export const PREBUILT_COURSES = [
               "concept": "Health score inputs",
               "question": "Which set of signals does the lesson list as feeding a predictive health score?",
               "options": [
-                "Only the account's payment status",
+                "Only the account's current payment status",
                 "Only the number of open support tickets",
                 "Product usage, engagement, and account facts",
-                "Only the CSM's manual gut-feel rating"
+                "Only the CSM's manual gut-feel rating alone"
               ],
               "correctIndex": 2
             },
@@ -19061,10 +19061,10 @@ export const PREBUILT_COURSES = [
               "concept": "False positives and precision",
               "question": "How should a CSM treat a red flag on a loyal agent who is simply quiet in the off-season?",
               "options": [
-                "Accept the score as a final verdict and forecast churn",
+                "Accept the score as final and forecast churn",
                 "Override the model using context the data lacks",
                 "Immediately escalate the account to an executive",
-                "Delete the account from the health model"
+                "Delete the account from the health model entirely"
               ],
               "correctIndex": 1
             }
@@ -19152,20 +19152,20 @@ export const PREBUILT_COURSES = [
               "question": "According to the lesson, a CSM copilot's role is to do what?",
               "options": [
                 "Decide account strategy on the CSM's behalf",
-                "Remove typing and searching between decisions",
-                "Replace the CSM on customer calls",
-                "Set the renewal price automatically"
+                "Replace the CSM entirely on customer calls",
+                "Set the account renewal price automatically",
+                "Remove typing and searching between decisions"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Call and meeting summaries",
               "question": "Why does the lesson call summaries the fastest win?",
               "options": [
-                "They require no historical data to work",
+                "They require almost no historical data to work",
                 "They eliminate the need for escalation guardrails",
-                "They feed downstream tasks like CRM notes and follow-up emails",
+                "They feed downstream tasks like CRM notes and emails",
                 "They are the only generative feature that never errs"
               ],
               "correctIndex": 2
@@ -19175,9 +19175,9 @@ export const PREBUILT_COURSES = [
               "concept": "Draft-and-review workflow",
               "question": "What is the core habit for handling generative outputs that reach customers?",
               "options": [
-                "Send the AI draft directly to save time",
+                "Send the raw AI draft straight out to save time",
                 "Draft with AI, then have a human edit and approve",
-                "Use only predictive AI for customer emails",
+                "Use only predictive AI for all customer emails",
                 "Have a second AI approve the first AI's draft"
               ],
               "correctIndex": 1
@@ -19187,10 +19187,10 @@ export const PREBUILT_COURSES = [
               "concept": "Draft-and-review workflow",
               "question": "Why is the review step especially critical for Lofty's customer base?",
               "options": [
-                "Realtors rarely read their emails",
-                "An AI error about plan inclusions can create a real billing dispute",
-                "The copilot cannot generate text without approval",
-                "Summaries are always inaccurate for realtors"
+                "Realtors rarely read the emails that you send them",
+                "An AI error on plan inclusions can spark a billing dispute",
+                "The copilot cannot generate any text without approval",
+                "AI summaries are almost always inaccurate for realtors"
               ],
               "correctIndex": 1
             },
@@ -19199,10 +19199,10 @@ export const PREBUILT_COURSES = [
               "concept": "QBR and renewal prep",
               "question": "Beyond saving time, what benefit does AI-assembled QBR and renewal prep provide?",
               "options": [
-                "It lowers the plan's monthly price",
-                "It removes the need for CSMs entirely",
-                "It raises the performance floor so every CSM walks in prepared",
-                "It guarantees the account will renew"
+                "It lowers the plan's total monthly price for them",
+                "It removes the need for human CSMs almost entirely",
+                "It raises the floor so every CSM walks in prepared",
+                "It guarantees the account will always renew on time"
               ],
               "correctIndex": 2
             },
@@ -19211,12 +19211,12 @@ export const PREBUILT_COURSES = [
               "concept": "Time reclamation",
               "question": "The lesson says reclaimed CSM time should ideally be redirected toward what?",
               "options": [
-                "Closing more inbound support tickets",
                 "Proactive outreach on at-risk accounts",
-                "Attending more internal meetings",
-                "Manually writing call notes again"
+                "Closing more inbound support tickets faster",
+                "Attending more internal team meetings",
+                "Manually writing all call notes again"
               ],
-              "correctIndex": 1
+              "correctIndex": 0
             }
           ]
         }
@@ -19317,60 +19317,60 @@ export const PREBUILT_COURSES = [
               "concept": "Hallucination and guardrails",
               "question": "What is the recommended posture to reduce hallucination?",
               "options": [
+                "Grounded and bounded: answer from your data within scope",
                 "Let the AI answer any question to maximize containment",
-                "Grounded and bounded: answer from your data within a defined scope",
-                "Remove human review to speed up responses",
+                "Remove all human review to speed up the responses",
                 "Feed the AI as much data as possible regardless of scope"
               ],
-              "correctIndex": 1
+              "correctIndex": 0
             },
             {
               "type": "mc",
               "concept": "Human-in-the-loop",
               "question": "How should human-in-the-loop oversight be calibrated?",
               "options": [
-                "Equally heavy on every AI output",
-                "To the stakes — light on internal notes, mandatory on price quotes",
+                "Applied equally heavily on every single AI output",
                 "Only on predictive scores, never on generative text",
-                "Removed once the AI reaches high accuracy"
+                "To the stakes: light on notes, mandatory on quotes",
+                "Removed entirely once the AI reaches high accuracy"
               ],
-              "correctIndex": 1
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Data privacy and scope",
               "question": "What does respecting data scope mean in this lesson?",
               "options": [
-                "Feeding AI everything so it has full context",
-                "Only feeding AI what it needs and knowing where that data goes",
-                "Storing all transcripts in a single shared system",
-                "Letting each team decide data rules independently"
+                "Feeding the AI absolutely everything for full context",
+                "Storing all customer transcripts in one shared system",
+                "Letting each team decide its own data rules independently",
+                "Feeding AI only what it needs and tracking where it goes"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "ROI measurement and baselines",
               "question": "Why is 'the AI handled 50,000 messages' called a vanity metric?",
               "options": [
-                "The number is usually exaggerated by vendors",
+                "The raw number is usually exaggerated by the vendors",
+                "Message volume is nearly impossible to measure well",
                 "It says nothing about resolution quality, cost, or churn",
-                "Message volume is impossible to measure accurately",
                 "It only applies to predictive AI, not generative AI"
               ],
-              "correctIndex": 1
+              "correctIndex": 2
             },
             {
               "type": "mc",
               "concept": "Change management for AI",
               "question": "What does the lesson say carries a broad AI rollout across teams?",
               "options": [
-                "Buying the most advanced AI tool available",
-                "Trust built during the pilot with early adopters",
-                "Mandating adoption on day one for everyone",
-                "Keeping the rollout goals confidential from staff"
+                "Buying the single most advanced AI tool available",
+                "Mandating adoption on day one for every team",
+                "Keeping the rollout goals confidential from staff",
+                "Trust built during the pilot with early adopters"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             }
           ]
         }
@@ -19468,9 +19468,9 @@ export const PREBUILT_COURSES = [
               "question": "The lesson defines the true cost of saying yes to a low-value task as:",
               "options": [
                 "The highest-value work you gave up instead",
-                "The literal minutes the task consumes",
-                "The stress the task adds to your day",
-                "The money spent completing the task"
+                "The literal minutes that the task consumes",
+                "The added stress the task brings to your day",
+                "The money you spend on completing the task"
               ],
               "correctIndex": 0
             },
@@ -19479,10 +19479,10 @@ export const PREBUILT_COURSES = [
               "concept": "The busyness trap",
               "question": "Why does the lesson call a full day of answering tickets potentially unproductive?",
               "options": [
-                "Tickets should always be delegated downward",
+                "Tickets should always be delegated straight downward",
                 "Answering tickets is beneath a director's pay grade",
-                "It generates no measurable data for reporting",
-                "It can leave the org where it started tomorrow"
+                "It generates no measurable data for any reporting",
+                "It can leave the org right where it started tomorrow"
               ],
               "correctIndex": 3
             },
@@ -19503,10 +19503,10 @@ export const PREBUILT_COURSES = [
               "concept": "Director-level scope",
               "question": "How does the lesson say a director's job differs from an individual contributor's?",
               "options": [
-                "Directors complete more tasks each day",
-                "Directors avoid customer-facing work entirely",
-                "Directors focus only on long-term planning",
-                "Directors allocate scarce attention rather than complete tasks"
+                "Directors simply complete far more tasks each day",
+                "Directors avoid all customer-facing work entirely",
+                "Directors focus only on distant long-term planning",
+                "Directors allocate scarce attention, not complete tasks"
               ],
               "correctIndex": 3
             },
@@ -19516,9 +19516,9 @@ export const PREBUILT_COURSES = [
               "question": "In the Tuesday example, what was the real opportunity cost of the interruptions?",
               "options": [
                 "The churn-warning playbook was never built",
-                "Three refunds went unapproved",
-                "A billing escalation was left unresolved",
-                "The website standup ran over time"
+                "Three customer refunds went entirely unapproved",
+                "A billing escalation was left fully unresolved",
+                "The website team standup ran over its time"
               ],
               "correctIndex": 0
             }
@@ -19605,10 +19605,10 @@ export const PREBUILT_COURSES = [
               "concept": "Eisenhower matrix",
               "question": "In the Eisenhower matrix, what should you do with important-but-not-urgent work?",
               "options": [
-                "Delete it to reduce clutter",
-                "Delegate it to a direct report",
+                "Delete it outright to reduce clutter",
+                "Delegate it to a direct report below",
                 "Handle it only once it becomes urgent",
-                "Schedule and protect time for it"
+                "Schedule and protect real time for it"
               ],
               "correctIndex": 3
             },
@@ -19618,7 +19618,7 @@ export const PREBUILT_COURSES = [
               "question": "The lesson says urgency is mainly about:",
               "options": [
                 "Impact on your real goals",
-                "Deadlines and noise",
+                "Deadlines and outside noise",
                 "Long-term strategic value",
                 "Cost and effort required"
               ],
@@ -19629,10 +19629,10 @@ export const PREBUILT_COURSES = [
               "concept": "Impact/effort screen",
               "question": "On an impact/effort screen, a low-impact, high-effort item is best described as:",
               "options": [
-                "A trap to avoid",
-                "A quick win to grab now",
-                "A major bet to plan",
-                "Useful fill-in work"
+                "A costly trap best avoided",
+                "A quick win to grab right now",
+                "A major strategic bet to plan",
+                "Useful low-value fill-in work"
               ],
               "correctIndex": 0
             },
@@ -19641,10 +19641,10 @@ export const PREBUILT_COURSES = [
               "concept": "Weighted scoring",
               "question": "According to the lesson, the hidden benefit of weighted scoring is that:",
               "options": [
-                "It always produces a whole number",
-                "It requires no input from stakeholders",
-                "Its criteria are visible and agreed in advance",
-                "It is faster than every other method"
+                "It always produces a clean whole number",
+                "It requires no input at all from stakeholders",
+                "Its criteria are visible and agreed up front",
+                "It is faster than every other known method"
               ],
               "correctIndex": 2
             },
@@ -19653,10 +19653,10 @@ export const PREBUILT_COURSES = [
               "concept": "The loudest-voice bias",
               "question": "The loudest-voice bias refers to the tendency to prioritize:",
               "options": [
-                "Whichever stakeholder escalated hardest",
-                "The task with the lowest effort",
-                "The most recently completed work",
-                "The item with the clearest deadline"
+                "Whichever stakeholder escalated the hardest",
+                "The task with the very lowest effort cost",
+                "The most recently completed piece of work",
+                "The item with the single clearest deadline"
               ],
               "correctIndex": 0
             },
@@ -19665,9 +19665,9 @@ export const PREBUILT_COURSES = [
               "concept": "Weighted scoring",
               "question": "When is weighted scoring worth its overhead, per the lesson?",
               "options": [
-                "For every routine daily choice",
-                "Only for one-person tasks",
-                "For sorting your personal inbox",
+                "For every small routine daily choice",
+                "Only for simple one-person tasks",
+                "For sorting your own personal inbox",
                 "For high-stakes, contested decisions"
               ],
               "correctIndex": 3
@@ -19756,9 +19756,9 @@ export const PREBUILT_COURSES = [
               "question": "The lesson argues that declining a low-value ask is really:",
               "options": [
                 "Honoring a prior, higher commitment",
-                "A way to avoid extra work",
-                "A sign of poor teamwork",
-                "A temporary stalling tactic"
+                "A simple way to dodge doing extra work",
+                "A clear outward sign of poor teamwork",
+                "A temporary stalling and delay tactic"
               ],
               "correctIndex": 0
             },
@@ -19767,10 +19767,10 @@ export const PREBUILT_COURSES = [
               "concept": "Trade-off framing",
               "question": "Trade-off framing declines a request by:",
               "options": [
-                "Refusing without explanation",
-                "Immediately delegating it elsewhere",
-                "Promising to do it whenever possible",
-                "Making the cost of yes visible so the requester chooses"
+                "Flatly refusing it without any explanation",
+                "Immediately delegating it to someone elsewhere",
+                "Promising to do it whenever it is possible",
+                "Making the cost of yes visible so they choose"
               ],
               "correctIndex": 3
             },
@@ -19779,10 +19779,10 @@ export const PREBUILT_COURSES = [
               "concept": "Deferral over refusal",
               "question": "According to the lesson, what makes a deferral fail and damage trust?",
               "options": [
-                "Giving it a specific date",
+                "Giving it a firm and specific date",
                 "Letting the queue become a black hole",
-                "Explaining the reason for waiting",
-                "Placing it in a visible list"
+                "Explaining the real reason for waiting",
+                "Placing it in a clearly visible list"
               ],
               "correctIndex": 1
             },
@@ -19791,10 +19791,10 @@ export const PREBUILT_COURSES = [
               "concept": "The graceful no",
               "question": "The lesson says what actually damages relationships is:",
               "options": [
-                "The word no itself",
-                "A prompt and clear refusal",
+                "Simply saying the plain word no itself",
+                "A prompt, clear, and direct refusal",
                 "A vague, delayed, or apologetic no",
-                "Explaining your current priorities"
+                "Openly explaining current priorities"
               ],
               "correctIndex": 2
             },
@@ -19803,10 +19803,10 @@ export const PREBUILT_COURSES = [
               "concept": "Protecting capacity",
               "question": "Under a default of deferral, what earns an immediate context switch?",
               "options": [
-                "Any request from a senior leader",
-                "Whatever arrived most recently",
-                "Any task expected to be quick",
-                "A genuine emergency like a revenue-threatening outage"
+                "Any incoming request from a senior leader above",
+                "Whatever happened to arrive the most recently",
+                "Any task that is expected to be fairly quick",
+                "A true emergency like a revenue-threatening outage"
               ],
               "correctIndex": 3
             },
@@ -19815,10 +19815,10 @@ export const PREBUILT_COURSES = [
               "concept": "The strategic yes",
               "question": "In the VP example, how did you protect your committed renewal forecast?",
               "options": [
-                "You refused the churn breakdown outright",
-                "You named the cost and offered the breakdown next week",
-                "You dropped the forecast to do both",
-                "You escalated the conflict to leadership"
+                "You refused the churn breakdown request outright",
+                "You named the cost and offered it next week",
+                "You dropped the forecast entirely to do both",
+                "You escalated the whole conflict up to leadership"
               ],
               "correctIndex": 1
             }
@@ -19905,10 +19905,10 @@ export const PREBUILT_COURSES = [
               "concept": "Strategic alignment",
               "question": "The lesson's practical test for strategic alignment is that any big rock should:",
               "options": [
-                "Fit within this week's calendar",
-                "Be doable without extra headcount",
-                "Trace to a company objective in one sentence",
-                "Have been requested by an executive"
+                "Fit neatly within this single week's calendar",
+                "Be doable without any extra new headcount",
+                "Trace to a company objective in a sentence",
+                "Have been directly requested by an executive"
               ],
               "correctIndex": 2
             },
@@ -19917,10 +19917,10 @@ export const PREBUILT_COURSES = [
               "concept": "Cascading objectives",
               "question": "Cascading objectives well means:",
               "options": [
-                "Translating the goal into concrete ownable team work",
+                "Translating the goal into concrete ownable work",
                 "Copying the company slogan onto each team page",
                 "Setting a separate goal unrelated to the company's",
-                "Letting each team invent its own objective"
+                "Letting each team invent its own objective freely"
               ],
               "correctIndex": 0
             },
@@ -19929,10 +19929,10 @@ export const PREBUILT_COURSES = [
               "concept": "Portfolio thinking",
               "question": "What does portfolio thinking force that a flat task list does not?",
               "options": [
-                "Faster completion of every task",
-                "Equal effort across all areas",
-                "Elimination of defensive work",
-                "Honest divestment of initiatives that no longer earn attention"
+                "Consistently faster completion of every task",
+                "Roughly equal effort spread across all areas",
+                "The full elimination of all defensive busywork",
+                "Honest exit from work that no longer earns its keep"
               ],
               "correctIndex": 3
             },
@@ -19954,9 +19954,9 @@ export const PREBUILT_COURSES = [
               "question": "The single-brokerage website redesign is described as an example of:",
               "options": [
                 "A local optimization with tiny reach",
-                "A high-RICE quick win",
-                "A well-cascaded objective",
-                "A defensive portfolio bet"
+                "A very high-RICE quick win project",
+                "A cleanly well-cascaded objective",
+                "A defensive portfolio protection bet"
               ],
               "correctIndex": 0
             },
@@ -19966,9 +19966,9 @@ export const PREBUILT_COURSES = [
               "question": "According to the lesson, work that can't be traced to an objective is often:",
               "options": [
                 "The highest-impact work available",
-                "A required compliance task",
+                "A strictly required compliance task",
                 "Legacy activity surviving on inertia",
-                "A genuine emergency"
+                "A genuine and pressing emergency"
               ],
               "correctIndex": 2
             }
@@ -20060,9 +20060,9 @@ export const PREBUILT_COURSES = [
               "question": "The lesson describes prioritization as:",
               "options": [
                 "A one-time decision made with clarity",
-                "A task best handled by executives",
-                "A quarterly-only exercise",
-                "A loop you run on a schedule"
+                "A task best handled by senior executives",
+                "A recurring quarterly-only exercise",
+                "A loop you run on a regular schedule"
               ],
               "correctIndex": 3
             },
@@ -20072,8 +20072,8 @@ export const PREBUILT_COURSES = [
               "question": "What is the purpose of defining reprioritization triggers in advance?",
               "options": [
                 "To justify replanning after any loud request",
-                "To distinguish legitimate mid-cycle changes from noise",
-                "To eliminate scheduled priority reviews",
+                "To tell legitimate mid-cycle changes from noise",
+                "To eliminate all scheduled priority reviews",
                 "To centralize all decisions with the director"
               ],
               "correctIndex": 1
@@ -20095,10 +20095,10 @@ export const PREBUILT_COURSES = [
               "concept": "Delegated prioritization",
               "question": "Delegated prioritization means giving managers:",
               "options": [
-                "The criteria and authority to rank within their domain",
-                "A longer list of tasks to complete",
-                "Permission to escalate every decision upward",
-                "Full control over company objectives"
+                "The criteria and authority to rank in their domain",
+                "A much longer list of tasks for them to complete",
+                "Permission to escalate every single decision upward",
+                "Full and total control over company objectives"
               ],
               "correctIndex": 0
             },
@@ -20107,10 +20107,10 @@ export const PREBUILT_COURSES = [
               "concept": "The stop-doing list",
               "question": "The lesson calls the stop-doing list the operational teeth behind the course because it:",
               "options": [
-                "Tracks new initiatives to launch",
-                "Makes ending work as deliberate as starting it",
-                "Measures each team's total workload",
-                "Replaces the prioritization cadence"
+                "Tracks brand-new initiatives to launch soon",
+                "Makes ending work as deliberate as starting",
+                "Measures each team's total overall workload",
+                "Fully replaces the prioritization cadence"
               ],
               "correctIndex": 1
             },
@@ -20119,10 +20119,10 @@ export const PREBUILT_COURSES = [
               "concept": "Delegated prioritization",
               "question": "In the operating-rhythm example, how did your Sr. Billing Specialist prioritize without you?",
               "options": [
-                "By waiting for the monthly review",
-                "By escalating the conflict upward",
-                "By pausing all billing work",
-                "By using your shared criteria to make the ranking call"
+                "By simply waiting for the next monthly review",
+                "By escalating the whole conflict straight upward",
+                "By pausing all of the billing work entirely",
+                "By using your shared criteria to make the call"
               ],
               "correctIndex": 3
             }
@@ -20213,10 +20213,10 @@ export const PREBUILT_COURSES = [
               "concept": "Meeting cost",
               "question": "What does the lesson say is the true cost of a 60-minute meeting with eight attendees?",
               "options": [
-                "One hour, since that is the calendar block",
-                "Eight person-hours, plus the disruption to everyone's focus",
-                "Only the organizer's preparation time",
-                "Half a day, regardless of attendee count"
+                "One hour, since that is just the calendar block",
+                "Eight person-hours, plus the disruption to focus",
+                "Only the meeting organizer's preparation time",
+                "Half a day, regardless of the attendee count"
               ],
               "correctIndex": 1
             },
@@ -20225,10 +20225,10 @@ export const PREBUILT_COURSES = [
               "concept": "Purpose statement",
               "question": "According to the lesson, how should you complete a meeting's purpose statement?",
               "options": [
-                "\"We will discuss the current project status\"",
-                "\"We will meet with the relevant stakeholders\"",
-                "\"By the end, we will have ___\" naming a concrete outcome",
-                "\"We will review what everyone did last week\""
+                "\"We will discuss the current project status here\"",
+                "\"We will meet with the most relevant stakeholders\"",
+                "\"By the end, we will have ___\" a concrete outcome",
+                "\"We will review what everyone did over last week\""
               ],
               "correctIndex": 2
             },
@@ -20237,10 +20237,10 @@ export const PREBUILT_COURSES = [
               "concept": "Sync vs async decision",
               "question": "Which kind of work does the lesson say justifies a live meeting?",
               "options": [
-                "Work high in ambiguity, emotion, or back-and-forth",
-                "Routine status that flows in one direction",
-                "Metrics and FYIs the team should simply know",
-                "Any topic involving more than two people"
+                "Work high in ambiguity, emotion, or real debate",
+                "Routine status that simply flows in one direction",
+                "Metrics and FYIs the whole team should simply know",
+                "Any topic that involves more than two people"
               ],
               "correctIndex": 0
             },
@@ -20249,22 +20249,22 @@ export const PREBUILT_COURSES = [
               "concept": "Default-no discipline",
               "question": "What does the lesson mean by treating meeting time as a budget?",
               "options": [
-                "Charging departments for the meetings they hold",
-                "Treating a meeting as scarce and to be justified, not a free default",
-                "Limiting every meeting to a fixed dollar amount",
-                "Allowing meetings only when the calendar is empty"
+                "Charging every department for each meeting they hold",
+                "Limiting every single meeting to a fixed dollar amount",
+                "Allowing meetings only when the calendar is fully empty",
+                "Treating a meeting as scarce, to be justified not assumed"
               ],
-              "correctIndex": 1
+              "correctIndex": 3
             },
             {
               "type": "mc",
               "concept": "Sync vs async decision",
               "question": "Per the lesson, where should one-directional information like status and FYIs default to?",
               "options": [
-                "A daily standing live call",
+                "A daily standing live call for the whole team",
                 "A recurring video meeting with all stakeholders",
-                "An async written form people read on their own schedule",
-                "A monthly all-hands presentation"
+                "An async written form read on people's own time",
+                "A monthly all-hands presentation to everyone"
               ],
               "correctIndex": 2
             },
@@ -20273,12 +20273,12 @@ export const PREBUILT_COURSES = [
               "concept": "Meeting types",
               "question": "What does the lesson say a meeting without a stated purpose tends to become?",
               "options": [
-                "A shorter meeting than planned",
                 "A meeting about everything that decides nothing",
-                "A meeting that ends early on its own",
-                "A meeting only the organizer attends"
+                "A far shorter meeting than originally planned",
+                "A meeting that somehow ends early on its own",
+                "A meeting only the organizer bothers to attend"
               ],
-              "correctIndex": 1
+              "correctIndex": 0
             }
           ]
         }
@@ -20355,10 +20355,10 @@ export const PREBUILT_COURSES = [
               "concept": "Outcome-based agenda",
               "question": "Which agenda item follows the outcome-based format the lesson recommends?",
               "options": [
-                "\"Renewals\"",
-                "\"Discuss the renewals pipeline\"",
-                "\"Decide which three at-risk accounts get an executive touch\"",
-                "\"Renewals and expansion update\""
+                "\"The overall renewals and pipeline status topic\"",
+                "\"Discuss the current renewals pipeline in depth\"",
+                "\"Decide which three at-risk accounts get exec touch\"",
+                "\"Renewals, expansion, and general account update\""
               ],
               "correctIndex": 2
             },
@@ -20368,8 +20368,8 @@ export const PREBUILT_COURSES = [
               "question": "According to the lesson, what does an item that demands most of the meeting's time signal?",
               "options": [
                 "It should be discussed without any time limit",
-                "It may deserve its own separate meeting",
-                "It should be moved to the end of the agenda",
+                "It may well deserve its own separate meeting",
+                "It should be moved to the very end of the agenda",
                 "It should be handled entirely by the organizer"
               ],
               "correctIndex": 1
@@ -20379,10 +20379,10 @@ export const PREBUILT_COURSES = [
               "concept": "Item owner",
               "question": "What is the role of an item owner as defined in the lesson?",
               "options": [
-                "The person accountable for preparing and leading that agenda item",
-                "The most senior person present in the meeting",
-                "The person who takes notes for the whole meeting",
-                "The attendee who scheduled the meeting invite"
+                "The person accountable for preparing and leading it",
+                "The most senior person who is present in the meeting",
+                "The person who takes notes for the entire meeting",
+                "The attendee who scheduled the original meeting invite"
               ],
               "correctIndex": 0
             },
@@ -20392,7 +20392,7 @@ export const PREBUILT_COURSES = [
               "question": "What does the lesson say a pre-read accomplishes?",
               "options": [
                 "It replaces the meeting entirely for every topic",
-                "It moves one-directional information out of the live room",
+                "It moves one-directional info out of the live room",
                 "It records the decisions made during the meeting",
                 "It assigns the action items after the meeting ends"
               ],
@@ -20403,10 +20403,10 @@ export const PREBUILT_COURSES = [
               "concept": "Outcome-based agenda",
               "question": "Where does the lesson say the most important decision should sit on the agenda?",
               "options": [
-                "In the final five minutes as a closer",
-                "Wherever it is most comfortable to raise",
-                "Split evenly across the whole meeting",
-                "Near the top, while energy and attention are high"
+                "In the final five minutes as a quick closer",
+                "Wherever it feels most comfortable to raise it",
+                "Split evenly across the whole entire meeting",
+                "Near the top, while energy and focus are high"
               ],
               "correctIndex": 3
             },
@@ -20415,10 +20415,10 @@ export const PREBUILT_COURSES = [
               "concept": "Pre-read",
               "question": "Why does the lesson call pre-reads doubly valuable for cross-timezone teams?",
               "options": [
-                "They shorten the meeting to under ten minutes",
-                "They let Manila and China colleagues absorb dense material in writing at their own pace",
-                "They remove the need for anyone to attend live",
-                "They guarantee everyone speaks the same amount"
+                "They reliably shorten every meeting to under ten minutes",
+                "They let remote colleagues absorb material at their own pace",
+                "They remove the need for anyone at all to attend live",
+                "They guarantee that everyone speaks the exact same amount"
               ],
               "correctIndex": 1
             }
@@ -20502,8 +20502,8 @@ export const PREBUILT_COURSES = [
               "question": "How does the lesson describe the facilitator's role?",
               "options": [
                 "A passive host who lets the conversation flow freely",
-                "A traffic controller steering the discussion toward its destination",
-                "The note-taker who records what others decide",
+                "A traffic controller steering discussion to its goal",
+                "The note-taker who records what all others decide",
                 "The most senior person, who should speak the most"
               ],
               "correctIndex": 1
@@ -20513,10 +20513,10 @@ export const PREBUILT_COURSES = [
               "concept": "Airtime balance",
               "question": "According to the lesson, whom do meetings default to without active facilitation?",
               "options": [
-                "Whoever has the most relevant information",
-                "Whoever was invited first",
+                "Whoever happens to have the most relevant info",
+                "Whoever was invited to the meeting first",
                 "Whoever is most senior, confident, or awake",
-                "Whoever prepared the pre-read"
+                "Whoever actually prepared the pre-read doc"
               ],
               "correctIndex": 2
             },
@@ -20526,9 +20526,9 @@ export const PREBUILT_COURSES = [
               "question": "What is a round-robin as defined in the lesson?",
               "options": [
                 "Letting people volunteer comments whenever they wish",
-                "Inviting each participant by name to contribute in turn",
-                "Limiting the meeting to one speaker throughout",
-                "Rotating who schedules the meeting each week"
+                "Inviting each participant by name to speak in turn",
+                "Limiting the whole meeting to one speaker throughout",
+                "Rotating who schedules the team meeting each week"
               ],
               "correctIndex": 1
             },
@@ -20537,10 +20537,10 @@ export const PREBUILT_COURSES = [
               "concept": "Psychological safety",
               "question": "Which behavior does the lesson say builds psychological safety?",
               "options": [
-                "Thanking people for raising problems and never shooting the messenger",
-                "Requiring everyone to agree before moving on",
-                "Keeping your own uncertainty hidden from the team",
-                "Letting only senior people voice concerns"
+                "Thanking people for problems, never blaming the messenger",
+                "Requiring everyone to fully agree before moving on",
+                "Keeping your own uncertainty hidden from the whole team",
+                "Letting only the most senior people voice concerns"
               ],
               "correctIndex": 0
             },
@@ -20550,9 +20550,9 @@ export const PREBUILT_COURSES = [
               "question": "What is the purpose of a parking lot in a meeting?",
               "options": [
                 "To record the final decisions and their owners",
-                "To list who was absent from the meeting",
-                "To rank agenda items by seniority",
-                "To capture valuable off-topic points to revisit later"
+                "To list out who was absent from the meeting",
+                "To rank all the agenda items by seniority",
+                "To capture off-topic points to revisit later"
               ],
               "correctIndex": 3
             },
@@ -20561,10 +20561,10 @@ export const PREBUILT_COURSES = [
               "concept": "Airtime balance",
               "question": "Why does the lesson warn against treating silence as agreement on the Manila and China teams?",
               "options": [
-                "Because they prefer to communicate only in writing",
-                "Because interrupting a senior leader can feel disrespectful in their culture, masking concerns",
-                "Because they work in a different time zone from the US",
-                "Because they are not given the agenda in advance"
+                "Because they generally prefer to communicate only in writing",
+                "Because deferring to seniors there can mask unspoken concerns",
+                "Because they work in a totally different time zone from the US",
+                "Because they are simply never given the agenda in advance"
               ],
               "correctIndex": 1
             }
@@ -20647,9 +20647,9 @@ export const PREBUILT_COURSES = [
               "concept": "Decision rights",
               "question": "According to the lesson, what causes smart teams to circle for an hour and leave with nothing?",
               "options": [
-                "Too many action items assigned at once",
+                "Too many separate action items assigned at once",
                 "Ambiguity about who actually makes the decision",
-                "A pre-read that was too long to finish",
+                "A pre-read that was simply too long to finish",
                 "Meeting in a time zone unfriendly to some members"
               ],
               "correctIndex": 1
@@ -20659,10 +20659,10 @@ export const PREBUILT_COURSES = [
               "concept": "Disagree and commit",
               "question": "What does disagree and commit ask of people, per the lesson?",
               "options": [
-                "To change their true belief to match the group's",
-                "To keep debating until everyone genuinely agrees",
-                "To support the decision in action even if they argued against it",
-                "To defer entirely to the most senior person"
+                "To change their own true belief to match the group's",
+                "To keep on debating until everyone genuinely agrees",
+                "To back the decision in action despite having opposed it",
+                "To defer entirely to whoever is the most senior person"
               ],
               "correctIndex": 2
             },
@@ -20671,10 +20671,10 @@ export const PREBUILT_COURSES = [
               "concept": "Action item",
               "question": "Which of these qualifies as a proper action item by the lesson's standard?",
               "options": [
-                "\"The team will follow up on the sequence\"",
-                "\"Someone should look into the billing issue soon\"",
-                "\"We'll revisit the dunning topic later\"",
-                "\"Maria sends the revised dunning sequence by Friday\""
+                "\"The team will follow up on the email sequence soon\"",
+                "\"Someone really should look into the billing issue\"",
+                "\"We will revisit the whole dunning topic later on\"",
+                "\"Maria sends the revised dunning sequence Friday\""
               ],
               "correctIndex": 3
             },
@@ -20683,9 +20683,9 @@ export const PREBUILT_COURSES = [
               "concept": "Decision log",
               "question": "What role does the lesson give the decision log?",
               "options": [
-                "The single source of truth you point back to for past decisions",
-                "A list of attendees for compliance purposes",
-                "A ranking of agenda items by importance",
+                "The single source of truth for all past decisions",
+                "A running list of attendees for compliance purposes",
+                "A ranking of all agenda items by their importance",
                 "A place to park off-topic ideas during the meeting"
               ],
               "correctIndex": 0
@@ -20695,10 +20695,10 @@ export const PREBUILT_COURSES = [
               "concept": "Re-litigation",
               "question": "How does the lesson say you best prevent re-litigation of a decision?",
               "options": [
-                "By avoiding the topic in future meetings",
-                "By capturing the decision and its reasoning in writing",
-                "By requiring unanimous agreement every time",
-                "By letting only the owner attend the meeting"
+                "By simply avoiding the topic in all future meetings",
+                "By capturing the decision and its full reasoning",
+                "By requiring full unanimous agreement every time",
+                "By letting only the decision owner attend the meeting"
               ],
               "correctIndex": 1
             },
@@ -20707,10 +20707,10 @@ export const PREBUILT_COURSES = [
               "concept": "Decision rights",
               "question": "Which phrasing does the lesson give as a way to state decision rights clearly?",
               "options": [
-                "\"Let's just see where the conversation goes\"",
-                "\"Whoever feels strongest should decide\"",
-                "\"I own this call and want your input\"",
-                "\"We'll figure out who decides afterward\""
+                "\"Let's just see where this whole conversation goes\"",
+                "\"Whoever happens to feel strongest should decide\"",
+                "\"I own this call, and I want your input first\"",
+                "\"We'll figure out who decides sometime afterward\""
               ],
               "correctIndex": 2
             }
@@ -20793,10 +20793,10 @@ export const PREBUILT_COURSES = [
               "concept": "Timezone burden sharing",
               "question": "What does the lesson recommend when a standing cross-timezone meeting must inconvenience someone?",
               "options": [
-                "Always keep the same slot for consistency",
+                "Always keep the exact same slot for consistency",
                 "Rotate the inconvenient time so the burden is shared",
-                "Cancel the meeting entirely",
-                "Let only the US team choose the time"
+                "Cancel the recurring meeting altogether entirely",
+                "Let only the US-based team pick the meeting time"
               ],
               "correctIndex": 1
             },
@@ -20805,9 +20805,9 @@ export const PREBUILT_COURSES = [
               "concept": "Night-shift toll",
               "question": "According to the lesson, why do meetings with your Manila team land during their night shift?",
               "options": [
-                "Because they prefer working overnight",
+                "Because they simply prefer working overnight",
                 "Because they refuse to meet during their local day",
-                "Because they already work US-aligned hours",
+                "Because they already work fully US-aligned hours",
                 "Because the US team meets only in the evening"
               ],
               "correctIndex": 2
@@ -20817,9 +20817,9 @@ export const PREBUILT_COURSES = [
               "concept": "Meeting cadence",
               "question": "What does the lesson say a good cadence reserves scarce live time for?",
               "options": [
-                "Status updates and FYIs",
-                "Reading pre-reads together aloud",
-                "Recording attendance and metrics",
+                "Routine status updates and team FYIs",
+                "Reading the pre-reads together aloud",
+                "Recording attendance and raw metrics",
                 "Decisions, coaching, and connection"
               ],
               "correctIndex": 3
@@ -20830,9 +20830,9 @@ export const PREBUILT_COURSES = [
               "question": "In a meeting audit, which set of options does the lesson give for each recurring meeting?",
               "options": [
                 "Keep, shorten, make async, merge, or kill",
-                "Approve, escalate, or defer",
-                "Record, transcribe, or summarize",
-                "Delegate, attend, or skip"
+                "Approve, escalate, defer, or reassign it",
+                "Record, transcribe, summarize, or share",
+                "Delegate, attend, skip, or reschedule it"
               ],
               "correctIndex": 0
             },
@@ -20841,9 +20841,9 @@ export const PREBUILT_COURSES = [
               "concept": "Async-first alignment",
               "question": "How does the lesson say a distributed team should mainly stay aligned?",
               "options": [
-                "Through a daily live call for everyone",
-                "Through a shared written source of truth updated on each person's schedule",
-                "Through longer meetings held less often",
+                "Through one daily live call held for the whole team",
+                "Through a shared written source of truth kept current",
+                "Through much longer meetings that are held less often",
                 "Through one-on-one calls with the director only"
               ],
               "correctIndex": 1
@@ -20853,8 +20853,8 @@ export const PREBUILT_COURSES = [
               "concept": "Meeting audit",
               "question": "Why does the lesson call killing a purposeless standing meeting high-leverage?",
               "options": [
-                "It removes the need for any written records",
-                "It lets the director avoid facilitation work",
+                "It removes the need for any written records at all",
+                "It lets the director avoid all facilitation work",
                 "It returns time to many people every week, forever",
                 "It guarantees faster decisions in remaining meetings"
               ],
@@ -20902,7 +20902,7 @@ export const PREBUILT_COURSES = [
           }
         ],
         "example": {
-          "title": "Chris's Tuesday audit",
+          "title": "Your Tuesday audit",
           "text": "You tag one Tuesday and find six hours of meetings, ninety minutes of Manila escalation follow-up, and roughly two hours of **hidden work** answering billing and website pings — leaving twenty scattered minutes of **proactive time** for the QBR deck you owe your VP. Nothing on that day was wasted, yet the one thing only you could do barely happened. The audit shows the problem is not laziness or poor tools; it is that **reactive time** was never bounded, so it expanded to fill everything."
         },
         "pauseAndThink": {
@@ -20948,9 +20948,9 @@ export const PREBUILT_COURSES = [
               "question": "According to the lesson, what is reactive time?",
               "options": [
                 "Work triggered by other people's needs and incidents",
-                "Time you block in advance for strategy work",
-                "Any meeting that appears on your calendar",
-                "Work done quickly to save effort later"
+                "Time you deliberately block in advance for strategy work",
+                "Any meeting that happens to appear on your calendar",
+                "Work done quickly now to save yourself effort later"
               ],
               "correctIndex": 0
             },
@@ -20959,10 +20959,10 @@ export const PREBUILT_COURSES = [
               "concept": "reactive vs proactive time",
               "question": "The lesson describes reactive load as which of the following?",
               "options": [
-                "A sign that a director is failing at the role",
+                "A clear sign that a director is failing at the role",
                 "The natural default gravity of a people-heavy org",
                 "Something that only affects individual contributors",
-                "A problem solved entirely by better tools"
+                "A problem solved entirely by buying better tools"
               ],
               "correctIndex": 1
             },
@@ -20971,9 +20971,9 @@ export const PREBUILT_COURSES = [
               "concept": "time vs energy",
               "question": "Why can a director have a free hour and still not do strategic work well?",
               "options": [
-                "The hour is too short for any real output",
+                "The hour is simply too short for any real output",
                 "Strategic work always requires more than one hour",
-                "They may lack energy even when they have time",
+                "They may lack the energy even when they have the time",
                 "Meetings are inherently more valuable than strategy"
               ],
               "correctIndex": 2
@@ -21007,10 +21007,10 @@ export const PREBUILT_COURSES = [
               "concept": "time vs energy",
               "question": "In the Tuesday audit example, why did the QBR deck barely get done?",
               "options": [
-                "The deck was assigned to the wrong team",
+                "The deck was mistakenly assigned to the wrong team",
                 "Reactive time was never bounded and filled the day",
-                "The tools for building decks were broken",
-                "The audit itself consumed the whole afternoon"
+                "The tools for building the deck were badly broken",
+                "The audit itself consumed the entire afternoon block"
               ],
               "correctIndex": 1
             }
@@ -21097,10 +21097,10 @@ export const PREBUILT_COURSES = [
               "concept": "deep work",
               "question": "How does the lesson define deep work?",
               "options": [
-                "Any task that appears urgent in the moment",
+                "Any task that happens to appear urgent in the moment",
                 "Cognitively demanding, high-value, distraction-free effort",
-                "Work delegated to your most senior manager",
-                "Logistical tasks completed in short bursts"
+                "Routine work delegated to your most senior manager",
+                "Logistical tasks knocked out in short, quick bursts"
               ],
               "correctIndex": 1
             },
@@ -21110,9 +21110,9 @@ export const PREBUILT_COURSES = [
               "question": "Why does shallow work tend to crowd out deep work?",
               "options": [
                 "It feels productive and urgent, so it takes priority",
-                "It is legally required to be done first",
-                "It always has a firm external deadline",
-                "It produces the outputs directors are paid for"
+                "It is wrongly assumed to be legally required first",
+                "It always carries a firm external deadline attached",
+                "It produces the visible outputs directors are paid for"
               ],
               "correctIndex": 0
             },
@@ -21121,10 +21121,10 @@ export const PREBUILT_COURSES = [
               "concept": "time blocking",
               "question": "What does time blocking accomplish according to the lesson?",
               "options": [
-                "It removes all meetings from your calendar",
-                "It hands your priorities to your backup",
+                "It removes every last meeting from your calendar",
+                "It quietly hands your priorities off to your backup",
                 "It gives proactive work a reserved home in advance",
-                "It guarantees no escalation ever reaches you"
+                "It guarantees that no escalation ever reaches you"
               ],
               "correctIndex": 2
             },
@@ -21146,9 +21146,9 @@ export const PREBUILT_COURSES = [
               "question": "What does focus defense include in this lesson?",
               "options": [
                 "Silencing notifications and naming an escalation backup",
-                "Refusing to take any calls for the entire day",
-                "Deleting Slack from your work devices permanently",
-                "Cancelling the block whenever a request arrives"
+                "Refusing to take any calls at all for the entire day",
+                "Deleting Slack from all your work devices permanently",
+                "Cancelling the whole block whenever a new request arrives"
               ],
               "correctIndex": 0
             },
@@ -21247,10 +21247,10 @@ export const PREBUILT_COURSES = [
               "concept": "peak hours",
               "question": "What is the core idea of matching tasks to your peak hours?",
               "options": [
-                "Do routine email when your focus is sharpest",
-                "Spread hard work evenly across every hour",
+                "Do routine email during the hours your focus is sharpest",
+                "Spread the hard work evenly across every single hour",
                 "Do your hardest work when focus is naturally sharpest",
-                "Save all difficult work for the end of the day"
+                "Save all your difficult work for the end of the day"
               ],
               "correctIndex": 2
             },
@@ -21260,9 +21260,9 @@ export const PREBUILT_COURSES = [
               "question": "What mistake do most directors make with their energy, per the lesson?",
               "options": [
                 "They spend their sharpest hours on email, not strategy",
-                "They take too many breaks between focus cycles",
+                "They take far too many breaks between their focus cycles",
                 "They schedule strategy work during their peak hours",
-                "They protect their evenings far too aggressively"
+                "They protect their quiet evenings far too aggressively"
               ],
               "correctIndex": 0
             },
@@ -21271,10 +21271,10 @@ export const PREBUILT_COURSES = [
               "concept": "ultradian rhythm",
               "question": "How does the lesson describe the ultradian rhythm?",
               "options": [
-                "A steady flat line of focus you can drain all day",
+                "A steady flat line of focus you can freely drain all day",
                 "Roughly ninety-minute cycles of higher then lower capacity",
-                "A single peak that occurs only after lunch each day",
-                "A weekly pattern of productive and unproductive days"
+                "A single energy peak that occurs only after lunch each day",
+                "A weekly pattern alternating productive and unproductive days"
               ],
               "correctIndex": 1
             },
@@ -21295,10 +21295,10 @@ export const PREBUILT_COURSES = [
               "concept": "night-shift toll",
               "question": "What is the real energy challenge for your Manila teams?",
               "options": [
-                "A same-day handoff delay across time zones",
+                "A same-day handoff delay stretched across time zones",
                 "The toll of working the night shift against their clock",
-                "A daytime schedule that never overlaps yours",
-                "A lack of access to the tools they need"
+                "A daytime schedule that never once overlaps with yours",
+                "A persistent lack of access to the tools they need"
               ],
               "correctIndex": 1
             },
@@ -21308,9 +21308,9 @@ export const PREBUILT_COURSES = [
               "question": "In the example, how did you adjust work for the Manila billing team?",
               "options": [
                 "You queued non-urgent reviews for early in their next shift",
-                "You moved all their work to your own afternoon trough",
-                "You added extra pings near the end of their shift",
-                "You asked them to switch to a daytime local schedule"
+                "You moved all of their work into your own afternoon trough",
+                "You added several extra pings near the very end of their shift",
+                "You asked them to switch over to a daytime local schedule"
               ],
               "correctIndex": 0
             }
@@ -21399,8 +21399,8 @@ export const PREBUILT_COURSES = [
               "options": [
                 "Urgent things move your goals; important things shout for attention",
                 "Urgent things shout for attention now; important things move your goals",
-                "They mean the same thing in a support organization",
-                "Important things are always also the most urgent ones"
+                "They mean essentially the same thing in any support organization",
+                "Important things are also always the most urgent ones to handle"
               ],
               "correctIndex": 1
             },
@@ -21410,9 +21410,9 @@ export const PREBUILT_COURSES = [
               "question": "What happens when a director reacts in arrival order?",
               "options": [
                 "The loudest request wins, rarely the most important one",
-                "The most important work always gets done first",
-                "Every request is automatically delegated downward",
-                "Focus blocks become easier to protect over time"
+                "The most important work somehow always gets done first",
+                "Every incoming request is automatically delegated downward",
+                "Focus blocks somehow become easier to protect over time"
               ],
               "correctIndex": 0
             },
@@ -21421,10 +21421,10 @@ export const PREBUILT_COURSES = [
               "concept": "delegation",
               "question": "How does the lesson define effective delegation?",
               "options": [
-                "Handing off a task while keeping all decision authority",
-                "Asking a backup to attend meetings in your place",
+                "Handing off a task while quietly keeping all decision authority",
+                "Asking a backup to attend all your meetings in your place",
                 "Granting authority and context so decisions stop reaching you",
-                "Reviewing every delegated decision after the fact"
+                "Reviewing every single delegated decision after the fact"
               ],
               "correctIndex": 2
             },
@@ -21458,9 +21458,9 @@ export const PREBUILT_COURSES = [
               "question": "In the example, how did you cut your interruption stream?",
               "options": [
                 "You set approval thresholds owned by billing and the website PM",
-                "You asked everyone to stop sending requests entirely",
-                "You moved all decisions into a single weekly meeting",
-                "You extended your working hours to clear the backlog"
+                "You asked everyone on the team to stop sending requests entirely",
+                "You moved all incoming decisions into a single weekly meeting",
+                "You extended your own working hours to clear the whole backlog"
               ],
               "correctIndex": 0
             }
@@ -21547,10 +21547,10 @@ export const PREBUILT_COURSES = [
               "concept": "weekly planning",
               "question": "Why is a weekly planning ritual more effective than daily firefighting?",
               "options": [
-                "It removes the need to ever delegate decisions",
+                "It removes the need to ever delegate any decisions again",
                 "It sets direction once, before the reactive tide comes in",
-                "It guarantees no escalations occur during the week",
-                "It replaces the need for protected focus blocks"
+                "It guarantees that no escalations occur during the week",
+                "It replaces the need for any protected focus blocks"
               ],
               "correctIndex": 1
             },
@@ -21560,9 +21560,9 @@ export const PREBUILT_COURSES = [
               "question": "According to the lesson, why does every yes imply a no?",
               "options": [
                 "Because your capacity is finite whether you admit it or not",
-                "Because managers always resent additional requests",
-                "Because saying yes is considered poor leadership",
-                "Because new work is always less important than old work"
+                "Because your managers always resent taking on additional requests",
+                "Because saying yes too often is considered poor leadership",
+                "Because new work is always less important than the older work"
               ],
               "correctIndex": 0
             },
@@ -21571,10 +21571,10 @@ export const PREBUILT_COURSES = [
               "concept": "sustainable pace",
               "question": "How does the lesson describe running at redline?",
               "options": [
-                "The most reliable way to raise output all year",
-                "A neutral choice with no effect on your teams",
+                "The single most reliable way to raise output all year",
+                "A neutral choice with no real effect on your teams at all",
                 "A short burst followed by errors, attrition, and burnout",
-                "The best way to protect your Manila teams' energy"
+                "The best possible way to protect your Manila teams' energy"
               ],
               "correctIndex": 2
             },
@@ -21583,9 +21583,9 @@ export const PREBUILT_COURSES = [
               "concept": "operating rhythm",
               "question": "What is the goal of a personal operating rhythm?",
               "options": [
-                "A flawless week that depends on perfect conditions",
-                "A schedule with no buffers or delegated decisions",
-                "A daily reliance on willpower to protect your time",
+                "A flawless week that entirely depends on perfect conditions",
+                "A rigid schedule with no buffers or delegated decisions",
+                "A daily reliance on sheer willpower to protect your time",
                 "A rhythm that survives a bad week, not just a perfect one"
               ],
               "correctIndex": 3
@@ -21701,10 +21701,10 @@ export const PREBUILT_COURSES = [
               "concept": "Accountable",
               "question": "In RACI, the Accountable role is best described as:",
               "options": [
-                "The people who do the hands-on work",
+                "The people who actually do the hands-on work on the task",
                 "The single person who owns the outcome and answers for it",
-                "Anyone whose input is gathered before acting",
-                "People notified after the decision is made"
+                "Anyone whose input is gathered before the work is acted on",
+                "The people simply notified after the decision has been made"
               ],
               "correctIndex": 1
             },
@@ -21713,10 +21713,10 @@ export const PREBUILT_COURSES = [
               "concept": "One-Accountable rule",
               "question": "How many Accountable people should a single task have?",
               "options": [
-                "Exactly one",
-                "At least two for coverage",
-                "As many as are Responsible",
-                "Zero, since the team owns it"
+                "Precisely one accountable owner",
+                "At least two people for coverage",
+                "As many people as are Responsible",
+                "Zero, since the whole team owns it"
               ],
               "correctIndex": 0
             },
@@ -21725,10 +21725,10 @@ export const PREBUILT_COURSES = [
               "concept": "Consulted",
               "question": "The Consulted role involves:",
               "options": [
-                "One-way notification after the fact",
-                "No communication unless asked",
-                "Two-way input sought before acting",
-                "Formal sign-off on the final result"
+                "One-way notification given after the fact",
+                "No two-way communication offered unless asked",
+                "Two-way input actively sought before acting",
+                "Formal sign-off given on the final result"
               ],
               "correctIndex": 2
             },
@@ -21737,9 +21737,9 @@ export const PREBUILT_COURSES = [
               "concept": "Informed",
               "question": "Which statement fits the Informed role?",
               "options": [
-                "They negotiate the approach with the owner",
-                "They perform the core task steps",
-                "They approve the budget for the work",
+                "They negotiate the whole approach directly with the owner",
+                "They personally perform the core steps of the task",
+                "They approve the full budget allocated for the work",
                 "They are told the outcome one-way after it happens"
               ],
               "correctIndex": 3
@@ -21750,9 +21750,9 @@ export const PREBUILT_COURSES = [
               "question": "A Manila agent resolving a ticket while the US lead owns the standard illustrates that:",
               "options": [
                 "Responsible and Accountable can be different people",
-                "Every task needs two Accountables",
-                "Consulted and Informed are the same thing",
-                "Responsible people never do the work"
+                "Every single task needs two separate Accountables",
+                "Consulted and Informed always mean the same thing",
+                "Responsible people themselves never do the actual work"
               ],
               "correctIndex": 0
             },
@@ -21761,10 +21761,10 @@ export const PREBUILT_COURSES = [
               "concept": "One-Accountable rule",
               "question": "A refund sits untouched for days because each team assumed another owned it. This most likely reflects:",
               "options": [
-                "Too many Consulted parties",
-                "A task with zero clear Accountable",
-                "An excess of Informed stakeholders",
-                "A missing Responsible person only"
+                "Simply too many Consulted parties involved",
+                "A task with zero clear Accountable owner",
+                "An excess of Informed stakeholders listed",
+                "A single missing Responsible person only"
               ],
               "correctIndex": 1
             }
@@ -21851,10 +21851,10 @@ export const PREBUILT_COURSES = [
               "concept": "Rows and columns",
               "question": "In a RACI matrix, rows and columns represent:",
               "options": [
-                "Rows are people; columns are dates",
+                "Rows are people; columns are calendar dates",
                 "Rows are tasks; columns are people or roles",
-                "Rows are metrics; columns are teams",
-                "Rows are budgets; columns are outcomes"
+                "Rows are metrics; columns are individual teams",
+                "Rows are budgets; columns are the outcomes"
               ],
               "correctIndex": 1
             },
@@ -21864,9 +21864,9 @@ export const PREBUILT_COURSES = [
               "question": "The row test verifies that each task has:",
               "options": [
                 "Exactly one A and at least one R",
-                "At least two Accountables",
-                "Only Informed stakeholders",
-                "No Responsible people at all"
+                "At least two separate Accountables",
+                "Only Informed stakeholders listed",
+                "No Responsible people on it at all"
               ],
               "correctIndex": 0
             },
@@ -21875,10 +21875,10 @@ export const PREBUILT_COURSES = [
               "concept": "Anti-patterns",
               "question": "'Too many C's' in a matrix typically causes:",
               "options": [
-                "Orphaned outcomes with no owner",
-                "Overloaded Responsible parties",
+                "Orphaned outcomes left with no clear owner",
+                "Badly overloaded Responsible parties everywhere",
                 "Decision paralysis from consulting everyone",
-                "Stakeholders learning too late"
+                "Key stakeholders learning about it far too late"
               ],
               "correctIndex": 2
             },
@@ -21887,10 +21887,10 @@ export const PREBUILT_COURSES = [
               "concept": "Task decomposition",
               "question": "Rows in a well-built matrix should be written as:",
               "options": [
-                "Broad department names like 'billing'",
-                "Customer names",
+                "Broad whole-department names",
+                "Individual customer names",
                 "Verb-based discrete tasks",
-                "Calendar quarters"
+                "Calendar quarters or dates"
               ],
               "correctIndex": 2
             },
@@ -21899,10 +21899,10 @@ export const PREBUILT_COURSES = [
               "concept": "Right-sizing granularity",
               "question": "You should set row granularity at the level where:",
               "options": [
-                "Every keystroke is captured",
-                "Ownership actually changes hands",
-                "The whole quarter is one row",
-                "Only executives are involved"
+                "Every single keystroke is captured",
+                "Ownership genuinely changes hands",
+                "The whole quarter becomes one row",
+                "Only senior executives are involved"
               ],
               "correctIndex": 1
             },
@@ -21911,10 +21911,10 @@ export const PREBUILT_COURSES = [
               "concept": "Anti-patterns",
               "question": "A person marked as both A and R on one small task is:",
               "options": [
-                "Forbidden under all conditions",
-                "Allowed — they own it and do it",
-                "Proof of a zero-Accountable gap",
-                "The same as having two Accountables"
+                "Simply forbidden under any and all conditions",
+                "Allowed, because they both own it and do it",
+                "Proof of a zero-Accountable ownership gap",
+                "The same as having two separate Accountables"
               ],
               "correctIndex": 1
             }
@@ -22001,10 +22001,10 @@ export const PREBUILT_COURSES = [
               "concept": "Boundary tasks",
               "question": "RACI delivers the most value when applied to:",
               "options": [
-                "Tasks inside a single tidy team",
-                "Boundary tasks spanning two teams",
-                "Purely individual to-do lists",
-                "Tasks with no stakeholders"
+                "Tasks kept inside a single tidy team",
+                "Boundary tasks spanning two separate teams",
+                "Purely individual personal to-do lists",
+                "Simple tasks with no stakeholders at all"
               ],
               "correctIndex": 1
             },
@@ -22014,9 +22014,9 @@ export const PREBUILT_COURSES = [
               "question": "At a handoff, the key thing to make explicit is:",
               "options": [
                 "Whether Accountability moves or stays",
-                "The exact minute of transfer",
-                "How many emails were sent",
-                "Who is most senior overall"
+                "The exact clock minute of the transfer",
+                "How many emails were sent about it",
+                "Who is the most senior person overall"
               ],
               "correctIndex": 0
             },
@@ -22025,10 +22025,10 @@ export const PREBUILT_COURSES = [
               "concept": "Split accountability",
               "question": "Because Manila works US-aligned night-shift hours, the main ownership risk is:",
               "options": [
-                "A full-day handoff delay",
-                "Same-day handoff lag to the US",
+                "A full-day handoff delay each time",
+                "Same-day handoff lag back to the US",
                 "Ownership drifting to whoever is online",
-                "No overlap with US hours at all"
+                "No overlap with US working hours at all"
               ],
               "correctIndex": 2
             },
@@ -22038,9 +22038,9 @@ export const PREBUILT_COURSES = [
               "question": "To prevent ownership fragmenting across shifts, assign the Accountable to:",
               "options": [
                 "The most junior available agent",
-                "Whoever answers first",
-                "The customer directly",
-                "A role rather than a shift"
+                "Whoever happens to answer first",
+                "The customer entirely directly",
+                "A defined role rather than a shift"
               ],
               "correctIndex": 3
             },
@@ -22050,9 +22050,9 @@ export const PREBUILT_COURSES = [
               "question": "A recurring 'who should have handled that' argument is best understood as:",
               "options": [
                 "An unstated matrix that needs one agreed A",
-                "A permanent personality conflict",
-                "A reason to add more Consulted parties",
-                "Evidence the task should be dropped"
+                "A permanent underlying personality conflict",
+                "A reason to add even more Consulted parties",
+                "Clear evidence the task should be dropped"
               ],
               "correctIndex": 0
             },
@@ -22061,10 +22061,10 @@ export const PREBUILT_COURSES = [
               "concept": "Cross-team ownership",
               "question": "For a stale-listing IDX bug during onboarding, a clean resolution is to:",
               "options": [
-                "Let all three teams share accountability",
-                "Name one Accountable owner for the fix",
-                "Escalate straight to the customer",
-                "Wait for the next shift to decide"
+                "Let all three teams share the accountability",
+                "Name one Accountable owner for the whole fix",
+                "Escalate the bug straight to the customer",
+                "Wait for the next shift to decide on it"
               ],
               "correctIndex": 1
             }
@@ -22151,10 +22151,10 @@ export const PREBUILT_COURSES = [
               "concept": "RASCI",
               "question": "The S added in RASCI stands for a role that:",
               "options": [
-                "Signs off on final output",
+                "Formally signs off on the final output",
                 "Actively helps the Responsible do the work",
-                "Sets the schedule",
-                "Supervises all Accountable owners"
+                "Sets the schedule for the whole project",
+                "Supervises all of the Accountable owners"
               ],
               "correctIndex": 1
             },
@@ -22175,10 +22175,10 @@ export const PREBUILT_COURSES = [
               "concept": "Model selection",
               "question": "For an ongoing operational process with recurring handoffs, the best fit is:",
               "options": [
-                "RAPID",
-                "RACI",
+                "The RAPID decision model",
+                "The standard RACI model",
                 "A single Approver only",
-                "No model needed"
+                "No formal model needed"
               ],
               "correctIndex": 1
             },
@@ -22187,10 +22187,10 @@ export const PREBUILT_COURSES = [
               "concept": "DACI",
               "question": "In DACI, the single decision-maker is the:",
               "options": [
-                "Driver",
-                "Contributor",
-                "Approver",
-                "Informed party"
+                "The Driver role only",
+                "The Contributor role",
+                "The single Approver",
+                "The Informed party"
               ],
               "correctIndex": 2
             },
@@ -22199,10 +22199,10 @@ export const PREBUILT_COURSES = [
               "concept": "RAPID",
               "question": "RAPID is most appropriate when a decision:",
               "options": [
-                "Is a small routine task",
+                "Is a small, low-risk routine task",
                 "Has veto-holders and high stakes",
-                "Involves only one person",
-                "Requires no input at all"
+                "Involves only one single person",
+                "Requires no outside input at all"
               ],
               "correctIndex": 1
             },
@@ -22212,9 +22212,9 @@ export const PREBUILT_COURSES = [
               "question": "Choosing a one-off new playbook, then running it weekly, suggests:",
               "options": [
                 "DACI to decide, then RACI to run it",
-                "RAPID for both phases",
-                "RACI for the decision only",
-                "No framework in either phase"
+                "RAPID used for both of the phases",
+                "RACI for the decision phase only",
+                "No framework at all in either phase"
               ],
               "correctIndex": 0
             }
@@ -22301,10 +22301,10 @@ export const PREBUILT_COURSES = [
               "concept": "Living document",
               "question": "The best way to keep a matrix current is to:",
               "options": [
-                "Write it once and archive it",
+                "Write it once and then archive it away",
                 "Tie review to a cadence you already run",
-                "Rebuild it from scratch monthly",
-                "Let each person edit their own row"
+                "Rebuild it from scratch each and every month",
+                "Let each person freely edit their own row"
               ],
               "correctIndex": 1
             },
@@ -22314,9 +22314,9 @@ export const PREBUILT_COURSES = [
               "question": "Escalation ownership should be defined:",
               "options": [
                 "During the incident by whoever is free",
-                "Before an incident, by tier",
-                "Only after the customer complains",
-                "By the customer's preference"
+                "Before any incident, defined by tier",
+                "Only after the customer has complained",
+                "Entirely by the customer's own preference"
               ],
               "correctIndex": 1
             },
@@ -22325,10 +22325,10 @@ export const PREBUILT_COURSES = [
               "concept": "Cross-cultural adaptation",
               "question": "Across Manila and China partners, adapting RACI means:",
               "options": [
-                "Abandoning the single-Accountable rule",
-                "Assigning multiple Accountables for harmony",
-                "Keeping the single-A rule but flexing how it's communicated",
-                "Never naming owners at all"
+                "Completely abandoning the single-Accountable rule",
+                "Assigning multiple Accountables purely for harmony",
+                "Keeping the single-A rule but flexing its communication",
+                "Choosing to never name any clear task owners at all"
               ],
               "correctIndex": 2
             },
@@ -22337,9 +22337,9 @@ export const PREBUILT_COURSES = [
               "concept": "Matrix decay",
               "question": "A thorough matrix that no one has reviewed in months is suffering from:",
               "options": [
-                "Over-engineering",
-                "Matrix decay",
-                "Too few rows",
+                "Clear over-engineering",
+                "Classic matrix decay",
+                "Having far too few rows",
                 "Split accountability"
               ],
               "correctIndex": 1
@@ -22349,10 +22349,10 @@ export const PREBUILT_COURSES = [
               "concept": "Over-engineering",
               "question": "Adding many exotic roles and rows until no one maintains the grid is:",
               "options": [
-                "Over-engineering",
-                "Healthy thoroughness",
-                "Required for escalations",
-                "The living-document ideal"
+                "Plain over-engineering of the grid",
+                "Healthy and careful thoroughness",
+                "Required for handling escalations",
+                "The ideal living-document state"
               ],
               "correctIndex": 0
             },
@@ -22361,10 +22361,10 @@ export const PREBUILT_COURSES = [
               "concept": "Living document",
               "question": "The healthy middle between decay and over-engineering is:",
               "options": [
-                "An exhaustive grid of every step",
+                "An exhaustive grid documenting every single step",
                 "A short, current matrix of tasks that get dropped",
-                "No matrix, just verbal agreements",
-                "One row for the entire org"
+                "No matrix at all, just informal verbal agreements",
+                "A single row covering the entire organization"
               ],
               "correctIndex": 1
             }
@@ -22459,10 +22459,10 @@ export const PREBUILT_COURSES = [
               "concept": "Agile mindset",
               "question": "According to the lesson, what is the most important starting point for adopting agile?",
               "options": [
-                "Buying a dedicated agile project-management tool",
+                "Buying a dedicated agile project-management tool suite",
                 "Adopting the underlying values before any ceremonies",
-                "Hiring a certified scrum master for each team",
-                "Scheduling a daily standup for every team"
+                "Hiring a certified scrum master for each of the teams",
+                "Scheduling a daily standup for every single team"
               ],
               "correctIndex": 1
             },
@@ -22471,10 +22471,10 @@ export const PREBUILT_COURSES = [
               "concept": "Iterative delivery",
               "question": "What is the main operational benefit of iterative delivery described in the lesson?",
               "options": [
-                "It removes the need to measure any results",
-                "It guarantees plans never have to change again",
+                "It removes the need to ever measure any of the results",
+                "It guarantees your plans never have to change ever again",
                 "It caps the cost of a wrong direction at one short cycle",
-                "It lets you skip planning entirely for large goals"
+                "It lets you skip planning entirely for the largest goals"
               ],
               "correctIndex": 2
             },
@@ -22483,9 +22483,9 @@ export const PREBUILT_COURSES = [
               "concept": "Empiricism",
               "question": "How does empiricism change the way an agile team settles a disagreement?",
               "options": [
-                "The most senior person's prediction decides it",
-                "The team defers the decision until next quarter",
-                "A detailed written plan is used to decide it",
+                "The most senior person's own prediction decides it",
+                "The team simply defers the decision until next quarter",
+                "A detailed written plan alone is used to decide it",
                 "A small trial is run and observed results decide it"
               ],
               "correctIndex": 3
@@ -22507,10 +22507,10 @@ export const PREBUILT_COURSES = [
               "concept": "Responding to change",
               "question": "Why does 'responding to change' matter especially for operations teams?",
               "options": [
-                "Operations teams never follow any plan at all",
-                "Their environment shifts often, so short cycles keep them nimble",
-                "It lets them avoid measuring their own results",
-                "It replaces all collaboration with fixed contracts"
+                "Operations teams supposedly never follow any plan at all",
+                "Their environment shifts often, so short cycles stay nimble",
+                "It lets them conveniently avoid measuring their own results",
+                "It replaces all their collaboration with fixed contracts"
               ],
               "correctIndex": 1
             },
@@ -22519,10 +22519,10 @@ export const PREBUILT_COURSES = [
               "concept": "Agile mindset",
               "question": "What is 'cargo-cult agile' as defined in the lesson?",
               "options": [
-                "Using agile only for engineering and never operations",
+                "Using agile only for engineering and never for operations",
                 "Running iterations that are far too short to finish work",
                 "Copying agile rituals without adopting the underlying values",
-                "Measuring outcomes without ever holding any meetings"
+                "Measuring outcomes without ever once holding any meetings"
               ],
               "correctIndex": 2
             }
@@ -22622,9 +22622,9 @@ export const PREBUILT_COURSES = [
               "question": "Why does capping work-in-progress make a team faster, per the lesson?",
               "options": [
                 "It forces finishing before starting and cuts context-switching",
-                "It lets everyone start as many items as they want",
-                "It removes the need to ever measure cycle time",
-                "It pushes more work onto each person upstream"
+                "It lets everyone start as many new items as they possibly want",
+                "It removes the need to ever measure the cycle time again",
+                "It pushes even more work onto each person working upstream"
               ],
               "correctIndex": 0
             },
@@ -22633,7 +22633,7 @@ export const PREBUILT_COURSES = [
               "concept": "Bottleneck",
               "question": "How does a kanban board with WIP limits reveal a bottleneck?",
               "options": [
-                "By assigning blame to the slowest individual",
+                "By assigning direct blame to the slowest individual",
                 "By hiding stalled work until the backlog explodes",
                 "By automatically hiring more staff for that stage",
                 "By showing a column filling to its cap and stalling"
@@ -22645,10 +22645,10 @@ export const PREBUILT_COURSES = [
               "concept": "Cycle time",
               "question": "What does cycle time measure?",
               "options": [
-                "The number of hours each person works weekly",
+                "The total number of hours each person works every week",
                 "The elapsed time for one item to go from started to done",
-                "The total headcount assigned to a workflow stage",
-                "The number of new cards added to the board daily"
+                "The total headcount assigned to a single workflow stage",
+                "The number of brand-new cards added to the board each day"
               ],
               "correctIndex": 1
             },
@@ -22657,10 +22657,10 @@ export const PREBUILT_COURSES = [
               "concept": "Pull system",
               "question": "In a pull system, when does a person take on new work?",
               "options": [
-                "Whenever a manager pushes it onto their queue",
-                "On a fixed schedule regardless of their capacity",
-                "Only when they have capacity to pull it",
-                "Whenever an upstream stage wants to look busy"
+                "Whenever a manager pushes it onto their work queue",
+                "On a fixed schedule regardless of their real capacity",
+                "Only when they actually have capacity to pull it",
+                "Whenever an upstream stage merely wants to look busy"
               ],
               "correctIndex": 2
             },
@@ -22670,9 +22670,9 @@ export const PREBUILT_COURSES = [
               "question": "Why does the lesson call flow metrics safer to discuss openly than hours-worked?",
               "options": [
                 "They are impossible for anyone to measure accurately",
-                "They always make the team look more productive",
-                "They hide problems from leadership entirely",
-                "They describe the system rather than individuals"
+                "They always make the whole team look more productive",
+                "They hide problems from leadership entirely, always",
+                "They describe the system itself rather than individuals"
               ],
               "correctIndex": 3
             }
@@ -22775,9 +22775,9 @@ export const PREBUILT_COURSES = [
               "concept": "Sprint",
               "question": "According to the lesson, which kind of work is better suited to sprints than to continuous kanban?",
               "options": [
-                "An interrupt-heavy live support queue",
-                "Ad-hoc requests that arrive unpredictably",
-                "Ongoing failed-payment collections cases",
+                "An interrupt-heavy live customer support queue",
+                "Ad-hoc requests that keep arriving unpredictably",
+                "Ongoing failed-payment collections case work",
                 "Project-style work like an onboarding redesign"
               ],
               "correctIndex": 3
@@ -22788,9 +22788,9 @@ export const PREBUILT_COURSES = [
               "question": "What makes a backlog more than just a pile of tasks?",
               "options": [
                 "It is ranked so the most valuable item is clearly on top",
-                "It contains only tasks approved by executives",
-                "It is reset to empty at the start of each sprint",
-                "It lists tasks alphabetically for easy searching"
+                "It contains only the tasks personally approved by executives",
+                "It is reset back to empty at the start of every sprint",
+                "It lists all tasks alphabetically for easy searching"
               ],
               "correctIndex": 0
             },
@@ -22799,10 +22799,10 @@ export const PREBUILT_COURSES = [
               "concept": "Sprint goal",
               "question": "What role does the sprint goal play during the sprint?",
               "options": [
-                "It records how many hours each person logged",
+                "It records exactly how many hours each person logged",
                 "It anchors the sprint so off-goal tasks get questioned",
-                "It lists every task assigned to every member",
-                "It replaces the need for a prioritized backlog"
+                "It lists every single task assigned to every member",
+                "It replaces the need for any prioritized backlog at all"
               ],
               "correctIndex": 1
             },
@@ -22811,10 +22811,10 @@ export const PREBUILT_COURSES = [
               "concept": "Sprint",
               "question": "When a genuine emergency hits mid-sprint, what is the honest move per the lesson?",
               "options": [
-                "Silently add it on top of the committed work",
-                "Cancel the entire sprint and start over",
-                "Swap it in and take an equivalent item out",
-                "Refuse it until the next planning session"
+                "Silently add it right on top of the committed work",
+                "Cancel the entire sprint and just start over",
+                "Swap it in and take an equivalent item back out",
+                "Refuse it entirely until the next planning session"
               ],
               "correctIndex": 2
             },
@@ -22913,10 +22913,10 @@ export const PREBUILT_COURSES = [
               "concept": "Daily standup",
               "question": "What is the real payload of a daily standup according to the lesson?",
               "options": [
-                "A detailed status report delivered to the manager",
-                "Surfacing blockers that are stopping work",
-                "Solving each technical problem in full detail",
-                "Reassigning every task to a new owner daily"
+                "A detailed status report delivered up to the manager",
+                "Surfacing the blockers that are currently stopping work",
+                "Solving each technical problem in complete full detail",
+                "Reassigning every single task to a new owner daily"
               ],
               "correctIndex": 1
             },
@@ -22937,10 +22937,10 @@ export const PREBUILT_COURSES = [
               "concept": "Sprint review",
               "question": "What is demonstrated in a sprint review?",
               "options": [
-                "Actual completed work shown to stakeholders",
-                "A slide deck about work planned for next sprint",
-                "The team's private critique of its own process",
-                "A ranked list of everything still in the backlog"
+                "The actual completed work shown to real stakeholders",
+                "A slide deck about the work planned for next sprint",
+                "The team's own private critique of its own process",
+                "A ranked list of everything still left in the backlog"
               ],
               "correctIndex": 0
             },
@@ -22949,10 +22949,10 @@ export const PREBUILT_COURSES = [
               "concept": "Retrospective",
               "question": "What distinguishes a retrospective from a sprint review?",
               "options": [
-                "The retro demos finished work to outside stakeholders",
-                "The retro replaces the need for any standups",
+                "The retro demos the finished work to outside stakeholders",
+                "The retro replaces the need for holding any standups at all",
                 "The retro examines how the team worked, not the work itself",
-                "The retro sets the priority order of the backlog"
+                "The retro sets the full priority order of the whole backlog"
               ],
               "correctIndex": 2
             },
@@ -22961,9 +22961,9 @@ export const PREBUILT_COURSES = [
               "concept": "Continuous improvement",
               "question": "What must a retrospective produce to actually create value?",
               "options": [
-                "A long list of every problem raised by the team",
-                "A ranking of team members by performance",
-                "A full status update for senior leadership",
+                "A long list of every single problem raised by the team",
+                "A ranking of all team members by their performance",
+                "A full status update for the senior leadership team",
                 "A few concrete, owned actions for next iteration"
               ],
               "correctIndex": 3
@@ -22974,9 +22974,9 @@ export const PREBUILT_COURSES = [
               "question": "Why does the lesson stress keeping retrospectives blameless?",
               "options": [
                 "So people speak honestly and examine the system",
-                "So the meeting can be skipped more often",
-                "So the manager can identify who to fault",
-                "So the retro can double as the sprint review"
+                "So the whole meeting can be skipped more often",
+                "So the manager can identify exactly who to fault",
+                "So the retro can double as the sprint review meeting"
               ],
               "correctIndex": 0
             }
@@ -23072,9 +23072,9 @@ export const PREBUILT_COURSES = [
               "question": "According to the lesson, what is the hardest work once multiple teams are involved?",
               "options": [
                 "Choosing which agile framework brand to license",
-                "Making handoff dependencies visible and owned",
-                "Writing longer and more detailed backlogs",
-                "Increasing the number of daily standups held"
+                "Making all handoff dependencies visible and owned",
+                "Writing much longer and more detailed backlogs",
+                "Increasing the total number of daily standups held"
               ],
               "correctIndex": 1
             },
@@ -23083,7 +23083,7 @@ export const PREBUILT_COURSES = [
               "concept": "Cadence alignment",
               "question": "Why does the lesson call the Manila night-shift overlap an advantage for cadence alignment?",
               "options": [
-                "It removes the need for any shared board",
+                "It removes the need for having any shared board at all",
                 "It lets teams sprint on totally different rhythms",
                 "It eliminates all cross-team dependencies at once",
                 "It gives real-time overlap to place sync points in"
@@ -23096,9 +23096,9 @@ export const PREBUILT_COURSES = [
               "question": "What distinguishes an actionable metric from a vanity metric?",
               "options": [
                 "It tells you what to change rather than just looking good",
-                "It always rises steadily up and to the right",
-                "It ranks individuals against one another clearly",
-                "It is easier to present in an executive deck"
+                "It always rises steadily up and to the right on charts",
+                "It clearly ranks individuals against one another by output",
+                "It is far easier to present neatly in an executive deck"
               ],
               "correctIndex": 0
             },
@@ -23107,10 +23107,10 @@ export const PREBUILT_COURSES = [
               "concept": "Agile anti-patterns",
               "question": "What is the common thread across the agile anti-patterns the lesson lists?",
               "options": [
-                "Too much focus on measuring real outcomes",
-                "Teams iterating far too quickly to keep up",
+                "Too much focus placed on measuring real outcomes",
+                "Teams iterating far too quickly for anyone to keep up",
                 "Form persisting while the underlying value drains out",
-                "Leaders removing too many blockers for the team"
+                "Leaders removing far too many blockers for the team"
               ],
               "correctIndex": 2
             },
@@ -23119,9 +23119,9 @@ export const PREBUILT_COURSES = [
               "concept": "Servant leadership",
               "question": "How does the lesson describe the job of an agile leader?",
               "options": [
-                "Assigning tasks and demanding daily status",
-                "Ranking team members by their weekly output",
-                "Maximizing the number of ceremonies run",
+                "Assigning out tasks and demanding a daily status report",
+                "Ranking all team members by their weekly output totals",
+                "Maximizing the sheer number of ceremonies run each week",
                 "Removing blockers, protecting focus, improving the system"
               ],
               "correctIndex": 3
@@ -23133,7 +23133,7 @@ export const PREBUILT_COURSES = [
               "options": [
                 "You lead by clearing the path, not by pulling rank",
                 "It lets you assign tasks across reporting lines",
-                "It removes the need to align any cadences",
+                "It removes the need to align any of the cadences",
                 "It replaces outcome metrics with status reports"
               ],
               "correctIndex": 0
@@ -23229,10 +23229,10 @@ export const PREBUILT_COURSES = [
               "concept": "Objective",
               "question": "What is an Objective in the OKR framework?",
               "options": [
-                "A numeric metric with a baseline and target",
+                "A numeric metric with a clear baseline and target",
                 "A short qualitative statement of where you want to go",
-                "A weekly task assigned to a team member",
-                "A continuously monitored health metric"
+                "A weekly task assigned to a single team member",
+                "A continuously monitored operational health metric"
               ],
               "correctIndex": 1
             },
@@ -23241,10 +23241,10 @@ export const PREBUILT_COURSES = [
               "concept": "Key Result",
               "question": "How many key results does the lesson recommend per objective?",
               "options": [
-                "Exactly one",
-                "Two to five",
-                "Six to ten",
-                "As many as the team can list"
+                "Exactly one per objective",
+                "Two to five per objective",
+                "Six to ten per objective",
+                "As many as the team lists"
               ],
               "correctIndex": 1
             },
@@ -23253,10 +23253,10 @@ export const PREBUILT_COURSES = [
               "concept": "Outcome vs. output",
               "question": "Which of these is written as an outcome-based key result rather than an output?",
               "options": [
-                "Publish three new help articles",
-                "Hire two support agents",
+                "Publish three brand-new help center articles this quarter",
+                "Hire and onboard two new support agents this quarter",
                 "Cut onboarding support tickets from 40 to 25 per week",
-                "Launch a macro library"
+                "Launch a shared macro library for the support team"
               ],
               "correctIndex": 2
             },
@@ -23265,10 +23265,10 @@ export const PREBUILT_COURSES = [
               "concept": "OKR vs. KPI",
               "question": "According to the lesson, how does a KPI differ from an OKR?",
               "options": [
-                "A KPI is a health metric you monitor continuously, not a time-boxed push",
-                "A KPI is always more ambitious than an OKR",
-                "A KPI has no numeric value",
-                "A KPI is the same as an objective"
+                "A KPI is a health metric monitored continuously, not a timed push",
+                "A KPI is always far more ambitious than any OKR could ever be",
+                "A KPI never carries any kind of numeric value whatsoever",
+                "A KPI means exactly the same thing as a stated objective"
               ],
               "correctIndex": 0
             },
@@ -23277,10 +23277,10 @@ export const PREBUILT_COURSES = [
               "concept": "Aspirational vs. committed OKRs",
               "question": "For an aspirational (stretch) OKR, what score is described as genuine success?",
               "options": [
-                "Exactly 100 percent",
-                "Around 70 percent",
-                "At least 90 percent",
-                "Anything above 40 percent"
+                "About 100 percent exactly",
+                "Around 70 percent scored",
+                "At least 90 percent or so",
+                "Anything over 40 percent"
               ],
               "correctIndex": 1
             },
@@ -23289,10 +23289,10 @@ export const PREBUILT_COURSES = [
               "concept": "Objective",
               "question": "Why is 'provide great support this quarter' a weak objective on its own?",
               "options": [
-                "It is too numeric to inspire anyone",
+                "It is far too numeric to genuinely inspire anyone",
                 "It lacks measurable key results to prove it was met",
-                "It is a committed rather than aspirational goal",
-                "It describes a KPI instead of a task"
+                "It is a committed goal rather than an aspirational one",
+                "It describes a KPI instead of a real actionable task"
               ],
               "correctIndex": 1
             }
@@ -23379,10 +23379,10 @@ export const PREBUILT_COURSES = [
               "concept": "Baseline and target",
               "question": "What three elements should every metric key result include?",
               "options": [
-                "Owner, budget, and risk",
-                "Baseline, target, and deadline",
-                "Objective, task, and score",
-                "Guardrail, milestone, and vanity check"
+                "A clear owner, a budget, and a risk",
+                "A baseline, a target, and a deadline",
+                "An objective, a task, and a score",
+                "A guardrail, a milestone, and a check"
               ],
               "correctIndex": 1
             },
@@ -23391,10 +23391,10 @@ export const PREBUILT_COURSES = [
               "concept": "Vanity metric",
               "question": "Which is the described test for a vanity metric?",
               "options": [
-                "It requires more than one team to move",
+                "It requires far more than one single team to move it",
                 "It improves but nothing the customer cares about changes",
-                "It has no numeric baseline",
-                "It can only be measured yearly"
+                "It has no meaningful numeric baseline behind it at all",
+                "It can only ever be measured once a year at year-end"
               ],
               "correctIndex": 1
             },
@@ -23403,10 +23403,10 @@ export const PREBUILT_COURSES = [
               "concept": "Sandbagging",
               "question": "What is sandbagging in goal setting?",
               "options": [
-                "Setting a target you are already sure to hit so the score stays green",
-                "Splitting one objective into several teams",
-                "Measuring effort instead of outcomes",
-                "Adding a guardrail to a stretch goal"
+                "Setting a target you are sure to hit so the score stays green",
+                "Splitting one single objective across several different teams",
+                "Deliberately measuring effort instead of the real outcomes",
+                "Adding an unnecessary guardrail metric onto a stretch goal"
               ],
               "correctIndex": 0
             },
@@ -23415,10 +23415,10 @@ export const PREBUILT_COURSES = [
               "concept": "Health metric guardrail",
               "question": "What is the purpose of a guardrail metric?",
               "options": [
-                "To make a target easier to reach",
-                "To protect a healthy metric from being sacrificed to a more aggressive one",
-                "To replace the objective entirely",
-                "To count total activity for reporting"
+                "To conveniently make a difficult target much easier to reach",
+                "To protect a healthy metric from being sacrificed to a bigger one",
+                "To completely replace the underlying objective altogether",
+                "To count up total raw activity purely for status reporting"
               ],
               "correctIndex": 1
             },
@@ -23427,10 +23427,10 @@ export const PREBUILT_COURSES = [
               "concept": "Metric vs. milestone key result",
               "question": "When is a milestone key result appropriate, per the lesson?",
               "options": [
-                "Whenever a metric feels too hard to measure",
-                "For any recurring weekly task",
-                "When the outcome is binary or staged and the milestone genuinely proves progress",
-                "Only for committed OKRs, never aspirational ones"
+                "Whenever a chosen metric simply feels too hard to measure well",
+                "For literally any recurring weekly operational task on the list",
+                "When the outcome is binary or staged and the milestone proves progress",
+                "Only ever for committed OKRs, and never for aspirational ones"
               ],
               "correctIndex": 2
             },
@@ -23439,10 +23439,10 @@ export const PREBUILT_COURSES = [
               "concept": "Vanity metric",
               "question": "Why is 'send 100% of renewal reminders on time' flagged in the example?",
               "options": [
-                "It lacks a deadline",
+                "It completely lacks any kind of firm, stated deadline attached",
                 "It is a vanity metric because reminders sent aren't the outcome",
-                "It is a guardrail applied to the wrong metric",
-                "It sandbags the renewal target"
+                "It is really a guardrail applied to the entirely wrong metric",
+                "It quietly sandbags the underlying renewal target metric"
               ],
               "correctIndex": 1
             }
@@ -23529,10 +23529,10 @@ export const PREBUILT_COURSES = [
               "concept": "Cascading vs. connecting",
               "question": "Why does the lesson prefer connecting over strict cascading?",
               "options": [
-                "It removes the need for company objectives",
-                "Teams defend goals they helped shape and neglect ones imposed on them",
-                "It guarantees every team hits 100 percent",
-                "It eliminates all cross-team dependencies"
+                "It completely removes the need for any company objectives at all",
+                "Teams defend goals they helped shape, not ones imposed on them",
+                "It guarantees that every single team hits a full 100 percent",
+                "It eliminates all of the messy cross-team dependencies at once"
               ],
               "correctIndex": 1
             },
@@ -23542,9 +23542,9 @@ export const PREBUILT_COURSES = [
               "question": "What does vertical alignment provide?",
               "options": [
                 "A traceable link from a team OKR up to a company objective",
-                "A shared budget across peer teams",
-                "A weekly status meeting cadence",
-                "A guardrail on every metric"
+                "A shared common budget spread across all the peer teams",
+                "A fixed weekly status meeting cadence for every team",
+                "A protective guardrail placed on every single metric"
               ],
               "correctIndex": 0
             },
@@ -23553,10 +23553,10 @@ export const PREBUILT_COURSES = [
               "concept": "Shared key result",
               "question": "What is a shared key result?",
               "options": [
-                "A key result with no numeric target",
+                "A key result set with no clear numeric target at all",
                 "A single key result jointly owned by two dependent teams",
-                "A key result copied from the company objective",
-                "A backup goal used only if the main one fails"
+                "A key result directly copied from the company objective",
+                "A backup goal used only when the main one clearly fails"
               ],
               "correctIndex": 1
             },
@@ -23565,10 +23565,10 @@ export const PREBUILT_COURSES = [
               "concept": "Bottom-up OKRs",
               "question": "Roughly what share of a team's OKRs should originate bottom-up, per the lesson?",
               "options": [
-                "None — all should be top-down",
-                "About half",
-                "Exactly one",
-                "All of them"
+                "None, since all are top-down",
+                "Roughly about half of them",
+                "Only about one of them",
+                "Basically all of them"
               ],
               "correctIndex": 1
             },
@@ -23577,10 +23577,10 @@ export const PREBUILT_COURSES = [
               "concept": "Horizontal alignment",
               "question": "How does horizontal alignment help you influence teams you don't own?",
               "options": [
-                "It gives you formal authority over them",
-                "A co-owned visible number is harder to deprioritize than a spoken favor",
-                "It removes the dependency entirely",
-                "It lets you set their objectives for them"
+                "It suddenly gives you full formal authority over all of them",
+                "A co-owned visible number is harder to drop than a spoken favor",
+                "It completely removes the underlying dependency entirely",
+                "It simply lets you set all of their objectives for them"
               ],
               "correctIndex": 1
             },
@@ -23679,10 +23679,10 @@ export const PREBUILT_COURSES = [
               "concept": "0.0 to 1.0 scoring",
               "question": "What target average score defines success for an aspirational OKR?",
               "options": [
-                "Around 0.7",
-                "Exactly 1.0",
-                "Below 0.3",
-                "Precisely 0.5"
+                "Around 0.7 on average",
+                "Exactly 1.0 overall",
+                "Below 0.3 on average",
+                "Precisely 0.5 overall"
               ],
               "correctIndex": 0
             },
@@ -23691,10 +23691,10 @@ export const PREBUILT_COURSES = [
               "concept": "Confidence score",
               "question": "Why is a mid-quarter confidence drop described as valuable?",
               "options": [
-                "It guarantees the target will be missed",
+                "It fully guarantees the target will be missed",
                 "You can still act on it before the quarter ends",
-                "It automatically raises the final score",
-                "It replaces the need for a retrospective"
+                "It automatically raises your final OKR score",
+                "It replaces the need for any retrospective at all"
               ],
               "correctIndex": 1
             },
@@ -23703,10 +23703,10 @@ export const PREBUILT_COURSES = [
               "concept": "Decoupling OKRs from compensation",
               "question": "What happens if OKR scores feed directly into pay, per the lesson?",
               "options": [
-                "Teams set more ambitious targets",
-                "Everyone sandbags their targets",
-                "Confidence scores become more honest",
-                "The objective becomes a KPI"
+                "Teams start setting more ambitious targets",
+                "Everyone quietly sandbags their own targets",
+                "Confidence scores actually become more honest",
+                "The objective effectively becomes a KPI"
               ],
               "correctIndex": 1
             },
@@ -23715,10 +23715,10 @@ export const PREBUILT_COURSES = [
               "concept": "Weekly check-in",
               "question": "Why is an async written check-in recommended for your Manila team?",
               "options": [
-                "It avoids the need for any scoring",
+                "It conveniently avoids the need for doing any scoring at all",
                 "It respects their night-shift hours and leaves a scannable trail",
-                "It removes confidence scores from the process",
-                "It replaces the quarter-end retrospective"
+                "It quietly removes confidence scores from the whole process",
+                "It fully replaces the standard quarter-end retrospective"
               ],
               "correctIndex": 1
             },
@@ -23829,10 +23829,10 @@ export const PREBUILT_COURSES = [
               "concept": "Too many OKRs",
               "question": "How many objectives per team does the lesson recommend for real focus?",
               "options": [
-                "Two or three",
-                "Eight to ten",
-                "One per person",
-                "As many as leadership assigns"
+                "Two or three per team",
+                "Eight to ten per team",
+                "One goal for each person",
+                "As many as are assigned"
               ],
               "correctIndex": 0
             },
@@ -23841,10 +23841,10 @@ export const PREBUILT_COURSES = [
               "concept": "OKRs as a task tracker",
               "question": "What signals that OKRs have become a task tracker?",
               "options": [
-                "The list has a few outcome-based key results",
+                "The list has a few solid outcome-based key results",
                 "The doc reads like a to-do dump of weekly tasks",
-                "Each objective has a confidence score",
-                "The OKRs are decoupled from compensation"
+                "Each objective is given its own confidence score",
+                "The OKRs are fully decoupled from compensation"
               ],
               "correctIndex": 1
             },
@@ -23853,10 +23853,10 @@ export const PREBUILT_COURSES = [
               "concept": "Phased rollout",
               "question": "What does a phased rollout start with?",
               "options": [
-                "Every team in the org at once",
+                "Every single team across the whole org all at once",
                 "One or two teams for a quarter, then widening after a retro",
-                "Only the billing team, permanently",
-                "A company-wide launch event"
+                "Only the billing team, kept that way permanently",
+                "A single big company-wide launch event for everyone"
               ],
               "correctIndex": 1
             },
@@ -23865,10 +23865,10 @@ export const PREBUILT_COURSES = [
               "concept": "Focus and the power of no",
               "question": "According to the lesson, where does the real value of OKRs come from?",
               "options": [
-                "The number of goals you write down",
-                "The goals you consciously leave off",
-                "Linking every goal to a task",
-                "Scoring every objective at 1.0"
+                "The sheer number of goals you write down",
+                "The goals you consciously choose to leave off",
+                "Linking up every single goal to a task",
+                "Scoring every single objective at a 1.0"
               ],
               "correctIndex": 1
             },
@@ -23877,10 +23877,10 @@ export const PREBUILT_COURSES = [
               "concept": "Set-and-forget",
               "question": "What is the set-and-forget failure mode?",
               "options": [
-                "Writing goals once and never revisiting them until quarter-end",
-                "Setting too few objectives",
-                "Sharing key results across teams",
-                "Grading on a 0.0 to 1.0 scale"
+                "Writing goals once and never revisiting until quarter-end",
+                "Setting far too few objectives for the team to pursue",
+                "Sharing important key results widely across many teams",
+                "Grading absolutely everything on a 0.0 to 1.0 scale"
               ],
               "correctIndex": 0
             },
@@ -23891,8 +23891,8 @@ export const PREBUILT_COURSES = [
               "options": [
                 "Because leadership requires you to reject all new goals",
                 "Because if you don't, no one else will protect focus",
-                "Because saying no raises OKR scores automatically",
-                "Because it removes the need for a rollout"
+                "Because saying no somehow raises OKR scores automatically",
+                "Because it entirely removes the need for any rollout"
               ],
               "correctIndex": 1
             }
@@ -23994,9 +23994,9 @@ export const PREBUILT_COURSES = [
               "question": "What distinguishes a KPI from an ordinary metric?",
               "options": [
                 "A KPI is tied to a strategic goal and would trigger action if it moved",
-                "A KPI is always expressed as a percentage rather than a raw count",
-                "A KPI is measured monthly while metrics are measured daily",
-                "A KPI must be displayed on an executive dashboard to qualify"
+                "A KPI is always expressed as a percentage rather than as a raw count",
+                "A KPI is measured monthly while metrics are measured daily or hourly",
+                "A KPI must be displayed on an executive dashboard before it qualifies"
               ],
               "correctIndex": 0
             },
@@ -24006,9 +24006,9 @@ export const PREBUILT_COURSES = [
               "question": "Which of these is a lagging indicator?",
               "options": [
                 "Share of new brokerages that set up AI calling in week one",
-                "First-response time on today's open support tickets",
-                "Quarterly net revenue retention for the SMB book",
-                "Number of accounts logging in fewer than four times in month one"
+                "Median first-response time on today's open support tickets",
+                "Quarterly net revenue retention for the SMB customer book",
+                "Accounts that log in fewer than four times in month one"
               ],
               "correctIndex": 2
             },
@@ -24041,10 +24041,10 @@ export const PREBUILT_COURSES = [
               "concept": "Key performance indicator",
               "question": "According to the lesson, why should you reserve the KPI label for a small set of numbers?",
               "options": [
-                "Dashboards render slowly when they contain many metrics",
+                "Dashboards render slowly when they are packed with too many metrics",
                 "It keeps dashboards honest and teams focused on what you'd act on",
-                "Executives can only interpret one number per meeting",
-                "Fewer metrics reduce the cost of data storage and tooling"
+                "Executives can only ever interpret a single number in each meeting",
+                "Fewer metrics reduce the cost of data storage and reporting tooling"
               ],
               "correctIndex": 1
             },
@@ -24053,8 +24053,8 @@ export const PREBUILT_COURSES = [
               "concept": "Lagging indicator",
               "question": "What is the core weakness of relying only on lagging indicators?",
               "options": [
-                "They are too noisy to trust for any real decision",
-                "They cannot be tied to a strategic goal or outcome",
+                "They are far too noisy to trust for any real decision",
+                "They cannot be tied to a strategic goal or business outcome",
                 "By the time the number is bad, the period is already over",
                 "They are impossible to measure without a data warehouse"
               ],
@@ -24157,10 +24157,10 @@ export const PREBUILT_COURSES = [
               "concept": "KPI tree",
               "question": "What is the purpose of a KPI tree?",
               "options": [
-                "To rank teams against each other on a single leaderboard",
+                "To rank teams against each other on a single shared leaderboard",
                 "To store historical metric values in a structured database",
                 "To decompose one headline outcome into the drivers that feed it",
-                "To decide how often each dashboard should be refreshed"
+                "To decide how often each dashboard ought to be refreshed"
               ],
               "correctIndex": 2
             },
@@ -24182,9 +24182,9 @@ export const PREBUILT_COURSES = [
               "question": "Which three filters does the lesson use to prune a candidate list to the vital few?",
               "options": [
                 "Influence, signal, and non-redundancy",
-                "Cost, frequency, and audience",
-                "Accuracy, precision, and recall",
-                "Novelty, popularity, and simplicity"
+                "Collection cost, frequency, and audience",
+                "Accuracy, precision, and statistical recall",
+                "Novelty, popularity, and visual simplicity"
               ],
               "correctIndex": 0
             },
@@ -24194,8 +24194,8 @@ export const PREBUILT_COURSES = [
               "question": "According to the lesson, who should own a given KPI?",
               "options": [
                 "The person who first proposed adding it to the dashboard",
-                "The team with the most real leverage over moving it",
-                "The most senior leader whose area it touches",
+                "The team that holds the most real leverage over moving it",
+                "The most senior leader whose area of the org it touches",
                 "Whoever is responsible for pulling and reporting the data"
               ],
               "correctIndex": 1
@@ -24314,9 +24314,9 @@ export const PREBUILT_COURSES = [
               "question": "How should you treat an external benchmark from a different customer mix?",
               "options": [
                 "Adopt it directly as the committed target for your team",
-                "Ignore all external data and use only internal trends",
-                "As context to weight lightly, not as gospel",
-                "Use it to replace your baseline measurement entirely"
+                "Ignore all external data and rely on internal trends only",
+                "As helpful context to weight lightly, never as gospel",
+                "Use it to replace your own baseline measurement entirely"
               ],
               "correctIndex": 2
             },
@@ -24337,10 +24337,10 @@ export const PREBUILT_COURSES = [
               "concept": "Thresholds and bands",
               "question": "What advantage do thresholds and bands have over a single target line?",
               "options": [
-                "They remove the need to document a baseline first",
-                "They guarantee the target will be hit each period",
-                "They convert the target into an external benchmark",
-                "They signal when to relax, watch, or act, with actions defined in advance"
+                "They remove any need to document a baseline carefully before you begin",
+                "They guarantee the target will always be hit in every single period",
+                "They convert the target into a best-in-class external benchmark figure",
+                "They flag when to relax, watch, or act, with responses defined in advance"
               ],
               "correctIndex": 3
             },
@@ -24349,8 +24349,8 @@ export const PREBUILT_COURSES = [
               "concept": "Stretch vs. realistic",
               "question": "What is the risk of setting targets impossibly high?",
               "options": [
-                "They are too easy to hit and teach the team nothing",
-                "They get missed, ignored, and eventually gamed",
+                "They are far too easy to hit and teach the team nothing",
+                "They get missed, then ignored, and are eventually gamed",
                 "They force benchmarks to be recalculated each quarter",
                 "They make baselines impossible to measure accurately"
               ],
@@ -24361,10 +24361,10 @@ export const PREBUILT_COURSES = [
               "concept": "Stretch vs. realistic",
               "question": "What rough rule does the lesson give for a well-calibrated committed target?",
               "options": [
-                "It should be hit every single period without exception",
-                "It should exactly match the best-in-class benchmark",
+                "It should be hit every single period without any exception",
+                "It should exactly match the published best-in-class benchmark",
                 "It should be reachable in about seven or eight tries out of ten",
-                "It should double the team's current baseline performance"
+                "It should roughly double the team's current baseline performance"
               ],
               "correctIndex": 2
             }
@@ -24456,10 +24456,10 @@ export const PREBUILT_COURSES = [
               "concept": "Operational definition",
               "question": "What is the practical test of a good operational definition?",
               "options": [
-                "It fits on a single line of a dashboard tile",
+                "It fits neatly on a single line of any dashboard tile display",
                 "Two independent analysts compute the identical number from it",
-                "It uses only data available in the billing system",
-                "It matches the benchmark used by industry peers"
+                "It uses only the data already available in the billing system",
+                "It matches the external benchmark used by most industry peers"
               ],
               "correctIndex": 1
             },
@@ -24468,10 +24468,10 @@ export const PREBUILT_COURSES = [
               "concept": "Data source and lineage",
               "question": "Why does documenting data lineage matter for a KPI?",
               "options": [
-                "It removes the need to define the metric precisely",
-                "It guarantees the KPI will hit its target each period",
+                "It removes any need to define the underlying metric precisely",
+                "It guarantees the KPI will reliably hit its target each period",
                 "It lets you diagnose a suspicious number rather than just distrust it",
-                "It sets the green, amber, and red bands automatically"
+                "It sets the green, amber, and red threshold bands automatically"
               ],
               "correctIndex": 2
             },
@@ -24480,9 +24480,9 @@ export const PREBUILT_COURSES = [
               "concept": "Data quality",
               "question": "Why is a precisely-defined KPI built on dirty data described as worse than no KPI?",
               "options": [
-                "It is slower to compute than a rough estimate",
-                "It cannot be added to an executive dashboard",
-                "It requires a KPI dictionary that teams rarely maintain",
+                "It is noticeably slower to compute than a rough estimate",
+                "It cannot easily be added to any executive-level dashboard",
+                "It requires a KPI dictionary that teams will rarely maintain",
                 "Its false precision earns trust the number does not deserve"
               ],
               "correctIndex": 3
@@ -24493,9 +24493,9 @@ export const PREBUILT_COURSES = [
               "question": "What happens when you review a slow-moving KPI far too frequently?",
               "options": [
                 "You overreact to random wiggles that are just noise",
-                "The operational definition changes on its own",
-                "The data source becomes unreliable over time",
-                "The baseline resets and must be recalculated"
+                "The operational definition quietly changes on its own",
+                "The underlying data source becomes unreliable over time",
+                "The baseline silently resets and must be recalculated"
               ],
               "correctIndex": 0
             },
@@ -24504,10 +24504,10 @@ export const PREBUILT_COURSES = [
               "concept": "KPI dictionary",
               "question": "What is the primary purpose of a KPI dictionary?",
               "options": [
-                "To rank which teams are hitting their targets",
-                "To store every raw data record behind each metric",
-                "To be the single source of truth for definitions, owners, sources, and cadence",
-                "To automate the calculation of leading indicators"
+                "To rank which teams are currently hitting their assigned targets",
+                "To store every raw underlying data record that sits behind each metric",
+                "The single source of truth for definitions, owners, sources, and cadence",
+                "To fully automate the calculation of all leading indicator metrics"
               ],
               "correctIndex": 2
             },
@@ -24516,10 +24516,10 @@ export const PREBUILT_COURSES = [
               "concept": "Operational definition",
               "question": "When two teams' churn numbers disagree each month, where does the lesson say to look first?",
               "options": [
-                "At which team is underperforming on retention",
+                "At which team is underperforming badly on retention",
                 "At the definitions and data sources they each use",
-                "At whether the target was set too high",
-                "At the review cadence each team follows"
+                "At whether the retention target was set too high",
+                "At the review cadence each of the teams follows"
               ],
               "correctIndex": 1
             }
@@ -24615,7 +24615,7 @@ export const PREBUILT_COURSES = [
                 "A measure improves once a team is trained on its definition",
                 "When a measure becomes a target, it ceases to be a good measure",
                 "Leading indicators are always more reliable than lagging ones",
-                "Every KPI must be paired with an external benchmark"
+                "Every KPI must always be paired with an external benchmark figure"
               ],
               "correctIndex": 1
             },
@@ -24624,10 +24624,10 @@ export const PREBUILT_COURSES = [
               "concept": "Perverse incentive",
               "question": "Which is an example of a perverse incentive from the lesson?",
               "options": [
-                "Reviewing quarterly NRR on a daily cadence",
-                "Reading churn from billing while marketing reads it from the CRM",
+                "Reviewing quarterly NRR figures on a rushed daily cadence",
+                "Reading churn from billing while marketing reads it off the CRM",
                 "Closing tickets fast without resolving them to hit a count",
-                "Setting a target before establishing a baseline"
+                "Setting an ambitious target before establishing any baseline"
               ],
               "correctIndex": 2
             },
@@ -24636,9 +24636,9 @@ export const PREBUILT_COURSES = [
               "concept": "Counter-metric",
               "question": "What is the job of a counter-metric?",
               "options": [
-                "To replace the main KPI once it has been gamed",
-                "To set the target level for the headline metric",
-                "To document the data lineage of the main KPI",
+                "To permanently replace the main KPI once it has been gamed",
+                "To set the appropriate target level for the headline metric",
+                "To document the complete data lineage behind the main KPI",
                 "To worsen when the main KPI is gamed, exposing the gaming path"
               ],
               "correctIndex": 3
@@ -24649,7 +24649,7 @@ export const PREBUILT_COURSES = [
               "question": "Why is a balanced set of quantity, quality, and outcome metrics harder to game?",
               "options": [
                 "Cheating one dimension degrades the others, so imbalance shows",
-                "It requires fewer data sources than a single metric",
+                "It requires far fewer data sources than a single headline metric",
                 "It automatically sets realistic rather than stretch targets",
                 "It eliminates the need to define each metric operationally"
               ],
@@ -24660,10 +24660,10 @@ export const PREBUILT_COURSES = [
               "concept": "KPI review and retirement",
               "question": "Why does the lesson say KPIs should be reviewed and retired on a schedule?",
               "options": [
-                "Because reporting tools delete unused metrics automatically",
+                "Because reporting tools quietly delete unused metrics automatically",
                 "Because a KPI can rot into a ritual everyone hits and no one believes",
-                "Because benchmarks are republished every quarter",
-                "Because baselines expire after a fixed period of time"
+                "Because external benchmarks are republished afresh every quarter",
+                "Because baselines simply expire after a fixed set period of time"
               ],
               "correctIndex": 1
             },
@@ -24762,10 +24762,10 @@ export const PREBUILT_COURSES = [
               "concept": "Multiple Listing Service",
               "question": "What best describes a Multiple Listing Service?",
               "options": [
-                "A free public government database of all homes for sale",
+                "A free public government database listing all homes currently for sale",
                 "A private, membership-based database run by and for licensed brokers",
-                "A consumer app owned by a national real estate portal",
-                "A federal registry that tracks property ownership records"
+                "A consumer-facing app owned by a large national real estate portal",
+                "A federal registry that tracks property ownership and deed records"
               ],
               "correctIndex": 1
             },
@@ -24774,10 +24774,10 @@ export const PREBUILT_COURSES = [
               "concept": "Cooperation and compensation",
               "question": "The deal at the heart of an MLS is best summarized as:",
               "options": [
-                "Sellers pay a flat fee to list on a national portal",
-                "Buyers pay brokers directly for database access",
-                "A listing broker shares inventory in exchange for cooperating brokers bringing buyers",
-                "The MLS pays brokers to upload listings quickly"
+                "Sellers each pay a flat listing fee to appear on one national portal",
+                "Buyers pay cooperating brokers directly in order to gain database access",
+                "A listing broker shares inventory so cooperating brokers will bring buyers",
+                "The MLS pays its member brokers a fee to upload their listings quickly"
               ],
               "correctIndex": 2
             },
@@ -24786,10 +24786,10 @@ export const PREBUILT_COURSES = [
               "concept": "MLS fragmentation",
               "question": "Why is there no single MLS a website can simply plug into nationwide?",
               "options": [
-                "Federal law bans a national listing database outright",
-                "There are hundreds of separate regional MLSs, each with its own rules and formats",
-                "Only one MLS exists but it limits how many websites connect",
-                "MLSs merged into one system that changes formats yearly"
+                "Federal law bans any single national listing database outright",
+                "There are hundreds of separate regional MLSs, each with its own rules",
+                "Only one MLS exists but it limits how many websites may connect to it",
+                "The MLSs all merged into one system that changes its formats yearly"
               ],
               "correctIndex": 1
             },
@@ -24798,10 +24798,10 @@ export const PREBUILT_COURSES = [
               "concept": "Listing data ownership",
               "question": "Why is MLS listing data treated as controlled property rather than open information?",
               "options": [
-                "Because the government classifies it as a state secret",
-                "Because portals bought exclusive rights to all of it",
-                "Because it changes too fast to be considered stable",
-                "Because member brokers contribute it under cooperative rules and expect its reuse to be governed"
+                "Because the federal government formally classifies it as a state secret",
+                "Because the national portals purchased exclusive rights to all of it",
+                "Because it changes far too quickly to ever be considered stable data",
+                "Because member brokers contribute it under rules that govern how it is reused"
               ],
               "correctIndex": 3
             },
@@ -24810,10 +24810,10 @@ export const PREBUILT_COURSES = [
               "concept": "Broker cooperative",
               "question": "Membership in an MLS is primarily available to whom?",
               "options": [
-                "Any consumer who registers an email address",
-                "Only property developers and homebuilders",
+                "Any individual consumer who simply registers an email address",
+                "Only large property developers and residential homebuilders",
                 "Licensed real estate brokers and their agents who join and pay dues",
-                "Any software vendor that requests a data feed"
+                "Any software vendor that formally requests a listing data feed"
               ],
               "correctIndex": 2
             },
@@ -24823,8 +24823,8 @@ export const PREBUILT_COURSES = [
               "question": "A brokerage expanding into a second metro area typically must:",
               "options": [
                 "Do nothing, since one MLS membership covers the whole country",
-                "Only update a setting in their existing website dashboard",
-                "Wait for the national MLS to auto-enroll the new office",
+                "Only update a single setting in their existing website dashboard",
+                "Wait for the national MLS to automatically enroll the new office",
                 "Join and be approved by the separate MLS serving that new market"
               ],
               "correctIndex": 3
@@ -24908,10 +24908,10 @@ export const PREBUILT_COURSES = [
               "concept": "IDX",
               "question": "What does IDX (Internet Data Exchange) primarily provide?",
               "options": [
-                "The rules and access to display other brokers' MLS listings on your own website",
-                "A private messaging channel between competing brokerages",
-                "A backup copy of the MLS in case the database fails",
-                "A consumer credit-check service for mortgage approval"
+                "Rules and access to display other brokers' MLS listings on your own website",
+                "A private messaging channel that runs between competing brokerages only",
+                "A backup copy of the entire MLS kept in case the main database fails",
+                "A consumer credit-check service used for mortgage pre-approval decisions"
               ],
               "correctIndex": 0
             },
@@ -24920,10 +24920,10 @@ export const PREBUILT_COURSES = [
               "concept": "Feed refresh cadence",
               "question": "A listing's price is correct in the MLS but old on a Lofty site. The most likely cause is:",
               "options": [
-                "The listing was permanently deleted from the MLS",
+                "The listing was permanently deleted from the source MLS",
                 "The website has not yet completed its next feed sync",
-                "The agent lost their real estate license",
-                "The consumer's browser is blocking updates"
+                "The listing agent recently lost their real estate license",
+                "The consumer's web browser is silently blocking updates"
               ],
               "correctIndex": 1
             },
@@ -24932,10 +24932,10 @@ export const PREBUILT_COURSES = [
               "concept": "Opt-out",
               "question": "A specific home is entirely absent from a customer's IDX site. A legitimate non-bug cause is:",
               "options": [
-                "The MLS charges extra to display three-bedroom homes",
-                "IDX only shows listings under $500,000",
+                "The MLS charges extra to display certain three-bedroom homes",
+                "The IDX feed only ever shows listings priced under $500,000",
                 "The seller or broker opted the listing out of IDX display",
-                "Lofty randomly hides one listing per day"
+                "Lofty randomly hides exactly one listing from the site each day"
               ],
               "correctIndex": 2
             },
@@ -24944,9 +24944,9 @@ export const PREBUILT_COURSES = [
               "concept": "Listing broker attribution",
               "question": "Why must an IDX listing page name the brokerage that holds the listing?",
               "options": [
-                "To calculate the buyer's mortgage interest rate",
-                "To let consumers leave public reviews of the home",
-                "To trigger the feed refresh on schedule",
+                "To calculate the eventual buyer's mortgage interest rate",
+                "To let consumers leave public reviews of the listed home",
+                "To trigger the periodic feed refresh right on schedule",
                 "So consumers aren't misled about who actually listed the home"
               ],
               "correctIndex": 3
@@ -24956,10 +24956,10 @@ export const PREBUILT_COURSES = [
               "concept": "IDX feed",
               "question": "How does a listing travel from the MLS onto a Lofty website?",
               "options": [
-                "Agents manually retype each listing into the website",
-                "Consumers upload listings they find elsewhere",
+                "Agents manually retype each MLS listing into the website",
+                "Consumers upload listings that they find somewhere elsewhere",
                 "Lofty ingests a governed IDX feed and maps it into the site",
-                "The MLS emails a PDF that Lofty prints to the page"
+                "The MLS emails over a PDF that Lofty then prints to the page"
               ],
               "correctIndex": 2
             },
@@ -24968,10 +24968,10 @@ export const PREBUILT_COURSES = [
               "concept": "IDX",
               "question": "When a customer says 'my IDX is broken,' they usually mean:",
               "options": [
-                "The national MLS has permanently shut down",
+                "The one national MLS has now permanently shut down entirely",
                 "The pipeline feeding listings into their website has a problem",
-                "Their real estate license was revoked by the state",
-                "Consumers can no longer create accounts on the site"
+                "Their real estate license was just revoked by the state board",
+                "Consumers can no longer create new accounts on the website"
               ],
               "correctIndex": 1
             }
@@ -25054,10 +25054,10 @@ export const PREBUILT_COURSES = [
               "concept": "RESO",
               "question": "What problem does RESO primarily solve?",
               "options": [
-                "It gives consumers free access to listing data",
+                "It gives ordinary consumers free direct access to all listing data",
                 "It lets differing MLS data be understood consistently by software",
-                "It sets the commission a buyer's broker earns",
-                "It hosts the actual listing database for every MLS"
+                "It sets the commission that a buyer's broker ultimately earns",
+                "It hosts the actual underlying listing database for every MLS"
               ],
               "correctIndex": 1
             },
@@ -25066,10 +25066,10 @@ export const PREBUILT_COURSES = [
               "concept": "RESO Data Dictionary",
               "question": "The RESO Data Dictionary defines:",
               "options": [
-                "The legal contract between buyer and seller",
-                "The pricing tiers a website vendor can charge",
+                "The formal legal contract between the buyer and seller",
+                "The pricing tiers a website vendor is allowed to charge",
                 "A common set of field names and values for listing data",
-                "The refresh schedule every IDX feed must follow"
+                "The refresh schedule that every single IDX feed must follow"
               ],
               "correctIndex": 2
             },
@@ -25078,9 +25078,9 @@ export const PREBUILT_COURSES = [
               "concept": "RESO Web API",
               "question": "The RESO Web API is best described as:",
               "options": [
-                "A consumer-facing mobile app for browsing homes",
-                "A rule requiring attribution on every listing page",
-                "A private messaging tool for brokers",
+                "A consumer-facing mobile app built for browsing homes for sale",
+                "A rule requiring broker attribution on every listing page",
+                "A private, secure messaging tool built for licensed brokers",
                 "A modern, standardized way to pull MLS data over the internet"
               ],
               "correctIndex": 3
@@ -25092,8 +25092,8 @@ export const PREBUILT_COURSES = [
               "options": [
                 "It is being phased out in favor of the RESO Web API",
                 "It is becoming the new mandatory national standard",
-                "It has been made illegal by federal regulators",
-                "It is merging with IDX to form one system"
+                "It has recently been made illegal by federal regulators",
+                "It is now merging with IDX to form a single system"
               ],
               "correctIndex": 0
             },
@@ -25102,10 +25102,10 @@ export const PREBUILT_COURSES = [
               "concept": "Data normalization",
               "question": "Why does Lofty still perform data normalization despite RESO standards?",
               "options": [
-                "Because consumers demand different fonts per market",
-                "Because MLS adoption of the standards is uneven and includes custom fields",
-                "Because normalization is legally required before any display",
-                "Because the MLS charges less for normalized data"
+                "Because consumers demand entirely different fonts in each market",
+                "Because MLS adoption of the standards is uneven, with custom fields",
+                "Because normalization is legally required before any public display",
+                "Because the MLS reliably charges much less for pre-normalized data"
               ],
               "correctIndex": 1
             },
@@ -25114,10 +25114,10 @@ export const PREBUILT_COURSES = [
               "concept": "Data normalization",
               "question": "A filter that works in one market but returns garbage in another most likely traces to:",
               "options": [
-                "The customer using an outdated web browser",
-                "A billing lapse on the customer's account",
-                "An MLS whose data doesn't match the standard, forcing imperfect normalization",
-                "The consumer being in a different time zone"
+                "The customer happening to use a badly outdated web browser",
+                "A temporary billing lapse recorded on the customer's account",
+                "An MLS whose data breaks the standard, forcing imperfect mapping",
+                "The consumer simply happening to be in a different time zone"
               ],
               "correctIndex": 2
             }
@@ -25200,10 +25200,10 @@ export const PREBUILT_COURSES = [
               "concept": "Display compliance rules",
               "question": "IDX display compliance rules are best described as:",
               "options": [
-                "Optional best practices with no real consequences",
+                "Optional best practices that carry no real consequences",
                 "Conditions a broker must follow to keep their IDX access",
-                "Federal laws identical in every US market",
-                "Pricing rules set by the website vendor"
+                "Federal laws that are identical in every single US market",
+                "Pricing rules quietly set by the individual website vendor"
               ],
               "correctIndex": 1
             },
@@ -25212,10 +25212,10 @@ export const PREBUILT_COURSES = [
               "concept": "Data refresh requirements",
               "question": "Why can persistently outdated listings be a compliance problem, not just a quality one?",
               "options": [
-                "Because consumers prefer newer website designs",
-                "Because old listings load more slowly for visitors",
+                "Because consumers generally prefer newer, fresher website designs",
+                "Because stale old listings tend to load more slowly for visitors",
                 "Because many MLSs set a maximum allowable age for displayed data",
-                "Because refresh timing affects the agent's commission rate"
+                "Because refresh timing affects the agent's earned commission rate"
               ],
               "correctIndex": 2
             },
@@ -25224,9 +25224,9 @@ export const PREBUILT_COURSES = [
               "concept": "Commingling",
               "question": "Commingling, in an IDX context, refers to:",
               "options": [
-                "Combining two agents' commissions on one sale",
-                "Merging two separate MLSs into a single system",
-                "Sharing a login between multiple website users",
+                "Combining two agents' commissions together on one sale",
+                "Merging two separate regional MLSs into a single system",
+                "Sharing one login between several different website users",
                 "Mixing IDX data with other sources in ways an MLS forbids"
               ],
               "correctIndex": 3
@@ -25236,10 +25236,10 @@ export const PREBUILT_COURSES = [
               "concept": "Prohibited uses",
               "question": "Which is a commonly prohibited use of IDX data?",
               "options": [
-                "Using IDX data to build a separate valuation product or resell the raw feed",
-                "Displaying listings with the required broker attribution",
-                "Letting consumers search available homes on the site",
-                "Refreshing the feed on the MLS's required schedule"
+                "Using IDX data to build a separate valuation product or resell the feed",
+                "Displaying listings together with the required broker attribution shown",
+                "Letting ordinary consumers search available homes directly on the site",
+                "Refreshing the data feed exactly on the MLS's required set schedule"
               ],
               "correctIndex": 0
             },
@@ -25248,10 +25248,10 @@ export const PREBUILT_COURSES = [
               "concept": "Required attribution and disclaimers",
               "question": "A core IDX display rule requires that displayed listings:",
               "options": [
-                "Hide the listing brokerage to protect competitors",
+                "Hide the listing brokerage so as to protect competitors",
                 "Carry accurate required attribution and disclaimers",
-                "Show only homes listed by the displaying agent",
-                "Be manually re-entered by the agent each week"
+                "Show only the homes listed by the displaying agent",
+                "Be manually re-entered by the listing agent each week"
               ],
               "correctIndex": 1
             },
@@ -25260,10 +25260,10 @@ export const PREBUILT_COURSES = [
               "concept": "Prohibited uses",
               "question": "Why might one new listing-data feature be fine in one market but a violation in another?",
               "options": [
-                "Because website load times differ by region",
-                "Because consumers in each market have different tastes",
+                "Because overall website load times can differ from region to region",
+                "Because consumers in each local market simply have different tastes",
                 "Because commingling and prohibited-use rules are set per MLS and vary",
-                "Because the RESO Web API is only available in some states"
+                "Because the RESO Web API is only currently available in some states"
               ],
               "correctIndex": 2
             }
@@ -25346,10 +25346,10 @@ export const PREBUILT_COURSES = [
               "concept": "IDX and SEO",
               "question": "Why is IDX listing quality a revenue driver rather than a cosmetic concern?",
               "options": [
-                "Fresh, structured listing content drives the organic search traffic and leads customers pay for",
-                "Listings determine the color scheme of the website",
-                "The MLS pays Lofty directly for each displayed listing",
-                "More listings automatically lower the customer's subscription price"
+                "Fresh, structured listings drive organic search traffic and the leads customers pay for",
+                "Listings alone quietly determine the entire color scheme of the customer's website",
+                "The MLS pays Lofty directly, in cash, for every single displayed listing shown",
+                "More displayed listings automatically lower the customer's monthly subscription price"
               ],
               "correctIndex": 0
             },
@@ -25358,10 +25358,10 @@ export const PREBUILT_COURSES = [
               "concept": "Onboarding dependency on MLS approval",
               "question": "A frequently invisible cause of slow website onboarding is:",
               "options": [
-                "The customer forgetting their website password",
-                "The MLS's required approval of the IDX feed running on its own timeline",
-                "Lofty intentionally delaying enterprise accounts",
-                "Consumers not visiting the site quickly enough"
+                "The customer simply forgetting their own website login password",
+                "MLS approval of the IDX feed running on its own separate timeline",
+                "Lofty intentionally delaying the setup of enterprise accounts",
+                "Consumers just not visiting the new site quickly enough at first"
               ],
               "correctIndex": 1
             },
@@ -25370,9 +25370,9 @@ export const PREBUILT_COURSES = [
               "concept": "Root-cause triage",
               "question": "In the triage map, a listing that is entirely missing most likely indicates:",
               "options": [
-                "A feed refresh timing delay",
+                "A simple feed refresh timing delay",
                 "A RESO Web API upgrade in progress",
-                "An opt-out of IDX display",
+                "A seller's opt-out of IDX display",
                 "A prohibited-use compliance violation"
               ],
               "correctIndex": 2
@@ -25382,9 +25382,9 @@ export const PREBUILT_COURSES = [
               "concept": "Executive framing",
               "question": "Strong executive framing of an IDX issue means:",
               "options": [
-                "Always assuring leadership the product has no defects",
-                "Blaming the customer's MLS for every problem",
-                "Avoiding technical detail so no one asks questions",
+                "Always assuring leadership that the product has no real defects",
+                "Reflexively blaming the customer's MLS for every single problem",
+                "Avoiding all technical detail so that no one asks hard questions",
                 "Separating what Lofty owns from upstream MLS realities it mitigates"
               ],
               "correctIndex": 3
@@ -25394,10 +25394,10 @@ export const PREBUILT_COURSES = [
               "concept": "Churn from listing quality",
               "question": "How can poor listing data drive churn?",
               "options": [
-                "It raises the MLS membership dues the agent pays",
-                "Stale or missing listings weaken SEO and the lead value justifying the subscription",
-                "It forces the customer onto a more expensive plan",
-                "It changes the customer's real estate license status"
+                "It directly raises the MLS membership dues that the agent must pay",
+                "Stale or missing listings weaken SEO and the lead value of the subscription",
+                "It forces the paying customer onto a noticeably more expensive plan",
+                "It somehow changes the customer's active real estate license status"
               ],
               "correctIndex": 1
             },
@@ -25406,10 +25406,10 @@ export const PREBUILT_COURSES = [
               "concept": "Onboarding dependency on MLS approval",
               "question": "Setting expectations that MLS approval is an external gate mainly helps because:",
               "options": [
-                "It lets Lofty charge more for onboarding",
-                "It removes the need for any IDX feed",
-                "A customer who blames the wait on the MLS, not Lofty, stays patient and less likely to churn",
-                "It speeds up the MLS's internal approval process"
+                "It cleverly lets Lofty charge the customer much more for onboarding",
+                "It completely removes the need for any working IDX feed at all",
+                "A customer who blames the wait on the MLS, not Lofty, stays patient",
+                "It noticeably speeds up the MLS's own internal approval process"
               ],
               "correctIndex": 2
             }
@@ -25501,7 +25501,7 @@ export const PREBUILT_COURSES = [
               "concept": "Habit Loop",
               "question": "What are the four stages of the habit loop, in order?",
               "options": [
-                "Goal, plan, action, review",
+                "Goal, plan, action, then review",
                 "Cue, craving, routine, reward",
                 "Trigger, effort, streak, outcome",
                 "Problem, willpower, habit, result"
@@ -25514,9 +25514,9 @@ export const PREBUILT_COURSES = [
               "question": "According to the lesson, what do you actually crave when a habit is triggered?",
               "options": [
                 "The change of internal state the behavior delivers",
-                "The specific physical behavior itself",
-                "The cue that started the sequence",
-                "The praise of other people nearby"
+                "The specific physical behavior you actually perform",
+                "The external cue that first started off the sequence",
+                "The visible praise of other people standing nearby"
               ],
               "correctIndex": 0
             },
@@ -25525,10 +25525,10 @@ export const PREBUILT_COURSES = [
               "concept": "Cue",
               "question": "The lesson describes a cue on its own as what?",
               "options": [
-                "The most powerful part of the loop",
-                "The reward in disguise",
+                "By far the most powerful part of the whole loop",
+                "Really the loop's reward in clever disguise",
                 "Neutral information until a craving is attached",
-                "The same thing as a routine"
+                "Essentially the very same thing as a routine"
               ],
               "correctIndex": 2
             },
@@ -25552,7 +25552,7 @@ export const PREBUILT_COURSES = [
                 "It signals your brain the loop is worth remembering",
                 "It provides the initial trigger for the behavior",
                 "It creates the motivational pull before acting",
-                "It replaces the need for any cue"
+                "It entirely replaces the need for any external cue"
               ],
               "correctIndex": 0
             },
@@ -25561,10 +25561,10 @@ export const PREBUILT_COURSES = [
               "concept": "Problem-Solution Pattern",
               "question": "Why does the lesson say replacing a bad routine beats banning it?",
               "options": [
-                "Banning behaviors is against company policy",
+                "Banning certain behaviors is strictly against company policy",
                 "The loop still solves a recurring problem you need addressed",
-                "Rewards are impossible to remove from any loop",
-                "Cravings disappear the moment a cue is deleted"
+                "Rewards are basically impossible to remove from any habit loop",
+                "Cravings simply disappear the very moment a cue is deleted"
               ],
               "correctIndex": 1
             }
@@ -25643,8 +25643,8 @@ export const PREBUILT_COURSES = [
               "concept": "Implementation Intention",
               "question": "What is the correct format of an implementation intention?",
               "options": [
-                "I hope to [behavior] sometime this week",
-                "After [current habit], I will [new habit]",
+                "I really hope to [behavior] sometime this week",
+                "After my [current habit], I will do [new habit]",
                 "I will [behavior] at [time] in [location]",
                 "I want to become the kind of person who [behavior]"
               ],
@@ -25656,9 +25656,9 @@ export const PREBUILT_COURSES = [
               "question": "What does habit stacking use as the cue for the new habit?",
               "options": [
                 "An existing habit you already do automatically",
-                "A calendar alarm set for a random time",
-                "A reward you give yourself afterward",
-                "A vague intention to improve"
+                "A calendar alarm set for some random time of day",
+                "A reward you give to yourself right afterward",
+                "A vague, unfocused intention to simply improve"
               ],
               "correctIndex": 0
             },
@@ -25667,10 +25667,10 @@ export const PREBUILT_COURSES = [
               "concept": "Environment Design",
               "question": "According to the lesson, environment design means making good cues what?",
               "options": [
-                "Rewarded with money each time",
+                "Rewarded with a bit of money each time",
                 "Visible while adding friction to bad ones",
-                "Dependent on strong daily motivation",
-                "Scheduled only on weekends"
+                "Dependent on strong, steady daily motivation",
+                "Carefully scheduled only on the weekends"
               ],
               "correctIndex": 1
             },
@@ -25679,9 +25679,9 @@ export const PREBUILT_COURSES = [
               "concept": "Implementation Intention",
               "question": "Why do most habits fail before they start, per the lesson?",
               "options": [
-                "The reward is too large",
-                "The person lacks natural talent",
-                "The behavior is physically difficult",
+                "The promised reward is simply far too large",
+                "The person lacks any real natural talent",
+                "The behavior is physically fairly difficult",
                 "The cue is vague, like 'I'll do it later'"
               ],
               "correctIndex": 3
@@ -25692,9 +25692,9 @@ export const PREBUILT_COURSES = [
               "question": "The lesson says your environment is best described as what?",
               "options": [
                 "The invisible hand shaping which behaviors you do",
-                "Irrelevant once motivation is high enough",
-                "Only useful for breaking bad habits",
-                "A substitute for having any cue at all"
+                "Irrelevant once your motivation is high enough",
+                "Only ever useful for breaking your bad habits",
+                "A poor substitute for having any real cue at all"
               ],
               "correctIndex": 0
             },
@@ -25703,10 +25703,10 @@ export const PREBUILT_COURSES = [
               "concept": "Habit Stacking",
               "question": "Why does a stacked habit tend to be consistent?",
               "options": [
-                "It requires no reward to sustain",
+                "It requires no reward at all to sustain over time",
                 "The anchor habit already fires reliably every day",
-                "It removes the craving entirely",
-                "It works only when you feel motivated"
+                "It removes the underlying craving almost entirely",
+                "It works only on days when you feel motivated"
               ],
               "correctIndex": 1
             }
@@ -25791,7 +25791,7 @@ export const PREBUILT_COURSES = [
               "options": [
                 "How impressive a single attempt is",
                 "How often you repeat the behavior",
-                "How much willpower you exert",
+                "How much raw willpower you exert",
                 "How large the eventual reward is"
               ],
               "correctIndex": 1
@@ -25801,10 +25801,10 @@ export const PREBUILT_COURSES = [
               "concept": "Two-Minute Rule",
               "question": "What does the Two-Minute Rule ask you to do with a new habit?",
               "options": [
-                "Perform it only for two minutes forever",
-                "Delay it until you have two free minutes",
+                "Perform it only for a strict two minutes forever",
+                "Delay it until you happen to have two free minutes",
                 "Scale it down to a version doable in about two minutes",
-                "Do it twice as intensely as usual"
+                "Do it about twice as intensely as you usually would"
               ],
               "correctIndex": 2
             },
@@ -25813,9 +25813,9 @@ export const PREBUILT_COURSES = [
               "concept": "Friction",
               "question": "How does the lesson define friction?",
               "options": [
-                "The reward you feel after acting",
-                "The craving that pulls you toward a cue",
-                "The identity behind a behavior",
+                "The pleasant reward you feel right after acting",
+                "The craving that keeps pulling you toward a cue",
+                "The deeper identity sitting behind a behavior",
                 "The steps or effort between you and a behavior"
               ],
               "correctIndex": 3
@@ -25826,9 +25826,9 @@ export const PREBUILT_COURSES = [
               "question": "What does the law of least effort say about behavior?",
               "options": [
                 "You drift toward whatever takes the least energy in the moment",
-                "You always choose the option with the biggest payoff",
-                "Effort has no influence once a goal is set",
-                "You prefer harder tasks when motivated"
+                "You always choose whichever option has the very biggest payoff",
+                "Effort has essentially no influence once a clear goal is set",
+                "You tend to prefer harder tasks whenever you feel motivated"
               ],
               "correctIndex": 0
             },
@@ -25837,10 +25837,10 @@ export const PREBUILT_COURSES = [
               "concept": "Priming the Environment",
               "question": "In the exec-update example, how do you prime the environment?",
               "options": [
-                "By scheduling the update for late at night",
+                "By scheduling the whole update for late at night",
                 "By keeping a running notes doc so material is ready",
-                "By writing the most polished version possible",
-                "By waiting until you feel inspired"
+                "By writing the single most polished version possible",
+                "By simply waiting until you happen to feel inspired"
               ],
               "correctIndex": 1
             },
@@ -25849,10 +25849,10 @@ export const PREBUILT_COURSES = [
               "concept": "Repetition Over Perfection",
               "question": "Why does 'did it badly but did it' beat 'do it perfectly next week'?",
               "options": [
-                "Perfect work is against the rules",
-                "Next week always has more friction",
+                "Doing perfect work is somehow against the actual rules",
+                "Next week almost always brings even more friction",
                 "Each repetition casts another vote toward automaticity",
-                "Bad work earns a bigger reward"
+                "Doing bad work somehow earns you a bigger reward"
               ],
               "correctIndex": 2
             }
@@ -25936,10 +25936,10 @@ export const PREBUILT_COURSES = [
               "concept": "Immediate Reward",
               "question": "According to the lesson, which behaviors does the brain tend to repeat?",
               "options": [
-                "Ones that are hardest to perform",
-                "Ones that carry an immediate reward",
-                "Ones with only long-term payoffs",
-                "Ones that others cannot see"
+                "Ones that are clearly the hardest to perform",
+                "Ones that happen to carry an immediate reward",
+                "Ones that offer only a distant long-term payoff",
+                "Ones that other people simply cannot ever see"
               ],
               "correctIndex": 1
             },
@@ -25949,9 +25949,9 @@ export const PREBUILT_COURSES = [
               "question": "Why are good habits especially hard to sustain?",
               "options": [
                 "Their real reward is delayed far into the future",
-                "They have no cue attached",
-                "They require expensive equipment",
-                "They are always physically exhausting"
+                "They have no clear cue attached to them at all",
+                "They tend to require fairly expensive equipment",
+                "They are nearly always physically exhausting to do"
               ],
               "correctIndex": 0
             },
@@ -25960,10 +25960,10 @@ export const PREBUILT_COURSES = [
               "concept": "Habit Tracking",
               "question": "Why is habit tracking effective, per the lesson?",
               "options": [
-                "It eliminates the need for any cue",
-                "It punishes you for every mistake",
+                "It totally eliminates the need for any external cue",
+                "It harshly punishes you for every single mistake made",
                 "The act of recording is itself immediately satisfying",
-                "It replaces the underlying craving"
+                "It quietly replaces the entire underlying craving"
               ],
               "correctIndex": 2
             },
@@ -25972,9 +25972,9 @@ export const PREBUILT_COURSES = [
               "concept": "Never Miss Twice",
               "question": "What does the 'never miss twice' rule say does the real damage?",
               "options": [
-                "The first accidental miss",
+                "The first accidental single miss",
                 "Tracking the habit too closely",
-                "Rewarding yourself too soon",
+                "Rewarding yourself far too soon",
                 "The second consecutive miss"
               ],
               "correctIndex": 3
@@ -25985,9 +25985,9 @@ export const PREBUILT_COURSES = [
               "question": "What makes a streak motivating?",
               "options": [
                 "It becomes a visible chain you don't want to break",
-                "It removes all friction from the habit",
-                "It guarantees a large future payoff",
-                "It hides your progress from others"
+                "It removes just about all friction from the habit",
+                "It guarantees you a large payoff sometime in future",
+                "It cleverly hides your ongoing progress from others"
               ],
               "correctIndex": 0
             },
@@ -25998,7 +25998,7 @@ export const PREBUILT_COURSES = [
               "options": [
                 "It delays the reward until the goal is reached",
                 "It adds an immediate social cost to skipping",
-                "It makes the behavior take less effort",
+                "It makes the behavior take clearly less effort",
                 "It changes the cue that triggers the habit"
               ],
               "correctIndex": 1
@@ -26082,10 +26082,10 @@ export const PREBUILT_COURSES = [
               "concept": "Identity-Based Habits",
               "question": "What do identity-based habits focus on?",
               "options": [
-                "Who you wish to become",
+                "The kind of person you wish to become",
                 "The specific number you want to hit",
-                "The reward you get immediately",
-                "The cue that starts the behavior"
+                "The reward that you get immediately",
+                "The cue that starts off the behavior"
               ],
               "correctIndex": 0
             },
@@ -26106,9 +26106,9 @@ export const PREBUILT_COURSES = [
               "concept": "Votes for Identity",
               "question": "According to the lesson, what is each performance of a habit?",
               "options": [
-                "A guaranteed outcome",
+                "A fully guaranteed future outcome",
                 "A permanent change to your brain",
-                "A cue for the next habit",
+                "A ready cue for the very next habit",
                 "A vote for being a type of person"
               ],
               "correctIndex": 3
@@ -26119,9 +26119,9 @@ export const PREBUILT_COURSES = [
               "question": "What does the 'two-way street' between identity and habits mean?",
               "options": [
                 "Habits shape identity and identity shapes habits",
-                "You must choose either identity or habits, not both",
+                "You must pick either identity or habits, not both",
                 "Identity only matters after a goal is reached",
-                "Habits and identity are entirely unrelated"
+                "Habits and identity are completely unrelated"
               ],
               "correctIndex": 0
             },
@@ -26130,10 +26130,10 @@ export const PREBUILT_COURSES = [
               "concept": "Keystone Habits",
               "question": "What defines a keystone habit in this lesson?",
               "options": [
-                "A habit that takes exactly two minutes",
-                "A habit that reinforces an identity and pulls other habits along",
-                "A habit with no cue or reward",
-                "A habit done only once per quarter"
+                "A simple habit that takes exactly two minutes to complete",
+                "A habit that reinforces an identity and drags other habits along",
+                "A habit that has no real cue and no reward attached to it",
+                "A habit that gets done just once every single quarter year"
               ],
               "correctIndex": 1
             },
@@ -26142,10 +26142,10 @@ export const PREBUILT_COURSES = [
               "concept": "Identity-Based Habits",
               "question": "Why is an identity-based appeal more durable than a target for leading team change?",
               "options": [
-                "Targets are always unrealistic",
-                "Identity requires no action to maintain",
-                "People act in line with who they believe they are, which has no finish line",
-                "Identity statements are easier to measure than numbers"
+                "Committed targets are almost always completely unrealistic here",
+                "A settled identity requires no further action at all to maintain",
+                "People act in line with who they believe they are, with no finish line",
+                "Identity statements are far easier to measure than plain numbers"
               ],
               "correctIndex": 2
             }
@@ -26239,7 +26239,7 @@ export const PREBUILT_COURSES = [
               "options": [
                 "It relies on motivation, which is volatile and drains under real workload",
                 "It relies on ability, which cannot be changed once a process exists",
-                "It relies on prompts, which every team already has too many of",
+                "It relies on prompts, which every busy team already has far too many of",
                 "It relies on incentives, which managers are rarely allowed to alter"
               ],
               "correctIndex": 0
@@ -26249,8 +26249,8 @@ export const PREBUILT_COURSES = [
               "concept": "Behavior model",
               "question": "According to the behavior model, a behavior happens only when which three things converge?",
               "options": [
-                "Training, tooling, and a deadline",
-                "Motivation, ability, and a prompt",
+                "Training, tooling, and a firm deadline",
+                "Motivation, ability, and a clear prompt",
                 "Incentives, defaults, and social proof",
                 "Awareness, agreement, and accountability"
               ],
@@ -26273,9 +26273,9 @@ export const PREBUILT_COURSES = [
               "concept": "Friction",
               "question": "In the example, what actually caused logging churn signals to jump?",
               "options": [
-                "Repeating the ask firmly in every daily huddle",
+                "Repeating the ask firmly in every single daily huddle",
                 "Tying the behavior to each CSM's performance review",
-                "Adding a second reminder later in the workday",
+                "Adding yet a second reminder later in the workday",
                 "Cutting the logging steps down to a one-click tag"
               ],
               "correctIndex": 3
@@ -26287,7 +26287,7 @@ export const PREBUILT_COURSES = [
               "options": [
                 "It measures whether the behavior happened after the fact",
                 "It triggers the behavior at the moment it should occur",
-                "It supplies the motivation the person is lacking",
+                "It supplies the exact motivation the person is lacking",
                 "It reduces the number of steps the behavior requires"
               ],
               "correctIndex": 1
@@ -26298,9 +26298,9 @@ export const PREBUILT_COURSES = [
               "question": "What does the lesson say is the problem with depending on motivation to sustain a behavior?",
               "options": [
                 "It fluctuates and can't be manufactured on demand",
-                "It is structural and impossible to influence",
-                "It only affects individual contributors, not managers",
-                "It is identical across everyone on the team"
+                "It is structural and largely impossible to influence",
+                "It only affects individual contributors, never managers",
+                "It is basically identical across everyone on the team"
               ],
               "correctIndex": 0
             }
@@ -26386,8 +26386,8 @@ export const PREBUILT_COURSES = [
               "options": [
                 "Defaults are legally binding once a form is published",
                 "Most people accept the default rather than overriding it",
-                "Defaults raise motivation more than prompts do",
-                "Defaults remove all other options from the workflow"
+                "Defaults raise motivation noticeably more than prompts do",
+                "Defaults quietly remove all other options from the workflow"
               ],
               "correctIndex": 1
             },
@@ -26409,9 +26409,9 @@ export const PREBUILT_COURSES = [
               "question": "How does the lesson describe using friction as a two-way tool?",
               "options": [
                 "Remove it from good behaviors and add a little to bad ones",
-                "Remove it from every behavior to maximize throughput",
-                "Add it to good behaviors so they feel more earned",
-                "Add it everywhere to force people to slow down"
+                "Remove it from every behavior in order to maximize throughput",
+                "Add it to all good behaviors so they feel more earned",
+                "Add it just about everywhere to force people to slow down"
               ],
               "correctIndex": 0
             },
@@ -26432,10 +26432,10 @@ export const PREBUILT_COURSES = [
               "concept": "Nudge",
               "question": "What defines a nudge as described in the lesson?",
               "options": [
-                "It removes the worse option from the workflow entirely",
+                "It fully removes the worse option from the workflow entirely",
                 "It steers behavior without removing choice or changing incentives",
-                "It pays people a bonus for the desired behavior",
-                "It relies on repeated reminders to build motivation"
+                "It pays people a modest cash bonus for the desired behavior",
+                "It relies on repeated daily reminders to slowly build motivation"
               ],
               "correctIndex": 1
             },
@@ -26447,7 +26447,7 @@ export const PREBUILT_COURSES = [
                 "Delivered a firm policy lecture to the billing team",
                 "Removed the refund button from the tool completely",
                 "Made the better outcome the path of least resistance",
-                "Tied refund rates to each specialist's bonus"
+                "Tied refund rates directly to each specialist's bonus"
               ],
               "correctIndex": 2
             }
@@ -26533,8 +26533,8 @@ export const PREBUILT_COURSES = [
               "options": [
                 "The written policy that documents how work should be done",
                 "The tendency to look to others' behavior to decide our own",
-                "The rewards a leader offers for a desired behavior",
-                "The friction added to discourage a bad behavior"
+                "The rewards a leader openly offers for a desired behavior",
+                "The friction deliberately added to discourage a bad behavior"
               ],
               "correctIndex": 1
             },
@@ -26545,7 +26545,7 @@ export const PREBUILT_COURSES = [
               "options": [
                 "The injunctive norm, what people say they approve of",
                 "The formal norm, what the policy document states",
-                "The descriptive norm, what people actually do",
+                "The descriptive norm, what people genuinely actually do",
                 "The aspirational norm, what leaders hope will happen"
               ],
               "correctIndex": 2
@@ -26557,8 +26557,8 @@ export const PREBUILT_COURSES = [
               "options": [
                 "It signals the bad behavior is common and therefore normal",
                 "It reveals confidential performance data to the team",
-                "It raises motivation without addressing ability",
-                "It sets a default that people cannot opt out of"
+                "It raises motivation without ever addressing ability",
+                "It sets a hidden default that people cannot opt out of"
               ],
               "correctIndex": 0
             },
@@ -26580,7 +26580,7 @@ export const PREBUILT_COURSES = [
               "question": "For teams you influence but don't own, what does the lesson call your highest-leverage tool?",
               "options": [
                 "A formal mandate backed by their manager's authority",
-                "A performance penalty tied to the behavior",
+                "A performance penalty tied directly to the behavior",
                 "Making the desired behavior visible so peers copy it",
                 "A one-time training session on the new expectation"
               ],
@@ -26591,9 +26591,9 @@ export const PREBUILT_COURSES = [
               "concept": "Visibility",
               "question": "In the MidMarket example, how did you spread the value-recap behavior?",
               "options": [
-                "By ordering the team's manager to require recaps",
-                "By emailing that too few CSMs were doing recaps",
-                "By adding recaps as a locked step in the renewal tool",
+                "By ordering the team's own manager to formally require recaps",
+                "By emailing everyone that too few CSMs were doing recaps",
+                "By adding recaps as a locked required step in the renewal tool",
                 "By spotlighting a named CSM's win with her template attached"
               ],
               "correctIndex": 3
@@ -26679,7 +26679,7 @@ export const PREBUILT_COURSES = [
               "question": "What is the iron rule about incentives stated in the lesson?",
               "options": [
                 "People optimize for what is actually rewarded, not what you announce",
-                "Cash rewards always outperform recognition and status",
+                "Cash rewards will always outperform simple recognition and status",
                 "Incentives only change behavior when repeated for a full quarter",
                 "People ignore incentives unless they are written into policy"
               ],
@@ -26703,7 +26703,7 @@ export const PREBUILT_COURSES = [
               "question": "What is the recommended defense against a perverse incentive from a speed or volume metric?",
               "options": [
                 "Raise the target each quarter to keep people striving",
-                "Remove the metric and rely on motivation alone",
+                "Remove the metric entirely and rely on motivation alone",
                 "Pair it with a counter-metric that catches the gaming",
                 "Reward only the single top performer on that metric"
               ],
@@ -26714,10 +26714,10 @@ export const PREBUILT_COURSES = [
               "concept": "Reinforcement timing",
               "question": "Why does feedback timing matter so much for shaping behavior?",
               "options": [
-                "Feedback is only valid if it comes from a direct manager",
-                "Delayed feedback is easier to document for reviews",
-                "Feedback must always be positive to have any effect",
-                "Feedback close to the behavior shapes it far more than a distant review"
+                "Feedback is only ever valid if it comes straight from a direct manager",
+                "Delayed feedback is much easier to document later for reviews",
+                "Feedback must always be strictly positive to have any real effect",
+                "Feedback close to the behavior shapes it far more than a distant one"
               ],
               "correctIndex": 3
             },
@@ -26740,7 +26740,7 @@ export const PREBUILT_COURSES = [
               "options": [
                 "Average handle time per ticket",
                 "Total tickets received per shift",
-                "Reopen rate within 72 hours",
+                "Ticket reopen rate within 72 hours",
                 "Number of agents on the shift"
               ],
               "correctIndex": 2
@@ -26828,7 +26828,7 @@ export const PREBUILT_COURSES = [
                 "Because executives only fund single-behavior initiatives",
                 "Because trying to change many behaviors at once changes none",
                 "Because keystone behaviors need no baseline measurement",
-                "Because one behavior is easier to reward with cash"
+                "Because a single behavior is far easier to reward with cash"
               ],
               "correctIndex": 1
             },
@@ -26837,9 +26837,9 @@ export const PREBUILT_COURSES = [
               "concept": "Baseline and measurement",
               "question": "What is the purpose of capturing a baseline before intervening?",
               "options": [
-                "To decide which team should own the initiative",
+                "To decide which team should really own the initiative",
                 "To increase motivation by publishing current numbers",
-                "To set the default option in the workflow",
+                "To help set the default option in the standard workflow",
                 "To tell whether the intervention actually worked"
               ],
               "correctIndex": 3
@@ -26851,8 +26851,8 @@ export const PREBUILT_COURSES = [
               "options": [
                 "Cheap surfacing of friction plus a proof point and first norm",
                 "A guarantee that the behavior will never backslide later",
-                "Permission to skip measuring the baseline afterward",
-                "A way to reward the whole org before results are in"
+                "Permission to entirely skip measuring the baseline afterward",
+                "A way to reward the entire org even before results are in"
               ],
               "correctIndex": 0
             },
@@ -26861,9 +26861,9 @@ export const PREBUILT_COURSES = [
               "concept": "Layered design",
               "question": "Why does the lesson favor layered design over a single lever?",
               "options": [
-                "A single lever is cheaper but illegal in most orgs",
+                "A single lever is cheaper but flatly illegal in most orgs",
                 "Layered levers cover each other's weak spots, so change holds",
-                "Layering removes the need to embed the behavior later",
+                "Layering removes any need to embed the behavior in later",
                 "One lever always works if the incentive is large enough"
               ],
               "correctIndex": 1
@@ -26873,10 +26873,10 @@ export const PREBUILT_COURSES = [
               "concept": "Backsliding",
               "question": "What is the classic failure mode of a change initiative described here?",
               "options": [
-                "The behavior never starts because the baseline was too low",
-                "The pilot team refuses to adopt the new default",
+                "The behavior never even starts because the baseline was too low",
+                "The pilot team flatly refuses to adopt the new default option",
                 "The behavior spikes at launch then decays once attention moves on",
-                "The counter-metric hides the gaming from leadership"
+                "The counter-metric quietly hides the gaming from leadership"
               ],
               "correctIndex": 2
             },
@@ -26885,10 +26885,10 @@ export const PREBUILT_COURSES = [
               "concept": "Embedding",
               "question": "What is the embedding test the lesson recommends?",
               "options": [
-                "Whether the behavior beats its baseline in the first week",
-                "Whether two people would count the behavior the same way",
-                "Whether the pilot team volunteered for the change",
-                "Whether the behavior would still happen if you stopped paying attention"
+                "Whether the behavior beats its own baseline within the first week",
+                "Whether two different people would count the behavior the same way",
+                "Whether the pilot team fully volunteered for the entire change",
+                "Whether the behavior would still happen if you stopped watching"
               ],
               "correctIndex": 3
             }
@@ -26975,10 +26975,10 @@ export const PREBUILT_COURSES = [
               "concept": "Agentic AI operating system",
               "question": "What primarily distinguishes an 'agentic AI operating system' from a set of point tools?",
               "options": [
-                "It stores more contact records than competing tools",
+                "It stores far more contact records than rival point tools",
                 "The AI takes actions on the user's behalf across shared data",
-                "It offers a mobile app in addition to a web app",
-                "It charges a single monthly price instead of per feature"
+                "It ships a polished mobile app in addition to its web app",
+                "It charges one flat monthly price instead of per feature"
               ],
               "correctIndex": 1
             },
@@ -26999,10 +26999,10 @@ export const PREBUILT_COURSES = [
               "concept": "Data foundation",
               "question": "When a customer says 'the AI isn't working,' what is the most common root cause described in this lesson?",
               "options": [
-                "The AI model is fundamentally broken",
-                "The subscription tier is too low for AI",
-                "A thin or messy underlying data foundation",
-                "The customer's internet connection is unstable"
+                "The underlying AI model is fundamentally broken",
+                "The subscription tier is set too low for AI use",
+                "A thin or messy underlying customer data foundation",
+                "The customer's home internet connection is unstable"
               ],
               "correctIndex": 2
             },
@@ -27023,7 +27023,7 @@ export const PREBUILT_COURSES = [
               "concept": "System of action",
               "question": "Why is mapping a customer's pain to a lifecycle stage recommended over pitching 'AI' abstractly?",
               "options": [
-                "It lowers the price the customer has to pay",
+                "It lowers the total price the customer ends up paying",
                 "It makes the value concrete at the point of their pain",
                 "It avoids ever mentioning artificial intelligence",
                 "It shifts responsibility onto the customer's staff"
@@ -27121,10 +27121,10 @@ export const PREBUILT_COURSES = [
               "concept": "Autonomous lead engagement",
               "question": "What does autonomous lead engagement primarily remove for an agent?",
               "options": [
-                "The cost of their monthly subscription",
+                "The recurring cost of their monthly subscription",
                 "The grind of chasing and following up with leads",
-                "The need to hold a real estate license",
-                "The requirement to have a website"
+                "The need to personally hold a real estate license",
+                "The requirement to maintain a personal website"
               ],
               "correctIndex": 1
             },
@@ -27133,10 +27133,10 @@ export const PREBUILT_COURSES = [
               "concept": "Speed-to-lead",
               "question": "According to the lesson, why is speed-to-lead the AI's advantage over a human agent?",
               "options": [
-                "The AI writes more persuasive copy than humans",
+                "The AI writes far more persuasive copy than humans",
                 "The AI engages within seconds, when interest peaks",
-                "The AI can legally negotiate contracts",
-                "The AI works only during business hours"
+                "The AI can legally negotiate contract terms alone",
+                "The AI works only during normal business hours"
               ],
               "correctIndex": 1
             },
@@ -27145,10 +27145,10 @@ export const PREBUILT_COURSES = [
               "concept": "Nurture cadence",
               "question": "What does the nurture cadence provide that a busy human typically does not?",
               "options": [
-                "In-person showings of properties",
+                "In-person showings of listed properties",
                 "Persistent follow-up over days and weeks",
                 "Discounts on the customer's subscription",
-                "Legal review of purchase agreements"
+                "Legal review of signed purchase agreements"
               ],
               "correctIndex": 1
             },
@@ -27158,9 +27158,9 @@ export const PREBUILT_COURSES = [
               "question": "What is the ultimate goal of autonomous engagement described in this lesson?",
               "options": [
                 "Keeping the lead chatting as long as possible",
-                "Collecting the lead's payment information",
-                "Reaching a booked appointment",
-                "Maximizing the number of texts sent"
+                "Collecting the lead's payment card information",
+                "Reaching a booked appointment on the calendar",
+                "Maximizing the total number of texts sent"
               ],
               "correctIndex": 2
             },
@@ -27169,10 +27169,10 @@ export const PREBUILT_COURSES = [
               "concept": "Handoff to agent",
               "question": "What earns an agent's trust to let the AI run rather than hover over every message?",
               "options": [
-                "A lower monthly price",
+                "A lower recurring monthly subscription price",
                 "A clean handoff with visible conversation history",
-                "Turning off all follow-up messages",
-                "A guarantee the AI never texts anyone"
+                "Turning off every automated follow-up message",
+                "A guarantee the AI never texts any lead at all"
               ],
               "correctIndex": 1
             },
@@ -27182,9 +27182,9 @@ export const PREBUILT_COURSES = [
               "question": "Why does onboarding completeness predict satisfaction with this feature?",
               "options": [
                 "Because unfinished setup starves the AI of inputs to act on",
-                "Because completed onboarding lowers the price",
-                "Because it unlocks a separate premium AI model",
-                "Because it removes the need for lead generation"
+                "Because completed onboarding lowers the monthly price",
+                "Because it unlocks a separate, premium AI model tier",
+                "Because it removes any need for ongoing lead generation"
               ],
               "correctIndex": 0
             }
@@ -27266,7 +27266,7 @@ export const PREBUILT_COURSES = [
                 "Holds fully autonomous voice conversations with leads",
                 "Removes dead time between the agent's live calls",
                 "Writes and sends marketing emails automatically",
-                "Files the agent's transaction paperwork"
+                "Files the agent's post-closing transaction paperwork"
               ],
               "correctIndex": 1
             },
@@ -27288,9 +27288,9 @@ export const PREBUILT_COURSES = [
               "question": "Why does calling stay more human-in-the-loop than texting?",
               "options": [
                 "Voice is higher-stakes and harder to automate credibly",
-                "Texting is illegal in most states",
-                "Phones cannot connect to the CRM",
-                "The AI cannot generate any spoken words"
+                "Texting leads is illegal in most US states today",
+                "Phones simply cannot connect to the CRM system at all",
+                "The AI cannot generate any convincing spoken words"
               ],
               "correctIndex": 0
             },
@@ -27299,10 +27299,10 @@ export const PREBUILT_COURSES = [
               "concept": "Channel selection",
               "question": "What is the practical channel-selection guidance in this lesson?",
               "options": [
-                "Call everyone; never text",
+                "Call every single lead by phone and never text them",
                 "Text for scale and top-of-funnel; call for high intent",
-                "Use only email for all leads",
-                "Alternate randomly between channels"
+                "Use only email to reach every one of your leads",
+                "Alternate randomly between phone and text channels"
               ],
               "correctIndex": 1
             },
@@ -27311,10 +27311,10 @@ export const PREBUILT_COURSES = [
               "concept": "Deliverability",
               "question": "When a customer reports 'my texts aren't sending,' what is a frequent real cause?",
               "options": [
-                "The CRM has deleted their contacts",
+                "The CRM has quietly deleted all their contacts",
                 "Carrier filtering flagging high-volume messaging",
-                "Their real estate license expired",
-                "The AI refuses to write messages"
+                "Their real estate license recently expired",
+                "The AI outright refuses to write any messages"
               ],
               "correctIndex": 1
             },
@@ -27323,10 +27323,10 @@ export const PREBUILT_COURSES = [
               "concept": "Channel selection",
               "question": "What happens to agents who blast everyone by phone, per the lesson?",
               "options": [
-                "They burn out",
-                "They double their deliverability",
-                "They stop receiving leads entirely",
-                "They automatically lose their license"
+                "They quickly burn themselves out",
+                "They double their deliverability rate",
+                "They stop receiving inbound leads",
+                "They lose their license automatically"
               ],
               "correctIndex": 0
             }
@@ -27410,9 +27410,9 @@ export const PREBUILT_COURSES = [
               "question": "What does the lesson call the 'gate' that all automated outreach passes through?",
               "options": [
                 "The monthly subscription payment",
-                "Consent and opt-out handling",
+                "Consent and opt-out handling rules",
                 "The choice of website template",
-                "The size of the lead list"
+                "The overall size of the lead list"
               ],
               "correctIndex": 1
             },
@@ -27422,9 +27422,9 @@ export const PREBUILT_COURSES = [
               "question": "What are guardrails in the context of AI outreach?",
               "options": [
                 "Limits that keep the AI from saying or promising the wrong things",
-                "Discounts offered to enterprise customers",
-                "The physical servers running the platform",
-                "A type of lead-generation ad campaign"
+                "Special discounts offered to large enterprise accounts only",
+                "The physical data-center hardware that runs the platform",
+                "A particular kind of paid lead-generation advertising campaign"
               ],
               "correctIndex": 0
             },
@@ -27433,10 +27433,10 @@ export const PREBUILT_COURSES = [
               "concept": "Audit trail",
               "question": "Why is an audit trail described as essential for autonomous AI?",
               "options": [
-                "It increases the number of texts the AI can send",
+                "It increases the total number of texts the AI is allowed to send",
                 "It lets customers prove compliance and support diagnose complaints",
-                "It replaces the need for consent entirely",
-                "It lowers the customer's monthly bill"
+                "It completely replaces the need to ever collect any consent",
+                "It meaningfully lowers the customer's recurring monthly bill"
               ],
               "correctIndex": 1
             },
@@ -27445,10 +27445,10 @@ export const PREBUILT_COURSES = [
               "concept": "Compliance as trust",
               "question": "How does the lesson reframe compliance for retention?",
               "options": [
-                "As a pure cost that should be minimized",
+                "As a pure cost that should always be minimized",
                 "As a trust lever that makes customers stickier",
-                "As something only lawyers should discuss",
-                "As irrelevant to brokerage buyers"
+                "As something only the lawyers should ever discuss",
+                "As mostly irrelevant to serious brokerage buyers"
               ],
               "correctIndex": 1
             },
@@ -27458,9 +27458,9 @@ export const PREBUILT_COURSES = [
               "question": "Along with guardrails, what does trustworthy AI outreach depend on?",
               "options": [
                 "Sending the highest possible message volume",
-                "Appropriate disclosure in interactions",
-                "Removing all human oversight",
-                "Hiding that AI is involved at all"
+                "Appropriate disclosure during interactions",
+                "Removing all remaining human oversight",
+                "Hiding that AI is involved in any way"
               ],
               "correctIndex": 1
             },
@@ -27470,9 +27470,9 @@ export const PREBUILT_COURSES = [
               "question": "According to the lesson, a churn threat can sometimes trace back to what?",
               "options": [
                 "A compliance scare rather than a price objection",
-                "The customer wanting more lead sources",
-                "A request for a different website theme",
-                "The agent losing interest in real estate"
+                "The customer wanting even more lead sources added",
+                "A request to switch to a different website theme",
+                "The agent slowly losing interest in real estate"
               ],
               "correctIndex": 0
             }
@@ -27556,9 +27556,9 @@ export const PREBUILT_COURSES = [
               "question": "Why does the lesson say adoption is 'the whole game'?",
               "options": [
                 "Because features only pay off when customers actually use them",
-                "Because adoption lowers Lofty's operating costs",
-                "Because unused features are automatically refunded",
-                "Because adoption replaces the need for support"
+                "Because higher adoption lowers Lofty's own operating costs",
+                "Because unused features are automatically refunded each month",
+                "Because strong adoption replaces the need for any support"
               ],
               "correctIndex": 0
             },
@@ -27567,10 +27567,10 @@ export const PREBUILT_COURSES = [
               "concept": "Value realization",
               "question": "Which scenario does the lesson say is more likely to renew and expand?",
               "options": [
-                "A perfectly built platform stuck at 20% usage",
+                "A perfectly built platform still stuck at 20% usage",
                 "A modestly configured platform with an engaged agent",
-                "An account with the cheapest subscription tier",
-                "An account that never contacts support"
+                "An account paying for the cheapest subscription tier",
+                "An account that never once contacts the support team"
               ],
               "correctIndex": 1
             },
@@ -27579,10 +27579,10 @@ export const PREBUILT_COURSES = [
               "concept": "AI support playbook",
               "question": "What is the twofold payoff of an AI support playbook?",
               "options": [
-                "Higher prices and lower churn",
+                "Higher prices along with meaningfully lower churn",
                 "Faster resolution and cleaner signal to engineering",
-                "More lead sources and bigger ad budgets",
-                "Fewer customers and simpler billing"
+                "More lead sources and much bigger advertising budgets",
+                "Fewer total customers and noticeably simpler billing"
               ],
               "correctIndex": 1
             },
@@ -27591,10 +27591,10 @@ export const PREBUILT_COURSES = [
               "concept": "ROI narrative",
               "question": "What makes an ROI narrative land with an agent?",
               "options": [
-                "A longer list of available features",
+                "A longer list of the platform's available features",
                 "Real numbers like leads engaged and appointments booked",
-                "A promise of future product updates",
-                "A comparison to competitor pricing"
+                "A vague promise of future product updates to come",
+                "A direct comparison to competitor product pricing"
               ],
               "correctIndex": 1
             },
@@ -27603,10 +27603,10 @@ export const PREBUILT_COURSES = [
               "concept": "Executive reporting",
               "question": "What does the lesson advise bringing to executive reporting?",
               "options": [
-                "A raw data dump with no interpretation",
-                "A narrative of who adopts, where they stall, and what moved the number",
-                "Only the total revenue figure",
-                "A list of every open support ticket"
+                "A raw data dump offered with no interpretation whatsoever",
+                "A narrative of who adopts, where they stall, and what moved it",
+                "Only the single total revenue figure for the whole period",
+                "A long, flat list of every currently open support ticket"
               ],
               "correctIndex": 1
             },
@@ -27615,10 +27615,10 @@ export const PREBUILT_COURSES = [
               "concept": "AI support playbook",
               "question": "Which earlier-lesson checks should be codified into the support playbook?",
               "options": [
-                "Website theme, logo, and font settings",
+                "Website theme, logo, font, and color settings",
                 "Data foundation, deliverability, and audit trail",
                 "Pricing tier, contract length, and discount",
-                "Office location, staff count, and hours"
+                "Office location, staff count, and working hours"
               ],
               "correctIndex": 1
             }
@@ -27717,10 +27717,10 @@ export const PREBUILT_COURSES = [
               "concept": "Context window",
               "question": "What can Claude actually use to work on your task?",
               "options": [
-                "Your Lofty dashboards it can access directly",
-                "Everything you discussed with it last week",
+                "Your Lofty dashboards that it can access directly",
+                "Everything you discussed with it earlier last week",
                 "The prompt and conversation currently in front of it",
-                "Any public fact whether or not you provide it"
+                "Any public fact, whether or not you provide it to it"
               ],
               "correctIndex": 2
             },
@@ -27732,7 +27732,7 @@ export const PREBUILT_COURSES = [
                 "Exact figures, quotes, dates, and links",
                 "General restructuring of your pasted notes",
                 "Rephrasing an email into a warmer tone",
-                "Summarizing a document you provided"
+                "Summarizing a document that you provided"
               ],
               "correctIndex": 0
             },
@@ -27741,9 +27741,9 @@ export const PREBUILT_COURSES = [
               "concept": "Verification mindset",
               "question": "What does the verification mindset recommend?",
               "options": [
-                "Never use Claude for anything customer-facing",
-                "Trust outputs fully to move faster each day",
-                "Ask Claude to confirm its own accuracy",
+                "Never use Claude for anything that is customer-facing",
+                "Trust its outputs fully so you can move faster daily",
+                "Ask Claude itself to confirm its own factual accuracy",
                 "Use Claude for the draft, then check load-bearing facts"
               ],
               "correctIndex": 3
@@ -27753,10 +27753,10 @@ export const PREBUILT_COURSES = [
               "concept": "Pattern completion",
               "question": "Why can Claude state a wrong metric with full confidence?",
               "options": [
-                "It intentionally rounds numbers to look cleaner",
+                "It intentionally rounds off numbers so they look cleaner",
                 "It generates plausible text rather than retrieving your data",
-                "It mixes up two different customers' records",
-                "It is limited to old training data on your company"
+                "It mixes up two entirely different customers' records",
+                "It is limited to stale old training data about your company"
               ],
               "correctIndex": 1
             },
@@ -27766,9 +27766,9 @@ export const PREBUILT_COURSES = [
               "question": "What is the most reliable way to get accurate, specific output about your metrics?",
               "options": [
                 "Ask Claude to recall the figures from prior chats",
-                "Describe the numbers loosely from memory",
+                "Describe the numbers loosely from your own memory",
                 "Paste the actual report or export into the prompt",
-                "Trust Claude's general knowledge of Lofty"
+                "Trust Claude's general background knowledge of Lofty"
               ],
               "correctIndex": 2
             }
@@ -27851,7 +27851,7 @@ export const PREBUILT_COURSES = [
               "concept": "Prompt anatomy",
               "question": "Which set of elements defines a strong prompt?",
               "options": [
-                "Length, speed, tone, and emoji",
+                "Length, speed, tone, and emoji choices",
                 "Role, task, context, and output format",
                 "Greeting, question, thanks, and sign-off",
                 "Model, temperature, tokens, and cost"
@@ -27863,10 +27863,10 @@ export const PREBUILT_COURSES = [
               "concept": "Few-shot example",
               "question": "What is the most reliable way to get Claude to match a specific writing style?",
               "options": [
-                "Describe the tone in several sentences",
-                "Ask it to be more professional",
+                "Describe the target tone in several full sentences",
+                "Simply ask it to be a good deal more professional",
                 "Paste a sample output in that style to imitate",
-                "Tell it which author to sound like"
+                "Tell it which well-known author to sound like"
               ],
               "correctIndex": 2
             },
@@ -27876,9 +27876,9 @@ export const PREBUILT_COURSES = [
               "question": "Where does most of the output quality come from?",
               "options": [
                 "Short follow-up instructions that steer the draft",
-                "Writing one flawless prompt up front",
-                "Choosing a longer response length",
-                "Repeating the same prompt several times"
+                "Writing one perfectly flawless prompt right up front",
+                "Choosing a considerably longer response length",
+                "Repeating the exact same prompt several times over"
               ],
               "correctIndex": 0
             },
@@ -27887,9 +27887,9 @@ export const PREBUILT_COURSES = [
               "concept": "Role and audience",
               "question": "Why name the role and audience in a prompt?",
               "options": [
-                "It reduces the cost of the request",
-                "It lets Claude access more data",
-                "It guarantees factual accuracy",
+                "It reduces the overall cost of the request",
+                "It lets Claude reach and access more data",
+                "It guarantees the output's factual accuracy",
                 "It sharpens the tone, depth, and vocabulary"
               ],
               "correctIndex": 3
@@ -27899,10 +27899,10 @@ export const PREBUILT_COURSES = [
               "concept": "Output format",
               "question": "What does specifying the output format accomplish?",
               "options": [
-                "It makes Claude verify its own numbers",
+                "It makes Claude verify its own reported numbers",
                 "It returns the result in the shape you can use",
-                "It shortens Claude's memory of the task",
-                "It removes the need for any context"
+                "It shortens Claude's working memory of the task",
+                "It removes the need to supply any context at all"
               ],
               "correctIndex": 1
             },
@@ -28021,10 +28021,10 @@ export const PREBUILT_COURSES = [
               "concept": "Action extraction",
               "question": "What does action extraction pull out of raw meeting notes?",
               "options": [
-                "A polished narrative of the discussion",
+                "A polished discussion narrative",
                 "Owners, actions, and due dates",
-                "A word-for-word transcript",
-                "A ranked list of attendees"
+                "A full word-for-word transcript",
+                "A ranked list of all attendees"
               ],
               "correctIndex": 1
             },
@@ -28033,7 +28033,7 @@ export const PREBUILT_COURSES = [
               "concept": "Audience adaptation",
               "question": "What is the point of audience adaptation?",
               "options": [
-                "Sending the identical message to everyone",
+                "Sending one identical message to everyone",
                 "Writing a new message from scratch each time",
                 "Letting Claude decide who should be informed",
                 "Recasting one core message per reader's needs"
@@ -28045,10 +28045,10 @@ export const PREBUILT_COURSES = [
               "concept": "Meeting prep prompt",
               "question": "What inputs make a meeting prep prompt effective?",
               "options": [
-                "Only the meeting title on its own",
+                "Only the meeting's title text on its own",
                 "The invite, last notes, and relevant metrics",
-                "A list of attendees and nothing else",
-                "Claude's memory of the previous meeting"
+                "A plain list of attendees and nothing else",
+                "Claude's own memory of the previous meeting"
               ],
               "correctIndex": 1
             },
@@ -28058,9 +28058,9 @@ export const PREBUILT_COURSES = [
               "question": "How should a message differ for a US executive versus your Manila support team?",
               "options": [
                 "More detail and empathy for the exec, brevity for the team",
-                "Identical wording to keep things fair",
+                "Use the identical wording for both to keep everything fair",
                 "More brevity and outcomes for the exec, more detail for the team",
-                "Longer for both to be thorough"
+                "Make it noticeably longer for both audiences to be thorough"
               ],
               "correctIndex": 2
             }
@@ -28146,7 +28146,7 @@ export const PREBUILT_COURSES = [
                 "A one-off, highly sensitive judgment call",
                 "Repeated, rule-based, text-heavy tasks",
                 "A unique decision with costly downside",
-                "Anything you will never do again"
+                "Anything you will simply never do again"
               ],
               "correctIndex": 1
             },
@@ -28155,10 +28155,10 @@ export const PREBUILT_COURSES = [
               "concept": "Prompt chaining",
               "question": "Why break a complex task into a chain of prompts?",
               "options": [
-                "It uses fewer words overall",
-                "It hides the intermediate steps",
+                "It uses noticeably fewer total words overall",
+                "It neatly hides all the intermediate steps",
                 "Each step is checkable and errors don't compound",
-                "It removes the need for any context"
+                "It removes the need to provide any context"
               ],
               "correctIndex": 2
             },
@@ -28167,9 +28167,9 @@ export const PREBUILT_COURSES = [
               "concept": "Reusable prompt template",
               "question": "When is it worth turning a prompt into a reusable template?",
               "options": [
-                "When the prompt failed the first time",
-                "When the task is unique and one-time",
-                "When the stakes are too high to draft",
+                "When the prompt failed on the very first try",
+                "When the task is entirely unique and one-time",
+                "When the stakes are far too high to ever draft",
                 "When the task is high-frequency and stable"
               ],
               "correctIndex": 3
@@ -28180,9 +28180,9 @@ export const PREBUILT_COURSES = [
               "question": "What do projects give you across sessions?",
               "options": [
                 "Retained reference material and instructions",
-                "Faster responses for every prompt",
-                "Automatic fact-checking of outputs",
-                "A permanent memory of all customers"
+                "Noticeably faster responses for every prompt",
+                "Automatic fact-checking of all your outputs",
+                "A permanent stored memory of all customers"
               ],
               "correctIndex": 0
             },
@@ -28191,10 +28191,10 @@ export const PREBUILT_COURSES = [
               "concept": "Custom instructions",
               "question": "What is the benefit of custom instructions?",
               "options": [
-                "They shorten every response automatically",
+                "They shorten every single response automatically",
                 "They apply standing guidance without re-pasting it",
-                "They let Claude access your live systems",
-                "They guarantee the output is accurate"
+                "They let Claude directly access your live systems",
+                "They guarantee the final output is fully accurate"
               ],
               "correctIndex": 1
             },
@@ -28203,10 +28203,10 @@ export const PREBUILT_COURSES = [
               "concept": "Reusable prompt template",
               "question": "Beyond saving your time, what does templating a task also achieve?",
               "options": [
-                "It removes the need to verify facts",
-                "It makes Claude respond more quickly",
+                "It removes the need to verify any facts at all",
+                "It makes Claude respond noticeably more quickly",
                 "It keeps quality consistent when a teammate runs it",
-                "It lets the task run without any input"
+                "It lets the task run without any input at all"
               ],
               "correctIndex": 2
             }
@@ -28304,7 +28304,7 @@ export const PREBUILT_COURSES = [
                 "A person is present while Claude generates",
                 "Claude reviews and approves its own output",
                 "A named owner reviews and approves before use",
-                "The customer signs off on every draft"
+                "The customer signs off on every single draft"
               ],
               "correctIndex": 2
             },
@@ -28313,7 +28313,7 @@ export const PREBUILT_COURSES = [
               "concept": "Over-reliance",
               "question": "What is the core danger of over-reliance?",
               "options": [
-                "Spending too long editing drafts",
+                "Spending far too long editing your drafts",
                 "Using Claude for too many tasks at once",
                 "Writing prompts that are overly detailed",
                 "Sending polished output unread as if correct"
@@ -28326,7 +28326,7 @@ export const PREBUILT_COURSES = [
               "question": "What makes team adoption of Claude stick?",
               "options": [
                 "Making the safe, reviewed way the easy way",
-                "Mandating use without any guardrails",
+                "Mandating its use without any guardrails",
                 "Leaving each person to figure it out alone",
                 "Restricting the tool to leadership only"
               ],
@@ -28337,10 +28337,10 @@ export const PREBUILT_COURSES = [
               "concept": "Disclosure and trust",
               "question": "How should AI support customer relationships?",
               "options": [
-                "By replacing the human voice entirely",
-                "By handling customers without their knowledge",
+                "By replacing the human voice on relationships entirely",
+                "By handling customers entirely without their knowledge",
                 "By assisting while keeping the human voice on relationships",
-                "By disclosing every prompt to the customer"
+                "By disclosing every single prompt to the customer directly"
               ],
               "correctIndex": 2
             },
@@ -28350,9 +28350,9 @@ export const PREBUILT_COURSES = [
               "question": "When you only need help with structure or wording, how can you protect sensitive data?",
               "options": [
                 "Anonymize with placeholders and still get the draft",
-                "Skip Claude and write it entirely by hand",
-                "Paste everything but ask Claude to forget it",
-                "Split the data across several prompts"
+                "Skip Claude entirely and write it all by hand yourself",
+                "Paste everything, but ask Claude to forget it afterward",
+                "Split the sensitive data across several separate prompts"
               ],
               "correctIndex": 0
             }
@@ -28456,9 +28456,9 @@ export const PREBUILT_COURSES = [
               "question": "What is the key advantage of a database over a plain page for a recurring list?",
               "options": [
                 "It can be filtered and sorted by its properties",
-                "It uses a larger font by default",
-                "It cannot be edited once created",
-                "It automatically emails your team"
+                "It uses a noticeably larger font by default",
+                "It cannot be edited at all once it is created",
+                "It automatically emails your whole team daily"
               ],
               "correctIndex": 0
             },
@@ -28467,10 +28467,10 @@ export const PREBUILT_COURSES = [
               "concept": "Property",
               "question": "What does a property do in a Notion database?",
               "options": [
-                "It locks the database from edits",
+                "It locks the entire database from edits",
                 "It attaches a typed field to every entry",
-                "It deletes old rows automatically",
-                "It converts the database to a page"
+                "It deletes the oldest rows automatically",
+                "It converts the database back into a page"
               ],
               "correctIndex": 1
             },
@@ -28479,7 +28479,7 @@ export const PREBUILT_COURSES = [
               "concept": "Page",
               "question": "When is a plain page the better choice over a database?",
               "options": [
-                "When you need to filter entries by owner",
+                "When you need to filter your entries by owner",
                 "When you want a static one-off narrative or memo",
                 "When many people query the same list daily",
                 "When each entry needs the same status field"
@@ -28491,10 +28491,10 @@ export const PREBUILT_COURSES = [
               "concept": "Workspace hierarchy",
               "question": "How is the workspace hierarchy formed in Notion?",
               "options": [
-                "By exporting pages to PDF",
+                "By exporting the pages out to PDF",
                 "By assigning properties to blocks",
                 "By pages nesting inside other pages",
-                "By emailing pages between users"
+                "By emailing pages between the users"
               ],
               "correctIndex": 2
             },
@@ -28503,10 +28503,10 @@ export const PREBUILT_COURSES = [
               "concept": "Property",
               "question": "In a database, each entry is itself what?",
               "options": [
-                "A single block only",
-                "A property value",
-                "A page",
-                "A workspace"
+                "Just a single lone block",
+                "A single property value",
+                "A page of its very own",
+                "An entire workspace area"
               ],
               "correctIndex": 2
             }
@@ -28593,10 +28593,10 @@ export const PREBUILT_COURSES = [
               "concept": "Select and multi-select",
               "question": "Why is a select property better than free text for a status field?",
               "options": [
-                "It hides the field from viewers",
+                "It hides the field from all the viewers",
                 "It forces consistent values so filters work",
-                "It automatically closes old entries",
-                "It sends a notification on change"
+                "It automatically closes out old entries",
+                "It sends a notification on every change"
               ],
               "correctIndex": 1
             },
@@ -28606,9 +28606,9 @@ export const PREBUILT_COURSES = [
               "question": "What does a relation property do?",
               "options": [
                 "It links rows in one database to rows in another",
-                "It changes the color of a row",
-                "It converts numbers into dates",
-                "It exports the database to a page"
+                "It changes the background fill color of a row",
+                "It converts stored numbers into date values",
+                "It exports the whole database out to a page"
               ],
               "correctIndex": 0
             },
@@ -28617,10 +28617,10 @@ export const PREBUILT_COURSES = [
               "concept": "Rollup",
               "question": "What can a rollup show on an account row?",
               "options": [
-                "A random sample of other accounts",
-                "The workspace-wide font setting",
+                "A random sample of the other accounts",
+                "The workspace-wide default font setting",
                 "A count or summary of its related rows",
-                "The name of the database creator"
+                "The name of the original database creator"
               ],
               "correctIndex": 2
             },
@@ -28629,10 +28629,10 @@ export const PREBUILT_COURSES = [
               "concept": "Single source of truth",
               "question": "What is the main benefit of keeping a single source of truth?",
               "options": [
-                "It makes pages load with animations",
+                "It makes the pages load with smooth animations",
                 "Updating one record keeps every linked view current",
-                "It allows unlimited free-text fields",
-                "It prevents anyone from editing data"
+                "It allows an unlimited number of free-text fields",
+                "It prevents anyone at all from editing the data"
               ],
               "correctIndex": 1
             },
@@ -28641,10 +28641,10 @@ export const PREBUILT_COURSES = [
               "concept": "Property type",
               "question": "According to the lesson, choosing property types deliberately is best described as what?",
               "options": [
-                "A purely cosmetic decision",
-                "The biggest driver of whether a database stays clean",
-                "Irrelevant once data is entered",
-                "Only useful for number fields"
+                "Largely a cosmetic, surface-level styling choice",
+                "The main driver of whether a database stays clean",
+                "Basically irrelevant once the data has been entered",
+                "Only ever genuinely useful for numeric fields"
               ],
               "correctIndex": 1
             },
@@ -28653,10 +28653,10 @@ export const PREBUILT_COURSES = [
               "concept": "Relation",
               "question": "How does using relations help prevent documentation from rotting?",
               "options": [
-                "By deleting old pages weekly",
-                "By linking to one record instead of copy-pasting duplicates",
-                "By locking all properties",
-                "By emailing reminders to owners"
+                "By deleting all of the old pages on a weekly basis",
+                "By linking to one record instead of pasting duplicates",
+                "By locking down every one of the properties involved",
+                "By emailing regular reminders out to the record owners"
               ],
               "correctIndex": 1
             }
@@ -28741,8 +28741,8 @@ export const PREBUILT_COURSES = [
               "options": [
                 "The underlying data is duplicated",
                 "Only the way the data is displayed",
-                "The property types are deleted",
-                "The owner of every row"
+                "The property types all get deleted",
+                "The assigned owner of every row"
               ],
               "correctIndex": 1
             },
@@ -28751,10 +28751,10 @@ export const PREBUILT_COURSES = [
               "concept": "Linked database",
               "question": "What is a linked database?",
               "options": [
-                "A separate copy of the data on a new page",
+                "A completely separate copy of the data on a new page",
                 "A view of an existing database showing the same live data",
-                "A database with no properties",
-                "An exported spreadsheet file"
+                "A brand-new database that has no properties at all",
+                "An exported, standalone spreadsheet file saved to disk"
               ],
               "correctIndex": 1
             },
@@ -28764,9 +28764,9 @@ export const PREBUILT_COURSES = [
               "question": "What does grouping do to a view?",
               "options": [
                 "It clusters rows by a property into columns or sections",
-                "It permanently sorts the source database",
-                "It removes all filters",
-                "It converts rows into blocks"
+                "It permanently re-sorts the entire source database",
+                "It removes every single filter from the view at once",
+                "It converts all of the rows into separate blocks"
               ],
               "correctIndex": 0
             },
@@ -28775,10 +28775,10 @@ export const PREBUILT_COURSES = [
               "concept": "Dashboard",
               "question": "Why does a dashboard of linked views stay current automatically?",
               "options": [
-                "Because it emails owners each morning",
-                "Because someone re-pastes the data nightly",
+                "Because it emails all of the owners each morning",
+                "Because someone manually re-pastes the data nightly",
                 "Because each tile reads live from its source database",
-                "Because it locks after creation"
+                "Because it fully locks itself right after creation"
               ],
               "correctIndex": 2
             },
@@ -28789,7 +28789,7 @@ export const PREBUILT_COURSES = [
               "options": [
                 "The reader's specific question",
                 "The alphabetical order of owners",
-                "The oldest data available",
+                "The oldest available data on hand",
                 "The builder's personal preference"
               ],
               "correctIndex": 0
@@ -28799,10 +28799,10 @@ export const PREBUILT_COURSES = [
               "concept": "View",
               "question": "Which is an example of two views serving different audiences from one database?",
               "options": [
-                "Two identical tables on two pages",
-                "A board by status for standup and a calendar by date for planning",
-                "A PDF export and a printed copy",
-                "Two separate databases with copied rows"
+                "Two completely identical tables sitting on two separate pages",
+                "A status board for standup and a date calendar for planning",
+                "A one-time PDF export alongside a printed-out paper copy",
+                "Two entirely separate databases with copied-over rows"
               ],
               "correctIndex": 1
             }
@@ -28886,9 +28886,9 @@ export const PREBUILT_COURSES = [
               "question": "What is the true test of a good SOP according to the lesson?",
               "options": [
                 "How completely it documents every edge case",
-                "How usable it is at the moment of need",
-                "How many people co-authored it",
-                "How long it took to write"
+                "How usable it truly is at the moment of need",
+                "How many different people co-authored it",
+                "How long it actually took to first write it"
               ],
               "correctIndex": 1
             },
@@ -28897,10 +28897,10 @@ export const PREBUILT_COURSES = [
               "concept": "Database template",
               "question": "What does a database template do for a new entry?",
               "options": [
-                "It deletes the previous entry",
+                "It automatically deletes the previous entry made",
                 "It pre-fills structure and default property values",
-                "It hides the entry from the team",
-                "It converts the database to a page"
+                "It hides the new entry from the entire team's view",
+                "It converts the whole database back into a page"
               ],
               "correctIndex": 1
             },
@@ -28910,9 +28910,9 @@ export const PREBUILT_COURSES = [
               "question": "Why are defaults called the quiet lever of operations?",
               "options": [
                 "They make the easiest path and the correct path the same",
-                "They require constant reminders to work",
-                "They only apply to executives",
-                "They slow the team down deliberately"
+                "They require constant, repeated reminders to work at all",
+                "They only ever apply to the most senior executives",
+                "They deliberately slow the entire team down over time"
               ],
               "correctIndex": 0
             },
@@ -28921,10 +28921,10 @@ export const PREBUILT_COURSES = [
               "concept": "Adoption",
               "question": "According to the lesson, most documentation fails because of what?",
               "options": [
-                "It contains factual errors",
+                "It contains basic factual errors",
                 "No one uses it, due to friction",
-                "It is too short",
-                "It lacks a title"
+                "It is simply much too short to use",
+                "It lacks any clear, usable title"
               ],
               "correctIndex": 1
             },
@@ -28933,10 +28933,10 @@ export const PREBUILT_COURSES = [
               "concept": "Adoption",
               "question": "What happens when people encounter one stale or bloated doc?",
               "options": [
-                "They rewrite it immediately",
+                "They rewrite it almost immediately",
                 "They stop trusting all the docs",
                 "They archive the whole workspace",
-                "They add more properties"
+                "They quietly add more properties"
               ],
               "correctIndex": 1
             },
@@ -28945,10 +28945,10 @@ export const PREBUILT_COURSES = [
               "concept": "Buttons and automation",
               "question": "What can a Notion button do?",
               "options": [
-                "Create a pre-templated entry or update a status in one click",
-                "Permanently lock the workspace",
-                "Translate content between languages",
-                "Replace the database with a spreadsheet"
+                "Create a pre-templated entry or set a status in one click",
+                "Permanently lock down the entire shared team workspace",
+                "Automatically translate content between many languages",
+                "Replace the whole database with a plain spreadsheet"
               ],
               "correctIndex": 0
             }
@@ -29035,10 +29035,10 @@ export const PREBUILT_COURSES = [
               "concept": "Permissions and sharing",
               "question": "What do permissions and sharing control in Notion?",
               "options": [
-                "The font and color of pages",
+                "The font style and fill color of the pages",
                 "Who can view, comment on, or edit each page",
-                "How fast pages load",
-                "The number of properties allowed"
+                "How fast each of the individual pages loads",
+                "The total number of properties allowed"
               ],
               "correctIndex": 1
             },
@@ -29047,10 +29047,10 @@ export const PREBUILT_COURSES = [
               "concept": "Teamspace",
               "question": "What is the purpose of a teamspace?",
               "options": [
-                "To group pages and members for a function with its own default access",
-                "To permanently delete old pages",
-                "To disable all relations",
-                "To export data to email"
+                "To group pages and members for a function with default access",
+                "To permanently delete all of the old and stale pages",
+                "To disable every single relation across the workspace",
+                "To export the workspace's data straight out to email"
               ],
               "correctIndex": 0
             },
@@ -29059,10 +29059,10 @@ export const PREBUILT_COURSES = [
               "concept": "Workspace rot",
               "question": "What best describes workspace rot?",
               "options": [
-                "A feature that speeds up search",
+                "A genuinely helpful feature that speeds up search a lot",
                 "The slow decay as duplicates pile up and content goes stale",
-                "A permission level for external guests",
-                "A type of database template"
+                "A specific permission level meant for external guests",
+                "A particular type of reusable database entry template"
               ],
               "correctIndex": 1
             },
@@ -29071,10 +29071,10 @@ export const PREBUILT_COURSES = [
               "concept": "Review cadence",
               "question": "How does a review cadence keep documentation trustworthy?",
               "options": [
-                "It hides all old pages from view",
+                "It automatically hides all of the old pages from view",
                 "It forces a regular check that content is still accurate",
-                "It locks the database from editing",
-                "It duplicates each page for backup"
+                "It permanently locks the database against editing",
+                "It duplicates every single page for a backup copy"
               ],
               "correctIndex": 1
             },
@@ -29084,9 +29084,9 @@ export const PREBUILT_COURSES = [
               "question": "Why archive closed content instead of deleting it?",
               "options": [
                 "To keep the active workspace clean while preserving the record",
-                "To remove it from every backup permanently",
-                "To make it editable by external guests",
-                "To increase the property count"
+                "To remove it entirely from every single backup, permanently",
+                "To make it freely editable by any outside external guests",
+                "To deliberately increase the overall property count over time"
               ],
               "correctIndex": 0
             },
@@ -29096,9 +29096,9 @@ export const PREBUILT_COURSES = [
               "question": "How should shared data connect across multiple teamspaces as you scale?",
               "options": [
                 "Through relations rather than duplication",
-                "By copying it into each teamspace",
-                "By emailing it weekly",
-                "By deleting it from the source"
+                "By copying it into every separate teamspace",
+                "By emailing it around on a weekly basis",
+                "By deleting it from the original source"
               ],
               "correctIndex": 0
             }
@@ -29196,7 +29196,7 @@ export const PREBUILT_COURSES = [
                 "It automatically expands to include newly added rows",
                 "It permanently locks the data against any edits",
                 "It converts all text to uppercase automatically",
-                "It removes the need to ever save the file"
+                "It removes the need to ever manually save the file"
               ],
               "correctIndex": 0
             },
@@ -29205,10 +29205,10 @@ export const PREBUILT_COURSES = [
               "concept": "Absolute reference",
               "question": "Which reference stays pinned to the same cell when the formula is copied down?",
               "options": [
-                "A2",
-                "A$2 shifting by column",
-                "$A$2",
-                "The first cell in each new row"
+                "A2, a completely relative reference",
+                "$A2, whose row shifts when copied down",
+                "$A$2, a fully absolute cell reference",
+                "The first cell found in each new row"
               ],
               "correctIndex": 2
             },
@@ -29242,9 +29242,9 @@ export const PREBUILT_COURSES = [
               "question": "What does Ctrl+Arrow do in a data region?",
               "options": [
                 "Jumps to the edge of the current data region",
-                "Deletes the current row of data",
-                "Opens the print dialog for the sheet",
-                "Converts the selection to a Table"
+                "Deletes the entire current row of the data",
+                "Opens the print dialog box for the sheet",
+                "Converts the current selection into a Table"
               ],
               "correctIndex": 0
             },
@@ -29254,9 +29254,9 @@ export const PREBUILT_COURSES = [
               "question": "A formula referencing B1 breaks when copied down 200 rows. What is the most likely fix?",
               "options": [
                 "Merge B1 with the cells above it",
-                "Retype the data as text values",
-                "Delete the extra rows entirely",
-                "Lock the reference as $B$1"
+                "Retype all the data as text values",
+                "Delete all the extra rows entirely",
+                "Lock the cell reference as $B$1"
               ],
               "correctIndex": 3
             }
@@ -29343,10 +29343,10 @@ export const PREBUILT_COURSES = [
               "concept": "XLOOKUP",
               "question": "What advantage does XLOOKUP have over VLOOKUP?",
               "options": [
-                "It can only search sorted numeric data",
+                "It can only ever search pre-sorted numeric data",
                 "It can return values from a column left of the key",
-                "It requires merged cells to function",
-                "It always rounds results to whole numbers"
+                "It requires merged cells in order to function",
+                "It always rounds its results to whole numbers"
               ],
               "correctIndex": 1
             },
@@ -29358,7 +29358,7 @@ export const PREBUILT_COURSES = [
                 "The return column is specified by position number",
                 "It automatically deletes the inserted column",
                 "It switches to approximate match on its own",
-                "It reverses the sort order of the table"
+                "It reverses the sort order of the whole table"
               ],
               "correctIndex": 0
             },
@@ -29367,10 +29367,10 @@ export const PREBUILT_COURSES = [
               "concept": "Exact match",
               "question": "When matching account IDs, which match type should you use?",
               "options": [
-                "Approximate match on unsorted data",
-                "Whatever the default happens to be in VLOOKUP",
-                "Exact match",
-                "A partial text-fragment match"
+                "An approximate match on unsorted data",
+                "Whatever VLOOKUP's default happens to be",
+                "An exact match on the account ID keys",
+                "A partial text-fragment match instead"
               ],
               "correctIndex": 2
             },
@@ -29392,9 +29392,9 @@ export const PREBUILT_COURSES = [
               "question": "How does INDEX/MATCH locate a value?",
               "options": [
                 "MATCH finds the key's position, then INDEX returns the value there",
-                "It merges the two tables into a single range first",
-                "It requires the key to be in the rightmost column",
-                "It only works when both tables are pivot tables"
+                "It first merges the two tables into a single combined range",
+                "It requires the lookup key to sit in the rightmost column",
+                "It only works when both of the tables are actual pivot tables"
               ],
               "correctIndex": 0
             },
@@ -29403,9 +29403,9 @@ export const PREBUILT_COURSES = [
               "concept": "Exact match",
               "question": "Some VLOOKUP rows return wrong values with no error shown. What is the most likely cause?",
               "options": [
-                "The workbook needs to be saved as a Table",
-                "The lookup key column was deleted entirely",
-                "The return column contains only text",
+                "The whole workbook needs to be saved as a Table first",
+                "The lookup key column was accidentally deleted entirely",
+                "The return column happens to contain only text values",
                 "The match type was left approximate on unsorted data"
               ],
               "correctIndex": 3
@@ -29499,9 +29499,9 @@ export const PREBUILT_COURSES = [
               "question": "Why might a pivot table show outdated totals after the source data changed?",
               "options": [
                 "Pivots cache data and must be manually refreshed",
-                "The source data was converted to a Table",
+                "The source data was recently converted to a Table",
                 "Pivots recalculate only when the file is closed",
-                "Slicers block the pivot from updating"
+                "Slicers actively block the pivot from updating"
               ],
               "correctIndex": 0
             },
@@ -29522,10 +29522,10 @@ export const PREBUILT_COURSES = [
               "concept": "Slicer",
               "question": "What does a slicer do in a pivot-based dashboard?",
               "options": [
-                "It refreshes the source data automatically",
+                "It refreshes all of the source data automatically",
                 "It filters connected pivots and charts with a click",
-                "It changes the summary math to an average",
-                "It groups dates into quarters permanently"
+                "It changes the summary math over to an average",
+                "It groups the dates into quarters permanently"
               ],
               "correctIndex": 1
             },
@@ -29547,9 +29547,9 @@ export const PREBUILT_COURSES = [
               "question": "How do you change what a pivot table summarizes by?",
               "options": [
                 "Drag fields between the Rows, Columns, and Values areas",
-                "Retype every formula in the source range",
-                "Delete and re-import the entire workbook",
-                "Merge the header cells of the source"
+                "Retype every single formula in the source range",
+                "Delete and then re-import the entire workbook file",
+                "Merge together all the header cells of the source"
               ],
               "correctIndex": 0
             },
@@ -29558,10 +29558,10 @@ export const PREBUILT_COURSES = [
               "concept": "Grouping",
               "question": "What does grouping let you do inside a pivot table?",
               "options": [
-                "Encrypt the underlying source data",
-                "Send the pivot directly to PowerPoint",
+                "Encrypt all of the underlying pivot source data",
+                "Send the pivot table directly into PowerPoint",
                 "Roll detail up into buckets like months or tiers",
-                "Force an exact-match lookup on the keys"
+                "Force an exact-match lookup on all the keys"
               ],
               "correctIndex": 2
             }
@@ -29649,9 +29649,9 @@ export const PREBUILT_COURSES = [
               "question": "What is a defining trait of an Outlook inbox rule?",
               "options": [
                 "It acts on messages automatically based on criteria",
-                "It runs only when you click it manually",
-                "It can only tag messages with colors",
-                "It requires the sender to approve the action"
+                "It runs only when you go and click it manually",
+                "It can only ever tag incoming messages with colors",
+                "It requires the sender to approve each action first"
               ],
               "correctIndex": 0
             },
@@ -29660,10 +29660,10 @@ export const PREBUILT_COURSES = [
               "concept": "Categories",
               "question": "Why are categories better than folders for grouping a single escalation across senders?",
               "options": [
-                "Categories delete the original messages",
+                "Categories permanently delete all the original messages",
                 "Categories cut across folders while a message lives in only one",
-                "Categories automatically reply to each sender",
-                "Categories move mail to a different mailbox"
+                "Categories automatically reply to each and every sender",
+                "Categories move the mail to an entirely different mailbox"
               ],
               "correctIndex": 1
             },
@@ -29672,7 +29672,7 @@ export const PREBUILT_COURSES = [
               "concept": "Quick Steps",
               "question": "How does a Quick Step differ from a rule?",
               "options": [
-                "It only works on calendar events",
+                "It only ever works on calendar events",
                 "It permanently deletes matching mail",
                 "It runs on demand when you choose it",
                 "It cannot combine more than one action"
@@ -29685,8 +29685,8 @@ export const PREBUILT_COURSES = [
               "question": "What is a search folder in Outlook?",
               "options": [
                 "A folder that compresses old attachments",
-                "A folder that blocks external senders",
-                "A backup copy of your entire mailbox",
+                "A folder that blocks all external senders",
+                "A backup copy of your entire email mailbox",
                 "A saved live query that stays auto-populated"
               ],
               "correctIndex": 3
@@ -29697,9 +29697,9 @@ export const PREBUILT_COURSES = [
               "question": "What is the point of focus time blocking on your calendar?",
               "options": [
                 "Reserving deep-work time as real, visibly-busy appointments",
-                "Automatically forwarding meetings to your team",
-                "Hiding your calendar from all colleagues",
-                "Converting meetings into email threads"
+                "Automatically forwarding all your meetings to your team",
+                "Hiding your entire calendar from all of your colleagues",
+                "Converting your meetings into long email threads instead"
               ],
               "correctIndex": 0
             },
@@ -29710,8 +29710,8 @@ export const PREBUILT_COURSES = [
               "options": [
                 "Manila works a daytime shift far ahead of US hours",
                 "The Manila team is on a US-aligned night shift",
-                "Rules cannot run during overlapping hours",
-                "Categories must be reset each time zone change"
+                "Rules simply cannot run during overlapping hours",
+                "Categories must be reset on each time zone change"
               ],
               "correctIndex": 1
             }
@@ -29798,10 +29798,10 @@ export const PREBUILT_COURSES = [
               "concept": "Action titles",
               "question": "What makes a slide title an action title?",
               "options": [
-                "It names the topic in one or two words",
+                "It names the slide's topic in one or two words",
                 "It states the slide's conclusion as a sentence",
                 "It matches the font of the previous slide",
-                "It lists every data point on the slide"
+                "It lists every single data point on the slide"
               ],
               "correctIndex": 1
             },
@@ -29810,10 +29810,10 @@ export const PREBUILT_COURSES = [
               "concept": "Chart choice",
               "question": "Which chart best shows change in a metric over time?",
               "options": [
-                "A pie chart",
+                "A standard round pie chart",
                 "A bar chart of categories",
-                "A line chart",
-                "A single large number"
+                "A line chart across time",
+                "A single large KPI number"
               ],
               "correctIndex": 2
             },
@@ -29823,9 +29823,9 @@ export const PREBUILT_COURSES = [
               "question": "What is the advantage of using the Slide Master?",
               "options": [
                 "It sets fonts and colors for the whole deck at once",
-                "It automatically writes the slide titles",
-                "It converts charts back into Excel tables",
-                "It emails the deck to executives for you"
+                "It automatically writes all of the slide titles",
+                "It converts the charts back into Excel tables",
+                "It emails the finished deck to executives for you"
               ],
               "correctIndex": 0
             },
@@ -29835,9 +29835,9 @@ export const PREBUILT_COURSES = [
               "question": "What does one message per slide require?",
               "options": [
                 "Filling each slide with at least three claims",
-                "Removing all charts from every slide",
+                "Removing all of the charts from every slide",
                 "Limiting the slide to a single supported claim",
-                "Using the same chart type on every slide"
+                "Using the exact same chart type on every slide"
               ],
               "correctIndex": 2
             },
@@ -29846,9 +29846,9 @@ export const PREBUILT_COURSES = [
               "concept": "Data-ink discipline",
               "question": "Which action reflects data-ink discipline?",
               "options": [
-                "Adding 3-D effects to emphasize the chart",
-                "Including decorative clip art on each slide",
-                "Duplicating the legend for extra clarity",
+                "Adding fancy 3-D effects to emphasize the chart",
+                "Including decorative clip art on every single slide",
+                "Duplicating the chart legend for extra clarity",
                 "Removing chart junk so remaining ink carries meaning"
               ],
               "correctIndex": 3
@@ -29858,10 +29858,10 @@ export const PREBUILT_COURSES = [
               "concept": "Action titles",
               "question": "An exec says the data is good but the story is hard to follow. What is the fastest structural fix?",
               "options": [
-                "Rewrite each title as an action title stating its conclusion",
-                "Add more data series to every chart",
-                "Switch all charts to pie charts",
-                "Increase the font size across the deck"
+                "Rewrite each title as an action title with its conclusion",
+                "Add several more data series to each and every chart",
+                "Switch all of the deck's charts over to pie charts",
+                "Increase the overall font size across the whole deck"
               ],
               "correctIndex": 0
             }
