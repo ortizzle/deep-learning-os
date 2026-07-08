@@ -543,12 +543,11 @@ mark.kw {
 .closer-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 .closer-actions { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
 /* Closer save/share reuse .save-mark/.share-mark's look but sit inline in
-   .closer-actions instead of absolutely-positioned — they share a header
-   row with "+ Add to Today" instead of overlapping it in the corner.
+   .closer-actions instead of floated in a corner — they share a header
+   row with "+ Add to Today" instead of overlapping it.
    Scoped via the parent (not just the bare class) so it wins over the
    later .save-mark/.share-mark base rules regardless of source order. */
 .closer-actions .save-mark, .closer-actions .share-mark {
-  position: static;
   width: auto;
   height: auto;
   padding: 4px;
@@ -760,11 +759,17 @@ button.task-src:hover { text-decoration: underline; }
 }
 .hl-bar-btn:active { transform: scale(0.97); }
 .hl { cursor: pointer; }
-.saveable { position: relative; padding-right: 68px; }
-.save-mark {
-  position: absolute;
-  top: 6px;
-  right: 6px;
+/* The actions live in a small floated span prepended to the block, so text
+   wraps around it for just the couple of lines beside it instead of every
+   line in the paragraph losing width to reserved corner padding. */
+.saveable { position: relative; }
+.block-actions {
+  float: right;
+  display: inline-flex;
+  gap: 6px;
+  margin: 0 0 6px 10px;
+}
+.save-mark, .share-mark {
   width: 26px;
   height: 26px;
   display: flex;
@@ -781,30 +786,9 @@ button.task-src:hover { text-decoration: underline; }
   cursor: pointer;
   transition: border-color 0.15s, color 0.15s, transform 0.1s;
 }
-.save-mark:hover { border-color: var(--accent); color: var(--accent); }
-.save-mark:active { transform: scale(0.92); }
+.save-mark:hover, .share-mark:hover { border-color: var(--accent); color: var(--accent); }
+.save-mark:active, .share-mark:active { transform: scale(0.92); }
 .save-mark.saved { color: var(--accent); border-color: var(--accent); }
-.share-mark {
-  position: absolute;
-  top: 6px;
-  right: 36px;
-  width: 26px;
-  height: 26px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
-  color: var(--text-2);
-  line-height: 1;
-  padding: 0;
-  cursor: pointer;
-  transition: border-color 0.15s, color 0.15s, transform 0.1s;
-}
-.share-mark:hover { border-color: var(--accent); color: var(--accent); }
-.share-mark:active { transform: scale(0.92); }
 .share-pill {
   display: inline-flex;
   align-items: center;

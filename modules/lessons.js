@@ -580,8 +580,9 @@ function markSavedBlocks(article, lesson, highlights) {
       await shareText({ title: lesson.title, text: passageShare(text, lesson.title) });
     });
 
+    const actions = el('span', { class: 'block-actions' }, [btn, shareBtn]);
     block.classList.add('saveable');
-    block.append(btn, shareBtn);
+    block.prepend(actions);
   }
 }
 

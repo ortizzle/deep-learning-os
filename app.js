@@ -23,7 +23,7 @@ import { el, clear, toast, navigate } from './modules/ui.js';
 const view = document.getElementById('view');
 
 // Keep in sync with the CACHE suffix in sw.js — bumped on every deploy.
-const APP_VERSION = 'v31';
+const APP_VERSION = 'v32';
 
 // ---------- theme ----------
 
