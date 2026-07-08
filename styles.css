@@ -547,7 +547,15 @@ mark.kw {
    row with "+ Add to Today" instead of overlapping it in the corner.
    Scoped via the parent (not just the bare class) so it wins over the
    later .save-mark/.share-mark base rules regardless of source order. */
-.closer-actions .save-mark, .closer-actions .share-mark { position: static; padding: 2px; }
+.closer-actions .save-mark, .closer-actions .share-mark {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 4px;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
 .closer-add {
   flex-shrink: 0;
   background: var(--accent-soft);
@@ -752,38 +760,51 @@ button.task-src:hover { text-decoration: underline; }
 }
 .hl-bar-btn:active { transform: scale(0.97); }
 .hl { cursor: pointer; }
-.saveable { position: relative; }
+.saveable { position: relative; padding-right: 68px; }
 .save-mark {
   position: absolute;
   top: 6px;
   right: 6px;
-  background: none;
-  border: none;
-  color: var(--text-3);
-  font-size: 15px;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  color: var(--text-2);
+  font-size: 14px;
   line-height: 1;
-  padding: 4px;
+  padding: 0;
   cursor: pointer;
-  opacity: 0.55;
-  transition: opacity 0.15s, color 0.15s;
+  transition: border-color 0.15s, color 0.15s, transform 0.1s;
 }
-.save-mark:hover { opacity: 1; }
-.save-mark.saved { color: var(--accent); opacity: 1; }
+.save-mark:hover { border-color: var(--accent); color: var(--accent); }
+.save-mark:active { transform: scale(0.92); }
+.save-mark.saved { color: var(--accent); border-color: var(--accent); }
 .share-mark {
   position: absolute;
-  top: 7px;
-  right: 30px;
-  background: none;
-  border: none;
-  color: var(--text-3);
+  top: 6px;
+  right: 36px;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  color: var(--text-2);
   line-height: 1;
-  padding: 4px;
+  padding: 0;
   cursor: pointer;
-  opacity: 0.55;
-  transition: opacity 0.15s, color 0.15s;
+  transition: border-color 0.15s, color 0.15s, transform 0.1s;
 }
-.share-mark:hover { opacity: 1; color: var(--accent); }
-li.saveable { padding-right: 52px; }
+.share-mark:hover { border-color: var(--accent); color: var(--accent); }
+.share-mark:active { transform: scale(0.92); }
 .share-pill {
   display: inline-flex;
   align-items: center;
@@ -903,6 +924,7 @@ textarea.input { resize: vertical; line-height: 1.5; }
 .field-label { display: block; font-size: 13px; font-weight: 500; color: var(--text-2); margin-bottom: 6px; }
 
 .settings-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.app-version { margin: 16px 0 0; text-align: center; }
 .accent-row { display: flex; gap: 10px; margin-bottom: 10px; }
 .accent-dot {
   width: 30px; height: 30px;

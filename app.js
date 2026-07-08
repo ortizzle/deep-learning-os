@@ -22,6 +22,9 @@ import { el, clear, toast, navigate } from './modules/ui.js';
 
 const view = document.getElementById('view');
 
+// Keep in sync with the CACHE suffix in sw.js — bumped on every deploy.
+const APP_VERSION = 'v31';
+
 // ---------- theme ----------
 
 const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -149,7 +152,9 @@ function renderSettings(root) {
       el('button', { class: 'btn btn-primary', onclick: onSave }, 'Save'),
       el('button', { class: 'btn', onclick: onSyncNow, disabled: syncConfigured() ? null : 'disabled' }, 'Sync now'),
       el('button', { class: 'btn', onclick: onExport }, 'Export JSON'),
-    ])
+    ]),
+
+    el('p', { class: 'muted small app-version' }, APP_VERSION)
   );
 
   async function onSave() {
