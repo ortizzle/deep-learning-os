@@ -381,6 +381,12 @@ h4 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: 
 .stat-icon { font-size: 18px; margin-right: 4px; }
 .stat-label { font-size: 12px; color: var(--text-2); margin-top: 2px; }
 
+/* Claude token usage readout in Settings */
+.usage { margin-top: 14px; }
+.usage .stat-row { margin-bottom: 8px; }
+.usage-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.btn.small { padding: 6px 12px; font-size: 12px; }
+
 /* coach chips + header */
 .coach-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .coach-head .link { padding: 0; flex-shrink: 0; }

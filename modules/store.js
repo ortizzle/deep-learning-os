@@ -51,6 +51,39 @@ export function saveSettings(patch) {
   return next;
 }
 
+// ---------- Claude API usage ----------
+// Cumulative token counters, device-local like the key. Kept in settings so
+// they survive reloads without touching IndexedDB. `since` marks when counting
+// (re)started so the totals have a meaningful window.
+
+const ZERO_USAGE = { inputTokens: 0, outputTokens: 0, cacheTokens: 0, requests: 0, since: null };
+
+export function getApiUsage() {
+  return { ...ZERO_USAGE, ...(getSettings().apiUsage || {}) };
+}
+
+// Fold one API response's `usage` block into the running totals. Anthropic
+// reports cache reads/writes separately from input_tokens, so track them too.
+export function recordApiUsage(usage = {}) {
+  const u = getApiUsage();
+  const input = usage.input_tokens || 0;
+  const output = usage.output_tokens || 0;
+  const cache = (usage.cache_read_input_tokens || 0) + (usage.cache_creation_input_tokens || 0);
+  saveSettings({
+    apiUsage: {
+      inputTokens: u.inputTokens + input,
+      outputTokens: u.outputTokens + output,
+      cacheTokens: u.cacheTokens + cache,
+      requests: u.requests + 1,
+      since: u.since || now(),
+    },
+  });
+}
+
+export function resetApiUsage() {
+  saveSettings({ apiUsage: { ...ZERO_USAGE, since: now() } });
+}
+
 // ---------- IndexedDB core ----------
 
 function openDb() {

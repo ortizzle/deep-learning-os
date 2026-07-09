@@ -9,6 +9,8 @@ import {
   pushToGist,
   onSyncStatus,
   exportSnapshot,
+  getApiUsage,
+  resetApiUsage,
 } from './modules/store.js';
 import { renderDashboard, renderContinue, renderCompletedLessons, renderDailyActivity } from './modules/dashboard.js';
 import { renderTopics, renderTopic, renderLesson } from './modules/lessons.js';
@@ -23,7 +25,7 @@ import { el, clear, toast, navigate } from './modules/ui.js';
 const view = document.getElementById('view');
 
 // Keep in sync with the CACHE suffix in sw.js — bumped on every deploy.
-const APP_VERSION = 'v33';
+const APP_VERSION = 'v34';
 
 // ---------- theme ----------
 
@@ -136,6 +138,7 @@ function renderSettings(root) {
       el('label', { class: 'field-label' }, 'API key (stored only on this device)'),
       apiKey,
       el('p', { class: 'muted small' }, 'Used for direct browser calls to api.anthropic.com. Never leaves your device except to Anthropic.'),
+      usageBlock(root),
     ]),
 
     el('section', { class: 'panel' }, [
@@ -183,6 +186,52 @@ function renderSettings(root) {
     a.click();
     URL.revokeObjectURL(url);
   }
+}
+
+// Cumulative Claude token usage on this device, shown under the API key.
+function usageBlock(root) {
+  const u = getApiUsage();
+  const inputTotal = u.inputTokens + u.cacheTokens; // cache reads/writes are input-side
+  const total = inputTotal + u.outputTokens;
+
+  // 24.3k / 1.2M style for tiles; full comma-grouped number on hover.
+  const compact = (n) =>
+    n >= 1e6 ? (n / 1e6).toFixed(1).replace(/\.0$/, '') + 'M'
+    : n >= 1e3 ? (n / 1e3).toFixed(n >= 1e5 ? 0 : 1).replace(/\.0$/, '') + 'k'
+    : String(n);
+  const full = (n) => n.toLocaleString();
+
+  const tile = (value, label, titleNum) =>
+    el('div', { class: 'stat', title: titleNum != null ? `${full(titleNum)}` : null }, [
+      el('div', { class: 'stat-value' }, value),
+      el('div', { class: 'stat-label' }, label),
+    ]);
+
+  const since = u.since
+    ? new Date(u.since).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })
+    : null;
+
+  const resetBtn = el('button', {
+    class: 'btn small',
+    disabled: u.requests ? null : 'disabled',
+    onclick: () => { resetApiUsage(); toast('Usage reset', 'success'); renderSettings(root); },
+  }, 'Reset');
+
+  return el('div', { class: 'usage' }, [
+    el('label', { class: 'field-label' }, 'Token usage (this device)'),
+    el('div', { class: 'stat-row' }, [
+      tile(compact(inputTotal), 'Input tokens', inputTotal),
+      tile(compact(u.outputTokens), 'Output tokens', u.outputTokens),
+      tile(full(u.requests), 'API calls'),
+    ]),
+    el('div', { class: 'usage-foot' }, [
+      el('span', { class: 'muted small' },
+        u.requests
+          ? `≈ ${full(total)} tokens total${since ? ` · since ${since}` : ''}`
+          : 'No Claude API calls yet on this device.'),
+      resetBtn,
+    ]),
+  ]);
 }
 
 // ---------- boot ----------

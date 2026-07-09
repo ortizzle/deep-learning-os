@@ -2,7 +2,7 @@
 // transport (direct browser call today) can be swapped for a proxy later with
 // zero changes to lessons/quiz/coach.
 
-import { getSettings } from './store.js';
+import { getSettings, recordApiUsage } from './store.js';
 
 const MODEL = 'claude-sonnet-4-6';
 const API_URL = 'https://api.anthropic.com/v1/messages';
@@ -79,6 +79,7 @@ async function callClaude({ system, messages, maxTokens = 2048, temperature }) {
   }
 
   const json = await res.json();
+  if (json.usage) recordApiUsage(json.usage);
   return (json.content || [])
     .filter((b) => b.type === 'text')
     .map((b) => b.text)
