@@ -178,20 +178,18 @@ ${content.slice(0, 7000)}
 
 Rules:
 - Every question must be answerable solely from the lesson content above. Never test facts the lesson does not state, even if you know them.
-- 5-8 questions, mixing multiple choice and short answer.
+- 4-6 questions, all multiple choice. No short-answer questions — every question must have exactly four options and one correct answer, so the quiz can be graded entirely on-device.
 - Tie every question to one of the key concepts via the "concept" field.
 - This app is for quick study sessions — keep everything terse.
-- Multiple choice: all four options must be roughly the SAME length and level of detail as each other (within a few words). Never let the correct option be noticeably longer, more qualified, or more complete than the distractors — that's a giveaway, not a real test. If the correct fact needs more words to state accurately, add comparable qualifying detail to the distractors too, don't just pad them with filler.
-- Short answer: "modelAnswer" must be ONE short sentence, ideally under 15 words — a phrase-length answer a learner could recall in a few seconds, not a paragraph explaining the reasoning.
+- All four options must be roughly the SAME length and level of detail as each other (within a few words). Never let the correct option be noticeably longer, more qualified, or more complete than the distractors — that's a giveaway, not a real test. If the correct fact needs more words to state accurately, add comparable qualifying detail to the distractors too, don't just pad them with filler.
 
 Return JSON:
 {
   "questions": [
-    { "type": "mc", "concept": "concept name", "question": "...", "options": ["A","B","C","D"], "correctIndex": 0 },
-    { "type": "short", "concept": "concept name", "question": "...", "modelAnswer": "a one-sentence ideal answer, under 15 words" }
+    { "type": "mc", "concept": "concept name", "question": "...", "options": ["A","B","C","D"], "correctIndex": 0 }
   ]
 }`;
-  return generateJSON({ system, prompt, maxTokens: 2500 });
+  return generateJSON({ system, prompt, maxTokens: 2000 });
 }
 
 // Grade a batch of short-answer responses. Returns [{ correct, score, feedback }].

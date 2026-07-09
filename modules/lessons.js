@@ -1,7 +1,7 @@
 // lessons.js — topics + lessons: list, detail, creation, and the lesson reader.
 
 import * as store from './store.js';
-import { generateLesson, generateSyllabus, hasApiKey } from './ai.js';
+import { generateLesson, generateSyllabus, generateQuiz, hasApiKey } from './ai.js';
 import { touchActivity } from './gamification.js';
 import { addManualTask, addHabitFromText } from './today.js';
 import { SUGGESTED_TOPICS } from './suggestedTopics.js';
@@ -10,6 +10,42 @@ import { el, clear, paragraphs, rich, toast, loading, navigate, shareText, SHARE
 // Formatted share text for a passage from a lesson.
 function passageShare(text, lessonTitle) {
   return `“${text}”\n\n— ${lessonTitle} · Ortiz Learning OS`;
+}
+
+// Flatten a lesson into quiz source material (full text, not a truncated body).
+// Shared with quiz.js so pre-generation and any live fallback see the same
+// source of truth.
+export function lessonContent(lesson) {
+  return [
+    ...(lesson.sections || []).map((s) => `${s.heading}\n${s.text}`),
+    lesson.example?.text ? `In practice: ${lesson.example.text}` : '',
+    ...(lesson.glossary || []).map((g) => `${g.term}: ${g.definition}`),
+    (lesson.insights || []).join('\n'),
+    lesson.body || '',
+  ].filter(Boolean).join('\n\n');
+}
+
+// Pre-generate a lesson's quiz in the background so taking it later costs no
+// tokens. No-op if the lesson already carries a quiz or there's no API key.
+// Re-fetches before saving so a concurrent update (e.g. completedAt) isn't
+// clobbered.
+export async function ensureLessonQuiz(lesson) {
+  if (!hasApiKey() || lesson.quiz?.questions?.length) return;
+  try {
+    const quiz = await generateQuiz({
+      lessonTitle: lesson.title,
+      concepts: lesson.concepts,
+      content: lessonContent(lesson),
+    });
+    if (!quiz?.questions?.length) return;
+    const fresh = await store.get('lessons', lesson.id);
+    if (fresh && !fresh.quiz?.questions?.length) {
+      fresh.quiz = quiz;
+      await store.put('lessons', fresh);
+    }
+  } catch (err) {
+    console.warn('ensureLessonQuiz failed', err);
+  }
 }
 
 // Where a lesson sits in its topic's curriculum: { index, total } or null.
@@ -402,6 +438,11 @@ async function saveGeneratedLesson(topic, data, entry) {
   if (entry) entry.lessonId = lesson.id;
   topic.lessonIds = [...(topic.lessonIds || []), lesson.id];
   await store.put('topics', topic);
+
+  // Prepare the quiz ahead of time in the background so opening it later spends
+  // no tokens. Fire-and-forget: the reader shouldn't wait on it.
+  ensureLessonQuiz(lesson);
+
   return lesson;
 }
 

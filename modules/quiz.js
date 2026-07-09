@@ -4,20 +4,9 @@
 import * as store from './store.js';
 import { generateQuiz, gradeShortAnswers, hasApiKey } from './ai.js';
 import { touchActivity, nextMastery } from './gamification.js';
-import { prepareNextLesson } from './lessons.js';
+import { prepareNextLesson, lessonContent } from './lessons.js';
 import { addLessonAction } from './today.js';
 import { el, clear, toast, loading, navigate } from './ui.js';
-
-// Flatten a lesson into quiz source material (full text, not a truncated body).
-function lessonContent(lesson) {
-  return [
-    ...(lesson.sections || []).map((s) => `${s.heading}\n${s.text}`),
-    lesson.example?.text ? `In practice: ${lesson.example.text}` : '',
-    ...(lesson.glossary || []).map((g) => `${g.term}: ${g.definition}`),
-    (lesson.insights || []).join('\n'),
-    lesson.body || '',
-  ].filter(Boolean).join('\n\n');
-}
 
 export async function renderQuiz(root, { id, focusConcepts = [] }) {
   clear(root);
@@ -27,13 +16,20 @@ export async function renderQuiz(root, { id, focusConcepts = [] }) {
     return;
   }
   let quizData;
-  // Pre-authored quiz attached to the lesson: instant, no tokens. Retests
-  // still generate live so they can focus on missed concepts. Only a live
-  // generation needs an API key, so gate on that — a pre-authored quiz reads
-  // and (for MC) grades entirely locally.
-  if (!focusConcepts.length && lesson.quiz?.questions?.length) {
-    quizData = lesson.quiz;
+  // Pre-authored quiz attached to the lesson: instant, no tokens, graded
+  // entirely on-device (all questions are multiple choice). Retests reuse the
+  // same questions, narrowed to the concepts missed last time — also tokenless.
+  if (lesson.quiz?.questions?.length) {
+    if (focusConcepts.length) {
+      const subset = lesson.quiz.questions.filter((q) => focusConcepts.includes(q.concept));
+      quizData = { questions: subset.length ? subset : lesson.quiz.questions };
+    } else {
+      quizData = lesson.quiz;
+    }
   } else {
+    // No quiz was prepared ahead of time (e.g. background prep hasn't finished
+    // or the lesson predates pre-generation). Generate once, then cache it on
+    // the lesson so every later attempt is free.
     if (!hasApiKey()) {
       toast('Add your Claude API key in Settings first', 'warn');
       return navigate('#/settings');
@@ -50,6 +46,12 @@ export async function renderQuiz(root, { id, focusConcepts = [] }) {
       console.error(err);
       toast(err.message || 'Quiz generation failed', 'error');
       return navigate(`#/lesson/${lesson.id}`);
+    }
+    // Persist the full quiz so it's generated only once. Skip focused retests —
+    // those are a subset, not the lesson's canonical quiz.
+    if (!focusConcepts.length && quizData?.questions?.length) {
+      lesson.quiz = quizData;
+      await store.put('lessons', lesson);
     }
   }
 
