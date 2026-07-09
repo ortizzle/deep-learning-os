@@ -3,7 +3,7 @@
 // States: pending / done / skipped ("doesn't apply" — honest, chain-safe).
 
 import * as store from './store.js';
-import { touchActivity, dayString, isWeekend, prevWorkingDay } from './gamification.js';
+import { touchActivity, dayString, isWeekend } from './gamification.js';
 import { el, toast, navigate } from './ui.js';
 
 // Day boundaries pinned to Arizona time (see gamification.js).
@@ -41,15 +41,15 @@ async function materializeToday() {
     }
   }
 
-  // Carry forward unfinished actions from the last working day; expire the rest.
-  const carryFrom = prevWorkingDay(today);
-  for (const t of tasks) {
-    const actionable = t.type === 'action' || t.type === 'manual';
-    if (!actionable || t.status !== 'pending' || t.date >= today) continue;
-    if (t.date === carryFrom && !t.carried && !isWeekend(today)) {
-      await store.put('tasks', { ...t, id: undefined, date: today, carried: true });
+  // Carry forward unfinished actions/manual tasks every working day until
+  // they're actually done or skipped — they represent real commitments and
+  // shouldn't quietly expire just because a day was missed.
+  if (!isWeekend(today)) {
+    for (const t of tasks) {
+      const actionable = t.type === 'action' || t.type === 'manual';
+      if (!actionable || t.status !== 'pending' || t.date >= today) continue;
+      await store.put('tasks', { ...t, date: today, carried: true });
     }
-    await store.put('tasks', { ...t, status: 'expired' });
   }
 }
 
