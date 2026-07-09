@@ -7,6 +7,20 @@ import { getSettings, recordApiUsage } from './store.js';
 const MODEL = 'claude-sonnet-4-6';
 const API_URL = 'https://api.anthropic.com/v1/messages';
 
+// USD per 1M tokens for the active model (Claude Sonnet 4.6, current rates).
+// Cache tokens are priced at the read rate — this app doesn't set cache_control,
+// so cacheTokens is ~0 in practice; a cost estimate treats them as reads.
+export const PRICING = { model: MODEL, input: 3, output: 15, cacheRead: 0.30 };
+
+// Estimated USD cost for a bundle of tracked tokens.
+export function estimateCostUSD({ inputTokens = 0, outputTokens = 0, cacheTokens = 0 } = {}) {
+  return (
+    inputTokens * PRICING.input +
+    outputTokens * PRICING.output +
+    cacheTokens * PRICING.cacheRead
+  ) / 1e6;
+}
+
 // Shared context injected into every generation prompt.
 export const CHRIS_CONTEXT = `You are assisting Chris, Director of Customer Success at Lofty (lofty.com, formerly Chime).
 His responsibilities span Technical Support, Onboarding, Customer Success Management, Billing, Customer Operations, AI initiatives, KPIs, and executive reporting.

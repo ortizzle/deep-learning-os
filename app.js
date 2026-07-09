@@ -19,13 +19,13 @@ import { renderCoach } from './modules/coach.js';
 import { renderSaved } from './modules/saved.js';
 import { renderReview } from './modules/review.js';
 import { seedPrebuiltCourses } from './modules/prebuiltContent.js';
-import { hasApiKey } from './modules/ai.js';
+import { hasApiKey, estimateCostUSD, PRICING } from './modules/ai.js';
 import { el, clear, toast, navigate } from './modules/ui.js';
 
 const view = document.getElementById('view');
 
 // Keep in sync with the CACHE suffix in sw.js — bumped on every deploy.
-const APP_VERSION = 'v34';
+const APP_VERSION = 'v35';
 
 // ---------- theme ----------
 
@@ -231,7 +231,18 @@ function usageBlock(root) {
           : 'No Claude API calls yet on this device.'),
       resetBtn,
     ]),
+    u.requests
+      ? el('p', { class: 'muted small usage-cost' },
+          `≈ ${money(estimateCostUSD(u))} spent · ${PRICING.model} at $${PRICING.input}/$${PRICING.output} per 1M in/out`)
+      : null,
   ]);
+}
+
+// Format a USD amount: tiny costs keep precision, larger ones round to cents.
+function money(usd) {
+  if (usd <= 0) return '$0.00';
+  if (usd < 0.01) return `$${usd.toFixed(4)}`;
+  return `$${usd.toFixed(2)}`;
 }
 
 // ---------- boot ----------
