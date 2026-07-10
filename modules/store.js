@@ -203,6 +203,19 @@ export async function exportSnapshot() {
   return { schemaVersion: SCHEMA_VERSION, updatedAt: now(), data };
 }
 
+// Restore from an Export JSON file. Merges (never wipes) using the same
+// tombstone-aware, newest-wins rules as sync, so importing a backup into a
+// blank app brings everything back, and importing into a populated app can
+// only add/refresh — it can't destroy newer local edits. Returns a small
+// summary for the toast; throws on a malformed file.
+export async function importSnapshot(snapshot) {
+  if (!snapshot || typeof snapshot !== 'object' || !snapshot.data) {
+    throw new Error('Not a Deep Learning OS backup file');
+  }
+  await mergeSnapshot(snapshot);
+  return { total: countRecords(await exportSnapshot()) };
+}
+
 // Merge an incoming snapshot: newest updatedAt wins per record, EXCEPT
 // tombstoned records — a deletion (locally or on another device) is never
 // resurrected by a later merge, unless a genuinely newer edit exists.
@@ -265,6 +278,13 @@ const syncListeners = new Set();
 let lastSyncError = null;
 export function getLastSyncError() {
   return lastSyncError;
+}
+
+// Total user records across every store — used by importSnapshot to report how
+// much data the app holds after a restore.
+function countRecords(snapshot) {
+  if (!snapshot || !snapshot.data) return 0;
+  return STORES.reduce((n, name) => n + (snapshot.data[name]?.length || 0), 0);
 }
 
 export function onSyncStatus(fn) {
