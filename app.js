@@ -8,10 +8,10 @@ import {
   pullFromGist,
   pushToGist,
   onSyncStatus,
-  exportSnapshot,
   importSnapshot,
   getLastSyncError,
 } from './modules/store.js';
+import { downloadBackup, startBackupClock } from './modules/backup.js';
 import { renderDashboard, renderContinue, renderCompletedLessons, renderDailyActivity } from './modules/dashboard.js';
 import { renderTopics, renderTopic, renderLesson } from './modules/lessons.js';
 import { renderQuiz } from './modules/quiz.js';
@@ -25,7 +25,7 @@ import { el, clear, toast, navigate } from './modules/ui.js';
 const view = document.getElementById('view');
 
 // Keep in sync with the CACHE suffix in sw.js — bumped on every deploy.
-const APP_VERSION = 'v38';
+const APP_VERSION = 'v39';
 
 // ---------- theme ----------
 
@@ -246,12 +246,7 @@ function renderSettings(root) {
   }
 
   async function onExport() {
-    const snapshot = await exportSnapshot();
-    const blob = new Blob([JSON.stringify(snapshot, null, 2)], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = el('a', { href: url, download: 'deep-learning-os-backup.json' });
-    a.click();
-    URL.revokeObjectURL(url);
+    await downloadBackup(); // full snapshot + stamps the backup-reminder clock
   }
 }
 
@@ -295,6 +290,9 @@ async function boot() {
     console.error('initStore failed', err);
     toast(`Storage error — some data may be unavailable (${err?.message || err})`, 'error');
   }
+
+  // Start the weekly backup-reminder clock (no-op if already running).
+  startBackupClock();
 
   // First-run nudge toward settings if nothing is configured.
   if (!hasApiKey() && !location.hash) {

@@ -7,6 +7,7 @@ import { recentHighlights } from './saved.js';
 import { renderTodayPanel } from './today.js';
 import { syllabusPosition } from './lessons.js';
 import { questionOfTheDay } from './review.js';
+import { backupBanner } from './backup.js';
 import { el, clear, navigate } from './ui.js';
 
 function statCard(value, label, icon, onClick) {
@@ -82,6 +83,10 @@ export async function renderDashboard(root) {
   }).format(new Date()), 10);
   const greet = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
   root.append(el('h2', { class: 'greeting' }, `${greet}, Chris`));
+
+  // Gentle weekly nudge to grab a local backup; re-render on action to clear it.
+  const banner = backupBanner(() => renderDashboard(root));
+  if (banner) root.append(banner);
 
   // The three signals that matter: consistency, volume, depth.
   root.append(
