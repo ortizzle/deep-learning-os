@@ -318,6 +318,25 @@ async function gistFetch(path, options = {}) {
   return res.json();
 }
 
+// The full text of a gist file. The Gist API truncates the inline `content`
+// field once a file grows past ~1 MB (our snapshot crossed that line once all
+// the prebuilt courses seeded), setting `truncated: true` and pointing at a
+// `raw_url` with the complete body. Reading `content` directly then yields a
+// cut-off string that JSON.parse rejects ("Unterminated string…"), which is
+// exactly what silently killed sync. Fall back to raw_url whenever the API
+// flags truncation. raw_url lives on gist.githubusercontent.com — the service
+// worker deliberately ignores that host, and the long unguessable path is the
+// access capability, so no Authorization header is needed (and sending one can
+// get rejected there).
+async function gistFileContent(file) {
+  if (file.truncated && file.raw_url) {
+    const res = await fetch(file.raw_url, { cache: 'no-cache' });
+    if (!res.ok) throw new Error(`Raw fetch ${res.status}`);
+    return res.text();
+  }
+  return file.content;
+}
+
 // Returns true only if the remote snapshot was fetched and merged.
 export async function pullFromGist() {
   if (!syncConfigured()) return false;
@@ -326,8 +345,9 @@ export async function pullFromGist() {
   try {
     const gist = await gistFetch(`/gists/${gistId}`);
     const file = gist.files && gist.files[GIST_FILENAME];
-    if (file && file.content) {
-      await mergeSnapshot(JSON.parse(file.content));
+    if (file) {
+      const content = await gistFileContent(file);
+      if (content) await mergeSnapshot(JSON.parse(content));
     }
     lastSyncError = null;
     emitSync('synced');
