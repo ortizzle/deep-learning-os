@@ -9,6 +9,8 @@ import {
   pushToGist,
   onSyncStatus,
   exportSnapshot,
+  importSnapshot,
+  getLastSyncError,
 } from './modules/store.js';
 import { renderDashboard, renderContinue, renderCompletedLessons, renderDailyActivity } from './modules/dashboard.js';
 import { renderTopics, renderTopic, renderLesson } from './modules/lessons.js';
@@ -23,7 +25,7 @@ import { el, clear, toast, navigate } from './modules/ui.js';
 const view = document.getElementById('view');
 
 // Keep in sync with the CACHE suffix in sw.js — bumped on every deploy.
-const APP_VERSION = 'v33';
+const APP_VERSION = 'v36';
 
 // ---------- theme ----------
 
@@ -95,6 +97,8 @@ function renderSettings(root) {
   const status = el('span', { class: 'sync-dot ' + (syncConfigured() ? 'on' : 'off') });
   const statusText = el('span', { class: 'muted' }, syncConfigured() ? 'Sync configured' : 'Local-only (no sync)');
 
+  const importFile = el('input', { type: 'file', accept: 'application/json,.json', style: 'display:none', onchange: onImport });
+
   const themePref = s.theme || 'auto';
   const themeBtn = (value, label) =>
     el('button', {
@@ -141,6 +145,14 @@ function renderSettings(root) {
     el('section', { class: 'panel' }, [
       el('h4', {}, 'Gist sync (optional)'),
       el('div', { class: 'sync-status' }, [status, statusText]),
+      ...(getLastSyncError()
+        ? [
+            el('p', { class: 'small sync-error' }, `⚠ Last sync failed: ${getLastSyncError()}`),
+            ...(/40[13]/.test(getLastSyncError())
+              ? [el('p', { class: 'muted small' }, 'A 401/403 usually means the GitHub token expired or was revoked. Generate a new token with the gist scope and save it here, then tap Sync now.')]
+              : []),
+          ]
+        : []),
       el('label', { class: 'field-label' }, 'GitHub token (gist scope)'),
       gistToken,
       el('label', { class: 'field-label' }, 'Gist ID'),
@@ -148,10 +160,19 @@ function renderSettings(root) {
       el('p', { class: 'muted small' }, 'Leave blank to run fully local. When set, your data mirrors to a private Gist and merges across devices.'),
     ]),
 
+    el('section', { class: 'panel' }, [
+      el('h4', {}, 'Backup'),
+      el('p', { class: 'muted small' }, 'Export a full copy of your data to a file. Import merges a backup back in — safe to run into a blank app (restores everything) or a populated one (only adds/refreshes, never deletes newer edits).'),
+      el('div', { class: 'settings-actions' }, [
+        el('button', { class: 'btn', onclick: onExport }, 'Export JSON'),
+        el('button', { class: 'btn', onclick: () => importFile.click() }, 'Import JSON'),
+        importFile,
+      ]),
+    ]),
+
     el('div', { class: 'settings-actions' }, [
       el('button', { class: 'btn btn-primary', onclick: onSave }, 'Save'),
       el('button', { class: 'btn', onclick: onSyncNow, disabled: syncConfigured() ? null : 'disabled' }, 'Sync now'),
-      el('button', { class: 'btn', onclick: onExport }, 'Export JSON'),
     ]),
 
     el('p', { class: 'muted small app-version' }, APP_VERSION)
@@ -164,15 +185,38 @@ function renderSettings(root) {
       gistId: gistId.value.trim(),
     });
     toast('Settings saved', 'success');
+    // If sync is configured, verify the credentials right now instead of
+    // letting a dead token fail silently in the background for days — a live
+    // pull flips the header dot and surfaces any error inline immediately.
+    if (syncConfigured()) await pullFromGist();
     renderSettings(root);
+  }
+
+  async function onImport() {
+    const file = importFile.files?.[0];
+    if (!file) return;
+    importFile.value = ''; // allow re-importing the same file later
+    try {
+      const snapshot = JSON.parse(await file.text());
+      const { total } = await importSnapshot(snapshot);
+      toast(`Imported — ${total} records now in the app`, 'success');
+      // Push the restored data up so the cloud copy matches (guarded).
+      if (syncConfigured()) await pushToGist();
+      navigate('#/dashboard');
+    } catch (err) {
+      toast(`Import failed — ${err.message}`, 'error');
+    }
   }
 
   async function onSyncNow() {
     if (!syncConfigured()) return;
     toast('Syncing…');
-    await pullFromGist();
-    await pushToGist();
-    toast('Synced', 'success');
+    // pushToGist pulls (and merges) first, then pushes — one call is the
+    // full round trip. It aborts rather than pushing if the pull fails.
+    const ok = await pushToGist();
+    if (ok) toast('Synced', 'success');
+    else toast(`Sync failed — ${getLastSyncError() || 'see console'}`, 'error');
+    renderSettings(root);
   }
 
   async function onExport() {
@@ -196,10 +240,23 @@ async function boot() {
     navigator.serviceWorker.register('./sw.js').catch((e) => console.warn('SW failed', e));
   }
 
+  // Ask the browser to mark our storage persistent. Without this, the OS may
+  // silently evict IndexedDB under storage pressure — even for an installed
+  // PWA in daily use — which presents as "the app reset to zero".
+  if (navigator.storage?.persist) {
+    navigator.storage.persist().then((granted) => {
+      if (!granted) console.warn('Persistent storage not granted; data may be evicted under storage pressure');
+    }).catch(() => {});
+  }
+
   // Reflect sync status in the header dot.
   onSyncStatus((st) => {
     const dot = document.getElementById('header-sync');
-    if (dot) dot.className = 'header-sync ' + st;
+    if (!dot) return;
+    dot.className = 'header-sync ' + st;
+    dot.title = st === 'error'
+      ? `Sync failing — ${getLastSyncError() || 'unknown error'}. Check Settings.`
+      : `Sync: ${st}`;
   });
 
   // A storage failure must degrade, never blank the app.
