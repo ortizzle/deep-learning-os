@@ -25,7 +25,7 @@ import { el, clear, toast, navigate } from './modules/ui.js';
 const view = document.getElementById('view');
 
 // Keep in sync with the CACHE suffix in sw.js — bumped on every deploy.
-const APP_VERSION = 'v37';
+const APP_VERSION = 'v38';
 
 // ---------- theme ----------
 
@@ -98,6 +98,7 @@ function renderSettings(root) {
   const statusText = el('span', { class: 'muted' }, syncConfigured() ? 'Sync configured' : 'Local-only (no sync)');
 
   const importFile = el('input', { type: 'file', accept: 'application/json,.json', style: 'display:none', onchange: onImport });
+  const restoreFile = el('input', { type: 'file', accept: 'application/json,.json', style: 'display:none', onchange: onRestore });
 
   const themePref = s.theme || 'auto';
   const themeBtn = (value, label) =>
@@ -162,11 +163,13 @@ function renderSettings(root) {
 
     el('section', { class: 'panel' }, [
       el('h4', {}, 'Backup'),
-      el('p', { class: 'muted small' }, 'Export a full copy of your data to a file. Import merges a backup back in — safe to run into a blank app (restores everything) or a populated one (only adds/refreshes, never deletes newer edits).'),
+      el('p', { class: 'muted small' }, 'Export a full copy of your data to a file. Import merges a backup back in (only adds/refreshes, never deletes). Restore makes a backup authoritative — it overwrites current data with the file, for recovering after data loss.'),
       el('div', { class: 'settings-actions' }, [
         el('button', { class: 'btn', onclick: onExport }, 'Export JSON'),
         el('button', { class: 'btn', onclick: () => importFile.click() }, 'Import JSON'),
+        el('button', { class: 'btn', onclick: onRestoreClick }, 'Restore…'),
         importFile,
+        restoreFile,
       ]),
     ]),
 
@@ -205,6 +208,29 @@ function renderSettings(root) {
       navigate('#/dashboard');
     } catch (err) {
       toast(`Import failed — ${err.message}`, 'error');
+    }
+  }
+
+  async function onRestoreClick() {
+    // Restore overwrites current data — take a safety copy of the present state
+    // first (so a wrong file is undoable), then let them pick the backup.
+    if (!confirm('Restore overwrites your current data with the file you pick, and makes it the source of truth for sync.\n\nA copy of your CURRENT data will download first as a safety net. Continue?')) return;
+    await onExport();
+    restoreFile.click();
+  }
+
+  async function onRestore() {
+    const file = restoreFile.files?.[0];
+    if (!file) return;
+    restoreFile.value = '';
+    try {
+      const snapshot = JSON.parse(await file.text());
+      const { total } = await importSnapshot(snapshot, { restore: true });
+      toast(`Restored — ${total} records now in the app`, 'success');
+      if (syncConfigured()) await pushToGist();
+      navigate('#/dashboard');
+    } catch (err) {
+      toast(`Restore failed — ${err.message}`, 'error');
     }
   }
 
