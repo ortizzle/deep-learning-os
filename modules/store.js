@@ -197,9 +197,51 @@ function pristineProfile(p) {
 
 // ---------- snapshot (versioned, migration-ready) ----------
 
-export async function exportSnapshot() {
+// Authored (static) fields on a prebuilt lesson. They're identical on every
+// device — reconstructed from bundled prebuiltCourses.js by seedPrebuiltCourses
+// — so there's no reason to ship them through sync. Dropping them from the sync
+// payload is what keeps the Gist small (the quiz + body across 200 lessons were
+// the bulk of it, and what pushed the file past the API's ~1 MB inline limit).
+// Everything NOT listed here is preserved, so user state like completedAt /
+// startedAt always travels.
+const HEAVY_LESSON_FIELDS = [
+  'body', 'sections', 'objectives', 'concepts', 'glossary', 'insights',
+  'example', 'pauseAndThink', 'quiz', 'leadershipTakeaway', 'productivityTip',
+  'discussionQ', 'action',
+];
+
+// True for a prebuilt lesson record: id is the deterministic `pb-…` the seeder
+// assigns (user-generated lessons use uid()).
+const isPrebuiltLesson = (rec) => typeof rec.id === 'string' && rec.id.startsWith('pb-');
+
+// A prebuilt lesson stripped of its authored content for sync. `body` is always
+// present on a full record (even if '') and always dropped here, so its absence
+// is the reliable "this record is slimmed" sentinel used on the way back in.
+function slimLesson(l) {
+  if (!isPrebuiltLesson(l)) return l;
+  const out = { ...l };
+  for (const f of HEAVY_LESSON_FIELDS) delete out[f];
+  return out;
+}
+
+// Re-attach local authored content to an incoming slimmed prebuilt lesson so a
+// merge/restore can't blank out a lesson mid-session (before the next boot's
+// seed would rehydrate it). Overlays the incoming user-state onto the local
+// record, keeping its body/quiz/etc. If there's no local copy yet, the slim
+// record stands and seedPrebuiltCourses hydrates it on the next boot.
+function reconcile(name, rec, existing) {
+  if (name === 'lessons' && isPrebuiltLesson(rec) && rec.body === undefined && existing) {
+    return { ...existing, ...rec };
+  }
+  return rec;
+}
+
+export async function exportSnapshot({ slim = false } = {}) {
   const data = {};
-  for (const name of STORES) data[name] = await getAll(name);
+  for (const name of STORES) {
+    const recs = await getAll(name);
+    data[name] = slim && name === 'lessons' ? recs.map(slimLesson) : recs;
+  }
   return { schemaVersion: SCHEMA_VERSION, updatedAt: now(), data };
 }
 
@@ -226,7 +268,9 @@ export async function importSnapshot(snapshot, { restore = false } = {}) {
   if (restore) {
     for (const name of STORES) {
       for (const rec of snapshot.data[name] || []) {
-        if (rec && rec.id) await put(name, rec); // touch:true → wins future merges
+        if (!rec || !rec.id) continue;
+        const existing = await get(name, rec.id);
+        await put(name, reconcile(name, rec, existing)); // touch:true → wins future merges
       }
     }
   } else {
@@ -270,7 +314,7 @@ export async function mergeSnapshot(snapshot) {
         const exPristine = pristineProfile(existing);
         if (inPristine !== exPristine) wins = exPristine;
       }
-      if (wins) await put(name, rec, { touch: false });
+      if (wins) await put(name, reconcile(name, rec, existing), { touch: false });
     }
   }
 
@@ -390,7 +434,10 @@ export async function pushToGist() {
   if (!(await pullFromGist())) return false;
   emitSync('syncing');
   try {
-    const snapshot = await exportSnapshot();
+    // Sync payload is slimmed: prebuilt lessons travel without their authored
+    // content (each device rebuilds that from the bundle). Backups via
+    // exportSnapshot() stay full and self-contained.
+    const snapshot = await exportSnapshot({ slim: true });
     await gistFetch(`/gists/${gistId}`, {
       method: 'PATCH',
       body: JSON.stringify({

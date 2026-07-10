@@ -345,6 +345,16 @@ h4 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: 
 .level-bar-label { font-size: 11px; margin-top: 6px; }
 
 .greeting { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; margin: 4px 0 14px; }
+
+/* backup reminder banner */
+.backup-banner {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 10px 12px; margin-bottom: 14px;
+}
+.backup-banner-text { font-size: 13px; color: var(--text-2); }
+.backup-banner-actions { display: flex; gap: 8px; }
+.btn-sm { padding: 6px 12px; font-size: 13px; }
 .panel-head { display: flex; align-items: center; justify-content: space-between; }
 .panel-head h4 { margin-bottom: 10px; }
 .panel-head .link { padding: 0; }
