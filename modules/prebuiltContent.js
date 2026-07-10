@@ -154,12 +154,21 @@ export async function seedPrebuiltCourses() {
         topicDirty = true;
       }
 
-      // Create the lesson only if it isn't already there. If it exists but
-      // predates the pre-authored quiz (e.g. seeded by an earlier version),
-      // backfill the quiz so returning users get it without a reseed.
+      // Create the lesson only if it isn't already there. If it exists, it may
+      // need its authored content rebuilt: sync now ships prebuilt lessons
+      // slimmed (no body/quiz/etc — those come from this bundle), so a copy that
+      // arrived via merge has `body === undefined`. Rehydrate the authored
+      // fields from the bundle while preserving the record's user state
+      // (completedAt/startedAt) and timestamps. Older full records missing only
+      // the pre-authored quiz still get that backfilled.
       const existing = await store.get('lessons', lessonId);
       if (existing) {
-        if (L.quiz?.questions?.length && !existing.quiz?.questions?.length) {
+        if (existing.body === undefined) {
+          const authored = lessonRecord(lessonId, topic.id, L);
+          // authored provides content; existing overlays user state + stamps
+          // (its keys for the stripped fields are absent, so authored's win).
+          await store.put('lessons', { ...authored, ...existing }, { touch: false });
+        } else if (L.quiz?.questions?.length && !existing.quiz?.questions?.length) {
           existing.quiz = L.quiz;
           await store.put('lessons', existing);
         }
