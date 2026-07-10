@@ -934,6 +934,7 @@ textarea.input { resize: vertical; line-height: 1.5; }
   font-weight: 600;
 }
 .sync-status { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+.sync-error { color: var(--bad); }
 .sync-dot { width: 9px; height: 9px; border-radius: 50%; }
 .sync-dot.on { background: var(--good); }
 .sync-dot.off { background: var(--text-3); }

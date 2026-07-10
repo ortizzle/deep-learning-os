@@ -2,7 +2,7 @@
 // request: XP, levels, and achievements removed. What remains is the daily
 // streak (consistency signal) and per-concept mastery (the learning engine).
 
-import { getProfile, saveProfile } from './store.js';
+import { updateProfile } from './store.js';
 
 // Day boundaries are pinned to Arizona time (America/Phoenix, no DST) —
 // Chris's home timezone — so streaks and daily lists don't wobble with
@@ -56,10 +56,7 @@ function bumpStreak(profile) {
 // Record that learning activity happened today (keeps the streak honest).
 // The single entry point that used to be award(); XP no longer exists.
 export async function touchActivity() {
-  const profile = await getProfile();
-  bumpStreak(profile);
-  await saveProfile(profile);
-  return profile;
+  return updateProfile((profile) => bumpStreak(profile));
 }
 
 // ---------- Mastery (spaced-repetition foundation) ----------

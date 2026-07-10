@@ -107,11 +107,12 @@ async function checkDayClosed() {
   const anyDone = todays.some((t) => t.status === 'done');
   if (!resolved || !anyDone) return;
 
-  const profile = await store.getProfile();
-  if (profile.lastPerfectDay === today) return;
-  profile.lastPerfectDay = today;
-  await store.saveProfile(profile);
-  toast('✨ Everything closed out for today', 'success');
+  let already = false;
+  await store.updateProfile((profile) => {
+    if (profile.lastPerfectDay === today) { already = true; return false; }
+    profile.lastPerfectDay = today;
+  });
+  if (!already) toast('✨ Everything closed out for today', 'success');
 }
 
 // 7-day dot chain for a habit (oldest → today).

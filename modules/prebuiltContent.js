@@ -95,11 +95,16 @@ export async function seedPrebuiltCourses() {
     const existingLessons = topic ? allLessons.filter((l) => l.topicId === topic.id) : [];
     const hasPrebuilt = existingLessons.some((l) => pbIds.has(l.id));
     const hasUser = existingLessons.some((l) => !pbIds.has(l.id));
+    // A topic the seeder itself created has a deterministic `pb-` id — treat
+    // it as prebuilt even if the `prebuilt` flag got dropped (e.g. by a stale
+    // whole-topic write elsewhere). The flag alone must never be the only
+    // thing standing between the scrub below and a user's lessons + mastery.
+    const isPrebuilt = Boolean(topic?.prebuilt) || topic?.id?.startsWith('pb-');
 
     // The user's OWN topic that an earlier seed doubled: it holds the user's
     // lessons AND prebuilt copies, and was never adopted (no marker). Scrub the
     // prebuilt copies, leave the user's lessons, and don't reseed.
-    if (hasUser && hasPrebuilt && !topic.prebuilt) {
+    if (hasUser && hasPrebuilt && !isPrebuilt) {
       await removePrebuiltDuplicates(topic, existingLessons, pbIds);
       continue;
     }
@@ -107,7 +112,7 @@ export async function seedPrebuiltCourses() {
     // The user's own topic (their lessons, never adopted) → leave it entirely
     // alone. (A prebuilt topic the user extended has topic.prebuilt set, so it
     // falls through to idempotent seeding below and keeps both.)
-    if (hasUser && !topic.prebuilt) continue;
+    if (hasUser && !isPrebuilt) continue;
 
     // Empty topic, an already-prebuilt topic, or a not-yet-existing one → seed.
     if (!topic) {

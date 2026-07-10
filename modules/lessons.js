@@ -482,9 +482,9 @@ async function flushReadingTime() {
   readStart = null;
   if (secs < 30) return; // ignore drive-by visits
   const mins = Math.min(30, Math.max(1, Math.round(secs / 60))); // cap 30/visit
-  const profile = await store.getProfile();
-  profile.learningMinutes = (profile.learningMinutes || 0) + mins;
-  await store.saveProfile(profile);
+  await store.updateProfile((profile) => {
+    profile.learningMinutes = (profile.learningMinutes || 0) + mins;
+  });
 }
 
 window.addEventListener('hashchange', () => {

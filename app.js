@@ -9,6 +9,7 @@ import {
   pushToGist,
   onSyncStatus,
   exportSnapshot,
+  getLastSyncError,
 } from './modules/store.js';
 import { renderDashboard, renderContinue, renderCompletedLessons, renderDailyActivity } from './modules/dashboard.js';
 import { renderTopics, renderTopic, renderLesson } from './modules/lessons.js';
@@ -23,7 +24,7 @@ import { el, clear, toast, navigate } from './modules/ui.js';
 const view = document.getElementById('view');
 
 // Keep in sync with the CACHE suffix in sw.js — bumped on every deploy.
-const APP_VERSION = 'v34';
+const APP_VERSION = 'v35';
 
 // ---------- theme ----------
 
@@ -141,6 +142,14 @@ function renderSettings(root) {
     el('section', { class: 'panel' }, [
       el('h4', {}, 'Gist sync (optional)'),
       el('div', { class: 'sync-status' }, [status, statusText]),
+      ...(getLastSyncError()
+        ? [
+            el('p', { class: 'small sync-error' }, `⚠ Last sync failed: ${getLastSyncError()}`),
+            ...(/40[13]/.test(getLastSyncError())
+              ? [el('p', { class: 'muted small' }, 'A 401/403 usually means the GitHub token expired or was revoked. Generate a new token with the gist scope and save it here, then tap Sync now.')]
+              : []),
+          ]
+        : []),
       el('label', { class: 'field-label' }, 'GitHub token (gist scope)'),
       gistToken,
       el('label', { class: 'field-label' }, 'Gist ID'),
@@ -170,9 +179,12 @@ function renderSettings(root) {
   async function onSyncNow() {
     if (!syncConfigured()) return;
     toast('Syncing…');
-    await pullFromGist();
-    await pushToGist();
-    toast('Synced', 'success');
+    // pushToGist pulls (and merges) first, then pushes — one call is the
+    // full round trip. It aborts rather than pushing if the pull fails.
+    const ok = await pushToGist();
+    if (ok) toast('Synced', 'success');
+    else toast(`Sync failed — ${getLastSyncError() || 'see console'}`, 'error');
+    renderSettings(root);
   }
 
   async function onExport() {
@@ -196,10 +208,23 @@ async function boot() {
     navigator.serviceWorker.register('./sw.js').catch((e) => console.warn('SW failed', e));
   }
 
+  // Ask the browser to mark our storage persistent. Without this, the OS may
+  // silently evict IndexedDB under storage pressure — even for an installed
+  // PWA in daily use — which presents as "the app reset to zero".
+  if (navigator.storage?.persist) {
+    navigator.storage.persist().then((granted) => {
+      if (!granted) console.warn('Persistent storage not granted; data may be evicted under storage pressure');
+    }).catch(() => {});
+  }
+
   // Reflect sync status in the header dot.
   onSyncStatus((st) => {
     const dot = document.getElementById('header-sync');
-    if (dot) dot.className = 'header-sync ' + st;
+    if (!dot) return;
+    dot.className = 'header-sync ' + st;
+    dot.title = st === 'error'
+      ? `Sync failing — ${getLastSyncError() || 'unknown error'}. Check Settings.`
+      : `Sync: ${st}`;
   });
 
   // A storage failure must degrade, never blank the app.

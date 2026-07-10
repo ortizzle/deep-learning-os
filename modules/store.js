@@ -164,6 +164,37 @@ export async function saveProfile(profile) {
   return put('profile', { ...profile, id: PROFILE_ID });
 }
 
+// Serialized read-modify-write for the profile singleton. Streak bumps,
+// reading-time flushes, and day-close checks all mutate the same record from
+// independent async flows; each doing its own get→mutate→save meant whichever
+// landed last silently reverted the others' fields (a lost streak increment,
+// vanished learningMinutes). All profile mutations go through here instead.
+let profileChain = Promise.resolve();
+export function updateProfile(mutate) {
+  const run = profileChain.then(async () => {
+    const p = await getProfile();
+    const result = await mutate(p);
+    if (result === false) return p; // mutation declined — nothing to save
+    return saveProfile(result || p);
+  });
+  profileChain = run.catch(() => {}); // a failed mutation must not wedge the chain
+  return run;
+}
+
+// A profile that has never recorded any activity — i.e. the default that
+// getProfile() mints into an empty store. Used by mergeSnapshot to make sure
+// a freshly-wiped device's zeroed profile never outranks a real one.
+function pristineProfile(p) {
+  return (
+    !p.lastActiveDate &&
+    !(p.xp > 0) &&
+    !(p.streak > 0) &&
+    !(p.learningMinutes > 0) &&
+    !(p.achievements || []).length &&
+    !(p.goals || []).length
+  );
+}
+
 // ---------- snapshot (versioned, migration-ready) ----------
 
 export async function exportSnapshot() {
@@ -196,9 +227,18 @@ export async function mergeSnapshot(snapshot) {
     for (const rec of incoming) {
       if (!rec || !rec.id || tombSet.has(`${name}:${rec.id}`)) continue;
       const existing = await get(name, rec.id);
-      if (!existing || (rec.updatedAt || '') > (existing.updatedAt || '')) {
-        await put(name, rec, { touch: false });
+      let wins = !existing || (rec.updatedAt || '') > (existing.updatedAt || '');
+      // Profiles additionally merge on CONTENT: recorded activity always
+      // beats an untouched default, regardless of timestamps. Pre-v34 code
+      // stamped freshly-minted empty profiles with now(), so a wiped device
+      // can carry a "newer" zeroed profile on either side of a merge — never
+      // let it beat the real one.
+      if (name === 'profile' && existing) {
+        const inPristine = pristineProfile(rec);
+        const exPristine = pristineProfile(existing);
+        if (inPristine !== exPristine) wins = exPristine;
       }
+      if (wins) await put(name, rec, { touch: false });
     }
   }
 
@@ -219,6 +259,13 @@ export async function mergeSnapshot(snapshot) {
 const GIST_FILENAME = 'deep-learning-os.json';
 let syncTimer = null;
 const syncListeners = new Set();
+
+// Last sync failure, surfaced in Settings and the header dot's tooltip —
+// sync rot must be loud, not a console.warn nobody reads.
+let lastSyncError = null;
+export function getLastSyncError() {
+  return lastSyncError;
+}
 
 export function onSyncStatus(fn) {
   syncListeners.add(fn);
@@ -251,8 +298,9 @@ async function gistFetch(path, options = {}) {
   return res.json();
 }
 
+// Returns true only if the remote snapshot was fetched and merged.
 export async function pullFromGist() {
-  if (!syncConfigured()) return;
+  if (!syncConfigured()) return false;
   const { gistId } = getSettings();
   emitSync('syncing');
   try {
@@ -261,21 +309,28 @@ export async function pullFromGist() {
     if (file && file.content) {
       await mergeSnapshot(JSON.parse(file.content));
     }
+    lastSyncError = null;
     emitSync('synced');
+    return true;
   } catch (err) {
     console.warn('pullFromGist failed', err);
+    lastSyncError = `Pull failed — ${err.message}`;
     emitSync('error');
+    return false;
   }
 }
 
 export async function pushToGist() {
-  if (!syncConfigured()) return;
+  if (!syncConfigured()) return false;
   const { gistId } = getSettings();
+  // Merge remote first so a push can never clobber records this device
+  // hasn't seen (e.g. content seeded from another machine). If the pull
+  // FAILS we must abort, not push blind: a blind push replaces the Gist
+  // with only what this device holds — on a freshly-wiped device that
+  // overwrites the cloud backup with zeros and propagates the wipe.
+  if (!(await pullFromGist())) return false;
   emitSync('syncing');
   try {
-    // Merge remote first so a push can never clobber records this device
-    // hasn't seen (e.g. content seeded from another machine).
-    await pullFromGist();
     const snapshot = await exportSnapshot();
     await gistFetch(`/gists/${gistId}`, {
       method: 'PATCH',
@@ -283,10 +338,14 @@ export async function pushToGist() {
         files: { [GIST_FILENAME]: { content: JSON.stringify(snapshot) } },
       }),
     });
+    lastSyncError = null;
     emitSync('synced');
+    return true;
   } catch (err) {
     console.warn('pushToGist failed', err);
+    lastSyncError = `Push failed — ${err.message}`;
     emitSync('error');
+    return false;
   }
 }
 
