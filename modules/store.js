@@ -139,7 +139,14 @@ export function defaultProfile() {
     learningMinutes: 0,
     goals: [],
     createdAt: now(),
-    updatedAt: now(),
+    // Epoch, NOT now(): a freshly-materialized empty profile must always LOSE
+    // the newest-updatedAt-wins merge to a real synced profile. Stamping it
+    // with now() (as this used to) made the empty default outrank the real
+    // remote one whenever local storage had been cleared — the app came back
+    // "at zero", and the next debounced push then overwrote the Gist with the
+    // zeros, propagating the reset to every device. The first real activity
+    // (touchActivity → saveProfile) bumps this to now().
+    updatedAt: new Date(0).toISOString(),
   };
 }
 
@@ -147,7 +154,8 @@ export async function getProfile() {
   let p = await get('profile', PROFILE_ID);
   if (!p) {
     p = defaultProfile();
-    await put('profile', p);
+    // touch:false preserves the epoch updatedAt above — do NOT restamp to now().
+    await put('profile', p, { touch: false });
   }
   return p;
 }
@@ -292,6 +300,12 @@ function scheduleSync() {
 // Called once on boot: open db, then pull remote if configured.
 export async function initStore() {
   await openDb();
-  await getProfile(); // ensure singleton exists
+  // Pull BEFORE ensuring the singleton: on a device whose local storage was
+  // cleared (new device, cleared site data, or Safari's ~7-day PWA eviction),
+  // this restores the real profile into the empty store first, so getProfile()
+  // finds it instead of minting a fresh zeroed default. If the pull fails
+  // (offline/error) we still fall back to the epoch-stamped default below,
+  // which can never overwrite the good remote copy on a later sync.
   if (syncConfigured()) await pullFromGist();
+  await getProfile(); // ensure singleton exists
 }
