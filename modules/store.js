@@ -203,16 +203,35 @@ export async function exportSnapshot() {
   return { schemaVersion: SCHEMA_VERSION, updatedAt: now(), data };
 }
 
-// Restore from an Export JSON file. Merges (never wipes) using the same
-// tombstone-aware, newest-wins rules as sync, so importing a backup into a
-// blank app brings everything back, and importing into a populated app can
-// only add/refresh — it can't destroy newer local edits. Returns a small
-// summary for the toast; throws on a malformed file.
-export async function importSnapshot(snapshot) {
+// Restore from an Export JSON file. Two modes:
+//
+// - merge (default): tombstone-aware, newest-wins — same rules as sync. Safe
+//   into a blank app (full restore) or a populated one (only adds/refreshes,
+//   never destroys newer local edits).
+//
+// - restore ({ restore: true }): disaster recovery — make this backup
+//   AUTHORITATIVE. Every record it contains overwrites its local counterpart,
+//   and each is re-stamped updatedAt=now so the restored data wins every later
+//   merge. Without the restamp, records a wiped device re-seeded (e.g. prebuilt
+//   lessons, whose fresh copies carry newer timestamps than the completed
+//   versions in an older backup) would shadow the restore both locally and on
+//   the next sync. Records only present locally (not in the backup) are left
+//   untouched, so restore adds/overwrites but never deletes.
+//
+// Returns a small summary for the toast; throws on a malformed file.
+export async function importSnapshot(snapshot, { restore = false } = {}) {
   if (!snapshot || typeof snapshot !== 'object' || !snapshot.data) {
     throw new Error('Not a Deep Learning OS backup file');
   }
-  await mergeSnapshot(snapshot);
+  if (restore) {
+    for (const name of STORES) {
+      for (const rec of snapshot.data[name] || []) {
+        if (rec && rec.id) await put(name, rec); // touch:true → wins future merges
+      }
+    }
+  } else {
+    await mergeSnapshot(snapshot);
+  }
   return { total: countRecords(await exportSnapshot()) };
 }
 
