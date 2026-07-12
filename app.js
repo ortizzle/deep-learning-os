@@ -148,6 +148,18 @@ function renderSettings(root) {
       el('button', { class: 'btn btn-primary', onclick: onSave }, 'Save'),
       el('button', { class: 'btn', onclick: onSyncNow, disabled: syncConfigured() ? null : 'disabled' }, 'Sync now'),
       el('button', { class: 'btn', onclick: onExport }, 'Export JSON'),
+    ]),
+
+    // ----- the rest of the suite (same origin, so the Home OS hub can read
+    // this app's data right on this device) -----
+    el('section', { class: 'panel' }, [
+      el('h4', {}, 'Ortiz OS'),
+      el('p', { class: 'muted small' }, 'Sister apps. The suite hub (in Home OS) shows your whole day — learning, focus, and home — in one place.'),
+      el('div', { class: 'settings-actions' }, [
+        el('button', { class: 'btn btn-primary', onclick: () => (location.href = '/ortiz-home-os/#/hub') }, 'Suite hub'),
+        el('button', { class: 'btn', onclick: () => (location.href = '/ortiz-focus-os/') }, 'Focus OS →'),
+        el('button', { class: 'btn', onclick: () => (location.href = '/ortiz-home-os/') }, 'Home OS →'),
+      ]),
     ])
   );
 

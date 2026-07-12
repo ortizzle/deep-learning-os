@@ -4,6 +4,12 @@ A personal, AI-powered learning platform. Static PWA — no server, no build ste
 vanilla HTML/CSS/JS with ES modules. Deploys to GitHub Pages at
 `ortizzle.github.io/deep-learning-os/`.
 
+First app in the Ortiz OS suite, alongside
+[Focus OS](https://ortizzle.github.io/ortiz-focus-os/) and
+[Home OS](https://ortizzle.github.io/ortiz-home-os/) — all on one origin, so
+the suite hub (Home OS `#/hub`) can read this app's day locally. Suite plan:
+the ROADMAP in the ortiz-focus-os repo.
+
 ## Run locally
 
 ```bash
