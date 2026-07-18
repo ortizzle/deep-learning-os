@@ -5,6 +5,7 @@ import * as store from './store.js';
 import { masteredTopicCount, dayString } from './gamification.js';
 import { recentHighlights } from './saved.js';
 import { renderTodayPanel } from './today.js';
+import { refresherPanel } from './refresher.js';
 import { syllabusPosition } from './lessons.js';
 import { questionOfTheDay } from './review.js';
 import { el, clear, navigate } from './ui.js';
@@ -96,6 +97,11 @@ export async function renderDashboard(root) {
   const todayPanel = el('section', { class: 'panel today' });
   root.append(todayPanel);
   await renderTodayPanel(todayPanel);
+
+  // Daily refresher: one completed lesson resurfaced (same pick as the
+  // morning email — shared logic in refresherCore.mjs).
+  const refresher = await refresherPanel();
+  if (refresher) root.append(refresher);
 
   const topicById = Object.fromEntries(topics.map((t) => [t.id, t]));
 
