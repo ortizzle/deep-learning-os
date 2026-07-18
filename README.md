@@ -41,3 +41,38 @@ modules and the service worker require an http origin.)
 Data is versioned (`{ schemaVersion: 1, data }`) so v2 (spaced repetition) and
 v3 (knowledge graph, monthly themes) can migrate cleanly. Mastery scores already
 accumulate per concept; the review scheduler is intentionally not built yet.
+
+Also: `modules/refresherCore.mjs` holds the pure daily-refresher selection
+logic (weakest/stalest completed lesson, question of the day, mastery decay),
+shared between the app's Home card (`modules/refresher.js`) and the email
+builder (`scripts/daily-refresher.mjs`) so both surfaces agree every day.
+
+## Daily refresher email
+
+A scheduled GitHub Action (`.github/workflows/daily-refresher.yml`) emails a
+summarized review of one completed lesson every morning at 6:00 AM Arizona,
+picked weakest-mastery/stalest-first. It includes the question of the day
+(answer at the bottom of the email), "slipping away" mastery callouts, and a
+one-line note from the executive coach. On Fridays it sends a week-in-review
+edition instead (lessons completed, follow-through on action items, weekend
+review targets).
+
+It reads the same Gist the app syncs to, so **Gist sync must be configured in
+the app** for the email to have data. One-time setup — add these repository
+secrets (Settings → Secrets and variables → Actions):
+
+| Secret | Value |
+|--------|-------|
+| `GIST_TOKEN` | GitHub token with `gist` scope (same one used in the app) |
+| `GIST_ID` | The sync Gist's ID (same as in app Settings) |
+| `MAIL_USERNAME` | The Gmail address to send from |
+| `MAIL_APP_PASSWORD` | A Gmail [app password](https://myaccount.google.com/apppasswords) (requires 2FA) |
+| `ANTHROPIC_API_KEY` | *(optional)* enables the coach one-liner; everything else works without it |
+
+Test it any time from the Actions tab via **Run workflow**. If no lessons are
+completed yet, the run exits quietly without sending. Local dry run:
+
+```bash
+SNAPSHOT_FILE=path/to/snapshot.json node scripts/daily-refresher.mjs
+open email.html
+```

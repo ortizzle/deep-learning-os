@@ -360,6 +360,19 @@ h4 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: 
 .qotd-answer { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
 .qotd-answer p { margin: 4px 0 8px; line-height: 1.5; }
 .qotd-answer.hidden { display: none; }
+/* daily refresher */
+.refresher-why { font-size: 13px; color: var(--text-2); margin: -4px 0 10px; }
+.refresher-body { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
+.refresher-body.hidden { display: none; }
+.refresher-sub {
+  font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;
+  font-weight: 600; color: var(--text-3); margin: 12px 0 4px;
+}
+.refresher-body p { line-height: 1.55; margin: 0 0 4px; }
+.refresher-list { padding-left: 18px; margin: 0; }
+.refresher-list li { line-height: 1.55; margin-bottom: 4px; }
+.refresher-body .btn { margin-top: 14px; }
+
 .standings-toggle { display: block; margin-top: 12px; padding: 0; }
 .standings-wrap { margin-top: 12px; }
 .standings-wrap.hidden { display: none; }

@@ -1,0 +1,45 @@
+# Daily refresher email — 6:00 AM Arizona every day (America/Phoenix has no
+# DST, so 13:00 UTC is always 6 AM). Fridays send the week-in-review edition
+# instead. Builds the email from the app's synced Gist snapshot, then sends
+# via Gmail SMTP. See README "Daily refresher email" for the required secrets.
+
+name: Daily refresher email
+
+on:
+  schedule:
+    - cron: '0 13 * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build email from Gist snapshot
+        id: build
+        env:
+          GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
+          GIST_ID: ${{ secrets.GIST_ID }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/daily-refresher.mjs
+
+      - name: Send email
+        if: steps.build.outputs.send == 'true'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_APP_PASSWORD }}
+          from: Ortiz Learning OS <${{ secrets.MAIL_USERNAME }}>
+          to: chris.ortiz@gmail.com
+          subject: ${{ steps.build.outputs.subject }}
+          html_body: file://email.html
