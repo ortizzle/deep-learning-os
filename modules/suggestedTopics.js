@@ -69,6 +69,12 @@ export const SUGGESTED_TOPICS = [
     ],
   },
   {
+    category: 'Business Finance',
+    topics: [
+      { name: 'EBITDA & the Rule of 40', description: 'How the CEO\'s operating scoreboard works: EBITDA and margins, the Rule of 40, and the operating-efficiency levers — CAC payback, cost-to-serve, retention — that a CS org can actually move.' },
+    ],
+  },
+  {
     category: 'Compliance',
     topics: [
       { name: 'CIPA & Communications Compliance', description: 'The California Invasion of Privacy Act and communications-recording law: consent, disclosures, and what they mean for AI calling, texting, chat, and website tracking.' },
