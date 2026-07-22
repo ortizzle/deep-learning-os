@@ -291,6 +291,11 @@ async function boot() {
     // Preloaded courses: real lessons authored ahead of time, seeded straight
     // into the store so these topics need no Claude API call to read.
     await seedPrebuiltCourses();
+    // Background sync AFTER seeding (so the two never interleave writes) and
+    // deliberately un-awaited: first paint comes from the local store, the
+    // merged remote lands moments later. initStore still blocks on the pull
+    // in the one case that needs it — an empty (wiped/new) local store.
+    if (syncConfigured()) pullFromGist();
   } catch (err) {
     console.error('initStore failed', err);
     toast(`Storage error — some data may be unavailable (${err?.message || err})`, 'error');

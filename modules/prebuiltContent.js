@@ -78,13 +78,23 @@ async function removePrebuiltDuplicates(topic, existingLessons, pbIds) {
 export async function seedPrebuiltCourses() {
   if (!PREBUILT_COURSES.length) return;
 
-  const [topics, tombstones, allLessons] = await Promise.all([
+  const [topics, tombstones, allLessons, allConcepts] = await Promise.all([
     store.getAll('topics'),
     store.getAll('tombstones'),
     store.getAll('lessons'),
+    store.getAll('concepts'),
   ]);
   const tomb = new Set(tombstones.map((t) => t.id)); // `${store}:${recordId}`
   const topicByName = new Map(topics.map((t) => [norm(t.name), t]));
+  const lessonById = new Map(allLessons.map((l) => [l.id, l]));
+  // Concept names per topic, from the ONE getAll above — this seeder runs on
+  // every boot, and a fresh concepts scan per course (41 of them) was a real
+  // chunk of the time the app spent blank on open.
+  const conceptNamesByTopic = new Map();
+  for (const c of allConcepts) {
+    if (!conceptNamesByTopic.has(c.topicId)) conceptNamesByTopic.set(c.topicId, new Set());
+    conceptNamesByTopic.get(c.topicId).add(c.name);
+  }
 
   for (const course of PREBUILT_COURSES) {
     const topicId = `pb-${course.topicKey}`;
@@ -130,9 +140,11 @@ export async function seedPrebuiltCourses() {
     topic.syllabus = topic.syllabus || [];
     topic.lessonIds = topic.lessonIds || [];
 
-    const conceptNames = new Set(
-      (await store.getAll('concepts')).filter((c) => c.topicId === topic.id).map((c) => c.name)
-    );
+    let conceptNames = conceptNamesByTopic.get(topic.id);
+    if (!conceptNames) {
+      conceptNames = new Set();
+      conceptNamesByTopic.set(topic.id, conceptNames);
+    }
     // Adopt this topic as prebuilt so future boots know it's ours (and never
     // mistake a later user-generated lesson here for a duplicate to scrub).
     let topicDirty = false;
@@ -141,6 +153,11 @@ export async function seedPrebuiltCourses() {
       topicDirty = true;
     }
 
+    // Collect this course's writes and flush them in two batched puts — on
+    // the very first boot this loop creates ~200 lessons and ~1000 concepts,
+    // and a transaction per record made that first open crawl.
+    const lessonWrites = [];
+    const conceptWrites = [];
     for (const L of course.lessons) {
       const lessonId = `pb-${course.topicKey}-${L.key}`;
       if (tomb.has(`lessons:${lessonId}`)) continue; // deleted lesson stays gone
@@ -157,21 +174,21 @@ export async function seedPrebuiltCourses() {
       // Create the lesson only if it isn't already there. If it exists but
       // predates the pre-authored quiz (e.g. seeded by an earlier version),
       // backfill the quiz so returning users get it without a reseed.
-      const existing = await store.get('lessons', lessonId);
+      const existing = lessonById.get(lessonId);
       if (existing) {
         if (L.quiz?.questions?.length && !existing.quiz?.questions?.length) {
           existing.quiz = L.quiz;
-          await store.put('lessons', existing);
+          lessonWrites.push(existing);
         }
       } else {
-        await store.put('lessons', lessonRecord(lessonId, topic.id, L));
+        lessonWrites.push(lessonRecord(lessonId, topic.id, L));
         if (!topic.lessonIds.includes(lessonId)) topic.lessonIds.push(lessonId);
         topicDirty = true;
 
         for (const name of L.concepts || []) {
           if (conceptNames.has(name)) continue;
           conceptNames.add(name);
-          await store.put('concepts', {
+          conceptWrites.push({
             name,
             topicId: topic.id,
             masteryScore: 0,
@@ -182,6 +199,8 @@ export async function seedPrebuiltCourses() {
       }
     }
 
+    await store.bulkPut('lessons', lessonWrites);
+    await store.bulkPut('concepts', conceptWrites);
     if (topicDirty) await store.put('topics', topic);
   }
 }
