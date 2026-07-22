@@ -16,7 +16,12 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- media="print" + onload swap loads the font stylesheet WITHOUT blocking
+       first paint: the app renders immediately in the system font stack and
+       swaps to Inter when the CSS arrives. A plain stylesheet link here held
+       the whole app white behind a fonts.googleapis.com fetch on every open. -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
 
   <link rel="stylesheet" href="./styles.css" />
 </head>

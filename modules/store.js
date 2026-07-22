@@ -113,6 +113,24 @@ export async function put(store, record, { touch = true } = {}) {
   return rec;
 }
 
+// Batched put(): one readwrite transaction for a whole set of records, same
+// stamping semantics as put(). A sync merge or course seed touches hundreds of
+// records — opening a transaction per record made those take seconds on mobile.
+export async function bulkPut(store, records, { touch = true } = {}) {
+  if (!records.length) return;
+  const os = await tx(store, 'readwrite');
+  await Promise.all(
+    records.map((record) => {
+      const rec = { ...record };
+      if (!rec.id) rec.id = uid();
+      if (!rec.createdAt) rec.createdAt = now();
+      if (touch) rec.updatedAt = now();
+      return reqToPromise(os.put(rec));
+    })
+  );
+  scheduleSync();
+}
+
 export async function remove(store, id) {
   await reqToPromise((await tx(store, 'readwrite')).delete(id));
   // Record a tombstone so this deletion survives sync — without it, the
@@ -242,23 +260,35 @@ export async function mergeSnapshot(snapshot) {
   if (!snapshot || !snapshot.data) return;
   // Future: if snapshot.schemaVersion < SCHEMA_VERSION, migrate here.
 
+  // The snapshot holds every record on the remote (1500+ now that prebuilt
+  // courses sync). Diff it against ONE getAll per store in memory and write
+  // only the winners in one batch — a get-then-put transaction per record
+  // made every pull (each boot, and before each push) take seconds on mobile.
+
   // Tombstones merge first, so we know what NOT to bring back.
+  const localTombs = new Map((await getAll('tombstones')).map((t) => [t.id, t]));
+  const tombWinners = [];
   for (const t of snapshot.data.tombstones || []) {
     if (!t || !t.id) continue;
-    const existing = await get('tombstones', t.id);
+    const existing = localTombs.get(t.id);
     if (!existing || (t.updatedAt || '') > (existing.updatedAt || '')) {
-      await put('tombstones', t, { touch: false });
+      localTombs.set(t.id, t);
+      tombWinners.push(t);
     }
   }
-  const tombstones = await getAll('tombstones');
-  const tombSet = new Set(tombstones.map((t) => t.id)); // `${store}:${recordId}`
+  await bulkPut('tombstones', tombWinners, { touch: false });
+  const tombstones = [...localTombs.values()];
+  const tombSet = new Set(localTombs.keys()); // `${store}:${recordId}`
 
   for (const name of STORES) {
     if (name === 'tombstones') continue;
     const incoming = snapshot.data[name] || [];
+    if (!incoming.length) continue;
+    const existingById = new Map((await getAll(name)).map((r) => [r.id, r]));
+    const winners = [];
     for (const rec of incoming) {
       if (!rec || !rec.id || tombSet.has(`${name}:${rec.id}`)) continue;
-      const existing = await get(name, rec.id);
+      const existing = existingById.get(rec.id);
       let wins = !existing || (rec.updatedAt || '') > (existing.updatedAt || '');
       // Profiles additionally merge on CONTENT: recorded activity always
       // beats an untouched default, regardless of timestamps. Pre-v34 code
@@ -270,8 +300,9 @@ export async function mergeSnapshot(snapshot) {
         const exPristine = pristineProfile(existing);
         if (inPristine !== exPristine) wins = exPristine;
       }
-      if (wins) await put(name, rec, { touch: false });
+      if (wins) winners.push(rec);
     }
+    await bulkPut(name, winners, { touch: false });
   }
 
   // Purge any local record whose tombstone is newer than its last edit —
@@ -418,12 +449,21 @@ function scheduleSync() {
 // Called once on boot: open db, then pull remote if configured.
 export async function initStore() {
   await openDb();
-  // Pull BEFORE ensuring the singleton: on a device whose local storage was
-  // cleared (new device, cleared site data, or Safari's ~7-day PWA eviction),
-  // this restores the real profile into the empty store first, so getProfile()
-  // finds it instead of minting a fresh zeroed default. If the pull fails
-  // (offline/error) we still fall back to the epoch-stamped default below,
-  // which can never overwrite the good remote copy on a later sync.
-  if (syncConfigured()) await pullFromGist();
+  // Pull BEFORE ensuring the singleton — but ONLY when the local store is
+  // empty: on a device whose local storage was cleared (new device, cleared
+  // site data, or Safari's ~7-day PWA eviction), this restores the real
+  // profile into the empty store first, so getProfile() finds it instead of
+  // minting a fresh zeroed default. If the pull fails (offline/error) we
+  // still fall back to the epoch-stamped default below, which can never
+  // overwrite the good remote copy on a later sync.
+  //
+  // A WARM store skips the blocking pull entirely: the local copy is the
+  // source of truth for first paint, and waiting on the GitHub API (plus a
+  // >1MB snapshot download) held the whole app behind the network on every
+  // open. Boot kicks off a background pull after seeding instead; merge
+  // safety doesn't depend on ordering (every push re-pulls and merges first).
+  if (syncConfigured() && !(await get('profile', PROFILE_ID))) {
+    await pullFromGist();
+  }
   await getProfile(); // ensure singleton exists
 }

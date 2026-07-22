@@ -2,7 +2,7 @@
 // current code (prevents stale-code-vs-upgraded-DB crashes); offline still
 // works from the last cached shell. Never touches api.* traffic.
 
-const CACHE = 'dlos-shell-v39';
+const CACHE = 'dlos-shell-v40';
 const SHELL = [
   './',
   './index.html',
@@ -46,6 +46,28 @@ self.addEventListener('fetch', (e) => {
     return;
   }
   if (e.request.method !== 'GET') return;
+
+  // Fonts never need to be fresh: serve the cached copy immediately and
+  // refresh it in the background. Sending these through the network-first
+  // path below made every open wait on fonts.googleapis.com. (Cross-origin
+  // stylesheet fetches are opaque — status 0 — so cache on type, not res.ok.)
+  if (url.hostname === 'fonts.googleapis.com' || url.hostname === 'fonts.gstatic.com') {
+    e.respondWith(
+      caches.match(e.request).then((cached) => {
+        const refresh = fetch(e.request)
+          .then((res) => {
+            if (res.ok || res.type === 'opaque') {
+              const copy = res.clone();
+              caches.open(CACHE).then((c) => c.put(e.request, copy));
+            }
+            return res;
+          })
+          .catch(() => cached);
+        return cached || refresh;
+      })
+    );
+    return;
+  }
 
   // Network-first: fresh code whenever online, cached shell when offline.
   // cache:'no-cache' forces ETag revalidation past GitHub Pages' max-age=600,
