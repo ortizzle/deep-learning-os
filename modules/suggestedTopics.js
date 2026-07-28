@@ -75,6 +75,14 @@ export const SUGGESTED_TOPICS = [
     ],
   },
   {
+    category: 'Bookshelf',
+    topics: [
+      { name: 'Connected Strategy (Siggelkow & Terwiesch)', description: 'Nicolaj Siggelkow & Christian Terwiesch\'s playbook for turning episodic transactions into continuous customer relationships — the Recognize–Request–Respond–Repeat journey and the four connected strategies — applied to building out the customer journey in Customer Success.' },
+      { name: 'Scaling People (Claire Hughes Johnson)', description: 'Claire Hughes Johnson\'s tactical operating manual for management and company building — self-awareness, founding documents, planning cadences, hiring, onboarding, feedback, performance, and org design — as installable systems for scaling a team.' },
+      { name: 'The Algorithm (Jon McNeill)', description: 'Jon McNeill\'s hypergrowth operating system — first-principles thinking and the question → delete → simplify → accelerate → automate loop from Tesla and SpaceX — applied to running Customer Success and AI initiatives at an AI-first company.' },
+    ],
+  },
+  {
     category: 'Compliance',
     topics: [
       { name: 'CIPA & Communications Compliance', description: 'The California Invasion of Privacy Act and communications-recording law: consent, disclosures, and what they mean for AI calling, texting, chat, and website tracking.' },

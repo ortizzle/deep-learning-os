@@ -30611,5 +30611,2741 @@ export const PREBUILT_COURSES = [
         }
       }
     ]
+  },
+  {
+    "topicKey": "connected-strategy",
+    "name": "Connected Strategy (Siggelkow & Terwiesch)",
+    "description": "Nicolaj Siggelkow & Christian Terwiesch's playbook for turning episodic transactions into continuous customer relationships — the Recognize–Request–Respond–Repeat journey and the four connected strategies — applied to building out the customer journey in Customer Success.",
+    "category": "Bookshelf",
+    "lessons": [
+      {
+        "key": "episodic-to-continuous",
+        "title": "From Episodic Transactions to Continuous Relationships",
+        "focus": "Establishes the core shift the book argues for — from episodic transactions to connected customer relationships — and the sacrifice gap that continuous relationships close.",
+        "objectives": [
+          "Contrast episodic transactions with connected customer relationships",
+          "Define the sacrifice gap and explain what creates it",
+          "Explain the two ways connected strategies create value: higher willingness to pay and lower cost to serve"
+        ],
+        "concepts": [
+          "Episodic interactions",
+          "Connected customer relationship",
+          "Sacrifice gap",
+          "Willingness to pay",
+          "Cost to serve",
+          "Value creation"
+        ],
+        "sections": [
+          {
+            "heading": "The episodic default",
+            "text": "Most businesses run on **episodic interactions**: a customer shows up, buys, and disappears until the next need pushes them back. Each episode starts cold — the firm remembers little from last time, reacts only once the customer initiates, and treats the sale as the finish line. This transactional default dominated business for a century, and it is exactly what Siggelkow and Terwiesch argue is now obsolete.\n\nThe problem is not that episodic models are broken; it is that they leave enormous value on the table. Between episodes the firm is blind, so it cannot help, anticipate, or deepen the relationship. Every interaction becomes a fresh negotiation rather than a continuing conversation."
+          },
+          {
+            "heading": "The connected customer relationship",
+            "text": "A **connected customer relationship** replaces those disconnected episodes with a continuous, low-friction connection that runs before, during, and after any single transaction. Instead of waiting for the customer to come back, the firm stays present — sensing needs, offering help, and learning from every interaction. The relationship, not the transaction, becomes the unit of value.\n\nThe shift is powered by connected technologies — sensors, apps, data — but the strategic move is a mindset change: you stop asking 'how do we win the next sale' and start asking 'how do we stay continuously useful.' Each connection makes the next one smarter, which is what turns a series of touches into a genuine relationship."
+          },
+          {
+            "heading": "The sacrifice gap",
+            "text": "At the heart of the book is the **sacrifice gap** — the distance between what a customer truly wants and what a standard, one-size-fits-all offering actually gives them. Because firms historically could not know each customer individually, they built universal offerings, and customers 'settled,' absorbing the gap as wasted money, time, or poor fit.\n\nConnected relationships shrink the sacrifice gap by personalizing continuously: the more the firm connects and learns, the closer it can deliver exactly what each customer needs, when they need it. Closing that gap is the central source of value in a connected strategy."
+          },
+          {
+            "heading": "Two ways to create value",
+            "text": "Closing the sacrifice gap pays off in two directions at once. First, a better-fitting, lower-friction experience raises the customer's **willingness to pay** — they value the relationship more and stay longer. Second, connection lets the firm anticipate and automate, which lowers its **cost to serve** — fewer wasted interactions, less rework, less churn to replace.\n\nThat combination is why the authors insist connected strategies are not a growth-versus-efficiency trade-off. Done well, they **expand the pie**: more value for the customer and lower cost for the firm, simultaneously."
+          }
+        ],
+        "example": {
+          "title": "From onboarding sprint to continuous relationship",
+          "text": "Picture Lofty onboarding today as an **episodic interaction**: a new realtor gets a burst of setup calls, then the relationship goes quiet until something breaks or renewal looms. The **sacrifice gap** is everything the agent needed in month three that no one was there to provide. A **connected customer relationship** flips it — your onboarding and CS motion stays present, watching adoption signals from the AI CRM and power dialer, nudging the agent before lead ROI slips. You raise **willingness to pay** (the agent keeps seeing value) while lowering **cost to serve** (fewer escalations, less churn to backfill)."
+        },
+        "pauseAndThink": {
+          "question": "Why do the authors argue that connected strategies are not simply a trade-off between a better customer experience and lower cost?",
+          "answer": "Because closing the sacrifice gap works in both directions at once: a more personalized, lower-friction relationship raises the customer's willingness to pay AND lets the firm anticipate and automate, which lowers its cost to serve. Rather than trading one for the other, a well-built connected strategy expands the pie — more value created and less cost incurred at the same time."
+        },
+        "glossary": [
+          {
+            "term": "Episodic interaction",
+            "definition": "A discrete, disconnected transaction after which the firm and customer part ways until the next separate need arises."
+          },
+          {
+            "term": "Connected customer relationship",
+            "definition": "A continuous, low-friction connection in which the firm stays present before, during, and after any single transaction."
+          },
+          {
+            "term": "Sacrifice gap",
+            "definition": "The distance between what a customer truly wants and what a standard, one-size-fits-all offering actually delivers."
+          },
+          {
+            "term": "Willingness to pay",
+            "definition": "The maximum value a customer places on a product or relationship, raised when the experience fits better and has less friction."
+          },
+          {
+            "term": "Cost to serve",
+            "definition": "The total cost a firm incurs to deliver its product or service to a customer, which connection can lower by anticipating and automating."
+          },
+          {
+            "term": "Expanding the pie",
+            "definition": "Creating more value for the customer and lower cost for the firm at the same time, rather than trading one against the other."
+          }
+        ],
+        "insights": [
+          "The strategic shift is from the **transaction** as the unit of value to the ongoing **relationship** — you stop chasing the next sale and start staying continuously useful.",
+          "The **sacrifice gap** is the core target: value comes from closing the distance between what a customer wants and what a standard offering gives.",
+          "Connection is not a growth-versus-efficiency trade-off — closing the gap can raise **willingness to pay** and lower **cost to serve** at once."
+        ],
+        "action": "Pick one part of the realtor journey you own — onboarding, say — and write down the biggest **sacrifice gap** in it: the thing customers need that no one is currently there to provide between touchpoints.",
+        "leadershipTakeaway": "Reframe your org's mandate for your teams from 'resolve tickets and close renewals' to 'stay continuously useful' — the **connected customer relationship** is a mindset shift before it is a technology.",
+        "productivityTip": "Keep a running list of the moments customers 'settle' — each one is a **sacrifice gap** and a candidate for where connection would pay off most.",
+        "discussionQ": "Which parts of your customer relationship are still fundamentally episodic, and what would it take — culturally, not just technically — to make them continuous?",
+        "quiz": {
+          "questions": [
+            {
+              "type": "mc",
+              "concept": "Episodic interactions",
+              "question": "What best characterizes an episodic interaction model?",
+              "options": [
+                "The firm stays continuously present, sensing and anticipating the customer's needs",
+                "The firm engages in discrete, disconnected transactions and forgets between them",
+                "The firm shares all of its customer data openly with its direct competitors",
+                "The firm charges a fixed subscription regardless of how often the customer buys"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "type": "mc",
+              "concept": "Sacrifice gap",
+              "question": "What is the sacrifice gap?",
+              "options": [
+                "The revenue a firm gives up by pricing its product below its nearest rival",
+                "The time a customer waits between placing an order and receiving delivery",
+                "The distance between what a customer truly wants and what a standard offering gives",
+                "The share of customers who abandon a purchase midway through the checkout flow"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "type": "mc",
+              "concept": "Connected customer relationship",
+              "question": "What defines a connected customer relationship?",
+              "options": [
+                "A continuous, low-friction connection running before, during, and after any sale",
+                "A single high-value transaction that a dedicated account manager negotiates yearly",
+                "A loyalty program that rewards customers with points after each completed purchase",
+                "A one-time onboarding sprint that ends once the customer is fully set up"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "type": "mc",
+              "concept": "Cost to serve",
+              "question": "How does closing the sacrifice gap tend to lower a firm's cost to serve?",
+              "options": [
+                "By raising prices so that fewer, higher-value customers remain to support",
+                "By removing the sales team and relying only on word-of-mouth referrals",
+                "By outsourcing every customer interaction to the cheapest possible region",
+                "By anticipating and automating needs, reducing wasted interactions and churn"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "type": "mc",
+              "concept": "Willingness to pay",
+              "question": "Why does a connected relationship tend to raise a customer's willingness to pay?",
+              "options": [
+                "Because customers are locked into long contracts they cannot exit early",
+                "Because a better-fitting, lower-friction experience makes the relationship more valuable",
+                "Because competitors are legally barred from offering a similar connected service",
+                "Because the firm discloses less information, keeping the customer uncertain"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "type": "mc",
+              "concept": "Value creation",
+              "question": "Why do the authors say connected strategies are not a growth-versus-efficiency trade-off?",
+              "options": [
+                "Because efficiency always matters more than growth in a mature software market",
+                "Because firms must choose one customer segment and abandon all the others",
+                "Because closing the sacrifice gap can raise willingness to pay and lower cost at once",
+                "Because regulators require firms to reinvest all efficiency gains into growth"
+              ],
+              "correctIndex": 2
+            }
+          ]
+        }
+      },
+      {
+        "key": "recognize-request-respond-repeat",
+        "title": "The Journey: Recognize, Request, Respond, Repeat",
+        "focus": "Breaks the connected customer experience into its four dimensions and shows how the Repeat dimension converts single interactions into a learning relationship.",
+        "objectives": [
+          "Break a connected interaction into Recognize, Request, and Respond",
+          "Distinguish customer-driven recognition from firm-sensed latent needs",
+          "Explain how the Repeat dimension turns interactions into a learning relationship"
+        ],
+        "concepts": [
+          "Recognize",
+          "Request",
+          "Respond",
+          "Repeat dimension",
+          "Connected customer experience",
+          "Latent need"
+        ],
+        "sections": [
+          {
+            "heading": "The three-step arc of a single connection",
+            "text": "Every connected interaction, no matter how simple, moves through the same short arc. First the customer's need must be **Recognize**d — something surfaces that the customer wants or lacks. Then that need is turned into a **Request** — a specific, actionable ask the firm can act on. Finally the firm delivers a **Respond** — the product, answer, or service that meets the need.\n\nThink of it as the anatomy of one connection. Recognize is 'what do you need,' Request is 'here is exactly what to do about it,' and Respond is 'here it is.' Every connected customer experience is built from repeated passes through this arc."
+          },
+          {
+            "heading": "Recognize: from stated to latent needs",
+            "text": "Recognition is where connected strategies get ambitious. In the episodic world the customer does all the recognizing — they notice a need and go looking. Connected firms increasingly take on recognition themselves, sensing a **latent need** the customer hasn't yet put into words. The car that knows it needs service, the app that notices a habit slipping — the firm recognizes before the customer asks.\n\nHow far 'up' the firm reaches into recognition is a core design choice, and as the next lesson shows, it is exactly what separates the four connected strategies. The more recognition the firm shoulders, the more proactive and valuable the relationship feels."
+          },
+          {
+            "heading": "Request and Respond: shrinking friction",
+            "text": "Once a need is recognized, the **Request** step translates it into a precise instruction, and the **Respond** step fulfills it. The strategic goal across both is to strip out friction: every form the customer fills, every choice they agonize over, every delay is sacrifice you can remove. Great connected experiences make the request nearly effortless and the response nearly instant.\n\nThe division of labor matters. The firm can let the customer form the request (a search box), help shape it (recommendations), or make it for them (auto-reorder). Each choice moves work off the customer and onto the firm's intelligence."
+          },
+          {
+            "heading": "Repeat: the dimension that makes it a relationship",
+            "text": "The fourth dimension, the **Repeat** dimension, is what the authors treat as the real prize. A single Recognize-Request-Respond cycle is just a good transaction. But when the firm captures what it learned and feeds it into the next cycle, recognition gets sharper, requests get easier, and responses get more precise — the relationship compounds.\n\nRepeat is the difference between a vending machine and a relationship. It turns each interaction into training data for the next, which both raises value for the customer and builds a **connected customer experience** that a competitor starting from zero cannot instantly match."
+          }
+        ],
+        "example": {
+          "title": "One lead, four dimensions",
+          "text": "Trace a single lead through Lofty's autonomous engagement. **Recognize**: the AI CRM detects a new inbound lead and infers intent from behavior — a **latent need** the agent never saw. **Request**: it frames the next action (text now, book a showing). **Respond**: the AI engages instantly and the power dialer queues the call. Then the **Repeat** dimension does the heavy lifting — every reply, booking, and no-show teaches the model, so the next lead is recognized faster and worked better. Your CS job is to make sure that Repeat loop actually closes: that outcomes flow back so the agent's system keeps getting smarter."
+        },
+        "pauseAndThink": {
+          "question": "Two firms both run smooth Recognize-Request-Respond cycles, but only one builds a durable relationship. What is the likely difference?",
+          "answer": "The Repeat dimension. A firm that treats each interaction as a standalone transaction never gets better; a firm that captures what it learns and feeds it into the next cycle sharpens recognition, eases requests, and improves responses over time. That compounding is what turns individual interactions into a deepening relationship — and into an advantage competitors cannot instantly copy."
+        },
+        "glossary": [
+          {
+            "term": "Recognize",
+            "definition": "The first step of a connected interaction, in which a customer need surfaces or the firm senses it."
+          },
+          {
+            "term": "Request",
+            "definition": "The step that translates a recognized need into a specific, actionable ask the firm can fulfill."
+          },
+          {
+            "term": "Respond",
+            "definition": "The step in which the firm delivers the product, answer, or service that meets the need."
+          },
+          {
+            "term": "Repeat dimension",
+            "definition": "The looping element that feeds each interaction's learning into the next, turning transactions into a deepening relationship."
+          },
+          {
+            "term": "Connected customer experience",
+            "definition": "The customer-facing relationship built from repeated Recognize-Request-Respond cycles plus the Repeat dimension."
+          },
+          {
+            "term": "Latent need",
+            "definition": "A need the customer has not yet articulated but that the firm can detect and act on."
+          }
+        ],
+        "insights": [
+          "Every connected interaction is one pass through **Recognize → Request → Respond**; the four connected strategies differ mainly in how much of that arc the firm carries.",
+          "The frontier of **Recognize** is spotting a **latent need** before the customer voices it — that is what makes a relationship feel proactive rather than reactive.",
+          "The **Repeat dimension** is the real prize: it converts each interaction into training data for the next, and a good transaction into a compounding relationship."
+        ],
+        "action": "Take Lofty's autonomous lead engagement and label each stage with its step — Recognize, Request, Respond — then check whether the **Repeat** loop actually closes: do outcomes flow back to improve the next cycle?",
+        "leadershipTakeaway": "Direct your teams' energy toward closing the **Repeat** loop — capturing outcomes consistently across Manila and US — because that compounding is where durable advantage is built, not in any single response.",
+        "productivityTip": "When you audit a workflow, ask 'where does the learning go?' — a step that produces no data for the next cycle is a broken **Repeat** dimension worth fixing.",
+        "discussionQ": "Where in your customer journey could the firm recognize a latent need before the customer does — and where would that feel helpful versus intrusive?",
+        "quiz": {
+          "questions": [
+            {
+              "type": "mc",
+              "concept": "Connected customer experience",
+              "question": "The three steps of a single connected interaction, in order, are:",
+              "options": [
+                "Request, then Respond, then Recognize",
+                "Respond, then Recognize, then Request",
+                "Recognize, then Request, then Respond",
+                "Recognize, then Respond, then Request"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "type": "mc",
+              "concept": "Recognize",
+              "question": "In the Recognize step, what is the frontier that connected firms push toward?",
+              "options": [
+                "Sensing a latent need before the customer has put it into words",
+                "Waiting for the customer to file a formal complaint before acting",
+                "Asking the customer to complete a long survey after every purchase",
+                "Recognizing only needs that competitors have already advertised widely"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "type": "mc",
+              "concept": "Latent need",
+              "question": "A latent need is best described as:",
+              "options": [
+                "A need the customer has already stated clearly and placed an order for",
+                "A need that only the firm's competitors are currently able to satisfy",
+                "A need the firm has decided is too costly to serve profitably",
+                "A need the customer has not yet articulated but the firm can detect"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "type": "mc",
+              "concept": "Request",
+              "question": "What is the strategic goal of the Request and Respond steps?",
+              "options": [
+                "To maximize the number of forms and choices the customer must complete",
+                "To strip out friction so the request is effortless and the response is fast",
+                "To delay fulfillment until the customer confirms the order several times",
+                "To shift as much decision-making back onto the customer as possible"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "type": "mc",
+              "concept": "Repeat dimension",
+              "question": "Why do the authors treat the Repeat dimension as the real prize?",
+              "options": [
+                "Because it lets the firm charge customers a fee for each repeated purchase",
+                "Because it guarantees the customer will never switch to a competitor",
+                "Because it feeds each interaction's learning into the next, compounding the relationship",
+                "Because it eliminates the need for the firm to collect any customer data"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "type": "mc",
+              "concept": "Respond",
+              "question": "What distinguishes a mere good transaction from a connected relationship?",
+              "options": [
+                "Whether the firm captures and reuses what it learned in the next cycle",
+                "Whether the transaction was priced above the market average that quarter",
+                "Whether the customer paid using a subscription rather than a one-time fee",
+                "Whether the interaction happened through an app rather than in person"
+              ],
+              "correctIndex": 0
+            }
+          ]
+        }
+      },
+      {
+        "key": "four-connected-strategies",
+        "title": "The Four Connected Strategies",
+        "focus": "Lays out Respond-to-Desire, Curated Offering, Coach Behavior, and Automatic Execution as one spectrum, and how to choose among them by fit and trade-offs.",
+        "objectives": [
+          "Name the four connected strategies and order them on a single spectrum",
+          "Match each strategy to the customer effort and firm knowledge it implies",
+          "Choose the right strategy for a given need's predictability and stakes"
+        ],
+        "concepts": [
+          "Respond-to-Desire",
+          "Curated Offering",
+          "Coach Behavior",
+          "Automatic Execution",
+          "Customer effort / firm knowledge"
+        ],
+        "sections": [
+          {
+            "heading": "One spectrum: how far up the journey the firm reaches",
+            "text": "The four connected strategies are not four unrelated tactics — they sit on a single spectrum defined by how much of the Recognize-Request work the firm takes off the customer's plate. At one end the customer does almost everything and the firm just delivers; at the other the firm recognizes the need, forms the request, and acts on its own. As you move along the spectrum, **customer effort** falls and required **firm knowledge** rises.\n\nGetting the order straight matters, because each step deeper demands more data, more trust, and more accuracy from you. The four, in order, are Respond-to-Desire, Curated Offering, Coach Behavior, and Automatic Execution."
+          },
+          {
+            "heading": "Respond-to-Desire and Curated Offering",
+            "text": "**Respond-to-Desire** is the shallowest and most familiar: the customer already knows exactly what they want, and the firm's whole job is to fulfill it with zero friction — one tap, instant delivery. The firm adds no judgment about *what* the customer needs; it just makes getting it effortless.\n\n**Curated Offering** goes one step up. Here the customer knows the general category but not the specific choice, so the firm helps form the request — recommending, filtering, ranking options to fit that customer. Think of a tailored shortlist rather than an infinite catalog. The firm now contributes knowledge about which option fits best."
+          },
+          {
+            "heading": "Coach Behavior and Automatic Execution",
+            "text": "**Coach Behavior** reaches into recognition itself. The customer has a goal but struggles to act consistently, so the firm nudges, reminds, and encourages the behaviors the customer has already said they want — helping them recognize the moment to act. The firm isn't just fulfilling desire; it is shaping follow-through.\n\n**Automatic Execution** is the deepest: the firm recognizes the need, decides the response, and acts on the customer's behalf with no request at all — auto-replenishment, a system that fixes itself. The customer delegates the entire arc. This delivers the least effort and the most value when it works, and the highest cost when the firm gets it wrong."
+          },
+          {
+            "heading": "Choosing among them: fit and trade-offs",
+            "text": "No single strategy is 'best' — fit depends on how predictable the need is and how much the customer trusts you to act. **Automatic Execution** shines for routine, low-regret needs where prediction is reliable; force it onto an unpredictable, high-stakes decision and a wrong call destroys trust. **Respond-to-Desire** is safest when the customer wants control.\n\nThe practical craft is placing each strategy where it fits and, often, layering them: coach in one area, curate in another, automate the truly routine. The deeper you go, the more your **firm knowledge** and prediction accuracy have to earn the customer's delegation."
+          }
+        ],
+        "example": {
+          "title": "Four strategies across the Lofty stack",
+          "text": "Map your own product surface. When an agent opens the dialer to call a list they chose, that's **Respond-to-Desire** — just make it frictionless. When the CRM ranks which leads to work next, that's a **Curated Offering**. When the system reminds a lapsing agent 'you haven't followed up with these 12 leads,' that's **Coach Behavior** — nudging the behavior they signed up for. When the AI engages a new lead and books the appointment untouched, that's **Automatic Execution**. The design question for your CS org: which surfaces are predictable enough to automate, and which still need the agent holding the wheel?"
+        },
+        "pauseAndThink": {
+          "question": "Why is Automatic Execution both the highest-value and the highest-risk of the four connected strategies?",
+          "answer": "Because it removes the customer from the loop entirely — the firm recognizes the need and acts on its own, which delivers the least effort and most value when the prediction is right. But that same delegation means a wrong action happens without the customer's consent or correction, so errors are costly and directly damage trust. It fits routine, predictable, low-regret needs and is dangerous for unpredictable, high-stakes ones."
+        },
+        "glossary": [
+          {
+            "term": "Respond-to-Desire",
+            "definition": "A strategy where the customer knows exactly what they want and the firm fulfills it with minimal friction."
+          },
+          {
+            "term": "Curated Offering",
+            "definition": "A strategy where the firm helps the customer form a request by recommending and ranking options that fit."
+          },
+          {
+            "term": "Coach Behavior",
+            "definition": "A strategy where the firm nudges and reminds the customer toward behaviors they have committed to."
+          },
+          {
+            "term": "Automatic Execution",
+            "definition": "A strategy where the firm recognizes the need and acts on the customer's behalf with no request."
+          },
+          {
+            "term": "Customer effort",
+            "definition": "How much work the customer must do in an interaction, falling as the firm takes on more of the Recognize-Request arc."
+          },
+          {
+            "term": "Firm knowledge",
+            "definition": "The data and prediction accuracy a firm needs, rising as strategies move toward Automatic Execution."
+          }
+        ],
+        "insights": [
+          "The four strategies sit on one spectrum of how much Recognize-Request work the firm takes on: moving deeper, **customer effort** falls and **firm knowledge** rises.",
+          "No strategy is 'best' — **Automatic Execution** fits routine, predictable, low-regret needs, while **Respond-to-Desire** is safest when the customer wants control.",
+          "The deeper strategies demand more trust and accuracy, so a wrong **Automatic Execution** is far more costly than a wrong recommendation — match depth to prediction reliability."
+        ],
+        "action": "List four Lofty touchpoints and tag each with the connected strategy it currently uses — Respond-to-Desire, Curated Offering, Coach Behavior, or Automatic Execution — and flag any that are automated beyond what your prediction accuracy can support.",
+        "leadershipTakeaway": "Teach your CS and support leads to name the strategy behind each feature; 'that should be Coach Behavior, not Automatic Execution' is a sharper design conversation than 'the AI is too aggressive.'",
+        "productivityTip": "Use the spectrum as a triage tool: when a workflow frustrates customers, ask whether it is applying a strategy one step too deep for the need's predictability.",
+        "discussionQ": "Which Lofty touchpoint is the best candidate to move one step deeper on the spectrum — and what data or trust would you need before it is safe?",
+        "quiz": {
+          "questions": [
+            {
+              "type": "mc",
+              "concept": "Respond-to-Desire",
+              "question": "Which situation best fits a Respond-to-Desire strategy?",
+              "options": [
+                "The customer knows exactly what they want and the firm fulfills it with zero friction",
+                "The firm senses a need and acts on it entirely without the customer's involvement",
+                "The firm nudges the customer toward a behavior they committed to but neglect",
+                "The firm narrows a large set of options down to a tailored shortlist for the customer"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "type": "mc",
+              "concept": "Curated Offering",
+              "question": "What does a Curated Offering primarily do for the customer?",
+              "options": [
+                "Acts on the customer's behalf without any request being made at all",
+                "Reminds the customer to follow through on goals they have already set",
+                "Delivers exactly the item the customer has already specified, instantly",
+                "Helps form the request by recommending and ranking options that fit them"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "type": "mc",
+              "concept": "Coach Behavior",
+              "question": "Coach Behavior is the right strategy when:",
+              "options": [
+                "The customer wants full control and only needs frictionless fulfillment",
+                "The customer has a goal but struggles to act on it consistently",
+                "The need is fully routine and safe to automate without oversight",
+                "The firm has no data about the customer's history or preferences"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "type": "mc",
+              "concept": "Automatic Execution",
+              "question": "Why is Automatic Execution both highest-value and highest-risk?",
+              "options": [
+                "It requires the least firm data yet somehow produces the best predictions",
+                "It always costs more to run than the other three connected strategies combined",
+                "It removes the customer from the loop, so a wrong action happens uncorrected",
+                "It can only be used by firms that also offer a subscription revenue model"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "type": "mc",
+              "concept": "Customer effort / firm knowledge",
+              "question": "As you move from Respond-to-Desire toward Automatic Execution, what happens?",
+              "options": [
+                "Customer effort falls while the firm knowledge required rises",
+                "Customer effort rises while the firm knowledge required falls",
+                "Both customer effort and required firm knowledge fall together",
+                "Both customer effort and required firm knowledge rise together"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "type": "mc",
+              "concept": "Automatic Execution",
+              "question": "For which kind of need is Automatic Execution the best fit?",
+              "options": [
+                "An unpredictable, high-stakes decision the customer wants to control",
+                "A one-time purchase the customer will likely never make again",
+                "A need the firm cannot predict and has little data about yet",
+                "A routine, predictable, low-regret need the firm can reliably anticipate"
+              ],
+              "correctIndex": 3
+            }
+          ]
+        }
+      },
+      {
+        "key": "delivery-model-and-flywheel",
+        "title": "The Delivery Model and the Data Flywheel",
+        "focus": "Shows the back-stage half of a connected strategy and how the Repeat dimension compounds into a data flywheel and competitive advantage that is hard to copy.",
+        "objectives": [
+          "Distinguish the connected customer experience from the connected delivery model",
+          "Explain how the data flywheel produces increasing returns",
+          "Explain why accumulated learning, not software, is the durable advantage"
+        ],
+        "concepts": [
+          "Connected delivery model",
+          "Connection architecture",
+          "Data flywheel",
+          "Increasing returns",
+          "Competitive advantage",
+          "Revenue model"
+        ],
+        "sections": [
+          {
+            "heading": "Front stage and back stage",
+            "text": "A full connected strategy has two halves. The customer sees the **connected customer experience** — the Recognize-Request-Respond-Repeat relationship from the last two lessons. Behind it sits the **connected delivery model**: the operational machinery — technology, data, partners, and processes — that lets the firm actually produce and deliver that experience over and over.\n\nThe authors are emphatic that the experience is only as good as the delivery model behind it. A slick app that can't reliably fulfill, learn, and improve is theater. Designing the back stage is where connected strategy becomes real work."
+          },
+          {
+            "heading": "Connection architecture and revenue model",
+            "text": "Two structural choices define the delivery model. The first is the **connection architecture** — how the firm and its partners are wired together to reach the customer. The book describes several, such as the **connected producer** (the maker connects directly to the end customer), the connected retailer, and the connected market maker, each shifting who holds the customer relationship and the data.\n\nThe second is the **revenue model** — how the firm captures value from a continuous relationship rather than a one-time sale. Options range from subscription to pay-per-use to outcome-based pricing, where the firm gets paid for the results it delivers. Continuous relationships unlock pricing that episodic transactions can't."
+          },
+          {
+            "heading": "The data flywheel",
+            "text": "The engine that makes connected strategies compound is the **data flywheel**. Every trip through the Repeat dimension leaves data behind; that data sharpens recognition and response; sharper response creates more value; more value attracts and retains more customers; more customers generate still more data. It is a self-reinforcing loop with **increasing returns**.\n\nThis is why connected strategies tend toward winner-take-most dynamics. The firm that connects earliest and widest accumulates a learning lead that literally grows with every interaction, while a late entrant starts the same loop from a standstill."
+          },
+          {
+            "heading": "Why it's hard to copy",
+            "text": "The flywheel is also the source of durable **competitive advantage**. A rival can copy your interface, your features, even your pricing — but it cannot copy the years of accumulated interaction data and the tuned recognition that data buys. The moat is the learning, not the software.\n\nThat reframes what you protect and invest in. The strategic asset is the **Repeat** loop itself: anything that closes it faster or captures more from each cycle widens a lead competitors can't simply buy. The advantage is earned interaction by interaction, which is exactly what makes it hard to copy."
+          }
+        ],
+        "example": {
+          "title": "Lofty's flywheel, and where it leaks",
+          "text": "Lofty's autonomous lead engagement is a **data flywheel** in motion: every AI conversation, booking, and closing teaches the system which messages convert, so the next agent's leads are worked better — more value, more retention, more data. Your **connected delivery model** is the unglamorous half that makes it run: clean data flowing from support and CS back into the model, Manila and US teams tagging outcomes consistently, the **Repeat** loop actually closing. The **competitive advantage** isn't the dialer a competitor could clone; it's the accumulated engagement data no new entrant has. Your job is to plug the leaks where outcomes never make it back into the loop."
+        },
+        "pauseAndThink": {
+          "question": "A competitor launches an app with the same features as your connected offering. Why might that still fail to erode your advantage?",
+          "answer": "Because the durable advantage in a connected strategy is not the software or features — it is the accumulated interaction data and the tuned recognition it buys, built up through the Repeat dimension over many cycles. A competitor can copy the interface but starts its data flywheel from zero, while yours has been compounding with every interaction. The learning lead, not the app, is the moat."
+        },
+        "glossary": [
+          {
+            "term": "Connected delivery model",
+            "definition": "The back-stage machinery — technology, data, partners, and processes — that produces and delivers the connected customer experience."
+          },
+          {
+            "term": "Connection architecture",
+            "definition": "The arrangement of firm and partners that reaches the customer, such as connected producer, connected retailer, or connected market maker."
+          },
+          {
+            "term": "Data flywheel",
+            "definition": "The self-reinforcing loop where more interactions generate more data, which improves service and attracts more customers."
+          },
+          {
+            "term": "Increasing returns",
+            "definition": "The dynamic in which each additional interaction makes the firm's advantage larger rather than merely adding to it."
+          },
+          {
+            "term": "Competitive advantage",
+            "definition": "In connected strategy, the durable edge that comes from accumulated interaction data and tuned recognition, not from software."
+          },
+          {
+            "term": "Revenue model",
+            "definition": "How a firm captures value from a continuous relationship — via subscription, pay-per-use, or outcome-based pricing."
+          }
+        ],
+        "insights": [
+          "A connected strategy has two halves: the customer-facing **connected customer experience** and the back-stage **connected delivery model** that makes it repeatable.",
+          "The **data flywheel** gives connected strategies **increasing returns** — the earliest, widest connector accumulates a learning lead that grows with every interaction.",
+          "The real moat is the learning, not the software: a rival can copy your app but not the years of accumulated **interaction data** behind your recognition."
+        ],
+        "action": "Trace one place where Lofty's **Repeat** loop feeds the model, and find one place where it leaks — an outcome (a closing, a churn) that never makes it back into the data. Closing that leak widens the flywheel.",
+        "leadershipTakeaway": "Frame the unglamorous data-hygiene work — consistent outcome tagging across Manila and US teams — as protecting the company's real moat, because the **competitive advantage** lives in that accumulated learning.",
+        "productivityTip": "When you evaluate a new initiative, ask whether it feeds the **data flywheel** or just adds a feature — the former compounds, the latter can be copied.",
+        "discussionQ": "If your advantage is the accumulated data, not the software, how should that change what your org invests in and what it guards most carefully?",
+        "quiz": {
+          "questions": [
+            {
+              "type": "mc",
+              "concept": "Connected delivery model",
+              "question": "What is the connected delivery model?",
+              "options": [
+                "The front-stage experience the customer sees during each interaction",
+                "The one-time price a customer pays when they first sign up for a service",
+                "The marketing campaign that attracts new customers to the relationship",
+                "The back-stage machinery — tech, data, partners, processes — that delivers the experience"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "type": "mc",
+              "concept": "Connection architecture",
+              "question": "A connected producer architecture means:",
+              "options": [
+                "A retailer owns the customer relationship and resells the maker's goods",
+                "The maker connects directly to the end customer and holds the relationship",
+                "A marketplace matches many independent buyers and sellers to each other",
+                "A crowd of users collectively supplies the firm's core service capacity"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "type": "mc",
+              "concept": "Data flywheel",
+              "question": "How does the data flywheel work?",
+              "options": [
+                "The firm buys data from competitors to fill gaps in its own records",
+                "The firm resets its learning each quarter to avoid stale information",
+                "More customers generate more data, which improves service and attracts more customers",
+                "The firm limits data collection so customers feel their privacy is protected"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "type": "mc",
+              "concept": "Competitive advantage",
+              "question": "Why is a connected strategy's advantage hard for a rival to copy?",
+              "options": [
+                "The moat is accumulated interaction data and tuned recognition, not the software",
+                "The firm patents its user interface so no competitor may build one like it",
+                "The firm signs exclusive contracts preventing customers from ever leaving",
+                "The firm keeps its pricing secret so competitors cannot undercut it"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "type": "mc",
+              "concept": "Increasing returns",
+              "question": "Why do connected strategies tend toward winner-take-most dynamics?",
+              "options": [
+                "Because regulators cap the number of firms allowed in each market",
+                "Because late entrants can instantly buy the same accumulated learning",
+                "Because customers legally cannot use more than one connected service",
+                "Because the earliest, widest connector's learning lead grows with every interaction"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "type": "mc",
+              "concept": "Revenue model",
+              "question": "Which revenue model does a continuous relationship make possible that a one-time sale does not?",
+              "options": [
+                "A single upfront payment covering the full lifetime of ownership",
+                "Outcome-based pricing, where the firm is paid for the results it delivers",
+                "A barter arrangement where no money changes hands between the parties",
+                "A one-time licensing fee with no ongoing obligation to the customer"
+              ],
+              "correctIndex": 1
+            }
+          ]
+        }
+      },
+      {
+        "key": "designing-and-building-it-out",
+        "title": "Designing and Building It Out",
+        "focus": "Turns the frameworks into a build-out method — map the journey, match strategies to touchpoints, and avoid the pitfalls of creepiness, over-automation, and cost.",
+        "objectives": [
+          "Map a customer journey and locate its widest sacrifice gaps",
+          "Assign the right connected strategy to each touchpoint",
+          "Identify and mitigate the pitfalls: creepiness, over-automation, and cost"
+        ],
+        "concepts": [
+          "Customer journey mapping",
+          "Strategy-to-touchpoint fit",
+          "Privacy / creepiness / trust",
+          "Over-automation",
+          "Cost of connection",
+          "Sacrifice gap"
+        ],
+        "sections": [
+          {
+            "heading": "Map the journey before you connect it",
+            "text": "Building a connected strategy starts with a map, not a technology. Lay out the customer's actual **customer journey** end to end and find where the **sacrifice gap** is widest — the moments where customers settle, struggle, or churn. Those gaps are where connection creates the most value, and they are where you connect first.\n\nThe temptation is to connect everywhere at once. Resist it. Connection is an investment, so you want it aimed at the few touchpoints where closing the gap moves retention or willingness to pay the most, not sprinkled thinly across the whole journey."
+          },
+          {
+            "heading": "Match strategy to touchpoint",
+            "text": "With the journey mapped, assign each stage its right connected strategy. Routine, predictable steps are candidates for **Automatic Execution**; decision-heavy steps want a **Curated Offering**; behavior-and-follow-through problems call for **Coach Behavior**; and moments where the customer wants control stay **Respond-to-Desire**. The art is fit, not maximal automation.\n\nThis is a per-touchpoint judgment, and the same customer may sit in different strategies at different stages. Getting the assignment right is most of the design work — a strategy that's wrong for its touchpoint creates friction instead of removing it."
+          },
+          {
+            "heading": "The creepiness line: privacy and trust",
+            "text": "Every connected strategy runs on customer data, which puts **privacy** and trust at the center of the design. The same personalization that delights can tip into feeling like surveillance — the **creepiness line** — when data use is opaque or exceeds what the customer expects. Cross it and you destroy the trust the whole relationship depends on.\n\nThe guardrail is a transparent value exchange: the customer should clearly get more than they give, and understand what's collected and why. Trust is not a compliance checkbox here; it is the precondition for the deeper strategies, because no one delegates recognition to a firm they don't trust."
+          },
+          {
+            "heading": "Over-automation and the cost of connection",
+            "text": "Two failure modes deserve special vigilance. **Over-automation** — pushing Automatic Execution onto needs that are unpredictable or high-stakes — turns confident errors into churn; when prediction isn't reliable, coach or curate instead of acting unbidden. And connection is not free: the **cost of connection** — technology, data pipelines, and operations — is real, so build only where the value created clearly exceeds it.\n\nThe disciplined path is to keep humans in the loop where judgment and empathy matter, automate the genuinely routine, and treat every connection as an investment that has to earn its cost. A connected strategy is a portfolio of bets, not a single all-in wager on automation."
+          }
+        ],
+        "example": {
+          "title": "A connected build-out plan for CS",
+          "text": "Sketch your own build-out. Map the realtor journey from onboarding through renewal and flag the widest **sacrifice gaps** — say, month-three adoption drop-off. Assign strategies: **Automatic Execution** for routine lead engagement, **Coach Behavior** for nudging agents who've stopped using the power dialer, a **Curated Offering** for which features to adopt next, and human **Respond-to-Desire** for a frustrated enterprise account that wants a person. Watch the **creepiness line** — an AI that references a lead's every move can unsettle agents and their clients — and don't **over-automate** the high-stakes renewal conversation. Build where value beats the **cost of connection**, and keep your Manila and US CS teams on the judgment calls."
+        },
+        "pauseAndThink": {
+          "question": "You've identified a high-stakes, hard-to-predict moment in the customer journey. Why is Automatic Execution usually the wrong connected strategy there, and what fits better?",
+          "answer": "Because Automatic Execution acts without the customer in the loop, and when the need is unpredictable a confident wrong action lands without any chance to correct it — costly errors that erode trust exactly where the stakes are highest. Better to keep the customer involved: Coach Behavior or a Curated Offering guides them while leaving the decision and control with them, and a human Respond-to-Desire fits when empathy and judgment matter most."
+        },
+        "glossary": [
+          {
+            "term": "Customer journey mapping",
+            "definition": "Laying out the customer's end-to-end experience to find where sacrifice gaps and value are largest."
+          },
+          {
+            "term": "Strategy-to-touchpoint fit",
+            "definition": "Assigning each journey stage the connected strategy that matches its need, predictability, and stakes."
+          },
+          {
+            "term": "Creepiness line",
+            "definition": "The point where personalization tips into feeling like surveillance because data use is opaque or exceeds expectations."
+          },
+          {
+            "term": "Over-automation",
+            "definition": "Pushing Automatic Execution onto unpredictable or high-stakes needs, where confident errors drive customers away."
+          },
+          {
+            "term": "Cost of connection",
+            "definition": "The real technology, data, and operating cost of building a connection, which the value created must exceed."
+          },
+          {
+            "term": "Transparent value exchange",
+            "definition": "A relationship in which the customer clearly gets more than they give and understands what data is collected and why."
+          }
+        ],
+        "insights": [
+          "Build from a **customer journey** map, not a technology: connect first where the **sacrifice gap** and value at stake are widest, not everywhere at once.",
+          "Trust is the precondition for the deeper strategies — cross the **creepiness line** with opaque data use and no one will delegate recognition to you.",
+          "Guard against **over-automation** and the **cost of connection**: keep humans where judgment matters, automate the routine, and build only where value beats cost."
+        ],
+        "action": "Draft a one-page connected build-out for one journey — map the stages, mark the widest **sacrifice gap**, and assign each stage a connected strategy — then circle the one place you'd risk crossing the **creepiness line**.",
+        "leadershipTakeaway": "Position connection as a portfolio of bets, not an all-in wager on automation: your credibility with leadership comes from knowing where value beats the **cost of connection** and where to keep a human in the loop.",
+        "productivityTip": "Before automating any touchpoint, run two quick checks — is the need predictable enough, and does the value clearly exceed the **cost of connection**? If either fails, coach or curate instead.",
+        "discussionQ": "Where is Lofty's AI closest to the creepiness line for realtors and their clients, and what transparent value exchange would keep it on the right side?",
+        "quiz": {
+          "questions": [
+            {
+              "type": "mc",
+              "concept": "Customer journey mapping",
+              "question": "Where should you connect first when building out a connected strategy?",
+              "options": [
+                "At every touchpoint simultaneously, to maximize total coverage quickly",
+                "At the touchpoints where the sacrifice gap — and the value at stake — is widest",
+                "At the cheapest touchpoints to build, regardless of customer impact",
+                "At the touchpoints your largest competitor has not yet automated"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "type": "mc",
+              "concept": "Strategy-to-touchpoint fit",
+              "question": "What is the core design task once the customer journey is mapped?",
+              "options": [
+                "Assigning each stage the connected strategy that fits its need and predictability",
+                "Automating every stage as fully as the current technology allows",
+                "Applying a single connected strategy uniformly across the whole journey",
+                "Removing all human involvement so the experience is fully consistent"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "type": "mc",
+              "concept": "Privacy / creepiness / trust",
+              "question": "What crosses the 'creepiness line' in a connected strategy?",
+              "options": [
+                "Offering the customer a clear summary of the value they receive",
+                "Letting the customer opt out of data collection at any time",
+                "Using customer data opaquely or beyond what the customer expects",
+                "Collecting only the minimum data needed to deliver the service"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "type": "mc",
+              "concept": "Over-automation",
+              "question": "What is the danger of over-automation?",
+              "options": [
+                "It makes routine, predictable tasks slightly faster than a human would",
+                "It reduces the amount of data the firm can collect from each interaction",
+                "It forces customers to make more decisions than they want to make",
+                "It pushes Automatic Execution onto unpredictable needs, turning errors into churn"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "type": "mc",
+              "concept": "Cost of connection",
+              "question": "How should the cost of connection shape where you build?",
+              "options": [
+                "Build only where the value created clearly exceeds the cost of connecting",
+                "Build everywhere, since connection technology is essentially free to run",
+                "Build only at the touchpoints with the lowest possible data requirements",
+                "Build wherever a competitor has already proven customers will pay"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "type": "mc",
+              "concept": "Sacrifice gap",
+              "question": "Why start a build-out by finding the widest sacrifice gaps?",
+              "options": [
+                "Because those are the cheapest places to install new technology",
+                "Because regulators require firms to address the largest gaps first",
+                "Because that is where closing the gap creates the most value and retention",
+                "Because competitors always ignore their customers' largest gaps"
+              ],
+              "correctIndex": 2
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "topicKey": "scaling-people",
+    "name": "Scaling People (Claire Hughes Johnson)",
+    "description": "Claire Hughes Johnson's tactical operating manual for management and company building — self-awareness, founding documents, planning cadences, hiring, onboarding, feedback, performance, and org design — as installable systems for scaling a team.",
+    "category": "Bookshelf",
+    "lessons": [
+      {
+        "key": "self-awareness-foundation",
+        "title": "Self-Awareness and Your 'How to Work With Me' Manual",
+        "focus": "Opens the book where Johnson insists all scalable management starts — with knowing your own operating style — and turns that into a document your teams can actually use.",
+        "objectives": [
+          "Explain why Johnson treats self-awareness as the precondition for managing others",
+          "Identify your working style, motivations, and triggers using structured self-reflection",
+          "Draft a 'how to work with me' user manual and personal operating principles"
+        ],
+        "concepts": [
+          "self-awareness",
+          "working style",
+          "how to work with me",
+          "operating principles",
+          "self-assessment tools",
+          "triggers and motivations"
+        ],
+        "sections": [
+          {
+            "heading": "You are the first system you have to understand",
+            "text": "Johnson's book opens on a claim that sounds soft but is deeply operational: **self-awareness** is the foundation of effective management. You cannot design a team's operating system while you're a mystery to yourself, because every unexamined preference of yours quietly becomes an unwritten rule others have to decode. The manager who 'just prefers things a certain way' forces the whole team to reverse-engineer that way through trial and error.\n\nThe discipline is to make your own **working style** explicit — how you process information, how you make decisions, where your energy comes from, and what reliably sets you off. This is not therapy; it is documentation. Managing across Manila, US, and China teams, you are already the least-understood variable in the room, because remote and cross-cultural distance strips away the informal cues people would otherwise use to read you."
+          },
+          {
+            "heading": "Use tools, but hold them lightly",
+            "text": "Johnson is a fan of structured **self-assessment tools** — Myers-Briggs, the Enneagram, StrengthsFinder, DISC — not because any one is scientifically decisive, but because they give you shared language for tendencies that are otherwise invisible. A label like 'I default to action over analysis' becomes a thing you and your team can name and plan around rather than a personality trait you both stumble into.\n\nThe payload of any assessment isn't the type; it's the **triggers and motivations** it surfaces. What energizes you, what drains you, what you do under stress, and which behaviors in others push your buttons. Naming these lets you build guardrails — so when your US global support lead delivers bad news the way that happens to irritate you, you respond to the news, not the delivery."
+          },
+          {
+            "heading": "Write the user manual",
+            "text": "The concrete deliverable Johnson recommends is a **how to work with me** document — a short, honest manual you hand to your team that says how you operate, what you value, how you like to communicate, and how to give you feedback. It removes months of guesswork and models the self-disclosure you want back from them. Pairing it with your **operating principles** — the handful of beliefs that govern how you make calls — turns your leadership from a black box into something people can partner with deliberately.\n\nThe test of a good manual is that it is specific enough to be falsifiable: 'I read documents before meetings and get frustrated by verbal-only updates' is useful; 'I value great communication' is wallpaper. Written once and shared, it pays off every time a new CSM or lead joins and doesn't have to spend a quarter learning your unwritten rules the hard way."
+          }
+        ],
+        "example": {
+          "title": "Onboarding a new US MidMarket lead across the distance gap",
+          "text": "A new MidMarket Client Success lead joins, and you're managing them indirectly and remotely. Instead of letting them decode you over months of missteps, you send them your **how to work with me** manual on day one: you prefer written pre-reads, you make decisions faster when you see the options laid out, you get triggered by surprises in front of executives, and the fastest way to lose your trust is to hide a slipping number. You also name a **trigger** honestly — that terse one-line Slack updates read to you as disengagement even when they aren't. That single document collapses a quarter of guesswork into a shared, editable contract about how the two of you work."
+        },
+        "pauseAndThink": {
+          "question": "Why does Johnson insist a manager document their own working style before trying to improve their team's systems?",
+          "answer": "Because every unexamined preference of the manager becomes an unwritten rule the team must decode through trial and error. Making your working style, triggers, and operating principles explicit removes that guesswork, models the self-disclosure you want back, and lets people partner with you deliberately instead of reacting to a black box — which matters most across remote and cross-cultural distance where informal cues are missing."
+        },
+        "glossary": [
+          {
+            "term": "Self-awareness",
+            "definition": "Honest, working knowledge of your own tendencies, motivations, and triggers — the foundation Johnson says all management rests on."
+          },
+          {
+            "term": "Working style",
+            "definition": "How you process information, make decisions, communicate, and draw energy — the operating pattern others must otherwise reverse-engineer."
+          },
+          {
+            "term": "How to work with me",
+            "definition": "A short written user manual you give your team describing how you operate, what you value, and how to give you feedback."
+          },
+          {
+            "term": "Operating principles",
+            "definition": "The handful of stated beliefs that govern how you make decisions and set expectations."
+          },
+          {
+            "term": "Self-assessment tools",
+            "definition": "Structured instruments (Myers-Briggs, Enneagram, StrengthsFinder, DISC) used to create shared language for otherwise invisible tendencies."
+          },
+          {
+            "term": "Triggers and motivations",
+            "definition": "The specific things that energize, drain, or provoke you — the real payload of any self-assessment."
+          }
+        ],
+        "insights": [
+          "Every **unexamined preference** of a manager becomes an unwritten rule the team must decode — documenting your style converts guesswork into a shared contract.",
+          "The value of an assessment isn't the type label, it's the **triggers and motivations** it surfaces so you can build guardrails around them.",
+          "A **how to work with me** manual is only useful if it's specific and falsifiable — 'I get frustrated by verbal-only updates' beats 'I value communication.'"
+        ],
+        "action": "Draft a one-page **how to work with me** manual this week — how you decide, how you like updates, one honest trigger, and how to give you feedback — and share it with one direct report as a test.",
+        "leadershipTakeaway": "Your **self-awareness** is infrastructure: the more explicit you make your own operating style, the less your team burns on decoding you and the more they spend on the work.",
+        "productivityTip": "Keep your **operating principles** pinned where you draft messages; re-reading them before a hard reply keeps you responding to the substance, not to a **trigger**.",
+        "discussionQ": "Which of your own working-style preferences have quietly become unwritten rules your team has had to decode — and what would change if you wrote them down?",
+        "quiz": {
+          "questions": [
+            {
+              "type": "mc",
+              "concept": "self-awareness",
+              "question": "Why does Johnson place self-awareness at the foundation of management?",
+              "options": [
+                "Because self-aware managers can skip writing anything down for their teams",
+                "Because unexamined preferences become unwritten rules the team must decode",
+                "Because personality type determines who is allowed to become a manager",
+                "Because it lets a manager avoid ever having to give difficult feedback"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "type": "mc",
+              "concept": "how to work with me",
+              "question": "What is the purpose of a 'how to work with me' document?",
+              "options": [
+                "To rank direct reports by how compatible their styles are with yours",
+                "To replace performance reviews with a single onboarding form",
+                "To tell your team how you operate so they don't decode you by trial and error",
+                "To formally record disciplinary expectations for HR compliance"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "type": "mc",
+              "concept": "self-assessment tools",
+              "question": "How does Johnson suggest using instruments like Myers-Briggs or the Enneagram?",
+              "options": [
+                "As shared language for tendencies, held lightly rather than as decisive science",
+                "As a scientific test that permanently fixes each person's category",
+                "As a hiring filter to screen out incompatible personality types",
+                "As a substitute for having any operating principles at all"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "type": "mc",
+              "concept": "triggers and motivations",
+              "question": "According to the lesson, what is the real payload of a self-assessment?",
+              "options": [
+                "The type label you can put in your email signature",
+                "A ranking of your strengths against your peers' strengths",
+                "A prediction of which roles you will be promoted into",
+                "The triggers and motivations it surfaces so you can build guardrails"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "type": "mc",
+              "concept": "how to work with me",
+              "question": "Which line belongs in an effective 'how to work with me' manual?",
+              "options": [
+                "'I value great communication and strong collaboration'",
+                "'I read pre-reads before meetings and get frustrated by verbal-only updates'",
+                "'I am a people person who cares deeply about the team'",
+                "'I always try to do the right thing for the company'"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "type": "mc",
+              "concept": "operating principles",
+              "question": "What role do stated operating principles play for a manager?",
+              "options": [
+                "They list the software tools the team is required to use",
+                "They replace the company's mission and values entirely",
+                "They make explicit the beliefs that govern how you make decisions",
+                "They set the quarterly revenue targets for the team"
+              ],
+              "correctIndex": 2
+            }
+          ]
+        }
+      },
+      {
+        "key": "founding-documents",
+        "title": "Founding Documents: Mission, Vision, Values, and Strategy",
+        "focus": "Establishes the documented 'why, what, and how' that Johnson calls the backbone of any team that intends to scale beyond the founders' heads.",
+        "objectives": [
+          "Distinguish mission, vision, values, and strategy and what question each answers",
+          "Explain why writing these down is what makes a team scalable",
+          "Draft team-level founding documents that ladder up to the company's"
+        ],
+        "concepts": [
+          "founding documents",
+          "mission",
+          "vision",
+          "values",
+          "strategy",
+          "operating principles"
+        ],
+        "sections": [
+          {
+            "heading": "Why, what, and how — written down",
+            "text": "Johnson frames a company's **founding documents** as the answers to three questions: why do we exist, what are we trying to build, and how do we behave getting there. When a team is small, these live in the founders' heads and get transmitted by osmosis. The moment you scale — new hires, new offices, new time zones — osmosis fails, and anything undocumented gets reinvented, inconsistently, by everyone downstream.\n\nWriting them down is not bureaucracy; it is the mechanism that lets you scale without being in every room. A documented **mission** and set of **values** is what lets your Manila SMB CSM team make a judgment call at 2am their time the way you would have made it, without pinging you. The document is a stand-in for your presence."
+          },
+          {
+            "heading": "Four documents, four jobs",
+            "text": "The pieces do distinct jobs. **Mission** is the enduring why — the reason the organization exists, largely unchanging. **Vision** is the concrete picture of where you're going over a horizon of a few years; it should be vivid enough that people can tell whether you're getting closer. **Values** are the how — the behaviors you reward and the ones you won't tolerate, ideally specific enough to guide a real decision.\n\n**Strategy** is the plan for how you'll actually win given your resources and constraints — the choices about where to play and what not to do. Johnson's point is that vague strategy is the most common failure: a 'strategy' that could belong to any competitor isn't one. Good strategy names trade-offs, and trade-offs are uncomfortable, which is exactly why teams avoid writing them."
+          },
+          {
+            "heading": "Team documents ladder up",
+            "text": "You don't only inherit the company's documents; you author your own that ladder up to them. Your CS org needs its own mission ('why does customer success exist at this company'), its own vision, and its own **operating principles** — the local rules of the road that translate company values into how your teams actually work day to day.\n\nThe test is coherence: someone should be able to trace a line from a CSM's daily priorities up through your org's strategy to the company mission without a gap or a contradiction. When that line is unbroken, delegation becomes safe, because people making decisions three levels down are anchored to the same why you are. When it's broken, every decision has to escalate."
+          }
+        ],
+        "example": {
+          "title": "Giving your Manila SMB team a document instead of a lifeline",
+          "text": "Your Manila SMB CSM team keeps escalating judgment calls — should they comp an onboarding fee for a frustrated agent, how hard to push adoption before flagging churn risk. Each escalation is really a symptom: they have no documented **operating principles** to reason from, so they route every gray-area decision to you across a time-zone gap. You write a one-page team **mission** ('we make every SMB agent productive on Lofty fast enough to see lead ROI before they doubt it') and three operating principles that translate the company **values** into concrete CS trade-offs. The escalations drop, because the document now stands in for your presence in a room you can't be in."
+        },
+        "pauseAndThink": {
+          "question": "Johnson says writing down founding documents is what makes a team scalable. What breaks if they stay unwritten?",
+          "answer": "When mission, vision, values, and strategy live only in the founders' or manager's head, they transmit by osmosis — which fails the moment you add new hires, offices, or time zones. Anything undocumented gets reinvented inconsistently by everyone downstream, and every gray-area decision has to escalate because people lack a shared 'why' to reason from. The written document stands in for the leader's presence in rooms they can't be in."
+        },
+        "glossary": [
+          {
+            "term": "Founding documents",
+            "definition": "The written mission, vision, values, and strategy that answer why a team exists, what it's building, and how it behaves."
+          },
+          {
+            "term": "Mission",
+            "definition": "The enduring reason an organization exists — the 'why' that changes rarely if ever."
+          },
+          {
+            "term": "Vision",
+            "definition": "A concrete picture of where the organization is going over a few-year horizon, vivid enough to measure progress against."
+          },
+          {
+            "term": "Values",
+            "definition": "The 'how' — the behaviors an organization rewards and refuses to tolerate, specific enough to guide real decisions."
+          },
+          {
+            "term": "Strategy",
+            "definition": "The plan for how to win given resources and constraints, defined by explicit trade-offs about where to play and what not to do."
+          },
+          {
+            "term": "Operating principles",
+            "definition": "Local rules of the road that translate company values into how a specific team works day to day."
+          }
+        ],
+        "insights": [
+          "Founding documents answer three questions — **why** (mission), **what** (vision), and **how** (values) — plus the plan to win (strategy).",
+          "Writing them down isn't bureaucracy; it's the mechanism that lets you **scale without being in every room**.",
+          "A **strategy** that could belong to any competitor isn't a strategy — good ones name uncomfortable trade-offs."
+        ],
+        "action": "Draft a one-page CS-org **mission** and three **operating principles** that translate the company's values into concrete trade-offs your teams face, then pressure-test them against last month's escalations.",
+        "leadershipTakeaway": "Documented **founding documents** are delegation infrastructure: an unbroken line from a CSM's daily priorities up to the company mission is what makes it safe to push decisions down.",
+        "productivityTip": "Before answering the next gray-area escalation, ask whether a missing **operating principle** would have let the team decide without you — and write that principle instead of just the answer.",
+        "discussionQ": "Where in your org does the line from daily work up to company mission break or contradict itself — and what decision keeps escalating because of it?",
+        "quiz": {
+          "questions": [
+            {
+              "type": "mc",
+              "concept": "mission",
+              "question": "In Johnson's framing, what does an organization's mission answer?",
+              "options": [
+                "The quarterly targets the team commits to hitting",
+                "The enduring reason the organization exists",
+                "The specific behaviors the organization rewards",
+                "The competitive trade-offs about where to play"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "type": "mc",
+              "concept": "founding documents",
+              "question": "Why does Johnson say founding documents are what make a team scalable?",
+              "options": [
+                "Because investors demand a full set of them before they will fund a company",
+                "Because they remove the need to hire any experienced managers as you grow",
+                "Because undocumented intent transmits by osmosis, which fails as you add people and time zones",
+                "Because they let the founders step back and take much longer vacations"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "type": "mc",
+              "concept": "strategy",
+              "question": "What distinguishes a real strategy from a fake one, per the lesson?",
+              "options": [
+                "A real strategy names explicit trade-offs about where to play and what not to do",
+                "A real strategy is the one with the largest budget attached to it",
+                "A real strategy avoids any language a competitor might also use",
+                "A real strategy is written by the CEO rather than by a team"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "type": "mc",
+              "concept": "vision",
+              "question": "How does vision differ from mission?",
+              "options": [
+                "Vision lists the company's values; mission lists its trade-offs",
+                "Vision is the enduring why; mission is the few-year picture",
+                "Vision and mission are two names for the same document",
+                "Vision is a concrete few-year picture; mission is the enduring why"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "type": "mc",
+              "concept": "operating principles",
+              "question": "What is the job of team-level operating principles?",
+              "options": [
+                "To translate company values into how a specific team works day to day",
+                "To set the company's overall mission for the next decade",
+                "To replace the company's values with the team's own preferences",
+                "To document each team member's personal working style"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "type": "mc",
+              "concept": "values",
+              "question": "What makes a set of values useful rather than decorative?",
+              "options": [
+                "They are printed on the office wall and the careers page",
+                "They are specific enough to guide a real decision and name what won't be tolerated",
+                "They are broad enough to fit any company in any industry",
+                "They are approved by the board before being shared internally"
+              ],
+              "correctIndex": 1
+            }
+          ]
+        }
+      },
+      {
+        "key": "planning-and-cadence",
+        "title": "Planning, Goals, and the Operating Cadence",
+        "focus": "Turns strategy into goals and, crucially, into a repeating rhythm — the calendar of the business — so that intent actually gets executed across time zones.",
+        "objectives": [
+          "Translate strategy into goals using clear ownership and timeframes",
+          "Explain the 'who does what by when' discipline behind accountable goals",
+          "Design an operating cadence of reviews and rhythms that fits a distributed org"
+        ],
+        "concepts": [
+          "goals and OKRs",
+          "operating cadence",
+          "who does what by when",
+          "calendar of the business",
+          "planning process",
+          "reviews and rhythms"
+        ],
+        "sections": [
+          {
+            "heading": "Goals turn strategy into commitments",
+            "text": "Strategy is direction; **goals and OKRs** are the commitments that make it real. Johnson is pragmatic about the format — objectives with measurable key results, or plain prioritized goals — as long as they're few, ownable, and measurable. The failure mode she warns against is a goal so vague or so shared that no one is actually on the hook for it. A goal owned by 'the team' is a goal owned by no one.\n\nThe fix is her recurring discipline: **who does what by when**. Every commitment names a single owner, a specific deliverable, and a date. It sounds almost too simple, but most execution failures trace back to a missing one of those three. Without an owner, work stalls; without a date, it drifts; without a clear deliverable, people do adjacent things and call it done."
+          },
+          {
+            "heading": "The cadence is the system",
+            "text": "Johnson's central operating idea is that a plan without a rhythm dies. The **operating cadence** is the repeating structure of meetings, reviews, and check-ins that keeps goals alive between the annual kickoff and the year-end — the heartbeat that converts a static plan into sustained execution. Annual planning sets direction, quarterly reviews course-correct, weekly rhythms surface blockers, and each layer has a defined purpose so meetings aren't ceremonial.\n\nThis is the **calendar of the business**: a predictable, published schedule of when planning happens, when reviews happen, when goals get scored. Its value is that it makes execution boring in the best sense — people stop wondering when the next checkpoint is and start preparing for it. A good cadence removes the anxiety of ad hoc; everyone knows the beat."
+          },
+          {
+            "heading": "Design the cadence for your actual org",
+            "text": "A cadence has to fit the org it runs. Johnson stresses that **reviews and rhythms** should be intentional about who's in the room and what decision each meeting exists to make — otherwise you accrete status meetings that inform no decision. For a distributed org, the design constraint is human: every synchronous review you schedule taxes someone, and for a night-shift Manila team, a poorly-placed 'quick sync' lands in the hardest part of their day.\n\nSo you design for asymmetry: push status and updates to written, async formats that don't require anyone to be awake at a bad hour, and reserve precious synchronous time for the decisions and debates that genuinely need real-time back-and-forth. The **planning process** and its cadence are where your values about respecting people's time either show up or don't."
+          }
+        ],
+        "example": {
+          "title": "An operating cadence that doesn't punish the night shift",
+          "text": "You inherit a tangle of standing meetings, several of which force your Manila SMB CSM team into synchronous calls during the roughest stretch of their night shift. You redesign the **operating cadence**: quarterly goals are set in a written planning doc every team contributes to async; weekly status moves to a shared written update with no meeting; and you protect one genuinely synchronous review for cross-team decisions, placed in the overlap window that's least brutal for Manila. Each surviving meeting now has a stated decision it exists to make, and every goal in the doc carries a **who does what by when** line. The team stops guessing when the next checkpoint is — the **calendar of the business** is published — and the night shift stops paying for meetings that could have been documents."
+        },
+        "pauseAndThink": {
+          "question": "Why does Johnson say a plan without an operating cadence dies?",
+          "answer": "Because goals set once at an annual kickoff decay without a repeating structure to keep them alive. The operating cadence — annual planning, quarterly reviews, weekly rhythms — is the heartbeat that course-corrects, surfaces blockers, and scores progress between checkpoints. Without it, execution drifts, no one knows when the next checkpoint is, and the plan becomes a document nobody revisits. The cadence, not the plan, is what actually produces sustained execution."
+        },
+        "glossary": [
+          {
+            "term": "Goals and OKRs",
+            "definition": "The measurable commitments that translate strategy into work — objectives with key results, or prioritized goals, as long as they're few, ownable, and measurable."
+          },
+          {
+            "term": "Operating cadence",
+            "definition": "The repeating structure of planning, reviews, and check-ins that keeps goals alive and converts a static plan into sustained execution."
+          },
+          {
+            "term": "Who does what by when",
+            "definition": "Johnson's accountability discipline: every commitment names a single owner, a specific deliverable, and a date."
+          },
+          {
+            "term": "Calendar of the business",
+            "definition": "The predictable, published schedule of when planning, reviews, and goal-scoring happen across the year."
+          },
+          {
+            "term": "Planning process",
+            "definition": "The structured way an org sets direction and goals — annual for direction, quarterly for course-correction."
+          },
+          {
+            "term": "Reviews and rhythms",
+            "definition": "The recurring meetings of the cadence, each with a defined purpose and a decision it exists to make."
+          }
+        ],
+        "insights": [
+          "Most execution failures trace to a missing piece of **who does what by when** — no owner, no date, or no clear deliverable.",
+          "The **operating cadence** is the system; a plan without a repeating rhythm decays between the kickoff and year-end.",
+          "In a distributed org, every synchronous review taxes someone — push status to **async** and reserve real-time slots for genuine decisions."
+        ],
+        "action": "Audit your standing meetings this week: for each, write the single decision it exists to make; kill or convert to async any that inform no decision, especially ones landing in the Manila night shift's hardest hours.",
+        "leadershipTakeaway": "Your **operating cadence** encodes your values about people's time — respecting a night shift by moving status to writing is a leadership statement, not just a scheduling tweak.",
+        "productivityTip": "Add a **who does what by when** line to every goal and action item; the three fields — owner, deliverable, date — catch the drift before it starts.",
+        "discussionQ": "Which of your recurring meetings would survive if you had to name the specific decision each one exists to make — and which are really status that belongs in a document?",
+        "quiz": {
+          "questions": [
+            {
+              "type": "mc",
+              "concept": "who does what by when",
+              "question": "What three elements does Johnson's 'who does what by when' discipline require?",
+              "options": [
+                "A budget, a headcount, and an executive sponsor",
+                "A single owner, a specific deliverable, and a date",
+                "A meeting, a slide deck, and a follow-up email",
+                "A KPI, a dashboard, and a quarterly bonus"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "type": "mc",
+              "concept": "operating cadence",
+              "question": "What is the role of the operating cadence?",
+              "options": [
+                "To replace goals with a series of status meetings",
+                "To set the company's mission at the annual kickoff",
+                "To keep goals alive and convert a static plan into sustained execution",
+                "To reduce the number of people who need to attend planning"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "type": "mc",
+              "concept": "goals and OKRs",
+              "question": "What failure mode does Johnson warn about when setting goals?",
+              "options": [
+                "A goal so vague or so shared that no one is actually on the hook for it",
+                "A goal that names a single owner and a specific deadline",
+                "A goal written down in the quarterly planning document",
+                "A goal that is measurable and tied to the strategy"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "type": "mc",
+              "concept": "reviews and rhythms",
+              "question": "How should each meeting in the cadence be designed?",
+              "options": [
+                "To include as many people as possible for transparency",
+                "To recur on the same day so no one forgets it exists",
+                "To always run for exactly thirty minutes regardless of topic",
+                "To be intentional about who's in the room and what decision it makes"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "type": "mc",
+              "concept": "calendar of the business",
+              "question": "What is the main value of publishing a calendar of the business?",
+              "options": [
+                "It lets managers cancel meetings without warning the team",
+                "People stop wondering when the next checkpoint is and prepare for it",
+                "It guarantees every goal will be hit by year-end",
+                "It shifts all planning responsibility onto the executive team"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "type": "mc",
+              "concept": "planning process",
+              "question": "For a distributed org with a night-shift team, what cadence design does the lesson recommend?",
+              "options": [
+                "Schedule every review during core US hours regardless of impact",
+                "Eliminate all synchronous meetings and communicate only in writing",
+                "Push status to async and reserve synchronous time for real decisions",
+                "Rotate the pain by moving every meeting to a new time each week"
+              ],
+              "correctIndex": 2
+            }
+          ]
+        }
+      },
+      {
+        "key": "hiring-as-a-system",
+        "title": "Hiring as a System: Scorecards, Structured Interviews, and Closing",
+        "focus": "Replaces gut-feel hiring with a repeatable system — define the role, interview against it, reduce bias in the debrief, and close deliberately.",
+        "objectives": [
+          "Build a role scorecard that defines outcomes and competencies before sourcing",
+          "Run structured interviews against a rubric to reduce bias",
+          "Make hiring decisions in a disciplined debrief and close the candidate"
+        ],
+        "concepts": [
+          "role scorecard",
+          "structured interviewing",
+          "interview loop and rubric",
+          "reducing bias",
+          "the debrief",
+          "closing the candidate"
+        ],
+        "sections": [
+          {
+            "heading": "Define the role before you meet anyone",
+            "text": "Johnson's hiring system starts before sourcing, with a **role scorecard**: a written definition of the outcomes the person must achieve and the competencies required to achieve them. Not a list of responsibilities — a list of what success actually looks like in the first year, and the handful of capabilities that predict it. The scorecard is the standard everything downstream measures against.\n\nThe discipline it enforces is honesty about **must-haves** versus nice-to-haves. Most job descriptions are wish lists that screen out strong candidates and give the panel no shared bar. Writing the scorecard forces you and the hiring team to agree, in advance and in writing, on what genuinely predicts success in the role — before any charming candidate tempts you to move the goalposts."
+          },
+          {
+            "heading": "Structured interviews beat impressions",
+            "text": "**Structured interviewing** means every candidate is assessed against the same competencies with the same planned questions, by an **interview loop** where each interviewer owns a specific area and scores against a shared **rubric**. This is the opposite of the common pattern where five people each 'have a conversation' and then compare vibes. Divided coverage plus consistent questions produces evidence you can actually compare across candidates.\n\nJohnson emphasizes this is primarily about **reducing bias**. Unstructured interviews reward similarity-to-the-interviewer and confident self-presentation — proxies for privilege, not performance. A rubric that forces each interviewer to cite specific evidence for a competency, rather than a global 'I liked them,' is a bias-reduction machine. It also protects a strong candidate who happens to interview quietly from being lost to a louder, weaker one."
+          },
+          {
+            "heading": "Decide in the debrief, then close",
+            "text": "The **debrief** is where the system either holds or collapses. Johnson's rule is to gather evidence before opinions: interviewers submit their written assessments against the rubric before the group discusses, so the room isn't anchored by whoever speaks first or loudest. The conversation is then a structured weighing of evidence against the scorecard, ending in a clear decision with an owner — not a diffuse 'let's keep looking.'\n\nHiring doesn't end at 'yes.' **Closing the candidate** is its own deliberate step: understanding what actually motivates them, addressing their real hesitations, and selling the role and the growth honestly rather than overselling. Johnson treats a botched close — losing a great candidate you'd already decided to hire — as an unforced error, because the whole expensive funnel is wasted if the last mile fails."
+          }
+        ],
+        "example": {
+          "title": "Hiring an SMB CSM without repeating last year's mis-hire",
+          "text": "You're hiring a Manila SMB CSM and want to stop the pattern of charming-in-the-interview, struggling-on-the-job hires. You write a **role scorecard** first: the year-one outcomes (drive adoption to a retention threshold across a book of cost-sensitive agents) and the three competencies that predict it (resilience with frustrated customers, product-learning speed, and clear written follow-up). You build an **interview loop** where each interviewer owns one competency and scores against a **rubric** with required evidence. In the **debrief**, everyone submits written scores before anyone talks, so the loudest voice doesn't anchor the room. When you decide yes, you treat **closing** as its own step — you ask what the candidate actually wants from the next two years and speak to it honestly instead of assuming the offer sells itself."
+        },
+        "pauseAndThink": {
+          "question": "Why does Johnson require interviewers to submit written assessments before the debrief discussion begins?",
+          "answer": "To reduce anchoring bias. If discussion starts first, the room gets anchored by whoever speaks first or most confidently, and other interviewers unconsciously conform. Gathering independent written evidence against the rubric first preserves each interviewer's genuine read, turns the debrief into a structured weighing of evidence against the scorecard rather than a vibe-off, and protects strong-but-quiet candidates from being lost to louder impressions."
+        },
+        "glossary": [
+          {
+            "term": "Role scorecard",
+            "definition": "A written definition of the outcomes a hire must achieve and the competencies that predict them, drafted before sourcing."
+          },
+          {
+            "term": "Structured interviewing",
+            "definition": "Assessing every candidate against the same competencies with the same planned questions and a shared scoring standard."
+          },
+          {
+            "term": "Interview loop and rubric",
+            "definition": "A panel where each interviewer owns a specific competency and scores against a common rubric requiring cited evidence."
+          },
+          {
+            "term": "Reducing bias",
+            "definition": "The core purpose of structure — replacing similarity-to-interviewer and confident self-presentation with comparable evidence."
+          },
+          {
+            "term": "The debrief",
+            "definition": "The decision meeting where interviewers submit written assessments first, then weigh evidence against the scorecard to a clear call."
+          },
+          {
+            "term": "Closing the candidate",
+            "definition": "The deliberate final step of understanding a candidate's motivations, addressing hesitations, and selling the role honestly."
+          }
+        ],
+        "insights": [
+          "Write the **role scorecard** before sourcing — outcomes and must-have competencies — so no charming candidate moves the goalposts later.",
+          "Structure is primarily a **bias-reduction** tool: a rubric demanding cited evidence beats five people comparing vibes.",
+          "Losing a candidate you'd already decided to hire is an unforced error — **closing** is its own step, not an afterthought."
+        ],
+        "action": "For your next open CSM role, write the **role scorecard** first — year-one outcomes plus three predictive competencies — and assign each to a specific interviewer with a rubric before you post the job.",
+        "leadershipTakeaway": "A hiring **system** is how you scale judgment: it lets a panel who don't share your instincts still hire to your bar, which is the only way hiring survives growth.",
+        "productivityTip": "Require written **rubric** scores submitted before the **debrief** opens; it prevents the loudest voice from anchoring the room and makes the meeting shorter and better.",
+        "discussionQ": "Where in your current hiring do impressions still substitute for evidence — and which competency, if you scored it with a rubric, would have changed a past decision?",
+        "quiz": {
+          "questions": [
+            {
+              "type": "mc",
+              "concept": "role scorecard",
+              "question": "What does a role scorecard define, and when is it written?",
+              "options": [
+                "A ranked list of candidates, written after the interview loop",
+                "The outcomes and competencies that predict success, written before sourcing",
+                "The salary band and equity grant, written when the offer goes out",
+                "The interview questions, written during the debrief meeting"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "type": "mc",
+              "concept": "reducing bias",
+              "question": "According to Johnson, what is the primary purpose of structured interviewing?",
+              "options": [
+                "To make the interview process faster and cheaper to run",
+                "To let each interviewer ask whatever they find interesting",
+                "To reduce bias by replacing impressions with comparable evidence",
+                "To ensure the most confident candidate always wins the role"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "type": "mc",
+              "concept": "the debrief",
+              "question": "What is Johnson's rule for running the debrief?",
+              "options": [
+                "Gather written assessments before opinions so the room isn't anchored",
+                "Let the hiring manager state their view first to set direction",
+                "Discuss openly and reach consensus before anyone writes anything",
+                "Skip the debrief when interviewers seem to broadly agree"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "type": "mc",
+              "concept": "interview loop and rubric",
+              "question": "How is an interview loop structured to produce comparable evidence?",
+              "options": [
+                "Every interviewer covers every topic to get full coverage",
+                "Interviewers each have a free-form conversation and compare notes",
+                "One senior interviewer decides and the rest simply ratify it",
+                "Each interviewer owns a specific competency and scores against a shared rubric"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "type": "mc",
+              "concept": "closing the candidate",
+              "question": "Why does Johnson treat closing as its own deliberate step?",
+              "options": [
+                "Because a great offer always sells itself without any effort",
+                "Because losing a candidate you'd decided to hire wastes the whole funnel",
+                "Because closing is legally required before extending an offer",
+                "Because it lets you renegotiate the scorecard after deciding"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "type": "mc",
+              "concept": "role scorecard",
+              "question": "What discipline does writing a scorecard force on the hiring team?",
+              "options": [
+                "Listing every possible responsibility the role might ever touch",
+                "Agreeing to interview at least ten candidates per opening",
+                "Honesty about must-haves versus nice-to-haves, agreed in advance",
+                "Deferring to the most senior person's gut feeling about fit"
+              ],
+              "correctIndex": 2
+            }
+          ]
+        }
+      },
+      {
+        "key": "onboarding-and-ramping",
+        "title": "Onboarding and Ramping: Designing the First 90 Days",
+        "focus": "Treats onboarding as a designed system rather than a welcome email — a structured 30/60/90 ramp that gets new people productive fast and signals your culture on day one.",
+        "objectives": [
+          "Explain why onboarding is a designed system, not an event",
+          "Build a 30/60/90 ramp plan with milestones and clear expectations",
+          "Use buddies, documentation, and early feedback to accelerate time-to-productivity"
+        ],
+        "concepts": [
+          "onboarding system",
+          "ramp plan",
+          "30/60/90 milestones",
+          "onboarding buddy",
+          "time to productivity",
+          "early expectations"
+        ],
+        "sections": [
+          {
+            "heading": "Onboarding is a system you owe people",
+            "text": "Johnson is blunt that the hardest part of hiring isn't the offer — it's what happens after. A great candidate joins into chaos, spends three months guessing at norms, and either leaves or calcifies into mediocre performance. So she treats **onboarding** as a designed **system**, not a welcome lunch: a deliberate sequence that takes a new hire from day one to genuine contribution.\n\nThe first days also teach the new person what your organization actually values, regardless of what your values doc says. An onboarding that's organized, documented, and attentive signals that you take execution and people seriously. One that's improvised signals the opposite — and that first impression is expensive to reverse. Every new CSM you bring into the Manila or MidMarket teams is forming their model of 'how we operate here' in week one."
+          },
+          {
+            "heading": "The 30/60/90 ramp plan",
+            "text": "The core artifact is a **ramp plan** with **30/60/90 milestones** — an explicit picture of what 'ramped' looks like at each checkpoint. Thirty days is usually about learning: the product, the systems, the customers, the people. Sixty days shifts toward doing with support. Ninety days is contributing at or near the expected bar. Naming these turns a vague 'settling in' into measurable progress both you and the new hire can see.\n\nThe plan's real gift is **early expectations** made explicit. A new CSM shouldn't have to guess whether they're behind. When the milestones are written — 'by day 30 you can run a standard onboarding call solo' — the person can self-assess and you can intervene early if the ramp is off, instead of discovering a problem at the 90-day mark when it's harder to fix."
+          },
+          {
+            "heading": "Buddies, docs, and early feedback",
+            "text": "Johnson recommends assigning an **onboarding buddy** — a peer, not the manager — who answers the hundred small questions a new hire is embarrassed to ask upward. This offloads the informal knowledge transfer that no document fully captures and gives the new person a safe relationship from day one, which matters even more remotely, where a new Manila CSM can't just turn to the next desk.\n\nGood documentation does the heavy lifting the buddy shouldn't have to — process docs, the founding documents, a 'how we work' guide — so **time to productivity** shrinks. And you close the loop with early, frequent feedback: a 30-day check isn't just for you to assess them, it's for them to tell you where the onboarding itself is broken. The best onboarding systems improve every hire, because each new person is a test of the system."
+          }
+        ],
+        "example": {
+          "title": "A ramp plan that catches a struggling CSM at day 30, not day 90",
+          "text": "You're onboarding a new SMB CSM in Manila and want to stop losing the first quarter to guesswork. You build a **ramp plan** with **30/60/90 milestones**: by day 30 they can navigate the Lofty product and shadow onboarding calls; by day 60 they run standard calls with a buddy listening; by day 90 they own a book at the team's adoption bar. You assign an **onboarding buddy** from the SMB team — a peer they can ask anything without feeling judged, which matters because there's no next desk to lean over to. At the 30-day check you notice they're behind on product fluency, so you adjust the ramp immediately instead of discovering the gap when their book is already churning. And you ask them what about the **onboarding** itself slowed them down, so the next hire gets a better version."
+        },
+        "pauseAndThink": {
+          "question": "Why does Johnson assign an onboarding buddy who is a peer rather than the new hire's manager?",
+          "answer": "Because new hires have a hundred small questions they're embarrassed to ask their manager, and a peer buddy gives them a safe, low-stakes relationship to ask them from day one. It offloads the informal knowledge transfer no document fully captures, accelerates time to productivity, and matters even more remotely where a new hire can't lean over to the next desk. The manager still owns the ramp plan and milestones; the buddy owns the small, human questions."
+        },
+        "glossary": [
+          {
+            "term": "Onboarding system",
+            "definition": "A designed sequence that takes a new hire from day one to genuine contribution — not a welcome event."
+          },
+          {
+            "term": "Ramp plan",
+            "definition": "The explicit plan describing what a new hire should learn and achieve at each stage of onboarding."
+          },
+          {
+            "term": "30/60/90 milestones",
+            "definition": "Checkpoints defining what 'ramped' looks like at 30, 60, and 90 days — roughly learning, doing with support, then contributing."
+          },
+          {
+            "term": "Onboarding buddy",
+            "definition": "A peer assigned to answer a new hire's informal questions and offer a safe relationship from day one."
+          },
+          {
+            "term": "Time to productivity",
+            "definition": "How quickly a new hire reaches expected contribution — the metric a good onboarding system shrinks."
+          },
+          {
+            "term": "Early expectations",
+            "definition": "Written milestones that let a new hire self-assess and let the manager intervene before problems calcify."
+          }
+        ],
+        "insights": [
+          "Onboarding is a **system you owe people**; week-one experience teaches the new hire what you actually value, whatever the values doc claims.",
+          "A written **ramp plan** with 30/60/90 milestones turns vague 'settling in' into progress you can both see and course-correct early.",
+          "Every new hire is a **test of the onboarding system** — ask them what slowed them down so the next person gets a better version."
+        ],
+        "action": "Write a 30/60/90 **ramp plan** for your next CSM hire with one concrete, observable milestone at each checkpoint, and assign a peer **onboarding buddy** before their start date.",
+        "leadershipTakeaway": "The organization new hires believe in is the one they experience in week one — an improvised onboarding quietly overrides every value you've written down.",
+        "productivityTip": "At each new hire's 30-day check, ask what about the **onboarding** slowed them down and fix one thing; the system compounds across every future hire.",
+        "discussionQ": "If you mapped what a new CSM actually experiences in their first week, would it match the values you claim — and where's the biggest gap?",
+        "quiz": {
+          "questions": [
+            {
+              "type": "mc",
+              "concept": "onboarding system",
+              "question": "How does Johnson frame onboarding?",
+              "options": [
+                "As a welcome lunch and a stack of paperwork to complete",
+                "As a designed system that takes a new hire to genuine contribution",
+                "As the recruiter's responsibility once the offer is signed",
+                "As an optional step for experienced senior hires"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "type": "mc",
+              "concept": "30/60/90 milestones",
+              "question": "What roughly characterizes the three stages of a 30/60/90 ramp?",
+              "options": [
+                "Interviewing, negotiating, and signing the offer",
+                "Probation, review, and termination decision",
+                "Learning, doing with support, then contributing at the bar",
+                "Shadowing, vacation, and first performance rating"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "type": "mc",
+              "concept": "onboarding buddy",
+              "question": "Why is the onboarding buddy a peer rather than the manager?",
+              "options": [
+                "So the new hire can ask small questions without feeling judged",
+                "So the manager avoids any responsibility for the ramp",
+                "So the buddy can formally rate the new hire's performance",
+                "So the company can reduce the number of managers it needs"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "type": "mc",
+              "concept": "early expectations",
+              "question": "What is the real gift of written ramp milestones?",
+              "options": [
+                "They let HR calculate the exact start-date bonus",
+                "They guarantee the new hire will pass their probation period",
+                "They let the manager delay all feedback until day 90",
+                "They let the new hire self-assess and the manager intervene early"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "type": "mc",
+              "concept": "onboarding system",
+              "question": "What does a new hire's first-week experience teach them?",
+              "options": [
+                "What the organization actually values, regardless of the values doc",
+                "The exact compensation of their peers on the team",
+                "Which colleagues will be promoted in the next cycle",
+                "The company's long-term financial forecast"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "type": "mc",
+              "concept": "time to productivity",
+              "question": "How does a good onboarding system keep improving?",
+              "options": [
+                "By keeping the ramp plan secret from new hires",
+                "By treating each new hire as a test and asking what slowed them down",
+                "By making every hire ramp faster than the last regardless of role",
+                "By removing the buddy once documentation exists"
+              ],
+              "correctIndex": 1
+            }
+          ]
+        }
+      },
+      {
+        "key": "feedback-mechanics",
+        "title": "Feedback: The Formula and Building a Feedback Culture",
+        "focus": "Gives you the mechanics of specific, behavioral feedback — the situation-behavior-impact formula — and the harder work of building a team where feedback flows in every direction.",
+        "objectives": [
+          "Deliver feedback using a specific behavioral formula rather than vague judgments",
+          "Receive feedback in a way that keeps it flowing toward you",
+          "Build a culture where feedback is frequent, expected, and multidirectional"
+        ],
+        "concepts": [
+          "feedback formula",
+          "situation-behavior-impact",
+          "specific vs vague feedback",
+          "receiving feedback",
+          "feedback culture",
+          "feedback as a gift"
+        ],
+        "sections": [
+          {
+            "heading": "The feedback formula",
+            "text": "Most feedback fails because it's a verdict, not a description. 'You need to be more strategic' tells someone they're falling short and gives them nothing to change. Johnson's **feedback formula** fixes this by anchoring feedback to observable behavior: describe the **situation**, the specific **behavior** you observed, and its **impact**. 'In yesterday's exec review (situation), you presented the churn number without the plan attached (behavior), and it left the room worried we weren't on top of it (impact).'\n\nThe power of **situation-behavior-impact** is that it's about something real and shared, not the person's character. It separates the behavior — changeable — from identity — not. That makes it hearable, which is the whole point: feedback the person can't hear is wasted, no matter how correct. **Specific vs vague** is the entire difference between feedback that changes behavior and feedback that just wounds."
+          },
+          {
+            "heading": "Receiving is the harder half",
+            "text": "Johnson argues that how you take feedback determines how much of it you'll ever get. **Receiving feedback** well means resisting the reflex to defend, explain, or counterattack, and instead getting curious — asking questions to understand before you decide whether to act. Every time you react badly to feedback, you teach the giver never to bother again, and you're the last to know when you've gone off track.\n\nThis is doubly true for a leader, because power suppresses upward feedback. Your Manila leads and US CSMs will not naturally tell you hard truths across a hierarchy and a cultural distance. You have to actively pull it — ask for it specifically, thank people visibly for it, and act on some of it publicly — or you'll operate on a flattering, incomplete picture. The person most insulated from feedback in your org is you."
+          },
+          {
+            "heading": "Culture is feedback made routine",
+            "text": "A **feedback culture** is one where feedback is frequent, expected, and flows in every direction — not hoarded for the annual review. Johnson's stance is that **feedback is a gift**: withholding it to be 'nice' is actually the unkind choice, because it denies someone the information they need to grow. The kind act is the timely, specific, well-delivered version.\n\nYou build this culture the way you build any norm — by modeling it relentlessly and making it safe. When you visibly ask for feedback and respond to it without punishing the giver, you signal it's safe to do the same. When you deliver hard feedback with genuine care, you show it's about growth, not gotcha. Across your Manila, US, and China teams, the norm won't set itself; the culture is whatever behavior you consistently reward and model."
+          }
+        ],
+        "example": {
+          "title": "Rewriting a verdict into feedback your US lead can act on",
+          "text": "Your US global support lead keeps surfacing problems in executive meetings without a proposed fix, and your instinct is to tell them to 'be more prepared' — a verdict that will sting and change nothing. Instead you use the **feedback formula**: 'In this morning's escalation review (situation), you raised the SLA miss but didn't bring a recovery plan (behavior), so the VP left thinking support was reactive (impact).' It's specific, behavioral, and hearable. Then you model the other half — you ask them for **feedback** on how you run those reviews, and when they tell you the agenda is too rushed for Manila to prep, you thank them and change it. That exchange, repeated, is how a **feedback culture** actually forms across the hierarchy and the distance — you pulled the upward feedback that power would otherwise have suppressed."
+        },
+        "pauseAndThink": {
+          "question": "Why does Johnson say the way you receive feedback determines how much you'll get?",
+          "answer": "Because every time you defend, explain, or counterattack in response to feedback, you teach the giver it isn't worth the risk and they stop offering it. This is especially dangerous for a leader, since power already suppresses upward feedback — your reports won't naturally tell you hard truths across hierarchy and cultural distance. If you react badly, you end up operating on a flattering, incomplete picture and are the last to know when you've gone off track. Receiving well — getting curious instead of defensive — is what keeps feedback flowing toward you."
+        },
+        "glossary": [
+          {
+            "term": "Feedback formula",
+            "definition": "Johnson's structure for delivering feedback anchored to observable behavior rather than character judgments."
+          },
+          {
+            "term": "Situation-behavior-impact",
+            "definition": "The three parts of good feedback: the context, the specific behavior observed, and the effect it had."
+          },
+          {
+            "term": "Specific vs vague feedback",
+            "definition": "The difference between behavior a person can change and a verdict that only wounds; specificity is what makes feedback actionable."
+          },
+          {
+            "term": "Receiving feedback",
+            "definition": "Taking feedback with curiosity rather than defensiveness, which determines how much feedback you'll continue to get."
+          },
+          {
+            "term": "Feedback culture",
+            "definition": "A norm where feedback is frequent, expected, and multidirectional rather than saved for annual reviews."
+          },
+          {
+            "term": "Feedback as a gift",
+            "definition": "The stance that withholding feedback to be 'nice' is unkind, because it denies someone the information they need to grow."
+          }
+        ],
+        "insights": [
+          "Anchor feedback to **situation-behavior-impact** — it separates changeable behavior from identity, which is what makes it hearable.",
+          "How you **receive** feedback sets how much you get; react badly once and you teach the giver never to risk it again.",
+          "Power suppresses upward feedback, so the person most insulated from it in your org is **you** — you have to actively pull it."
+        ],
+        "action": "Take one piece of vague feedback you're sitting on and rewrite it into **situation-behavior-impact** before you deliver it, then ask that same person for one piece of feedback on you.",
+        "leadershipTakeaway": "**Feedback is a gift**, and withholding it to spare feelings is the unkind choice — the caring act is the specific, timely, well-delivered version.",
+        "productivityTip": "Keep the three-word prompt 'situation, behavior, impact' in your notes; drafting hard feedback against it turns a stewing verdict into something deliverable in two minutes.",
+        "discussionQ": "Who on your team has stopped giving you honest feedback because of how you once reacted — and what would it take to reopen that channel?",
+        "quiz": {
+          "questions": [
+            {
+              "type": "mc",
+              "concept": "situation-behavior-impact",
+              "question": "What are the three components of Johnson's feedback formula?",
+              "options": [
+                "Praise, criticism, and a rating on a five-point scale",
+                "The situation, the specific behavior observed, and its impact",
+                "The person's strengths, weaknesses, and career aspirations",
+                "A goal, a deadline, and a consequence for missing it"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "type": "mc",
+              "concept": "specific vs vague feedback",
+              "question": "Why does 'you need to be more strategic' fail as feedback?",
+              "options": [
+                "It is too positive to motivate any real change",
+                "It should only ever be delivered in a written review",
+                "It is a verdict on the person that gives them nothing to change",
+                "It names a behavior but omits the required deadline"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "type": "mc",
+              "concept": "feedback culture",
+              "question": "What characterizes a healthy feedback culture in Johnson's view?",
+              "options": [
+                "Feedback is delivered only by managers to their reports",
+                "Feedback is saved and batched for the annual review",
+                "Feedback is limited to positive recognition to protect morale",
+                "Feedback is frequent, expected, and flows in every direction"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "type": "mc",
+              "concept": "receiving feedback",
+              "question": "What does receiving feedback well require?",
+              "options": [
+                "Resisting the reflex to defend and getting curious instead",
+                "Explaining immediately why the feedback is mistaken",
+                "Waiting for the annual review to respond to it",
+                "Rating the giver on how well they delivered it"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "type": "mc",
+              "concept": "feedback as a gift",
+              "question": "Why does Johnson call withholding feedback the unkind choice?",
+              "options": [
+                "Because it violates most companies' HR policies",
+                "Because it denies someone the information they need to grow",
+                "Because it makes the manager's job harder later on",
+                "Because it means the annual review will take longer"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "type": "mc",
+              "concept": "receiving feedback",
+              "question": "Why is a leader especially at risk of not hearing hard truths?",
+              "options": [
+                "Because leaders are too busy to attend feedback sessions",
+                "Because feedback formulas don't apply to senior roles",
+                "Because power suppresses upward feedback, so it must be actively pulled",
+                "Because reports are contractually barred from criticizing leaders"
+              ],
+              "correctIndex": 2
+            }
+          ]
+        }
+      },
+      {
+        "key": "performance-management",
+        "title": "Performance Management: Reviews, Calibration, and Managing Out",
+        "focus": "Covers the formal machinery of judging performance fairly — reviews, calibration, and ratings — and the humane, clear handling of underperformance the book insists on.",
+        "objectives": [
+          "Run a performance review that assesses against expectations without surprises",
+          "Explain the purpose of calibration and consistent ratings across managers",
+          "Handle underperformance clearly and humanely through PIPs and managing out"
+        ],
+        "concepts": [
+          "performance review",
+          "calibration",
+          "ratings distribution",
+          "no surprises principle",
+          "performance improvement plan",
+          "managing out"
+        ],
+        "sections": [
+          {
+            "heading": "Reviews assess against expectations, and never surprise",
+            "text": "A **performance review** is the formal, periodic assessment of someone against the expectations of their role — and Johnson's governing rule is the **no surprises principle**: nothing in a review should be news. If a review is the first time someone hears they're underperforming, the failure is the manager's, not the employee's, because the ongoing feedback that should have surfaced it never happened. The review consolidates and formalizes; it doesn't reveal.\n\nThat makes the review only as good as the feedback culture underneath it. The formal document exists to create a shared, documented record and a deliberate moment to look at the whole arc — trajectory, patterns, growth — rather than the latest incident. It's the periodic zoom-out that day-to-day feedback can't provide, but it depends entirely on that day-to-day feedback having happened."
+          },
+          {
+            "heading": "Calibration keeps ratings fair",
+            "text": "Left alone, managers rate inconsistently — some are lenient, some harsh, and 'exceeds expectations' means different things on different teams. **Calibration** is the process where managers compare ratings across people and teams to enforce a consistent bar, so a rating means the same thing regardless of who assigned it. It surfaces the manager who inflates everyone and the one who under-credits a strong performer.\n\nJohnson is measured about the **ratings distribution**: forcing a rigid curve can be corrosive, but some shared reference for what each level means is necessary or the whole system loses meaning. The goal isn't a quota; it's consistency and fairness. For you, calibrating across the US MidMarket and Manila SMB CS teams is what stops a strong Manila CSM from being rated below a mediocre US one purely because their managers hold different bars."
+          },
+          {
+            "heading": "Underperformance: clear and humane",
+            "text": "Johnson refuses the false choice between clarity and kindness. When someone is underperforming, the humane path is to be direct and early — name the gap specifically, be explicit that it's serious, and give a real, supported chance to close it. A **performance improvement plan** does this formally: concrete expectations, a defined timeframe, and genuine support, so the person knows exactly where the bar is and has a fair shot at clearing it.\n\nWhen it doesn't work, **managing out** — done with dignity — is a kindness to everyone, including the person, who is usually struggling in a role that isn't right for them. Johnson's stance is that keeping a clearly-failing person in place out of conflict-avoidance is neither kind nor fair: it's unfair to the team carrying them, to your standards, and to the person denied the honest signal to move on. The cruelty is in the ambiguity, not in the clarity."
+          }
+        ],
+        "example": {
+          "title": "Calibrating across two CS teams and handling one clear gap",
+          "text": "Review season spans your indirectly-overseen US MidMarket and Manila SMB CSM teams, and you notice the two teams' managers hold different bars — a strong Manila CSM risks a lower rating than a middling US one. You run a **calibration** session so 'meets' and 'exceeds' mean the same thing across both, protecting the strong performer from a geography penalty. Separately, one CSM has been clearly under the adoption bar for two quarters. Following the **no surprises principle**, they've already heard this in ongoing feedback, so the **performance improvement plan** you write — specific targets, a real timeframe, concrete support — confirms rather than shocks. If it doesn't turn, you **manage them out** with dignity, because leaving them stuck in a role that isn't working is the least kind option for them and unfair to the team absorbing the gap."
+        },
+        "pauseAndThink": {
+          "question": "Why does Johnson insist a performance review should contain no surprises?",
+          "answer": "Because if a review is the first time someone hears they're underperforming, the ongoing feedback that should have surfaced it never happened — and that's the manager's failure, not the employee's. The review's job is to consolidate, formalize, and zoom out on the whole arc, not to reveal. A surprise in a review means the day-to-day feedback culture underneath it is broken, and it robs the person of the earlier chance to course-correct that they deserved."
+        },
+        "glossary": [
+          {
+            "term": "Performance review",
+            "definition": "The formal, periodic assessment of a person against role expectations, consolidating ongoing feedback into a documented record."
+          },
+          {
+            "term": "Calibration",
+            "definition": "The process where managers compare ratings across people and teams to enforce a consistent bar and reduce individual bias."
+          },
+          {
+            "term": "Ratings distribution",
+            "definition": "The shared reference for what each rating level means; useful for consistency, corrosive if forced into a rigid quota."
+          },
+          {
+            "term": "No surprises principle",
+            "definition": "The rule that nothing in a review should be news, because ongoing feedback should have surfaced it already."
+          },
+          {
+            "term": "Performance improvement plan",
+            "definition": "A formal plan with concrete expectations, a timeframe, and support that gives an underperformer a fair, clear chance to close a gap."
+          },
+          {
+            "term": "Managing out",
+            "definition": "Transitioning someone out of a role, done with dignity, when a real gap can't be closed — treated as a kindness over prolonged ambiguity."
+          }
+        ],
+        "insights": [
+          "The **no surprises principle** makes a review only as good as the day-to-day feedback beneath it — the review consolidates, it doesn't reveal.",
+          "**Calibration** protects a strong performer from a lenient-or-harsh-manager lottery by making a rating mean the same thing everywhere.",
+          "The cruelty in underperformance is the **ambiguity**, not the clarity — direct, early, supported honesty is the humane path."
+        ],
+        "action": "Before the next review cycle, list anyone whose rating might depend more on which team they're on than on their work, and plan a **calibration** conversation to align the bar across your US and Manila CS teams.",
+        "leadershipTakeaway": "Clarity and kindness are not opposites: keeping a clearly-failing person in place out of conflict-avoidance is unfair to them, to the team carrying them, and to your standards.",
+        "productivityTip": "Keep a running feedback log per report through the quarter; when review time comes, the **no surprises** document nearly writes itself and nothing has to be reconstructed from memory.",
+        "discussionQ": "Where have you avoided a hard performance conversation in the name of kindness — and who is actually paying for that avoidance right now?",
+        "quiz": {
+          "questions": [
+            {
+              "type": "mc",
+              "concept": "no surprises principle",
+              "question": "What does the 'no surprises' principle require of a performance review?",
+              "options": [
+                "That it be delivered in writing rather than in person",
+                "That nothing in it be news, because feedback surfaced it already",
+                "That it always result in a rating of 'meets expectations'",
+                "That it be scheduled at the same time every single quarter"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "type": "mc",
+              "concept": "calibration",
+              "question": "What problem does calibration solve?",
+              "options": [
+                "It sets each employee's compensation for the next year",
+                "It replaces ongoing feedback with a single annual event",
+                "It ensures a rating means the same thing across different managers",
+                "It forces every team into the exact same headcount"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "type": "mc",
+              "concept": "managing out",
+              "question": "How does Johnson frame managing someone out of a role?",
+              "options": [
+                "As a last resort to be delayed as long as humanly possible",
+                "As a purely legal process handled entirely by HR",
+                "As a punishment that should be visible to the whole team",
+                "As a kindness done with dignity when a real gap can't be closed"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "type": "mc",
+              "concept": "performance improvement plan",
+              "question": "What makes a performance improvement plan fair?",
+              "options": [
+                "Concrete expectations, a defined timeframe, and genuine support",
+                "A vague warning with no specific targets attached",
+                "A guarantee that the person will keep their role regardless",
+                "A secret timeline the employee is not told about"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "type": "mc",
+              "concept": "ratings distribution",
+              "question": "What is Johnson's measured view of ratings distributions?",
+              "options": [
+                "A rigid forced curve should be applied to every team",
+                "Ratings should be abolished so no one is ever compared",
+                "Some shared reference for each level is needed, but a rigid quota can be corrosive",
+                "Managers should each invent their own private rating scale"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "type": "mc",
+              "concept": "performance review",
+              "question": "What is the distinct value of the formal review, given ongoing feedback exists?",
+              "options": [
+                "It is the only time a manager is allowed to criticize anyone",
+                "It zooms out on the whole arc and creates a documented record",
+                "It replaces the need for any day-to-day feedback",
+                "It determines promotions without any manager input"
+              ],
+              "correctIndex": 1
+            }
+          ]
+        }
+      },
+      {
+        "key": "org-design-and-scaling-yourself",
+        "title": "Organizational Design and Scaling Yourself",
+        "focus": "Closes the arc where scaling ultimately lives — designing structure, spans and layers, and delegation so the org outgrows any single leader, including you.",
+        "objectives": [
+          "Apply principles of org design — structure, roles, spans, and layers",
+          "Use delegation and clear ownership to scale beyond your own capacity",
+          "Recognize when structure must change and redesign it deliberately"
+        ],
+        "concepts": [
+          "organizational design",
+          "spans and layers",
+          "roles and responsibilities",
+          "delegation",
+          "scaling yourself",
+          "directly responsible individual"
+        ],
+        "sections": [
+          {
+            "heading": "Structure follows strategy, not personalities",
+            "text": "**Organizational design** is the deliberate arrangement of people into teams, reporting lines, and roles to execute the strategy. Johnson's warning is that orgs tend to drift into structures shaped by personalities and history — this person happens to own that because they always have — rather than by what the strategy actually requires. Good design starts from the work: what has to get done, and what grouping of people and clear ownership makes that flow.\n\nThe primary design levers are **spans and layers**: how many people report to each manager (span) and how many management levels sit between the top and the front line (layers). Too many layers slows decisions and dilutes information as it travels; too wide a span means managers can't actually support their people. There's no universal right answer — it's a deliberate trade-off you tune to the work, not an accident you inherit."
+          },
+          {
+            "heading": "Clear roles and a single owner",
+            "text": "Structure only works if **roles and responsibilities** are unambiguous. Johnson's recurring device is the **directly responsible individual** — a named single owner for every important outcome, so accountability never diffuses into 'the team' or 'we.' When two people share ownership of a thing, often no one truly owns it; when a clear DRI is named, decisions get made and someone can be asked how it's going.\n\nThis matters acutely across your matrix — Manila, US, and China teams, direct and indirect reports, partnerships across org lines. In a distributed, cross-functional structure, ambiguity about who owns what is the default failure mode, and it compounds with distance and time zones. Naming a DRI for each outcome is how you keep work from falling into the seams between teams that never quite meet."
+          },
+          {
+            "heading": "Delegation is how you scale yourself",
+            "text": "The hardest scaling problem is you. As the org grows, the leader who stays the bottleneck — approving everything, owning every hard call — caps the whole team at their personal capacity. **Delegation** is the escape: handing real ownership, not just tasks, to people you've equipped to make the call. Johnson frames it as giving away the decision along with the context and the guardrails, then resisting the urge to take it back the moment it's done imperfectly.\n\n**Scaling yourself** means deliberately working out of every job as the org matures — building the documents, the cadence, the DRIs, and the judgment in others that let decisions happen three levels down without you. Everything earlier in this course serves that end: the founding documents, the operating cadence, the hiring and feedback systems all exist so the organization can eventually run on its systems and its people rather than on your presence in every room."
+          }
+        ],
+        "example": {
+          "title": "Redesigning your CS org so it stops running through you",
+          "text": "Your CS org has grown by accretion — indirect oversight of MidMarket and Manila SMB CSM teams, a US support lead, billing partnerships, China operations — and every cross-team decision still routes to you, because ownership was never designed, just inherited. You do deliberate **organizational design**: you examine your **spans and layers**, find you have too many one-off dotted lines diluting accountability, and name a **directly responsible individual** for each key outcome so work stops falling into the seams between Manila, the US, and China. Then you **delegate** real decisions — not tasks — to the leads you've equipped with the founding documents and operating principles, and you hold yourself back from grabbing calls back the moment they're made differently than you would. That's **scaling yourself**: building the org so it runs on its systems and people, not on you being in every room across every time zone."
+        },
+        "pauseAndThink": {
+          "question": "Why does Johnson say the hardest scaling problem is the leader themselves?",
+          "answer": "Because a leader who stays the bottleneck — approving everything and owning every hard call — caps the entire team at their personal capacity, and that ceiling gets lower relative to the org as it grows. Scaling yourself means deliberately working out of every job: delegating real ownership with context and guardrails, naming DRIs, and building the documents and cadence so decisions can happen three levels down without you. Everything else in the book serves this end — the goal is an org that runs on its systems and people rather than the leader's presence in every room."
+        },
+        "glossary": [
+          {
+            "term": "Organizational design",
+            "definition": "The deliberate arrangement of people into teams, reporting lines, and roles to execute the strategy — driven by the work, not personalities."
+          },
+          {
+            "term": "Spans and layers",
+            "definition": "The primary org-design levers: how many people report to each manager (span) and how many management levels exist (layers)."
+          },
+          {
+            "term": "Roles and responsibilities",
+            "definition": "The unambiguous definition of who owns what, without which even a good structure fails."
+          },
+          {
+            "term": "Delegation",
+            "definition": "Handing real ownership — the decision plus context and guardrails — to equipped people, not merely assigning tasks."
+          },
+          {
+            "term": "Scaling yourself",
+            "definition": "Deliberately working out of every job so the org runs on its systems and people rather than the leader's constant presence."
+          },
+          {
+            "term": "Directly responsible individual",
+            "definition": "A named single owner for an outcome, so accountability never diffuses into 'the team' or 'we'."
+          }
+        ],
+        "insights": [
+          "Orgs drift into structures shaped by **personalities and history**; good design starts from the work and the strategy instead.",
+          "A named **directly responsible individual** for each outcome is how work stops falling into the seams between distributed teams.",
+          "The leader who stays the bottleneck caps the team at their own capacity — **delegation** hands away the decision, not just the task."
+        ],
+        "action": "Map your key CS outcomes and name a single **directly responsible individual** for each; wherever the DRI is 'you' or 'the team,' decide who it should actually be and hand over the decision with its context.",
+        "leadershipTakeaway": "**Scaling yourself** is the whole point of every system in this course: founding documents, cadence, hiring, and feedback exist so the org can run three levels down without you in the room.",
+        "productivityTip": "When a decision reaches you, ask whether a named **DRI** with the right context could own it next time — then delegate the decision, not just the task, and resist taking it back.",
+        "discussionQ": "Which decisions still route to you only because ownership was inherited rather than designed — and who could own them if you handed over the context and the call?",
+        "quiz": {
+          "questions": [
+            {
+              "type": "mc",
+              "concept": "organizational design",
+              "question": "What should drive organizational design, per Johnson?",
+              "options": [
+                "The seniority and preferences of the longest-tenured managers",
+                "The work the strategy requires and the ownership that makes it flow",
+                "Keeping every existing reporting line exactly as it is",
+                "Matching the org chart of the nearest competitor"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "type": "mc",
+              "concept": "spans and layers",
+              "question": "What do 'spans' and 'layers' refer to in org design?",
+              "options": [
+                "The company's revenue tiers and its customer segments",
+                "The number of offices and the time zones they span",
+                "How many report to each manager, and how many management levels exist",
+                "The length of the planning cycle and the review cadence"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "type": "mc",
+              "concept": "directly responsible individual",
+              "question": "Why does Johnson emphasize naming a directly responsible individual?",
+              "options": [
+                "So accountability never diffuses into 'the team' or 'we'",
+                "So the manager can avoid ever making a decision themselves",
+                "So every outcome has at least three co-owners for safety",
+                "So HR can assign blame after a project fails"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "type": "mc",
+              "concept": "delegation",
+              "question": "What distinguishes real delegation from merely assigning work?",
+              "options": [
+                "It hands over the task while keeping every decision for yourself",
+                "It requires the delegate to check back before any choice",
+                "It only applies to work the leader finds uninteresting",
+                "It hands over the decision along with the context and guardrails"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "type": "mc",
+              "concept": "scaling yourself",
+              "question": "What does 'scaling yourself' ultimately mean?",
+              "options": [
+                "Personally reviewing every decision to maintain quality",
+                "Working out of every job so the org runs on its systems and people",
+                "Adding as many layers as possible to spread the workload",
+                "Hiring only people who make decisions exactly as you would"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "type": "mc",
+              "concept": "spans and layers",
+              "question": "What is the risk of too many management layers?",
+              "options": [
+                "Managers end up with far too few people to support",
+                "The org becomes impossible to draw on a single chart",
+                "It slows decisions and dilutes information as it travels",
+                "Every manager is forced to delegate every decision"
+              ],
+              "correctIndex": 2
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "topicKey": "the-algorithm",
+    "name": "The Algorithm (Jon McNeill)",
+    "description": "Jon McNeill's hypergrowth operating system — first-principles thinking and the question → delete → simplify → accelerate → automate loop from Tesla and SpaceX — applied to running Customer Success and AI initiatives at an AI-first company.",
+    "category": "Bookshelf",
+    "lessons": [
+      {
+        "key": "the-algorithm-mindset",
+        "title": "The Algorithm Mindset: Hypergrowth as a System",
+        "focus": "Opens the course by reframing hypergrowth as a repeatable system built on first-principles thinking, and previews the five-step loop the rest of the course teaches.",
+        "objectives": [
+          "Distinguish first-principles reasoning from reasoning by analogy",
+          "Explain why McNeill treats repeatable hypergrowth as a system rather than a founder's magic",
+          "Name the five steps of the algorithm in their required order"
+        ],
+        "concepts": [
+          "the algorithm",
+          "first-principles thinking",
+          "reasoning by analogy",
+          "hypergrowth as a system",
+          "requirement ownership"
+        ],
+        "sections": [
+          {
+            "heading": "Reason up from the physics, not from the past",
+            "text": "The engine underneath McNeill's whole framework is **first-principles thinking**: break a problem down to what you actually know is true — the physics, the unit costs, the real constraints — and rebuild your answer up from there. Its opposite is **reasoning by analogy**, where you decide by pattern-matching to what everyone else does or what you did last year. Analogy is fast and usually fine, which is exactly why it quietly smuggles in assumptions nobody has checked in years.\n\nIn a support org, reasoning by analogy sounds like 'onboarding is six calls because onboarding has always been six calls.' First principles asks what an agent actually needs to reach first value in Lofty — a live IDX site, working lead capture, the AI CRM engaging leads — and works backward to the shortest path there. The two roads often end in very different places."
+          },
+          {
+            "heading": "Hypergrowth is a system, not a personality",
+            "text": "The book's central claim is that the results at Tesla and SpaceX were not a founder's mystical gift but **hypergrowth as a system** — a repeatable operating loop any team can run. McNeill calls that loop **the algorithm**: five steps, always in the same order — question every requirement, delete, simplify and optimize, accelerate, and automate. The order is the point, not decoration.\n\nTreating growth as a system is liberating for an operator. It means you don't need a genius in the room; you need a disciplined process you can teach your Manila support leads and your US CSMs to run on their own queues. The magic that looks like luck from outside is mostly a team refusing to skip steps."
+          },
+          {
+            "heading": "Every requirement has a name, not a department",
+            "text": "The very first move in the algorithm carries a rule that shapes everything after it: every requirement must come with **requirement ownership** — a specific person's name attached, never a department. 'Compliance requires this' or 'Billing needs that' is where dumb requirements hide, because no single human can be asked to defend them.\n\nWhen a real name is attached, you can go ask that person why the rule exists, whether it still should, and what breaks if it's gone. Ownership turns a vague constraint into a conversation. Without it, the algorithm stalls at step one, because you can't question a requirement nobody will claim."
+          }
+        ],
+        "example": {
+          "title": "The onboarding that was six calls because it was always six calls",
+          "text": "Your team runs a six-call onboarding for every new agent, SMB to enterprise. Applying **first-principles thinking**, you ask what an agent truly needs to reach first value — a live site, lead capture, the AI CRM working leads — and realize three of the six calls exist only because they always have. When you ask who actually requires call four, nobody can name a person; it's owned by 'onboarding,' not a human. That missing **requirement ownership** is your signal: you've found a rule to question, not a step to optimize."
+        },
+        "pauseAndThink": {
+          "question": "Why does McNeill insist that every requirement carry a person's name rather than a department's?",
+          "answer": "Because a requirement owned by a department can't be interrogated — no single human can defend or drop it, so it survives unquestioned. Attaching a name turns the requirement into a conversation you can actually have: you can ask that person why it exists, whether it still should, and what breaks without it. Ownership is what makes step one of the algorithm possible."
+        },
+        "glossary": [
+          {
+            "term": "The algorithm",
+            "definition": "McNeill's five-step operating loop — question, delete, simplify/optimize, accelerate, automate — run always in that order."
+          },
+          {
+            "term": "First-principles thinking",
+            "definition": "Reasoning up from what is fundamentally true (physics, unit costs, real constraints) rather than from precedent or convention."
+          },
+          {
+            "term": "Reasoning by analogy",
+            "definition": "Deciding by pattern-matching to what others do or what was done before, which carries unexamined assumptions along with it."
+          },
+          {
+            "term": "Hypergrowth as a system",
+            "definition": "The idea that repeatable outsized growth comes from a teachable operating process, not a founder's innate genius."
+          },
+          {
+            "term": "Requirement ownership",
+            "definition": "The rule that every requirement must be tied to a named person, not a department, so it can be questioned."
+          }
+        ],
+        "insights": [
+          "**First-principles thinking** rebuilds an answer from what's actually true; **reasoning by analogy** copies what already exists and inherits its stale assumptions.",
+          "McNeill's core bet is that hypergrowth is **a system** you can teach a team, not a personality trait you have to hire for.",
+          "The algorithm is ordered on purpose — question and delete come before any optimizing or automating, and skipping ahead is the classic mistake."
+        ],
+        "action": "Pick one recurring process you own — onboarding, an escalation path, a QA checklist — and write down which of its steps exist for a first-principles reason and which exist only by analogy to 'how we've always done it.'",
+        "leadershipTakeaway": "Frame the algorithm to your leads as a **repeatable system** they own, not a top-down efficiency drive — the goal is teams that can run question-and-delete on their own queues without you in the room.",
+        "productivityTip": "Before your next process debate, ask everyone to attach a **name** to each requirement on the table; the ones nobody will claim are usually the ones worth killing.",
+        "discussionQ": "Where in your org does 'we've always done it this way' currently stand in for a real requirement — and what would it take to make someone actually own or drop it?",
+        "quiz": {
+          "questions": [
+            {
+              "type": "mc",
+              "concept": "first-principles thinking",
+              "question": "What best describes first-principles thinking as McNeill uses it?",
+              "options": [
+                "Copying the operating playbook of the fastest-growing competitor in your market",
+                "Reasoning up from what is fundamentally true rather than from precedent or convention",
+                "Deferring the decision to whichever department has historically owned the process",
+                "Choosing the option that requires the fewest changes to current workflows"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "type": "mc",
+              "concept": "reasoning by analogy",
+              "question": "Why does reasoning by analogy carry hidden risk?",
+              "options": [
+                "It always takes far longer than reasoning up from first principles",
+                "It can only be used by founders, not by operating teams or managers",
+                "It requires expensive tooling that most support organizations lack",
+                "It smuggles in unexamined assumptions by copying what already exists"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "type": "mc",
+              "concept": "the algorithm",
+              "question": "What is the correct order of the five steps of the algorithm?",
+              "options": [
+                "Question requirements, delete, simplify/optimize, accelerate, automate",
+                "Automate, accelerate, simplify/optimize, delete, question requirements",
+                "Delete, question requirements, automate, simplify/optimize, accelerate",
+                "Simplify/optimize, question requirements, delete, automate, accelerate"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "type": "mc",
+              "concept": "hypergrowth as a system",
+              "question": "What is McNeill's central claim about hypergrowth?",
+              "options": [
+                "It depends on hiring a single visionary founder for each new initiative",
+                "It is mostly luck and timing that cannot be deliberately reproduced",
+                "It comes from a repeatable, teachable operating system rather than personal genius",
+                "It requires unlimited capital to buy growth faster than competitors can"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "type": "mc",
+              "concept": "requirement ownership",
+              "question": "According to the algorithm, how should every requirement be attributed?",
+              "options": [
+                "To the department whose budget the requirement most directly affects",
+                "To the executive team, since they set all company-wide standards",
+                "To whichever vendor or system originally introduced the constraint",
+                "To a specific named person who can defend or drop it, never a department"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "type": "mc",
+              "concept": "the algorithm",
+              "question": "Why does McNeill stress that the algorithm's steps run in a fixed order?",
+              "options": [
+                "Because the order is arbitrary and teams may reorder it to taste",
+                "Because questioning and deleting first prevents optimizing or automating things that shouldn't exist",
+                "Because automation must come first to free up time for the other steps",
+                "Because accelerating cycle time is the only step that truly matters"
+              ],
+              "correctIndex": 1
+            }
+          ]
+        }
+      },
+      {
+        "key": "question-and-delete",
+        "title": "Question Every Requirement, Then Delete",
+        "focus": "Teaches the first two and most consequential steps of the algorithm — making requirements 'less dumb' and aggressively deleting parts, processes, and steps under the 10% add-back rule.",
+        "objectives": [
+          "Apply the 'make each requirement less dumb' test to a real process",
+          "Explain and use the 10% add-back rule to calibrate how much to delete",
+          "Recognize why delete precedes simplify, optimize, and automate"
+        ],
+        "concepts": [
+          "make it less dumb",
+          "delete the part or process",
+          "the 10% add-back rule",
+          "smart-person requirements",
+          "delete before you improve"
+        ],
+        "sections": [
+          {
+            "heading": "Make each requirement less dumb",
+            "text": "Step one isn't 'question requirements' in the abstract — it's **make it less dumb**. Every requirement, McNeill notes, is only as smart as the person who wrote it, and the most dangerous ones are **smart-person requirements**: rules handed down by someone respected, which everyone therefore stops questioning. The smarter the source, the less scrutiny the rule gets, which is exactly backwards.\n\nFor your org, this means dragging each rule into daylight and asking who wrote it and why. A QA form field that support has filled in for three years, an approval gate on refunds under fifty dollars, a mandatory call step — each is a requirement someone once wrote for a reason that may no longer exist. Questioning it isn't insubordination; it's step one."
+          },
+          {
+            "heading": "Delete the part, the process, the step",
+            "text": "Step two is the one teams flinch at: **delete the part or process**. Not shrink it, not streamline it — remove it entirely and see what actually breaks. McNeill's discipline here is the **10% add-back rule**: if you're not later forced to add back around 10% of what you deleted, you didn't delete aggressively enough. Adding some back isn't failure — it's proof you cut to the real bone rather than stopping at the comfortable trim.\n\nThe rule reframes deletion as an experiment with an expected error rate. You're supposed to overshoot slightly. A team that deletes so cautiously it never has to restore anything has confused caution with rigor — it left waste on the table to avoid the mild embarrassment of adding a step back."
+          },
+          {
+            "heading": "Delete before you improve",
+            "text": "The reason delete sits at step two — ahead of simplify, optimize, and automate — is the whole thesis of the book compressed into a rule: **delete before you improve**. Every hour spent optimizing, streamlining, or automating a step is wasted if that step shouldn't exist at all. The most expensive work is work done beautifully on something that should have been removed.\n\nThis is where AI-native teams get into the most trouble. The exciting move is to automate a clunky process; the correct move is to first ask whether the process should exist, then delete what shouldn't, and only then improve what survives. Automation applied to a bloated workflow just makes the waste run faster and cost more to maintain."
+          }
+        ],
+        "example": {
+          "title": "The refund approval nobody would defend",
+          "text": "Every refund under fifty dollars routes to a manager approval queue, adding a day to resolution. You apply **make it less dumb**: who wrote this rule? It turns out a former leader added it after one bad quarter, years ago. So you **delete the part** entirely — auto-approve sub-fifty refunds — and watch what breaks. The **10% add-back rule** shows up honestly: a week later you add back a single guardrail, a flag on accounts with three refunds in a month. That small restoration is the signal you cut deep enough, not proof you cut wrong."
+        },
+        "pauseAndThink": {
+          "question": "Your team deletes six steps from a process and never has to restore a single one. Why might McNeill see that as a warning sign rather than a clean success?",
+          "answer": "Because the 10% add-back rule expects you to overshoot slightly — if nothing had to be added back, you almost certainly didn't cut to the real bone. Deleting so cautiously that everything survives means you stopped at the comfortable trim and left waste in place to avoid the minor embarrassment of restoring a step. The add-back isn't failure; its absence is the tell."
+        },
+        "glossary": [
+          {
+            "term": "Make it less dumb",
+            "definition": "Step one of the algorithm: interrogate every requirement, since each is only as smart as whoever wrote it."
+          },
+          {
+            "term": "Delete the part or process",
+            "definition": "Step two: remove a part, process, or step entirely and observe what actually breaks, rather than shrinking it."
+          },
+          {
+            "term": "The 10% add-back rule",
+            "definition": "The calibration that if you don't have to restore roughly 10% of what you deleted, you didn't delete aggressively enough."
+          },
+          {
+            "term": "Smart-person requirements",
+            "definition": "Rules from a respected source that go unquestioned precisely because the source is trusted — the most dangerous kind."
+          },
+          {
+            "term": "Delete before you improve",
+            "definition": "The principle that optimizing or automating a step is wasted effort if the step should have been removed first."
+          }
+        ],
+        "insights": [
+          "The most dangerous requirements are **smart-person requirements** — the ones a respected name attached, which everyone therefore stops scrutinizing.",
+          "The **10% add-back rule** treats deletion as an experiment you're meant to overshoot; restoring a little is evidence you cut deep enough.",
+          "Optimizing or automating before deleting just makes waste run faster — **delete before you improve** is the order, every time."
+        ],
+        "action": "Take one process you own and delete a step this week — actually remove it, don't shrink it — then watch for what breaks; if you have to add anything back, you found the right depth.",
+        "leadershipTakeaway": "Give your team explicit permission to overshoot on deletion and treat **add-backs as success, not error** — otherwise fear of restoring a step keeps them trimming timidly around real waste.",
+        "productivityTip": "Audit your recurring QA forms and checklists for **smart-person requirements** — fields added by a respected leader long ago — and delete the ones no current owner will defend.",
+        "discussionQ": "What's one process at Lofty that would be tempting to automate but that you suspect should be deleted instead — and how would you tell the difference before spending the engineering time?",
+        "quiz": {
+          "questions": [
+            {
+              "type": "mc",
+              "concept": "make it less dumb",
+              "question": "What is the actual instruction behind step one of the algorithm?",
+              "options": [
+                "Automate the requirement so no human has to enforce it manually",
+                "Document every requirement thoroughly before changing anything",
+                "Make each requirement less dumb by questioning who wrote it and why",
+                "Escalate every requirement to the executive team for final approval"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "type": "mc",
+              "concept": "the 10% add-back rule",
+              "question": "What does the 10% add-back rule tell you about how aggressively you deleted?",
+              "options": [
+                "If you never have to add anything back, you probably didn't cut deep enough",
+                "You should aim to add back at least half of everything you removed",
+                "Adding anything back proves the deletion was a strategic mistake",
+                "The rule applies only to physical parts, never to processes or steps"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "type": "mc",
+              "concept": "smart-person requirements",
+              "question": "Why are 'smart-person requirements' especially dangerous?",
+              "options": [
+                "They are always written in overly technical language nobody can read",
+                "They cost more to implement than requirements from junior staff",
+                "They come from a respected source, so they go unquestioned by everyone",
+                "They can only be removed with approval from the original author"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "type": "mc",
+              "concept": "delete the part or process",
+              "question": "What does step two of the algorithm actually ask you to do?",
+              "options": [
+                "Shrink the process to its smallest reasonable size while keeping it intact",
+                "Remove the part, process, or step entirely and observe what breaks",
+                "Reassign the step to a cheaper team before deciding whether to keep it",
+                "Optimize the step so it runs faster before considering removal"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "type": "mc",
+              "concept": "delete before you improve",
+              "question": "Why does deletion come before simplify, optimize, and automate?",
+              "options": [
+                "Because deletion is the easiest step and builds momentum for the rest",
+                "Because the other three steps require executive approval that deletion doesn't",
+                "Because automation tools can't run until the process has been shrunk first",
+                "Because effort spent improving a step is wasted if the step shouldn't exist"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "type": "mc",
+              "concept": "delete before you improve",
+              "question": "What is the specific risk of automating a bloated process at an AI-first company?",
+              "options": [
+                "Automation always costs more than hiring additional support staff",
+                "Automation makes the underlying waste run faster and costlier to maintain",
+                "Automation cannot be applied to customer-facing processes at all",
+                "Automation permanently locks the process so it can never be deleted later"
+              ],
+              "correctIndex": 1
+            }
+          ]
+        }
+      },
+      {
+        "key": "simplify-optimize-accelerate",
+        "title": "Simplify, Optimize, and Accelerate — In Order",
+        "focus": "Covers steps three and four of the algorithm — improving only what survived deletion, then compressing cycle time — and why doing them out of order wastes effort.",
+        "objectives": [
+          "Explain why simplify and optimize come only after deletion",
+          "Define cycle time and why accelerating it is step four, not step one",
+          "Diagnose when a team is optimizing something that should have been deleted"
+        ],
+        "concepts": [
+          "simplify and optimize",
+          "cycle time",
+          "accelerate",
+          "premature optimization",
+          "the order dependency"
+        ],
+        "sections": [
+          {
+            "heading": "Improve only what survived",
+            "text": "Step three, **simplify and optimize**, is deliberately narrow: you improve only the parts, processes, and steps that survived deletion. That constraint is the safeguard against **premature optimization** — the very human urge to polish a workflow before asking whether it should exist. McNeill's warning is blunt: the most common error smart engineers make is optimizing a thing that shouldn't be there at all.\n\nSo simplify has a prerequisite. A macro that auto-fills a beautifully worded response to a ticket type you could have deflected entirely is optimization spent in the wrong place. Once the surviving steps are genuinely necessary, though, simplification is where real quality lives — clearer templates, fewer handoffs, tighter routing."
+          },
+          {
+            "heading": "Accelerate cycle time — but only now",
+            "text": "Step four is **accelerate**: compress the **cycle time** of what remains — how long it takes to go from a customer's request to a resolved outcome, from a new agent's signup to first value. Speed compounds. A faster onboarding cycle means agents reach lead ROI sooner, which is precisely when churn risk falls and adoption rises for a commission-based small-business customer.\n\nBut acceleration is step four for a reason. Speeding up a process you haven't questioned, deleted, and simplified just means you reach the wrong outcome faster and burn more resource doing it. The book's sequencing is strict: you earn the right to accelerate only after the first three steps have removed the waste that acceleration would otherwise amplify."
+          },
+          {
+            "heading": "The order dependency is the discipline",
+            "text": "What ties steps one through four together is **the order dependency** — each step assumes the ones before it are done. Delete before you simplify, simplify before you accelerate. Run them out of order and you get expensive, well-executed motion in the wrong direction: a fast, elegant, thoroughly optimized process that should never have existed.\n\nThis is why McNeill treats the algorithm as a sequence and not a menu. The temptation, especially for a capable team, is to jump straight to the exciting step — a slick automation, a speed record on time-to-resolution. The discipline is refusing to skip, because every skipped step multiplies the cost of the ones that follow."
+          }
+        ],
+        "example": {
+          "title": "The macro that optimized a ticket you could have deleted",
+          "text": "Your Manila support lead proudly ships a polished macro that auto-fills a perfect reply to 'how do I reset my IDX site password' — cutting handle time in half. It's genuine **simplify and optimize** work, but applied in the wrong place: that ticket type is a self-serve reset you could have deflected out of the queue entirely. Deletion should have come first. Once you fix the order — deflect the resettable tickets, then simplify what genuinely needs a human, then **accelerate** the cycle time on those — the same effort produces a far bigger drop in queue volume."
+        },
+        "pauseAndThink": {
+          "question": "A team cuts a process's cycle time in half but never questioned or deleted any of its steps. What has the algorithm's ordering to say about that win?",
+          "answer": "That it may be a fast route to the wrong outcome. Accelerating is step four precisely because speeding up a process you haven't questioned, deleted, and simplified just makes you reach an unnecessary or bloated result faster — and burn more resource doing it. Under the order dependency, the halved cycle time is only a real win if the surviving steps have already earned their place."
+        },
+        "glossary": [
+          {
+            "term": "Simplify and optimize",
+            "definition": "Step three of the algorithm: improve the parts and steps that survived deletion, never before."
+          },
+          {
+            "term": "Cycle time",
+            "definition": "How long a process takes end to end — from request to resolution, or from signup to first value."
+          },
+          {
+            "term": "Accelerate",
+            "definition": "Step four: compress the cycle time of what remains, earned only after questioning, deleting, and simplifying."
+          },
+          {
+            "term": "Premature optimization",
+            "definition": "Polishing or speeding up a step before confirming it should exist — the classic error the algorithm's order prevents."
+          },
+          {
+            "term": "The order dependency",
+            "definition": "The rule that each algorithm step assumes the prior ones are done, so running them out of sequence multiplies cost."
+          }
+        ],
+        "insights": [
+          "**Simplify and optimize** has a prerequisite — it applies only to what survived deletion, or you polish waste.",
+          "**Accelerate** is step four on purpose: speeding up an unquestioned process just reaches the wrong outcome faster.",
+          "**The order dependency** is the whole discipline — skip a step and every later step costs more and does less."
+        ],
+        "action": "Look at your most-optimized process and ask whether it earned that optimization — if any of its steps would fail the delete test, you've found effort spent in the wrong place.",
+        "leadershipTakeaway": "Celebrate teams for **deleting** before you celebrate them for speed records; rewarding a halved cycle time on an unquestioned process teaches people to skip straight to step four.",
+        "productivityTip": "Track **cycle time** on your top three processes as a headline metric, but always pair it with 'how many steps did we remove this quarter' so speed never masks unquestioned bloat.",
+        "discussionQ": "Where has your org optimized or automated something impressively that, on reflection, should have been deleted — and what made the optimization feel like progress at the time?",
+        "quiz": {
+          "questions": [
+            {
+              "type": "mc",
+              "concept": "simplify and optimize",
+              "question": "What is the prerequisite for step three, simplify and optimize?",
+              "options": [
+                "Executive sign-off on the budget for the improvement work",
+                "That the steps being improved already survived the deletion step",
+                "A full automation plan for the process to be built in parallel",
+                "A competitor benchmark showing the process is slower than average"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "type": "mc",
+              "concept": "premature optimization",
+              "question": "According to McNeill, what is the most common error capable engineers make?",
+              "options": [
+                "Deleting too aggressively and having to restore most of what they cut",
+                "Refusing to automate any process even when it is clearly stable",
+                "Optimizing a thing beautifully that shouldn't have existed at all",
+                "Questioning requirements so much that no work ever ships"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "type": "mc",
+              "concept": "cycle time",
+              "question": "How is cycle time best defined in this lesson?",
+              "options": [
+                "The number of employees assigned to a given process at once",
+                "The total cost of running a process over a full fiscal quarter",
+                "The percentage of tickets a process resolves without escalation",
+                "How long a process takes end to end, from request to resolution"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "type": "mc",
+              "concept": "accelerate",
+              "question": "Why is accelerate placed at step four rather than earlier?",
+              "options": [
+                "Because speed matters less than any other step in the algorithm",
+                "Because acceleration requires automation tools that come later",
+                "Because speeding up an unquestioned process just reaches the wrong outcome faster",
+                "Because customers rarely notice how fast a process actually runs"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "type": "mc",
+              "concept": "the order dependency",
+              "question": "What happens when the algorithm's steps are run out of order?",
+              "options": [
+                "You get well-executed motion in the wrong direction at multiplied cost",
+                "The steps become optional and can be skipped without consequence",
+                "The process automatically reverts to its original unimproved state",
+                "The team saves time by parallelizing all steps at once"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "type": "mc",
+              "concept": "simplify and optimize",
+              "question": "A macro perfectly auto-fills replies to a ticket type you could have deflected entirely. What does the algorithm say went wrong?",
+              "options": [
+                "The macro should have been accelerated before it was simplified",
+                "Optimization was applied to a step that deletion should have removed first",
+                "The team automated too late instead of making it step one",
+                "The cycle time was measured incorrectly, hiding the real gain"
+              ],
+              "correctIndex": 1
+            }
+          ]
+        }
+      },
+      {
+        "key": "automate-last",
+        "title": "Automate Last: Why AI Comes at Step Five",
+        "focus": "Explains the algorithm's final and most misunderstood step — automation goes last — using the Model 3 over-automation cautionary tale, and applies it directly to AI adoption at an AI-first company.",
+        "objectives": [
+          "Explain why automation is deliberately the last step of the algorithm",
+          "Use the Model 3 over-automation story as a cautionary lesson",
+          "Apply 'automate last' to AI initiatives and decide what to automate versus delete"
+        ],
+        "concepts": [
+          "automate last",
+          "the Model 3 over-automation trap",
+          "automating a flawed process",
+          "delete-before-you-automate",
+          "AI adoption discipline"
+        ],
+        "sections": [
+          {
+            "heading": "Automation is step five for a reason",
+            "text": "The final step of the algorithm is **automate last**. Not because automation is unimportant — it's transformative — but because automation is the step that locks a process in place. Automating something makes it faster, cheaper, and much harder to change or remove later. You only want that permanence around a process that has already been questioned, deleted down to essentials, simplified, and accelerated.\n\nThe deep principle is **delete-before-you-automate**: the worst thing you can do is take a flawed or unnecessary process and pour engineering into making it run itself. Now the waste is fast, invisible, expensive to maintain, and defended by the very automation you built. **Automating a flawed process** is how a team spends its most valuable resource entrenching its worst decisions."
+          },
+          {
+            "heading": "The Model 3 line as the cautionary tale",
+            "text": "The book's marquee example is **the Model 3 over-automation trap**: Tesla tried to automate too much of the Model 3 assembly line too early, built a hyper-complex robotic system, and it became a bottleneck that nearly sank the company. The famous admission was that excessive automation was a mistake and that humans were underrated — the fix was to rip out automation and put people back.\n\nThe lesson isn't 'automation is bad.' It's that automation applied before the process was simplified created fragility, not leverage. They automated complexity instead of deleting it first. Every operator who's ever shipped a brittle, over-engineered workflow that a human could have handled more flexibly has lived a small version of the Model 3 line."
+          },
+          {
+            "heading": "What 'automate last' means for AI adoption",
+            "text": "At an AI-first company the pull is to lead with automation — point the AI at everything. The algorithm says the opposite: **AI adoption discipline** means running steps one through four before you deploy the model. Question whether the workflow should exist, delete what shouldn't, simplify what remains, accelerate it — then automate the clean version.\n\nConcretely, before you point Lofty's autonomous lead engagement or an AI support agent at a queue, ask what in that queue should simply not exist. Deflecting or deleting a class of tickets is almost always cheaper and more durable than automating your way through them. AI is the most powerful step in the algorithm precisely because it's last — its leverage is real only when it's amplifying a process you've already made worth running."
+          }
+        ],
+        "example": {
+          "title": "Pointing the AI agent at a queue that shouldn't exist",
+          "text": "You're tempted to deploy an AI support agent on the billing-question queue — hundreds of tickets a week, ripe for automation. Applying **automate last**, you first ask why the queue is so large. Half the tickets are agents confused by a single unclear line on the invoice. That's a **delete-before-you-automate** moment: fix the invoice line and those tickets vanish, cheaply and permanently. Had you automated first, you'd have built and maintained an AI flow to eloquently answer a question the product should never have raised — your own small **Model 3 over-automation trap**."
+        },
+        "pauseAndThink": {
+          "question": "An AI-first company's instinct is to automate first and fastest. Why does the algorithm deliberately put automation last?",
+          "answer": "Because automation locks a process in — it makes the workflow faster, cheaper, and much harder to change or remove. That permanence is only valuable around a process already questioned, deleted to essentials, simplified, and accelerated. Automate a flawed or unnecessary process and you spend your most valuable resource entrenching waste, making it fast, invisible, and expensive to maintain — the Model 3 line in miniature."
+        },
+        "glossary": [
+          {
+            "term": "Automate last",
+            "definition": "Step five of the algorithm: automation goes last because it locks a process in and makes it hard to change."
+          },
+          {
+            "term": "The Model 3 over-automation trap",
+            "definition": "Tesla's early attempt to over-automate the Model 3 line, which became a bottleneck and had to be partly reversed."
+          },
+          {
+            "term": "Automating a flawed process",
+            "definition": "Pouring engineering into making a broken or unnecessary process run itself — entrenching the waste it contains."
+          },
+          {
+            "term": "Delete-before-you-automate",
+            "definition": "The rule that you must remove what shouldn't exist before automating what remains."
+          },
+          {
+            "term": "AI adoption discipline",
+            "definition": "Running the algorithm's first four steps before deploying AI, so the model amplifies a clean process, not a flawed one."
+          }
+        ],
+        "insights": [
+          "Automation is step five because it **locks a process in** — you only want that permanence around a process already made worth running.",
+          "The **Model 3 line** is the cautionary tale: automating complexity instead of deleting it first created fragility, not leverage.",
+          "At an AI-first company, **delete-before-you-automate** usually beats automation — killing a class of tickets is cheaper and more durable than answering them with a model."
+        ],
+        "action": "Take the AI initiative you're most excited to ship and, before deploying, list which parts of the target workflow should be deleted rather than automated — then automate only the clean remainder.",
+        "leadershipTakeaway": "Protect your team from the **automate-first reflex**: reward the person who deletes a queue over the person who builds a clever AI flow to serve a queue that shouldn't exist.",
+        "productivityTip": "Add a one-line gate to every automation and AI proposal — 'what did we delete first?' — and don't greenlight builds that can't answer it.",
+        "discussionQ": "Which current or planned AI initiative at Lofty risks being a Model 3 moment — automating a process before it was questioned and deleted — and how would you catch it before the build?",
+        "quiz": {
+          "questions": [
+            {
+              "type": "mc",
+              "concept": "automate last",
+              "question": "Why does the algorithm place automation as the final step?",
+              "options": [
+                "Because automation is the least valuable of the five steps",
+                "Because automation locks a process in and should only wrap an already-refined one",
+                "Because automation can only be done after the fiscal year closes",
+                "Because customers distrust any process that has been automated"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "type": "mc",
+              "concept": "the Model 3 over-automation trap",
+              "question": "What is the lesson of Tesla's Model 3 over-automation experience?",
+              "options": [
+                "Automation should always be maximized as early as possible in production",
+                "Robots are inherently more reliable than people on any assembly line",
+                "Automating complexity before simplifying it created fragility, not leverage",
+                "The Model 3 succeeded precisely because it was fully automated from day one"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "type": "mc",
+              "concept": "automating a flawed process",
+              "question": "What happens when you automate a flawed or unnecessary process?",
+              "options": [
+                "The automation naturally corrects the flaws in the underlying process",
+                "The process becomes cheaper to delete later thanks to the automation",
+                "The flaws become visible immediately, prompting a quick fix",
+                "You entrench the waste, making it fast, invisible, and costly to maintain"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "type": "mc",
+              "concept": "delete-before-you-automate",
+              "question": "A billing queue is huge because of one confusing invoice line. What does delete-before-you-automate recommend?",
+              "options": [
+                "Fix the invoice line so the tickets disappear before automating anything",
+                "Deploy an AI agent to answer the invoice questions as fast as possible",
+                "Hire more billing staff in Manila to clear the queue manually",
+                "Route the queue to the enterprise CS team for white-glove handling"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "type": "mc",
+              "concept": "AI adoption discipline",
+              "question": "What does AI adoption discipline require before deploying a model on a workflow?",
+              "options": [
+                "Securing the largest possible budget for the AI deployment first",
+                "Benchmarking the AI against every competitor's automation stack",
+                "Running the first four algorithm steps so AI amplifies a clean process",
+                "Automating the workflow first and refining the process afterward"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "type": "mc",
+              "concept": "automate last",
+              "question": "Why is AI called the most powerful step in the algorithm precisely because it comes last?",
+              "options": [
+                "Because AI is too expensive to justify at any earlier step",
+                "Because only automated processes are allowed to use AI models",
+                "Because AI works only on processes that have never been simplified",
+                "Because its leverage is real only when amplifying an already-refined process"
+              ],
+              "correctIndex": 3
+            }
+          ]
+        }
+      },
+      {
+        "key": "the-operating-culture",
+        "title": "The Operating Culture: Small Teams, Fast Loops",
+        "focus": "Closes the course with the human operating system around the algorithm — small empowered teams, tight metrics and feedback loops, and a bias to action — and how to run your own org on it.",
+        "objectives": [
+          "Explain how small empowered teams that own outcomes enable the algorithm",
+          "Describe the role of tight metrics and feedback loops in rapid iteration",
+          "Turn bias to action and obsessive customer focus into concrete operating habits"
+        ],
+        "concepts": [
+          "small empowered teams",
+          "bias to action",
+          "metrics and feedback loops",
+          "obsessive customer focus",
+          "rapid iteration"
+        ],
+        "sections": [
+          {
+            "heading": "Small teams that own the outcome",
+            "text": "The algorithm needs a culture to run in, and McNeill's is built on **small empowered teams** that own an outcome end to end rather than a slice of a process. A small team that owns onboarding-to-first-value can question, delete, and iterate on the whole path; a large team that owns 'call three' can only defend call three. Ownership of an outcome is what gives people the standing to delete their own steps.\n\nFor your org this is a design choice, not just a vibe. Whether a pooled SMB CSM team in Manila owns 'time to first lead ROI' as a single number — versus each person owning a fragment of the journey — determines whether they can actually run the algorithm or just execute a fixed script. Empowerment without a clear owned outcome is just noise; an owned outcome without empowerment is just pressure."
+          },
+          {
+            "heading": "Run on tight metrics and fast feedback loops",
+            "text": "Hypergrowth teams run on **metrics and feedback loops** — a small set of numbers that tell you fast whether a change worked, feeding **rapid iteration**. The tightness of the loop is what matters: a metric you see monthly can't drive a weekly experiment. McNeill's teams instrument the outcome, change something, read the result quickly, and adjust — the scientific method at operating speed.\n\nThis is also the honest partner to deletion. When you delete a step under the 10% add-back rule, a tight feedback loop is how you learn — fast and cheaply — whether that step is the 10% you need back. Without instrumentation, aggressive deletion is reckless; with it, deletion becomes a controlled experiment you can run every week."
+          },
+          {
+            "heading": "Bias to action and obsessive customer focus",
+            "text": "Two attitudes power the loop. **Bias to action** means defaulting to a reversible experiment over another meeting — the cost of trying a small, undoable change is almost always lower than the cost of deliberating, and you learn something real either way. **Obsessive customer focus** keeps the action pointed at what matters: for a commission-based agent, that's lead ROI and closings, not internal tidiness.\n\nTogether they make the algorithm continuous rather than a one-time cleanup. You question, delete, simplify, accelerate, and automate — measure the customer outcome, and run the loop again. The teams that look magical from outside are just running this cycle faster and more often than everyone else, on the small number of things their customers actually feel."
+          }
+        ],
+        "example": {
+          "title": "Giving the SMB pod one number and the power to move it",
+          "text": "You restructure your Manila SMB CSM team into a small pod that owns a single outcome — 'days to first lead ROI' — with a live dashboard, not a monthly report. That's **small empowered teams** plus **metrics and feedback loops** in one move. Now when the pod deletes a step from onboarding, the loop tells them within a week whether ROI slowed, so **bias to action** stops being reckless. They run the algorithm on their own path weekly, aimed squarely at the number a commission-based agent actually feels — the definition of **obsessive customer focus**."
+        },
+        "pauseAndThink": {
+          "question": "Why does aggressive deletion under the 10% add-back rule depend on tight metrics and feedback loops?",
+          "answer": "Because a fast feedback loop is how you learn — cheaply and quickly — whether a deleted step is part of the 10% you actually need back. Without instrumentation, cutting hard is reckless guessing; with a tight loop reading the outcome within days, each deletion becomes a controlled experiment you can run and reverse safely. The metrics are what make bias to action responsible rather than careless."
+        },
+        "glossary": [
+          {
+            "term": "Small empowered teams",
+            "definition": "Compact teams that own an outcome end to end, giving them the standing to question and delete their own steps."
+          },
+          {
+            "term": "Bias to action",
+            "definition": "Defaulting to a small reversible experiment over further deliberation, because trying usually costs less than deciding."
+          },
+          {
+            "term": "Metrics and feedback loops",
+            "definition": "A tight set of outcome numbers read quickly after each change, enabling fast, evidence-based iteration."
+          },
+          {
+            "term": "Obsessive customer focus",
+            "definition": "Aiming every change at the outcome the customer actually feels — for a realtor, lead ROI and closings."
+          },
+          {
+            "term": "Rapid iteration",
+            "definition": "Repeatedly changing, measuring, and adjusting at operating speed — the algorithm run continuously, not once."
+          }
+        ],
+        "insights": [
+          "**Small empowered teams** that own an outcome can run the algorithm; teams that own a fragment can only defend their fragment.",
+          "Tight **feedback loops** are what make aggressive deletion safe — they tell you fast whether a cut is the 10% you need back.",
+          "The teams that look magical are just running **question → delete → simplify → accelerate → automate** faster and on the few things customers actually feel."
+        ],
+        "action": "Pick one team and give it a single owned outcome number on a live dashboard this quarter — then let it run one delete-and-measure experiment against that number every week.",
+        "leadershipTakeaway": "Empowerment and ownership are two halves of one lever: give a small team **both** a clear outcome to own and the authority to change the process, or you get pressure and noise instead of the algorithm.",
+        "productivityTip": "Replace one recurring status meeting with a **live metric dashboard** so your teams read outcomes continuously and default to a small experiment instead of waiting for the next review.",
+        "discussionQ": "Which of your teams currently owns a fragment rather than an outcome — and what single number could you hand them that would let them run the whole algorithm on their own work?",
+        "quiz": {
+          "questions": [
+            {
+              "type": "mc",
+              "concept": "small empowered teams",
+              "question": "Why do small teams that own an outcome enable the algorithm?",
+              "options": [
+                "Because smaller teams are cheaper to staff than larger ones",
+                "Because owning the whole outcome gives them standing to delete their own steps",
+                "Because small teams require less instrumentation and fewer metrics",
+                "Because they can bypass customer feedback and move faster alone"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "type": "mc",
+              "concept": "metrics and feedback loops",
+              "question": "What makes a feedback loop useful for driving rapid iteration?",
+              "options": [
+                "It reports the largest possible number of metrics at once",
+                "It replaces experiments with detailed quarterly planning cycles",
+                "It is read tightly and quickly enough to inform the next change",
+                "It measures internal effort rather than customer outcomes"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "type": "mc",
+              "concept": "bias to action",
+              "question": "What does a bias to action favor?",
+              "options": [
+                "Additional deliberation until every risk has been fully eliminated",
+                "Escalating decisions upward so leadership carries the accountability",
+                "Waiting for a competitor to validate the approach before trying it",
+                "A small reversible experiment over further meetings, since trying usually costs less"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "type": "mc",
+              "concept": "obsessive customer focus",
+              "question": "For a commission-based realtor customer, where should obsessive customer focus point?",
+              "options": [
+                "Lead ROI and closings — the outcomes the customer actually feels",
+                "The internal tidiness of the support team's ticket taxonomy",
+                "The number of features shipped in the last product release",
+                "The size of the CS team assigned to each account tier"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "type": "mc",
+              "concept": "rapid iteration",
+              "question": "What does it mean to run the algorithm as rapid iteration rather than a one-time cleanup?",
+              "options": [
+                "You automate every process once and never revisit any of them",
+                "You repeat question, delete, simplify, accelerate, and automate continuously against customer outcomes",
+                "You delete a large batch of steps annually during planning season",
+                "You optimize each process exactly once and then lock it permanently"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "type": "mc",
+              "concept": "small empowered teams",
+              "question": "Why is empowerment without a clearly owned outcome insufficient?",
+              "options": [
+                "Because empowered teams always overspend their allocated budgets",
+                "Because outcomes can only be owned by executives, not front-line teams",
+                "Because empowerment without an owned outcome is just noise, and an owned outcome without empowerment is just pressure",
+                "Because metrics make empowerment unnecessary for running the algorithm"
+              ],
+              "correctIndex": 2
+            }
+          ]
+        }
+      }
+    ]
   }
 ];
