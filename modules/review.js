@@ -5,7 +5,7 @@
 
 import * as store from './store.js';
 import { gradeShortAnswers, hasApiKey } from './ai.js';
-import { touchActivity, nextMastery, dayString } from './gamification.js';
+import { touchActivity, applyReviewResult, isDue, dayString } from './gamification.js';
 import { questionOfTheDayCore } from './refresherCore.mjs';
 import { el, clear, toast, loading, navigate } from './ui.js';
 
@@ -38,13 +38,15 @@ async function buildPool() {
       pool.push({
         q,
         lesson,
+        due: isDue(c) ? 1 : 0,
         mastery: c?.masteryScore ?? 0,
         lastReviewed: c?.lastReviewed || '',
       });
     }
   }
-  // Weakest first, then stalest. Cap two questions per concept for variety.
-  pool.sort((a, b) => (a.mastery - b.mastery) || a.lastReviewed.localeCompare(b.lastReviewed));
+  // Due concepts first (the scheduler's queue), then weakest, then stalest.
+  // Cap two questions per concept for variety.
+  pool.sort((a, b) => (b.due - a.due) || (a.mastery - b.mastery) || a.lastReviewed.localeCompare(b.lastReviewed));
   const perConcept = {};
   return pool.filter((p) => {
     const k = `${p.lesson.topicId}:${p.q.concept}`;
@@ -83,6 +85,7 @@ export async function renderReview(root) {
   const avg = reviewed.length
     ? Math.round(reviewed.reduce((a, c) => a + (c.masteryScore || 0), 0) / reviewed.length)
     : 0;
+  const dueCount = reviewed.filter((c) => isDue(c)).length;
   const weakest = [...reviewed].sort((a, b) => (a.masteryScore || 0) - (b.masteryScore || 0)).slice(0, 3);
 
   root.append(
@@ -91,10 +94,11 @@ export async function renderReview(root) {
       el('div', { class: 'stat-row review-stats' }, [
         el('div', { class: 'stat' }, [el('div', { class: 'stat-value' }, String(reviewed.length)), el('div', { class: 'stat-label' }, 'concepts tracked')]),
         el('div', { class: 'stat' }, [el('div', { class: 'stat-value' }, `${avg}%`), el('div', { class: 'stat-label' }, 'avg mastery')]),
+        el('div', { class: 'stat' }, [el('div', { class: 'stat-value' }, String(dueCount)), el('div', { class: 'stat-label' }, 'due today')]),
       ]),
       weakest.length
         ? el('div', { class: 'weak-list' }, [
-            el('span', { class: 'muted small' }, 'Due for attention: '),
+            el('span', { class: 'muted small' }, 'Needs attention: '),
             ...weakest.map((c) => el('span', { class: 'pill' }, `${c.name} ${c.masteryScore || 0}%`)),
           ])
         : null,
@@ -102,7 +106,8 @@ export async function renderReview(root) {
   );
 
   root.append(
-    el('button', { class: 'btn btn-primary full', onclick: () => startSession(root) }, '▶ Start review session')
+    el('button', { class: 'btn btn-primary full', onclick: () => startSession(root) },
+      dueCount ? `▶ Review ${dueCount} due concept${dueCount === 1 ? '' : 's'}` : '▶ Start review session')
   );
 }
 
@@ -200,18 +205,13 @@ async function startSession(root) {
       }
     }
 
-    // Feed mastery.
+    // Feed mastery + schedule each concept's next review.
     const allConcepts = await store.getAll('concepts');
     for (let i = 0; i < questions.length; i++) {
       const c = allConcepts.find(
         (x) => x.topicId === meta[i].lesson.topicId && x.name === questions[i].concept
       );
-      if (c) {
-        c.masteryScore = nextMastery(c.masteryScore || 0, results[i].score || 0, 0.3);
-        c.timesReviewed = (c.timesReviewed || 0) + 1;
-        c.lastReviewed = store.now();
-        await store.put('concepts', c);
-      }
+      if (c) await store.put('concepts', applyReviewResult(c, results[i].score, 0.3));
     }
     await touchActivity();
 

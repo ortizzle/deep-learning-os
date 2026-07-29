@@ -66,6 +66,39 @@ export function nextMastery(prev = 0, resultPct, weight = 0.4) {
   return Math.round(prev * (1 - weight) + resultPct * weight);
 }
 
+// ---------- Spaced-repetition scheduler (v2) ----------
+
+// Expanding review ladder, in days. Pass a review → climb one rung; miss →
+// back to the first rung. Day-granular on purpose: everything in this app
+// runs on Arizona day boundaries, and sub-day scheduling would just nag.
+const REVIEW_INTERVALS = [1, 3, 7, 14, 30, 60, 90];
+
+export function nextInterval(prevDays, passed) {
+  if (!passed) return REVIEW_INTERVALS[0];
+  const next = REVIEW_INTERVALS.find((d) => d > (prevDays || 0));
+  return next || REVIEW_INTERVALS[REVIEW_INTERVALS.length - 1];
+}
+
+// Apply one graded result (0-100) to a concept record: mastery, counters,
+// and the next due date. Mutates and returns the record; the caller persists
+// it. This is THE single write path for review results — quiz, review
+// sessions, and teach-back all funnel through here so scheduling can't drift.
+export function applyReviewResult(concept, score, weight = 0.4) {
+  concept.masteryScore = nextMastery(concept.masteryScore || 0, score || 0, weight);
+  concept.timesReviewed = (concept.timesReviewed || 0) + 1;
+  concept.lastReviewed = new Date().toISOString();
+  concept.intervalDays = nextInterval(concept.intervalDays, (score || 0) >= 60);
+  concept.dueAt = dayString(new Date(Date.now() + concept.intervalDays * 86400000));
+  return concept;
+}
+
+// Due = its day has arrived, or it was reviewed before dueAt existed (those
+// legacy concepts surface immediately and get scheduled on their next answer).
+export function isDue(concept, today = dayString()) {
+  if (!concept || !(concept.timesReviewed > 0)) return false;
+  return !concept.dueAt || concept.dueAt <= today;
+}
+
 // A topic counts as "mastered" when its reviewed concepts average 90+.
 export function masteredTopicCount(topics, concepts) {
   let count = 0;

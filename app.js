@@ -18,6 +18,7 @@ import { renderQuiz } from './modules/quiz.js';
 import { renderCoach } from './modules/coach.js';
 import { renderSaved } from './modules/saved.js';
 import { renderReview } from './modules/review.js';
+import { renderSearch } from './modules/search.js';
 import { seedPrebuiltCourses } from './modules/prebuiltContent.js';
 import { hasApiKey } from './modules/ai.js';
 import { el, clear, toast, navigate } from './modules/ui.js';
@@ -61,6 +62,7 @@ const routes = [
   { re: /^#\/completed$/, tab: 'dashboard', fn: () => renderCompletedLessons(view) },
   { re: /^#\/activity$/, tab: 'dashboard', fn: () => renderDailyActivity(view) },
   { re: /^#\/review$/, tab: 'review', fn: () => renderReview(view) },
+  { re: /^#\/search$/, tab: 'topics', fn: () => renderSearch(view) },
   { re: /^#\/settings$/, tab: 'settings', fn: () => renderSettings(view) },
 ];
 

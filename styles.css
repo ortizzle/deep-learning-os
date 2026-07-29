@@ -1019,3 +1019,14 @@ textarea.input { resize: vertical; line-height: 1.5; }
 }
 .tab-icon { font-size: 18px; line-height: 1; }
 .tab.active { color: var(--accent); }
+
+/* ---------- apply-it modes + search (2026-07-29) ---------- */
+.head-actions { display: flex; gap: 8px; align-items: center; }
+.practice-row { display: flex; gap: 8px; margin-top: 10px; }
+.practice-row .btn { flex: 1; min-height: 44px; }
+.teachback { margin-top: 14px; }
+.teachback textarea { margin: 10px 0; width: 100%; }
+.teachback .result { margin-top: 10px; }
+.search-results { margin-top: 14px; }
+.search-results .card { text-align: left; width: 100%; }
+.search-results .card .pill { margin-top: 6px; }

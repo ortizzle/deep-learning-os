@@ -123,7 +123,27 @@ export async function renderCoach(root) {
     return;
   }
 
-  const session = await getOrCreateSession();
+  // A lesson's "Practice with coach" handoff: start a fresh session and open
+  // it with a role-play brief the coach runs in character.
+  let scenarioOpener = null;
+  const pendingScenario = sessionStorage.getItem('coach-scenario');
+  if (pendingScenario) {
+    sessionStorage.removeItem('coach-scenario');
+    try {
+      const s = JSON.parse(pendingScenario);
+      scenarioOpener =
+        `Let's role-play so I can practice the lesson "${s.title}".` +
+        ` You play the counterpart — pick whoever fits this material best (a skeptical exec, a struggling direct report, an upset customer, a tough negotiator).` +
+        ` Set the scene in one short paragraph, then stay in character and push back realistically, one exchange at a time — don't coach me mid-scene.` +
+        (s.concepts?.length ? ` Design the scenario so I'm forced to actually use: ${s.concepts.join(', ')}.` : '') +
+        ` When I say "debrief", break character and grade how I applied the lesson — what I did well, what I missed, and the one thing to do differently next time` +
+        (s.insights?.length ? `, judged against these ideas: ${s.insights.join(' | ')}` : '') + '.';
+    } catch { /* malformed handoff — just open the coach normally */ }
+  }
+
+  const session = scenarioOpener
+    ? await store.put('coachSessions', { messages: [], summary: '' })
+    : await getOrCreateSession();
   const thread = el('div', { class: 'chat-thread' });
   const renderThread = () => {
     clear(thread);
@@ -180,7 +200,7 @@ export async function renderCoach(root) {
   // One-tap starters, grounded in recent activity. Shown until the
   // conversation gets going.
   let chipsRow = null;
-  if (session.messages.length < 2) {
+  if (!scenarioOpener && session.messages.length < 2) {
     const chips = await buildStarterChips();
     chipsRow = el('div', { class: 'chips' }, chips.map((c) =>
       el('button', {
@@ -197,4 +217,10 @@ export async function renderCoach(root) {
   root.append(
     ...[thread, chipsRow, el('div', { class: 'chat-composer' }, [input, sendBtn])].filter(Boolean)
   );
+
+  // Kick off the role-play immediately — the brief is the first user turn.
+  if (scenarioOpener) {
+    input.value = scenarioOpener;
+    send();
+  }
 }
