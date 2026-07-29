@@ -1,8 +1,8 @@
 // lessons.js — topics + lessons: list, detail, creation, and the lesson reader.
 
 import * as store from './store.js';
-import { generateLesson, generateSyllabus, hasApiKey } from './ai.js';
-import { touchActivity } from './gamification.js';
+import { generateLesson, generateSyllabus, gradeTeachBack, hasApiKey } from './ai.js';
+import { touchActivity, applyReviewResult } from './gamification.js';
 import { addManualTask, addHabitFromText } from './today.js';
 import { SUGGESTED_TOPICS } from './suggestedTopics.js';
 import { el, clear, paragraphs, rich, toast, loading, navigate, shareText, SHARE_ICON } from './ui.js';
@@ -59,7 +59,10 @@ export async function renderTopics(root) {
   root.append(
     el('header', { class: 'view-head' }, [
       el('h1', {}, 'Topics'),
-      el('button', { class: 'btn btn-primary', onclick: () => newTopicDialog(root) }, '+ New Topic'),
+      el('div', { class: 'head-actions' }, [
+        el('button', { class: 'btn', title: 'Search all lessons', onclick: () => navigate('#/search') }, '🔍'),
+        el('button', { class: 'btn btn-primary', onclick: () => newTopicDialog(root) }, '+ New Topic'),
+      ]),
     ])
   );
 
@@ -670,6 +673,80 @@ function lessonWordCount(lesson) {
   return parts.join(' ').split(/\s+/).filter(Boolean).length;
 }
 
+// ---------- apply-it modes ----------
+
+// Hand a lesson to the coach as a role-play brief. The coach view picks this
+// up on load (sessionStorage survives the hash navigation, nothing synced).
+function startScenario(lesson) {
+  sessionStorage.setItem('coach-scenario', JSON.stringify({
+    lessonId: lesson.id,
+    title: lesson.title,
+    concepts: lesson.concepts || [],
+    insights: lesson.insights || [],
+  }));
+  navigate('#/coach');
+}
+
+// Inline teach-back: explain the lesson from memory, get graded against it,
+// and feed the result into every one of the lesson's concepts (low weight —
+// one free-recall attempt shouldn't swing mastery like a full quiz).
+function openTeachBack(anchor, lesson) {
+  const existing = anchor.querySelector('.teachback');
+  if (existing) return existing.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+  const ta = el('textarea', {
+    class: 'input', rows: '6',
+    placeholder: 'From memory: explain this lesson\'s core ideas in your own words, as if teaching a new team member…',
+  });
+  const out = el('div');
+  const submit = el('button', { class: 'btn btn-primary full' }, 'Grade my explanation');
+  submit.addEventListener('click', async () => {
+    const text = ta.value.trim();
+    if (text.length < 40) return toast('Give it a real attempt — a few sentences at least', 'warn');
+    submit.setAttribute('disabled', 'disabled');
+    submit.textContent = 'Grading…';
+    try {
+      const content = [
+        ...(lesson.sections || []).map((s) => `${s.heading}\n${s.text}`),
+        (lesson.insights || []).join('\n'),
+      ].filter(Boolean).join('\n\n');
+      const g = await gradeTeachBack({ lessonTitle: lesson.title, content, explanation: text });
+
+      const allConcepts = await store.getAll('concepts');
+      for (const name of lesson.concepts || []) {
+        const c = allConcepts.find((x) => x.topicId === lesson.topicId && x.name === name);
+        if (c) await store.put('concepts', applyReviewResult(c, g.score, 0.25));
+      }
+      await touchActivity();
+
+      const tier = g.score >= 80 ? 'ok' : g.score >= 50 ? 'partial' : 'bad';
+      clear(out);
+      out.append(
+        el('div', { class: `result ${tier}` }, [
+          el('p', {}, [el('strong', {}, `${g.score}% — `), g.feedback || '']),
+          g.missing?.length
+            ? el('p', { class: 'muted small' }, `Worth revisiting: ${g.missing.join('; ')}`)
+            : null,
+        ])
+      );
+      submit.remove();
+    } catch (err) {
+      console.error(err);
+      toast(err.message || 'Grading failed', 'error');
+      submit.removeAttribute('disabled');
+      submit.textContent = 'Grade my explanation';
+    }
+  });
+
+  const card = el('div', { class: 'teachback panel' }, [
+    el('h4', {}, 'Teach it back'),
+    el('p', { class: 'muted small' }, 'The strongest retention test there is: no peeking at the lesson above.'),
+    ta, submit, out,
+  ]);
+  anchor.append(card);
+  card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
 export async function renderLesson(root, { id }) {
   clear(root);
   const lesson = await store.get('lessons', id);
@@ -849,6 +926,18 @@ export async function renderLesson(root, { id }) {
     el('button', { class: 'btn btn-primary full', onclick: () => navigate(`#/quiz/${lesson.id}`) },
       lesson.completedAt ? 'Retake quiz' : 'Start quiz →')
   );
+
+  // Apply-it modes (both need the API): role-play the material with the
+  // coach, or explain it back from memory and get graded. Recall + rehearsal
+  // beat recognition — this is where a lesson turns into a skill.
+  if (hasApiKey()) {
+    article.append(
+      el('div', { class: 'practice-row' }, [
+        el('button', { class: 'btn full', onclick: () => startScenario(lesson) }, '🎭 Practice with coach'),
+        el('button', { class: 'btn full', onclick: () => openTeachBack(article, lesson) }, '🗣 Teach it back'),
+      ])
+    );
+  }
 
   root.append(article);
 

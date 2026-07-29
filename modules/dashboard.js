@@ -2,7 +2,7 @@
 // checklist, the Continue-reading shelf, and what to start next.
 
 import * as store from './store.js';
-import { masteredTopicCount, dayString } from './gamification.js';
+import { masteredTopicCount, dayString, isDue } from './gamification.js';
 import { recentHighlights } from './saved.js';
 import { renderTodayPanel } from './today.js';
 import { refresherPanel } from './refresher.js';
@@ -144,11 +144,17 @@ export async function renderDashboard(root) {
     );
   }
 
-  // Review: a question of the day + collapsible standings.
+  // Review: due-today count + a question of the day + collapsible standings.
   const qotd = await questionOfTheDay();
   const ranked = await topicRankings();
   if (qotd || ranked.length) {
-    const panel = el('section', { class: 'panel' }, [el('h4', {}, 'Review')]);
+    const dueCount = (await store.getAll('concepts')).filter((c) => isDue(c)).length;
+    const panel = el('section', { class: 'panel' }, [
+      el('div', { class: 'panel-head' }, [
+        el('h4', {}, 'Review'),
+        dueCount ? el('span', { class: 'pill' }, `${dueCount} due`) : null,
+      ]),
+    ]);
 
     if (qotd) {
       const answer = el('div', { class: 'qotd-answer hidden' }, [
@@ -164,7 +170,8 @@ export async function renderDashboard(root) {
           reveal,
           answer,
         ]),
-        el('button', { class: 'btn btn-primary full', onclick: () => navigate('#/review') }, 'Start full review →')
+        el('button', { class: 'btn btn-primary full', onclick: () => navigate('#/review') },
+          dueCount ? `Review ${dueCount} due concept${dueCount === 1 ? '' : 's'} →` : 'Start full review →')
       );
     }
 

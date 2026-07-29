@@ -4,7 +4,11 @@
 
 import { getSettings } from './store.js';
 
-const MODEL = 'claude-sonnet-4-6';
+// Sonnet 5: the upgrade path from Sonnet 4.6 — near-Opus quality on generation
+// tasks at Sonnet pricing. Two migration notes baked into callClaude below:
+// sampling params (temperature) are no longer accepted, and adaptive thinking
+// is on by default, so max_tokens must leave headroom for thinking + text.
+const MODEL = 'claude-sonnet-5';
 const API_URL = 'https://api.anthropic.com/v1/messages';
 
 // Shared context injected into every generation prompt.
@@ -37,19 +41,20 @@ export function hasApiKey() {
 }
 
 // The single transport seam. To move to a proxy later, change only this fn.
-async function callClaude({ system, messages, maxTokens = 2048, temperature }) {
+async function callClaude({ system, messages, maxTokens = 4096 }) {
   const { apiKey } = getSettings();
   if (!apiKey) {
     throw new AIError('No Claude API key set. Add one in Settings.');
   }
 
+  // No sampling params: Sonnet 5 rejects non-default temperature/top_p with a
+  // 400 — steer tone via prompts instead (the coach prompt already does).
   const body = {
     model: MODEL,
     max_tokens: maxTokens,
     messages,
   };
   if (system) body.system = system;
-  if (temperature != null) body.temperature = temperature;
 
   let res;
   try {
@@ -128,7 +133,7 @@ ${priorTitles.length ? `Already covered — do not repeat: ${priorTitles.join(';
 Lessons must build progressively from foundations to advanced application, each covering clearly distinct ground.
 
 Return JSON: { "lessons": [ { "title": "short lesson title", "focus": "one sentence: what this lesson covers and why it comes at this point" } ] }`;
-  return generateJSON({ system, prompt, maxTokens: 1200 });
+  return generateJSON({ system, prompt, maxTokens: 2500 });
 }
 
 export async function generateLesson({ topicName, topicDescription, priorTitles = [], plannedTitle, plannedFocus }) {
@@ -160,7 +165,7 @@ Return JSON with exactly this shape:
 Write 3-5 sections, each a single core idea a textbook would give its own subheading. Glossary covers the lesson's key terms (3-6 entries).
 
 In section text, "example.text", "insights", "action", "leadershipTakeaway", and "productivityTip", wrap the most important key terms in double asterisks like **this** — the app renders them as highlights. Highlight sparingly: 1-3 terms per paragraph or item, only genuinely load-bearing vocabulary. No other markdown.`;
-  return generateJSON({ system, prompt, maxTokens: 3500 });
+  return generateJSON({ system, prompt, maxTokens: 7000 });
 }
 
 // ---------- Quizzes ----------
@@ -191,7 +196,7 @@ Return JSON:
     { "type": "short", "concept": "concept name", "question": "...", "modelAnswer": "a one-sentence ideal answer, under 15 words" }
   ]
 }`;
-  return generateJSON({ system, prompt, maxTokens: 2500 });
+  return generateJSON({ system, prompt, maxTokens: 5000 });
 }
 
 // Grade a batch of short-answer responses. Returns [{ correct, score, feedback }].
@@ -212,8 +217,34 @@ Rubric:
 ${JSON.stringify(items, null, 2)}
 
 Return JSON: { "results": [ { "score": 0-100, "correct": true/false, "feedback": "..." } ] } in the same order.`;
-  const out = await generateJSON({ system, prompt, maxTokens: 1500 });
+  const out = await generateJSON({ system, prompt, maxTokens: 3000 });
   return out.results || [];
+}
+
+// Grade a "teach-back": the learner explains the lesson from memory in their
+// own words. Returns { score, feedback, missing[] }.
+export async function gradeTeachBack({ lessonTitle, content, explanation }) {
+  const system = `You grade "teach-back" explanations — a learner explaining a lesson from memory as if teaching a colleague. You reward accurate understanding in ANY wording; you are generous with synonyms and plain language, and you never require the lesson's phrasing. Respond with JSON only — no markdown, no fences.`;
+  const prompt = `The lesson being explained is "${lessonTitle}".
+
+LESSON CONTENT — the source of truth:
+---
+${(content || '').slice(0, 6000)}
+---
+
+THE LEARNER'S EXPLANATION:
+---
+${explanation}
+---
+
+Rubric:
+- Score 0-100 on how well the explanation covers and correctly states the lesson's CORE ideas. Coverage of the big ideas matters most; minor omissions of detail cost little; actual misstatements cost more.
+- 90+ = teaches it correctly and hits essentially every core idea; 70-89 = solid grasp, one core idea thin or missing; 50-69 = right general shape, real gaps; below 50 = major ideas missing or wrong.
+- Feedback (2-3 sentences): FIRST name what was explained well, THEN the most important gap or misstatement.
+- "missing": up to 3 core ideas that were absent or misstated, each a short phrase. Empty array if none.
+
+Return JSON: { "score": 0-100, "feedback": "...", "missing": ["..."] }`;
+  return generateJSON({ system, prompt, maxTokens: 2000 });
 }
 
 // ---------- Executive Coach ----------
@@ -232,7 +263,6 @@ export async function coachReply({ contextSummary, history }) {
   return callClaude({
     system: coachSystemPrompt(contextSummary),
     messages: history,
-    maxTokens: 1024,
-    temperature: 0.8,
+    maxTokens: 2048,
   });
 }

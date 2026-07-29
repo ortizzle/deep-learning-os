@@ -3,7 +3,7 @@
 
 import * as store from './store.js';
 import { generateQuiz, gradeShortAnswers, hasApiKey } from './ai.js';
-import { touchActivity, nextMastery } from './gamification.js';
+import { touchActivity, applyReviewResult } from './gamification.js';
 import { prepareNextLesson } from './lessons.js';
 import { addLessonAction } from './today.js';
 import { el, clear, toast, loading, navigate } from './ui.js';
@@ -170,17 +170,13 @@ export async function renderQuiz(root, { id, focusConcepts = [] }) {
       conceptResults,
     });
 
-    // Update mastery per concept (weighted average) — v2 foundation.
+    // Update mastery + schedule the next review per concept.
+    const allConcepts = await store.getAll('concepts');
     for (const r of conceptResults) {
-      const concept = (await store.getAll('concepts')).find(
+      const concept = allConcepts.find(
         (c) => c.topicId === lesson.topicId && c.name === r.concept
       );
-      if (concept) {
-        concept.masteryScore = nextMastery(concept.masteryScore || 0, r.score || 0);
-        concept.timesReviewed = (concept.timesReviewed || 0) + 1;
-        concept.lastReviewed = store.now();
-        await store.put('concepts', concept);
-      }
+      if (concept) await store.put('concepts', applyReviewResult(concept, r.score));
     }
 
     // Mark lesson complete + record activity for the streak.
