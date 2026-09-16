@@ -303,8 +303,13 @@ async function boot() {
     toast(`Storage error — some data may be unavailable (${err?.message || err})`, 'error');
   }
 
-  // First-run nudge toward settings if nothing is configured.
-  if (!hasApiKey() && !location.hash) {
+  // First-run nudge toward settings — shown once ever, not on every launch.
+  // A home-screen PWA restarts at manifest start_url (no hash) EVERY open,
+  // unlike a browser tab that resumes its last URL — so gating on "hash is
+  // empty" alone re-fired this on every single launch for anyone who hadn't
+  // added a key (which is optional; prebuilt courses need no API access).
+  if (!hasApiKey() && !location.hash && !getSettings().onboarded) {
+    saveSettings({ onboarded: true });
     navigate('#/settings');
   }
 
