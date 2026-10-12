@@ -8,6 +8,7 @@ import {
   pullFromGist,
   pushToGist,
   onSyncStatus,
+  onDataChange,
   exportSnapshot,
   importSnapshot,
   getLastSyncError,
@@ -26,7 +27,7 @@ import { el, clear, toast, navigate } from './modules/ui.js';
 const view = document.getElementById('view');
 
 // Keep in sync with the CACHE suffix in sw.js — bumped on every deploy.
-const APP_VERSION = 'v38';
+const APP_VERSION = 'v43';
 
 // ---------- theme ----------
 
@@ -173,6 +174,8 @@ function renderSettings(root) {
         importFile,
         restoreFile,
       ]),
+      window.OrtizDrive &&
+        window.OrtizDrive.settingsBlock({ labelTag: 'h4', labelClass: 'drive-label', buttonClass: 'btn full', hintClass: 'muted small' }),
     ]),
 
     el('div', { class: 'settings-actions' }, [
@@ -257,6 +260,48 @@ function renderSettings(root) {
   }
 }
 
+// ---------- Google Drive copy ----------
+
+// OrtizDrive reads the data synchronously, but it lives in IndexedDB — so a
+// copy of the export snapshot is kept here and refreshed after every load,
+// write and sync. Same shape as Export JSON, so a Drive file goes back in
+// through Import or Restore.
+let driveSnapshot = null;
+let driveTimer = null;
+
+async function refreshDriveSnapshot() {
+  const snap = await exportSnapshot();
+  // exportSnapshot stamps now(); the newest record time keeps the content
+  // fingerprint stable, so an unchanged reload doesn't upload again.
+  const stamps = Object.values(snap.data).flat().map((r) => r.updatedAt || r.deletedAt || '');
+  driveSnapshot = { ...snap, updatedAt: stamps.sort().pop() || null };
+  window.OrtizDrive.check();
+}
+
+function scheduleDriveRefresh() {
+  clearTimeout(driveTimer);
+  driveTimer = setTimeout(() => refreshDriveSnapshot().catch((e) => console.warn('Drive snapshot failed', e)), 1500);
+}
+
+function initDrive() {
+  if (!window.OrtizDrive) return;
+  window.OrtizDrive.init({
+    app: 'Deep Learning OS',
+    prefix: 'deep-learning-os',
+    getData: () => {
+      if (!driveSnapshot) throw new Error('not loaded yet');
+      return structuredClone(driveSnapshot);
+    },
+    toast: (msg) => toast(msg),
+    onChange: () => {
+      const slot = document.querySelector('.drive-slot');
+      if (slot) window.OrtizDrive.mountBar(slot, { className: 'btn full drive-bar' });
+    },
+  });
+  onDataChange(scheduleDriveRefresh);
+  onSyncStatus((st) => st === 'synced' && scheduleDriveRefresh());
+}
+
 // ---------- boot ----------
 
 async function boot() {
@@ -302,6 +347,9 @@ async function boot() {
     console.error('initStore failed', err);
     toast(`Storage error — some data may be unavailable (${err?.message || err})`, 'error');
   }
+
+  initDrive();
+  scheduleDriveRefresh();
 
   // First-run nudge toward settings — shown once ever, not on every launch.
   // A home-screen PWA restarts at manifest start_url (no hash) EVERY open,

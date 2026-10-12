@@ -110,7 +110,19 @@ export async function put(store, record, { touch = true } = {}) {
   if (touch) rec.updatedAt = now();
   await reqToPromise((await tx(store, 'readwrite')).put(rec));
   scheduleSync();
+  emitChange();
   return rec;
+}
+
+const changeListeners = new Set();
+
+export function onDataChange(fn) {
+  changeListeners.add(fn);
+  return () => changeListeners.delete(fn);
+}
+
+function emitChange() {
+  changeListeners.forEach((fn) => fn());
 }
 
 // Batched put(): one readwrite transaction for a whole set of records, same
@@ -129,6 +141,7 @@ export async function bulkPut(store, records, { touch = true } = {}) {
     })
   );
   scheduleSync();
+  emitChange();
 }
 
 export async function remove(store, id) {
@@ -140,6 +153,7 @@ export async function remove(store, id) {
     await put('tombstones', { id: `${store}:${id}`, store, recordId: id, deletedAt: now() });
   }
   scheduleSync();
+  emitChange();
 }
 
 // ---------- profile singleton ----------

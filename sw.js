@@ -2,7 +2,7 @@
 // current code (prevents stale-code-vs-upgraded-DB crashes); offline still
 // works from the last cached shell. Never touches api.* traffic.
 
-const CACHE = 'dlos-shell-v42';
+const CACHE = 'dlos-shell-v43';
 const SHELL = [
   './',
   './index.html',
@@ -24,6 +24,7 @@ const SHELL = [
   './modules/suggestedTopics.js',
   './modules/today.js',
   './modules/ui.js',
+  './ortiz-drive.js',
 ];
 
 self.addEventListener('install', (e) => {

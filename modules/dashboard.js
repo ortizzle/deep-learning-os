@@ -83,6 +83,9 @@ export async function renderDashboard(root) {
   }).format(new Date()), 10);
   const greet = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
   root.append(el('h2', { class: 'greeting' }, `${greet}, Chris`));
+  const driveSlot = el('div', { class: 'drive-slot' });
+  root.append(driveSlot);
+  window.OrtizDrive?.mountBar(driveSlot, { className: 'btn full drive-bar' });
 
   // The three signals that matter: consistency, volume, depth.
   root.append(
