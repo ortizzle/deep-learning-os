@@ -922,6 +922,9 @@ textarea.input { resize: vertical; line-height: 1.5; }
 
 .settings-actions { display: flex; gap: 8px; flex-wrap: wrap; }
 .app-version { margin: 16px 0 0; text-align: center; }
+.ortiz-drive { margin-top: 18px; }
+.ortiz-drive .btn, .drive-bar { min-height: 48px; }
+.drive-slot .drive-bar { margin: 0 0 14px; }
 .accent-row { display: flex; gap: 10px; margin-bottom: 10px; }
 .accent-dot {
   width: 30px; height: 30px;
